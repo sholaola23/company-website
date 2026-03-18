@@ -3,11 +3,11 @@ import { Mail, Phone, Linkedin, Twitter } from "lucide-react";
 import Logo from "@/components/shared/Logo";
 
 const SERVICES_LINKS = [
-  { label: "AI Lead Intake System", href: "/services/lead-intake" },
-  { label: "Appointment Booking Bot", href: "/services/appointment-booking" },
-  { label: "AI Inbox Assistant", href: "/services/inbox-assistant" },
+  { label: "AI Lead Intake & Booking", href: "/services/lead-intake" },
+  { label: "AI Email Assistant", href: "/services/email-assistant" },
   { label: "SEO Content Automation", href: "/services/seo-content" },
-  { label: "AI Workshops", href: "/services/workshops" },
+  { label: "WhatsApp Customer Bot", href: "/services/whatsapp-bot" },
+  { label: "AI Workshops", href: "/services/ai-workshop" },
 ];
 
 const COMPANY_LINKS = [

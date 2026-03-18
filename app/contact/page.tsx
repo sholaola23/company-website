@@ -49,9 +49,9 @@ export default function ContactPage() {
             <div className="flex flex-col gap-5">
               {/* Email */}
               <a
-                href="mailto:olusholaoladipupo1@gmail.com"
+                href="mailto:hello@oladipupoconsulting.co.uk"
                 className="flex items-start gap-4 p-4 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-zinc-700 transition-colors duration-150 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-                aria-label="Send email to olusholaoladipupo1@gmail.com"
+                aria-label="Send email to hello@oladipupoconsulting.co.uk"
               >
                 <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 shrink-0">
                   <Mail size={16} className="text-blue-400" aria-hidden="true" />
@@ -61,7 +61,7 @@ export default function ContactPage() {
                     Email
                   </p>
                   <p className="text-sm text-zinc-200 group-hover:text-zinc-50 transition-colors">
-                    olusholaoladipupo1@gmail.com
+                    hello@oladipupoconsulting.co.uk
                   </p>
                 </div>
               </a>
