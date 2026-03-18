@@ -12,6 +12,96 @@ export const metadata = {
 
 const staticPosts = [
   {
+    id: "static-3",
+    slug: "automate-appointment-booking",
+    title: "How to Automate Appointment Booking for Your Small Business",
+    excerpt:
+      "Stop missing calls and double-booking. Learn how AI appointment booking works for small businesses — and how to set it up in days, not weeks.",
+    publishedAt: "19 March 2026",
+    tags: ["AI Automation", "Appointment Booking", "Small Business", "Guides"],
+  },
+  {
+    id: "static-4",
+    slug: "ai-for-plumbers",
+    title: "AI for Plumbers: 5 Automations That Win More Jobs",
+    excerpt:
+      "AI isn't about replacing plumbers — it's about winning more jobs. Here are 5 practical automations for quote follow-ups, emergency handling, reviews, scheduling, and invoicing.",
+    publishedAt: "19 March 2026",
+    tags: ["AI Automation", "Plumbers", "Trades", "Industry Guide"],
+  },
+  {
+    id: "static-5",
+    slug: "ai-for-salons",
+    title: "AI for Salons: How to Fill Empty Chairs Without Lifting a Phone",
+    excerpt:
+      "Fewer no-shows, more rebookings, and a full diary — without chasing clients. Here's how salon automation handles reminders, reviews, content, and waitlists.",
+    publishedAt: "19 March 2026",
+    tags: ["AI Automation", "Salons", "Beauty", "Industry Guide"],
+  },
+  {
+    id: "static-6",
+    slug: "ai-for-restaurants",
+    title: "AI for Restaurants: Automate Orders, Bookings, and Reviews",
+    excerpt:
+      "From WhatsApp ordering to automated table bookings and review collection — practical AI automations that help restaurants save time and serve more customers.",
+    publishedAt: "19 March 2026",
+    tags: ["AI Automation", "Restaurants", "Hospitality", "Industry Guide"],
+  },
+  {
+    id: "static-7",
+    slug: "ai-automation-cost",
+    title: "How Much Does AI Automation Cost for a Small Business?",
+    excerpt:
+      "An honest pricing breakdown for AI automation. Compare DIY, freelancer, agency, and specialist costs — with real ROI numbers from real businesses.",
+    publishedAt: "19 March 2026",
+    tags: ["AI Automation", "Pricing", "Small Business", "Guides"],
+  },
+  {
+    id: "static-8",
+    slug: "whatsapp-automation-business",
+    title: "WhatsApp Automation for Business: The Complete Guide",
+    excerpt:
+      "The complete guide to WhatsApp automation for small businesses. How WhatsApp bots handle orders, bookings, FAQs, and follow-ups — automatically.",
+    publishedAt: "19 March 2026",
+    tags: ["WhatsApp", "AI Automation", "Small Business", "Guides"],
+  },
+  {
+    id: "static-9",
+    slug: "ai-for-healthcare",
+    title: "AI for Healthcare: Automating Patient Bookings and Follow-Ups",
+    excerpt:
+      "How clinics, dentists, and healthcare practices use AI to automate patient scheduling, reduce no-shows by 60%, and digitise forms — while staying compliant.",
+    publishedAt: "19 March 2026",
+    tags: ["AI Automation", "Healthcare", "Clinics", "Industry Guide"],
+  },
+  {
+    id: "static-10",
+    slug: "get-more-google-reviews",
+    title: "How to Get More Google Reviews Automatically",
+    excerpt:
+      "Automated review collection can 3x your Google reviews without awkward asks. Here's exactly how it works and why it's the best ROI in local marketing.",
+    publishedAt: "19 March 2026",
+    tags: ["Google Reviews", "Local SEO", "AI Automation", "Small Business"],
+  },
+  {
+    id: "static-11",
+    slug: "ai-for-coaches",
+    title: "AI for Coaches and Consultants: Automate Your Admin",
+    excerpt:
+      "Stop spending half your time on admin. Here's how coaches and consultants use AI to automate booking, onboarding, content repurposing, and invoicing.",
+    publishedAt: "19 March 2026",
+    tags: ["AI Automation", "Coaches", "Consultants", "Industry Guide"],
+  },
+  {
+    id: "static-12",
+    slug: "what-is-ai-readiness-audit",
+    title: "What Is an AI Readiness Audit? (And Why It's Free)",
+    excerpt:
+      "Find out what our free AI Readiness Audit includes, how it works, and why there's genuinely no catch. A personalised report showing where AI can save your business time and money.",
+    publishedAt: "19 March 2026",
+    tags: ["AI Audit", "Small Business", "Getting Started", "Guides"],
+  },
+  {
     id: "static-1",
     slug: "5-ways-ai-saves-time",
     title: "5 Ways AI Can Save Your Small Business 10+ Hours a Week",

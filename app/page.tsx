@@ -15,6 +15,7 @@ import GradientBlob from "@/components/shared/GradientBlob";
 import HeroImage from "@/components/shared/HeroImage";
 import PersonalisedCTA from "@/components/shared/PersonalisedCTA";
 import RotatingHeadline from "@/components/home/RotatingHeadline";
+import JsonLd from "@/components/shared/JsonLd";
 
 // ---------------------------------------------------------------------------
 // Hero
@@ -467,9 +468,33 @@ function HowItWorks() {
 // ---------------------------------------------------------------------------
 // Page
 // ---------------------------------------------------------------------------
+const businessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Oladipupo Consulting Ltd",
+  "description":
+    "AI automation systems, professional websites, and AI training for small businesses. We help SMBs save time and grow with intelligent automation — delivered in 7 days.",
+  "url": "https://oladipupoconsulting.co.uk",
+  "email": "hello@oladipupoconsulting.co.uk",
+  "telephone": "+447469347654",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "GB",
+  },
+  "priceRange": "£500 - £3,500",
+  "areaServed": "Worldwide",
+  "serviceType": ["AI Automation", "Website Development", "AI Training"],
+  "founder": {
+    "@type": "Person",
+    "name": "Olushola Oladipupo",
+  },
+  "sameAs": [],
+};
+
 export default function HomePage() {
   return (
     <main>
+      <JsonLd data={businessJsonLd} />
       <Hero />
       <SocialProofBar />
       <WhatWeBuild />

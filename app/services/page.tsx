@@ -7,6 +7,7 @@ import ServiceFilterClient from "@/components/services/ServiceFilterClient";
 import AnimatedSection from "@/components/shared/AnimatedSection";
 import { services } from "@/lib/services-data";
 import { cn } from "@/lib/utils";
+import JsonLd from "@/components/shared/JsonLd";
 
 export const metadata: Metadata = {
   title: "AI Automation Services",
@@ -63,9 +64,39 @@ const TIERS = [
   },
 ];
 
+const servicesJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "AI Automation Services — Oladipupo Consulting",
+  "description":
+    "From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 7 days.",
+  "numberOfItems": services.length,
+  "itemListElement": services.map((service, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "item": {
+      "@type": "Service",
+      "name": service.name,
+      "description": service.pain,
+      "url": `https://oladipupoconsulting.co.uk/services/${service.slug}`,
+      "provider": {
+        "@type": "Organization",
+        "name": "Oladipupo Consulting Ltd",
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": service.setupPrice.replace(/[^0-9]/g, ""),
+        "priceCurrency": "GBP",
+        "description": `${service.setupPrice} setup + ${service.monthlyPrice}`,
+      },
+    },
+  })),
+};
+
 export default function ServicesPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
+      <JsonLd data={servicesJsonLd} />
       {/* Page heading */}
       <AnimatedSection>
         <div className="mb-16 sm:mb-20">

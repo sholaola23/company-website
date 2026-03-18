@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
 import type { Metadata } from "next";
+import JsonLd from "@/components/shared/JsonLd";
 
 export const metadata: Metadata = {
   title: "Why Every Local Business Needs a Website in 2026 (And What It Costs)",
@@ -30,9 +31,32 @@ export const metadata: Metadata = {
 
 const tags = ["Websites", "Local Business", "SEO", "UK Business"];
 
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline":
+    "Why Every Local Business Needs a Website in 2026 (And What It Costs)",
+  "description":
+    "46% of UK small businesses still don't have a website. Here's why that's costing you customers, what a good business website needs, and what it actually costs in 2026.",
+  "author": {
+    "@type": "Person",
+    "name": "Olushola Oladipupo",
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Oladipupo Consulting Ltd",
+    "url": "https://oladipupoconsulting.co.uk",
+  },
+  "datePublished": "2026-03-18",
+  "dateModified": "2026-03-18",
+  "mainEntityOfPage":
+    "https://oladipupoconsulting.co.uk/blog/local-business-website-2026",
+};
+
 export default function BlogPost() {
   return (
     <main className="min-h-screen">
+      <JsonLd data={articleJsonLd} />
       <article className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <Link
@@ -215,7 +239,14 @@ export default function BlogPost() {
                   Your website needs to tell Google what you do and where you
                   do it. That means proper page titles, a meta description,
                   and content that mentions your services and location. Without
-                  this, you&apos;re invisible in search results.
+                  this, you&apos;re invisible in search results. Our{" "}
+                  <Link
+                    href="/services/seo-content"
+                    className="text-blue-400 hover:text-blue-300 underline transition-colors"
+                  >
+                    SEO Content Automation service
+                  </Link>{" "}
+                  handles this for you.
                 </p>
               </div>
             </div>
@@ -339,10 +370,10 @@ export default function BlogPost() {
 
               <p className="text-zinc-400 text-sm">
                 <Link
-                  href="/case-studies"
+                  href="/case-studies/quantumfm-media"
                   className="text-blue-400 hover:underline"
                 >
-                  Read the full case study &rarr;
+                  Read the full QuantumFM Media case study &rarr;
                 </Link>
               </p>
             </div>
@@ -353,8 +384,15 @@ export default function BlogPost() {
             </h2>
 
             <p className="text-zinc-300 leading-relaxed mb-4">
-              For &pound;1,500, our website package includes everything a
-              local business needs to start getting found online:
+              For &pound;1,500, our{" "}
+              <Link
+                href="/services/business-website"
+                className="text-blue-400 hover:text-blue-300 underline transition-colors"
+              >
+                Professional Business Website package
+              </Link>{" "}
+              includes everything a local business needs to start getting found
+              online:
             </p>
 
             <ul className="mb-8 space-y-2">

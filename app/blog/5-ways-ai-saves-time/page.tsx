@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Clock, Calendar, Mail, Users, Palette } from "lucide-react";
 import type { Metadata } from "next";
+import JsonLd from "@/components/shared/JsonLd";
 
 export const metadata: Metadata = {
   title: "5 Ways AI Can Save Your Small Business 10+ Hours a Week",
@@ -30,9 +31,30 @@ export const metadata: Metadata = {
 
 const tags = ["AI Automation", "Small Business", "Productivity", "UK Business"];
 
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "5 Ways AI Can Save Your Small Business 10+ Hours a Week",
+  "description":
+    "Discover how AI automation helps UK small businesses save 10+ hours every week. From appointment booking to email responses — practical examples for plumbers, salons, cleaners and more.",
+  "author": {
+    "@type": "Person",
+    "name": "Olushola Oladipupo",
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Oladipupo Consulting Ltd",
+    "url": "https://oladipupoconsulting.co.uk",
+  },
+  "datePublished": "2026-03-18",
+  "dateModified": "2026-03-18",
+  "mainEntityOfPage": "https://oladipupoconsulting.co.uk/blog/5-ways-ai-saves-time",
+};
+
 export default function BlogPost() {
   return (
     <main className="min-h-screen">
+      <JsonLd data={articleJsonLd} />
       <article className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <Link
@@ -133,7 +155,13 @@ export default function BlogPost() {
             <p className="text-zinc-300 leading-relaxed mb-8">
               A salon owner in Birmingham we spoke to was spending 4 hours a
               week managing bookings through WhatsApp. After automating it,
-              those 4 hours went straight back into serving clients.
+              those 4 hours went straight back into serving clients.{" "}
+              <Link
+                href="/services/lead-intake"
+                className="text-blue-400 hover:text-blue-300 underline transition-colors"
+              >
+                See how our AI Lead Intake &amp; Appointment Booking system works
+              </Link>.
             </p>
 
             {/* Section 2 */}
@@ -172,7 +200,13 @@ export default function BlogPost() {
               A plumber in Manchester told us he used to spend his evenings
               replying to emails. Now his AI assistant drafts replies as they
               come in. He spends 10 minutes reviewing them instead of an hour
-              writing them.
+              writing them.{" "}
+              <Link
+                href="/services/email-assistant"
+                className="text-blue-400 hover:text-blue-300 underline transition-colors"
+              >
+                Learn more about our AI Email Assistant
+              </Link>.
             </p>
 
             {/* Section 3 */}
@@ -289,7 +323,13 @@ export default function BlogPost() {
             <p className="text-zinc-300 leading-relaxed mb-8">
               A restaurant owner in Leeds went from posting once a month to
               five times a week, without spending any extra time on it. Their
-              Instagram following grew 40% in three months.
+              Instagram following grew 40% in three months.{" "}
+              <Link
+                href="/services/social-media"
+                className="text-blue-400 hover:text-blue-300 underline transition-colors"
+              >
+                Explore our Social Media Content Engine
+              </Link>.
             </p>
 
             {/* Summary */}

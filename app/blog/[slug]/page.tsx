@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { fetchPostBySlug, fetchPostBlocks, fetchPublishedPosts } from "@/lib/notion-cms";
 import { notFound } from "next/navigation";
+import JsonLd from "@/components/shared/JsonLd";
 
 export const revalidate = 60;
 
@@ -105,8 +106,27 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   const blocks = await fetchPostBlocks(post.id);
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "description": post.excerpt || `Read ${post.title} on the Oladipupo Consulting blog.`,
+    "author": {
+      "@type": "Person",
+      "name": "Olushola Oladipupo",
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Oladipupo Consulting Ltd",
+      "url": "https://oladipupoconsulting.co.uk",
+    },
+    "datePublished": post.publishedAt,
+    "mainEntityOfPage": `https://oladipupoconsulting.co.uk/blog/${slug}`,
+  };
+
   return (
     <main className="min-h-screen">
+      <JsonLd data={articleJsonLd} />
       <article className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <Link
