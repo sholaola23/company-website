@@ -655,9 +655,9 @@ function CompleteStep({ result }: { result: AuditResult }) {
           </svg>
         </div>
         <div>
-          <h3 className="text-xl font-bold text-zinc-50 mb-2">Your full report is on its way!</h3>
+          <h3 className="text-xl font-bold text-zinc-50 mb-2">Your full report is being generated!</h3>
           <p className="text-sm text-zinc-400 leading-relaxed max-w-sm mx-auto">
-            Olushola will personally review your results and send a detailed 5-section audit within 24 hours.
+            Your personalised 5-section AI Readiness Report is being created right now. You&apos;ll receive it by email within 2 minutes.
           </p>
         </div>
         <NextLink

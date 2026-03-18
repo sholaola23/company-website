@@ -28,6 +28,8 @@ interface AuditRequestBody {
     score: number;
     scoreLabel: string;
     summary: string;
+    findings?: { title: string; description: string; severity: string }[];
+    quickWins?: { title: string; description: string }[];
     recommendedTier: string;
     tierReason: string;
   };
@@ -299,6 +301,35 @@ export async function POST(req: NextRequest) {
   // TODO: Create Notion page when NOTION_AUDIT_DB is configured
   // const notionDbId = process.env.NOTION_AUDIT_DB;
   // if (notionDbId) { ... }
+
+  // 3. Fire-and-forget: trigger full report generation if instant audit data is present
+  if (instantAuditResults?.findings && cleanEmail) {
+    const reportPayload = {
+      businessName: cleanBusinessName,
+      industry: cleanIndustry,
+      website: cleanWebsite || "",
+      email: cleanEmail,
+      yourName: cleanYourName,
+      instantAuditResults,
+    };
+
+    // Determine the base URL for the internal API call
+    const protocol = req.headers.get("x-forwarded-proto") || "https";
+    const host = req.headers.get("host") || "localhost:3000";
+    const baseUrl = `${protocol}://${host}`;
+
+    // Fire-and-forget — do not await. The prospect gets their confirmation email
+    // immediately; the full report arrives 1-2 minutes later.
+    fetch(`${baseUrl}/api/generate-report`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(reportPayload),
+    }).catch((err) => {
+      console.error("[audit-request] failed to trigger report generation:", err);
+    });
+
+    console.log("[audit-request] triggered background report generation for", cleanBusinessName);
+  }
 
   return NextResponse.json({ success: true });
 }
