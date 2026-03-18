@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { waitUntil } from "@vercel/functions";
 import { Resend } from "resend";
 
 const resend = process.env.RESEND_API_KEY
@@ -318,15 +319,17 @@ export async function POST(req: NextRequest) {
     const host = req.headers.get("host") || "localhost:3000";
     const baseUrl = `${protocol}://${host}`;
 
-    // Fire-and-forget — do not await. The prospect gets their confirmation email
-    // immediately; the full report arrives 1-2 minutes later.
-    fetch(`${baseUrl}/api/generate-report`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(reportPayload),
-    }).catch((err) => {
-      console.error("[audit-request] failed to trigger report generation:", err);
-    });
+    // Use waitUntil to keep the function alive while the report generates in the background.
+    // The response is sent immediately; Vercel keeps the function running for the background work.
+    waitUntil(
+      fetch(`${baseUrl}/api/generate-report`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(reportPayload),
+      }).catch((err) => {
+        console.error("[audit-request] failed to trigger report generation:", err);
+      })
+    );
 
     console.log("[audit-request] triggered background report generation for", cleanBusinessName);
   }
