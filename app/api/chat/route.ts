@@ -11,6 +11,12 @@ export async function POST(req: NextRequest) {
     return Response.json({ error: "Messages required" }, { status: 400 });
   }
 
+  // Reject empty/whitespace-only messages
+  const lastMessage = messages[messages.length - 1];
+  if (!lastMessage?.content?.trim()) {
+    return Response.json({ text: "It looks like your message was empty. How can I help you today?" });
+  }
+
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0] || "unknown";
   const { allowed } = checkChatRateLimit(ip);
   if (!allowed) {
@@ -50,7 +56,7 @@ export async function POST(req: NextRequest) {
       },
       body: JSON.stringify({
         model: "claude-haiku-4-5-20251001",
-        max_tokens: 500,
+        max_tokens: 700,
         stream: true,
         system: CHAT_SYSTEM_PROMPT,
         messages: cappedMessages,
