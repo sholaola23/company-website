@@ -4,6 +4,7 @@ import {
   FileSearch,
   Globe,
   GraduationCap,
+  ShieldCheck,
   TrendingUp,
   Users,
   Zap,
@@ -106,8 +107,8 @@ function Hero() {
 // Social proof bar
 // ---------------------------------------------------------------------------
 const stats = [
-  { numeric: 8, suffix: "+", label: "Hours Saved Weekly", sublabel: "per client" },
-  { numeric: 180, suffix: "", label: "Orders Automated", sublabel: "weekly at E'Manuel" },
+  { numeric: 8, suffix: "+", label: "Hours / ~\u00A3400 Saved", sublabel: "per client weekly" },
+  { numeric: 180, suffix: "", label: "Orders Automated Weekly", sublabel: "at E\u2019Manuel Bakery" },
   { numeric: 9, suffix: "", label: "Workflows Deployed", sublabel: "for one bakery" },
   { numeric: 7, suffix: "", label: "Day Delivery", sublabel: "audit to live" },
 ];
@@ -361,6 +362,42 @@ function CaseStudiesPreview() {
 }
 
 // ---------------------------------------------------------------------------
+// 90-Day Results Guarantee
+// ---------------------------------------------------------------------------
+function ResultsGuarantee() {
+  return (
+    <section className="bg-zinc-950 py-24" aria-labelledby="guarantee-heading">
+      <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
+        <AnimatedSection>
+          <div className="mx-auto max-w-2xl rounded-2xl border-2 border-emerald-500/40 bg-zinc-900/60 p-8 sm:p-10 text-center">
+            <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500/10 border border-emerald-500/30">
+              <ShieldCheck
+                size={28}
+                className="text-emerald-400"
+                aria-hidden="true"
+              />
+            </div>
+            <h2
+              id="guarantee-heading"
+              className="text-2xl font-bold text-zinc-50 sm:text-3xl"
+            >
+              90-Day Results Guarantee
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-zinc-400">
+              If you don&apos;t save at least 5 hours per week within 90 days,
+              we&apos;ll refund your setup fee. No questions asked.
+            </p>
+            <p className="mt-3 text-sm font-medium text-emerald-400">
+              Every project we deliver is backed by this guarantee.
+            </p>
+          </div>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+}
+
+// ---------------------------------------------------------------------------
 // How it works — 4 steps
 // ---------------------------------------------------------------------------
 const steps = [
@@ -499,6 +536,7 @@ export default function HomePage() {
       <SocialProofBar />
       <WhatWeBuild />
       <CaseStudiesPreview />
+      <ResultsGuarantee />
       <HowItWorks />
       <PersonalisedCTA />
     </main>

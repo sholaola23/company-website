@@ -11,6 +11,8 @@ export type CaseStudy = {
   results: { label: string; value: string }[];
   deliverables: string[];
   testimonial?: string;
+  beforeAfter?: { before: string; after: string }[];
+  annualSaving?: string;
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -21,13 +23,13 @@ export const caseStudies: CaseStudy[] = [
     location: "Kettering, UK",
     tier: "Growth",
     heroStat: "8 hrs",
-    heroLabel: "saved per week",
+    heroLabel: "saved per week — equivalent to ~£400/month in admin costs",
     problem:
       "Running a Nigerian-style bread bakery handling 140-180 weekly orders. Orders came in via WhatsApp messages, payments were manually tracked across SumUp and bank transfers, and production quantities were hand-tallied. The owner spent 8+ hours per week on admin instead of baking.",
     solution:
       "Built 9 automated workflows — online order form (Tally.so), real-time Google Sheets production dashboard (5 tabs), automated payment matching across SumUp and bank transfers, delivery route optimisation with Google Maps, WhatsApp order confirmations.",
     results: [
-      { label: "Admin time saved", value: "8 hrs/week" },
+      { label: "Admin time saved", value: "8 hrs/week (~£400/mo)" },
       { label: "Orders processed automatically", value: "140-180/week" },
       { label: "Manual payment reconciliation", value: "Zero" },
       { label: "Production tallies", value: "Automated" },
@@ -41,6 +43,13 @@ export const caseStudies: CaseStudy[] = [
       "WhatsApp Twilio integration",
       "Google Maps route optimisation",
     ],
+    beforeAfter: [
+      { before: "8+ hours of admin every week", after: "Fully automated -- zero manual work" },
+      { before: "Manual WhatsApp order-taking", after: "Online form with auto-confirmations" },
+      { before: "Guessing production quantities", after: "Real-time dashboard with order data" },
+      { before: "Manual payment reconciliation", after: "Automated SumUp matching" },
+    ],
+    annualSaving: "Estimated annual saving: \u00A320,000+ in admin time",
   },
   {
     slug: "quantumfm-media",
@@ -69,6 +78,11 @@ export const caseStudies: CaseStudy[] = [
       "12 responsive pages",
       "Web3Forms integration",
       "Vercel deployment + DNS",
+    ],
+    beforeAfter: [
+      { before: "No online presence -- invisible on Google", after: "Professional 12-page website live" },
+      { before: "Events shared only on WhatsApp", after: "Full events calendar with online discovery" },
+      { before: "No brand identity", after: "Complete brand kit -- logo, colours, typography" },
     ],
   },
 ];

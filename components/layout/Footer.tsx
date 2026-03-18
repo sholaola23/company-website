@@ -17,12 +17,20 @@ const COMPANY_LINKS = [
   { label: "Contact", href: "/contact" },
 ];
 
+const LOCATION_LINKS = [
+  { label: "London", href: "/ai-automation-london" },
+  { label: "Manchester", href: "/ai-automation-manchester" },
+  { label: "Birmingham", href: "/ai-automation-birmingham" },
+  { label: "Leeds", href: "/ai-automation-leeds" },
+  { label: "Kettering", href: "/ai-automation-kettering" },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-zinc-950 border-t border-zinc-800/60" aria-label="Site footer">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Main footer grid */}
-        <div className="py-16 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="py-16 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-5">
           {/* Brand column */}
           <div className="lg:col-span-1 flex flex-col gap-5">
             <Link
@@ -66,6 +74,25 @@ export default function Footer() {
             </h3>
             <ul className="flex flex-col gap-3" role="list">
               {COMPANY_LINKS.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-zinc-400 hover:text-zinc-50 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Locations column */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-5">
+              Locations
+            </h3>
+            <ul className="flex flex-col gap-3" role="list">
+              {LOCATION_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}

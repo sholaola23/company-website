@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, ShieldCheck } from "lucide-react";
 import SectionHeading from "@/components/shared/SectionHeading";
 import CTAButton from "@/components/shared/CTAButton";
 import ServiceFilterClient from "@/components/services/ServiceFilterClient";
@@ -260,6 +260,31 @@ export default function ServicesPage() {
             ))}
           </div>
         </section>
+      </AnimatedSection>
+
+      {/* 90-Day Guarantee */}
+      <AnimatedSection delay={0.15}>
+        <div className="mt-16 flex items-center gap-4 rounded-xl border border-emerald-500/30 bg-emerald-500/5 px-6 py-5 max-w-3xl mx-auto">
+          <ShieldCheck
+            size={24}
+            className="text-emerald-400 shrink-0"
+            aria-hidden="true"
+          />
+          <p className="text-sm text-zinc-300">
+            Every package comes with our{" "}
+            <span className="font-semibold text-emerald-400">
+              90-Day Results Guarantee
+            </span>
+            .{" "}
+            <Link
+              href="/audit"
+              className="text-blue-400 hover:text-blue-300 transition-colors"
+            >
+              Start with a free audit
+            </Link>{" "}
+            to see what&apos;s possible.
+          </p>
+        </div>
       </AnimatedSection>
     </div>
   );

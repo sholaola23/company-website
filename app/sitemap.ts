@@ -4,6 +4,14 @@ import { caseStudies } from "@/lib/case-studies-data";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://oladipupoconsulting.co.uk";
 
+const CITY_SLUGS = [
+  "ai-automation-london",
+  "ai-automation-manchester",
+  "ai-automation-birmingham",
+  "ai-automation-leeds",
+  "ai-automation-kettering",
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     { url: BASE_URL, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 1 },
@@ -29,5 +37,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...servicePages, ...caseStudyPages];
+  const cityPages = CITY_SLUGS.map((slug) => ({
+    url: `${BASE_URL}/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...servicePages, ...caseStudyPages, ...cityPages];
 }

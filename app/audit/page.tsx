@@ -73,6 +73,13 @@ export default function AuditPage() {
           <p className="text-center text-xs text-zinc-500 mt-4">
             Free for a limited time — normally £150
           </p>
+          <p className="text-center text-xs text-zinc-500 mt-2">
+            Backed by our{" "}
+            <span className="text-emerald-400 font-medium">
+              90-Day Results Guarantee
+            </span>{" "}
+            — if you don&apos;t see results, we refund your setup fee.
+          </p>
         </div>
       </AnimatedSection>
     </div>

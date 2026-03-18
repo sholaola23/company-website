@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, CheckCircle, MapPin, Tag } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle, MapPin, Tag } from "lucide-react";
+import AnimatedSection from "@/components/shared/AnimatedSection";
 import CTAButton from "@/components/shared/CTAButton";
 import { caseStudies } from "@/lib/case-studies-data";
 import { cn } from "@/lib/utils";
@@ -43,6 +44,8 @@ export default async function CaseStudyDetailPage({
   const { slug } = await params;
   const study = caseStudies.find((c) => c.slug === slug);
   if (!study) notFound();
+
+  const relatedStudies = caseStudies.filter((c) => c.slug !== slug);
 
   return (
     <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
@@ -173,6 +176,104 @@ export default async function CaseStudyDetailPage({
           ))}
         </ul>
       </section>
+
+      {/* Before & After */}
+      {study.beforeAfter && study.beforeAfter.length > 0 && (
+        <>
+          <hr className="border-zinc-800 mb-10" />
+          <AnimatedSection>
+            <section className="mb-10" aria-labelledby="before-after-heading">
+              <h2
+                id="before-after-heading"
+                className="text-xl font-semibold text-zinc-50 mb-6"
+              >
+                Before &amp; After
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 rounded-xl border border-zinc-800 overflow-hidden">
+                {/* Column headers */}
+                <div className="bg-zinc-800/60 px-5 py-3 text-xs font-bold uppercase tracking-widest text-zinc-400">
+                  Before
+                </div>
+                <div className="bg-zinc-800/60 px-5 py-3 text-xs font-bold uppercase tracking-widest text-emerald-400">
+                  After
+                </div>
+                {study.beforeAfter.map((row, i) => (
+                  <div key={i} className="contents">
+                    <div
+                      className={cn(
+                        "px-5 py-4 text-sm text-zinc-400 leading-relaxed",
+                        i < study.beforeAfter!.length - 1 && "border-b border-zinc-800"
+                      )}
+                    >
+                      {row.before}
+                    </div>
+                    <div
+                      className={cn(
+                        "px-5 py-4 text-sm text-zinc-200 leading-relaxed font-medium",
+                        i < study.beforeAfter!.length - 1 && "border-b border-zinc-800"
+                      )}
+                    >
+                      {row.after}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Annual saving callout */}
+              {study.annualSaving && (
+                <div className="mt-6 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-6 py-4 text-center">
+                  <p className="text-base font-semibold text-emerald-400">
+                    {study.annualSaving}
+                  </p>
+                </div>
+              )}
+            </section>
+          </AnimatedSection>
+        </>
+      )}
+
+      {/* Related case studies */}
+      {relatedStudies.length > 0 && (
+        <>
+          <hr className="border-zinc-800 mb-10" />
+          <AnimatedSection>
+            <section className="mb-12" aria-labelledby="related-heading">
+              <h2
+                id="related-heading"
+                className="text-xl font-semibold text-zinc-50 mb-6"
+              >
+                See more results
+              </h2>
+              <div className="grid gap-4">
+                {relatedStudies.map((related) => (
+                  <Link
+                    key={related.slug}
+                    href={`/case-studies/${related.slug}`}
+                    className="group flex items-center justify-between rounded-xl border border-zinc-800 bg-zinc-900/50 p-6 transition-all duration-200 hover:border-blue-500/40 hover:bg-zinc-900"
+                  >
+                    <div>
+                      <span className="inline-block rounded-md border border-zinc-700 bg-zinc-800 px-2 py-0.5 text-xs font-medium text-zinc-400 mb-2">
+                        {related.industry}
+                      </span>
+                      <h3 className="text-base font-semibold text-zinc-50">
+                        {related.name}
+                      </h3>
+                      <p className="mt-1 text-sm text-zinc-400">
+                        {related.heroStat} {related.heroLabel}
+                      </p>
+                    </div>
+                    <ArrowRight
+                      size={18}
+                      className="text-zinc-600 transition-all duration-200 group-hover:text-blue-400 group-hover:translate-x-0.5 shrink-0 ml-4"
+                      aria-hidden="true"
+                    />
+                  </Link>
+                ))}
+              </div>
+            </section>
+          </AnimatedSection>
+        </>
+      )}
 
       {/* Bottom CTA */}
       <div className="bg-gradient-to-br from-blue-500/10 to-zinc-900 border border-blue-500/20 rounded-xl p-8 text-center">
