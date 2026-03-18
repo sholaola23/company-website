@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { ANTHROPIC_API_URL, ANTHROPIC_VERSION } from "@/lib/constants";
 
+// Allow up to 300s on Pro plan for full report generation
+export const maxDuration = 300;
+
 // ---------------------------------------------------------------------------
 // Config
 // ---------------------------------------------------------------------------
