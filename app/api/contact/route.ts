@@ -1,4 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
+
+const resend = process.env.RESEND_API_KEY
+  ? new Resend(process.env.RESEND_API_KEY)
+  : null;
+
+const FROM_NOTIFY =
+  process.env.RESEND_DOMAIN_VERIFIED === "true"
+    ? "Oladipupo Consulting <notifications@oladipupoconsulting.co.uk>"
+    : "Oladipupo Consulting <onboarding@resend.dev>";
+
+const FROM_REPLY =
+  process.env.RESEND_DOMAIN_VERIFIED === "true"
+    ? "Oladipupo Consulting <hello@oladipupoconsulting.co.uk>"
+    : "Oladipupo Consulting <onboarding@resend.dev>";
 
 interface ContactBody {
   name: string;
@@ -93,15 +108,55 @@ async function notifyOwner({
   message: string;
   aiReply: string;
 }) {
-  // Logs for now — email notification added when email service (Resend/SendGrid) is configured
-  console.log("=== NEW CONTACT FORM SUBMISSION ===");
-  console.log(`Name:    ${name}`);
-  console.log(`Email:   ${email}`);
-  console.log(`Phone:   ${phone || "not provided"}`);
-  console.log(`Message: ${message}`);
-  console.log("--- AI AUTO-REPLY DRAFTED ---");
-  console.log(aiReply);
-  console.log("=================================");
+  console.log("[contact] New submission from:", name, email);
+
+  if (!process.env.RESEND_API_KEY) {
+    console.log("[contact] RESEND_API_KEY not set, skipping email");
+    console.log("=== NEW CONTACT FORM SUBMISSION ===");
+    console.log(`Name:    ${name}`);
+    console.log(`Email:   ${email}`);
+    console.log(`Phone:   ${phone || "not provided"}`);
+    console.log(`Message: ${message}`);
+    console.log("--- AI AUTO-REPLY DRAFTED ---");
+    console.log(aiReply);
+    console.log("=================================");
+    return;
+  }
+
+  try {
+    // Send notification to Olushola
+    await resend?.emails.send({
+      from: FROM_NOTIFY,
+      to: "olusholaoladipupo1@gmail.com",
+      subject: `New Contact: ${name} — ${email}`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
+        <p><strong>Message:</strong></p>
+        <blockquote style="border-left: 3px solid #3b82f6; padding-left: 12px; color: #555;">${message}</blockquote>
+        <hr>
+        <h3>AI Auto-Reply (drafted for prospect):</h3>
+        <pre style="background: #f5f5f5; padding: 16px; border-radius: 8px; white-space: pre-wrap;">${aiReply}</pre>
+        <p><em>Reply directly to this email or send the auto-reply above to ${email}</em></p>
+      `,
+    });
+  } catch (err) {
+    console.error("[contact] failed to send owner notification:", err);
+  }
+
+  try {
+    // Send auto-reply to the prospect
+    await resend?.emails.send({
+      from: FROM_REPLY,
+      to: email,
+      subject: `Thanks for reaching out, ${name} — Oladipupo Consulting`,
+      text: aiReply,
+    });
+  } catch (err) {
+    console.error("[contact] failed to send prospect auto-reply:", err);
+  }
 }
 
 export async function POST(req: NextRequest) {

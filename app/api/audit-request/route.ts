@@ -1,4 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
+
+const resend = process.env.RESEND_API_KEY
+  ? new Resend(process.env.RESEND_API_KEY)
+  : null;
+
+const FROM_NOTIFY =
+  process.env.RESEND_DOMAIN_VERIFIED === "true"
+    ? "Oladipupo Consulting <notifications@oladipupoconsulting.co.uk>"
+    : "Oladipupo Consulting <onboarding@resend.dev>";
+
+const FROM_REPLY =
+  process.env.RESEND_DOMAIN_VERIFIED === "true"
+    ? "Oladipupo Consulting <hello@oladipupoconsulting.co.uk>"
+    : "Oladipupo Consulting <onboarding@resend.dev>";
 
 interface AuditRequestBody {
   businessName: string;
@@ -117,25 +132,80 @@ async function notifyOwnerAudit({
   aiReply: string;
   instantAuditResults?: AuditRequestBody["instantAuditResults"];
 }) {
-  // Logs for now — email notification added when email service (Resend/SendGrid) is configured
-  console.log("=== NEW AUDIT REQUEST ===");
-  console.log(`Business: ${businessName}`);
-  console.log(`Name:     ${yourName}`);
-  console.log(`Email:    ${email}`);
-  console.log(`Phone:    ${phone || "not provided"}`);
-  console.log(`Industry: ${industry}`);
-  console.log(`Website:  ${website || "not provided"}`);
-  console.log(`Headache: ${headache}`);
-  if (instantAuditResults) {
-    console.log("--- INSTANT AUDIT PREVIEW ---");
-    console.log(`Score:    ${instantAuditResults.score}/10 (${instantAuditResults.scoreLabel})`);
-    console.log(`Tier:     ${instantAuditResults.recommendedTier}`);
-    console.log(`Summary:  ${instantAuditResults.summary}`);
-    console.log(`Reason:   ${instantAuditResults.tierReason}`);
+  console.log("[audit-request] New request from:", yourName, email);
+
+  if (!process.env.RESEND_API_KEY) {
+    console.log("[audit-request] RESEND_API_KEY not set, skipping email");
+    console.log("=== NEW AUDIT REQUEST ===");
+    console.log(`Business: ${businessName}`);
+    console.log(`Name:     ${yourName}`);
+    console.log(`Email:    ${email}`);
+    console.log(`Phone:    ${phone || "not provided"}`);
+    console.log(`Industry: ${industry}`);
+    console.log(`Website:  ${website || "not provided"}`);
+    console.log(`Headache: ${headache}`);
+    if (instantAuditResults) {
+      console.log("--- INSTANT AUDIT PREVIEW ---");
+      console.log(`Score:    ${instantAuditResults.score}/10 (${instantAuditResults.scoreLabel})`);
+      console.log(`Tier:     ${instantAuditResults.recommendedTier}`);
+      console.log(`Summary:  ${instantAuditResults.summary}`);
+      console.log(`Reason:   ${instantAuditResults.tierReason}`);
+    }
+    console.log("--- AI AUTO-REPLY DRAFTED ---");
+    console.log(aiReply);
+    console.log("=========================");
+    return;
   }
-  console.log("--- AI AUTO-REPLY DRAFTED ---");
-  console.log(aiReply);
-  console.log("=========================");
+
+  const instantAuditSection = instantAuditResults
+    ? `
+      <hr>
+      <h3>Instant Audit Preview</h3>
+      <p><strong>Score:</strong> ${instantAuditResults.score}/10 (${instantAuditResults.scoreLabel})</p>
+      <p><strong>Recommended Tier:</strong> ${instantAuditResults.recommendedTier}</p>
+      <p><strong>Summary:</strong> ${instantAuditResults.summary}</p>
+      <p><strong>Tier Reason:</strong> ${instantAuditResults.tierReason}</p>
+    `
+    : "";
+
+  try {
+    // Send notification to Olushola with all audit details
+    await resend?.emails.send({
+      from: FROM_NOTIFY,
+      to: "olusholaoladipupo1@gmail.com",
+      subject: `New Audit Request: ${businessName} — ${yourName}`,
+      html: `
+        <h2>New AI Audit Request</h2>
+        <p><strong>Business:</strong> ${businessName}</p>
+        <p><strong>Name:</strong> ${yourName}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
+        <p><strong>Industry:</strong> ${industry}</p>
+        <p><strong>Website:</strong> ${website || "Not provided"}</p>
+        <p><strong>Biggest Challenge:</strong></p>
+        <blockquote style="border-left: 3px solid #3b82f6; padding-left: 12px; color: #555;">${headache}</blockquote>
+        ${instantAuditSection}
+        <hr>
+        <h3>AI Acknowledgement (drafted for prospect):</h3>
+        <pre style="background: #f5f5f5; padding: 16px; border-radius: 8px; white-space: pre-wrap;">${aiReply}</pre>
+        <p><em>Reply directly to this email or send the acknowledgement above to ${email}</em></p>
+      `,
+    });
+  } catch (err) {
+    console.error("[audit-request] failed to send owner notification:", err);
+  }
+
+  try {
+    // Send confirmation email to the prospect
+    await resend?.emails.send({
+      from: FROM_REPLY,
+      to: email,
+      subject: `Your AI Readiness Audit is on its way, ${yourName} — Oladipupo Consulting`,
+      text: aiReply,
+    });
+  } catch (err) {
+    console.error("[audit-request] failed to send prospect confirmation:", err);
+  }
 }
 
 export async function POST(req: NextRequest) {

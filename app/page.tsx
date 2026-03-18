@@ -1,8 +1,8 @@
 import Link from "next/link";
 import {
   ArrowRight,
-  CheckCircle,
   FileSearch,
+  Globe,
   GraduationCap,
   TrendingUp,
   Users,
@@ -138,53 +138,33 @@ function SocialProofBar() {
 }
 
 // ---------------------------------------------------------------------------
-// Services preview — 3 tier cards
+// What We Build — results-first category cards (replaces tier pricing cards)
 // ---------------------------------------------------------------------------
-const tiers = [
+const categories = [
   {
-    name: "Starter",
-    from: "£500",
-    monthly: "£50/mo",
+    icon: Zap,
+    title: "AI Automation",
     description:
-      "Perfect for solopreneurs and small teams taking their first AI step.",
-    features: [
-      "AI Lead Intake & Booking",
-      "AI Email Assistant",
-      "SEO Content Automation",
-      "Social Media Engine",
-    ],
-    recommended: false,
+      "Automate repetitive tasks. Lead capture, email responses, appointment booking, follow-ups — all running on autopilot.",
+    result: "8+ hours saved per week",
   },
   {
-    name: "Growth",
-    from: "£1,500",
-    monthly: "£150/mo",
-    description: "For established businesses ready to automate core operations.",
-    features: [
-      "Order-to-Delivery Automation",
-      "WhatsApp Customer Bot",
-      "Professional Website",
-      "Monthly optimisation retainer",
-    ],
-    recommended: true,
+    icon: Globe,
+    title: "Website Development",
+    description:
+      "Professional websites that convert visitors into customers. Mobile-first, SEO-optimised, delivered in 10-14 days.",
+    result: "12-page site built in 2 weeks",
   },
   {
-    name: "Scale",
-    from: "£3,500",
-    monthly: "£350/mo",
+    icon: GraduationCap,
+    title: "AI Training",
     description:
-      "Multi-system automation stack for businesses with complex workflows.",
-    features: [
-      "Custom automation build",
-      "Full AI workflow audit",
-      "Multi-channel integration",
-      "Priority support & SLA",
-    ],
-    recommended: false,
+      "Hands-on workshops that get your team using AI tools confidently. Tailored to your industry and skill level.",
+    result: "Teams productive with AI in one session",
   },
 ];
 
-function ServicesPreview() {
+function WhatWeBuild() {
   return (
     <section className="bg-zinc-950 py-24" aria-labelledby="services-heading">
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
@@ -198,103 +178,86 @@ function ServicesPreview() {
               id="services-heading"
               className="text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl"
             >
-              What We Build
+              Real Tools. Real Results.
             </h2>
             <p className="max-w-2xl text-base leading-relaxed text-zinc-400">
-              Automation, websites, training, and custom AI solutions — three
-              tiers designed to match where your business is today.
+              We help small businesses save time, win more customers, and look
+              professional — delivered fast and built to last.
             </p>
           </div>
         </AnimatedSection>
 
-        {/* Tier cards */}
+        {/* Category cards */}
         <div className="mt-16 grid gap-6 md:grid-cols-3">
-          {tiers.map((tier, index) => (
-            <AnimatedSection key={tier.name} delay={0.1 * (index + 1)}>
-              <div
-                className={`relative flex h-full flex-col rounded-2xl p-8 transition-all duration-300 hover:scale-[1.02] ${
-                  tier.recommended
-                    ? "border border-blue-500 bg-zinc-900 shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20"
-                    : "border border-zinc-800 bg-zinc-900/50 hover:border-zinc-700 hover:bg-zinc-900"
-                }`}
-              >
-                {tier.recommended && (
-                  <>
-                    {/* Animated gradient glow border overlay */}
-                    <div
+          {categories.map((cat, index) => {
+            const Icon = cat.icon;
+            return (
+              <AnimatedSection key={cat.title} delay={0.1 * (index + 1)}>
+                <div className="flex h-full flex-col rounded-2xl border border-zinc-800 bg-zinc-900/50 p-8 transition-all duration-300 hover:scale-[1.02] hover:border-zinc-700 hover:bg-zinc-900">
+                  {/* Icon */}
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10">
+                    <Icon
+                      size={22}
+                      className="text-blue-400"
                       aria-hidden="true"
-                      className="animate-gradient-border absolute inset-0 rounded-2xl opacity-20 blur-sm"
-                      style={{
-                        background:
-                          "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #3b82f6 100%)",
-                        backgroundSize: "200% 200%",
-                      }}
                     />
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                      <span className="inline-flex items-center rounded-full bg-blue-500 px-3 py-0.5 text-xs font-semibold text-white">
-                        Most Popular
-                      </span>
-                    </div>
-                  </>
-                )}
-
-                <div className="relative flex-1">
-                  <h3 className="text-sm font-semibold uppercase tracking-widest text-zinc-400">
-                    {tier.name}
-                  </h3>
-                  <div className="mt-3 flex items-baseline gap-2">
-                    <span className="text-3xl font-bold text-zinc-50">
-                      {tier.from}
-                    </span>
-                    <span className="text-sm text-zinc-500">setup</span>
                   </div>
-                  <p className="mt-0.5 text-sm text-zinc-500">
-                    {tier.monthly} retainer
+
+                  {/* Title */}
+                  <h3 className="mt-5 text-lg font-bold text-zinc-50">
+                    {cat.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-zinc-400">
+                    {cat.description}
                   </p>
 
-                  <p className="mt-4 text-sm leading-relaxed text-zinc-400">
-                    {tier.description}
-                  </p>
+                  {/* Result badge */}
+                  <div className="mt-6">
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-400">
+                      {cat.result}
+                    </span>
+                  </div>
 
-                  <ul className="mt-6 space-y-3" role="list">
-                    {tier.features.map((feature) => (
-                      <li
-                        key={feature}
-                        className="flex items-start gap-2.5 text-sm text-zinc-300"
-                      >
-                        <CheckCircle
-                          size={15}
-                          className="mt-0.5 shrink-0 text-blue-500"
-                          aria-hidden="true"
-                        />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Learn more */}
+                  <Link
+                    href="/services"
+                    className="group mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-blue-400 transition-colors duration-200 hover:text-blue-300"
+                  >
+                    Learn more
+                    <ArrowRight
+                      size={14}
+                      className="transition-transform duration-200 group-hover:translate-x-0.5"
+                      aria-hidden="true"
+                    />
+                  </Link>
                 </div>
-
-                <Link
-                  href="/services"
-                  className={`relative mt-8 inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition-all duration-200 group ${
-                    tier.recommended
-                      ? "bg-blue-500 text-white hover:bg-blue-600"
-                      : "border border-zinc-700 text-zinc-300 hover:border-zinc-500 hover:bg-zinc-800/60 hover:text-zinc-50"
-                  }`}
-                >
-                  Explore {tier.name} tier
-                  <ArrowRight
-                    size={14}
-                    className="transition-transform duration-200 group-hover:translate-x-0.5"
-                    aria-hidden="true"
-                  />
-                </Link>
-              </div>
-            </AnimatedSection>
-          ))}
+              </AnimatedSection>
+            );
+          })}
         </div>
 
+        {/* Pricing signal + all solutions link */}
+        <AnimatedSection delay={0.45}>
+          <p className="mt-10 text-center text-sm text-zinc-500">
+            Packages from £500.{" "}
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-1 font-medium text-blue-400 transition-colors duration-200 hover:text-blue-300 group"
+            >
+              View all 12 solutions
+              <ArrowRight
+                size={13}
+                className="transition-transform duration-200 group-hover:translate-x-0.5"
+                aria-hidden="true"
+              />
+            </Link>
+          </p>
+        </AnimatedSection>
+
         {/* AI Training & Workshops callout */}
-        <AnimatedSection delay={0.4}>
+        <AnimatedSection delay={0.55}>
           <div className="mt-8 rounded-2xl border border-zinc-700 bg-zinc-900/60 p-7 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between hover:border-zinc-600 transition-colors duration-200">
             <div className="flex items-start gap-4">
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-zinc-700 bg-zinc-800">
@@ -331,23 +294,6 @@ function ServicesPreview() {
             </Link>
           </div>
         </AnimatedSection>
-
-        {/* All solutions link */}
-        <AnimatedSection delay={0.5}>
-          <p className="mt-10 text-center">
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-400 transition-colors duration-200 hover:text-blue-300 group"
-            >
-              View all 12 solutions
-              <ArrowRight
-                size={14}
-                className="transition-transform duration-200 group-hover:translate-x-0.5"
-                aria-hidden="true"
-              />
-            </Link>
-          </p>
-        </AnimatedSection>
       </div>
     </section>
   );
@@ -375,6 +321,10 @@ function CaseStudiesPreview() {
             >
               Real Results for Real Businesses
             </h2>
+            <p className="max-w-xl text-base leading-relaxed text-zinc-400">
+              Not case studies written for marketing — actual numbers from live
+              clients.
+            </p>
           </div>
         </AnimatedSection>
 
@@ -384,7 +334,7 @@ function CaseStudiesPreview() {
             <AnimatedSection key={study.slug} delay={0.15 * (index + 1)}>
               <Link
                 href={`/case-studies/${study.slug}`}
-                className="group flex flex-col justify-between rounded-2xl border border-zinc-800 bg-zinc-900/60 p-8 transition-all duration-200 hover:border-zinc-700 hover:bg-zinc-900"
+                className="group flex flex-col justify-between rounded-2xl border border-zinc-700 bg-zinc-900 p-8 shadow-lg transition-all duration-200 hover:border-blue-500/40 hover:bg-zinc-900 hover:shadow-blue-500/5"
               >
                 <div>
                   {/* Industry tag */}
@@ -392,12 +342,12 @@ function CaseStudiesPreview() {
                     {study.industry}
                   </span>
 
-                  {/* Hero stat */}
+                  {/* Hero stat — larger, more prominent */}
                   <div className="mt-6">
-                    <p className="text-5xl font-bold tracking-tight text-zinc-50">
+                    <p className="text-6xl font-bold tracking-tight text-zinc-50">
                       {study.heroStat}
                     </p>
-                    <p className="mt-1 text-base font-medium text-zinc-400">
+                    <p className="mt-1.5 text-base font-semibold text-blue-400">
                       {study.heroLabel}
                     </p>
                   </div>
@@ -414,7 +364,7 @@ function CaseStudiesPreview() {
                   </p>
                 </div>
 
-                <div className="mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-blue-400 transition-colors duration-200 group-hover:text-blue-300">
+                <div className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-400 transition-colors duration-200 group-hover:text-blue-300">
                   Read case study
                   <ArrowRight
                     size={14}
@@ -426,6 +376,23 @@ function CaseStudiesPreview() {
             </AnimatedSection>
           ))}
         </div>
+
+        {/* View all CTA */}
+        <AnimatedSection delay={0.4}>
+          <p className="mt-10 text-center">
+            <Link
+              href="/case-studies"
+              className="group inline-flex items-center gap-1.5 text-sm font-medium text-zinc-400 transition-colors duration-200 hover:text-zinc-200"
+            >
+              View all case studies
+              <ArrowRight
+                size={14}
+                className="transition-transform duration-200 group-hover:translate-x-0.5"
+                aria-hidden="true"
+              />
+            </Link>
+          </p>
+        </AnimatedSection>
       </div>
     </section>
   );
@@ -541,26 +508,13 @@ function HowItWorks() {
 // ---------------------------------------------------------------------------
 export default function HomePage() {
   return (
-    <>
-      {/* Gradient-shift keyframe for the Growth card animated border */}
-      <style>{`
-        @keyframes gradientShift {
-          0%   { background-position: 0%   50%; }
-          50%  { background-position: 100% 50%; }
-          100% { background-position: 0%   50%; }
-        }
-        .animate-gradient-border {
-          animation: gradientShift 4s ease infinite;
-        }
-      `}</style>
-      <main>
-        <Hero />
-        <SocialProofBar />
-        <ServicesPreview />
-        <CaseStudiesPreview />
-        <HowItWorks />
-        <PersonalisedCTA />
-      </main>
-    </>
+    <main>
+      <Hero />
+      <SocialProofBar />
+      <WhatWeBuild />
+      <CaseStudiesPreview />
+      <HowItWorks />
+      <PersonalisedCTA />
+    </main>
   );
 }
