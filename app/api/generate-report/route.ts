@@ -165,8 +165,9 @@ async function uploadToBlob(
     const { put } = await import("@vercel/blob");
     const blob = await put(`reports/${slug}.html`, html, {
       access: "public",
-      contentType: "text/html",
+      contentType: "text/html; charset=utf-8",
       addRandomSuffix: false,
+      cacheControlMaxAge: 31536000,
     });
     return blob.url;
   } catch (err) {
@@ -386,10 +387,15 @@ export async function POST(req: NextRequest) {
 
     // Upload to Vercel Blob
     const slug = `${slugify(cleanData.businessName)}-${Date.now()}`;
-    const reportUrl = await uploadToBlob(slug, reportHtml);
+    const blobUrl = await uploadToBlob(slug, reportHtml);
+
+    // Use our clean proxy URL instead of raw blob URL (renders in browser, no download)
+    const reportUrl = blobUrl
+      ? `https://oladipupoconsulting.co.uk/reports/${slug}`
+      : null;
 
     if (reportUrl) {
-      console.log(`[generate-report] Uploaded to blob: ${reportUrl}`);
+      console.log(`[generate-report] Report available at: ${reportUrl}`);
     }
 
     // Send emails
