@@ -14,6 +14,7 @@ import AnimatedCounter from "@/components/shared/AnimatedCounter";
 import GradientBlob from "@/components/shared/GradientBlob";
 import HeroImage from "@/components/shared/HeroImage";
 import PersonalisedCTA from "@/components/shared/PersonalisedCTA";
+import RotatingHeadline from "@/components/home/RotatingHeadline";
 
 // ---------------------------------------------------------------------------
 // Hero
@@ -60,17 +61,12 @@ function Hero() {
                 AI Solutions — delivered in 7 days
               </div>
 
-              <h1 className="mx-auto max-w-4xl text-5xl font-bold leading-[1.1] tracking-tight text-zinc-50 sm:text-6xl lg:mx-0 lg:text-7xl">
-                Stop Losing Leads to Slow Follow-Up
-                <span className="block bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-                  We&apos;ll Fix That in 7 Days
-                </span>
-              </h1>
+              <RotatingHeadline />
 
               <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400 sm:text-xl lg:mx-0">
-                We build AI systems that reply to enquiries in seconds, book
-                appointments automatically, and follow up with every lead —
-                so you never miss another customer. For UK service businesses.
+                We build AI automation systems, professional websites, and
+                deliver hands-on AI training — so your business runs smarter,
+                responds faster, and grows without adding headcount.
               </p>
 
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
