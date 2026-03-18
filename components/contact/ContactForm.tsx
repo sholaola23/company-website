@@ -2,6 +2,7 @@
 
 import { useState, useId } from "react";
 import { cn } from "@/lib/utils";
+import { trackContactFormSubmitted } from "@/lib/analytics";
 
 interface FormState {
   name: string;
@@ -50,6 +51,7 @@ export default function ContactForm() {
         throw new Error(data.message ?? "Something went wrong. Please try again.");
       }
 
+      trackContactFormSubmitted();
       setStatus("success");
     } catch (err) {
       setStatus("error");

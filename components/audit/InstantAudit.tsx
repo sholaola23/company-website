@@ -16,6 +16,7 @@ import NextLink from "next/link";
 import { Zap, Lightbulb, ExternalLink } from "lucide-react";
 import { INDUSTRIES } from "@/lib/constants";
 import { markAuditStarted, markAuditCompleted } from "@/lib/visitor-tracking";
+import { trackAuditStarted, trackAuditCompleted, trackAuditEmailSubmitted } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 // ---------------------------------------------------------------------------
@@ -722,6 +723,7 @@ export default function InstantAudit() {
 
     dispatch({ type: "START_GENERATING" });
     markAuditStarted();
+    trackAuditStarted(state.industry);
 
     try {
       const response = await fetch("/api/instant-audit", {
@@ -775,11 +777,13 @@ export default function InstantAudit() {
 
         const result = JSON.parse(cleaned) as AuditResult;
         localStorage.setItem("oc_instant_audit", JSON.stringify(result));
+        trackAuditCompleted(state.industry, result.score);
         dispatch({ type: "SET_RESULT", result });
       } else {
         // Non-streaming fallback
         const result = (await response.json()) as AuditResult;
         localStorage.setItem("oc_instant_audit", JSON.stringify(result));
+        trackAuditCompleted(state.industry, result.score);
         dispatch({ type: "SET_RESULT", result });
       }
     } catch (err) {
@@ -826,6 +830,7 @@ export default function InstantAudit() {
       }
 
       markAuditCompleted();
+      trackAuditEmailSubmitted(state.industry);
       dispatch({ type: "COMPLETE" });
     } catch {
       dispatch({ type: "EMAIL_ERROR", message: "Network error. Please try again." });

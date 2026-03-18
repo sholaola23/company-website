@@ -24,6 +24,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Clock } from "lucide-react";
 import { getVisitorProfile, type VisitorProfile } from "@/lib/visitor-tracking";
+import { trackCTAClicked } from "@/lib/analytics";
 
 // ---------------------------------------------------------------------------
 // CTA variant definitions
@@ -174,6 +175,7 @@ export default function PersonalisedCTA() {
             <div className="mt-10">
               <Link
                 href={variant.buttonHref}
+                onClick={() => trackCTAClicked("bottom-cta", variant.key)}
                 className="inline-flex items-center gap-2 rounded-lg bg-blue-500 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-blue-500/25 transition-all duration-200 hover:bg-blue-600 hover:shadow-blue-500/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 group"
               >
                 {variant.buttonLabel}

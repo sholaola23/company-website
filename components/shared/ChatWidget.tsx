@@ -15,6 +15,7 @@
 import { useEffect, useRef, useState, useCallback, KeyboardEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUp, MessageCircle, X } from "lucide-react";
+import { trackChatOpened, trackChatMessageSent } from "@/lib/analytics";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -107,6 +108,8 @@ export default function ChatWidget() {
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const streamingIdRef = useRef<string | null>(null);
+  // Tracks whether chat_opened has been fired this session (fire once per session)
+  const chatOpenTrackedRef = useRef(false);
 
   // ── Rehydrate from sessionStorage on mount ──────────────────────────────────
   useEffect(() => {
@@ -145,6 +148,11 @@ export default function ChatWidget() {
     if (isOpen) {
       setShowNotification(false);
       setTimeout(() => inputRef.current?.focus(), 100);
+      // Fire once per session on first open
+      if (!chatOpenTrackedRef.current) {
+        chatOpenTrackedRef.current = true;
+        trackChatOpened();
+      }
     }
   }, [isOpen]);
 
@@ -170,6 +178,7 @@ export default function ChatWidget() {
 
     setInput("");
     setMessages((prev) => [...prev, userMessage]);
+    trackChatMessageSent();
     setIsStreaming(true);
 
     // Build conversation payload — exclude the static initial message if it's
