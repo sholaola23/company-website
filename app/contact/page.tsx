@@ -132,18 +132,14 @@ export default function ContactPage() {
               </h2>
             </div>
             <div className="flex flex-col gap-2 text-sm">
-              <div className="flex items-center justify-between">
-                <span className="text-zinc-400">Weekdays</span>
-                <span className="text-zinc-200 font-medium">5pm – 10pm GMT</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-zinc-400">Weekends</span>
-                <span className="text-zinc-200 font-medium">9am – 10pm GMT</span>
-              </div>
+              <p className="text-zinc-300 leading-relaxed">
+                Flexible hours — we work around your schedule so we never
+                disrupt your working day.
+              </p>
               <div className="mt-3 pt-3 border-t border-zinc-800">
                 <p className="text-xs text-zinc-500 leading-relaxed">
-                  We typically respond within a few hours. For urgent matters,
-                  WhatsApp is fastest.
+                  Most enquiries answered within a few hours. For urgent
+                  matters, WhatsApp is fastest.
                 </p>
               </div>
             </div>

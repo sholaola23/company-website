@@ -172,6 +172,64 @@ export default function ServicesPage() {
           <ServiceFilterClient services={services} />
         </section>
       </AnimatedSection>
+
+      {/* FAQ */}
+      <AnimatedSection delay={0.1}>
+        <section className="mt-20" aria-labelledby="faq-heading">
+          <h2
+            id="faq-heading"
+            className="text-2xl font-bold mb-8 text-center text-zinc-50"
+          >
+            Frequently Asked Questions
+          </h2>
+          <div className="max-w-3xl mx-auto space-y-4">
+            {[
+              {
+                q: "How long does it take to get started?",
+                a: "Most solutions are live within 5-14 days. We start with a free audit, then deliver a proposal within 48 hours.",
+              },
+              {
+                q: "Do I need to be technical?",
+                a: "Not at all. We handle everything — setup, configuration, and training. You just need to tell us what's slowing you down.",
+              },
+              {
+                q: "What's included in the monthly retainer?",
+                a: "Ongoing monitoring, optimisation, support, and minor adjustments. We make sure your automations keep working and improving.",
+              },
+              {
+                q: "Can I cancel anytime?",
+                a: "Yes. No long-term contracts. Monthly retainer, cancel whenever you like. We keep clients by delivering results, not locking them in.",
+              },
+              {
+                q: "What if it doesn't work for my business?",
+                a: "That's what the free audit is for. We'll tell you honestly if AI automation is a good fit before you spend a penny.",
+              },
+              {
+                q: "I'm not sure which service I need.",
+                a: "Start with a free AI Readiness Audit. We'll analyse your business and recommend exactly what will have the biggest impact.",
+              },
+            ].map((faq) => (
+              <details
+                key={faq.q}
+                className="group bg-zinc-900 border border-zinc-800 rounded-xl"
+              >
+                <summary className="flex items-center justify-between p-5 cursor-pointer text-zinc-100 font-medium text-sm hover:text-white list-none">
+                  {faq.q}
+                  <span
+                    className="text-zinc-500 group-open:rotate-180 transition-transform duration-200 shrink-0 ml-4"
+                    aria-hidden="true"
+                  >
+                    ▾
+                  </span>
+                </summary>
+                <div className="px-5 pb-5 text-sm text-zinc-400 leading-relaxed">
+                  {faq.a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </section>
+      </AnimatedSection>
     </div>
   );
 }

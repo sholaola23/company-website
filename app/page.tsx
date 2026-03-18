@@ -61,16 +61,16 @@ function Hero() {
               </div>
 
               <h1 className="mx-auto max-w-4xl text-5xl font-bold leading-[1.1] tracking-tight text-zinc-50 sm:text-6xl lg:mx-0 lg:text-7xl">
-                AI Solutions That{" "}
-                <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-                  Grow Your Business
+                Stop Losing Leads to Slow Follow-Up
+                <span className="block bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+                  We&apos;ll Fix That in 7 Days
                 </span>
               </h1>
 
               <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400 sm:text-xl lg:mx-0">
-                From intelligent automation to professional websites and team
-                training — we help small businesses work smarter with AI.
-                Delivered in 7 days.
+                We build AI systems that reply to enquiries in seconds, book
+                appointments automatically, and follow up with every lead —
+                so you never miss another customer. For UK service businesses.
               </p>
 
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
@@ -109,10 +109,10 @@ function Hero() {
 // Social proof bar
 // ---------------------------------------------------------------------------
 const stats = [
-  { numeric: 2, suffix: "", label: "Live Clients" },
-  { numeric: 8, suffix: "+ hrs/wk", label: "Saved Per Client" },
-  { numeric: 16, suffix: "", label: "AI Agents Running" },
-  { numeric: 33, suffix: "", label: "Leads in Pipeline" },
+  { numeric: 8, suffix: "+", label: "Hours Saved Weekly", sublabel: "per client" },
+  { numeric: 180, suffix: "", label: "Orders Automated", sublabel: "weekly at E'Manuel" },
+  { numeric: 9, suffix: "", label: "Workflows Deployed", sublabel: "for one bakery" },
+  { numeric: 7, suffix: "", label: "Day Delivery", sublabel: "audit to live" },
 ];
 
 function SocialProofBar() {
@@ -128,7 +128,10 @@ function SocialProofBar() {
               <dt className="text-2xl font-bold text-zinc-50 sm:text-3xl">
                 <AnimatedCounter target={stat.numeric} suffix={stat.suffix} />
               </dt>
-              <dd className="mt-1 text-sm text-zinc-500">{stat.label}</dd>
+              <dd className="mt-1 text-sm text-zinc-400 font-medium">{stat.label}</dd>
+              {"sublabel" in stat && stat.sublabel && (
+                <dd className="mt-0.5 text-xs text-zinc-600">{stat.sublabel}</dd>
+              )}
             </div>
           ))}
         </dl>
@@ -256,44 +259,6 @@ function WhatWeBuild() {
           </p>
         </AnimatedSection>
 
-        {/* AI Training & Workshops callout */}
-        <AnimatedSection delay={0.55}>
-          <div className="mt-8 rounded-2xl border border-zinc-700 bg-zinc-900/60 p-7 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between hover:border-zinc-600 transition-colors duration-200">
-            <div className="flex items-start gap-4">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-zinc-700 bg-zinc-800">
-                <GraduationCap
-                  size={20}
-                  className="text-blue-400"
-                  aria-hidden="true"
-                />
-              </div>
-              <div>
-                <h3 className="text-base font-semibold text-zinc-50">
-                  AI Training &amp; Workshops
-                </h3>
-                <p className="mt-1 text-sm leading-relaxed text-zinc-400 max-w-lg">
-                  Hands-on AI training tailored to your industry and team — from
-                  beginner fundamentals to advanced workflow automation. Run
-                  in-person or remote, half-day or full-day.
-                </p>
-                <p className="mt-2 text-sm font-medium text-blue-400">
-                  £500 – £5,000 per session
-                </p>
-              </div>
-            </div>
-            <Link
-              href="/services/ai-workshop"
-              className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-zinc-700 px-4 py-2.5 text-sm font-medium text-zinc-300 transition-all duration-200 hover:border-zinc-500 hover:bg-zinc-800/60 hover:text-zinc-50 group"
-            >
-              Learn more
-              <ArrowRight
-                size={14}
-                className="transition-transform duration-200 group-hover:translate-x-0.5"
-                aria-hidden="true"
-              />
-            </Link>
-          </div>
-        </AnimatedSection>
       </div>
     </section>
   );

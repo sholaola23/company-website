@@ -30,6 +30,10 @@ export default function AuditPage() {
             Get instant AI analysis of your business in 10&nbsp;seconds.
             No email required.
           </p>
+          <p className="text-zinc-400 text-sm mt-6">
+            We helped E&apos;Manuel Bakery save 8 hours per week and built QuantumFM Media a 12-page professional website.{" "}
+            <span className="text-blue-400">Let&apos;s find your wins.</span>
+          </p>
         </div>
       </AnimatedSection>
 
@@ -66,6 +70,9 @@ export default function AuditPage() {
       <AnimatedSection delay={0.2}>
         <div className="max-w-2xl mx-auto">
           <InstantAudit />
+          <p className="text-center text-xs text-zinc-500 mt-4">
+            Free for a limited time — normally £150
+          </p>
         </div>
       </AnimatedSection>
     </div>
