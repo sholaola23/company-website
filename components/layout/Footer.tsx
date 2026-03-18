@@ -1,0 +1,175 @@
+import Link from "next/link";
+import { Mail, Phone, Linkedin, Twitter } from "lucide-react";
+import Logo from "@/components/shared/Logo";
+
+const SERVICES_LINKS = [
+  { label: "AI Lead Intake System", href: "/services/lead-intake" },
+  { label: "Appointment Booking Bot", href: "/services/appointment-booking" },
+  { label: "AI Inbox Assistant", href: "/services/inbox-assistant" },
+  { label: "SEO Content Automation", href: "/services/seo-content" },
+  { label: "AI Workshops", href: "/services/workshops" },
+];
+
+const COMPANY_LINKS = [
+  { label: "About", href: "/about" },
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
+];
+
+export default function Footer() {
+  return (
+    <footer className="bg-zinc-950 border-t border-zinc-800/60" aria-label="Site footer">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Main footer grid */}
+        <div className="py-16 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Brand column */}
+          <div className="lg:col-span-1 flex flex-col gap-5">
+            <Link
+              href="/"
+              className="w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg"
+              aria-label="Oladipupo Consulting — home"
+            >
+              <Logo size="lg" />
+            </Link>
+            <p className="text-sm text-zinc-400 leading-relaxed max-w-xs">
+              AI solutions for small businesses — automation, websites, and
+              training. We build systems that save time, capture leads, and grow
+              revenue.
+            </p>
+            {/* Social icons */}
+            <div className="flex items-center gap-3" aria-label="Social media links">
+              <a
+                href="#"
+                rel="noopener noreferrer"
+                aria-label="Oladipupo Consulting on LinkedIn"
+                className="flex items-center justify-center w-8 h-8 rounded-lg text-zinc-500 hover:text-zinc-200 hover:bg-zinc-800 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+              >
+                <Linkedin size={16} />
+              </a>
+              <a
+                href="#"
+                rel="noopener noreferrer"
+                aria-label="Oladipupo Consulting on X / Twitter"
+                className="flex items-center justify-center w-8 h-8 rounded-lg text-zinc-500 hover:text-zinc-200 hover:bg-zinc-800 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+              >
+                <Twitter size={16} />
+              </a>
+            </div>
+          </div>
+
+          {/* Services column */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-5">
+              Services
+            </h3>
+            <ul className="flex flex-col gap-3" role="list">
+              {SERVICES_LINKS.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-zinc-400 hover:text-zinc-50 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company column */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-5">
+              Company
+            </h3>
+            <ul className="flex flex-col gap-3" role="list">
+              {COMPANY_LINKS.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-zinc-400 hover:text-zinc-50 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact column */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-5">
+              Contact
+            </h3>
+            <ul className="flex flex-col gap-4" role="list">
+              <li>
+                <a
+                  href="mailto:hello@oladipupoconsulting.co.uk"
+                  className="flex items-start gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+                  aria-label="Send us an email"
+                >
+                  <Mail
+                    size={15}
+                    className="mt-0.5 text-blue-500 shrink-0"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-zinc-400 group-hover:text-zinc-50 transition-colors duration-150">
+                    hello@oladipupoconsulting.co.uk
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+447469347654"
+                  className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+                  aria-label="Call us"
+                >
+                  <Phone
+                    size={15}
+                    className="text-blue-500 shrink-0"
+                    aria-hidden="true"
+                  />
+                  <span className="text-sm text-zinc-400 group-hover:text-zinc-50 transition-colors duration-150">
+                    07469 347654
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://wa.me/447469347654"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-zinc-400 hover:text-zinc-50 border border-zinc-700 hover:border-zinc-500 rounded-lg px-3 py-2 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                  aria-label="Message us on WhatsApp"
+                >
+                  WhatsApp Us
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="py-6 border-t border-zinc-800/60 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-zinc-500 text-center sm:text-left">
+            &copy; 2026 Oladipupo Consulting Ltd. Registered in England &amp; Wales.
+          </p>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/privacy"
+              className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms"
+              className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+            >
+              Terms
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
