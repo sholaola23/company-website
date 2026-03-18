@@ -379,7 +379,7 @@ export default function ChatWidget() {
         )}
       </AnimatePresence>
 
-      {/* ── Toggle button ─────────────────────────────────────────────────── */}
+      {/* ── Toggle button (hidden on mobile when chat is open) ──────────── */}
       <motion.button
         onClick={() => setIsOpen((v) => !v)}
         aria-label={isOpen ? "Close chat" : "Open AI assistant chat"}
@@ -388,9 +388,10 @@ export default function ChatWidget() {
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.94 }}
         className={[
-          "fixed z-50 bottom-6 right-6",
+          "fixed z-40 bottom-6 right-6",
           "sm:bottom-6 sm:right-6",
           "bottom-4 right-4",
+          isOpen ? "hidden sm:flex" : "",
           "w-14 h-14 rounded-full",
           "bg-blue-500 text-white shadow-lg shadow-blue-500/25",
           "flex items-center justify-center",

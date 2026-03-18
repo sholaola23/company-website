@@ -31,8 +31,15 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    // Cap conversation to last 20 messages
-    const cappedMessages = messages.slice(-20);
+    // Cap conversation to last 20 messages and ensure it starts with a user message
+    // (Anthropic API requires first message role to be "user")
+    let cappedMessages = messages.slice(-20);
+    while (cappedMessages.length > 0 && cappedMessages[0].role !== "user") {
+      cappedMessages = cappedMessages.slice(1);
+    }
+    if (cappedMessages.length === 0) {
+      return Response.json({ text: "How can I help you today?" });
+    }
 
     const response = await fetch(ANTHROPIC_API_URL, {
       method: "POST",

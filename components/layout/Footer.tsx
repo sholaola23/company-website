@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, Phone, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import Logo from "@/components/shared/Logo";
 
 const SERVICES_LINKS = [
@@ -37,25 +37,7 @@ export default function Footer() {
               training. We build systems that save time, capture leads, and grow
               revenue.
             </p>
-            {/* Social icons */}
-            <div className="flex items-center gap-3" aria-label="Social media links">
-              <a
-                href="#"
-                rel="noopener noreferrer"
-                aria-label="Oladipupo Consulting on LinkedIn"
-                className="flex items-center justify-center w-8 h-8 rounded-lg text-zinc-500 hover:text-zinc-200 hover:bg-zinc-800 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-              >
-                <Linkedin size={16} />
-              </a>
-              <a
-                href="#"
-                rel="noopener noreferrer"
-                aria-label="Oladipupo Consulting on X / Twitter"
-                className="flex items-center justify-center w-8 h-8 rounded-lg text-zinc-500 hover:text-zinc-200 hover:bg-zinc-800 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-              >
-                <Twitter size={16} />
-              </a>
-            </div>
+            {/* Social icons — hidden until real profiles are set up */}
           </div>
 
           {/* Services column */}
