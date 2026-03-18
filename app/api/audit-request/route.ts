@@ -8,6 +8,14 @@ interface AuditRequestBody {
   industry: string;
   website?: string;
   headache: string;
+  /** Optional — included when the request originates from the Instant Audit flow */
+  instantAuditResults?: {
+    score: number;
+    scoreLabel: string;
+    summary: string;
+    recommendedTier: string;
+    tierReason: string;
+  };
 }
 
 function isValidEmail(email: string): boolean {
@@ -97,6 +105,7 @@ async function notifyOwnerAudit({
   website,
   headache,
   aiReply,
+  instantAuditResults,
 }: {
   businessName: string;
   yourName: string;
@@ -106,6 +115,7 @@ async function notifyOwnerAudit({
   website?: string;
   headache: string;
   aiReply: string;
+  instantAuditResults?: AuditRequestBody["instantAuditResults"];
 }) {
   // Logs for now — email notification added when email service (Resend/SendGrid) is configured
   console.log("=== NEW AUDIT REQUEST ===");
@@ -116,6 +126,13 @@ async function notifyOwnerAudit({
   console.log(`Industry: ${industry}`);
   console.log(`Website:  ${website || "not provided"}`);
   console.log(`Headache: ${headache}`);
+  if (instantAuditResults) {
+    console.log("--- INSTANT AUDIT PREVIEW ---");
+    console.log(`Score:    ${instantAuditResults.score}/10 (${instantAuditResults.scoreLabel})`);
+    console.log(`Tier:     ${instantAuditResults.recommendedTier}`);
+    console.log(`Summary:  ${instantAuditResults.summary}`);
+    console.log(`Reason:   ${instantAuditResults.tierReason}`);
+  }
   console.log("--- AI AUTO-REPLY DRAFTED ---");
   console.log(aiReply);
   console.log("=========================");
@@ -134,7 +151,7 @@ export async function POST(req: NextRequest) {
   }
 
   // Validate required fields
-  const { businessName, yourName, email, industry, headache } = body;
+  const { businessName, yourName, email, industry, headache, instantAuditResults } = body;
 
   if (!businessName?.trim()) {
     return NextResponse.json(
@@ -195,6 +212,7 @@ export async function POST(req: NextRequest) {
       website: cleanWebsite,
       headache: cleanHeadache,
       aiReply,
+      instantAuditResults,
     });
 
     console.log("[audit-request] submission processed", {

@@ -2,7 +2,6 @@ import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle,
-  Clock,
   FileSearch,
   GraduationCap,
   TrendingUp,
@@ -14,6 +13,7 @@ import AnimatedSection from "@/components/shared/AnimatedSection";
 import AnimatedCounter from "@/components/shared/AnimatedCounter";
 import GradientBlob from "@/components/shared/GradientBlob";
 import HeroImage from "@/components/shared/HeroImage";
+import PersonalisedCTA from "@/components/shared/PersonalisedCTA";
 
 // ---------------------------------------------------------------------------
 // Hero
@@ -537,71 +537,6 @@ function HowItWorks() {
 }
 
 // ---------------------------------------------------------------------------
-// Bottom CTA
-// ---------------------------------------------------------------------------
-function BottomCTA() {
-  return (
-    <section
-      className="relative overflow-hidden bg-zinc-950 py-28"
-      aria-labelledby="cta-heading"
-    >
-      {/* Glow */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 flex items-center justify-center"
-      >
-        <div className="h-[400px] w-[700px] rounded-full bg-blue-500/8 blur-3xl" />
-      </div>
-
-      <div className="relative mx-auto max-w-3xl px-6 text-center sm:px-8">
-        <AnimatedSection>
-          {/* Clock icon */}
-          <div className="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-zinc-800 bg-zinc-900">
-            <Clock size={22} className="text-blue-500" aria-hidden="true" />
-          </div>
-
-          <h2
-            id="cta-heading"
-            className="text-4xl font-bold tracking-tight text-zinc-50 sm:text-5xl"
-          >
-            Ready to save 8+ hours a week?
-          </h2>
-
-          <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-zinc-400">
-            Get your free AI Readiness Audit — no obligation, just a
-            conversation.
-          </p>
-
-          <div className="mt-10">
-            <Link
-              href="/audit"
-              className="inline-flex items-center gap-2 rounded-lg bg-blue-500 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-blue-500/25 transition-all duration-200 hover:bg-blue-600 hover:shadow-blue-500/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 group"
-            >
-              Get Your Free Audit
-              <ArrowRight
-                size={18}
-                className="transition-transform duration-200 group-hover:translate-x-0.5"
-                aria-hidden="true"
-              />
-            </Link>
-          </div>
-
-          <p className="mt-6 text-sm text-zinc-500">
-            or email{" "}
-            <a
-              href="mailto:olusholaoladipupo1@gmail.com"
-              className="text-zinc-400 transition-colors duration-200 hover:text-zinc-200 underline underline-offset-2"
-            >
-              olusholaoladipupo1@gmail.com
-            </a>
-          </p>
-        </AnimatedSection>
-      </div>
-    </section>
-  );
-}
-
-// ---------------------------------------------------------------------------
 // Page
 // ---------------------------------------------------------------------------
 export default function HomePage() {
@@ -624,7 +559,7 @@ export default function HomePage() {
         <ServicesPreview />
         <CaseStudiesPreview />
         <HowItWorks />
-        <BottomCTA />
+        <PersonalisedCTA />
       </main>
     </>
   );

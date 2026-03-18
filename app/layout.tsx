@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import PageTracker from "@/components/shared/PageTracker";
+import ChatWidgetLoader from "@/components/shared/ChatWidgetLoader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -71,11 +73,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-950 text-zinc-50 min-h-screen flex flex-col`}
       >
+        <PageTracker />
         <Header />
         <main className="flex-1 pt-16" id="main-content">
           {children}
         </main>
         <Footer />
+        <ChatWidgetLoader />
       </body>
     </html>
   );
