@@ -67,7 +67,7 @@ async function generateAuditAutoReply({
       body: JSON.stringify({
         model: "claude-haiku-4-5-20251001",
         max_tokens: 500,
-        system: `You are the AI assistant for Oladipupo Consulting Ltd, a UK-based company that builds AI automation systems, professional websites, and delivers AI training for small businesses.
+        system: `You are the AI assistant for Oladipupo Consulting Ltd, a company that builds AI automation systems, professional websites, and delivers AI training for small businesses worldwide.
 
 Your job is to write a warm, professional acknowledgement email to someone who has just requested a free AI Readiness Audit. The reply should:
 - Thank them by first name for requesting the audit

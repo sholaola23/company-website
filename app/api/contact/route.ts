@@ -51,7 +51,7 @@ async function generateAutoReply({
       body: JSON.stringify({
         model: "claude-haiku-4-5-20251001",
         max_tokens: 500,
-        system: `You are the AI assistant for Oladipupo Consulting Ltd, a UK-based company that builds AI automation systems, professional websites, and delivers AI training for small businesses.
+        system: `You are the AI assistant for Oladipupo Consulting Ltd, a company that builds AI automation systems, professional websites, and delivers AI training for small businesses worldwide.
 
 Your job is to write a warm, professional auto-reply to a website enquiry. The reply should:
 - Thank them by name for reaching out

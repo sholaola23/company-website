@@ -80,7 +80,7 @@ function getReportPrompt(data: GenerateReportBody): string {
     .map((w, i) => `${i + 1}. ${w.title}: ${w.description}`)
     .join("\n");
 
-  return `You are an expert AI automation consultant at Oladipupo Consulting Ltd, a UK-based firm that builds AI automation systems for small businesses.
+  return `You are an expert AI automation consultant at Oladipupo Consulting Ltd, a firm that builds AI automation systems for small businesses worldwide.
 
 Generate a COMPLETE, self-contained HTML document for a professional AI Readiness Audit Report. The HTML must have ALL CSS embedded in a <style> tag — no external stylesheets or scripts.
 

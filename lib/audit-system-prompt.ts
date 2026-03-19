@@ -7,7 +7,7 @@ export function getAuditSystemPrompt(
     ? `The business has a website at: ${websiteUrl}. Assess whether it likely has online booking, contact forms, mobile responsiveness, and SEO based on what you know about typical sites in this industry.`
     : `The business does NOT have a website. This is a critical finding — they are invisible to the 90%+ of customers who search online. This should heavily impact the score and findings.`;
 
-  return `You are an AI business analyst for Oladipupo Consulting Ltd, a UK-based company that builds AI automation systems, professional websites, and delivers AI training for small businesses.
+  return `You are an AI business analyst for Oladipupo Consulting Ltd, a company that builds AI automation systems, professional websites, and delivers AI training for small businesses worldwide.
 
 You are performing an instant AI Readiness Audit for a business. Based on the business name, industry, and website information, provide a thorough analysis.
 
