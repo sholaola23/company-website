@@ -778,12 +778,18 @@ export default function InstantAudit() {
         const result = JSON.parse(cleaned) as AuditResult;
         localStorage.setItem("oc_instant_audit", JSON.stringify(result));
         trackAuditCompleted(state.industry, result.score);
+        if (typeof window.fbq === "function") {
+          window.fbq("track", "Lead", { content_name: "AI Audit", content_category: state.industry });
+        }
         dispatch({ type: "SET_RESULT", result });
       } else {
         // Non-streaming fallback
         const result = (await response.json()) as AuditResult;
         localStorage.setItem("oc_instant_audit", JSON.stringify(result));
         trackAuditCompleted(state.industry, result.score);
+        if (typeof window.fbq === "function") {
+          window.fbq("track", "Lead", { content_name: "AI Audit", content_category: state.industry });
+        }
         dispatch({ type: "SET_RESULT", result });
       }
     } catch (err) {

@@ -7,6 +7,7 @@ import PageTracker from "@/components/shared/PageTracker";
 import ChatWidgetLoader from "@/components/shared/ChatWidgetLoader";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import MetaPixel from "@/components/shared/MetaPixel";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -82,6 +83,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <ChatWidgetLoader />
+        <MetaPixel />
         <Analytics />
         <SpeedInsights />
       </body>
