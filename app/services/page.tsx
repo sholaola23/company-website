@@ -164,7 +164,7 @@ export default function ServicesPage() {
 
               <div className="mt-auto">
                 <CTAButton
-                  href="/audit"
+                  href="/contact"
                   variant={tier.highlight ? "primary" : "secondary"}
                   size="md"
                   className="w-full justify-center"
@@ -181,10 +181,10 @@ export default function ServicesPage() {
           <p className="text-center text-sm text-zinc-500 mt-6">
             Not sure which tier fits?{" "}
             <Link
-              href="/audit"
+              href="/contact"
               className="text-blue-400 hover:text-blue-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
             >
-              Get a free audit
+              Get in touch
             </Link>{" "}
             and we&apos;ll recommend the right package.
           </p>
@@ -277,10 +277,10 @@ export default function ServicesPage() {
             </span>
             .{" "}
             <Link
-              href="/audit"
+              href="/contact"
               className="text-blue-400 hover:text-blue-300 transition-colors"
             >
-              Start with a free audit
+              Get in touch
             </Link>{" "}
             to see what&apos;s possible.
           </p>

@@ -66,9 +66,9 @@ function Hero() {
               <RotatingHeadline />
 
               <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400 sm:text-xl lg:mx-0">
-                We build AI automation systems, professional websites, and
-                deliver hands-on AI training — so your business runs smarter,
-                responds faster, and grows without adding headcount.
+                We build AI systems that save you 8+ hours a week — lead
+                capture, email responses, bookings, follow-ups — all on
+                autopilot. So you can stop doing admin and start growing.
               </p>
 
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">

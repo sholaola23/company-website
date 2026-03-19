@@ -188,14 +188,14 @@ export default async function ServiceDetailPage({
       {/* Bottom CTA */}
       <div className="bg-gradient-to-br from-blue-500/10 to-zinc-900 border border-blue-500/20 rounded-xl p-8 text-center">
         <h2 className="text-xl font-semibold text-zinc-50 mb-3">
-          Ready to get started with {service.name}?
+          Interested in {service.name}?
         </h2>
         <p className="text-sm text-zinc-400 mb-6 max-w-sm mx-auto">
-          We start with a free audit to confirm this is the right fit for your
-          business — no obligation.
+          Tell us about your business and what you need — we&apos;ll get back to
+          you within a few hours.
         </p>
-        <CTAButton href="/audit" variant="primary" size="lg">
-          Get started with {service.name}
+        <CTAButton href="/contact" variant="primary" size="lg">
+          Get in Touch
         </CTAButton>
       </div>
     </div>

@@ -9,20 +9,28 @@ const headlines = [
     highlight: "Slow Follow-Up",
   },
   {
-    line1: "Your Patients Shouldn\u2019t",
-    highlight: "Wait on Hold",
+    line1: "Your Team Spends Hours on Work",
+    highlight: "AI Does in Minutes",
   },
   {
-    line1: "Your Business Deserves More Than",
-    highlight: "a Facebook Page",
+    line1: "Tried AI and",
+    highlight: "Nothing Stuck?",
+  },
+  {
+    line1: "Your Accountant Doesn\u2019t Need to",
+    highlight: "Chase Invoices Manually",
   },
   {
     line1: "Still Running Everything from",
     highlight: "WhatsApp?",
   },
   {
-    line1: "Your Team Spends Hours on Work",
-    highlight: "AI Does in Minutes",
+    line1: "Your Business Deserves More Than",
+    highlight: "a Facebook Page",
+  },
+  {
+    line1: "Spending Hours on Admin You",
+    highlight: "Could Automate Today?",
   },
 ];
 
