@@ -3,6 +3,8 @@ import { CHAT_SYSTEM_PROMPT } from "@/lib/chat-system-prompt";
 import { checkChatRateLimit } from "@/lib/rate-limit";
 import { ANTHROPIC_API_URL, ANTHROPIC_VERSION } from "@/lib/constants";
 
+export const runtime = "edge";
+
 export async function POST(req: NextRequest) {
   const body = await req.json();
   const { messages } = body;

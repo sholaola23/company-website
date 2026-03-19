@@ -3,6 +3,8 @@ import { getAuditSystemPrompt } from "@/lib/audit-system-prompt";
 import { checkAuditRateLimit } from "@/lib/rate-limit";
 import { ANTHROPIC_API_URL, ANTHROPIC_VERSION } from "@/lib/constants";
 
+export const runtime = "edge";
+
 export async function POST(req: NextRequest) {
   let body: { businessName?: string; industry?: string; websiteUrl?: string };
 

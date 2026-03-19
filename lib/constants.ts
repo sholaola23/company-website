@@ -1,5 +1,6 @@
 export const INDUSTRIES = [
   "Accounting / Finance",
+  "Automotive",
   "Beauty / Spa",
   "Church / Non-Profit",
   "Cleaning",
