@@ -48,6 +48,15 @@ export async function GET(
             { name: "Hassan Ibrahim", amount: 10.0, daysAgo: 1 },
             { name: "Joy Akinwale", amount: 7.5, daysAgo: 3 },
           ],
+          paymentBreakdown: {
+            totalPaid: 325.5,
+            sumupPaid: 245.0,
+            sumupCount: 10,
+            bankTransferPaid: 80.5,
+            bankTransferCount: 5,
+            otherPaid: 0,
+            otherCount: 0,
+          },
         },
         production: [
           { product: "Agege Bread", quantity: 42 },

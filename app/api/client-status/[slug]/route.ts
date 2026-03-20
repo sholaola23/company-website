@@ -176,6 +176,7 @@ export async function GET(
       industry: client.industry,
       logoUrl: client.logoUrl || null,
       initials: client.initials,
+      bankDetails: client.bankDetails || null,
     },
     summary: {
       health: overallHealth,

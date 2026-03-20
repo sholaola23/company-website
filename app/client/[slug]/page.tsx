@@ -20,6 +20,8 @@ import {
   RefreshCw,
   AlertCircle,
   MapPin,
+  Copy,
+  Check,
 } from "lucide-react";
 
 // We can't import ChefHat if it doesn't exist in this version of lucide,
@@ -65,8 +67,14 @@ interface WorkflowStatus {
   icon: string;
 }
 
+interface BankDetails {
+  accountName: string;
+  sortCode: string;
+  accountNumber: string;
+}
+
 interface StatusData {
-  client: { name: string; contactName: string; industry: string; logoUrl: string | null; initials: string };
+  client: { name: string; contactName: string; industry: string; logoUrl: string | null; initials: string; bankDetails: BankDetails | null };
   summary: {
     health: "green" | "amber" | "red";
     activeWorkflows: number;
@@ -92,6 +100,15 @@ interface SheetsData {
     unpaidCount: number;
     unpaidAmount: number;
     unpaidCustomers: { name: string; amount: number; daysAgo: number }[];
+    paymentBreakdown: {
+      totalPaid: number;
+      sumupPaid: number;
+      sumupCount: number;
+      bankTransferPaid: number;
+      bankTransferCount: number;
+      otherPaid: number;
+      otherCount: number;
+    } | null;
   } | null;
   production: { product: string; quantity: number }[] | null;
   deliveries: {
@@ -395,6 +412,7 @@ export default function ClientDashboard() {
   const [error, setError] = useState("");
   const [systemHealthOpen, setSystemHealthOpen] = useState(false);
   const [justRefreshed, setJustRefreshed] = useState(false);
+  const [bankCopied, setBankCopied] = useState(false);
 
   async function fetchAll(isRefresh = false) {
     try {
@@ -661,6 +679,86 @@ export default function ClientDashboard() {
             </Section>
           )}
 
+          {/* Payments Breakdown */}
+          {sheetsData?.orders?.paymentBreakdown && (
+            <Section>
+              <div className="bg-zinc-900 rounded-2xl border border-zinc-800/60 overflow-hidden">
+                {/* Accent strip */}
+                <div className="h-0.5 bg-gradient-to-r from-emerald-500/50 via-emerald-400/20 to-transparent" />
+                <div className="p-5">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Landmark className="w-4 h-4 text-emerald-400/80" />
+                    <h2 className="text-xs font-semibold text-zinc-500 uppercase tracking-widest">
+                      Payments
+                    </h2>
+                  </div>
+
+                  {/* Total paid — large animated figure */}
+                  <div className="mb-4">
+                    <AnimatedStat
+                      value={sheetsData.orders.paymentBreakdown.totalPaid}
+                      label={`${sheetsData.orders.paymentBreakdown.sumupCount + sheetsData.orders.paymentBreakdown.bankTransferCount + sheetsData.orders.paymentBreakdown.otherCount} payments collected`}
+                      prefix="£"
+                      decimals={2}
+                    />
+                  </div>
+
+                  {/* Method breakdown grid */}
+                  <div className="grid grid-cols-2 gap-3 pt-4 border-t border-zinc-800/60">
+                    {/* SumUp */}
+                    <div className="bg-zinc-800/40 rounded-xl p-3 space-y-1">
+                      <div className="flex items-center gap-1.5 text-zinc-500">
+                        <CreditCard className="w-3.5 h-3.5 shrink-0" />
+                        <span className="text-xs font-medium uppercase tracking-wide">
+                          SumUp
+                        </span>
+                      </div>
+                      <p className="text-white font-semibold tabular-nums text-base">
+                        {formatCurrency(sheetsData.orders.paymentBreakdown.sumupPaid)}
+                      </p>
+                      <p className="text-zinc-600 text-xs">
+                        {sheetsData.orders.paymentBreakdown.sumupCount}{" "}
+                        {sheetsData.orders.paymentBreakdown.sumupCount === 1
+                          ? "payment"
+                          : "payments"}
+                      </p>
+                    </div>
+
+                    {/* Bank Transfer */}
+                    <div className="bg-zinc-800/40 rounded-xl p-3 space-y-1">
+                      <div className="flex items-center gap-1.5 text-zinc-500">
+                        <Landmark className="w-3.5 h-3.5 shrink-0" />
+                        <span className="text-xs font-medium uppercase tracking-wide">
+                          Bank Transfer
+                        </span>
+                      </div>
+                      <p className="text-white font-semibold tabular-nums text-base">
+                        {formatCurrency(sheetsData.orders.paymentBreakdown.bankTransferPaid)}
+                      </p>
+                      <p className="text-zinc-600 text-xs">
+                        {sheetsData.orders.paymentBreakdown.bankTransferCount}{" "}
+                        {sheetsData.orders.paymentBreakdown.bankTransferCount === 1
+                          ? "payment"
+                          : "payments"}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Bank transfer nudge — only when both amount and count are zero */}
+                  {sheetsData.orders.paymentBreakdown.bankTransferPaid === 0 &&
+                    sheetsData.orders.paymentBreakdown.bankTransferCount === 0 && (
+                      <div className="mt-3 flex items-start gap-2.5 px-3 py-2.5 rounded-xl bg-amber-500/10 border border-amber-500/20">
+                        <AlertCircle className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
+                        <p className="text-amber-300/80 text-xs leading-relaxed">
+                          Upload your bank statement to match transfer payments
+                        </p>
+                      </div>
+                    )}
+                </div>
+              </div>
+            </Section>
+          )}
+
           {/* What to Bake */}
           {sheetsData?.production && sheetsData.production.length > 0 ? (
             <Section>
@@ -747,6 +845,34 @@ export default function ClientDashboard() {
                         {formatCurrency(sheetsData.orders.unpaidAmount)}
                       </span>
                     </div>
+
+                    {/* Quick payment reminder — copy message to send to customers */}
+                    {statusData.client.bankDetails && (
+                      <div className="mt-4 pt-3 border-t border-amber-500/10">
+                        <button
+                          onClick={() => {
+                            const bd = statusData.client.bankDetails!;
+                            const text = `Hi! Just a gentle reminder about your order from E'Manuel Foods and Bakery.\n\nPlease send payment via bank transfer:\n\nAccount: ${bd.accountName}\nSort Code: ${bd.sortCode}\nAccount No: ${bd.accountNumber}\n\nThank you!`;
+                            navigator.clipboard.writeText(text);
+                            setBankCopied(true);
+                            setTimeout(() => setBankCopied(false), 2500);
+                          }}
+                          className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/20 text-amber-400 hover:text-amber-300 transition-all text-xs font-medium"
+                        >
+                          {bankCopied ? (
+                            <>
+                              <Check className="w-3.5 h-3.5 text-emerald-400" />
+                              <span className="text-emerald-400">Payment reminder copied!</span>
+                            </>
+                          ) : (
+                            <>
+                              <Copy className="w-3.5 h-3.5" />
+                              Copy payment reminder message
+                            </>
+                          )}
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
               </Section>

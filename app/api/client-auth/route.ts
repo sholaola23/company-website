@@ -12,7 +12,12 @@ export async function POST(req: NextRequest) {
   }
 
   const expectedPassword = process.env[client.passwordEnvKey];
-  if (!expectedPassword || password !== expectedPassword) {
+  const adminPassword = process.env.CLIENT_ADMIN_PASSWORD;
+
+  const isClientMatch = expectedPassword && password === expectedPassword;
+  const isAdminMatch = adminPassword && password === adminPassword;
+
+  if (!isClientMatch && !isAdminMatch) {
     return NextResponse.json({ error: "Wrong password" }, { status: 401 });
   }
 

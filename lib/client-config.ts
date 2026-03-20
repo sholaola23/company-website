@@ -13,6 +13,12 @@ export interface WorkflowConfig {
   icon: string;
 }
 
+export interface BankDetails {
+  accountName: string;
+  sortCode: string;
+  accountNumber: string;
+}
+
 export interface ClientConfig {
   slug: string;
   name: string;
@@ -28,6 +34,8 @@ export interface ClientConfig {
   initials: string;
   // Password hash — stored as env var CLIENT_PASSWORD_{SLUG_UPPER}
   passwordEnvKey: string;
+  // Bank transfer details for unpaid order follow-ups (optional)
+  bankDetails?: BankDetails;
 }
 
 export const CLIENTS: Record<string, ClientConfig> = {
@@ -121,6 +129,11 @@ export const CLIENTS: Record<string, ClientConfig> = {
     sheetsId: "1Ns6S_2Nt7-OxQv2As5iof62_6wYu-qb2jK42MPUa8vw",
     initials: "EM",
     passwordEnvKey: "CLIENT_PASSWORD_EMANUEL",
+    bankDetails: {
+      accountName: "E'MANUEL FOODS AND BAKERY LIMITED",
+      sortCode: "40-09-06",
+      accountNumber: "82077337",
+    },
   },
 };
 

@@ -42,6 +42,16 @@ function findProductHeader(
   );
 }
 
+export interface PaymentBreakdown {
+  totalPaid: number;
+  sumupPaid: number;
+  sumupCount: number;
+  bankTransferPaid: number;
+  bankTransferCount: number;
+  otherPaid: number;
+  otherCount: number;
+}
+
 export interface OrdersSummary {
   totalOrders: number;
   totalRevenue: number;
@@ -49,6 +59,7 @@ export interface OrdersSummary {
   unpaidCount: number;
   unpaidAmount: number;
   unpaidCustomers: { name: string; amount: number; daysAgo: number }[];
+  paymentBreakdown: PaymentBreakdown;
 }
 
 export interface ProductionItem {
@@ -150,6 +161,15 @@ export async function getOrdersSummary(
     let unpaidAmount = 0;
     const unpaidCustomers: { name: string; amount: number; daysAgo: number }[] =
       [];
+    const paymentBreakdown: PaymentBreakdown = {
+      totalPaid: 0,
+      sumupPaid: 0,
+      sumupCount: 0,
+      bankTransferPaid: 0,
+      bankTransferCount: 0,
+      otherPaid: 0,
+      otherCount: 0,
+    };
 
     for (const row of thisWeek) {
       // Calculate basket total from product quantities × prices (primary)
@@ -170,9 +190,33 @@ export async function getOrdersSummary(
 
       totalRevenue += basketTotal;
 
-      if (paymentStatus === "paid") {
-        paidCount++;
-      } else {
+      if (paymentStatus === "paid" || paymentStatus === "partial") {
+        if (paymentStatus === "paid") paidCount++;
+
+        // Determine actual amount paid
+        const paymentAmountRaw = parseFloat(row.get("Payment Amount") || "");
+        const paidAmount = !isNaN(paymentAmountRaw) && paymentAmountRaw > 0
+          ? paymentAmountRaw
+          : basketTotal;
+
+        // Categorize by payment method using Payment Match (column X)
+        // Values: SUMUP-T1-95%, SUMUP-T2-70%, UNPAID, HSBC-..., BANK-..., MATCHED, PARTIAL
+        const paymentMatch = (row.get("Payment Match") || "").toUpperCase();
+
+        if (paymentMatch.startsWith("SUMUP")) {
+          paymentBreakdown.sumupPaid += paidAmount;
+          paymentBreakdown.sumupCount++;
+        } else if (paymentMatch.startsWith("HSBC") || paymentMatch.startsWith("BANK")) {
+          paymentBreakdown.bankTransferPaid += paidAmount;
+          paymentBreakdown.bankTransferCount++;
+        } else if (paymentStatus === "paid" && !paymentMatch.includes("UNPAID")) {
+          paymentBreakdown.otherPaid += paidAmount;
+          paymentBreakdown.otherCount++;
+        }
+        paymentBreakdown.totalPaid += paidAmount;
+      }
+
+      if (paymentStatus !== "paid") {
         unpaidCount++;
         // Use Outstanding Balance column if available, else fall back to basket total
         const outstandingRaw = row.get("Outstanding Balance");
@@ -209,16 +253,28 @@ export async function getOrdersSummary(
     // Sort unpaid by amount descending
     unpaidCustomers.sort((a, b) => b.amount - a.amount);
 
+    // Round all payment breakdown values to 2 decimal places
+    const round2 = (n: number) => (isNaN(n) ? 0 : Math.round(n * 100) / 100);
+
     return {
       totalOrders: thisWeek.length,
-      totalRevenue: isNaN(totalRevenue) ? 0 : Math.round(totalRevenue * 100) / 100,
+      totalRevenue: round2(totalRevenue),
       paidCount,
       unpaidCount,
-      unpaidAmount: isNaN(unpaidAmount) ? 0 : Math.round(unpaidAmount * 100) / 100,
+      unpaidAmount: round2(unpaidAmount),
       unpaidCustomers: unpaidCustomers.map((c) => ({
         ...c,
-        amount: isNaN(c.amount) ? 0 : Math.round(c.amount * 100) / 100,
+        amount: round2(c.amount),
       })),
+      paymentBreakdown: {
+        totalPaid: round2(paymentBreakdown.totalPaid),
+        sumupPaid: round2(paymentBreakdown.sumupPaid),
+        sumupCount: paymentBreakdown.sumupCount,
+        bankTransferPaid: round2(paymentBreakdown.bankTransferPaid),
+        bankTransferCount: paymentBreakdown.bankTransferCount,
+        otherPaid: round2(paymentBreakdown.otherPaid),
+        otherCount: paymentBreakdown.otherCount,
+      },
     };
   } catch (e) {
     console.error("Failed to fetch orders summary:", e);

@@ -12,9 +12,12 @@ export async function validateClientAuth(slug: string): Promise<boolean> {
   if (!authCookie) return false;
 
   const expectedPassword = process.env[client.passwordEnvKey];
-  if (!expectedPassword) return false;
+  const adminPassword = process.env.CLIENT_ADMIN_PASSWORD;
 
-  return authCookie.value === expectedPassword;
+  const isClientMatch = expectedPassword && authCookie.value === expectedPassword;
+  const isAdminMatch = adminPassword && authCookie.value === adminPassword;
+
+  return !!(isClientMatch || isAdminMatch);
 }
 
 export async function setClientAuthCookie(slug: string, password: string) {
