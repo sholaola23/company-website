@@ -13,7 +13,7 @@
 import { useReducer, useEffect, useRef, useId, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import NextLink from "next/link";
-import { Zap, Lightbulb, ExternalLink } from "lucide-react";
+import { Zap, Lightbulb, ExternalLink, Lock, BarChart3, Target, TrendingUp, Calendar, Sparkles } from "lucide-react";
 import { INDUSTRIES } from "@/lib/constants";
 import { markAuditStarted, markAuditCompleted } from "@/lib/visitor-tracking";
 import { trackAuditStarted, trackAuditCompleted, trackAuditEmailSubmitted } from "@/lib/analytics";
@@ -59,6 +59,8 @@ interface State {
   emailStatus: "idle" | "loading" | "error";
   emailError: string;
   auditError: string;
+  /** Notion page ID returned by /api/audit-log — used to attach email later */
+  notionPageId: string | null;
 }
 
 type Action =
@@ -70,7 +72,8 @@ type Action =
   | { type: "EMAIL_LOADING" }
   | { type: "EMAIL_ERROR"; message: string }
   | { type: "COMPLETE" }
-  | { type: "RESET" };
+  | { type: "RESET" }
+  | { type: "SET_NOTION_PAGE_ID"; id: string };
 
 const INITIAL_STATE: State = {
   step: "input",
@@ -83,6 +86,7 @@ const INITIAL_STATE: State = {
   emailStatus: "idle",
   emailError: "",
   auditError: "",
+  notionPageId: null,
 };
 
 function reducer(state: State, action: Action): State {
@@ -103,6 +107,8 @@ function reducer(state: State, action: Action): State {
       return { ...state, emailStatus: "error", emailError: action.message };
     case "COMPLETE":
       return { ...state, step: "complete", emailStatus: "idle" };
+    case "SET_NOTION_PAGE_ID":
+      return { ...state, notionPageId: action.id };
     case "RESET":
       return INITIAL_STATE;
     default:
@@ -553,20 +559,58 @@ function ResultsStep({ result, formId, state, dispatch, onEmailSubmit }: Results
         </NextLink>
       </motion.div>
 
-      {/* Email gate */}
+      {/* Email gate — blurred report teaser */}
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.75 }}
-        className="bg-zinc-900 border border-zinc-800 rounded-xl p-6"
+        className="border border-blue-500/30 bg-gradient-to-b from-blue-500/5 to-zinc-900 rounded-xl p-6 relative overflow-hidden"
       >
-        <h3 className="text-base font-semibold text-zinc-50 mb-1.5">
-          Get the Full 5-Section Report
-        </h3>
-        <p className="text-sm text-zinc-400 leading-relaxed mb-4">
-          Detailed competitor analysis, ROI projections, and implementation roadmap — delivered to your inbox.
+        {/* Header */}
+        <div className="flex items-center gap-2 mb-1.5">
+          <Sparkles size={16} className="text-blue-400" aria-hidden="true" />
+          <h3 className="text-base font-semibold text-zinc-50">
+            Unlock Your Full AI Readiness Report
+          </h3>
+        </div>
+        <p className="text-sm text-zinc-400 leading-relaxed mb-5">
+          Your personalised report has 5 in-depth sections ready for you:
         </p>
 
+        {/* Blurred report preview cards */}
+        <div className="flex flex-col gap-2.5 mb-5">
+          {[
+            { icon: BarChart3, title: "Deep Industry Analysis", teaser: "How your industry compares to AI adoption benchmarks..." },
+            { icon: Target, title: "Competitor Benchmarking", teaser: "What similar businesses are automating and where you..." },
+            { icon: TrendingUp, title: "ROI Projections", teaser: "Estimated hours saved per week and cost savings over..." },
+            { icon: Calendar, title: "90-Day Action Plan", teaser: "Step-by-step implementation roadmap tailored to your..." },
+            { icon: Sparkles, title: "Custom Recommendations", teaser: "Specific AI tools and workflows recommended for..." },
+          ].map(({ icon: Icon, title, teaser }, i) => (
+            <motion.div
+              key={title}
+              initial={{ opacity: 0, x: -8 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3, delay: 0.8 + i * 0.08 }}
+              className="flex items-start gap-3 bg-zinc-800/40 border border-zinc-700/30 rounded-lg px-4 py-3 relative overflow-hidden"
+            >
+              <Icon size={15} className="text-blue-400/70 shrink-0 mt-0.5" aria-hidden="true" />
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-medium text-zinc-200">{title}</p>
+                <p className="text-xs text-zinc-500 mt-0.5 select-none" style={{ filter: "blur(4px)" }} aria-hidden="true">
+                  {teaser}
+                </p>
+              </div>
+              <Lock size={13} className="text-zinc-600 shrink-0 mt-1" aria-hidden="true" />
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Social proof nudge */}
+        <p className="text-xs text-zinc-500 text-center mb-4">
+          Takes ~90 seconds to generate. Free, no obligation.
+        </p>
+
+        {/* Email form */}
         <form
           onSubmit={(e) => { e.preventDefault(); onEmailSubmit(); }}
           noValidate
@@ -598,7 +642,7 @@ function ResultsStep({ result, formId, state, dispatch, onEmailSubmit }: Results
             {state.emailStatus === "loading" ? (
               <>
                 <Spinner />
-                Sending...
+                Generating...
               </>
             ) : (
               "Send My Full Report"
@@ -718,6 +762,38 @@ export default function InstantAudit() {
     }
   }, [state.step]);
 
+  // Fire-and-forget: log audit completion to Notion via /api/audit-log
+  const logAuditCompletion = useCallback(
+    (result: AuditResult) => {
+      const findingsSummary = result.findings
+        .map((f) => `[${f.severity.toUpperCase()}] ${f.title}`)
+        .join("; ");
+
+      fetch("/api/audit-log", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          businessName: state.businessName.trim(),
+          industry: state.industry,
+          city: "", // city not collected in current form
+          score: result.score,
+          findings: findingsSummary,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.notionPageId) {
+            dispatch({ type: "SET_NOTION_PAGE_ID", id: data.notionPageId });
+          }
+        })
+        .catch((err) => {
+          // Non-blocking — don't disrupt user experience
+          console.error("[InstantAudit] audit-log failed:", err);
+        });
+    },
+    [state.businessName, state.industry]
+  );
+
   const runAudit = useCallback(async () => {
     if (!state.businessName.trim() || !state.industry) return;
 
@@ -782,6 +858,7 @@ export default function InstantAudit() {
           window.fbq("track", "Lead", { content_name: "AI Audit", content_category: state.industry });
         }
         dispatch({ type: "SET_RESULT", result });
+        logAuditCompletion(result);
       } else {
         // Non-streaming fallback
         const result = (await response.json()) as AuditResult;
@@ -791,6 +868,7 @@ export default function InstantAudit() {
           window.fbq("track", "Lead", { content_name: "AI Audit", content_category: state.industry });
         }
         dispatch({ type: "SET_RESULT", result });
+        logAuditCompletion(result);
       }
     } catch (err) {
       console.error("[InstantAudit] error:", err);
@@ -799,7 +877,7 @@ export default function InstantAudit() {
         message: "Something went wrong. Please try again.",
       });
     }
-  }, [state.businessName, state.industry, state.websiteUrl, state.noWebsite]);
+  }, [state.businessName, state.industry, state.websiteUrl, state.noWebsite, logAuditCompletion]);
 
   const submitEmail = useCallback(async () => {
     const email = state.email.trim();
@@ -835,13 +913,27 @@ export default function InstantAudit() {
         return;
       }
 
+      // Fire-and-forget: update the Notion audit record with the email
+      if (state.notionPageId) {
+        fetch("/api/audit-log", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            notionPageId: state.notionPageId,
+            email,
+          }),
+        }).catch((err) => {
+          console.error("[InstantAudit] audit-log email update failed:", err);
+        });
+      }
+
       markAuditCompleted();
       trackAuditEmailSubmitted(state.industry);
       dispatch({ type: "COMPLETE" });
     } catch {
       dispatch({ type: "EMAIL_ERROR", message: "Network error. Please try again." });
     }
-  }, [state.email, state.businessName, state.industry, state.websiteUrl, state.noWebsite, state.result]);
+  }, [state.email, state.businessName, state.industry, state.websiteUrl, state.noWebsite, state.result, state.notionPageId]);
 
   return (
     <>
