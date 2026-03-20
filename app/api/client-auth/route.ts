@@ -1,12 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getClient } from "@/lib/client-config";
+import { getClient, resolveSlug } from "@/lib/client-config";
 
 const COOKIE_PREFIX = "client_auth_";
 
 export async function POST(req: NextRequest) {
   const { slug, password } = await req.json();
 
-  const client = getClient(slug);
+  // Resolve vanity slugs (e.g. "emanuelbakery" → "emanuel")
+  const internalSlug = resolveSlug(slug);
+
+  const client = getClient(internalSlug);
   if (!client) {
     return NextResponse.json({ error: "Client not found" }, { status: 404 });
   }
@@ -22,7 +25,8 @@ export async function POST(req: NextRequest) {
   }
 
   const response = NextResponse.json({ ok: true });
-  response.cookies.set(`${COOKIE_PREFIX}${slug}`, password, {
+  // Always use the internal slug for the cookie name
+  response.cookies.set(`${COOKIE_PREFIX}${internalSlug}`, password, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",

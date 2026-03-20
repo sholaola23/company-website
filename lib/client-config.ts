@@ -59,10 +59,10 @@ export const CLIENTS: Record<string, ClientConfig> = {
         id: "NHBBHmLemmxWbQPV",
         name: "HSBC CSV Bank Match",
         shortName: "Bank Match",
-        schedule: "Every 1 min",
+        schedule: "Event-driven (weekly)",
         businessName: "Bank payments matching to orders",
         statusVerb: "Matching",
-        expectedScheduleHuman: "Continuously",
+        expectedScheduleHuman: "When you upload a bank statement",
         icon: "Landmark",
       },
       {
@@ -137,6 +137,18 @@ export const CLIENTS: Record<string, ClientConfig> = {
   },
 };
 
+// Vanity slugs for clean app.oladipupoconsulting.co.uk URLs
+// Maps friendly URL path → internal client slug
+export const VANITY_SLUGS: Record<string, string> = {
+  emanuelbakery: "emanuel",
+};
+
 export function getClient(slug: string): ClientConfig | undefined {
-  return CLIENTS[slug];
+  // Check vanity slugs first, then direct match
+  const resolvedSlug = VANITY_SLUGS[slug] || slug;
+  return CLIENTS[resolvedSlug];
+}
+
+export function resolveSlug(slug: string): string {
+  return VANITY_SLUGS[slug] || slug;
 }
