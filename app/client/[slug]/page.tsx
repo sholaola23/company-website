@@ -1,8 +1,51 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useEffect, useState, useRef } from "react";
+import { useParams } from "next/navigation";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  ShoppingCart,
+  Landmark,
+  ClipboardList,
+  Send,
+  Truck,
+  CreditCard,
+  Sparkles,
+  CheckCircle,
+  AlertTriangle,
+  XCircle,
+  Clock,
+  ChevronDown,
+  RefreshCw,
+  AlertCircle,
+  MapPin,
+} from "lucide-react";
 
+// We can't import ChefHat if it doesn't exist in this version of lucide,
+// so we use UtensilsCrossed as a fallback
+let ChefHat: typeof ShoppingCart;
+try {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  ChefHat = require("lucide-react").ChefHat;
+} catch {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  ChefHat = require("lucide-react").UtensilsCrossed;
+}
+
+// ─── Icon map ────────────────────────────────────────────────
+const ICON_MAP: Record<string, typeof ShoppingCart> = {
+  ShoppingCart,
+  Landmark,
+  ClipboardList,
+  Send,
+  Truck,
+  ChefHat,
+  CreditCard,
+  Sparkles,
+};
+
+// ─── Types ───────────────────────────────────────────────────
 interface WorkflowStatus {
   id: string;
   name: string;
@@ -16,10 +59,14 @@ interface WorkflowStatus {
   } | null;
   executionsThisWeek: number;
   errorsThisWeek: number;
+  businessName: string;
+  statusVerb: string;
+  expectedScheduleHuman: string;
+  icon: string;
 }
 
-interface DashboardData {
-  client: { name: string; contactName: string; industry: string };
+interface StatusData {
+  client: { name: string; contactName: string; industry: string; logoUrl: string | null; initials: string };
   summary: {
     health: "green" | "amber" | "red";
     activeWorkflows: number;
@@ -28,41 +75,134 @@ interface DashboardData {
     errorsThisWeek: number;
     lastUpdated: string;
   };
+  businessSummary: {
+    headline: string;
+    automationsRunning: number;
+    tasksCompletedThisWeek: number;
+    issuesNeedingAttention: number;
+  };
   workflows: WorkflowStatus[];
 }
 
-function StatusDot({ status }: { status: "green" | "amber" | "red" | "gray" }) {
-  const colors = {
-    green: "bg-emerald-500",
-    amber: "bg-amber-500",
-    red: "bg-red-500",
-    gray: "bg-gray-400",
-  };
+interface SheetsData {
+  orders: {
+    totalOrders: number;
+    totalRevenue: number;
+    paidCount: number;
+    unpaidCount: number;
+    unpaidAmount: number;
+    unpaidCustomers: { name: string; amount: number; daysAgo: number }[];
+  } | null;
+  production: { product: string; quantity: number }[] | null;
+  deliveries: {
+    totalStops: number;
+    byTown: { town: string; count: number }[];
+  } | null;
+  lastUpdated: string;
+}
+
+// ─── Helpers ─────────────────────────────────────────────────
+function friendlyTime(dateStr: string): string {
+  const date = new Date(dateStr);
+  const diff = Date.now() - date.getTime();
+  const mins = Math.floor(diff / 60000);
+  if (mins < 1) return "just now";
+  if (mins < 60) return `${mins} min ago`;
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 6) return `${hrs}h ago`;
+  const dayName = date.toLocaleDateString("en-GB", { weekday: "long" });
+  const time = date.toLocaleTimeString("en-GB", {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  });
+  return `${dayName} at ${time}`;
+}
+
+function formatCurrency(amount: number | null | undefined): string {
+  if (amount == null) return "£0.00";
+  return `\u00a3${amount.toFixed(2)}`;
+}
+
+// ─── Animation Variants ──────────────────────────────────────
+const fadeUp = {
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+// ─── Count-up Hook ───────────────────────────────────────────
+function useCountUp(target: number, duration = 900, decimals = 0) {
+  const [value, setValue] = useState(target === 0 ? 0 : 0.001);
+  const rafRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+    if (target === 0) return;
+    const start = performance.now();
+    function tick(now: number) {
+      const progress = Math.min((now - start) / duration, 1);
+      // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setValue(parseFloat((eased * target).toFixed(decimals)));
+      if (progress < 1) {
+        rafRef.current = requestAnimationFrame(tick);
+      }
+    }
+    rafRef.current = requestAnimationFrame(tick);
+    return () => {
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+    };
+  }, [target, duration, decimals]);
+
+  return value;
+}
+
+// ─── Skeleton Loading ────────────────────────────────────────
+function SkeletonCard({ rows = 2 }: { rows?: number }) {
   return (
-    <span
-      className={`inline-block w-3 h-3 rounded-full ${colors[status]}`}
-    />
+    <div className="bg-zinc-900/80 rounded-2xl border border-zinc-800/60 p-5 space-y-3">
+      <div className="h-3 w-24 rounded-full bg-zinc-800 animate-pulse" />
+      {Array.from({ length: rows }).map((_, i) => (
+        <div
+          key={i}
+          className="h-9 rounded-xl bg-zinc-800/70 animate-pulse"
+          style={{ animationDelay: `${i * 150}ms` }}
+        />
+      ))}
+    </div>
   );
 }
 
-function getWorkflowHealth(wf: WorkflowStatus): "green" | "amber" | "red" | "gray" {
-  if (!wf.active) return "gray";
-  if (wf.lastExecution?.status === "error" || wf.errorsThisWeek > 0) return "red";
-  if (!wf.lastExecution) return "amber";
-  return "green";
+function LoadingScreen() {
+  return (
+    <div className="min-h-screen bg-zinc-950 flex flex-col">
+      {/* Mock header */}
+      <div className="border-b border-zinc-800/60 px-5 py-5">
+        <div className="max-w-lg mx-auto space-y-2">
+          <div className="h-3 w-16 rounded-full bg-zinc-800 animate-pulse" />
+          <div className="h-6 w-48 rounded-full bg-zinc-800/80 animate-pulse" />
+        </div>
+      </div>
+      <main className="max-w-lg mx-auto w-full px-5 py-6 space-y-4">
+        <SkeletonCard rows={1} />
+        <SkeletonCard rows={2} />
+        <SkeletonCard rows={3} />
+        <SkeletonCard rows={2} />
+      </main>
+    </div>
+  );
 }
 
-function timeAgo(dateStr: string): string {
-  const diff = Date.now() - new Date(dateStr).getTime();
-  const mins = Math.floor(diff / 60000);
-  if (mins < 1) return "just now";
-  if (mins < 60) return `${mins}m ago`;
-  const hrs = Math.floor(mins / 60);
-  if (hrs < 24) return `${hrs}h ago`;
-  const days = Math.floor(hrs / 24);
-  return `${days}d ago`;
-}
-
+// ─── Login Form ──────────────────────────────────────────────
 function LoginForm({ slug }: { slug: string }) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -88,63 +228,202 @@ function LoginForm({ slug }: { slug: string }) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-950 flex items-center justify-center p-4">
-      <div className="bg-gray-900 rounded-2xl p-8 w-full max-w-md border border-gray-800">
-        <div className="text-center mb-8">
-          <h1 className="text-2xl font-bold text-white mb-2">Client Dashboard</h1>
-          <p className="text-gray-400">Enter your password to view your automation status.</p>
+    <div className="min-h-screen bg-zinc-950 flex items-center justify-center p-4">
+      {/* Subtle radial glow */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(59,130,246,0.06) 0%, transparent 70%)",
+        }}
+      />
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+        className="relative bg-zinc-900 rounded-2xl p-8 w-full max-w-md border border-zinc-800/80 shadow-2xl shadow-black/40"
+      >
+        {/* Logo mark */}
+        <div className="flex justify-center mb-6">
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-zinc-700 to-zinc-900 border border-zinc-700 flex items-center justify-center shadow-lg">
+            <span className="text-lg font-bold text-zinc-200 tracking-tight">EM</span>
+          </div>
         </div>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Dashboard password"
-            className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
-            autoFocus
-          />
-          {error && <p className="text-red-400 text-sm mb-4">{error}</p>}
+
+        <div className="text-center mb-8">
+          <h1 className="text-xl font-semibold text-white mb-1">
+            E&apos;Manuel Foods and Bakery
+          </h1>
+          <p className="text-zinc-500 text-sm leading-relaxed">
+            Enter your password to see how things are going.
+          </p>
+        </div>
+
+        <form onSubmit={handleSubmit} className="space-y-3">
+          <div className="relative">
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Dashboard password"
+              className="w-full px-4 py-3.5 bg-zinc-800/60 border border-zinc-700/80 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:ring-1 focus:ring-zinc-500 focus:border-zinc-500 transition-all text-sm"
+              autoFocus
+            />
+          </div>
+
+          <AnimatePresence>
+            {error && (
+              <motion.p
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                className="text-red-400 text-xs flex items-center gap-1.5 overflow-hidden"
+              >
+                <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+                {error}
+              </motion.p>
+            )}
+          </AnimatePresence>
+
           <button
             type="submit"
             disabled={loading || !password}
-            className="w-full py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-700 disabled:text-gray-500 text-white rounded-lg font-medium transition-colors"
+            className="w-full py-3.5 bg-white hover:bg-zinc-100 disabled:bg-zinc-800 disabled:text-zinc-600 text-zinc-900 rounded-xl font-medium transition-all text-sm shadow-sm"
           >
-            {loading ? "Signing in..." : "Sign In"}
+            {loading ? (
+              <span className="flex items-center justify-center gap-2">
+                <RefreshCw className="w-4 h-4 animate-spin" />
+                Signing in
+              </span>
+            ) : (
+              "Sign in"
+            )}
           </button>
         </form>
-        <p className="text-gray-500 text-xs text-center mt-6">
+
+        <p className="text-zinc-700 text-xs text-center mt-6">
           Powered by Oladipupo Consulting
         </p>
+      </motion.div>
+    </div>
+  );
+}
+
+// ─── Data Unavailable ────────────────────────────────────────
+function DataUnavailable({ label }: { label: string }) {
+  return (
+    <div className="bg-zinc-900/60 rounded-2xl border border-zinc-800/60 p-5">
+      <div className="flex items-center gap-3 text-zinc-600">
+        <AlertCircle className="w-4 h-4 shrink-0" />
+        <p className="text-sm">Unable to load {label} right now</p>
       </div>
     </div>
   );
 }
 
+// ─── Status Badge ────────────────────────────────────────────
+function StatusBadge({ wf }: { wf: WorkflowStatus }) {
+  if (!wf.active) {
+    return (
+      <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-zinc-800 text-zinc-500">
+        Paused
+      </span>
+    );
+  }
+  if (wf.lastExecution?.status === "error") {
+    return (
+      <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-red-500/10 text-red-400">
+        Needs attention
+      </span>
+    );
+  }
+  return (
+    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400">
+      {wf.statusVerb}
+    </span>
+  );
+}
+
+// ─── Animated Stat ───────────────────────────────────────────
+function AnimatedStat({
+  value,
+  label,
+  prefix = "",
+  decimals = 0,
+}: {
+  value: number;
+  label: string;
+  prefix?: string;
+  decimals?: number;
+}) {
+  const animated = useCountUp(value, 1000, decimals);
+
+  return (
+    <div>
+      <div className="text-3xl font-bold tabular-nums tracking-tight text-white">
+        {prefix}
+        {decimals > 0 ? animated.toFixed(decimals) : Math.round(animated)}
+      </div>
+      <div className="text-zinc-500 text-sm mt-0.5">{label}</div>
+    </div>
+  );
+}
+
+// ─── Section Wrapper ─────────────────────────────────────────
+function Section({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <motion.div variants={fadeUp} className={className}>
+      {children}
+    </motion.div>
+  );
+}
+
+// ─── Main Dashboard ──────────────────────────────────────────
 export default function ClientDashboard() {
   const params = useParams();
   const slug = params.slug as string;
-  const [data, setData] = useState<DashboardData | null>(null);
+  const [statusData, setStatusData] = useState<StatusData | null>(null);
+  const [sheetsData, setSheetsData] = useState<SheetsData | null>(null);
   const [needsLogin, setNeedsLogin] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [systemHealthOpen, setSystemHealthOpen] = useState(false);
+  const [justRefreshed, setJustRefreshed] = useState(false);
 
-  async function fetchStatus() {
+  async function fetchAll(isRefresh = false) {
     try {
-      const res = await fetch(`/api/client-status/${slug}`);
-      if (res.status === 401) {
+      const [statusRes, sheetsRes] = await Promise.all([
+        fetch(`/api/client-status/${slug}`),
+        fetch(`/api/client-sheets/${slug}`),
+      ]);
+
+      if (statusRes.status === 401) {
         setNeedsLogin(true);
         setLoading(false);
         return;
       }
-      if (!res.ok) {
-        setError("Failed to load dashboard data.");
-        setLoading(false);
-        return;
+
+      if (statusRes.ok) {
+        setStatusData(await statusRes.json());
       }
-      const json = await res.json();
-      setData(json);
+
+      if (sheetsRes.ok) {
+        setSheetsData(await sheetsRes.json());
+      }
+
       setNeedsLogin(false);
       setLoading(false);
+
+      if (isRefresh) {
+        setJustRefreshed(true);
+        setTimeout(() => setJustRefreshed(false), 2000);
+      }
     } catch {
       setError("Connection error. Please try again.");
       setLoading(false);
@@ -152,148 +431,517 @@ export default function ClientDashboard() {
   }
 
   useEffect(() => {
-    fetchStatus();
-    // Auto-refresh every 5 minutes
-    const interval = setInterval(fetchStatus, 5 * 60 * 1000);
+    fetchAll();
+    const interval = setInterval(() => fetchAll(true), 5 * 60 * 1000);
     return () => clearInterval(interval);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slug]);
 
-  if (loading) {
+  if (loading) return <LoadingScreen />;
+  if (needsLogin) return <LoginForm slug={slug} />;
+
+  if (error || !statusData) {
     return (
-      <div className="min-h-screen bg-gray-950 flex items-center justify-center">
-        <div className="text-gray-400 text-lg">Loading dashboard...</div>
+      <div className="min-h-screen bg-zinc-950 flex items-center justify-center p-4">
+        <div className="text-center space-y-4">
+          <XCircle className="w-10 h-10 text-red-500/60 mx-auto" />
+          <p className="text-zinc-400">{error || "Something went wrong."}</p>
+          <button
+            onClick={() => {
+              setError("");
+              setLoading(true);
+              fetchAll();
+            }}
+            className="px-5 py-2.5 bg-zinc-800 text-zinc-300 rounded-xl hover:bg-zinc-700 transition-colors text-sm font-medium"
+          >
+            Try again
+          </button>
+        </div>
       </div>
     );
   }
 
-  if (needsLogin) {
-    return <LoginForm slug={slug} />;
-  }
+  const { health } = statusData.summary;
 
-  if (error || !data) {
-    return (
-      <div className="min-h-screen bg-gray-950 flex items-center justify-center">
-        <div className="text-red-400 text-lg">{error || "Something went wrong."}</div>
-      </div>
-    );
-  }
-
-  const healthLabels = {
-    green: "All Systems Operational",
-    amber: "Minor Issues Detected",
-    red: "Attention Required",
+  const bannerConfig = {
+    green: {
+      bg: "bg-gradient-to-br from-emerald-950/60 to-zinc-900",
+      border: "border-emerald-500/20",
+      iconColor: "text-emerald-400",
+      icon: CheckCircle,
+    },
+    amber: {
+      bg: "bg-gradient-to-br from-amber-950/50 to-zinc-900",
+      border: "border-amber-500/20",
+      iconColor: "text-amber-400",
+      icon: AlertTriangle,
+    },
+    red: {
+      bg: "bg-gradient-to-br from-red-950/50 to-zinc-900",
+      border: "border-red-500/20",
+      iconColor: "text-red-400",
+      icon: XCircle,
+    },
   };
 
-  const healthColors = {
-    green: "text-emerald-400 border-emerald-500/30 bg-emerald-500/10",
-    amber: "text-amber-400 border-amber-500/30 bg-amber-500/10",
-    red: "text-red-400 border-red-500/30 bg-red-500/10",
-  };
+  const banner = bannerConfig[health];
+  const BannerIcon = banner.icon;
+
+  // Hour-based greeting
+  const hour = new Date().getHours();
+  const greeting =
+    hour < 12 ? "Good morning" : hour < 17 ? "Good afternoon" : "Good evening";
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
+    <div className="min-h-screen bg-zinc-950 text-white">
+      {/* Ambient top glow */}
+      <div
+        className="fixed top-0 left-0 right-0 h-64 pointer-events-none z-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(30,30,40,0.8) 0%, transparent 70%)",
+        }}
+      />
+
       {/* Header */}
-      <header className="border-b border-gray-800 px-6 py-4">
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <div>
-            <h1 className="text-xl font-bold">{data.client.name}</h1>
-            <p className="text-gray-400 text-sm">Automation Dashboard</p>
+      <header className="relative z-10 border-b border-zinc-800/60 px-5 py-5">
+        <div className="max-w-lg mx-auto flex items-start justify-between">
+          <div className="flex items-center gap-3.5">
+            {/* Client logo or initials */}
+            {statusData.client.logoUrl ? (
+              <Image
+                src={statusData.client.logoUrl}
+                alt={statusData.client.name}
+                width={44}
+                height={44}
+                className="rounded-xl object-cover border border-zinc-700/50"
+              />
+            ) : (
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-zinc-700 to-zinc-900 border border-zinc-700/60 flex items-center justify-center shadow-lg shrink-0">
+                <span className="text-sm font-bold text-zinc-200 tracking-tight">
+                  {statusData.client.initials}
+                </span>
+              </div>
+            )}
+            <div>
+              <p className="text-zinc-500 text-sm">
+                {greeting}, {statusData.client.contactName}
+              </p>
+              <h1 className="text-lg font-semibold mt-0.5 text-white leading-tight">
+                {statusData.client.name}
+              </h1>
+            </div>
           </div>
-          <div className="text-right text-sm text-gray-500">
-            Last updated: {timeAgo(data.summary.lastUpdated)}
+
+          {/* Refresh indicator */}
+          <div className="flex items-center gap-1.5 mt-1 shrink-0">
+            <AnimatePresence>
+              {justRefreshed ? (
+                <motion.span
+                  key="refreshed"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  className="flex items-center gap-1 text-emerald-400 text-xs"
+                >
+                  <CheckCircle className="w-3 h-3" />
+                  Updated
+                </motion.span>
+              ) : (
+                <motion.span
+                  key="idle"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="text-zinc-700 text-xs"
+                >
+                  {friendlyTime(statusData.summary.lastUpdated)}
+                </motion.span>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </header>
 
-      <main className="max-w-5xl mx-auto px-6 py-8">
-        {/* Health Banner */}
-        <div
-          className={`rounded-xl border p-6 mb-8 ${healthColors[data.summary.health]}`}
+      <main className="relative z-10 max-w-lg mx-auto px-5 py-5">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+          className="space-y-4"
         >
-          <div className="flex items-center gap-3">
-            <StatusDot status={data.summary.health} />
-            <span className="text-lg font-semibold">
-              {healthLabels[data.summary.health]}
-            </span>
-          </div>
-        </div>
-
-        {/* Summary Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          <div className="bg-gray-900 rounded-xl p-5 border border-gray-800">
-            <div className="text-3xl font-bold">{data.summary.activeWorkflows}</div>
-            <div className="text-gray-400 text-sm mt-1">Active Workflows</div>
-          </div>
-          <div className="bg-gray-900 rounded-xl p-5 border border-gray-800">
-            <div className="text-3xl font-bold">{data.summary.totalWorkflows}</div>
-            <div className="text-gray-400 text-sm mt-1">Total Workflows</div>
-          </div>
-          <div className="bg-gray-900 rounded-xl p-5 border border-gray-800">
-            <div className="text-3xl font-bold">{data.summary.executionsThisWeek}</div>
-            <div className="text-gray-400 text-sm mt-1">Runs This Week</div>
-          </div>
-          <div className="bg-gray-900 rounded-xl p-5 border border-gray-800">
-            <div className={`text-3xl font-bold ${data.summary.errorsThisWeek > 0 ? "text-red-400" : "text-emerald-400"}`}>
-              {data.summary.errorsThisWeek}
+          {/* Health Banner */}
+          <Section>
+            <div
+              className={`rounded-2xl border p-5 ${banner.bg} ${banner.border}`}
+            >
+              <div className="flex items-center gap-3.5">
+                <div className="relative shrink-0">
+                  <BannerIcon className={`w-7 h-7 ${banner.iconColor}`} />
+                  {health === "green" && (
+                    <motion.div
+                      className="absolute inset-0 rounded-full"
+                      animate={{ scale: [1, 1.5, 1], opacity: [0.6, 0, 0.6] }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                      style={{
+                        background: "rgba(52,211,153,0.15)",
+                        borderRadius: "50%",
+                      }}
+                    />
+                  )}
+                </div>
+                <div>
+                  <p className="text-base font-semibold leading-snug text-white">
+                    {statusData.businessSummary.headline}
+                  </p>
+                  <p className="text-sm text-zinc-400 mt-0.5">
+                    {statusData.businessSummary.automationsRunning} automations
+                    running for you
+                  </p>
+                </div>
+              </div>
+              {health !== "green" && (
+                <p className="text-sm text-zinc-400 mt-3 pl-10">
+                  We&apos;re already looking into it &mdash; no action needed
+                  from you.
+                </p>
+              )}
             </div>
-            <div className="text-gray-400 text-sm mt-1">Errors This Week</div>
-          </div>
-        </div>
+          </Section>
 
-        {/* Workflow Table */}
-        <div className="bg-gray-900 rounded-xl border border-gray-800 overflow-hidden">
-          <div className="px-6 py-4 border-b border-gray-800">
-            <h2 className="text-lg font-semibold">Workflow Status</h2>
-          </div>
-          <div className="divide-y divide-gray-800">
-            {data.workflows.map((wf) => {
-              const health = getWorkflowHealth(wf);
-              return (
-                <div key={wf.id} className="px-6 py-4 flex items-center justify-between">
-                  <div className="flex items-center gap-3 min-w-0">
-                    <StatusDot status={health} />
-                    <div className="min-w-0">
-                      <div className="font-medium truncate">{wf.shortName}</div>
-                      <div className="text-gray-500 text-sm">{wf.schedule}</div>
-                    </div>
+          {/* This Week Summary */}
+          {sheetsData?.orders ? (
+            <Section>
+              <div className="bg-gradient-to-br from-zinc-900 to-zinc-900/60 rounded-2xl border border-zinc-800/60 p-5">
+                <h2 className="text-xs font-semibold text-zinc-500 uppercase tracking-widest mb-4">
+                  This Week
+                </h2>
+                <div className="grid grid-cols-2 gap-5">
+                  <AnimatedStat
+                    value={sheetsData.orders.totalOrders}
+                    label="orders"
+                  />
+                  <AnimatedStat
+                    value={sheetsData.orders.totalRevenue}
+                    label="revenue"
+                    prefix="£"
+                    decimals={2}
+                  />
+                </div>
+                <div className="flex items-center gap-3 mt-4 pt-4 border-t border-zinc-800/60 text-sm">
+                  <span className="flex items-center gap-1.5 text-emerald-400">
+                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                    {sheetsData.orders.paidCount} paid
+                  </span>
+                  <span className="text-zinc-700">&middot;</span>
+                  <span
+                    className={`flex items-center gap-1.5 ${
+                      sheetsData.orders.unpaidCount > 0
+                        ? "text-amber-400"
+                        : "text-zinc-600"
+                    }`}
+                  >
+                    {sheetsData.orders.unpaidCount > 0 && (
+                      <div className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                    )}
+                    {sheetsData.orders.unpaidCount} unpaid
+                    {sheetsData.orders.unpaidCount > 0 &&
+                      ` (${formatCurrency(sheetsData.orders.unpaidAmount)})`}
+                  </span>
+                </div>
+              </div>
+            </Section>
+          ) : (
+            <Section>
+              <DataUnavailable label="order summary" />
+            </Section>
+          )}
+
+          {/* What to Bake */}
+          {sheetsData?.production && sheetsData.production.length > 0 ? (
+            <Section>
+              <div className="bg-zinc-900 rounded-2xl border border-zinc-800/60 overflow-hidden">
+                {/* Accent strip */}
+                <div className="h-0.5 bg-gradient-to-r from-amber-500/60 via-orange-400/40 to-transparent" />
+                <div className="p-5">
+                  <div className="flex items-center gap-2 mb-4">
+                    <ChefHat className="w-4 h-4 text-amber-400/80" />
+                    <h2 className="text-xs font-semibold text-zinc-500 uppercase tracking-widest">
+                      What to Bake
+                    </h2>
                   </div>
-                  <div className="flex items-center gap-6 text-sm shrink-0">
-                    <div className="text-right">
-                      <div className="text-gray-300">{wf.executionsThisWeek} runs</div>
-                      {wf.errorsThisWeek > 0 && (
-                        <div className="text-red-400">{wf.errorsThisWeek} errors</div>
-                      )}
+                  <div className="space-y-2.5">
+                    {sheetsData.production.map((item, i) => (
+                      <motion.div
+                        key={item.product}
+                        initial={{ opacity: 0, x: -8 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: i * 0.07, duration: 0.35 }}
+                        className="flex items-center justify-between py-2 border-b border-zinc-800/40 last:border-0"
+                      >
+                        <div className="flex items-center gap-2.5">
+                          <div className="w-1 h-4 rounded-full bg-amber-500/50 shrink-0" />
+                          <span className="text-zinc-200 text-sm">
+                            {item.product}
+                          </span>
+                        </div>
+                        <span className="text-white font-semibold tabular-nums text-sm bg-zinc-800/60 px-2.5 py-0.5 rounded-lg">
+                          {item.quantity}
+                        </span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </Section>
+          ) : sheetsData?.production === null ? (
+            <Section>
+              <DataUnavailable label="production summary" />
+            </Section>
+          ) : null}
+
+          {/* Unpaid Orders */}
+          {sheetsData?.orders &&
+            sheetsData.orders.unpaidCustomers.length > 0 && (
+              <Section>
+                <div className="bg-gradient-to-br from-amber-950/30 to-zinc-900 rounded-2xl border border-amber-500/20 overflow-hidden">
+                  <div className="h-0.5 bg-gradient-to-r from-amber-500/70 via-amber-400/30 to-transparent" />
+                  <div className="p-5">
+                    <div className="flex items-center gap-2 mb-4">
+                      <CreditCard className="w-4 h-4 text-amber-400/80" />
+                      <h2 className="text-xs font-semibold text-amber-500/80 uppercase tracking-widest">
+                        Unpaid Orders
+                      </h2>
                     </div>
-                    <div className="text-gray-500 w-20 text-right">
-                      {wf.lastExecution?.startedAt
-                        ? timeAgo(wf.lastExecution.startedAt)
-                        : "Never"}
+                    <div className="space-y-3">
+                      {sheetsData.orders.unpaidCustomers.map((c, i) => (
+                        <div
+                          key={`${c.name}-${i}`}
+                          className="flex items-center justify-between"
+                        >
+                          <div>
+                            <span className="text-zinc-200 text-sm">
+                              {c.name}
+                            </span>
+                            <span className="text-zinc-600 text-xs ml-2">
+                              {c.daysAgo === 0
+                                ? "today"
+                                : c.daysAgo === 1
+                                  ? "yesterday"
+                                  : `${c.daysAgo} days ago`}
+                            </span>
+                          </div>
+                          <span className="text-amber-400 font-semibold tabular-nums text-sm">
+                            {formatCurrency(c.amount)}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-4 pt-3 border-t border-amber-500/10 flex justify-between text-sm">
+                      <span className="text-zinc-500">Total outstanding</span>
+                      <span className="text-amber-400 font-semibold tabular-nums">
+                        {formatCurrency(sheetsData.orders.unpaidAmount)}
+                      </span>
                     </div>
                   </div>
                 </div>
-              );
-            })}
-          </div>
-        </div>
+              </Section>
+            )}
 
-        {/* Footer */}
-        <div className="mt-8 text-center text-gray-600 text-sm">
-          <p>
-            Hi {data.client.contactName} — this dashboard auto-refreshes every 5
-            minutes.
-          </p>
-          <p className="mt-1">
-            Questions? Email{" "}
-            <a
-              href="mailto:hello@oladipupoconsulting.co.uk"
-              className="text-blue-400 hover:underline"
-            >
-              hello@oladipupoconsulting.co.uk
-            </a>
-          </p>
-          <p className="mt-4 text-gray-700">Powered by Oladipupo Consulting</p>
-        </div>
+          {/* Deliveries */}
+          {sheetsData?.deliveries && sheetsData.deliveries.totalStops > 0 ? (
+            <Section>
+              <div className="bg-zinc-900 rounded-2xl border border-zinc-800/60 overflow-hidden">
+                <div className="h-0.5 bg-gradient-to-r from-blue-500/50 via-blue-400/20 to-transparent" />
+                <div className="p-5">
+                  <div className="flex items-center gap-2 mb-4">
+                    <MapPin className="w-4 h-4 text-blue-400/70" />
+                    <h2 className="text-xs font-semibold text-zinc-500 uppercase tracking-widest">
+                      Deliveries
+                    </h2>
+                  </div>
+                  <div className="space-y-2.5">
+                    {sheetsData.deliveries.byTown.map((t) => (
+                      <div
+                        key={t.town}
+                        className="flex items-center justify-between py-1.5 border-b border-zinc-800/40 last:border-0"
+                      >
+                        <div className="flex items-center gap-2.5">
+                          <div className="w-1 h-4 rounded-full bg-blue-500/40 shrink-0" />
+                          <span className="text-zinc-200 text-sm">{t.town}</span>
+                        </div>
+                        <span className="text-zinc-400 text-sm tabular-nums">
+                          {t.count} {t.count === 1 ? "stop" : "stops"}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-4 pt-3 border-t border-zinc-800/60 flex justify-between text-sm">
+                    <span className="text-zinc-500">Total deliveries</span>
+                    <span className="text-white font-semibold tabular-nums">
+                      {sheetsData.deliveries.totalStops}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </Section>
+          ) : sheetsData?.deliveries?.totalStops === 0 ? (
+            <Section>
+              <div className="bg-zinc-900/60 rounded-2xl border border-zinc-800/60 p-5">
+                <div className="flex items-center gap-2 mb-2">
+                  <MapPin className="w-4 h-4 text-zinc-600" />
+                  <h2 className="text-xs font-semibold text-zinc-500 uppercase tracking-widest">
+                    Deliveries
+                  </h2>
+                </div>
+                <p className="text-zinc-600 text-sm pl-6">
+                  No deliveries scheduled yet this week
+                </p>
+              </div>
+            </Section>
+          ) : null}
+
+          {/* Activity Summary */}
+          <Section>
+            <div className="bg-zinc-900/40 rounded-2xl border border-zinc-800/40 p-5">
+              <p className="text-zinc-400 text-sm leading-relaxed">
+                We completed{" "}
+                <span className="text-white font-semibold">
+                  {statusData.businessSummary.tasksCompletedThisWeek}
+                </span>{" "}
+                tasks across your{" "}
+                <span className="text-white font-medium">
+                  {statusData.businessSummary.automationsRunning}
+                </span>{" "}
+                automations this week.{" "}
+                {statusData.businessSummary.issuesNeedingAttention === 0 ? (
+                  <span className="text-emerald-400">No issues detected.</span>
+                ) : (
+                  <span className="text-amber-400">
+                    {statusData.businessSummary.issuesNeedingAttention} item
+                    {statusData.businessSummary.issuesNeedingAttention > 1
+                      ? "s"
+                      : ""}{" "}
+                    needed attention.
+                  </span>
+                )}
+              </p>
+            </div>
+          </Section>
+
+          {/* System Health (Collapsible) */}
+          <Section>
+            <div className="bg-zinc-900 rounded-2xl border border-zinc-800/60 overflow-hidden">
+              <button
+                onClick={() => setSystemHealthOpen(!systemHealthOpen)}
+                className="w-full px-5 py-4 flex items-center justify-between text-left hover:bg-zinc-800/30 transition-colors"
+              >
+                <div className="flex items-center gap-3">
+                  <RefreshCw className="w-4 h-4 text-zinc-600" />
+                  <span className="text-sm font-medium text-zinc-400">
+                    System Health
+                  </span>
+                  <span
+                    className={`text-xs px-2 py-0.5 rounded-full font-medium ${
+                      health === "green"
+                        ? "bg-emerald-500/10 text-emerald-400"
+                        : health === "amber"
+                          ? "bg-amber-500/10 text-amber-400"
+                          : "bg-red-500/10 text-red-400"
+                    }`}
+                  >
+                    {health === "green"
+                      ? "All good"
+                      : `${statusData.businessSummary.issuesNeedingAttention} issue${statusData.businessSummary.issuesNeedingAttention !== 1 ? "s" : ""}`}
+                  </span>
+                </div>
+                <motion.div
+                  animate={{ rotate: systemHealthOpen ? 180 : 0 }}
+                  transition={{ duration: 0.25, ease: "easeInOut" }}
+                >
+                  <ChevronDown className="w-4 h-4 text-zinc-600" />
+                </motion.div>
+              </button>
+
+              <AnimatePresence initial={false}>
+                {systemHealthOpen && (
+                  <motion.div
+                    key="health-panel"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="border-t border-zinc-800/60 divide-y divide-zinc-800/40">
+                      {statusData.workflows.map((wf) => {
+                        const IconComponent = ICON_MAP[wf.icon] || RefreshCw;
+                        return (
+                          <div
+                            key={wf.id}
+                            className="px-5 py-3.5 flex items-start gap-3"
+                          >
+                            <div className="mt-0.5 p-1.5 rounded-xl bg-zinc-800/70 shrink-0">
+                              <IconComponent className="w-3.5 h-3.5 text-zinc-400" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center justify-between gap-2">
+                                <p className="text-sm font-medium text-white truncate">
+                                  {wf.businessName}
+                                </p>
+                                <StatusBadge wf={wf} />
+                              </div>
+                              <div className="flex items-center gap-3 mt-1 text-xs text-zinc-600">
+                                <span className="flex items-center gap-1">
+                                  <Clock className="w-3 h-3" />
+                                  {wf.lastExecution?.startedAt
+                                    ? friendlyTime(
+                                        wf.lastExecution.startedAt
+                                      )
+                                    : "Hasn\u2019t run yet"}
+                                </span>
+                                <span>Next: {wf.expectedScheduleHuman}</span>
+                              </div>
+                              {wf.errorsThisWeek > 0 && (
+                                <p className="text-red-400/80 text-xs mt-1">
+                                  {wf.errorsThisWeek} issue
+                                  {wf.errorsThisWeek > 1 ? "s" : ""} this
+                                  week &mdash; we&apos;re on it
+                                </p>
+                              )}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </Section>
+
+          {/* Footer */}
+          <Section>
+            <div className="pt-2 pb-10 text-center space-y-1.5">
+              <p className="text-zinc-600 text-xs">
+                Questions?{" "}
+                <a
+                  href="mailto:hello@oladipupoconsulting.co.uk"
+                  className="text-zinc-400 hover:text-white transition-colors underline underline-offset-2 decoration-zinc-700"
+                >
+                  hello@oladipupoconsulting.co.uk
+                </a>
+              </p>
+              <p className="text-zinc-800 text-xs">
+                Powered by Oladipupo Consulting
+              </p>
+            </div>
+          </Section>
+        </motion.div>
       </main>
     </div>
   );

@@ -19,6 +19,11 @@ interface WorkflowStatus {
   } | null;
   executionsThisWeek: number;
   errorsThisWeek: number;
+  // Business-friendly fields
+  businessName: string;
+  statusVerb: string;
+  expectedScheduleHuman: string;
+  icon: string;
 }
 
 async function fetchN8nWorkflows(apiKey: string) {
@@ -110,13 +115,25 @@ export async function GET(
       active: wfInfo?.active ?? false,
       lastExecution: lastExec
         ? {
-            status: lastExec.status === "success" ? "success" : lastExec.status === "error" ? "error" : lastExec.status === "waiting" ? "waiting" : "unknown",
+            status:
+              lastExec.status === "success"
+                ? "success"
+                : lastExec.status === "error"
+                  ? "error"
+                  : lastExec.status === "waiting"
+                    ? "waiting"
+                    : "unknown",
             startedAt: lastExec.startedAt || null,
             finishedAt: lastExec.stoppedAt || null,
           }
         : null,
       executionsThisWeek: weekExecutions.length,
       errorsThisWeek: weekErrors.length,
+      // Business-friendly fields from config
+      businessName: wf.businessName,
+      statusVerb: wf.statusVerb,
+      expectedScheduleHuman: wf.expectedScheduleHuman,
+      icon: wf.icon,
     });
   }
 
@@ -141,11 +158,24 @@ export async function GET(
         ? "red"
         : "amber";
 
+  const issuesNeedingAttention = workflowStatuses.filter(
+    (w) => w.lastExecution?.status === "error" || !w.active
+  ).length;
+
+  const headline =
+    overallHealth === "green"
+      ? "Everything's running smoothly"
+      : overallHealth === "amber"
+        ? "Something needs attention"
+        : "We're looking into an issue";
+
   return NextResponse.json({
     client: {
       name: client.name,
       contactName: client.contactName,
       industry: client.industry,
+      logoUrl: client.logoUrl || null,
+      initials: client.initials,
     },
     summary: {
       health: overallHealth,
@@ -154,6 +184,12 @@ export async function GET(
       executionsThisWeek: totalExecutions,
       errorsThisWeek: totalErrors,
       lastUpdated: new Date().toISOString(),
+    },
+    businessSummary: {
+      headline,
+      automationsRunning: activeCount,
+      tasksCompletedThisWeek: totalExecutions,
+      issuesNeedingAttention,
     },
     workflows: workflowStatuses,
   });
