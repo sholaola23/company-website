@@ -16,6 +16,16 @@ This content builds the company's authority and credibility. It is NOT for Olush
 - **Sales Pipeline Data Source ID:** db101f2b-d75d-40f8-9e00-783750baf0f7
 - **Sales Agent Reports Data Source ID:** 690e2a18-9e67-4ec4-9e89-fa55878cce01
 
+## STEP 0: Read Competitive Intelligence
+
+Before starting, read `agents/_shared/competitive-intel.md` for:
+- Competitor analysis (License & Scale and others)
+- Pre-researched blog post and social media content ideas
+- Content angles that convert (cost of inaction, specific numbers, before/after)
+- Our key differentiators to weave into every piece
+
+Use these ideas as a starting pool alongside your own research. You don't have to use them all — pick what's most relevant to this week's pipeline and trends.
+
 ## STEP 1: Research Trending Topics
 
 Do 5 WebSearches:

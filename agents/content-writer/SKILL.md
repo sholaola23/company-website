@@ -9,6 +9,7 @@ You are the **Content Writer** for Oladipupo Consulting Ltd. Every Tuesday you r
 Read these reference files:
 - `../_shared/voice.md` — Olushola's voice and messaging priorities
 - `../_shared/case-studies.md` — how to reference client work
+- `../_shared/competitive-intel.md` — competitor analysis, differentiators, and content angles
 - `instructions/blog-structure.md` — post structure and formatting
 - `examples/good/good-blog-opener.md` — what great openers look like
 - `examples/bad/bad-blog-patterns.md` — what to avoid

@@ -99,26 +99,32 @@ ${findingsText}
 QUICK WINS IDENTIFIED:
 ${quickWinsText}
 
-THE REPORT MUST CONTAIN THESE 5 SECTIONS:
+THE REPORT MUST CONTAIN THESE 8 SECTIONS:
 
 1. **AI Readiness Score** — Large visual score circle (use CSS for a circular score display with the number ${score} prominently shown), colour-coded (red <=3, amber 4-6, green 7+), with a paragraph explaining what this score means for their business specifically.
 
-2. **Current State Analysis** — Deep analysis of where ${businessName} currently stands with AI/automation adoption. Reference their industry (${industry}), identify specific manual processes likely causing bottlenecks, estimate time wasted on repetitive tasks, and compare to industry benchmarks. Include a styled table showing "Current Process vs AI-Automated" comparisons.
+2. **The Cost of Inaction** — A hard-hitting section showing what it costs ${businessName} EVERY MONTH by not automating. Calculate specific monthly costs: lost leads from slow response times, hours wasted on manual admin, revenue lost to competitors who respond faster, staff time spent on tasks AI could handle. Use a bold callout box showing the total monthly and annual cost of doing nothing (e.g. "You are losing approximately £X,XXX every month"). Make it emotionally compelling — this is the most persuasive section.
 
-3. **Competitor Landscape** — Analysis of how competitors in the ${industry} sector are using AI. What percentage of similar businesses have adopted AI tools? What advantages are early adopters gaining? Include specific examples relevant to ${industry} businesses.
+3. **Current State Analysis** — Deep analysis of where ${businessName} currently stands with AI/automation adoption. Reference their industry (${industry}), identify specific manual processes likely causing bottlenecks, estimate time wasted on repetitive tasks, and compare to industry benchmarks. Include a styled table showing "Current Process vs AI-Automated" comparisons.
 
-4. **Opportunity Map** — For each finding, create an "opportunity card" with:
+4. **Competitor Landscape** — Analysis of how competitors in the ${industry} sector are using AI. What percentage of similar businesses have adopted AI tools? What advantages are early adopters gaining? Include specific examples relevant to ${industry} businesses.
+
+5. **Opportunity Map** — For each finding, create an "opportunity card" with:
    - A RED panel showing the current pain point
    - A GREEN panel showing what it looks like after automation
    - Estimated hours saved per week
    - Revenue impact estimate
    Also include the quick wins as immediately actionable items.
 
-5. **Recommended Solution & ROI** — Based on the ${recommendedTier} tier recommendation:
+6. **Time Reclaimed Breakdown** — A clear, styled table breaking down EXACTLY how many hours per week/month ${businessName} would reclaim in each automation area (e.g. Lead response: 8 hrs/week, Admin & scheduling: 6 hrs/week, Follow-ups: 4 hrs/week, etc.). Show a total row. Use a visual bar chart style (CSS-only bars) to make the time savings feel tangible. End with a statement like "That's X hours back every month — equivalent to hiring a part-time employee."
+
+7. **ROI Projection** — A professional summary table showing Monthly and Annual projections for: Hours Reclaimed, Cost Savings (from reduced manual work), Revenue Recovered (from faster response, fewer lost leads), and Total Impact. Use a styled table with clear headers and a bold total row. Below the table, add a "Payback Period" callout showing how quickly the investment pays for itself.
+
+8. **Recommended Solution & Next Steps** — Based on the ${recommendedTier} tier recommendation:
    - What's included in this tier
    - Implementation timeline (7-day sprint)
-   - ROI calculation box showing: investment, estimated savings, payback period
-   - Phase grid showing the recommended tier highlighted, with upgrade path to higher tiers
+   - Phase grid showing Starter/Growth/Scale tiers with the recommended one highlighted
+   - A "Before vs After" narrative: 2 short paragraphs contrasting their business today (manual, slow, overwhelmed) vs 30 days from now (automated, fast, in control)
    - Clear CTA to book a call
 
 DESIGN REQUIREMENTS:
