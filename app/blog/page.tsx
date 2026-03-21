@@ -220,6 +220,42 @@ const staticPosts = [
     publishedAt: "18 March 2026",
     tags: ["Websites", "Local Business", "SEO", "UK Business"],
   },
+  {
+    id: "static-new-1",
+    slug: "ai-for-solicitors",
+    title: "AI for Solicitors & Law Firms: Automate Client Intake, Billing & Case Updates",
+    excerpt:
+      "How UK solicitors and law firms use AI to automate client intake, time recording, case updates, document assembly, and SRA compliance tracking.",
+    publishedAt: "21 March 2026",
+    tags: ["AI Automation", "Solicitors", "Legal", "Industry Guide"],
+  },
+  {
+    id: "static-new-2",
+    slug: "ai-for-recruitment-agencies",
+    title: "AI for Recruitment Agencies: Automate Candidate Screening, Outreach & Placement Tracking",
+    excerpt:
+      "5 practical AI automations for UK recruitment agencies — from CV screening and candidate outreach to IR35 compliance and placement tracking.",
+    publishedAt: "21 March 2026",
+    tags: ["AI Automation", "Recruitment", "Staffing", "Industry Guide"],
+  },
+  {
+    id: "static-new-3",
+    slug: "ai-for-mortgage-brokers",
+    title: "AI for Mortgage Brokers: Automate Lead Qualification, Applications & Client Updates",
+    excerpt:
+      "How UK mortgage brokers use AI to qualify leads faster, chase documents automatically, match lender products, and stay FCA compliant.",
+    publishedAt: "21 March 2026",
+    tags: ["AI Automation", "Mortgage Brokers", "Financial Services", "Industry Guide"],
+  },
+  {
+    id: "static-new-4",
+    slug: "ai-for-care-homes",
+    title: "AI for Care Homes & Home Care Agencies: Automate Rota Planning, Family Updates & Compliance",
+    excerpt:
+      "5 AI automations for UK care homes and domiciliary care agencies — from staff rota planning and family updates to CQC compliance and training tracking.",
+    publishedAt: "21 March 2026",
+    tags: ["AI Automation", "Care Homes", "Healthcare", "Industry Guide"],
+  },
 ];
 
 export default async function BlogPage() {

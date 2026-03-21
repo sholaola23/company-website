@@ -79,6 +79,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "automate-appointment-booking",
     "5-ways-ai-saves-time",
     "local-business-website-2026",
+    "ai-for-solicitors",
+    "ai-for-recruitment-agencies",
+    "ai-for-mortgage-brokers",
+    "ai-for-care-homes",
   ];
 
   const blogPages = BLOG_SLUGS.map((slug) => ({
