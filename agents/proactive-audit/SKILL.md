@@ -87,7 +87,7 @@ Slug format: lowercase, hyphens, no special chars. E.g. "Perfect Cleaning 365" â
 Use Bash to upload the HTML file to Vercel Blob storage:
 ```bash
 cat "/Users/olushola/AI Projects/audit-reports/[slug]-audit.html" | curl -s -X PUT \
-  -H "Authorization: Bearer vercel_blob_rw_EfL59E32tGPqBPOf_EuS55vdVQm7kxDV1Ommfto1QqrRwIT" \
+  -H "Authorization: Bearer $BLOB_READ_WRITE_TOKEN" \
   -H "x-api-version: 7" \
   -H "Content-Type: text/html; charset=utf-8" \
   -H "x-cache-control-max-age: 31536000" \

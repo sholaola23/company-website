@@ -58,7 +58,7 @@ Fill in ALL placeholders with real research data. Every `[X]` must be replaced.
 **Step 5b: Upload to Vercel Blob** (REQUIRED — this makes the report live):
 ```bash
 cat "/Users/olushola/AI Projects/audit-reports/[slug]-audit.html" | curl -s -X PUT \
-  -H "Authorization: Bearer vercel_blob_rw_EfL59E32tGPqBPOf_EuS55vdVQm7kxDV1Ommfto1QqrRwIT" \
+  -H "Authorization: Bearer $BLOB_READ_WRITE_TOKEN" \
   -H "x-api-version: 7" \
   -H "Content-Type: text/html; charset=utf-8" \
   -H "x-cache-control-max-age: 31536000" \
