@@ -1,90 +1,146 @@
 # Follow-up Email Templates
 
-## Follow-up 1: Value-Add Insight
-**Angle:** Show you've done homework. Provide a specific, useful observation tied to AI.
+## CRITICAL: Keep follow-ups SHORT
+The vault data proves: shorter follow-ups get higher reply rates. The "breakup" email (FU3) often gets the HIGHEST reply rate of all.
 
-Before drafting, do a quick WebSearch for the business (max 3 searches total across all leads):
-- Whether they appear on Google Maps for key search terms
-- A competitor with AI-powered booking or instant response
-- Their review count/rating vs. local competitors
-- A specific gap on their site
+---
 
-**Template:**
-```
-Subject: [Business Name] is losing customers to AI — here's how
-
-[OPENING — choose ONE, vary across leads:]
-- OPTION A (competitor intel): "I checked what [competitor or similar business type] in [area] are doing differently — most of the top ones now have AI-powered booking and instant customer responses."
-- OPTION B (specific finding): "I ran a quick check on [Business Name]'s online presence and found [specific observation]."
-- OPTION C (industry stat): "Did you know 67% of customers go with the first business that responds to their enquiry?"
-- OPTION D (direct question): "Quick question — when a customer contacts [Business Name] at 7pm, what happens?"
-
-[1-2 sentences connecting to their specific situation]
-
-[CASE STUDY — adapted for their industry, see ../_shared/case-studies.md]
-
-**If a Proactive Audit exists (check Notion: Proactive Audit = "done" and Audit Report URL is set):**
-I actually put together a free AI Readiness Audit for [Business Name] — a personalised report showing exactly where AI could save you time and money, with specific numbers. Here it is: [Audit Report URL]. No cost, no obligation — just thought you'd find it useful.
-
-**If no Proactive Audit exists:**
-I do free AI Readiness Audits for businesses like [Business Name] — a short report showing exactly where AI could save you time and money, with specific numbers. No cost, no obligation. Want me to put one together for you?
-
-[SIGNATURE — see ../_shared/ctas.md]
-```
-
-## Follow-up 2: Social Proof Deep Dive
-**Angle:** Lead with specific, impressive numbers. Make the proof impossible to ignore.
+## Follow-up 1: The Bump (Day 3 after initial email)
+**Angle:** Simple bump. Don't re-pitch. Just get back to top of inbox.
+**Word limit:** Under 30 words.
 
 **Template:**
 ```
-Subject: [Industry-relevant — e.g. "5 hours a week back — here's how"]
+Subject: RE: [original subject line]
 
-Hi [Contact Name],
+hey {{firstName}}
 
-[OPENING — lead with the most impressive number for their industry:]
-- Food/orders: "150 orders a week. Zero admin. That's what we delivered for a food business in under a week."
-- Time-saving: "5 hours a week saved on admin. That's what an AI system delivered for one of my clients — in their first week."
-- Response: "60-second AI responses to every customer enquiry, 24/7."
+wondering if you got a chance to look over this yet?
 
-Here's what the AI system actually does for them:
-- [Bullet 1 — adapt to their industry]
-- [Bullet 2]
-- [Bullet 3]
-- [Bullet 4]
-
-The whole thing was live in under a week.
-
-I think [Business Name] could see similar results — especially around [their pain point]. I'd love to put together a free AI Readiness Audit for you — it'll show exactly how many hours you'd save. Takes me a day, costs you nothing. Interested?
-
-[SIGNATURE]
+Shola
 ```
 
-## Follow-up 3: Final Soft Close
-**Angle:** Graceful exit. Short and warm. Leave the door permanently open.
+**Alternate (if Lead Intelligence has a specific hook to reference):**
+```
+Subject: RE: [original subject line]
+
+{{firstName}}
+
+still think [Business Name] could save serious time with AI — especially on [specific pain point from Lead Intelligence]
+
+worth a quick look?
+
+Shola
+```
+
+**Rules:**
+- NEVER re-pitch the full offer
+- NEVER add new information
+- Keep it under 3 lines
+- Reply to original thread (same subject, RE:)
+
+---
+
+## Follow-up 2: The Acknowledge + Value (Day 6 — 3 days after FU1)
+**Angle:** Acknowledge they're busy. Re-state value with proof. Give them an easy out.
+**Word limit:** Under 60 words.
 
 **Template:**
 ```
-Subject: Last one from me, [Contact Name] — then I'll leave you alone
+Subject: RE: [original subject line]
 
-Hi [Contact Name],
+{{firstName}}
 
-I know you're busy — this is my last email, I promise.
+know you're probably slammed right now
 
-I still think [Business Name] could do something really interesting with AI, particularly around [their pain point]. But the timing has to be right for you.
+still happy to share how we saved a bakery owner 10+ hours a week on admin if you're interested
 
-If that ever changes — whether it's in a month or a year — just drop me a reply or call me on 07469 347654. I'll pick up where we left off, no awkwardness.
+if timing isn't right just let me know
 
-Wishing you and the team a great one.
+Shola
+```
 
-Olushola
-Oladipupo Consulting Ltd
+**Alternate (with audit offer):**
+```
+Subject: RE: [original subject line]
+
+{{firstName}}
+
+know you're probably flat out
+
+i put together a free AI audit for businesses like [Business Name] — shows exactly where you're losing hours to manual work, with numbers
+
+want me to send it over? takes 2 minutes to read
+
+if timing isn't right, no worries at all
+
+Shola
+```
+
+**Alternate (with proactive audit — if Proactive Audit = "done" and Audit Report URL exists):**
+```
+Subject: RE: [original subject line]
+
+{{firstName}}
+
+i actually put together a free AI readiness report for [Business Name] — here it is: [Audit Report URL]
+
+shows exactly where AI could save you time, with real numbers. no cost, no strings
+
+worth a 2-minute look?
+
+Shola
+```
+
+**Rules:**
+- Acknowledge they're busy (empathy)
+- Re-state ONE value point (time saved, proof)
+- Give an easy out: "if timing isn't right just let me know"
+- The easy out OFTEN triggers replies
+
+---
+
+## Follow-up 3: The Breakup (Day 9 — 3 days after FU2)
+**Angle:** Graceful exit. Creates subtle FOMO. Highest reply rate of all follow-ups.
+**Word limit:** Under 30 words.
+
+**Template:**
+```
+Subject: RE: [original subject line]
+
+{{firstName}}
+
+going to assume the timing isn't right
+
+if anything changes on your end, feel free to reach out
+
+Shola
 oladipupoconsulting.co.uk
-07469 347654
-
-If this isn't relevant, just let me know and I won't follow up.
 ```
 
-## Word Limits
-- FU1: under 150 words
-- FU2: under 200 words
-- FU3: under 150 words
+**Rules:**
+- NEVER beg or grovel
+- NEVER re-pitch
+- Keep it 2-3 lines max
+- The "breakup" triggers "wait, don't go" replies
+- After FU3 with no reply → mark lead as "cold" in Notion
+- This is the FINAL follow-up. 3 touches then done.
+
+---
+
+## Timing Summary
+| Touch | Day | Template | Max Words |
+|---|---|---|---|
+| Initial outreach | Day 0 | Cold email script | 80 |
+| FU1: Bump | Day 3 | Simple bump | 30 |
+| FU2: Acknowledge | Day 6 | Value + easy out | 60 |
+| FU3: Breakup | Day 9 | Graceful exit | 30 |
+| No reply after FU3 | Day 12+ | Mark cold | — |
+
+## Reply Handling (if they reply at ANY stage)
+See `../_shared/cold-email-scripts.md` → Reply Handling section.
+Key rules:
+1. If they say "yes" or "interested" → Send Cal.com link immediately
+2. If they ask for "more info" → Send 3 bullets + Cal.com link
+3. If they say "not now" → Ask when to circle back, set reminder
+4. **CALL THEM FIRST** if possible — half will book on the spot

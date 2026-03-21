@@ -51,19 +51,21 @@ This rotation ensures we build data on which template+opening combinations conve
 ### Step 2: Check for Stale Sent Leads
 Check for leads where Status = "sent" and Sent Date is 5+ days ago with Follow-up Count = 0. Note in report as "may need follow-up".
 
-### Step 3: For Each Lead, Send an Email
+### Step 3: For Each Lead, Write and Send an Email
+**DEFAULT: Use vault-style short scripts (5 lines max, "reply yes" CTA).**
+Only use long-form templates from `templates/email-templates.md` if Lead Score >= 80 AND you have deep personalization data.
+
 1. Read the lead's full Notion page
-1b. **Read Lead Intelligence** (Phase 0 — Cross-Agent Memory): Read the Lead Intelligence field from the lead's Notion page. Use these observations to deeply personalize the email — reference specific details (e.g. "I noticed your website doesn't have online booking" or "With 12 Google reviews averaging 4.3 stars, you're clearly doing great work"). This field contains notes from Lead Scout and other agents. The more you reference real observations, the higher your personalization score.
-2. Read `instructions/template-selection.md` to pick the right template
-3. Read `templates/email-templates.md` for the full template
-4. Personalize using rules from `../_shared/personalization.md`
-5. Adapt case study per `../_shared/case-studies.md`
-6. Match tone per `../_shared/voice.md`
-7. Add CTA from `../_shared/ctas.md`
-8. Run self-quality check (from `../_shared/personalization.md`) — if below 6, SKIP this lead
-9. Check Gmail for existing sent emails to this address (avoid double-sending)
-10. **SEND the email** via gmail_send_email
-11. **Update Notion immediately after sending:**
+1b. **Read Lead Intelligence** (Phase 0 — Cross-Agent Memory): Read the Lead Intelligence field. Use observations to personalize — but keep the email SHORT. Reference ONE specific detail max.
+2. Read `../_shared/cold-email-scripts.md` — pick the best script (A-F) for this lead
+3. Read `../_shared/ctas.md` — use "reply yes" CTA (primary). NEVER include Cal.com link in first touch.
+4. Match tone per `../_shared/voice.md`
+5. Add PS line from `../_shared/ctas.md` PS Line Bank — pick the most relevant one
+6. **TOTAL EMAIL MUST BE UNDER 80 WORDS** (excluding signature). If it's longer, cut it.
+7. Run self-quality check — if below 6, SKIP this lead
+8. Check Gmail for existing sent emails to this address (avoid double-sending)
+9. **CREATE DRAFT** via gmail_create_draft (Olushola reviews before sending — human-in-the-loop)
+10. **Update Notion immediately after drafting:**
     - Status → "sent"
     - Sent Date → today (use `date:Sent Date:start` = today's ISO date)
     - Outreach Date → today (use `date:Outreach Date:start` = today's ISO date)
