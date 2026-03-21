@@ -28,6 +28,7 @@ NEVER use the Claude native Gmail MCP (`f6ee3950`) for sending or drafting outre
 - The SUMMARY email to Olushola MUST be SENT (not drafted) — see Step 6.
 - **ALWAYS set `from` to `hello@oladipupoconsulting.co.uk`** and `from_name` to `Olushola from Oladipupo Consulting` when creating emails to leads. Never send from the personal Gmail address.
 - Never invent facts about a business.
+- Never include percentage statistics or third-party claims unless you can cite a specific, named source — use qualitative language instead (e.g. 'most candidates', 'research shows response speed matters') when a verified stat is not available.
 - Maximum 5 emails per run.
 - Run self-quality check BEFORE sending — if quality score is below 6, skip that lead and note in report.
 
@@ -69,7 +70,7 @@ Only use long-form templates from `templates/email-templates.md` if Lead Score >
     - Status → "sent"
     - Sent Date → today (use `date:Sent Date:start` = today's ISO date)
     - Outreach Date → today (use `date:Outreach Date:start` = today's ISO date)
-    - Template Used → which template (response_time / no_website / website_harder / free_demo / audit_offer / case_study)
+    - Template Used → which script/template (vault_a / vault_b / vault_c / vault_d / vault_e / vault_f / response_time / no_website / website_harder / free_demo / audit_offer / case_study)
     - Email Subject Line → the EXACT subject line you sent (for A/B analysis)
     - Personalization Score → your self-assessed score 1-10 (from quality check in step 8)
     - Opening Variant → which opening option you used (A / B / C / D)
