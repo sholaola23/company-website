@@ -24,8 +24,8 @@ Read these shared reference files:
 NEVER use the Claude native Gmail MCP (`f6ee3950`) for sending or drafting outreach — it does NOT have send capability. Always use the Zapier MCP (`8ccf50b7`) for all email creation and sending.
 
 ## Critical Rules
-- You CREATE DRAFT emails for leads. Olushola reviews and sends them manually (human-in-the-loop).
-- The SUMMARY email to Olushola MUST be SENT (not drafted) — see Step 6.
+- You SEND emails directly to leads via `mcp__8ccf50b7-aff2-4b81-8947-88c792cc6a68__gmail_send_email`.
+- The SUMMARY email to Olushola MUST also be SENT (not drafted) — see Step 6.
 - **ALWAYS set `from` to `hello@oladipupoconsulting.co.uk`** and `from_name` to `Olushola from Oladipupo Consulting` when creating emails to leads. Never send from the personal Gmail address.
 - Never invent facts about a business.
 - Never include percentage statistics or third-party claims unless you can cite a specific, named source — use qualitative language instead (e.g. 'most candidates', 'research shows response speed matters') when a verified stat is not available.
@@ -65,8 +65,8 @@ Only use long-form templates from `templates/email-templates.md` if Lead Score >
 6. **TOTAL EMAIL MUST BE UNDER 80 WORDS** (excluding signature). If it's longer, cut it.
 7. Run self-quality check — if below 6, SKIP this lead
 8. Check Gmail for existing sent emails to this address (avoid double-sending)
-9. **CREATE DRAFT** via gmail_create_draft (Olushola reviews before sending — human-in-the-loop)
-10. **Update Notion immediately after drafting:**
+9. **SEND the email** via `mcp__8ccf50b7-aff2-4b81-8947-88c792cc6a68__gmail_send_email` with `from: hello@oladipupoconsulting.co.uk`
+10. **Update Notion immediately after sending:**
     - Status → "sent"
     - Sent Date → today (use `date:Sent Date:start` = today's ISO date)
     - Outreach Date → today (use `date:Outreach Date:start` = today's ISO date)
@@ -92,18 +92,16 @@ Create page in Sales Agent Reports with: emails sent, templates used, quality sc
 
 SEND to olusholaoladipupo1@gmail.com:
 
-**Subject:** `[Outreach Drafted] [X] emails drafted — [today's date] — REVIEW & SEND`
+**Subject:** `[Outreach Sent] [X] emails sent — [today's date]`
 
 **Body:**
 ```
 OUTREACH SUMMARY — [today's date]
 
-Emails drafted: [X] (waiting for your review in Gmail Drafts)
+Emails sent: [X] (from hello@oladipupoconsulting.co.uk)
 Leads skipped: [Y] (reason: [quality below 6 / no email / already contacted])
 
-⚠️ ACTION REQUIRED: Review and send these draft emails in Gmail:
-
-DRAFTED TO:
+SENT TO:
 1. [Business Name] ([Industry], [Location]) — Score [X] — Template: [which] — Subject: "[subject]"
 2. [Business Name] ([Industry], [Location]) — Score [X] — Template: [which] — Subject: "[subject]"
 ...
