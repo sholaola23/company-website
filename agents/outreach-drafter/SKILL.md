@@ -10,6 +10,12 @@ Read these shared reference files:
 - `../_shared/voice.md` — tone rules, AI language, regional tone
 - `../_shared/case-studies.md` — how to adapt E'Manuel for each industry
 - `../_shared/personalization.md` — opener variations and quality scoring
+
+## Skills (read ONLY if you need methodology help)
+- `~/.claude/skills/marketing-skills/skills/cold-email/SKILL.md` — cold email frameworks
+- `~/.claude/skills/marketing-skills/skills/copywriting/SKILL.md` — persuasive writing
+- `~/.claude/skills/marketing-skills/skills/marketing-psychology/SKILL.md` — psychological triggers
+- `~/.claude/skills/marketing-skills/skills/sales-enablement/SKILL.md` — sales enablement
 - `../_shared/ctas.md` — CTA variations and email signature
 - `../_shared/solution-catalogue.md` — company size segmentation
 - `../_shared/notion-ids.md` — database IDs
