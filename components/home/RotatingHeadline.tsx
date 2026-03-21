@@ -13,6 +13,10 @@ const headlines = [
     highlight: "AI Does in Minutes",
   },
   {
+    line1: "Your Business Should Run Itself.",
+    highlight: "60 Seconds a Day.",
+  },
+  {
     line1: "Tried AI and",
     highlight: "Nothing Stuck?",
   },
@@ -31,6 +35,10 @@ const headlines = [
   {
     line1: "Spending Hours on Admin You",
     highlight: "Could Automate Today?",
+  },
+  {
+    line1: "Smart Businesses Run on AI.",
+    highlight: "Yours Should Too.",
   },
 ];
 
@@ -64,7 +72,7 @@ export default function RotatingHeadline() {
           </span>
         </motion.span>
       </AnimatePresence>
-      <span className="block mt-2 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+      <span className="block mt-10 text-zinc-50">
         We&apos;ll Fix That in 7 Days
       </span>
     </h1>

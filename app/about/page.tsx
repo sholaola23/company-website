@@ -67,9 +67,10 @@ export default function AboutPage() {
           AI Solutions, Built for Small Businesses
         </h1>
         <p className="text-lg text-zinc-400 leading-relaxed">
-          We saw small businesses drowning in manual work while AI tools were
-          only accessible to large enterprises. So we productised it — repeatable
-          solutions, delivered fast, at prices SMBs can actually afford.
+          We are an AI-native agency — we use AI on the back end to deliver
+          results that used to require a full team. The businesses we work with
+          don&apos;t need to understand the technology. They just check a
+          dashboard, save 8+ hours a week, and watch their business run itself.
         </p>
       </div>
 

@@ -66,9 +66,9 @@ function Hero() {
               <RotatingHeadline />
 
               <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400 sm:text-xl lg:mx-0">
-                We build AI systems that save you 8+ hours a week — lead
-                capture, email responses, bookings, follow-ups — all on
-                autopilot. So you can stop doing admin and start growing.
+                We build AI systems that run your business on autopilot — lead
+                capture, bookings, follow-ups, order management. Your team
+                checks a dashboard. AI does the rest. Delivered in 7 days.
               </p>
 
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
@@ -424,9 +424,9 @@ const steps = [
   },
   {
     number: "04",
-    title: "Monthly Optimisation",
+    title: "Your Dashboard. 60 Seconds a Day.",
     description:
-      "Ongoing monitoring, improvements, and new features — we stay in your corner.",
+      "You get a real-time dashboard showing exactly what your business is doing. Check it in 60 seconds each morning — we handle everything behind the scenes.",
     icon: TrendingUp,
   },
 ];
