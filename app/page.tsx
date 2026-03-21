@@ -18,6 +18,8 @@ import PersonalisedCTA from "@/components/shared/PersonalisedCTA";
 import RotatingHeadline from "@/components/home/RotatingHeadline";
 import NewsletterSignup from "@/components/shared/NewsletterSignup";
 import JsonLd from "@/components/shared/JsonLd";
+import FAQSection from "@/components/shared/FAQSection";
+import type { FAQItem } from "@/components/shared/FAQSection";
 
 // ---------------------------------------------------------------------------
 // Hero
@@ -529,6 +531,39 @@ const businessJsonLd = {
   "sameAs": [],
 };
 
+const homepageFAQs: FAQItem[] = [
+  {
+    question: "What is AI automation for small businesses?",
+    answer:
+      "AI automation uses artificial intelligence to handle repetitive business tasks — things like responding to enquiries, booking appointments, sending follow-ups, and managing orders. Instead of hiring extra staff, you deploy AI systems that run 24/7 and free your team to focus on higher-value work.",
+  },
+  {
+    question: "How much does AI automation cost for a small business in the UK?",
+    answer:
+      "Our packages start from £500 for a single automation workflow, with monthly retainers from £50. Most small businesses see a return on investment within the first month through time savings alone. We offer a free AI readiness audit so you can see the potential impact before spending anything.",
+  },
+  {
+    question: "Do I need technical skills to use AI automation?",
+    answer:
+      "Not at all. We handle the entire setup, configuration, and training. Once your system is live, you interact with a simple dashboard — no coding or technical knowledge required. We also provide full documentation and standard operating procedures so your team can manage everything confidently.",
+  },
+  {
+    question: "How long does it take to set up AI automation?",
+    answer:
+      "Most of our automation systems are delivered within 7 days, from audit to going live. More complex multi-workflow systems take 7–14 days. We start with a free audit that maps your business processes and identifies the highest-impact opportunities.",
+  },
+  {
+    question: "Is AI automation safe and reliable for my business?",
+    answer:
+      "Yes. We build in human-in-the-loop safeguards for all sensitive communications, so nothing goes out without your approval until you are comfortable. Every system includes fallback behaviour for errors, logging, and alerting so you always know what is happening.",
+  },
+  {
+    question: "What happens if the automation does not deliver results?",
+    answer:
+      "Every project is backed by our 90-Day Results Guarantee. If you do not save at least 5 hours per week within 90 days, we refund your setup fee — no questions asked. We are confident in what we deliver because we only take on projects where we know AI will make a measurable difference.",
+  },
+];
+
 export default function HomePage() {
   return (
     <main>
@@ -539,6 +574,17 @@ export default function HomePage() {
       <CaseStudiesPreview />
       <ResultsGuarantee />
       <HowItWorks />
+      <section className="bg-zinc-950 py-24">
+        <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
+          <AnimatedSection>
+            <FAQSection
+              items={homepageFAQs}
+              eyebrow="FAQs"
+              heading="Common Questions About AI Automation"
+            />
+          </AnimatedSection>
+        </div>
+      </section>
       <NewsletterSignup />
       <PersonalisedCTA />
     </main>

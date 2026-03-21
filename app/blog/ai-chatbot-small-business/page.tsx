@@ -488,6 +488,33 @@ export default function BlogPost() {
             </p>
           </div>
 
+          {/* Related Articles */}
+          <div className="mt-12 border border-zinc-800 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-4 text-zinc-100">Related Articles</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link href="/blog/whatsapp-automation-business" className="text-blue-400 hover:text-blue-300 transition-colors">
+                  WhatsApp Automation for Business: The Complete Guide
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/ai-for-restaurants" className="text-blue-400 hover:text-blue-300 transition-colors">
+                  AI for Restaurants: Automate Orders, Bookings, and Reviews
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/ai-for-dentists" className="text-blue-400 hover:text-blue-300 transition-colors">
+                  AI for Dentists &amp; Dental Practices: Reduce No-Shows by 60%
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/whatsapp-bot" className="text-zinc-300 hover:text-white transition-colors">
+                  View our WhatsApp Customer Bot service &rarr;
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* CTA Section */}
           <div className="mt-16 bg-gradient-to-br from-blue-500/10 to-zinc-900 border border-zinc-800 rounded-xl p-8 text-center">
             <h3 className="text-xl font-semibold mb-2">

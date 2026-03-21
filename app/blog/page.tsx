@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { fetchPublishedPosts } from "@/lib/notion-cms";
+import BreadcrumbJsonLd from "@/components/shared/BreadcrumbJsonLd";
 
 export const revalidate = 60;
 
@@ -239,6 +240,7 @@ export default async function BlogPage() {
 
   return (
     <main className="min-h-screen">
+      <BreadcrumbJsonLd items={[{ name: "Blog", href: "/blog" }]} />
       <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto">
           <p className="text-blue-400 text-sm font-semibold uppercase tracking-wider mb-3">

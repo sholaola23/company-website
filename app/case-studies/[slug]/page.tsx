@@ -6,6 +6,7 @@ import AnimatedSection from "@/components/shared/AnimatedSection";
 import CTAButton from "@/components/shared/CTAButton";
 import PersonalisedCTA from "@/components/shared/PersonalisedCTA";
 import { caseStudies } from "@/lib/case-studies-data";
+import BreadcrumbJsonLd from "@/components/shared/BreadcrumbJsonLd";
 import { cn } from "@/lib/utils";
 
 // ── Static params ─────────────────────────────────────────────────────────────
@@ -50,6 +51,7 @@ export default async function CaseStudyDetailPage({
 
   return (
     <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
+      <BreadcrumbJsonLd items={[{ name: "Case Studies", href: "/case-studies" }, { name: study.name, href: `/case-studies/${slug}` }]} />
       {/* Back link */}
       <Link
         href="/case-studies"

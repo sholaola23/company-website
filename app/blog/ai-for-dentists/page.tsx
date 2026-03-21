@@ -376,6 +376,33 @@ export default function BlogPost() {
             </p>
           </div>
 
+          {/* Related Articles */}
+          <div className="mt-12 border border-zinc-800 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-4 text-zinc-100">Related Articles</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link href="/blog/ai-for-healthcare" className="text-blue-400 hover:text-blue-300 transition-colors">
+                  AI for Healthcare: Automating Patient Bookings and Follow-Ups
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/ai-for-salons" className="text-blue-400 hover:text-blue-300 transition-colors">
+                  AI for Salons: How to Fill Empty Chairs Without Lifting a Phone
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/automate-appointment-booking" className="text-blue-400 hover:text-blue-300 transition-colors">
+                  How to Automate Appointment Booking for Your Small Business
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/lead-intake" className="text-zinc-300 hover:text-white transition-colors">
+                  View our AI Lead Intake &amp; Appointment Booking service &rarr;
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* CTA Section */}
           <div className="mt-16 bg-gradient-to-br from-blue-500/10 to-zinc-900 border border-zinc-800 rounded-xl p-8 text-center">
             <h3 className="text-xl font-semibold mb-2">

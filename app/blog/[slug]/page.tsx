@@ -3,6 +3,7 @@ import { ArrowLeft } from "lucide-react";
 import { fetchPostBySlug, fetchPostBlocks, fetchPublishedPosts } from "@/lib/notion-cms";
 import { notFound } from "next/navigation";
 import JsonLd from "@/components/shared/JsonLd";
+import BreadcrumbJsonLd from "@/components/shared/BreadcrumbJsonLd";
 
 export const revalidate = 60;
 
@@ -127,6 +128,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   return (
     <main className="min-h-screen">
       <JsonLd data={articleJsonLd} />
+      <BreadcrumbJsonLd items={[{ name: "Blog", href: "/blog" }, { name: post.title, href: `/blog/${slug}` }]} />
       <article className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <Link
@@ -150,7 +152,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
 
-          <p className="text-zinc-500 text-sm mb-12">{post.publishedAt}</p>
+          <p className="text-zinc-500 text-sm mb-12">
+            By{" "}
+            <Link href="/about" className="text-zinc-300 hover:text-white transition-colors">
+              Olushola Oladipupo
+            </Link>
+            {" · "}
+            {post.publishedAt}
+          </p>
 
           <div className="prose prose-invert max-w-none">
             {blocks.map((block, i) => (

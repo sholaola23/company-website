@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import AnimatedSection from "@/components/shared/AnimatedSection";
 import InstantAudit from "@/components/audit/InstantAudit";
+import FAQSection from "@/components/shared/FAQSection";
+import type { FAQItem } from "@/components/shared/FAQSection";
 
 export const metadata: Metadata = {
   title: "Free AI Readiness Audit",
@@ -13,6 +15,39 @@ const HOW_IT_WORKS = [
   { step: "2", label: "Get instant AI analysis" },
   { step: "3", label: "Unlock the full report" },
 ] as const;
+
+const auditFAQs: FAQItem[] = [
+  {
+    question: "What is an AI readiness audit?",
+    answer:
+      "An AI readiness audit analyses your current business processes and identifies where artificial intelligence can save you time and money. Our instant audit takes just 10 seconds — you enter a few details about your business and receive a personalised report with your AI readiness score, key findings, and quick wins you can act on straight away.",
+  },
+  {
+    question: "Is the AI readiness audit really free?",
+    answer:
+      "Yes, completely free with no obligation. You do not even need to provide an email address to get your instant results. The full audit is normally valued at £150, but we offer it free because it helps us understand your business and demonstrate what AI automation can do for you.",
+  },
+  {
+    question: "What information do I need to provide for the audit?",
+    answer:
+      "Just basic details about your business — your industry, the size of your team, and the types of tasks you spend most time on. The whole process takes under a minute. There is no paperwork, no lengthy questionnaire, and no sales call required.",
+  },
+  {
+    question: "What will I learn from the audit results?",
+    answer:
+      "You will receive an AI readiness score, a breakdown of your biggest time-wasting processes, specific automation opportunities ranked by impact, and estimated time and cost savings. The report gives you a clear picture of where AI can make the biggest difference in your business.",
+  },
+  {
+    question: "What happens after I complete the audit?",
+    answer:
+      "You can unlock the full detailed report by providing your email. From there, if you would like to explore implementation, we will send you a custom proposal with a fixed price and timeline — typically within 48 hours. There is absolutely no pressure to proceed.",
+  },
+  {
+    question: "Is the audit relevant to my specific industry?",
+    answer:
+      "Yes. The audit is tailored to your industry and business type. We have helped businesses across hospitality, retail, professional services, trades, health and wellness, and media. The recommendations you receive are specific to the challenges and opportunities in your sector.",
+  },
+];
 
 export default function AuditPage() {
   return (
@@ -82,6 +117,17 @@ export default function AuditPage() {
           </p>
         </div>
       </AnimatedSection>
+
+      {/* FAQ Section */}
+      <div className="mt-20">
+        <AnimatedSection delay={0.3}>
+          <FAQSection
+            items={auditFAQs}
+            eyebrow="FAQs"
+            heading="Questions About the AI Readiness Audit"
+          />
+        </AnimatedSection>
+      </div>
     </div>
   );
 }

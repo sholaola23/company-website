@@ -448,6 +448,33 @@ export default function BlogPost() {
             </p>
           </div>
 
+          {/* Related Articles */}
+          <div className="mt-12 border border-zinc-800 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-4 text-zinc-100">Related Articles</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link href="/blog/get-more-google-reviews" className="text-blue-400 hover:text-blue-300 transition-colors">
+                  How to Get More Google Reviews Automatically
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/how-can-ai-help-my-business" className="text-blue-400 hover:text-blue-300 transition-colors">
+                  How Can AI Help My Business? 10 Real Examples from UK SMBs
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog/ai-automation-cost" className="text-blue-400 hover:text-blue-300 transition-colors">
+                  How Much Does AI Automation Cost for a Small Business?
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/business-website" className="text-zinc-300 hover:text-white transition-colors">
+                  View our Professional Business Website service &rarr;
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* CTA Section */}
           <div className="mt-16 bg-gradient-to-br from-blue-500/10 to-zinc-900 border border-zinc-800 rounded-xl p-8 text-center">
             <h3 className="text-xl font-semibold mb-2">

@@ -5,6 +5,7 @@ import SectionHeading from "@/components/shared/SectionHeading";
 import CTAButton from "@/components/shared/CTAButton";
 import AnimatedSection from "@/components/shared/AnimatedSection";
 import { caseStudies } from "@/lib/case-studies-data";
+import BreadcrumbJsonLd from "@/components/shared/BreadcrumbJsonLd";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -23,6 +24,7 @@ const TIER_BADGE: Record<string, string> = {
 export default function CaseStudiesPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
+      <BreadcrumbJsonLd items={[{ name: "Case Studies", href: "/case-studies" }]} />
       {/* Page heading */}
       <AnimatedSection>
         <div className="mb-16 sm:mb-20">

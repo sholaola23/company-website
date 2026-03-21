@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import CTAButton from "@/components/shared/CTAButton";
 import { services } from "@/lib/services-data";
+import BreadcrumbJsonLd from "@/components/shared/BreadcrumbJsonLd";
 import { cn } from "@/lib/utils";
 
 // ── Static params ─────────────────────────────────────────────────────────────
@@ -53,6 +54,7 @@ export default async function ServiceDetailPage({
 
   return (
     <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
+      <BreadcrumbJsonLd items={[{ name: "Services", href: "/services" }, { name: service.name, href: `/services/${slug}` }]} />
       {/* Back link */}
       <Link
         href="/services"

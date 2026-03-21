@@ -6,9 +6,12 @@ import CTAButton from "@/components/shared/CTAButton";
 import ServiceFilterClient from "@/components/services/ServiceFilterClient";
 import AnimatedSection from "@/components/shared/AnimatedSection";
 import PersonalisedCTA from "@/components/shared/PersonalisedCTA";
+import FAQSection from "@/components/shared/FAQSection";
+import type { FAQItem } from "@/components/shared/FAQSection";
 import { services } from "@/lib/services-data";
 import { cn } from "@/lib/utils";
 import JsonLd from "@/components/shared/JsonLd";
+import BreadcrumbJsonLd from "@/components/shared/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
   title: "AI Automation Services",
@@ -94,10 +97,44 @@ const servicesJsonLd = {
   })),
 };
 
+const servicesFAQs: FAQItem[] = [
+  {
+    question: "How long does it take to get started?",
+    answer:
+      "Most solutions are live within 5–14 days. We start with a free audit, then deliver a detailed proposal within 48 hours. From approval to going live, single automations typically take 3–7 days and multi-workflow systems take 7–14 days.",
+  },
+  {
+    question: "Do I need to be technical to use your services?",
+    answer:
+      "Not at all. We handle everything — setup, configuration, and training. You just need to tell us what is slowing you down. Once your system is live, you interact with a simple dashboard and we provide full documentation so your team can manage it confidently.",
+  },
+  {
+    question: "What is included in the monthly retainer?",
+    answer:
+      "Ongoing monitoring, optimisation, support, and minor adjustments. We make sure your automations keep working and improving over time. You also get priority access to our team for any questions or changes you need.",
+  },
+  {
+    question: "Can I cancel the monthly retainer at any time?",
+    answer:
+      "Yes. There are no long-term contracts. It is a monthly retainer that you can cancel whenever you like. We keep clients by delivering results, not by locking them into agreements.",
+  },
+  {
+    question: "What if AI automation does not work for my business?",
+    answer:
+      "That is what the free audit is for. We will tell you honestly if AI automation is a good fit before you spend a penny. Every project is also backed by our 90-Day Results Guarantee — if you do not save at least 5 hours per week, we refund your setup fee.",
+  },
+  {
+    question: "I am not sure which service or tier I need. How do I choose?",
+    answer:
+      "Start with a free AI Readiness Audit. We will analyse your business processes and recommend exactly which service and tier will have the biggest impact. Most small businesses start with the Starter or Growth tier and expand once they see results.",
+  },
+];
+
 export default function ServicesPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
       <JsonLd data={servicesJsonLd} />
+      <BreadcrumbJsonLd items={[{ name: "Services", href: "/services" }]} />
       {/* Page heading */}
       <AnimatedSection>
         <div className="mb-16 sm:mb-20">
@@ -207,60 +244,13 @@ export default function ServicesPage() {
 
       {/* FAQ */}
       <AnimatedSection delay={0.1}>
-        <section className="mt-20" aria-labelledby="faq-heading">
-          <h2
-            id="faq-heading"
-            className="text-2xl font-bold mb-8 text-center text-zinc-50"
-          >
-            Frequently Asked Questions
-          </h2>
-          <div className="max-w-3xl mx-auto space-y-4">
-            {[
-              {
-                q: "How long does it take to get started?",
-                a: "Most solutions are live within 5-14 days. We start with a free audit, then deliver a proposal within 48 hours.",
-              },
-              {
-                q: "Do I need to be technical?",
-                a: "Not at all. We handle everything — setup, configuration, and training. You just need to tell us what's slowing you down.",
-              },
-              {
-                q: "What's included in the monthly retainer?",
-                a: "Ongoing monitoring, optimisation, support, and minor adjustments. We make sure your automations keep working and improving.",
-              },
-              {
-                q: "Can I cancel anytime?",
-                a: "Yes. No long-term contracts. Monthly retainer, cancel whenever you like. We keep clients by delivering results, not locking them in.",
-              },
-              {
-                q: "What if it doesn't work for my business?",
-                a: "That's what the free audit is for. We'll tell you honestly if AI automation is a good fit before you spend a penny.",
-              },
-              {
-                q: "I'm not sure which service I need.",
-                a: "Start with a free AI Readiness Audit. We'll analyse your business and recommend exactly what will have the biggest impact.",
-              },
-            ].map((faq) => (
-              <details
-                key={faq.q}
-                className="group bg-zinc-900 border border-zinc-800 rounded-xl"
-              >
-                <summary className="flex items-center justify-between p-5 cursor-pointer text-zinc-100 font-medium text-sm hover:text-white list-none">
-                  {faq.q}
-                  <span
-                    className="text-zinc-500 group-open:rotate-180 transition-transform duration-200 shrink-0 ml-4"
-                    aria-hidden="true"
-                  >
-                    ▾
-                  </span>
-                </summary>
-                <div className="px-5 pb-5 text-sm text-zinc-400 leading-relaxed">
-                  {faq.a}
-                </div>
-              </details>
-            ))}
-          </div>
-        </section>
+        <div className="mt-20">
+          <FAQSection
+            items={servicesFAQs}
+            eyebrow="FAQs"
+            heading="Frequently Asked Questions"
+          />
+        </div>
       </AnimatedSection>
 
       {/* 90-Day Guarantee */}
