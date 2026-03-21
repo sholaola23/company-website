@@ -14,11 +14,14 @@ Read these shared reference files:
 - `../_shared/solution-catalogue.md` — company size segmentation
 - `../_shared/notion-ids.md` — database IDs
 
-## Tool Routing
-- **Gmail search:** `mcp__f6ee3950-bf48-46d7-90cc-d53c8546a0dc__gmail_search_messages`
-- **Gmail send:** `mcp__8ccf50b7-aff2-4b81-8947-88c792cc6a68__gmail_send_email`
-- **Gmail send (notification to Olushola):** `mcp__8ccf50b7-aff2-4b81-8947-88c792cc6a68__gmail_send_email`
+## Tool Routing (CRITICAL — follow exactly)
+⚠️ There are TWO Gmail MCPs. You MUST use the correct one:
+- **Gmail SEARCH/READ (Claude native):** `mcp__f6ee3950-bf48-46d7-90cc-d53c8546a0dc__gmail_search_messages` — this one can ONLY search, read, and create drafts. It CANNOT send.
+- **Gmail SEND (Zapier):** `mcp__8ccf50b7-aff2-4b81-8947-88c792cc6a68__gmail_send_email` — this is the ONLY tool that can SEND emails. Use this for sending the summary notification to Olushola.
+- **Gmail CREATE DRAFT (Zapier):** `mcp__8ccf50b7-aff2-4b81-8947-88c792cc6a68__gmail_create_draft` — use this for drafting outreach emails to leads.
 - **Notion:** `mcp__7ce036d0-a091-4c5b-8498-e155ede16e1a__notion-*`
+
+NEVER use the Claude native Gmail MCP (`f6ee3950`) for sending or drafting outreach — it does NOT have send capability. Always use the Zapier MCP (`8ccf50b7`) for all email creation and sending.
 
 ## Critical Rules
 - You CREATE DRAFT emails for leads. Olushola reviews and sends them manually (human-in-the-loop).
