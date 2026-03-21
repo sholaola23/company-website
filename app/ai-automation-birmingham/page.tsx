@@ -140,8 +140,93 @@ export default function AIAutomationBirminghamPage() {
         </div>
       </AnimatedSection>
 
-      {/* Services */}
+      {/* Why Birmingham Businesses Choose AI Automation */}
       <AnimatedSection delay={0.1}>
+        <section className="mb-20 sm:mb-24" aria-labelledby="why-birmingham-heading">
+          <div className="mb-12">
+            <SectionHeading
+              eyebrow="The Birmingham Advantage"
+              heading="Why Birmingham Businesses Choose AI Automation"
+              align="center"
+            />
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-6">
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              Birmingham is undergoing the most significant economic
+              transformation of any UK city outside London. The HS2
+              development, the Commonwealth Games legacy, and the ongoing
+              regeneration of Digbeth, Eastside, and the Jewellery Quarter have
+              brought unprecedented investment into the region. For small
+              businesses, this means more opportunities — but also fiercer
+              competition and higher expectations from customers who are used to
+              seamless digital experiences.
+            </p>
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              Birmingham&apos;s economic DNA is rooted in manufacturing and
+              making things, but the modern West Midlands economy is
+              increasingly driven by professional services, logistics, health
+              tech, and the automotive supply chain. Small businesses here
+              often operate as specialist suppliers or service providers to
+              larger enterprises, which means operational efficiency
+              isn&apos;t optional — it&apos;s a contract requirement.
+              Automating lead response, document handling, and client
+              communication helps Birmingham SMBs punch above their weight when
+              competing for contracts.
+            </p>
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              The West Midlands Combined Authority has invested heavily in
+              digital skills and business support, but many small firms still
+              lack the technical resource to implement AI solutions themselves.
+              That&apos;s the gap we fill: practical, affordable automation
+              built for the specific challenges Birmingham businesses face,
+              from managing high volumes of trade enquiries to keeping up with
+              compliance documentation across multiple sites.
+            </p>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Local Industries We Serve in Birmingham */}
+      <AnimatedSection delay={0.15}>
+        <section className="mb-20 sm:mb-24" aria-labelledby="industries-birmingham-heading">
+          <div className="mb-12">
+            <SectionHeading
+              eyebrow={`Serving ${CITY}'s Key Sectors`}
+              heading="Local Industries We Serve in Birmingham"
+              align="center"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            {[
+              { name: "Manufacturing & Engineering", description: "Precision engineering firms and component manufacturers across the Black Country automating quote management, order tracking, and supplier communication." },
+              { name: "Automotive Supply Chain", description: "Parts suppliers and service providers to JLR, BMW, and the wider Midlands automotive cluster automating compliance docs and delivery scheduling." },
+              { name: "Professional Services", description: "Law firms, accountancy practices, and consultancies in Colmore Row and Brindleyplace streamlining client intake and case management workflows." },
+              { name: "Healthcare & Dental", description: "Private practices, dental surgeries, and specialist clinics across Edgbaston and Solihull automating patient booking and follow-up communications." },
+              { name: "Construction & Trades", description: "Builders, roofers, and fit-out contractors working across HS2 and regeneration sites automating quote requests and project scheduling." },
+              { name: "Logistics & Distribution", description: "Freight companies and courier services near the NEC and motorway corridors automating dispatch, tracking updates, and customer notifications." },
+              { name: "Food & Hospitality", description: "Balti Triangle restaurants, city centre venues, and catering firms automating reservations, event enquiries, and supplier orders." },
+              { name: "Jewellery & Specialist Retail", description: "Jewellery Quarter workshops and independent retailers automating customer enquiries, bespoke order tracking, and appointment scheduling." },
+            ].map((industry) => (
+              <div
+                key={industry.name}
+                className="bg-zinc-900 border border-zinc-800 rounded-xl p-5 hover:border-zinc-700 transition-colors duration-200"
+              >
+                <h3 className="text-sm font-semibold text-zinc-50 mb-2">
+                  {industry.name}
+                </h3>
+                <p className="text-xs text-zinc-500 leading-relaxed">
+                  {industry.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Services */}
+      <AnimatedSection delay={0.2}>
         <section className="mb-20 sm:mb-24" aria-labelledby="services-heading">
           <div className="mb-12">
             <SectionHeading
@@ -176,7 +261,7 @@ export default function AIAutomationBirminghamPage() {
       </AnimatedSection>
 
       {/* How It Works */}
-      <AnimatedSection delay={0.2}>
+      <AnimatedSection delay={0.3}>
         <section className="mb-20 sm:mb-24" aria-labelledby="how-heading">
           <div className="mb-12">
             <SectionHeading
@@ -222,7 +307,7 @@ export default function AIAutomationBirminghamPage() {
       </AnimatedSection>
 
       {/* Social proof */}
-      <AnimatedSection delay={0.3}>
+      <AnimatedSection delay={0.4}>
         <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 sm:p-10 max-w-3xl mx-auto mb-20 sm:mb-24 text-center">
           <p className="text-sm text-zinc-400 leading-relaxed">
             Already helping businesses across the Midlands automate their
@@ -243,7 +328,7 @@ export default function AIAutomationBirminghamPage() {
       </AnimatedSection>
 
       {/* CTA */}
-      <AnimatedSection delay={0.4}>
+      <AnimatedSection delay={0.5}>
         <div className="text-center">
           <div className="inline-flex flex-col items-center gap-4">
             <p className="text-zinc-400 text-base">

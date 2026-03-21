@@ -31,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/about`, lastModified: SITE_LAUNCH, changeFrequency: "monthly" as const, priority: 0.6 },
     { url: `${BASE_URL}/blog`, lastModified: new Date(), changeFrequency: "daily" as const, priority: 0.7 },
     { url: `${BASE_URL}/contact`, lastModified: SITE_LAUNCH, changeFrequency: "monthly" as const, priority: 0.5 },
+    { url: `${BASE_URL}/tools/ai-roi-calculator`, lastModified: SITE_LAUNCH, changeFrequency: "monthly" as const, priority: 0.8 },
   ];
 
   const servicePages = services.map((s) => ({

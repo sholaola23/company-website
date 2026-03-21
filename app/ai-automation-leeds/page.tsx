@@ -141,8 +141,94 @@ export default function AIAutomationLeedsPage() {
         </div>
       </AnimatedSection>
 
-      {/* Services */}
+      {/* Why Leeds Businesses Choose AI Automation */}
       <AnimatedSection delay={0.1}>
+        <section className="mb-20 sm:mb-24" aria-labelledby="why-leeds-heading">
+          <div className="mb-12">
+            <SectionHeading
+              eyebrow="The Leeds Opportunity"
+              heading="Why Leeds Businesses Choose AI Automation"
+              align="center"
+            />
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-6">
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              Leeds has quietly become one of the UK&apos;s most important
+              business cities. It&apos;s the largest centre for financial and
+              professional services outside London, home to major legal firms,
+              banks, and insurance companies. But beyond the corporate skyline,
+              Leeds supports a thriving ecosystem of small businesses — from
+              independent health and beauty studios in Chapel Allerton to
+              trades firms across the wider West Yorkshire region. These
+              businesses are the backbone of the local economy, and
+              increasingly, they&apos;re turning to AI to stay competitive.
+            </p>
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              The Leeds City Region contributes over {"\u00A3"}70 billion to the
+              UK economy annually, yet many small businesses here still rely on
+              manual processes that were designed for a slower era. Estate
+              agents in Headingley lose leads because they can&apos;t respond
+              fast enough between viewings. Dental practices in Roundhay spend
+              hours on appointment confirmations that could be automated.
+              Trades businesses across Pudsey, Morley, and Horsforth waste
+              evenings writing quotes instead of spending time with their
+              families. These are the problems AI automation solves — not with
+              complex enterprise software, but with focused, practical systems
+              that work from day one.
+            </p>
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              Leeds businesses value straight talking and fair dealing.
+              That&apos;s why our approach — fixed pricing, 7-day delivery,
+              no ongoing lock-in — resonates so well with Yorkshire business
+              owners. You see exactly what you&apos;re getting, you see it
+              working within a week, and you only continue paying if the
+              results justify it.
+            </p>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Local Industries We Serve in Leeds */}
+      <AnimatedSection delay={0.15}>
+        <section className="mb-20 sm:mb-24" aria-labelledby="industries-leeds-heading">
+          <div className="mb-12">
+            <SectionHeading
+              eyebrow={`Serving ${CITY}'s Key Sectors`}
+              heading="Local Industries We Serve in Leeds"
+              align="center"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            {[
+              { name: "Legal & Financial Services", description: "Law firms, mortgage brokers, and financial advisers across the city centre automating client onboarding, document workflows, and compliance tracking." },
+              { name: "Property & Lettings", description: "Estate agents and letting agencies in Headingley, Meanwood, and Horsforth automating viewing bookings, tenant enquiries, and reference chasing." },
+              { name: "Health & Beauty", description: "Salons, barbershops, and aesthetic clinics in Chapel Allerton and the city centre automating appointment scheduling and client retention campaigns." },
+              { name: "Construction & Trades", description: "Builders, plumbers, and electricians across West Yorkshire automating quote requests, job scheduling, and invoice follow-up." },
+              { name: "Healthcare & Dental", description: "Private dental practices, physiotherapists, and specialist clinics in Roundhay and Oakwood automating patient booking and recall reminders." },
+              { name: "Education & Universities", description: "Private tutors, student accommodation providers, and training companies near the University of Leeds automating enquiry management and enrolment." },
+              { name: "Hospitality & Events", description: "Independent restaurants, bars, and event venues across the city automating reservations, event enquiries, and supplier coordination." },
+              { name: "Digital & Marketing Agencies", description: "Growing creative agencies in the Leeds Digital District automating client reporting, content scheduling, and project intake." },
+            ].map((industry) => (
+              <div
+                key={industry.name}
+                className="bg-zinc-900 border border-zinc-800 rounded-xl p-5 hover:border-zinc-700 transition-colors duration-200"
+              >
+                <h3 className="text-sm font-semibold text-zinc-50 mb-2">
+                  {industry.name}
+                </h3>
+                <p className="text-xs text-zinc-500 leading-relaxed">
+                  {industry.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Services */}
+      <AnimatedSection delay={0.2}>
         <section className="mb-20 sm:mb-24" aria-labelledby="services-heading">
           <div className="mb-12">
             <SectionHeading
@@ -177,7 +263,7 @@ export default function AIAutomationLeedsPage() {
       </AnimatedSection>
 
       {/* How It Works */}
-      <AnimatedSection delay={0.2}>
+      <AnimatedSection delay={0.3}>
         <section className="mb-20 sm:mb-24" aria-labelledby="how-heading">
           <div className="mb-12">
             <SectionHeading
@@ -223,7 +309,7 @@ export default function AIAutomationLeedsPage() {
       </AnimatedSection>
 
       {/* Social proof */}
-      <AnimatedSection delay={0.3}>
+      <AnimatedSection delay={0.4}>
         <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 sm:p-10 max-w-3xl mx-auto mb-20 sm:mb-24 text-center">
           <p className="text-sm text-zinc-400 leading-relaxed">
             Already helping businesses across Yorkshire and the wider UK
@@ -244,7 +330,7 @@ export default function AIAutomationLeedsPage() {
       </AnimatedSection>
 
       {/* CTA */}
-      <AnimatedSection delay={0.4}>
+      <AnimatedSection delay={0.5}>
         <div className="text-center">
           <div className="inline-flex flex-col items-center gap-4">
             <p className="text-zinc-400 text-base">

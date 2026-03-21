@@ -140,8 +140,91 @@ export default function AIAutomationLondonPage() {
         </div>
       </AnimatedSection>
 
-      {/* Services */}
+      {/* Why London Businesses Choose AI Automation */}
       <AnimatedSection delay={0.1}>
+        <section className="mb-20 sm:mb-24" aria-labelledby="why-london-heading">
+          <div className="mb-12">
+            <SectionHeading
+              eyebrow="The London Advantage"
+              heading="Why London Businesses Choose AI Automation"
+              align="center"
+            />
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-6">
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              London&apos;s economy is uniquely demanding. With over 1 million
+              registered businesses competing across 32 boroughs, response speed
+              is everything. A potential customer in Canary Wharf who fills in a
+              contact form at 7pm expects a reply before their commute home ends
+              — not the next morning. From financial services firms in the City
+              to independent retailers on Columbia Road, the capital rewards
+              businesses that communicate faster and more consistently than
+              their rivals.
+            </p>
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              Yet many London SMBs are caught in a productivity trap. High rents
+              and staffing costs mean teams are stretched thin, handling
+              everything from lead follow-up to invoicing manually. The result
+              is missed enquiries during peak hours, slow email turnaround, and
+              marketing that only happens when there&apos;s a quiet week — which
+              in London, rarely comes. AI automation breaks this cycle by
+              handling time-sensitive tasks around the clock, so your team can
+              focus on the high-value work that actually grows revenue.
+            </p>
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              London&apos;s diversity is also a strength. A Hackney-based design
+              studio faces completely different operational bottlenecks compared
+              to an estate agency in Richmond or a dental practice in Harley
+              Street. That&apos;s why we tailor every automation to the specific
+              workflows your business relies on, rather than offering a
+              one-size-fits-all template. The goal is simple: give London
+              businesses enterprise-level responsiveness on an SMB budget.
+            </p>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Local Industries We Serve in London */}
+      <AnimatedSection delay={0.15}>
+        <section className="mb-20 sm:mb-24" aria-labelledby="industries-london-heading">
+          <div className="mb-12">
+            <SectionHeading
+              eyebrow={`Serving ${CITY}'s Key Sectors`}
+              heading="Local Industries We Serve in London"
+              align="center"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            {[
+              { name: "Financial & Professional Services", description: "Accountants, solicitors, and consultants across the City and Canary Wharf streamlining client onboarding and document workflows." },
+              { name: "Property & Estate Agencies", description: "Lettings and sales agents in zones 1-6 automating viewings, tenant enquiries, and compliance paperwork." },
+              { name: "Health & Wellness", description: "Private clinics on Harley Street, dental practices, and physiotherapists automating appointment booking and patient follow-up." },
+              { name: "Creative & Design Agencies", description: "Shoreditch and Soho studios automating briefs intake, project scheduling, and client communication." },
+              { name: "Hospitality & Food Service", description: "Restaurants, catering companies, and event venues across the capital managing reservations and supplier orders." },
+              { name: "E-commerce & Retail", description: "Independent retailers and DTC brands automating customer support, returns processing, and inventory alerts." },
+              { name: "Construction & Trades", description: "Builders, electricians, and plumbers across Greater London automating quote requests and job scheduling." },
+              { name: "Education & Tutoring", description: "Private tutors, language schools, and training providers automating enrolment and session booking." },
+            ].map((industry) => (
+              <div
+                key={industry.name}
+                className="bg-zinc-900 border border-zinc-800 rounded-xl p-5 hover:border-zinc-700 transition-colors duration-200"
+              >
+                <h3 className="text-sm font-semibold text-zinc-50 mb-2">
+                  {industry.name}
+                </h3>
+                <p className="text-xs text-zinc-500 leading-relaxed">
+                  {industry.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Services */}
+      <AnimatedSection delay={0.2}>
         <section className="mb-20 sm:mb-24" aria-labelledby="services-heading">
           <div className="mb-12">
             <SectionHeading
@@ -176,7 +259,7 @@ export default function AIAutomationLondonPage() {
       </AnimatedSection>
 
       {/* How It Works */}
-      <AnimatedSection delay={0.2}>
+      <AnimatedSection delay={0.3}>
         <section className="mb-20 sm:mb-24" aria-labelledby="how-heading">
           <div className="mb-12">
             <SectionHeading
@@ -222,7 +305,7 @@ export default function AIAutomationLondonPage() {
       </AnimatedSection>
 
       {/* Social proof */}
-      <AnimatedSection delay={0.3}>
+      <AnimatedSection delay={0.4}>
         <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 sm:p-10 max-w-3xl mx-auto mb-20 sm:mb-24 text-center">
           <p className="text-sm text-zinc-400 leading-relaxed">
             Already helping businesses across the South East automate their
@@ -243,7 +326,7 @@ export default function AIAutomationLondonPage() {
       </AnimatedSection>
 
       {/* CTA */}
-      <AnimatedSection delay={0.4}>
+      <AnimatedSection delay={0.5}>
         <div className="text-center">
           <div className="inline-flex flex-col items-center gap-4">
             <p className="text-zinc-400 text-base">

@@ -137,8 +137,95 @@ export default function AIAutomationBristolPage() {
         </div>
       </AnimatedSection>
 
-      {/* Services */}
+      {/* Why Bristol Businesses Choose AI Automation */}
       <AnimatedSection delay={0.1}>
+        <section className="mb-20 sm:mb-24" aria-labelledby="why-bristol-heading">
+          <div className="mb-12">
+            <SectionHeading
+              eyebrow="The Bristol Edge"
+              heading="Why Bristol Businesses Choose AI Automation"
+              align="center"
+            />
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-6">
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              Bristol consistently ranks as one of the UK&apos;s most
+              innovative cities. With a thriving creative sector centred around
+              Stokes Croft and Spike Island, a deep-tech cluster in the Temple
+              Quarter Enterprise Zone, and one of Europe&apos;s strongest
+              aerospace corridors anchored by Airbus and Rolls-Royce in
+              Filton, the city punches well above its weight. This culture of
+              innovation means Bristol&apos;s small businesses are often early
+              adopters — but many still haven&apos;t connected the dots between
+              AI and their own day-to-day operations.
+            </p>
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              Bristol&apos;s business landscape is uniquely fragmented. The
+              city&apos;s famous independent spirit — Gloucester Road is the
+              longest street of independent shops in the UK — means thousands
+              of owner-operated businesses compete fiercely for local
+              customers. A tattoo studio in Bedminster, a yoga instructor in
+              Clifton, and a kitchen fitter in Kingswood all share the same
+              fundamental challenge: they&apos;re too busy delivering their
+              service to also handle lead follow-up, content marketing, and
+              inbox management effectively. AI automation bridges this gap by
+              handling time-consuming admin tasks so business owners can focus
+              on the craft that built their reputation.
+            </p>
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              Bristol also has a strong sustainability and ethical business
+              movement, with many SMBs prioritising long-term customer
+              relationships over aggressive sales tactics. Our automation
+              approach fits this ethos perfectly — we build systems that
+              enhance your customer experience rather than replacing the
+              personal touch, ensuring every enquiry gets a prompt,
+              professional response even when you&apos;re fully booked.
+            </p>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Local Industries We Serve in Bristol */}
+      <AnimatedSection delay={0.15}>
+        <section className="mb-20 sm:mb-24" aria-labelledby="industries-bristol-heading">
+          <div className="mb-12">
+            <SectionHeading
+              eyebrow={`Serving ${CITY}'s Key Sectors`}
+              heading="Local Industries We Serve in Bristol"
+              align="center"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            {[
+              { name: "Creative & Design", description: "Studios, freelance designers, and production companies around Stokes Croft and Spike Island automating briefs intake, project scheduling, and client approvals." },
+              { name: "Aerospace & Advanced Engineering", description: "SME suppliers in the Filton corridor automating compliance documentation, quality reporting, and contract management workflows." },
+              { name: "Health & Wellness", description: "Yoga studios, physiotherapists, and alternative health practitioners in Clifton and Montpelier automating session booking and client retention." },
+              { name: "Independent Retail", description: "Gloucester Road shops, Wapping Wharf boutiques, and market traders automating customer enquiries, stock alerts, and online order management." },
+              { name: "Food & Drink", description: "Independent cafes, restaurants, and craft breweries across the harbour and Southville automating reservations, event bookings, and supplier coordination." },
+              { name: "Environmental & Sustainability", description: "Green energy consultants, eco-businesses, and social enterprises automating grant applications, reporting, and stakeholder communications." },
+              { name: "Tech & SaaS Startups", description: "Early-stage companies in the Engine Shed and Temple Quarter automating customer onboarding, support ticket triage, and content marketing." },
+              { name: "Property & Construction", description: "Developers, architects, and trades firms across North Somerset and South Gloucestershire automating planning enquiries, quote follow-up, and site scheduling." },
+            ].map((industry) => (
+              <div
+                key={industry.name}
+                className="bg-zinc-900 border border-zinc-800 rounded-xl p-5 hover:border-zinc-700 transition-colors duration-200"
+              >
+                <h3 className="text-sm font-semibold text-zinc-50 mb-2">
+                  {industry.name}
+                </h3>
+                <p className="text-xs text-zinc-500 leading-relaxed">
+                  {industry.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Services */}
+      <AnimatedSection delay={0.2}>
         <section className="mb-20 sm:mb-24" aria-labelledby="services-heading">
           <div className="mb-12">
             <SectionHeading
@@ -173,7 +260,7 @@ export default function AIAutomationBristolPage() {
       </AnimatedSection>
 
       {/* How It Works */}
-      <AnimatedSection delay={0.2}>
+      <AnimatedSection delay={0.3}>
         <section className="mb-20 sm:mb-24" aria-labelledby="how-heading">
           <div className="mb-12">
             <SectionHeading
@@ -219,7 +306,7 @@ export default function AIAutomationBristolPage() {
       </AnimatedSection>
 
       {/* Social proof */}
-      <AnimatedSection delay={0.3}>
+      <AnimatedSection delay={0.4}>
         <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 sm:p-10 max-w-3xl mx-auto mb-20 sm:mb-24 text-center">
           <p className="text-sm text-zinc-400 leading-relaxed">
             Already helping businesses across the South West automate their
@@ -240,7 +327,7 @@ export default function AIAutomationBristolPage() {
       </AnimatedSection>
 
       {/* CTA */}
-      <AnimatedSection delay={0.4}>
+      <AnimatedSection delay={0.5}>
         <div className="text-center">
           <div className="inline-flex flex-col items-center gap-4">
             <p className="text-zinc-400 text-base">

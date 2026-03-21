@@ -141,8 +141,92 @@ export default function AIAutomationManchesterPage() {
         </div>
       </AnimatedSection>
 
-      {/* Services */}
+      {/* Why Manchester Businesses Choose AI Automation */}
       <AnimatedSection delay={0.1}>
+        <section className="mb-20 sm:mb-24" aria-labelledby="why-manchester-heading">
+          <div className="mb-12">
+            <SectionHeading
+              eyebrow="The Manchester Opportunity"
+              heading="Why Manchester Businesses Choose AI Automation"
+              align="center"
+            />
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-6">
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              Manchester sits at the heart of the UK&apos;s fastest-growing tech
+              corridor outside London. The city&apos;s digital economy has
+              expanded by over 80% in the past decade, with MediaCityUK,
+              Manchester Science Park, and the Oxford Road innovation district
+              attracting billions in investment. But this growth isn&apos;t just
+              about big corporates — it&apos;s created a booming ecosystem of
+              independent service businesses, freelancers, and micro-agencies
+              who need to compete on speed and professionalism without the
+              headcount of larger firms.
+            </p>
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              The challenge for Manchester SMBs is distinctly local. High street
+              businesses in the Northern Quarter compete with online-first
+              brands. Trades firms in Salford and Trafford juggle multiple job
+              sites while leads pile up unanswered. Service professionals across
+              Greater Manchester lose hours each week to manual email replies,
+              missed callbacks, and content marketing that never gets done. AI
+              automation solves these specific bottlenecks — capturing every
+              enquiry instantly, drafting follow-ups automatically, and keeping
+              your online presence active even when you&apos;re on site.
+            </p>
+            <p className="text-sm text-zinc-400 leading-relaxed">
+              Manchester&apos;s business culture is practical and
+              results-oriented. Business owners here don&apos;t want a
+              six-month consulting engagement — they want working systems
+              delivered fast, at a fair price, that start saving time from week
+              one. That mindset is exactly why our 7-day delivery model
+              resonates so strongly with Manchester businesses.
+            </p>
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Local Industries We Serve in Manchester */}
+      <AnimatedSection delay={0.15}>
+        <section className="mb-20 sm:mb-24" aria-labelledby="industries-manchester-heading">
+          <div className="mb-12">
+            <SectionHeading
+              eyebrow={`Serving ${CITY}'s Key Sectors`}
+              heading="Local Industries We Serve in Manchester"
+              align="center"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+            {[
+              { name: "Digital & Creative Agencies", description: "Marketing agencies and studios around the Northern Quarter and MediaCityUK automating client reporting, briefs intake, and content scheduling." },
+              { name: "Health & Beauty", description: "Salons, barbershops, and aesthetic clinics across Deansgate and Didsbury automating appointment booking and customer follow-up." },
+              { name: "Construction & Property", description: "Builders, property managers, and developers across Greater Manchester automating quote requests, tenant communications, and compliance tracking." },
+              { name: "Professional Services", description: "Accountants, solicitors, and financial advisers in Spinningfields and beyond streamlining client onboarding and document management." },
+              { name: "Fitness & Wellness", description: "Gyms, personal trainers, and wellness studios automating membership enquiries, class bookings, and retention campaigns." },
+              { name: "Food & Hospitality", description: "Independent restaurants, cafes, and catering businesses across the Curry Mile and beyond managing reservations and supplier coordination." },
+              { name: "E-commerce & Retail", description: "Online retailers and independent shops automating customer service, order tracking, and returns processing." },
+              { name: "Education & Training", description: "Private tutors, coaching businesses, and training providers across South Manchester automating enrolment and session management." },
+            ].map((industry) => (
+              <div
+                key={industry.name}
+                className="bg-zinc-900 border border-zinc-800 rounded-xl p-5 hover:border-zinc-700 transition-colors duration-200"
+              >
+                <h3 className="text-sm font-semibold text-zinc-50 mb-2">
+                  {industry.name}
+                </h3>
+                <p className="text-xs text-zinc-500 leading-relaxed">
+                  {industry.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </AnimatedSection>
+
+      {/* Services */}
+      <AnimatedSection delay={0.2}>
         <section className="mb-20 sm:mb-24" aria-labelledby="services-heading">
           <div className="mb-12">
             <SectionHeading
@@ -177,7 +261,7 @@ export default function AIAutomationManchesterPage() {
       </AnimatedSection>
 
       {/* How It Works */}
-      <AnimatedSection delay={0.2}>
+      <AnimatedSection delay={0.3}>
         <section className="mb-20 sm:mb-24" aria-labelledby="how-heading">
           <div className="mb-12">
             <SectionHeading
@@ -223,7 +307,7 @@ export default function AIAutomationManchesterPage() {
       </AnimatedSection>
 
       {/* Social proof */}
-      <AnimatedSection delay={0.3}>
+      <AnimatedSection delay={0.4}>
         <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 sm:p-10 max-w-3xl mx-auto mb-20 sm:mb-24 text-center">
           <p className="text-sm text-zinc-400 leading-relaxed">
             Already helping businesses across the North West automate their
@@ -244,7 +328,7 @@ export default function AIAutomationManchesterPage() {
       </AnimatedSection>
 
       {/* CTA */}
-      <AnimatedSection delay={0.4}>
+      <AnimatedSection delay={0.5}>
         <div className="text-center">
           <div className="inline-flex flex-col items-center gap-4">
             <p className="text-zinc-400 text-base">
