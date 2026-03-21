@@ -10,6 +10,11 @@ const CITY_SLUGS = [
   "ai-automation-birmingham",
   "ai-automation-leeds",
   "ai-automation-kettering",
+  "ai-automation-bristol",
+  "ai-automation-edinburgh",
+  "ai-automation-liverpool",
+  "ai-automation-glasgow",
+  "ai-automation-sheffield",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -44,5 +49,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...servicePages, ...caseStudyPages, ...cityPages];
+  const BLOG_SLUGS = [
+    "how-can-ai-help-my-business",
+    "ai-automation-uk-small-business-guide",
+    "ai-for-estate-agents",
+    "n8n-vs-zapier-vs-make",
+    "ai-automation-roi-calculator",
+    "ai-chatbot-small-business",
+    "ai-for-electricians",
+    "ai-for-gyms",
+    "ai-for-cleaning-companies",
+    "ai-for-accountants",
+    "ai-for-dentists",
+    "ai-for-plumbers",
+    "ai-for-salons",
+    "ai-for-restaurants",
+    "ai-for-healthcare",
+    "ai-for-coaches",
+    "ai-automation-cost",
+    "whatsapp-automation-business",
+    "get-more-google-reviews",
+    "what-is-ai-readiness-audit",
+    "automate-appointment-booking",
+    "5-ways-ai-saves-time",
+    "local-business-website-2026",
+  ];
+
+  const blogPages = BLOG_SLUGS.map((slug) => ({
+    url: `${BASE_URL}/blog/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...servicePages, ...caseStudyPages, ...cityPages, ...blogPages];
 }

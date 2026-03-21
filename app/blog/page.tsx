@@ -12,6 +12,105 @@ export const metadata = {
 
 const staticPosts = [
   {
+    id: "static-13",
+    slug: "how-can-ai-help-my-business",
+    title: "How Can AI Help My Business? 10 Real Examples from UK SMBs",
+    excerpt:
+      "Wondering how AI can help your business? Here are 10 real examples of UK small businesses using AI automation to save time, win more customers, and cut costs.",
+    publishedAt: "20 March 2026",
+    tags: ["AI Automation", "Small Business", "UK Business", "Guides"],
+  },
+  {
+    id: "static-14",
+    slug: "ai-for-estate-agents",
+    title: "AI for Estate Agents: Automate Rightmove Leads, Viewings & Follow-Up",
+    excerpt:
+      "AI for estate agents isn't hype — it's how the best agencies are responding to Rightmove leads in seconds, booking viewings automatically, and closing more sales.",
+    publishedAt: "20 March 2026",
+    tags: ["AI Automation", "Estate Agents", "Property", "Industry Guide"],
+  },
+  {
+    id: "static-15",
+    slug: "n8n-vs-zapier-vs-make",
+    title: "n8n vs Zapier vs Make: Which Automation Tool for Your UK Business?",
+    excerpt:
+      "Honest comparison of n8n, Zapier, and Make for UK small businesses. Pricing, pros, cons, data privacy, and which one we recommend for different use cases.",
+    publishedAt: "20 March 2026",
+    tags: ["AI Automation", "Tools", "Comparison", "Guides"],
+  },
+  {
+    id: "static-16",
+    slug: "ai-automation-roi-calculator",
+    title: "AI Automation ROI: How Much Can Your Business Actually Save?",
+    excerpt:
+      "Break down the real ROI of AI automation for UK small businesses. See the maths for plumbers, salons, restaurants, and more — with specific £ figures and payback timelines.",
+    publishedAt: "20 March 2026",
+    tags: ["AI Automation", "ROI", "Small Business", "Guides"],
+  },
+  {
+    id: "static-17",
+    slug: "ai-automation-uk-small-business-guide",
+    title: "AI Automation for UK Small Businesses: The Complete 2026 Guide",
+    excerpt:
+      "Everything UK small businesses need to know about AI automation in 2026. What it is, what it costs, which automations matter most, and how to get started — with links to every industry guide.",
+    publishedAt: "20 March 2026",
+    tags: ["AI Automation", "Small Business", "UK Business", "Complete Guide"],
+  },
+  {
+    id: "static-18",
+    slug: "ai-chatbot-small-business",
+    title: "AI Customer Service Chatbot for Small Businesses: WhatsApp, Website & Beyond",
+    excerpt:
+      "What AI chatbots actually do for small businesses, where to deploy them (website, WhatsApp, Messenger), what they cost, and whether one is right for you.",
+    publishedAt: "20 March 2026",
+    tags: ["AI Automation", "Chatbots", "WhatsApp", "Customer Service"],
+  },
+  {
+    id: "static-19",
+    slug: "ai-for-electricians",
+    title: "AI for Electricians & Tradespeople: Save 10+ Hours a Week",
+    excerpt:
+      "5 practical AI automations for electricians and tradespeople — from instant quote follow-ups to smart postcode scheduling and automated compliance reminders.",
+    publishedAt: "20 March 2026",
+    tags: ["AI Automation", "Electricians", "Trades", "Industry Guide"],
+  },
+  {
+    id: "static-20",
+    slug: "ai-for-gyms",
+    title: "AI for Gyms & Fitness Studios: Automate Bookings, Retention & Member Follow-Up",
+    excerpt:
+      "How gyms and fitness studios use AI to fill classes, reduce member churn, convert trials to memberships, and collect reviews — all on autopilot.",
+    publishedAt: "20 March 2026",
+    tags: ["AI Automation", "Gyms", "Fitness", "Industry Guide"],
+  },
+  {
+    id: "static-21",
+    slug: "ai-for-cleaning-companies",
+    title: "AI for Cleaning Companies: Win More Contracts While Spending Less on Admin",
+    excerpt:
+      "5 automations helping cleaning companies respond faster to enquiries, schedule staff, collect feedback, and renew contracts automatically.",
+    publishedAt: "20 March 2026",
+    tags: ["AI Automation", "Cleaning", "Service Business", "Industry Guide"],
+  },
+  {
+    id: "static-22",
+    slug: "ai-for-accountants",
+    title: "AI for Accountants & Bookkeepers: Automate Client Onboarding & Compliance",
+    excerpt:
+      "How accounting practices use AI to automate client onboarding, deadline reminders, receipt processing, and monthly reporting — saving 10+ hours a week.",
+    publishedAt: "20 March 2026",
+    tags: ["AI Automation", "Accountants", "Professional Services", "Industry Guide"],
+  },
+  {
+    id: "static-23",
+    slug: "ai-for-dentists",
+    title: "AI for Dentists & Dental Practices: Reduce No-Shows by 60%",
+    excerpt:
+      "Multi-channel appointment reminders, cancellation waitlist auto-fill, treatment plan follow-ups, and automated review collection for dental practices.",
+    publishedAt: "20 March 2026",
+    tags: ["AI Automation", "Dentists", "Healthcare", "Industry Guide"],
+  },
+  {
     id: "static-3",
     slug: "automate-appointment-booking",
     title: "How to Automate Appointment Booking for Your Small Business",
