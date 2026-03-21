@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 import Logo from "@/components/shared/Logo";
+import NewsletterSignup from "@/components/shared/NewsletterSignup";
 
 const SERVICES_LINKS = [
   { label: "AI Lead Intake & Booking", href: "/services/lead-intake" },
@@ -155,6 +156,13 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
+          </div>
+        </div>
+
+        {/* Newsletter signup */}
+        <div className="py-8 border-t border-zinc-800/60">
+          <div className="max-w-md">
+            <NewsletterSignup compact />
           </div>
         </div>
 

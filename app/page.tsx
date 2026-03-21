@@ -16,6 +16,7 @@ import GradientBlob from "@/components/shared/GradientBlob";
 import HeroImage from "@/components/shared/HeroImage";
 import PersonalisedCTA from "@/components/shared/PersonalisedCTA";
 import RotatingHeadline from "@/components/home/RotatingHeadline";
+import NewsletterSignup from "@/components/shared/NewsletterSignup";
 import JsonLd from "@/components/shared/JsonLd";
 
 // ---------------------------------------------------------------------------
@@ -538,6 +539,7 @@ export default function HomePage() {
       <CaseStudiesPreview />
       <ResultsGuarantee />
       <HowItWorks />
+      <NewsletterSignup />
       <PersonalisedCTA />
     </main>
   );
