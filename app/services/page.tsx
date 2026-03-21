@@ -5,6 +5,7 @@ import SectionHeading from "@/components/shared/SectionHeading";
 import CTAButton from "@/components/shared/CTAButton";
 import ServiceFilterClient from "@/components/services/ServiceFilterClient";
 import AnimatedSection from "@/components/shared/AnimatedSection";
+import PersonalisedCTA from "@/components/shared/PersonalisedCTA";
 import { services } from "@/lib/services-data";
 import { cn } from "@/lib/utils";
 import JsonLd from "@/components/shared/JsonLd";
@@ -286,6 +287,11 @@ export default function ServicesPage() {
           </p>
         </div>
       </AnimatedSection>
+
+      {/* Personalised bottom CTA */}
+      <div className="mt-16">
+        <PersonalisedCTA />
+      </div>
     </div>
   );
 }

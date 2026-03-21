@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, CheckCircle, MapPin, Tag } from "lucide-react";
 import AnimatedSection from "@/components/shared/AnimatedSection";
 import CTAButton from "@/components/shared/CTAButton";
+import PersonalisedCTA from "@/components/shared/PersonalisedCTA";
 import { caseStudies } from "@/lib/case-studies-data";
 import { cn } from "@/lib/utils";
 
@@ -232,6 +233,21 @@ export default async function CaseStudyDetailPage({
         </>
       )}
 
+      {/* Mid-page CTA — after results/before-after (high-emotion moment) */}
+      <AnimatedSection>
+        <div className="mb-10 rounded-xl border border-blue-500/20 bg-gradient-to-br from-blue-500/10 to-zinc-900 p-6 text-center">
+          <p className="text-base font-semibold text-zinc-50 mb-2">
+            Ready to see results like these in your business?
+          </p>
+          <p className="text-sm text-zinc-400 mb-4">
+            It starts with a free 10-second AI audit — no email required.
+          </p>
+          <CTAButton href="/audit" variant="primary" size="md">
+            Get Your Free AI Audit
+          </CTAButton>
+        </div>
+      </AnimatedSection>
+
       {/* Related case studies */}
       {relatedStudies.length > 0 && (
         <>
@@ -275,19 +291,8 @@ export default async function CaseStudyDetailPage({
         </>
       )}
 
-      {/* Bottom CTA */}
-      <div className="bg-gradient-to-br from-blue-500/10 to-zinc-900 border border-blue-500/20 rounded-xl p-8 text-center">
-        <h2 className="text-xl font-semibold text-zinc-50 mb-3">
-          Want results like this?
-        </h2>
-        <p className="text-sm text-zinc-400 mb-6 max-w-sm mx-auto">
-          Start with a free AI readiness audit. We&apos;ll show you exactly
-          where automation can have the biggest impact on your business.
-        </p>
-        <CTAButton href="/audit" variant="primary" size="lg">
-          Get Your Free Audit
-        </CTAButton>
-      </div>
+      {/* Bottom CTA — personalised based on visitor behaviour */}
+      <PersonalisedCTA />
     </div>
   );
 }
