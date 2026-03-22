@@ -157,11 +157,13 @@ export async function POST(
 
     if (error instanceof GoogleDriveUploadError) {
       console.error(`[client-upload] Drive error: ${error.message}`);
-      return fail("Upload failed. Please try again.", 500);
+      // Temporarily expose error detail for debugging
+      return fail(`Upload failed: ${error.message}`, 500);
     }
 
     // Unexpected errors
-    console.error("[client-upload] unexpected error:", error);
-    return fail("Upload failed. Please try again.", 500);
+    const errMsg = error instanceof Error ? error.message : String(error);
+    console.error("[client-upload] unexpected error:", errMsg);
+    return fail(`Upload failed: ${errMsg}`, 500);
   }
 }
