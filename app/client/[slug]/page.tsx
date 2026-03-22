@@ -517,9 +517,10 @@ export default function ClientDashboard() {
   const [justRefreshed, setJustRefreshed] = useState(false);
   const [bankCopied, setBankCopied] = useState(false);
   const [viewMode, setViewMode] = useState<"week" | "all">("week");
+  const viewModeRef = useRef(viewMode);
 
   async function fetchAll(isRefresh = false, view?: "week" | "all") {
-    const currentView = view ?? viewMode;
+    const currentView = view ?? viewModeRef.current;
     try {
       const viewParam = currentView === "all" ? "?view=all" : "";
       const [statusRes, sheetsRes] = await Promise.all([
@@ -749,6 +750,7 @@ export default function ClientDashboard() {
                     onClick={() => {
                       const next = viewMode === "week" ? "all" : "week";
                       setViewMode(next);
+                      viewModeRef.current = next;
                       fetchAll(true, next);
                     }}
                     className="text-xs text-blue-400 hover:text-blue-300 transition-colors"
