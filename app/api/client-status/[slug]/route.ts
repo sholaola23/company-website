@@ -147,26 +147,27 @@ export async function GET(
     0
   );
   const activeCount = workflowStatuses.filter((w) => w.active).length;
-  const errorCount = workflowStatuses.filter(
+
+  // Health is based ONLY on current state (last execution status), not past errors
+  const currentlyFailingCount = workflowStatuses.filter(
     (w) => w.lastExecution?.status === "error"
   ).length;
 
   const overallHealth: "green" | "amber" | "red" =
-    errorCount === 0 && totalErrors === 0
+    currentlyFailingCount === 0
       ? "green"
-      : errorCount >= 2 || totalErrors >= 5
+      : currentlyFailingCount >= 2 ||
+          currentlyFailingCount > workflowStatuses.length / 2
         ? "red"
         : "amber";
 
-  const issuesNeedingAttention = workflowStatuses.filter(
-    (w) => w.lastExecution?.status === "error" || !w.active
-  ).length;
+  const issuesNeedingAttention = currentlyFailingCount;
 
   const headline =
     overallHealth === "green"
-      ? "Everything's running smoothly"
+      ? "All systems running"
       : overallHealth === "amber"
-        ? "Something needs attention"
+        ? "Most systems running"
         : "We're looking into an issue";
 
   return NextResponse.json({
