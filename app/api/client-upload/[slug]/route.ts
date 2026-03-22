@@ -82,18 +82,7 @@ export async function POST(
     return fail("Only CSV files are accepted", 400);
   }
 
-  // 5. MIME type check
-  const allowedMimes = [
-    "text/csv",
-    "application/vnd.ms-excel",
-    "text/plain",
-    "application/csv",
-  ];
-  if (!allowedMimes.includes(file.type)) {
-    return fail("Invalid file type", 400);
-  }
-
-  // 6. File size check
+  // 5. File size check (MIME check removed — macOS sends csv as application/octet-stream)
   if (file.size > MAX_FILE_SIZE) {
     return fail("File too large (max 1MB)", 400);
   }
@@ -161,6 +150,6 @@ export async function POST(
   } catch (error) {
     const errMsg = error instanceof Error ? error.message : String(error);
     console.error("[client-upload] matching error:", errMsg);
-    return fail("Upload failed. Please try again.", 500);
+    return fail(`Matching failed: ${errMsg}`, 500);
   }
 }
