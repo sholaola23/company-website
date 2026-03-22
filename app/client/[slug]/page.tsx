@@ -743,22 +743,9 @@ export default function ClientDashboard() {
           {sheetsData?.orders ? (
             <Section>
               <div className="bg-gradient-to-br from-zinc-900 to-zinc-900/60 rounded-2xl border border-zinc-800/60 p-5">
-                <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-xs font-semibold text-zinc-500 uppercase tracking-widest">
-                    {viewMode === "week" ? "This Week" : "All Time"}
-                  </h2>
-                  <button
-                    onClick={() => {
-                      const next = viewMode === "week" ? "all" : "week";
-                      setViewMode(next);
-                      viewModeRef.current = next;
-                      fetchAll(true, next);
-                    }}
-                    className="text-xs text-blue-400 hover:text-blue-300 transition-colors"
-                  >
-                    {viewMode === "week" ? "View all time" : "View this week"}
-                  </button>
-                </div>
+                <h2 className="text-xs font-semibold text-zinc-500 uppercase tracking-widest mb-4">
+                  This Week
+                </h2>
                 <div className="grid grid-cols-2 gap-5">
                   <AnimatedStat
                     value={sheetsData.orders.totalOrders}
