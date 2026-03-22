@@ -75,6 +75,7 @@ export default function NewsletterSignup({
           <label htmlFor="newsletter-email-compact" className="sr-only">Email address</label>
           <input
             id="newsletter-email-compact"
+            name="email"
             type="email"
             required
             autoComplete="email"
@@ -172,6 +173,7 @@ export default function NewsletterSignup({
             <label htmlFor="newsletter-email" className="sr-only">Email address</label>
             <input
               id="newsletter-email"
+              name="email"
               type="email"
               required
               autoComplete="email"

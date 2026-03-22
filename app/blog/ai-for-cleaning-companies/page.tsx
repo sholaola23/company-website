@@ -26,6 +26,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/ai-for-cleaning-companies",
   },
+  twitter: {
+    title: "AI for Cleaning Companies: Win More Contracts",
+    description:
+      "5 practical AI automations that help cleaning companies win more contracts, reduce admin, and grow without adding office staff.",
+  },
 };
 
 const tags = ["AI Automation", "Cleaning", "Service Business", "Industry Guide"];

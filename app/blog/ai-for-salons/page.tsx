@@ -25,6 +25,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/ai-for-salons",
   },
+  twitter: {
+    title: "AI for Salons: Fill Empty Chairs Automatically",
+    description:
+      "Fewer no-shows, more rebookings, and a full diary — without chasing clients. Here's how AI automation works for salons.",
+  },
 };
 
 const tags = ["AI Automation", "Salons", "Beauty", "Industry Guide"];

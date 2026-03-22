@@ -24,6 +24,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/how-can-ai-help-my-business",
   },
+  twitter: {
+    title: "How Can AI Help My Business? 10 Real Examples from UK SMBs",
+    description:
+      "10 real-world examples of UK small businesses using AI to save time, win customers, and cut costs.",
+  },
 };
 
 const tags = ["AI Automation", "Small Business", "UK Business", "Guides"];

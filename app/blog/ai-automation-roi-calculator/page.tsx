@@ -24,6 +24,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/ai-automation-roi-calculator",
   },
+  twitter: {
+    title: "AI Automation ROI: How Much Can Your Business Actually Save?",
+    description:
+      "The real maths behind AI automation for small businesses. Specific savings, payback periods, and ROI scenarios.",
+  },
 };
 
 const tags = ["AI Automation", "ROI", "Small Business", "Guides"];

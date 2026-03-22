@@ -3,6 +3,19 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "Privacy policy for Oladipupo Consulting Ltd.",
+  alternates: {
+    canonical: "https://oladipupoconsulting.co.uk/privacy",
+  },
+  openGraph: {
+    title: "Privacy Policy | Oladipupo Consulting",
+    description: "Privacy policy for Oladipupo Consulting Ltd.",
+    url: "https://oladipupoconsulting.co.uk/privacy",
+    type: "website",
+  },
+  twitter: {
+    title: "Privacy Policy | Oladipupo Consulting",
+    description: "Privacy policy for Oladipupo Consulting Ltd.",
+  },
 };
 
 export default function PrivacyPage() {

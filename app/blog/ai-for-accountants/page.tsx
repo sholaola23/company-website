@@ -26,6 +26,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/ai-for-accountants",
   },
+  twitter: {
+    title: "AI for Accountants: Automate Onboarding",
+    description:
+      "5 practical AI automations that help accounting practices onboard clients faster, hit every deadline, and reduce admin by 10+ hours a week.",
+  },
 };
 
 const tags = [

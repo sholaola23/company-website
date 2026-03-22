@@ -24,6 +24,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/ai-for-estate-agents",
   },
+  twitter: {
+    title: "AI for Estate Agents: Automate Leads & Viewings",
+    description:
+      "5 practical AI automations that help estate agencies respond faster, book more viewings, and close more sales.",
+  },
 };
 
 const tags = ["AI Automation", "Estate Agents", "Property", "Industry Guide"];

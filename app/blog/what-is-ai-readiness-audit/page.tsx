@@ -25,6 +25,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/what-is-ai-readiness-audit",
   },
+  twitter: {
+    title: "What Is an AI Readiness Audit? (And Why It's Free)",
+    description:
+      "A personalised assessment of where AI can save your business time and money. Find out what's included and why it's completely free.",
+  },
 };
 
 const tags = ["AI Audit", "Small Business", "Getting Started", "Guides"];

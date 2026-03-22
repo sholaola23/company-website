@@ -9,6 +9,21 @@ export const metadata = {
   title: "Blog",
   description:
     "AI automation insights, case studies, and tips for small businesses.",
+  alternates: {
+    canonical: "https://oladipupoconsulting.co.uk/blog",
+  },
+  openGraph: {
+    title: "Blog | Oladipupo Consulting",
+    description:
+      "AI automation insights, case studies, and tips for small businesses.",
+    url: "https://oladipupoconsulting.co.uk/blog",
+    type: "website",
+  },
+  twitter: {
+    title: "Blog | Oladipupo Consulting",
+    description:
+      "AI automation insights, case studies, and tips for small businesses.",
+  },
 };
 
 const staticPosts = [

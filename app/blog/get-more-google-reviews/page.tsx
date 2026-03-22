@@ -25,6 +25,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/get-more-google-reviews",
   },
+  twitter: {
+    title: "How to Get More Google Reviews Automatically",
+    description:
+      "3x your Google reviews without awkward asks. Here's how small businesses automate review collection and climb Google rankings.",
+  },
 };
 
 const tags = ["Google Reviews", "Local SEO", "AI Automation", "Small Business"];

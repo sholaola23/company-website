@@ -24,6 +24,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/ai-for-electricians",
   },
+  twitter: {
+    title: "AI for Electricians & Tradespeople: Save 10+ Hours a Week",
+    description:
+      "5 practical AI automations that help electricians save 10+ hours a week on quoting, scheduling, compliance, reviews, and invoicing.",
+  },
 };
 
 const tags = ["AI Automation", "Electricians", "Trades", "Industry Guide"];

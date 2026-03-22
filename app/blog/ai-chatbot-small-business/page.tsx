@@ -28,6 +28,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/ai-chatbot-small-business",
   },
+  twitter: {
+    title: "AI Chatbots for Small Business: Complete Guide",
+    description:
+      "A practical guide to AI chatbots for UK small businesses. Where to deploy, what they cost, and whether one is right for you.",
+  },
 };
 
 const tags = ["AI Automation", "Chatbots", "WhatsApp", "Customer Service"];

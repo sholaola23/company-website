@@ -23,9 +23,25 @@ export async function generateMetadata({
   const { slug } = await params;
   const study = caseStudies.find((c) => c.slug === slug);
   if (!study) return {};
+  const pageTitle = `${study.name} — Case Study`;
+  const pageDescription = study.problem.slice(0, 155);
+  const pageUrl = `https://oladipupoconsulting.co.uk/case-studies/${slug}`;
   return {
-    title: `${study.name} — Case Study`,
-    description: study.problem.slice(0, 155),
+    title: pageTitle,
+    description: pageDescription,
+    alternates: {
+      canonical: pageUrl,
+    },
+    openGraph: {
+      title: `${pageTitle} | Oladipupo Consulting`,
+      description: pageDescription,
+      url: pageUrl,
+      type: "article",
+    },
+    twitter: {
+      title: `${pageTitle} | Oladipupo Consulting`,
+      description: pageDescription,
+    },
   };
 }
 

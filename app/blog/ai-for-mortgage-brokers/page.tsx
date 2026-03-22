@@ -26,6 +26,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/ai-for-mortgage-brokers",
   },
+  twitter: {
+    title: "AI for Mortgage Brokers: Qualify Leads Faster",
+    description:
+      "5 practical AI automations that help mortgage brokers qualify leads faster, streamline applications, and keep clients informed from DIP to completion.",
+  },
 };
 
 const tags = [

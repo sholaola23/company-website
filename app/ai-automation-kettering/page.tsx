@@ -37,6 +37,10 @@ export const metadata: Metadata = {
     url: CANONICAL,
     type: "website",
   },
+  twitter: {
+    title: `AI Automation for Small Businesses in ${CITY}`,
+    description: `AI automation services for small businesses in ${CITY} and Northamptonshire. Automate lead capture, order processing, appointment booking, and more.`,
+  },
 };
 
 const HOW_IT_WORKS = [

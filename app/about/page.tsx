@@ -7,6 +7,21 @@ export const metadata: Metadata = {
   title: "About Us",
   description:
     "Oladipupo Consulting — UK-based AI solutions agency for small businesses. AI automation, website development, and team training. Founded by Olushola Oladipupo. Registered in England & Wales.",
+  alternates: {
+    canonical: "https://oladipupoconsulting.co.uk/about",
+  },
+  openGraph: {
+    title: "About Us | Oladipupo Consulting",
+    description:
+      "UK-based AI solutions agency for small businesses. AI automation, website development, and team training. Founded by Olushola Oladipupo.",
+    url: "https://oladipupoconsulting.co.uk/about",
+    type: "website",
+  },
+  twitter: {
+    title: "About Us | Oladipupo Consulting",
+    description:
+      "UK-based AI solutions agency for small businesses. AI automation, website development, and team training. Founded by Olushola Oladipupo.",
+  },
 };
 
 const HOW_WE_WORK = [

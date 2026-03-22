@@ -26,6 +26,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/ai-for-gyms",
   },
+  twitter: {
+    title: "AI for Gyms: Automate Bookings & Retention",
+    description:
+      "5 practical AI automations that help gyms fill classes, retain members, and grow — without adding reception staff.",
+  },
 };
 
 const tags = ["AI Automation", "Gyms", "Fitness", "Industry Guide"];

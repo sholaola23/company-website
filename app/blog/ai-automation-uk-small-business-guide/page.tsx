@@ -26,6 +26,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/ai-automation-uk-small-business-guide",
   },
+  twitter: {
+    title: "AI Automation for UK Small Businesses (2026)",
+    description:
+      "Everything UK small businesses need to know about AI automation in 2026. What it is, what it costs, and how to get started.",
+  },
 };
 
 const tags = ["AI Automation", "Small Business", "UK Business", "Complete Guide"];

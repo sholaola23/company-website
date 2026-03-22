@@ -62,9 +62,11 @@ export default function FAQSection({
               >
                 <button
                   type="button"
+                  id={`faq-button-${index}`}
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   className="flex w-full items-center justify-between gap-4 p-5 text-left"
                   aria-expanded={isOpen}
+                  aria-controls={`faq-panel-${index}`}
                 >
                   <span className="text-sm font-medium text-zinc-100">
                     {item.question}
@@ -78,6 +80,9 @@ export default function FAQSection({
                   />
                 </button>
                 <div
+                  id={`faq-panel-${index}`}
+                  role="region"
+                  aria-labelledby={`faq-button-${index}`}
                   className={`grid transition-all duration-200 ${
                     isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
                   }`}

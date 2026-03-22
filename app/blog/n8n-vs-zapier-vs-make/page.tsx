@@ -24,6 +24,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/n8n-vs-zapier-vs-make",
   },
+  twitter: {
+    title: "n8n vs Zapier vs Make: Best for UK Business?",
+    description:
+      "Honest comparison of the three most popular automation tools. Which one is right for your business?",
+  },
 };
 
 const tags = ["AI Automation", "Tools", "Comparison", "Guides"];

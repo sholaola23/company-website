@@ -26,6 +26,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/ai-for-solicitors",
   },
+  twitter: {
+    title: "AI for Solicitors: Automate Intake & Billing",
+    description:
+      "5 practical AI automations that help solicitors and law firms onboard clients faster, bill accurately, and never miss a compliance deadline.",
+  },
 };
 
 const tags = [

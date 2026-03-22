@@ -24,6 +24,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/ai-for-dentists",
   },
+  twitter: {
+    title: "AI for Dentists & Dental Practices: Reduce No-Shows by 60%",
+    description:
+      "5 practical AI automations that help dental practices reduce no-shows by 60%, fill cancellations instantly, and grow patient numbers.",
+  },
 };
 
 const tags = ["AI Automation", "Dentists", "Healthcare", "Industry Guide"];

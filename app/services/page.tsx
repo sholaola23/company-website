@@ -17,6 +17,21 @@ export const metadata: Metadata = {
   title: "AI Automation Services",
   description:
     "From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 7 days.",
+  alternates: {
+    canonical: "https://oladipupoconsulting.co.uk/services",
+  },
+  openGraph: {
+    title: "AI Automation Services | Oladipupo Consulting",
+    description:
+      "From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 7 days.",
+    url: "https://oladipupoconsulting.co.uk/services",
+    type: "website",
+  },
+  twitter: {
+    title: "AI Automation Services | Oladipupo Consulting",
+    description:
+      "From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 7 days.",
+  },
 };
 
 const TIERS = [

@@ -25,6 +25,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/ai-automation-cost",
   },
+  twitter: {
+    title: "How Much Does AI Automation Cost for a Small Business?",
+    description:
+      "An honest pricing guide for AI automation. Compare options, see real ROI numbers, and find out what small businesses actually pay.",
+  },
 };
 
 const tags = ["AI Automation", "Pricing", "Small Business", "Guides"];

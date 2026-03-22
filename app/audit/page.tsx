@@ -8,6 +8,21 @@ export const metadata: Metadata = {
   title: "Free AI Readiness Audit",
   description:
     "Get instant AI analysis of your business in 10 seconds. See your AI readiness score, key findings, and quick wins — no email required.",
+  alternates: {
+    canonical: "https://oladipupoconsulting.co.uk/audit",
+  },
+  openGraph: {
+    title: "Free AI Readiness Audit | Oladipupo Consulting",
+    description:
+      "Get instant AI analysis of your business in 10 seconds. See your AI readiness score, key findings, and quick wins — no email required.",
+    url: "https://oladipupoconsulting.co.uk/audit",
+    type: "website",
+  },
+  twitter: {
+    title: "Free AI Readiness Audit | Oladipupo Consulting",
+    description:
+      "Get instant AI analysis of your business in 10 seconds. See your AI readiness score, key findings, and quick wins — no email required.",
+  },
 };
 
 const HOW_IT_WORKS = [

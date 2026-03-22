@@ -25,6 +25,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/ai-for-restaurants",
   },
+  twitter: {
+    title: "AI for Restaurants: Automate Orders, Bookings, and Reviews",
+    description:
+      "Practical AI automations for restaurants — from WhatsApp ordering to review collection. Save hours and serve more customers.",
+  },
 };
 
 const tags = ["AI Automation", "Restaurants", "Hospitality", "Industry Guide"];

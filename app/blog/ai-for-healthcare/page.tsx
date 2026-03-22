@@ -26,6 +26,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/ai-for-healthcare",
   },
+  twitter: {
+    title: "AI for Healthcare: Automating Patient Bookings and Follow-Ups",
+    description:
+      "How clinics, dentists, and healthcare practices use AI to automate patient bookings, reduce no-shows, and streamline admin.",
+  },
 };
 
 const tags = ["AI Automation", "Healthcare", "Clinics", "Industry Guide"];

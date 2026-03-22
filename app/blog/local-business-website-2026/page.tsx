@@ -27,6 +27,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/local-business-website-2026",
   },
+  twitter: {
+    title: "Does Your Business Need a Website in 2026?",
+    description:
+      "46% of UK small businesses still don't have a website. Here's why that's costing you customers and what it actually costs to fix.",
+  },
 };
 
 const tags = ["Websites", "Local Business", "SEO", "UK Business"];

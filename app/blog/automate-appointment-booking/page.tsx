@@ -25,6 +25,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/automate-appointment-booking",
   },
+  twitter: {
+    title: "Automate Appointment Booking for Your Business",
+    description:
+      "Stop missing calls and double-booking. Learn how AI appointment booking works for small businesses — and how to set it up.",
+  },
 };
 
 const tags = ["AI Automation", "Appointment Booking", "Small Business", "Guides"];

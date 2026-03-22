@@ -12,6 +12,21 @@ export const metadata: Metadata = {
   title: "Case Studies",
   description:
     "See how we've helped small businesses save time and grow with AI automation. Real results, real clients.",
+  alternates: {
+    canonical: "https://oladipupoconsulting.co.uk/case-studies",
+  },
+  openGraph: {
+    title: "Case Studies | Oladipupo Consulting",
+    description:
+      "See how we've helped small businesses save time and grow with AI automation. Real results, real clients.",
+    url: "https://oladipupoconsulting.co.uk/case-studies",
+    type: "website",
+  },
+  twitter: {
+    title: "Case Studies | Oladipupo Consulting",
+    description:
+      "See how we've helped small businesses save time and grow with AI automation. Real results, real clients.",
+  },
 };
 
 const TIER_BADGE: Record<string, string> = {

@@ -6,6 +6,21 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch with Oladipupo Consulting. Whether you have a question or you're ready to get started with AI automation.",
+  alternates: {
+    canonical: "https://oladipupoconsulting.co.uk/contact",
+  },
+  openGraph: {
+    title: "Contact Us | Oladipupo Consulting",
+    description:
+      "Get in touch with Oladipupo Consulting. Whether you have a question or you're ready to get started with AI automation.",
+    url: "https://oladipupoconsulting.co.uk/contact",
+    type: "website",
+  },
+  twitter: {
+    title: "Contact Us | Oladipupo Consulting",
+    description:
+      "Get in touch with Oladipupo Consulting. Whether you have a question or you're ready to get started with AI automation.",
+  },
 };
 
 export default function ContactPage() {

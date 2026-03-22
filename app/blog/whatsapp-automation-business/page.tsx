@@ -25,6 +25,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/whatsapp-automation-business",
   },
+  twitter: {
+    title: "WhatsApp Automation for Business: The Complete Guide",
+    description:
+      "How small businesses use WhatsApp automation to handle orders, bookings, and customer questions — without lifting a finger.",
+  },
 };
 
 const tags = ["WhatsApp", "AI Automation", "Small Business", "Guides"];

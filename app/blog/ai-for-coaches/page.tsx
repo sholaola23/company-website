@@ -25,6 +25,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/ai-for-coaches",
   },
+  twitter: {
+    title: "AI for Coaches and Consultants: Automate Your Admin",
+    description:
+      "Stop spending half your time on admin. Here's how coaches and consultants use AI to automate booking, onboarding, content, and invoicing.",
+  },
 };
 
 const tags = ["AI Automation", "Coaches", "Consultants", "Industry Guide"];

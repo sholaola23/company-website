@@ -3,6 +3,19 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description: "Terms of service for Oladipupo Consulting Ltd.",
+  alternates: {
+    canonical: "https://oladipupoconsulting.co.uk/terms",
+  },
+  openGraph: {
+    title: "Terms of Service | Oladipupo Consulting",
+    description: "Terms of service for Oladipupo Consulting Ltd.",
+    url: "https://oladipupoconsulting.co.uk/terms",
+    type: "website",
+  },
+  twitter: {
+    title: "Terms of Service | Oladipupo Consulting",
+    description: "Terms of service for Oladipupo Consulting Ltd.",
+  },
 };
 
 export default function TermsPage() {

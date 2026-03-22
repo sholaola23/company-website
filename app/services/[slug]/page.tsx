@@ -28,9 +28,24 @@ export async function generateMetadata({
   const { slug } = await params;
   const service = services.find((s) => s.slug === slug);
   if (!service) return {};
+  const pageDescription = `${service.pain}. Delivered in ${service.deliveryDays} for ${service.setupPrice}. Ideal for ${service.idealFor}.`;
+  const pageUrl = `https://oladipupoconsulting.co.uk/services/${slug}`;
   return {
     title: service.name,
-    description: `${service.pain}. Delivered in ${service.deliveryDays} for ${service.setupPrice}. Ideal for ${service.idealFor}.`,
+    description: pageDescription,
+    alternates: {
+      canonical: pageUrl,
+    },
+    openGraph: {
+      title: `${service.name} | Oladipupo Consulting`,
+      description: pageDescription,
+      url: pageUrl,
+      type: "website",
+    },
+    twitter: {
+      title: `${service.name} | Oladipupo Consulting`,
+      description: pageDescription,
+    },
   };
 }
 
@@ -158,7 +173,49 @@ export default async function ServiceDetailPage({
         </ul>
       </section>
 
-      {/* Reference client callout */}
+      {/* Proof / Real Results section */}
+      {service.proof && (
+        <section className="mb-12" aria-labelledby="proof-heading">
+          <h2
+            id="proof-heading"
+            className="text-xl font-semibold text-zinc-50 mb-6"
+          >
+            {service.proof.heading}
+          </h2>
+
+          {/* Stats grid */}
+          {service.proof.stats && service.proof.stats.length > 0 && (
+            <div className={cn(
+              "grid gap-3 mb-6",
+              service.proof.stats.length <= 3 ? "grid-cols-3" : "grid-cols-2 sm:grid-cols-4"
+            )}>
+              {service.proof.stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="bg-zinc-900 border border-zinc-800 rounded-lg p-4 text-center"
+                >
+                  <p className="text-lg font-bold text-blue-400">
+                    {stat.value}
+                  </p>
+                  <p className="text-xs text-zinc-500 mt-1">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          <p className="text-sm text-zinc-400 leading-relaxed">
+            {service.proof.description}
+          </p>
+
+          {service.proof.clientName && (
+            <p className="text-xs text-zinc-600 mt-3">
+              — {service.proof.clientName}
+            </p>
+          )}
+        </section>
+      )}
+
+      {/* Reference client callout (links to case study) */}
       {service.referenceClient && (
         <div className="mb-12 bg-zinc-900 border border-zinc-800 rounded-xl p-5 flex items-center justify-between gap-4">
           <div>
@@ -190,14 +247,13 @@ export default async function ServiceDetailPage({
       {/* Bottom CTA */}
       <div className="bg-gradient-to-br from-blue-500/10 to-zinc-900 border border-blue-500/20 rounded-xl p-8 text-center">
         <h2 className="text-xl font-semibold text-zinc-50 mb-3">
-          Interested in {service.name}?
+          {service.ctaText ? `Ready? ${service.ctaText}` : `Interested in ${service.name}?`}
         </h2>
         <p className="text-sm text-zinc-400 mb-6 max-w-sm mx-auto">
-          Tell us about your business and what you need — we&apos;ll get back to
-          you within a few hours.
+          {service.ctaSubtext ?? "Tell us about your business and what you need \u2014 we\u2019ll get back to you within a few hours."}
         </p>
-        <CTAButton href="/contact" variant="primary" size="lg">
-          Get in Touch
+        <CTAButton href={service.ctaHref ?? "/contact"} variant="primary" size="lg">
+          {service.ctaText ?? "Get in Touch"}
         </CTAButton>
       </div>
     </div>

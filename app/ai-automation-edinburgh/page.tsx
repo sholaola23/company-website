@@ -35,6 +35,10 @@ export const metadata: Metadata = {
     url: CANONICAL,
     type: "website",
   },
+  twitter: {
+    title: `AI Automation for Small Businesses in ${CITY}`,
+    description: `AI automation services for small businesses in ${CITY}. Automate lead capture, appointment booking, email management, and more.`,
+  },
 };
 
 const HOW_IT_WORKS = [

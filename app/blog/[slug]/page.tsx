@@ -16,9 +16,24 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = await fetchPostBySlug(slug);
   if (!post) return { title: "Post Not Found" };
+  const pageDescription = post.excerpt || `Read ${post.title} on the Oladipupo Consulting blog.`;
+  const pageUrl = `https://oladipupoconsulting.co.uk/blog/${slug}`;
   return {
     title: post.title,
-    description: post.excerpt || `Read ${post.title} on the Oladipupo Consulting blog.`,
+    description: pageDescription,
+    alternates: {
+      canonical: pageUrl,
+    },
+    openGraph: {
+      title: `${post.title} | Oladipupo Consulting`,
+      description: pageDescription,
+      url: pageUrl,
+      type: "article",
+    },
+    twitter: {
+      title: `${post.title} | Oladipupo Consulting`,
+      description: pageDescription,
+    },
   };
 }
 

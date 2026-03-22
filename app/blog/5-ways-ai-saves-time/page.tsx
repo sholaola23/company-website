@@ -27,6 +27,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/5-ways-ai-saves-time",
   },
+  twitter: {
+    title: "5 Ways AI Can Save Your Small Business 10+ Hours a Week",
+    description:
+      "Discover how AI automation helps UK small businesses save 10+ hours every week. Practical examples for plumbers, salons, cleaners and more.",
+  },
 };
 
 const tags = ["AI Automation", "Small Business", "Productivity", "UK Business"];

@@ -26,6 +26,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/ai-for-recruitment-agencies",
   },
+  twitter: {
+    title: "AI for Recruitment Agencies: Automate Screening",
+    description:
+      "5 practical AI automations that help UK recruitment agencies screen candidates faster, automate outreach, and stay compliant with IR35 and right-to-work checks.",
+  },
 };
 
 const tags = [

@@ -25,6 +25,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/ai-for-plumbers",
   },
+  twitter: {
+    title: "AI for Plumbers: 5 Automations That Win More Jobs",
+    description:
+      "5 practical AI automations that help plumbing businesses win more jobs, get more reviews, and spend less time on admin.",
+  },
 };
 
 const tags = ["AI Automation", "Plumbers", "Trades", "Industry Guide"];

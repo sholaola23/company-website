@@ -26,6 +26,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/blog/ai-for-care-homes",
   },
+  twitter: {
+    title: "AI for Care Homes: Automate Rotas & Compliance",
+    description:
+      "5 practical AI automations that help care homes and home care agencies fill shifts faster, update families automatically, and maintain CQC compliance.",
+  },
 };
 
 const tags = [
