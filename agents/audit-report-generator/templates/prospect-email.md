@@ -32,6 +32,6 @@ Your Free AI Readiness Audit — [Business Name]
 Olushola Oladipupo
 Oladipupo Consulting Ltd
 oladipupoconsulting.co.uk
-olusholaoladipupo1@gmail.com
+hello@oladipupoconsulting.co.uk
 07469 347654
 ```

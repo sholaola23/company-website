@@ -139,6 +139,7 @@ export default function ServicesPage() {
       <AnimatedSection>
         <div className="mb-16 sm:mb-20">
           <SectionHeading
+            as="h1"
             eyebrow="Our Solutions"
             heading="AI Automation Services"
             description="From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 7 days."

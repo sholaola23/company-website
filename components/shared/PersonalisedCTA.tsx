@@ -196,10 +196,10 @@ export default function PersonalisedCTA() {
         <p className="mt-6 text-sm text-zinc-500">
           or email{" "}
           <a
-            href="mailto:olusholaoladipupo1@gmail.com"
+            href="mailto:hello@oladipupoconsulting.co.uk"
             className="text-zinc-400 underline underline-offset-2 transition-colors duration-200 hover:text-zinc-200"
           >
-            olusholaoladipupo1@gmail.com
+            hello@oladipupoconsulting.co.uk
           </a>
         </p>
       </div>

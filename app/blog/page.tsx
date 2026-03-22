@@ -6,7 +6,7 @@ import BreadcrumbJsonLd from "@/components/shared/BreadcrumbJsonLd";
 export const revalidate = 60;
 
 export const metadata = {
-  title: "Blog — Oladipupo Consulting",
+  title: "Blog",
   description:
     "AI automation insights, case studies, and tips for small businesses.",
 };
@@ -24,7 +24,7 @@ const staticPosts = [
   {
     id: "static-14",
     slug: "ai-for-estate-agents",
-    title: "AI for Estate Agents: Automate Rightmove Leads, Viewings & Follow-Up",
+    title: "AI for Estate Agents: Automate Leads & Viewings",
     excerpt:
       "AI for estate agents isn't hype — it's how the best agencies are responding to Rightmove leads in seconds, booking viewings automatically, and closing more sales.",
     publishedAt: "20 March 2026",
@@ -33,7 +33,7 @@ const staticPosts = [
   {
     id: "static-15",
     slug: "n8n-vs-zapier-vs-make",
-    title: "n8n vs Zapier vs Make: Which Automation Tool for Your UK Business?",
+    title: "n8n vs Zapier vs Make: Best for UK Business?",
     excerpt:
       "Honest comparison of n8n, Zapier, and Make for UK small businesses. Pricing, pros, cons, data privacy, and which one we recommend for different use cases.",
     publishedAt: "20 March 2026",
@@ -51,7 +51,7 @@ const staticPosts = [
   {
     id: "static-17",
     slug: "ai-automation-uk-small-business-guide",
-    title: "AI Automation for UK Small Businesses: The Complete 2026 Guide",
+    title: "AI Automation for UK Small Businesses (2026)",
     excerpt:
       "Everything UK small businesses need to know about AI automation in 2026. What it is, what it costs, which automations matter most, and how to get started — with links to every industry guide.",
     publishedAt: "20 March 2026",
@@ -60,7 +60,7 @@ const staticPosts = [
   {
     id: "static-18",
     slug: "ai-chatbot-small-business",
-    title: "AI Customer Service Chatbot for Small Businesses: WhatsApp, Website & Beyond",
+    title: "AI Chatbots for Small Business: Complete Guide",
     excerpt:
       "What AI chatbots actually do for small businesses, where to deploy them (website, WhatsApp, Messenger), what they cost, and whether one is right for you.",
     publishedAt: "20 March 2026",
@@ -78,7 +78,7 @@ const staticPosts = [
   {
     id: "static-20",
     slug: "ai-for-gyms",
-    title: "AI for Gyms & Fitness Studios: Automate Bookings, Retention & Member Follow-Up",
+    title: "AI for Gyms: Automate Bookings & Retention",
     excerpt:
       "How gyms and fitness studios use AI to fill classes, reduce member churn, convert trials to memberships, and collect reviews — all on autopilot.",
     publishedAt: "20 March 2026",
@@ -87,7 +87,7 @@ const staticPosts = [
   {
     id: "static-21",
     slug: "ai-for-cleaning-companies",
-    title: "AI for Cleaning Companies: Win More Contracts While Spending Less on Admin",
+    title: "AI for Cleaning Companies: Win More Contracts",
     excerpt:
       "5 automations helping cleaning companies respond faster to enquiries, schedule staff, collect feedback, and renew contracts automatically.",
     publishedAt: "20 March 2026",
@@ -96,7 +96,7 @@ const staticPosts = [
   {
     id: "static-22",
     slug: "ai-for-accountants",
-    title: "AI for Accountants & Bookkeepers: Automate Client Onboarding & Compliance",
+    title: "AI for Accountants: Automate Onboarding",
     excerpt:
       "How accounting practices use AI to automate client onboarding, deadline reminders, receipt processing, and monthly reporting — saving 10+ hours a week.",
     publishedAt: "20 March 2026",
@@ -114,7 +114,7 @@ const staticPosts = [
   {
     id: "static-3",
     slug: "automate-appointment-booking",
-    title: "How to Automate Appointment Booking for Your Small Business",
+    title: "Automate Appointment Booking for Your Business",
     excerpt:
       "Stop missing calls and double-booking. Learn how AI appointment booking works for small businesses — and how to set it up in days, not weeks.",
     publishedAt: "19 March 2026",
@@ -132,7 +132,7 @@ const staticPosts = [
   {
     id: "static-5",
     slug: "ai-for-salons",
-    title: "AI for Salons: How to Fill Empty Chairs Without Lifting a Phone",
+    title: "AI for Salons: Fill Empty Chairs Automatically",
     excerpt:
       "Fewer no-shows, more rebookings, and a full diary — without chasing clients. Here's how salon automation handles reminders, reviews, content, and waitlists.",
     publishedAt: "19 March 2026",
@@ -214,7 +214,7 @@ const staticPosts = [
     id: "static-2",
     slug: "local-business-website-2026",
     title:
-      "Why Every Local Business Needs a Website in 2026 (And What It Costs)",
+      "Does Your Business Need a Website in 2026?",
     excerpt:
       "46% of UK small businesses still don't have a website. Here's why that's costing you customers, what a good website needs, and what it actually costs in 2026.",
     publishedAt: "18 March 2026",
@@ -223,7 +223,7 @@ const staticPosts = [
   {
     id: "static-new-1",
     slug: "ai-for-solicitors",
-    title: "AI for Solicitors & Law Firms: Automate Client Intake, Billing & Case Updates",
+    title: "AI for Solicitors: Automate Intake & Billing",
     excerpt:
       "How UK solicitors and law firms use AI to automate client intake, time recording, case updates, document assembly, and SRA compliance tracking.",
     publishedAt: "21 March 2026",
@@ -232,7 +232,7 @@ const staticPosts = [
   {
     id: "static-new-2",
     slug: "ai-for-recruitment-agencies",
-    title: "AI for Recruitment Agencies: Automate Candidate Screening, Outreach & Placement Tracking",
+    title: "AI for Recruitment Agencies: Automate Screening",
     excerpt:
       "5 practical AI automations for UK recruitment agencies — from CV screening and candidate outreach to IR35 compliance and placement tracking.",
     publishedAt: "21 March 2026",
@@ -241,7 +241,7 @@ const staticPosts = [
   {
     id: "static-new-3",
     slug: "ai-for-mortgage-brokers",
-    title: "AI for Mortgage Brokers: Automate Lead Qualification, Applications & Client Updates",
+    title: "AI for Mortgage Brokers: Qualify Leads Faster",
     excerpt:
       "How UK mortgage brokers use AI to qualify leads faster, chase documents automatically, match lender products, and stay FCA compliant.",
     publishedAt: "21 March 2026",
@@ -250,7 +250,7 @@ const staticPosts = [
   {
     id: "static-new-4",
     slug: "ai-for-care-homes",
-    title: "AI for Care Homes & Home Care Agencies: Automate Rota Planning, Family Updates & Compliance",
+    title: "AI for Care Homes: Automate Rotas & Compliance",
     excerpt:
       "5 AI automations for UK care homes and domiciliary care agencies — from staff rota planning and family updates to CQC compliance and training tracking.",
     publishedAt: "21 March 2026",
@@ -275,7 +275,7 @@ export default async function BlogPage() {
   ];
 
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <BreadcrumbJsonLd items={[{ name: "Blog", href: "/blog" }]} />
       <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto">
@@ -329,6 +329,6 @@ export default async function BlogPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

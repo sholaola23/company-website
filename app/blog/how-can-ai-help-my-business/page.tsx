@@ -30,7 +30,7 @@ const tags = ["AI Automation", "Small Business", "UK Business", "Guides"];
 
 export default function BlogPost() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <article className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <Link
@@ -492,6 +492,6 @@ export default function BlogPost() {
           </div>
         </div>
       </article>
-    </main>
+    </div>
   );
 }

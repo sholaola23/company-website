@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AI for Salons: How to Fill Empty Chairs Without Lifting a Phone",
+  title: "AI for Salons: Fill Empty Chairs Automatically",
   description:
     "AI for salons means fewer no-shows, more rebookings, and a full diary — without spending your evenings chasing clients. Here's how salon automation works.",
   keywords: [
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "salon business software",
   ],
   openGraph: {
-    title: "AI for Salons: How to Fill Empty Chairs Without Lifting a Phone",
+    title: "AI for Salons: Fill Empty Chairs Automatically",
     description:
       "Fewer no-shows, more rebookings, and a full diary — without chasing clients. Here's how AI automation works for salons.",
     type: "article",
@@ -31,7 +31,7 @@ const tags = ["AI Automation", "Salons", "Beauty", "Industry Guide"];
 
 export default function BlogPost() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <article className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <Link
@@ -290,6 +290,6 @@ export default function BlogPost() {
           </div>
         </div>
       </article>
-    </main>
+    </div>
   );
 }

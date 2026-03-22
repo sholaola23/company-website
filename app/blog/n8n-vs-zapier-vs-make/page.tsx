@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "n8n vs Zapier vs Make: Which Automation Tool for Your UK Business?",
+  title: "n8n vs Zapier vs Make: Best for UK Business?",
   description:
     "Honest comparison of n8n, Zapier, and Make for UK small businesses. Pricing, pros, cons, data privacy, and which one we recommend for different use cases.",
   keywords: [
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "zapier alternative UK",
   ],
   openGraph: {
-    title: "n8n vs Zapier vs Make: Which Automation Tool for Your UK Business?",
+    title: "n8n vs Zapier vs Make: Best for UK Business?",
     description:
       "Honest comparison of the three most popular automation tools. Which one is right for your business?",
     type: "article",
@@ -30,7 +30,7 @@ const tags = ["AI Automation", "Tools", "Comparison", "Guides"];
 
 export default function BlogPost() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <article className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <Link
@@ -556,6 +556,6 @@ export default function BlogPost() {
           </div>
         </div>
       </article>
-    </main>
+    </div>
   );
 }

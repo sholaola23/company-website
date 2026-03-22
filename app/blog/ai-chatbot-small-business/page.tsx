@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "AI Customer Service Chatbot for Small Businesses: WhatsApp, Website & Beyond",
+    "AI Chatbots for Small Business: Complete Guide",
   description:
     "A practical guide to AI chatbots for UK small businesses. Where to deploy them, what they can handle, what they cost, and whether one is right for your business.",
   keywords: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      "AI Customer Service Chatbot for Small Businesses: WhatsApp, Website & Beyond",
+      "AI Chatbots for Small Business: Complete Guide",
     description:
       "A practical guide to AI chatbots for UK small businesses. Where to deploy, what they cost, and whether one is right for you.",
     type: "article",
@@ -34,7 +34,7 @@ const tags = ["AI Automation", "Chatbots", "WhatsApp", "Customer Service"];
 
 export default function BlogPost() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <article className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <Link
@@ -540,6 +540,6 @@ export default function BlogPost() {
           </div>
         </div>
       </article>
-    </main>
+    </div>
   );
 }

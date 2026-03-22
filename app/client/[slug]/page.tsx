@@ -209,12 +209,12 @@ function LoadingScreen() {
           <div className="h-6 w-48 rounded-full bg-zinc-800/80 animate-pulse" />
         </div>
       </div>
-      <main className="max-w-lg mx-auto w-full px-5 py-6 space-y-4">
+      <div className="max-w-lg mx-auto w-full px-5 py-6 space-y-4">
         <SkeletonCard rows={1} />
         <SkeletonCard rows={2} />
         <SkeletonCard rows={3} />
         <SkeletonCard rows={2} />
-      </main>
+      </div>
     </div>
   );
 }
@@ -581,7 +581,7 @@ export default function ClientDashboard() {
         </div>
       </header>
 
-      <main className="relative z-10 max-w-lg mx-auto px-5 py-5">
+      <div className="relative z-10 max-w-lg mx-auto px-5 py-5">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -1068,7 +1068,7 @@ export default function ClientDashboard() {
             </div>
           </Section>
         </motion.div>
-      </main>
+      </div>
     </div>
   );
 }

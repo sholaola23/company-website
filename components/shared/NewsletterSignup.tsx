@@ -72,7 +72,9 @@ export default function NewsletterSignup({
           className="flex gap-2"
           aria-label="Newsletter signup"
         >
+          <label htmlFor="newsletter-email-compact" className="sr-only">Email address</label>
           <input
+            id="newsletter-email-compact"
             type="email"
             required
             autoComplete="email"
@@ -167,7 +169,9 @@ export default function NewsletterSignup({
             className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-3 sm:items-start justify-center"
             aria-label="Newsletter signup"
           >
+            <label htmlFor="newsletter-email" className="sr-only">Email address</label>
             <input
+              id="newsletter-email"
               type="email"
               required
               autoComplete="email"

@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AI for Estate Agents: Automate Rightmove Leads, Viewings & Follow-Up",
+  title: "AI for Estate Agents: Automate Leads & Viewings",
   description:
     "AI for estate agents isn't hype — it's how the best agencies are responding to Rightmove leads in seconds, booking viewings automatically, and closing more sales.",
   keywords: [
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "estate agent software",
   ],
   openGraph: {
-    title: "AI for Estate Agents: Automate Rightmove Leads, Viewings & Follow-Up",
+    title: "AI for Estate Agents: Automate Leads & Viewings",
     description:
       "5 practical AI automations that help estate agencies respond faster, book more viewings, and close more sales.",
     type: "article",
@@ -30,7 +30,7 @@ const tags = ["AI Automation", "Estate Agents", "Property", "Industry Guide"];
 
 export default function BlogPost() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <article className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <Link
@@ -388,6 +388,6 @@ export default function BlogPost() {
           </div>
         </div>
       </article>
-    </main>
+    </div>
   );
 }

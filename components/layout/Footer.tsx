@@ -15,6 +15,7 @@ const COMPANY_LINKS = [
   { label: "About", href: "/about" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Blog", href: "/blog" },
+  { label: "ROI Calculator", href: "/tools/ai-roi-calculator" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -23,6 +24,11 @@ const LOCATION_LINKS = [
   { label: "Manchester", href: "/ai-automation-manchester" },
   { label: "Birmingham", href: "/ai-automation-birmingham" },
   { label: "Leeds", href: "/ai-automation-leeds" },
+  { label: "Bristol", href: "/ai-automation-bristol" },
+  { label: "Edinburgh", href: "/ai-automation-edinburgh" },
+  { label: "Liverpool", href: "/ai-automation-liverpool" },
+  { label: "Glasgow", href: "/ai-automation-glasgow" },
+  { label: "Sheffield", href: "/ai-automation-sheffield" },
   { label: "Kettering", href: "/ai-automation-kettering" },
 ];
 

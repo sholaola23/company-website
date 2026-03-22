@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AI Automation for UK Small Businesses: The Complete 2026 Guide",
+  title: "AI Automation for UK Small Businesses (2026)",
   description:
     "Everything UK small businesses need to know about AI automation in 2026. What it is, what it costs, which automations matter most, and how to get started — in plain English.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "business automation guide",
   ],
   openGraph: {
-    title: "AI Automation for UK Small Businesses: The Complete 2026 Guide",
+    title: "AI Automation for UK Small Businesses (2026)",
     description:
       "Everything UK small businesses need to know about AI automation in 2026. What it is, what it costs, and how to get started.",
     type: "article",
@@ -32,7 +32,7 @@ const tags = ["AI Automation", "Small Business", "UK Business", "Complete Guide"
 
 export default function BlogPost() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <article className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <Link
@@ -728,6 +728,6 @@ export default function BlogPost() {
           </div>
         </div>
       </article>
-    </main>
+    </div>
   );
 }

@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "AI for Cleaning Companies: Win More Contracts While Spending Less on Admin",
+    "AI for Cleaning Companies: Win More Contracts",
   description:
     "Discover how AI automation helps cleaning companies respond to enquiries instantly, schedule staff efficiently, and win more commercial contracts — without growing your back office.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      "AI for Cleaning Companies: Win More Contracts While Spending Less on Admin",
+      "AI for Cleaning Companies: Win More Contracts",
     description:
       "5 practical AI automations that help cleaning companies win more contracts, reduce admin, and grow without adding office staff.",
     type: "article",
@@ -32,7 +32,7 @@ const tags = ["AI Automation", "Cleaning", "Service Business", "Industry Guide"]
 
 export default function BlogPost() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <article className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <Link
@@ -401,6 +401,6 @@ export default function BlogPost() {
           </div>
         </div>
       </article>
-    </main>
+    </div>
   );
 }

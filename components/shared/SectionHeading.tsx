@@ -6,6 +6,8 @@ interface SectionHeadingProps {
   description?: string;
   align?: "left" | "center";
   className?: string;
+  /** Render the heading as h1 instead of h2 (for page-level headings) */
+  as?: "h1" | "h2";
 }
 
 /**
@@ -23,6 +25,7 @@ export default function SectionHeading({
   description,
   align = "center",
   className,
+  as: Tag = "h2",
 }: SectionHeadingProps) {
   const isCenter = align === "center";
 
@@ -40,9 +43,9 @@ export default function SectionHeading({
         </span>
       )}
 
-      <h2 className="text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl">
+      <Tag className="text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl">
         {heading}
-      </h2>
+      </Tag>
 
       {description && (
         <p

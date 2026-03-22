@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "AI for Recruitment Agencies: Automate Candidate Screening, Outreach & Placement Tracking",
+    "AI for Recruitment Agencies: Automate Screening",
   description:
     "Discover how AI automation helps UK recruitment agencies screen CVs faster, automate candidate outreach, and streamline placement tracking with IR35 compliance.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      "AI for Recruitment Agencies: Automate Candidate Screening, Outreach & Placement Tracking",
+      "AI for Recruitment Agencies: Automate Screening",
     description:
       "5 practical AI automations that help UK recruitment agencies screen candidates faster, automate outreach, and stay compliant with IR35 and right-to-work checks.",
     type: "article",
@@ -37,7 +37,7 @@ const tags = [
 
 export default function BlogPost() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <article className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <Link
@@ -411,6 +411,6 @@ export default function BlogPost() {
           </div>
         </div>
       </article>
-    </main>
+    </div>
   );
 }

@@ -29,6 +29,7 @@ export default function CaseStudiesPage() {
       <AnimatedSection>
         <div className="mb-16 sm:mb-20">
           <SectionHeading
+            as="h1"
             eyebrow="Client Results"
             heading="Real Results for Real Businesses"
             description="See how we've helped businesses save time and grow with AI automation."

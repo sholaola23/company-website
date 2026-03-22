@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = await fetchPostBySlug(slug);
   if (!post) return { title: "Post Not Found" };
   return {
-    title: `${post.title} — Oladipupo Consulting`,
+    title: post.title,
     description: post.excerpt || `Read ${post.title} on the Oladipupo Consulting blog.`,
   };
 }
@@ -126,7 +126,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   };
 
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <JsonLd data={articleJsonLd} />
       <BreadcrumbJsonLd items={[{ name: "Blog", href: "/blog" }, { name: post.title, href: `/blog/${slug}` }]} />
       <article className="py-20 px-6">
@@ -184,6 +184,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
         </div>
       </article>
-    </main>
+    </div>
   );
 }

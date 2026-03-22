@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "AI for Solicitors & Law Firms: Automate Client Intake, Billing & Case Updates",
+    "AI for Solicitors: Automate Intake & Billing",
   description:
     "Discover how AI automation helps solicitors and law firms streamline client intake, automate billing, send case updates, and stay on top of SRA compliance.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      "AI for Solicitors & Law Firms: Automate Client Intake, Billing & Case Updates",
+      "AI for Solicitors: Automate Intake & Billing",
     description:
       "5 practical AI automations that help solicitors and law firms onboard clients faster, bill accurately, and never miss a compliance deadline.",
     type: "article",
@@ -37,7 +37,7 @@ const tags = [
 
 export default function BlogPost() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <article className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <Link
@@ -424,6 +424,6 @@ export default function BlogPost() {
           </div>
         </div>
       </article>
-    </main>
+    </div>
   );
 }

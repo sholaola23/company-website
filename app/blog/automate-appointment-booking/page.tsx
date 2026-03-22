@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, Clock } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "How to Automate Appointment Booking for Your Small Business",
+  title: "Automate Appointment Booking for Your Business",
   description:
     "Learn how to automate appointment booking for your small business. Stop missing calls and double-booking. Set up an AI booking system that works 24/7.",
   keywords: [
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "AI appointment system",
   ],
   openGraph: {
-    title: "How to Automate Appointment Booking for Your Small Business",
+    title: "Automate Appointment Booking for Your Business",
     description:
       "Stop missing calls and double-booking. Learn how AI appointment booking works for small businesses — and how to set it up.",
     type: "article",
@@ -31,7 +31,7 @@ const tags = ["AI Automation", "Appointment Booking", "Small Business", "Guides"
 
 export default function BlogPost() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <article className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <Link
@@ -337,6 +337,6 @@ export default function BlogPost() {
           </div>
         </div>
       </article>
-    </main>
+    </div>
   );
 }

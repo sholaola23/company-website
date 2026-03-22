@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "AI for Care Homes & Home Care Agencies: Automate Rota Planning, Family Updates & Compliance",
+    "AI for Care Homes: Automate Rotas & Compliance",
   description:
     "Discover how AI automation helps care homes and home care agencies streamline rota planning, keep families informed, and stay CQC-compliant with less admin.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      "AI for Care Homes & Home Care Agencies: Automate Rota Planning, Family Updates & Compliance",
+      "AI for Care Homes: Automate Rotas & Compliance",
     description:
       "5 practical AI automations that help care homes and home care agencies fill shifts faster, update families automatically, and maintain CQC compliance.",
     type: "article",
@@ -37,7 +37,7 @@ const tags = [
 
 export default function BlogPost() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <article className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <Link
@@ -419,6 +419,6 @@ export default function BlogPost() {
           </div>
         </div>
       </article>
-    </main>
+    </div>
   );
 }

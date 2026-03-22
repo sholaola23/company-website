@@ -225,7 +225,7 @@ Fill in ALL placeholder values `[X]` with real research data. Every placeholder 
       <h3>Ready to get started?</h3>
       <p>Book a free 30-minute discovery call. No obligation — just a conversation.</p>
       <div class="cta-contact">
-        <div class="cta-item">📧 <a href="mailto:olusholaoladipupo1@gmail.com">olusholaoladipupo1@gmail.com</a></div>
+        <div class="cta-item">📧 <a href="mailto:hello@oladipupoconsulting.co.uk">hello@oladipupoconsulting.co.uk</a></div>
         <div class="cta-item">📱 <a href="tel:+447469347654">07469 347654</a></div>
       </div>
     </div>
@@ -235,7 +235,7 @@ Fill in ALL placeholder values `[X]` with real research data. Every placeholder 
   <div class="footer">
     This is a complimentary AI Readiness Audit prepared by Oladipupo Consulting Ltd &nbsp;·&nbsp;
     Registered in England & Wales &nbsp;·&nbsp;
-    olusholaoladipupo1@gmail.com &nbsp;·&nbsp; 07469 347654
+    hello@oladipupoconsulting.co.uk &nbsp;·&nbsp; 07469 347654
   </div>
 
 </body>

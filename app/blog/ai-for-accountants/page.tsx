@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "AI for Accountants & Bookkeepers: Automate Client Onboarding & Compliance",
+    "AI for Accountants: Automate Onboarding",
   description:
     "Discover how AI automation helps accountants and bookkeepers streamline client onboarding, never miss a deadline, and free up hours of admin every week.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      "AI for Accountants & Bookkeepers: Automate Client Onboarding & Compliance",
+      "AI for Accountants: Automate Onboarding",
     description:
       "5 practical AI automations that help accounting practices onboard clients faster, hit every deadline, and reduce admin by 10+ hours a week.",
     type: "article",
@@ -37,7 +37,7 @@ const tags = [
 
 export default function BlogPost() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <article className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <Link
@@ -418,6 +418,6 @@ export default function BlogPost() {
           </div>
         </div>
       </article>
-    </main>
+    </div>
   );
 }

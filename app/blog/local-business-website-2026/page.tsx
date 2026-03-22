@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import JsonLd from "@/components/shared/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Why Every Local Business Needs a Website in 2026 (And What It Costs)",
+  title: "Does Your Business Need a Website in 2026?",
   description:
     "46% of UK small businesses still don't have a website. Here's why that's costing you customers, what a good business website needs, and what it actually costs in 2026.",
   keywords: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "local SEO UK",
   ],
   openGraph: {
-    title: "Why Every Local Business Needs a Website in 2026 (And What It Costs)",
+    title: "Does Your Business Need a Website in 2026?",
     description:
       "46% of UK small businesses still don't have a website. Here's why that's costing you customers and what it actually costs to fix.",
     type: "article",
@@ -35,7 +35,7 @@ const articleJsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline":
-    "Why Every Local Business Needs a Website in 2026 (And What It Costs)",
+    "Does Your Business Need a Website in 2026?",
   "description":
     "46% of UK small businesses still don't have a website. Here's why that's costing you customers, what a good business website needs, and what it actually costs in 2026.",
   "author": {
@@ -55,7 +55,7 @@ const articleJsonLd = {
 
 export default function BlogPost() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <JsonLd data={articleJsonLd} />
       <article className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
@@ -499,6 +499,6 @@ export default function BlogPost() {
           </div>
         </div>
       </article>
-    </main>
+    </div>
   );
 }

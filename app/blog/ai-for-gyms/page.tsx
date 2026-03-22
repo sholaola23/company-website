@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "AI for Gyms & Fitness Studios: Automate Bookings, Retention & Member Follow-Up",
+    "AI for Gyms: Automate Bookings & Retention",
   description:
     "Discover how AI automation helps gyms and fitness studios fill classes, retain members, convert trials, and collect reviews — without adding staff.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      "AI for Gyms & Fitness Studios: Automate Bookings, Retention & Member Follow-Up",
+      "AI for Gyms: Automate Bookings & Retention",
     description:
       "5 practical AI automations that help gyms fill classes, retain members, and grow — without adding reception staff.",
     type: "article",
@@ -32,7 +32,7 @@ const tags = ["AI Automation", "Gyms", "Fitness", "Industry Guide"];
 
 export default function BlogPost() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <article className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <Link
@@ -393,6 +393,6 @@ export default function BlogPost() {
           </div>
         </div>
       </article>
-    </main>
+    </div>
   );
 }

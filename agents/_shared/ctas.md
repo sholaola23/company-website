@@ -39,7 +39,7 @@ Olushola Oladipupo
 Oladipupo Consulting Ltd
 oladipupoconsulting.co.uk
 07469 347654
-olusholaoladipupo1@gmail.com
+hello@oladipupoconsulting.co.uk
 
 If this isn't relevant, just let me know and I won't follow up.
 ```

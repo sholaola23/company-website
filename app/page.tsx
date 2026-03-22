@@ -566,7 +566,7 @@ const homepageFAQs: FAQItem[] = [
 
 export default function HomePage() {
   return (
-    <main>
+    <>
       <JsonLd data={businessJsonLd} />
       <Hero />
       <SocialProofBar />
@@ -587,6 +587,6 @@ export default function HomePage() {
       </section>
       <NewsletterSignup />
       <PersonalisedCTA />
-    </main>
+    </>
   );
 }

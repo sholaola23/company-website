@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "AI for Mortgage Brokers: Automate Lead Qualification, Applications & Client Updates",
+    "AI for Mortgage Brokers: Qualify Leads Faster",
   description:
     "Discover how AI automation helps mortgage brokers qualify leads faster, chase documents automatically, and keep clients updated throughout the application process.",
   keywords: [
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      "AI for Mortgage Brokers: Automate Lead Qualification, Applications & Client Updates",
+      "AI for Mortgage Brokers: Qualify Leads Faster",
     description:
       "5 practical AI automations that help mortgage brokers qualify leads faster, streamline applications, and keep clients informed from DIP to completion.",
     type: "article",
@@ -37,7 +37,7 @@ const tags = [
 
 export default function BlogPost() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       <article className="py-20 px-6">
         <div className="max-w-3xl mx-auto">
           <Link
@@ -415,6 +415,6 @@ export default function BlogPost() {
           </div>
         </div>
       </article>
-    </main>
+    </div>
   );
 }
