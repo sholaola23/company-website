@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import { put } from "@vercel/blob";
 import { validateClientAuth } from "@/lib/client-auth";
 import { getClient } from "@/lib/client-config";
+import { matchBankStatement, type MatchSummary } from "@/lib/bank-match";
 
-// Known HSBC CSV header keywords (first line of a valid statement)
+// Known HSBC CSV header keywords
 const HSBC_HEADER_KEYWORDS = [
   "date",
   "type",
@@ -20,17 +20,6 @@ function fail(message: string, status: number) {
 }
 
 /**
- * Generate a safe timestamp string (no colons) for filenames.
- * e.g. "20260322T154500Z"
- */
-function safeTimestamp(): string {
-  return new Date()
-    .toISOString()
-    .replace(/[-:]/g, "")
-    .replace(/\.\d{3}Z$/, "Z");
-}
-
-/**
  * Validate CSV content:
  * - Non-empty
  * - At least 2 lines
@@ -44,54 +33,12 @@ function isValidBankStatementCSV(text: string): boolean {
   if (lines.length < 2) return false;
 
   const firstLine = lines[0].toLowerCase();
-
-  // Check for commas (basic CSV structure)
   const hasCommas = firstLine.includes(",");
-
-  // Check for known HSBC header keywords
   const hasKnownHeaders = HSBC_HEADER_KEYWORDS.some((keyword) =>
     firstLine.includes(keyword)
   );
 
   return hasCommas || hasKnownHeaders;
-}
-
-/**
- * Trigger n8n workflow to process the uploaded bank statement.
- * WF02 (HSBC CSV Bank Match) can be triggered via webhook.
- */
-async function triggerN8nProcessing(blobUrl: string, clientName: string) {
-  const n8nApiKey = process.env.N8N_API_KEY;
-  if (!n8nApiKey) {
-    console.warn("[client-upload] N8N_API_KEY not set — skipping trigger");
-    return;
-  }
-
-  // Trigger WF02 (Bank Match) via n8n webhook
-  // The workflow will download the CSV from the blob URL and process it
-  const webhookUrl = process.env.N8N_BANK_MATCH_WEBHOOK;
-  if (!webhookUrl) {
-    console.warn(
-      "[client-upload] N8N_BANK_MATCH_WEBHOOK not set — n8n will pick up via polling"
-    );
-    return;
-  }
-
-  try {
-    await fetch(webhookUrl, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        blobUrl,
-        clientName,
-        uploadedAt: new Date().toISOString(),
-      }),
-    });
-    console.log("[client-upload] triggered n8n bank match workflow");
-  } catch (error) {
-    // Non-fatal — n8n polling will pick it up eventually
-    console.warn("[client-upload] failed to trigger n8n:", error);
-  }
 }
 
 export async function POST(
@@ -110,6 +57,10 @@ export async function POST(
   const client = getClient(slug);
   if (!client) {
     return fail("Client not found", 404);
+  }
+
+  if (!client.sheetsId) {
+    return fail("Sheets not configured for this client", 400);
   }
 
   // 3. Parse form data
@@ -162,31 +113,54 @@ export async function POST(
     );
   }
 
-  // 8. Upload to Vercel Blob
-  const uploadFileName = `bank-statements/${client.slug}/bank-statement-${safeTimestamp()}.csv`;
+  // 8. Check Google Sheets config
+  if (!process.env.GOOGLE_SERVICE_ACCOUNT) {
+    return fail("Upload service not available", 503);
+  }
 
+  // 9. Parse CSV + match against orders + update Sheets
   try {
-    const blob = await put(uploadFileName, textContent, {
-      access: "public",
-      contentType: "text/csv",
-    });
-
-    console.log(
-      `[client-upload] ${client.name}: uploaded ${uploadFileName} → ${blob.url}`
+    const summary: MatchSummary = await matchBankStatement(
+      textContent,
+      client.sheetsId
     );
 
-    // 9. Trigger n8n to process (non-blocking, best-effort)
-    triggerN8nProcessing(blob.url, client.name).catch(() => {
-      /* ignore — n8n polling is the fallback */
-    });
+    if (summary.totalCredits === 0) {
+      return NextResponse.json({
+        success: true,
+        message: "No payment credits found in this statement",
+        summary,
+      });
+    }
+
+    // Build human-readable message
+    const parts: string[] = [];
+    if (summary.autoMatched > 0) {
+      parts.push(
+        `${summary.autoMatched} payment${summary.autoMatched === 1 ? "" : "s"} matched (£${summary.totalMatchedAmount.toFixed(2)})`
+      );
+    }
+    if (summary.needsReview > 0) {
+      parts.push(
+        `${summary.needsReview} need${summary.needsReview === 1 ? "s" : ""} review`
+      );
+    }
+    if (summary.unmatched > 0) {
+      parts.push(`${summary.unmatched} unmatched`);
+    }
+
+    const message = parts.join(", ");
+
+    console.log(`[client-upload] ${client.name}: ${message}`);
 
     return NextResponse.json({
       success: true,
-      fileName: uploadFileName,
+      message,
+      summary,
     });
   } catch (error) {
     const errMsg = error instanceof Error ? error.message : String(error);
-    console.error("[client-upload] blob upload error:", errMsg);
+    console.error("[client-upload] matching error:", errMsg);
     return fail("Upload failed. Please try again.", 500);
   }
 }

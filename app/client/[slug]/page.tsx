@@ -409,6 +409,7 @@ function BankStatementUpload({ slug }: { slug: string }) {
   const [uploadState, setUploadState] = useState<
     "idle" | "uploading" | "success" | "error"
   >("idle");
+  const [resultMsg, setResultMsg] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -418,6 +419,7 @@ function BankStatementUpload({ slug }: { slug: string }) {
 
     setUploadState("uploading");
     setErrorMsg("");
+    setResultMsg("");
 
     const formData = new FormData();
     formData.append("file", file);
@@ -435,21 +437,23 @@ function BankStatementUpload({ slug }: { slug: string }) {
       }
 
       setUploadState("success");
-      // Reset after 5 seconds
-      setTimeout(() => setUploadState("idle"), 5000);
+      setResultMsg(data.message || "Statement processed");
+      // Reset after 10 seconds (longer to read results)
+      setTimeout(() => {
+        setUploadState("idle");
+        setResultMsg("");
+      }, 10000);
     } catch (err) {
       setUploadState("error");
       setErrorMsg(
         err instanceof Error ? err.message : "Upload failed. Please try again."
       );
-      // Reset error after 8 seconds
       setTimeout(() => {
         setUploadState("idle");
         setErrorMsg("");
       }, 8000);
     }
 
-    // Clear the input so the same file can be re-uploaded
     if (fileInputRef.current) fileInputRef.current.value = "";
   }
 
@@ -468,7 +472,7 @@ function BankStatementUpload({ slug }: { slug: string }) {
         <div className="flex items-center gap-2.5">
           <FileCheck className="w-4 h-4 text-emerald-400 shrink-0" />
           <p className="text-emerald-300/90 text-xs leading-relaxed">
-            Uploaded successfully — matching should start shortly
+            {resultMsg}
           </p>
         </div>
       ) : uploadState === "error" ? (

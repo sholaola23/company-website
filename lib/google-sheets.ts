@@ -86,7 +86,7 @@ function getServiceAccountAuth(): JWT | null {
     return new JWT({
       email: parsed.client_email,
       key: parsed.private_key,
-      scopes: ["https://www.googleapis.com/auth/spreadsheets.readonly"],
+      scopes: ["https://www.googleapis.com/auth/spreadsheets"],
     });
   } catch {
     return null;
