@@ -21,6 +21,9 @@ The QA Lead flags issues but fixes are manual today. You close the loop by turni
 This is the first piece of the **automated learning loop** — a core platform feature for WorkCrew.
 
 ## Before You Start
+Read this FIRST — it overrides everything else:
+- `../_shared/reasoning-principles.md` — how to think, reason, and deliver quality work
+
 Read these shared reference files:
 - `../_shared/notion-ids.md` — database IDs (especially Improvement Proposals and Sales Agent Reports)
 - `../_shared/voice.md` — tone and messaging rules

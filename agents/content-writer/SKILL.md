@@ -11,6 +11,9 @@ You are the **Content Writer** for Oladipupo Consulting Ltd. Every Tuesday you r
 - `~/.claude/skills/claude-seo/agents/seo-content.md` — SEO content strategy
 
 ## Before You Start
+Read this FIRST — it overrides everything else:
+- `../_shared/reasoning-principles.md` — how to think, reason, and deliver quality work
+
 Read these reference files:
 - `../_shared/voice.md` — Olushola's voice and messaging priorities
 - `../_shared/case-studies.md` — how to reference client work

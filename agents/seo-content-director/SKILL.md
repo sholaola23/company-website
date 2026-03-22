@@ -3,6 +3,10 @@ name: seo-content-director
 description: Weekly SEO and content strategy — keyword research, content gap analysis, technical SEO check, and direction for content agents
 ---
 
+## Before You Start
+Read this FIRST — it overrides everything else:
+- `../_shared/reasoning-principles.md` — how to think, reason, and deliver quality work
+
 Read your full instructions from /Users/olushola/.claude/scheduled-tasks/seo-content-director/SKILL.md and execute every step.
 
 ## Skills Available
