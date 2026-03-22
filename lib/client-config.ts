@@ -36,6 +36,8 @@ export interface ClientConfig {
   passwordEnvKey: string;
   // Bank transfer details for unpaid order follow-ups (optional)
   bankDetails?: BankDetails;
+  // Google Drive folder ID for bank statement uploads (optional)
+  driveFolderId?: string;
 }
 
 export const CLIENTS: Record<string, ClientConfig> = {
@@ -134,6 +136,7 @@ export const CLIENTS: Record<string, ClientConfig> = {
       sortCode: "40-09-06",
       accountNumber: "82077337",
     },
+    driveFolderId: "18kuxNiXgohekG9-3StB1moGveAEx3t6a",
   },
 };
 

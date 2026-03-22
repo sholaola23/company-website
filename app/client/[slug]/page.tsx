@@ -22,6 +22,9 @@ import {
   MapPin,
   Copy,
   Check,
+  Upload,
+  Loader2,
+  FileCheck,
 } from "lucide-react";
 
 // We can't import ChefHat if it doesn't exist in this version of lucide,
@@ -401,6 +404,100 @@ function Section({
   );
 }
 
+// ─── Bank Statement Upload ───────────────────────────────────
+function BankStatementUpload({ slug }: { slug: string }) {
+  const [uploadState, setUploadState] = useState<
+    "idle" | "uploading" | "success" | "error"
+  >("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  async function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploadState("uploading");
+    setErrorMsg("");
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+      const res = await fetch(`/api/client-upload/${slug}`, {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.message ?? "Upload failed. Please try again.");
+      }
+
+      setUploadState("success");
+      // Reset after 5 seconds
+      setTimeout(() => setUploadState("idle"), 5000);
+    } catch (err) {
+      setUploadState("error");
+      setErrorMsg(
+        err instanceof Error ? err.message : "Upload failed. Please try again."
+      );
+      // Reset error after 8 seconds
+      setTimeout(() => {
+        setUploadState("idle");
+        setErrorMsg("");
+      }, 8000);
+    }
+
+    // Clear the input so the same file can be re-uploaded
+    if (fileInputRef.current) fileInputRef.current.value = "";
+  }
+
+  return (
+    <div className="mt-3 rounded-xl bg-zinc-800/50 border border-zinc-700/40 p-3">
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept=".csv"
+        onChange={handleFileChange}
+        className="hidden"
+        aria-label="Upload bank statement CSV"
+      />
+
+      {uploadState === "success" ? (
+        <div className="flex items-center gap-2.5">
+          <FileCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+          <p className="text-emerald-300/90 text-xs leading-relaxed">
+            Uploaded successfully — matching should start shortly
+          </p>
+        </div>
+      ) : uploadState === "error" ? (
+        <div className="flex items-center gap-2.5">
+          <AlertCircle className="w-4 h-4 text-red-400 shrink-0" />
+          <p className="text-red-300/90 text-xs leading-relaxed">{errorMsg}</p>
+        </div>
+      ) : (
+        <button
+          onClick={() => fileInputRef.current?.click()}
+          disabled={uploadState === "uploading"}
+          className="flex items-center gap-2.5 w-full text-left group disabled:opacity-60 disabled:cursor-not-allowed"
+        >
+          {uploadState === "uploading" ? (
+            <Loader2 className="w-4 h-4 text-amber-400 shrink-0 animate-spin" />
+          ) : (
+            <Upload className="w-4 h-4 text-amber-400/70 shrink-0 group-hover:text-amber-300 transition-colors" />
+          )}
+          <span className="text-amber-300/70 text-xs leading-relaxed group-hover:text-amber-200 transition-colors">
+            {uploadState === "uploading"
+              ? "Uploading..."
+              : "Upload bank statement (.csv)"}
+          </span>
+        </button>
+      )}
+    </div>
+  );
+}
+
 // ─── Main Dashboard ──────────────────────────────────────────
 export default function ClientDashboard() {
   const params = useParams();
@@ -744,16 +841,8 @@ export default function ClientDashboard() {
                     </div>
                   </div>
 
-                  {/* Bank transfer nudge — only when both amount and count are zero */}
-                  {sheetsData.orders.paymentBreakdown.bankTransferPaid === 0 &&
-                    sheetsData.orders.paymentBreakdown.bankTransferCount === 0 && (
-                      <div className="mt-3 flex items-start gap-2.5 px-3 py-2.5 rounded-xl bg-amber-500/10 border border-amber-500/20">
-                        <AlertCircle className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
-                        <p className="text-amber-300/80 text-xs leading-relaxed">
-                          Upload your bank statement to match transfer payments
-                        </p>
-                      </div>
-                    )}
+                  {/* Bank statement upload */}
+                  <BankStatementUpload slug={slug} />
                 </div>
               </div>
             </Section>
