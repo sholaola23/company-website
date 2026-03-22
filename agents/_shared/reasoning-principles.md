@@ -35,6 +35,15 @@ If a tool gives you bad data, DON'T report that bad data as truth. Find another 
 
 **NEVER say "I couldn't do X" without trying at least 2 different approaches.**
 
+### Browser Tool Routing (CRITICAL)
+There are TWO sets of Chrome browser tools. You MUST use the right one:
+
+- **`mcp__Claude_in_Chrome__*` (Claude in Chrome extension)** — This connects to Olushola's ACTUAL browser with all his logged-in sessions (Vercel, Google, Facebook, Beehiiv, etc). **ALWAYS use this for any task that requires authentication.** Start with `mcp__Claude_in_Chrome__tabs_context_mcp` to get existing tabs, then use `mcp__Claude_in_Chrome__navigate`, `mcp__Claude_in_Chrome__computer`, `mcp__Claude_in_Chrome__read_page`, etc.
+
+- **`mcp__plugin_chrome-devtools-mcp_chrome-devtools__*` (Chrome DevTools MCP)** — This is a SEPARATE browser with NO logged-in sessions. **NEVER use this for tasks requiring authentication** (Vercel, Google Search Console, Meta Ads, Beehiiv settings). Only use it for inspecting public pages where no login is needed.
+
+**Rule: If you need to be logged in, use `mcp__Claude_in_Chrome__*`. If you open a page and see a login screen, STOP — you're using the wrong tool. Switch to Claude in Chrome.**
+
 ## 3. Dive Deep — Trust Data, Not Summaries
 Leaders operate at all levels and stay connected to the details. Be sceptical when something looks off.
 - Check the RAW source, not a summary of it. Read the actual HTML, not a markdown conversion. Query the actual database, not a cached report.
