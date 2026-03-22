@@ -1,11 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
+import { put } from "@vercel/blob";
 import { validateClientAuth } from "@/lib/client-auth";
 import { getClient } from "@/lib/client-config";
-import {
-  uploadFileToDrive,
-  GoogleDriveNotConfiguredError,
-  GoogleDriveUploadError,
-} from "@/lib/google-drive";
 
 // Known HSBC CSV header keywords (first line of a valid statement)
 const HSBC_HEADER_KEYWORDS = [
@@ -60,6 +56,44 @@ function isValidBankStatementCSV(text: string): boolean {
   return hasCommas || hasKnownHeaders;
 }
 
+/**
+ * Trigger n8n workflow to process the uploaded bank statement.
+ * WF02 (HSBC CSV Bank Match) can be triggered via webhook.
+ */
+async function triggerN8nProcessing(blobUrl: string, clientName: string) {
+  const n8nApiKey = process.env.N8N_API_KEY;
+  if (!n8nApiKey) {
+    console.warn("[client-upload] N8N_API_KEY not set — skipping trigger");
+    return;
+  }
+
+  // Trigger WF02 (Bank Match) via n8n webhook
+  // The workflow will download the CSV from the blob URL and process it
+  const webhookUrl = process.env.N8N_BANK_MATCH_WEBHOOK;
+  if (!webhookUrl) {
+    console.warn(
+      "[client-upload] N8N_BANK_MATCH_WEBHOOK not set — n8n will pick up via polling"
+    );
+    return;
+  }
+
+  try {
+    await fetch(webhookUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        blobUrl,
+        clientName,
+        uploadedAt: new Date().toISOString(),
+      }),
+    });
+    console.log("[client-upload] triggered n8n bank match workflow");
+  } catch (error) {
+    // Non-fatal — n8n polling will pick it up eventually
+    console.warn("[client-upload] failed to trigger n8n:", error);
+  }
+}
+
 export async function POST(
   req: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
@@ -72,10 +106,10 @@ export async function POST(
     return fail("Unauthorized", 401);
   }
 
-  // 2. Client has driveFolderId
+  // 2. Get client config
   const client = getClient(slug);
-  if (!client?.driveFolderId) {
-    return fail("Upload not configured for this client", 400);
+  if (!client) {
+    return fail("Client not found", 404);
   }
 
   // 3. Parse form data
@@ -114,12 +148,9 @@ export async function POST(
   }
 
   // 7. Content validation
-  let content: Buffer;
   let textContent: string;
   try {
-    const arrayBuffer = await file.arrayBuffer();
-    content = Buffer.from(arrayBuffer);
-    textContent = content.toString("utf-8");
+    textContent = await file.text();
   } catch {
     return fail("Could not read file content", 400);
   }
@@ -131,39 +162,31 @@ export async function POST(
     );
   }
 
-  // 8. Upload to Google Drive
-  const uploadFileName = `bank-statement-${safeTimestamp()}.csv`;
+  // 8. Upload to Vercel Blob
+  const uploadFileName = `bank-statements/${client.slug}/bank-statement-${safeTimestamp()}.csv`;
 
   try {
-    await uploadFileToDrive(
-      client.driveFolderId,
-      uploadFileName,
-      content,
-      "text/csv"
-    );
+    const blob = await put(uploadFileName, textContent, {
+      access: "public",
+      contentType: "text/csv",
+    });
 
     console.log(
-      `[client-upload] ${client.name}: uploaded ${uploadFileName}`
+      `[client-upload] ${client.name}: uploaded ${uploadFileName} → ${blob.url}`
     );
+
+    // 9. Trigger n8n to process (non-blocking, best-effort)
+    triggerN8nProcessing(blob.url, client.name).catch(() => {
+      /* ignore — n8n polling is the fallback */
+    });
 
     return NextResponse.json({
       success: true,
       fileName: uploadFileName,
     });
   } catch (error) {
-    if (error instanceof GoogleDriveNotConfiguredError) {
-      return fail("Upload service not available", 503);
-    }
-
-    if (error instanceof GoogleDriveUploadError) {
-      console.error(`[client-upload] Drive error: ${error.message}`);
-      // Temporarily expose error detail for debugging
-      return fail(`Upload failed: ${error.message}`, 500);
-    }
-
-    // Unexpected errors
     const errMsg = error instanceof Error ? error.message : String(error);
-    console.error("[client-upload] unexpected error:", errMsg);
-    return fail(`Upload failed: ${errMsg}`, 500);
+    console.error("[client-upload] blob upload error:", errMsg);
+    return fail("Upload failed. Please try again.", 500);
   }
 }
