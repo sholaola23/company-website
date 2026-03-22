@@ -522,9 +522,10 @@ export default function ClientDashboard() {
   async function fetchAll(isRefresh = false, view?: "week" | "all") {
     const currentView = view ?? viewModeRef.current;
     try {
-      const viewParam = currentView === "all" ? "?view=all" : "";
+      const cacheBust = `_t=${Date.now()}`;
+      const viewParam = currentView === "all" ? `?view=all&${cacheBust}` : `?${cacheBust}`;
       const [statusRes, sheetsRes] = await Promise.all([
-        fetch(`/api/client-status/${slug}`),
+        fetch(`/api/client-status/${slug}?${cacheBust}`),
         fetch(`/api/client-sheets/${slug}${viewParam}`),
       ]);
 
