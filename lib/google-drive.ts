@@ -40,7 +40,7 @@ function getDriveAuth() {
   return new google.auth.JWT({
     email: parsed.client_email,
     key: parsed.private_key,
-    scopes: ["https://www.googleapis.com/auth/drive.file"],
+    scopes: ["https://www.googleapis.com/auth/drive"],
   });
 }
 
