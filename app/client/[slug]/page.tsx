@@ -516,12 +516,15 @@ export default function ClientDashboard() {
   const [systemHealthOpen, setSystemHealthOpen] = useState(false);
   const [justRefreshed, setJustRefreshed] = useState(false);
   const [bankCopied, setBankCopied] = useState(false);
+  const [viewMode, setViewMode] = useState<"week" | "all">("week");
 
-  async function fetchAll(isRefresh = false) {
+  async function fetchAll(isRefresh = false, view?: "week" | "all") {
+    const currentView = view ?? viewMode;
     try {
+      const viewParam = currentView === "all" ? "?view=all" : "";
       const [statusRes, sheetsRes] = await Promise.all([
         fetch(`/api/client-status/${slug}`),
-        fetch(`/api/client-sheets/${slug}`),
+        fetch(`/api/client-sheets/${slug}${viewParam}`),
       ]);
 
       if (statusRes.status === 401) {
@@ -738,9 +741,21 @@ export default function ClientDashboard() {
           {sheetsData?.orders ? (
             <Section>
               <div className="bg-gradient-to-br from-zinc-900 to-zinc-900/60 rounded-2xl border border-zinc-800/60 p-5">
-                <h2 className="text-xs font-semibold text-zinc-500 uppercase tracking-widest mb-4">
-                  This Week
-                </h2>
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className="text-xs font-semibold text-zinc-500 uppercase tracking-widest">
+                    {viewMode === "week" ? "This Week" : "All Time"}
+                  </h2>
+                  <button
+                    onClick={() => {
+                      const next = viewMode === "week" ? "all" : "week";
+                      setViewMode(next);
+                      fetchAll(true, next);
+                    }}
+                    className="text-xs text-blue-400 hover:text-blue-300 transition-colors"
+                  >
+                    {viewMode === "week" ? "View all time" : "View this week"}
+                  </button>
+                </div>
                 <div className="grid grid-cols-2 gap-5">
                   <AnimatedStat
                     value={sheetsData.orders.totalOrders}

@@ -126,7 +126,8 @@ function getCurrentWeekCode(): string {
 }
 
 export async function getOrdersSummary(
-  sheetsId: string
+  sheetsId: string,
+  allTime = false
 ): Promise<OrdersSummary | null> {
   try {
     const doc = await getDoc(sheetsId);
@@ -138,11 +139,13 @@ export async function getOrdersSummary(
     const rows = await sheet.getRows();
     const weekCode = getCurrentWeekCode();
 
-    // Filter to current week, exclude cancelled
+    // Filter orders — current week or all time
     const thisWeek = rows.filter((row) => {
-      const wc = row.get("Week Code");
       const status = (row.get("Order Status") || "").toLowerCase();
-      return wc === weekCode && status !== "cancelled";
+      if (status === "cancelled") return false;
+      if (allTime) return true;
+      const wc = row.get("Week Code");
+      return wc === weekCode;
     });
 
     // Build a map of product header → price from the column names
@@ -386,11 +389,12 @@ export async function getDeliverySummary(
 
 
 export async function getAllSheetsData(
-  sheetsId: string
+  sheetsId: string,
+  allTime = false
 ): Promise<SheetsData> {
   // Fetch all three in parallel for speed
   const [orders, production, deliveries] = await Promise.all([
-    getOrdersSummary(sheetsId),
+    getOrdersSummary(sheetsId, allTime),
     getProductionSummary(sheetsId),
     getDeliverySummary(sheetsId),
   ]);

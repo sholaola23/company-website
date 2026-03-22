@@ -84,10 +84,12 @@ export async function GET(
     );
   }
 
-  const data = await getAllSheetsData(client.sheetsId);
+  const allTime = req.nextUrl.searchParams.get("view") === "all";
+  const data = await getAllSheetsData(client.sheetsId, allTime);
 
   return NextResponse.json({
     ...data,
+    view: allTime ? "all" : "week",
     lastUpdated: new Date().toISOString(),
   });
 }
