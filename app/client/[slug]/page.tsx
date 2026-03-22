@@ -405,7 +405,7 @@ function Section({
 }
 
 // ─── Bank Statement Upload ───────────────────────────────────
-function BankStatementUpload({ slug }: { slug: string }) {
+function BankStatementUpload({ slug, onUploadComplete }: { slug: string; onUploadComplete?: () => void }) {
   const [uploadState, setUploadState] = useState<
     "idle" | "uploading" | "success" | "error"
   >("idle");
@@ -438,7 +438,9 @@ function BankStatementUpload({ slug }: { slug: string }) {
 
       setUploadState("success");
       setResultMsg(data.message || "Statement processed");
-      // Reset after 10 seconds (longer to read results)
+      // Auto-refresh dashboard data after 2 seconds (let Sheets propagate)
+      setTimeout(() => onUploadComplete?.(), 2000);
+      // Reset message after 10 seconds
       setTimeout(() => {
         setUploadState("idle");
         setResultMsg("");
@@ -846,7 +848,7 @@ export default function ClientDashboard() {
                   </div>
 
                   {/* Bank statement upload */}
-                  <BankStatementUpload slug={slug} />
+                  <BankStatementUpload slug={slug} onUploadComplete={() => fetchAll(true)} />
                 </div>
               </div>
             </Section>
