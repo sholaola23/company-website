@@ -42,8 +42,8 @@ const HOW_WE_WORK = [
 
 const STATS = [
   { value: "2", label: "Live clients" },
-  { value: "3", label: "Service pillars" },
-  { value: "16", label: "AI agents running" },
+  { value: "12", label: "Service offerings" },
+  { value: "60+", label: "AI agents running" },
   { value: "7 days", label: "Average delivery" },
 ];
 
