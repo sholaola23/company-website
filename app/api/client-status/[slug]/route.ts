@@ -148,10 +148,18 @@ export async function GET(
   );
   const activeCount = workflowStatuses.filter((w) => w.active).length;
 
-  // Health is based ONLY on current state (last execution status), not past errors
-  const currentlyFailingCount = workflowStatuses.filter(
-    (w) => w.lastExecution?.status === "error"
-  ).length;
+  // Health is based ONLY on current state — a workflow is "currently failing" only if:
+  // 1. Its last execution status was "error", AND
+  // 2. That error happened within the last 48 hours (not a stale old error from a weekly workflow)
+  const now = Date.now();
+  const FORTY_EIGHT_HOURS = 48 * 60 * 60 * 1000;
+  const currentlyFailingCount = workflowStatuses.filter((w) => {
+    if (w.lastExecution?.status !== "error") return false;
+    const lastRun = w.lastExecution?.startedAt
+      ? new Date(w.lastExecution.startedAt).getTime()
+      : 0;
+    return now - lastRun < FORTY_EIGHT_HOURS;
+  }).length;
 
   const overallHealth: "green" | "amber" | "red" =
     currentlyFailingCount === 0
