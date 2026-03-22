@@ -132,7 +132,7 @@ export default function AIAutomationBristolPage() {
             Gloucester Road&apos;s legendary indie shops. The businesses pulling
             ahead are the ones responding faster, following up automatically, and
             letting AI handle the admin. We build those systems — delivered in 7
-            days, starting from {"\u00A3"}500.
+            days, starting from £500.
           </p>
         </div>
       </AnimatedSection>

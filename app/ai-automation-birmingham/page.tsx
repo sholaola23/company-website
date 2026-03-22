@@ -135,7 +135,7 @@ export default function AIAutomationBirminghamPage() {
             creative district. But many small businesses are still running on
             manual processes: chasing leads by hand, missing enquiries, and
             spending hours on admin. We build AI systems that fix that —
-            delivered in 7 days, starting from {"\u00A3"}500.
+            delivered in 7 days, starting from £500.
           </p>
         </div>
       </AnimatedSection>

@@ -136,7 +136,7 @@ export default function AIAutomationLeedsPage() {
             beauty, property, trades, and professional services. But growth
             brings more enquiries, more admin, and more things slipping through
             the cracks. We build AI automation systems that handle the repetitive
-            work — delivered in 7 days, starting from {"\u00A3"}500.
+            work — delivered in 7 days, starting from £500.
           </p>
         </div>
       </AnimatedSection>
@@ -165,7 +165,7 @@ export default function AIAutomationLeedsPage() {
               increasingly, they&apos;re turning to AI to stay competitive.
             </p>
             <p className="text-sm text-zinc-400 leading-relaxed">
-              The Leeds City Region contributes over {"\u00A3"}70 billion to the
+              The Leeds City Region contributes over £70 billion to the
               UK economy annually, yet many small businesses here still rely on
               manual processes that were designed for a slower era. Estate
               agents in Headingley lose leads because they can&apos;t respond

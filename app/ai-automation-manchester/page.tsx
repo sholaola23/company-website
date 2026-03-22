@@ -136,7 +136,7 @@ export default function AIAutomationManchesterPage() {
             business in Stockport, the edge goes to whoever responds fastest
             and follows up consistently. We build AI automation systems that
             handle that for you — delivered in 7 days, starting from
-            {" \u00A3"}500.
+            £500.
           </p>
         </div>
       </AnimatedSection>

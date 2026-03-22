@@ -139,7 +139,7 @@ export default function AIAutomationKetteringPage() {
             outsized impact. When every lead matters and word-of-mouth drives
             your reputation, you can&apos;t afford slow responses or missed
             follow-ups. We build AI systems that handle the repetitive work —
-            delivered in 7 days, starting from {"\u00A3"}500.
+            delivered in 7 days, starting from £500.
           </p>
         </div>
       </AnimatedSection>

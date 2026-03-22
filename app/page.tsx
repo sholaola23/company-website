@@ -110,8 +110,8 @@ function Hero() {
 // Social proof bar
 // ---------------------------------------------------------------------------
 const stats = [
-  { numeric: 8, suffix: "+", label: "Hours / ~\u00A3400 Saved", sublabel: "per client weekly" },
-  { numeric: 180, suffix: "", label: "Orders Automated Weekly", sublabel: "at E\u2019Manuel Bakery" },
+  { numeric: 8, suffix: "+", label: "Hours / ~£400 Saved", sublabel: "per client weekly" },
+  { numeric: 180, suffix: "", label: "Orders Automated Weekly", sublabel: "at E'Manuel Bakery" },
   { numeric: 9, suffix: "", label: "Workflows Deployed", sublabel: "for one bakery" },
   { numeric: 7, suffix: "", label: "Day Delivery", sublabel: "audit to live" },
 ];

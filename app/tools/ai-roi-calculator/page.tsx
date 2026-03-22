@@ -35,11 +35,11 @@ type Industry = (typeof INDUSTRIES)[number];
 const TEAM_SIZES = ["1-5", "6-15", "16-50", "50+"] as const;
 
 const REVENUE_RANGES = [
-  "Under \u00a35k",
-  "\u00a35k\u2013\u00a315k",
-  "\u00a315k\u2013\u00a350k",
-  "\u00a350k\u2013\u00a3100k",
-  "\u00a3100k+",
+  "Under £5k",
+  "£5k–£15k",
+  "£15k–£50k",
+  "£50k–£100k",
+  "£100k+",
 ] as const;
 
 /** Estimated average hourly cost of admin time by industry (GBP). */
@@ -72,7 +72,7 @@ const faqs: FAQItem[] = [
   {
     question: "How is the AI ROI estimate calculated?",
     answer:
-      "We estimate that AI automation can eliminate 60\u201370% of repetitive admin tasks such as scheduling, follow-ups, data entry, and invoicing. The calculator multiplies the hours saved by an industry-average hourly rate to produce an annual cost saving, then compares that against a typical AI setup and monthly retainer investment to give you a return-on-investment percentage.",
+      "We estimate that AI automation can eliminate 60–70% of repetitive admin tasks such as scheduling, follow-ups, data entry, and invoicing. The calculator multiplies the hours saved by an industry-average hourly rate to produce an annual cost saving, then compares that against a typical AI setup and monthly retainer investment to give you a return-on-investment percentage.",
   },
   {
     question: "Are these savings realistic for a small business?",
@@ -82,12 +82,12 @@ const faqs: FAQItem[] = [
   {
     question: "What does the AI investment include?",
     answer:
-      "The calculator assumes a one-off \u00a3500 setup fee plus \u00a350 per month for ongoing optimisation and support. This covers the design, build, and deployment of your AI automation system, plus monthly monitoring, updates, and priority support. There are no hidden costs.",
+      "The calculator assumes a one-off £500 setup fee plus £50 per month for ongoing optimisation and support. This covers the design, build, and deployment of your AI automation system, plus monthly monitoring, updates, and priority support. There are no hidden costs.",
   },
   {
     question: "What happens after I see my ROI estimate?",
     answer:
-      "If the numbers look promising, the next step is a free AI Readiness Audit. We analyse your specific business processes and identify exactly where automation will have the biggest impact \u2014 with a personalised report you can act on straight away, no obligation.",
+      "If the numbers look promising, the next step is a free AI Readiness Audit. We analyse your specific business processes and identify exactly where automation will have the biggest impact — with a personalised report you can act on straight away, no obligation.",
   },
 ];
 
@@ -378,15 +378,15 @@ export default function AIROICalculatorPage() {
                   <ResultCard
                     icon={<PoundSterling size={24} />}
                     label="Cost Savings / Year"
-                    value={`\u00a3${results.costSavingsPerYear.toLocaleString("en-GB")}`}
-                    subtitle={`at \u00a3${results.rate}/hr avg rate`}
+                    value={`£${results.costSavingsPerYear.toLocaleString("en-GB")}`}
+                    subtitle={`at £${results.rate}/hr avg rate`}
                     delay={0.3}
                   />
                   <ResultCard
                     icon={<TrendingUp size={24} />}
                     label="Estimated ROI"
                     value={`${results.roiPercent}%`}
-                    subtitle={`on \u00a3${ANNUAL_INVESTMENT.toLocaleString("en-GB")} yr-1 investment`}
+                    subtitle={`on £${ANNUAL_INVESTMENT.toLocaleString("en-GB")} yr-1 investment`}
                     delay={0.4}
                   />
                 </div>
@@ -397,7 +397,7 @@ export default function AIROICalculatorPage() {
                   transition={{ delay: 0.6 }}
                   className="mt-6 text-center text-sm text-zinc-500"
                 >
-                  Based on a \u00a3{SETUP_FEE} setup fee + \u00a3{MONTHLY_FEE}/month retainer.
+                  Based on a £{SETUP_FEE} setup fee + £{MONTHLY_FEE}/month retainer.
                   Actual savings may vary.
                 </motion.p>
 
@@ -460,7 +460,7 @@ export default function AIROICalculatorPage() {
             <FAQSection
               items={faqs}
               eyebrow="FAQs"
-              heading="AI ROI Calculator \u2014 Frequently Asked Questions"
+              heading="AI ROI Calculator — Frequently Asked Questions"
             />
           </motion.div>
         </div>

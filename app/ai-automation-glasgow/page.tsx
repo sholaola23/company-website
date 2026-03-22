@@ -134,7 +134,7 @@ export default function AIAutomationGlasgowPage() {
             businesses serving homes and offices across the region. The
             businesses pulling ahead are the ones responding faster, following up
             automatically, and letting AI handle the admin. We build those
-            systems — delivered in 7 days, starting from {"\u00A3"}500.
+            systems — delivered in 7 days, starting from £500.
           </p>
         </div>
       </AnimatedSection>

@@ -138,7 +138,7 @@ function friendlyTime(dateStr: string): string {
 
 function formatCurrency(amount: number | null | undefined): string {
   if (amount == null) return "£0.00";
-  return `\u00a3${amount.toFixed(2)}`;
+  return `£${amount.toFixed(2)}`;
 }
 
 // ─── Animation Variants ──────────────────────────────────────
@@ -1028,7 +1028,7 @@ export default function ClientDashboard() {
                                     ? friendlyTime(
                                         wf.lastExecution.startedAt
                                       )
-                                    : "Hasn\u2019t run yet"}
+                                    : "Hasn't run yet"}
                                 </span>
                                 <span>Next: {wf.expectedScheduleHuman}</span>
                               </div>
