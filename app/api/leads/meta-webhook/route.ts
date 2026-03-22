@@ -27,16 +27,28 @@ interface ParsedLead {
  * a flat JSON body. We handle both formats.
  */
 function parseLead(body: Record<string, unknown>): ParsedLead {
-  // Format 1: Flat JSON (from Make.com, Zapier, Google Sheets webhook, or direct POST)
-  if (body.name || body.full_name || body.fullName || body.email) {
+  // Make.com sends contact fields nested inside body.data (full_name, email, phone)
+  // while ad metadata (ad_name, campaign_name) is at the top level
+  const data = (body.data && typeof body.data === "object" ? body.data : body) as Record<string, unknown>;
+
+  // Format 1: Flat or nested JSON (from Make.com, Zapier, Google Sheets webhook, or direct POST)
+  if (data.name || data.full_name || data.fullName || data.email || body.name || body.full_name || body.email) {
     return {
       name:
+        getString(data.full_name) ||
+        getString(data.name) ||
+        getString(data.fullName) ||
         getString(body.name) ||
         getString(body.full_name) ||
         getString(body.fullName) ||
         "Unknown",
-      email: getString(body.email) || "No email",
+      email:
+        getString(data.email) ||
+        getString(body.email) ||
+        "No email",
       phone:
+        getString(data.phone) ||
+        getString(data.phone_number) ||
         getString(body.phone) ||
         getString(body.phone_number) ||
         getString(body.phoneNumber) ||
@@ -45,6 +57,7 @@ function parseLead(body: Record<string, unknown>): ParsedLead {
         getString(body.form_name) ||
         getString(body.formName) ||
         getString(body.form_id) ||
+        getString(body.ad_name) ||
         "Meta Instant Form",
       source: getString(body.source) || "Meta Ads",
       adName:
