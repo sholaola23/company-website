@@ -1,5 +1,5 @@
 import { cookies } from "next/headers";
-import { getClient } from "./client-config";
+import { getClient, resolveSlug } from "./client-config";
 
 const COOKIE_PREFIX = "client_auth_";
 
@@ -7,8 +7,12 @@ export async function validateClientAuth(slug: string): Promise<boolean> {
   const client = getClient(slug);
   if (!client) return false;
 
+  const resolved = resolveSlug(slug);
   const cookieStore = await cookies();
-  const authCookie = cookieStore.get(`${COOKIE_PREFIX}${slug}`);
+  // Check both the raw slug and resolved slug cookies (vanity URL support)
+  const authCookie =
+    cookieStore.get(`${COOKIE_PREFIX}${slug}`) ||
+    cookieStore.get(`${COOKIE_PREFIX}${resolved}`);
   if (!authCookie) return false;
 
   const expectedPassword = process.env[client.passwordEnvKey];
