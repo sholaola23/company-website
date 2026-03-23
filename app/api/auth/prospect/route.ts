@@ -4,6 +4,9 @@ const PROSPECT_PASSWORDS: Record<string, string> = {
   "patricia-bright": "patricia2026",
   "range-beauty": "range2026",
   "heritage-hvac": "heritage2026",
+  "gorg-wellness": "gorg2026",
+  "pearl-dental": "pearl2026",
+  "aspire-dental": "aspire2026",
 };
 
 export async function POST(request: NextRequest) {
