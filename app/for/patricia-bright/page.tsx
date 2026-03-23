@@ -6,6 +6,7 @@ import {
   Clock,
   ChevronDown,
   ChevronUp,
+  Download,
   ExternalLink,
   Linkedin,
   Play,
@@ -697,6 +698,9 @@ function PatriciaContent() {
               caption="I stopped guessing and started structuring. Software. Systems. Operators. Vibes don't build wealth — structure does. #BusinessSystems"
             />
           </div>
+          <p className="text-xs text-zinc-600 mt-3 italic">
+            Ready to cut from your original footage — timestamps included.
+          </p>
         </div>
 
         {/* Instagram Carousel */}
@@ -814,14 +818,23 @@ Wealth isn't built on vibes. It's built on structure.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {QUOTE_CARDS.map((card, i) => (
-              <div
-                key={i}
-                className={`${card.bg} ${card.text} ${card.accent} rounded-2xl p-6 min-h-[140px] flex flex-col justify-between`}
-              >
-                <p className="text-base font-semibold leading-relaxed">&ldquo;{card.quote}&rdquo;</p>
-                <p className={`text-xs mt-3 ${card.text === "text-zinc-900" ? "text-zinc-500" : "text-zinc-400"}`}>
-                  — Patricia Bright
-                </p>
+              <div key={i} className="space-y-2">
+                <div
+                  className={`${card.bg} ${card.text} ${card.accent} rounded-2xl p-6 min-h-[140px] flex flex-col justify-between`}
+                >
+                  <p className="text-base font-semibold leading-relaxed">&ldquo;{card.quote}&rdquo;</p>
+                  <p className={`text-xs mt-3 ${card.text === "text-zinc-900" ? "text-zinc-500" : "text-zinc-400"}`}>
+                    — Patricia Bright
+                  </p>
+                </div>
+                <a
+                  href={`/api/prospect/quote-card?quote=${i + 1}`}
+                  download={`quote-card-${i + 1}.png`}
+                  className="inline-flex items-center gap-1.5 text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  Download PNG (1080×1080)
+                </a>
               </div>
             ))}
           </div>
@@ -858,6 +871,9 @@ Wealth isn't built on vibes. It's built on structure.
               ))}
             </div>
             <p className="text-xs text-zinc-600 mt-3">60 seconds · Instagram · TikTok · LinkedIn</p>
+            <p className="text-xs text-zinc-600 mt-1 italic">
+              Audiogram concept — ready to produce from your original audio.
+            </p>
           </div>
 
           {/* Newsletter snippet */}
