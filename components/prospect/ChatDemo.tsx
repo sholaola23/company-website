@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { Send, Bot } from "lucide-react";
 
 interface Message {
@@ -13,27 +13,30 @@ const INITIAL_MESSAGE: Message = {
   text: "Hey! Welcome to UWA. I'm here to help you find the right products for your hair. What are you looking for today?",
 };
 
-// Simple demo responses — replace with real API when chatbot is live
+// Fallback responses used when the API is unavailable
 const DEMO_RESPONSES: Record<string, string> = {
   default:
     "Great question! I'd love to help. For the most personalised recommendation, could you tell me a little about your hair type and what you're hoping to achieve?",
-  oil: "Our Marula Oil is one of our bestsellers — especially popular for 4C hair. It deeply moisturises without weighing your hair down. Would you like to know more about ingredients or how to use it?",
-  "4c": "For 4C hair, we'd recommend our Marula Oil Treatment — rich in oleic acid, it penetrates the hair shaft and locks in moisture. Customers with 4C hair consistently rate it our top product.",
+  oil: "Our Yangu Rooted Hair Oil is one of our bestsellers — it's lightweight, silicone-free, and locks in moisture without weighing your hair down. Would you like to know more about ingredients or how to use it?",
+  "4c": "For 4C hair, we'd recommend the Yangu Rooted Hair Oil for moisture sealing and the Flourishing Follicles Serum for scalp stimulation. Together they strengthen and protect beautifully.",
   pregnancy:
-    "All our products are formulated without parabens, sulphates, and harsh chemicals. That said, we always recommend checking with your healthcare provider during pregnancy. Would you like me to list the full ingredients for any specific product?",
+    "All our products are formulated with carefully selected natural ingredients. That said, we always recommend checking with your healthcare provider during pregnancy. Would you like me to list the full ingredients for any specific product?",
   shipping:
-    "We offer free UK shipping on orders over £30. Standard delivery is 3-5 business days. Express options are available at checkout.",
+    "We offer FREE UK shipping on all orders via Royal Mail tracked service — delivery in 24-48 hours. International shipping is also available, with free shipping on orders over $60 USD.",
   order:
-    "You can track your order using the link in your confirmation email, or contact our support team at hello@uwahaircare.com with your order number.",
+    "You can track your order using the Royal Mail tracking info sent with your dispatch confirmation. For any issues, contact UWA support at hello@uwaworld.com.",
 };
 
-function getResponse(input: string): string {
+function getFallbackResponse(input: string): string {
   const lower = input.toLowerCase();
-  if (lower.includes("oil") || lower.includes("marula")) return DEMO_RESPONSES["oil"];
+  if (lower.includes("oil") || lower.includes("yangu") || lower.includes("marula"))
+    return DEMO_RESPONSES["oil"];
   if (lower.includes("4c") || lower.includes("4 c")) return DEMO_RESPONSES["4c"];
   if (lower.includes("pregnan")) return DEMO_RESPONSES["pregnancy"];
-  if (lower.includes("ship") || lower.includes("deliver")) return DEMO_RESPONSES["shipping"];
-  if (lower.includes("order") || lower.includes("track")) return DEMO_RESPONSES["order"];
+  if (lower.includes("ship") || lower.includes("deliver"))
+    return DEMO_RESPONSES["shipping"];
+  if (lower.includes("order") || lower.includes("track"))
+    return DEMO_RESPONSES["order"];
   return DEMO_RESPONSES["default"];
 }
 
@@ -47,19 +50,51 @@ export default function ChatDemo() {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, typing]);
 
-  async function sendMessage(e: React.FormEvent) {
-    e.preventDefault();
-    const text = input.trim();
-    if (!text) return;
+  const sendMessage = useCallback(
+    async (e: React.FormEvent) => {
+      // FIX 1: Prevent form submission from navigating the page
+      e.preventDefault();
+      e.stopPropagation();
 
-    setInput("");
-    setMessages((prev) => [...prev, { role: "user", text }]);
-    setTyping(true);
+      const text = input.trim();
+      if (!text || typing) return;
 
-    await new Promise((r) => setTimeout(r, 900 + Math.random() * 600));
-    setTyping(false);
-    setMessages((prev) => [...prev, { role: "assistant", text: getResponse(text) }]);
-  }
+      setInput("");
+      setMessages((prev) => [...prev, { role: "user", text }]);
+      setTyping(true);
+
+      // Build conversation history for context (exclude the initial greeting)
+      const history = messages
+        .filter((_, i) => i > 0) // skip initial assistant greeting
+        .map((m) => ({ role: m.role, content: m.text }));
+
+      try {
+        const res = await fetch("/api/prospect/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: text, history }),
+        });
+
+        if (!res.ok) throw new Error(`API ${res.status}`);
+
+        const data = await res.json();
+        const reply = data.reply;
+
+        if (!reply) throw new Error("Empty reply");
+
+        setTyping(false);
+        setMessages((prev) => [...prev, { role: "assistant", text: reply }]);
+      } catch {
+        // Fallback to hardcoded responses if API fails
+        setTyping(false);
+        setMessages((prev) => [
+          ...prev,
+          { role: "assistant", text: getFallbackResponse(text) },
+        ]);
+      }
+    },
+    [input, typing, messages]
+  );
 
   return (
     <div className="w-full max-w-md mx-auto bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl">
@@ -111,8 +146,9 @@ export default function ChatDemo() {
         <div ref={bottomRef} />
       </div>
 
-      {/* Input */}
+      {/* Input — action="#" prevents native form navigation as a belt-and-suspenders fix */}
       <form
+        action="#"
         onSubmit={sendMessage}
         className="flex items-center gap-2 px-3 py-3 border-t border-zinc-800 bg-zinc-900"
       >
@@ -126,7 +162,7 @@ export default function ChatDemo() {
         />
         <button
           type="submit"
-          disabled={!input.trim()}
+          disabled={!input.trim() || typing}
           className="w-9 h-9 flex-shrink-0 bg-blue-600 hover:bg-blue-500 disabled:opacity-40 disabled:cursor-not-allowed rounded-xl flex items-center justify-center transition-all"
           aria-label="Send message"
         >
