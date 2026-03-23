@@ -108,6 +108,10 @@ interface OrderRow {
   paymentStatus: string;
   outstandingBalance: number;
   orderStatus: string;
+  refundAmount: number | null;
+  refundDate: string | null;
+  refundReason: string | null;
+  refundMethod: string | null;
 }
 
 interface SheetsData {
@@ -1143,6 +1147,24 @@ export default function ClientDashboard() {
                                     {!isPaid && !isCancelled && order.outstandingBalance > 0 && (
                                       <div className="text-xs text-amber-400/80">
                                         Outstanding: {formatCurrency(order.outstandingBalance)}
+                                      </div>
+                                    )}
+
+                                    {/* Refund indicator */}
+                                    {order.refundAmount != null && order.refundAmount > 0 && (
+                                      <div className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-purple-500/10 border border-purple-500/20">
+                                        <RefreshCw className="w-3 h-3 text-purple-400 shrink-0" />
+                                        <div className="flex-1 min-w-0">
+                                          <span className="text-xs font-medium text-purple-300">
+                                            Refunded {formatCurrency(order.refundAmount)}
+                                          </span>
+                                          {order.refundMethod && (
+                                            <span className="text-xs text-purple-400/70"> via {order.refundMethod}</span>
+                                          )}
+                                          {order.refundReason && (
+                                            <p className="text-xs text-purple-400/60 truncate mt-0.5">{order.refundReason}</p>
+                                          )}
+                                        </div>
                                       </div>
                                     )}
                                   </div>

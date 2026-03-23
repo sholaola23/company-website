@@ -58,6 +58,10 @@ export interface OrderRow {
   paymentStatus: string;
   outstandingBalance: number;
   orderStatus: string;
+  refundAmount: number | null;
+  refundDate: string | null;
+  refundReason: string | null;
+  refundMethod: string | null;
 }
 
 export interface OrdersSummary {
@@ -284,6 +288,13 @@ export async function getOrdersSummary(
           ? parseFloat(outstandingRawForRow)
           : NaN;
 
+      // Refund columns (gracefully default to null if columns don't exist yet)
+      const rawRefundAmount = row.get("Refund Amount");
+      const parsedRefundAmount =
+        rawRefundAmount != null && rawRefundAmount !== ""
+          ? parseFloat(rawRefundAmount)
+          : NaN;
+
       orderRows.push({
         fullName: name,
         phone: row.get("Phone Number (WhatsApp)") || row.get("Phone") || "",
@@ -301,6 +312,10 @@ export async function getOrdersSummary(
           ? 0
           : parsedOutstandingForRow,
         orderStatus: row.get("Order Status") || "Unknown",
+        refundAmount: isNaN(parsedRefundAmount) ? null : parsedRefundAmount,
+        refundDate: row.get("Refund Date") || null,
+        refundReason: row.get("Refund Reason") || null,
+        refundMethod: row.get("Refund Method") || null,
       });
     }
 
@@ -333,6 +348,7 @@ export async function getOrdersSummary(
         ...r,
         basketTotal: round2(r.basketTotal),
         outstandingBalance: round2(r.outstandingBalance),
+        refundAmount: r.refundAmount != null ? round2(r.refundAmount) : null,
       })),
     };
   } catch (e) {
