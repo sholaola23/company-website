@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { waitUntil } from "@vercel/functions";
 import { Resend } from "resend";
+import { Client } from "@notionhq/client";
 
 const resend = process.env.RESEND_API_KEY
   ? new Resend(process.env.RESEND_API_KEY)
@@ -299,9 +300,50 @@ export async function POST(req: NextRequest) {
     console.error("[audit-request] processing error:", error);
   }
 
-  // TODO: Create Notion page when NOTION_AUDIT_DB is configured
-  // const notionDbId = process.env.NOTION_AUDIT_DB;
-  // if (notionDbId) { ... }
+  // Log the audit request to Notion if configured
+  const notionDbId = process.env.NOTION_AUDIT_DB;
+  const notionKey = process.env.NOTION_API_KEY;
+  if (notionDbId && notionKey) {
+    waitUntil(
+      (async () => {
+        try {
+          const notion = new Client({ auth: notionKey });
+          await notion.pages.create({
+            parent: { database_id: notionDbId },
+            properties: {
+              "Business Name": {
+                title: [{ text: { content: cleanBusinessName } }],
+              },
+              Name: {
+                rich_text: [{ text: { content: cleanYourName } }],
+              },
+              Email: { email: cleanEmail },
+              Phone: {
+                rich_text: cleanPhone
+                  ? [{ text: { content: cleanPhone } }]
+                  : [],
+              },
+              Industry: { select: { name: cleanIndustry } },
+              Website: {
+                url: cleanWebsite || null,
+              },
+              Challenge: {
+                rich_text: [
+                  { text: { content: cleanHeadache.slice(0, 2000) } },
+                ],
+              },
+              "Submitted At": {
+                date: { start: new Date().toISOString() },
+              },
+              Status: { select: { name: "new" } },
+            },
+          });
+        } catch (err) {
+          console.error("[audit-request] failed to create Notion page:", err);
+        }
+      })()
+    );
+  }
 
   // 3. Fire-and-forget: trigger full report generation if instant audit data is present
   if (instantAuditResults?.findings && cleanEmail) {

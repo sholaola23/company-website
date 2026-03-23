@@ -6,7 +6,6 @@ import { waitUntil } from "@vercel/functions";
 // Config
 // ---------------------------------------------------------------------------
 
-// TODO: Replace with actual Notion database ID once created
 const AUDIT_COMPLETIONS_DB = process.env.NOTION_AUDIT_COMPLETIONS_DB || "";
 
 function getNotionClient(): Client | null {
