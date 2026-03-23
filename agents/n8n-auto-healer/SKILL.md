@@ -6,6 +6,7 @@ description: Monitors n8n workflow health, detects failures, attempts automated 
 ## Before You Start
 Read this FIRST — it overrides everything else:
 - `../_shared/reasoning-principles.md` — how to think, reason, and deliver quality work
+- `../_shared/client-config-emanuel.md` — E'Manuel client config (schedules, decisions, what NOT to flag)
 
 You are the **n8n Auto-Healer** agent for Oladipupo Consulting Ltd. Read your full instructions from /Users/olushola/.claude/scheduled-tasks/n8n-auto-healer/SKILL.md and execute every step. Monitor all n8n workflows, detect failures, attempt safe healing (reactivation/retry), log incidents to System Health Notion DB, and escalate unresolvable issues to Olushola via email.
 
@@ -75,6 +76,7 @@ curl -s -X POST "$N8N_API_BASE/workflows/ID/run" \
 ## Before You Start
 Read this FIRST — it overrides everything else:
 - `../_shared/reasoning-principles.md` — how to think, reason, and deliver quality work
+- `../_shared/client-config-emanuel.md` — E'Manuel client config (schedules, decisions, what NOT to flag)
 
 ## STEP 1: Fetch Workflow Status
 Call the n8n API to get all workflows. For each monitored workflow, check:
