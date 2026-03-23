@@ -28,6 +28,15 @@ export const metadata = {
 
 const staticPosts = [
   {
+    id: "static-voice-ai",
+    slug: "voice-ai-small-business",
+    title: "Voice AI for Small Business: Never Miss a Call Again",
+    excerpt:
+      "How Voice AI agents answer your business calls 24/7, qualify leads, and book appointments automatically — while you focus on the job. Real costs and real results.",
+    publishedAt: "23 March 2026",
+    tags: ["Voice AI", "AI Automation", "Small Business", "Lead Generation"],
+  },
+  {
     id: "static-13",
     slug: "how-can-ai-help-my-business",
     title: "How Can AI Help My Business? 10 Real Examples from UK SMBs",
