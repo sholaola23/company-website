@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 const PROSPECT_PASSWORDS: Record<string, string> = {
   "patricia-bright": "patricia2026",
   "range-beauty": "range2026",
+  "heritage-hvac": "heritage2026",
 };
 
 export async function POST(request: NextRequest) {
