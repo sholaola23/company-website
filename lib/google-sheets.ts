@@ -460,6 +460,45 @@ export async function getDeliverySummary(
 }
 
 
+/**
+ * Write refund data to a specific row in the Orders sheet.
+ * Columns: Refund Amount (AA), Refund Date (AB), Refund Reason (AC), Refund Method (AD)
+ */
+export async function writeRefund(
+  sheetsId: string,
+  rowIndex: number,
+  refundAmount: number,
+  refundReason: string,
+  refundMethod: string
+): Promise<{ success: boolean; error?: string }> {
+  try {
+    const doc = await getDoc(sheetsId);
+    if (!doc) return { success: false, error: "Could not connect to Google Sheets" };
+
+    const sheet = doc.sheetsByTitle["Orders"];
+    if (!sheet) return { success: false, error: "Orders sheet not found" };
+
+    const rows = await sheet.getRows();
+    if (rowIndex < 0 || rowIndex >= rows.length) {
+      return { success: false, error: "Invalid row index" };
+    }
+
+    const row = rows[rowIndex];
+    const today = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
+
+    row.set("Refund Amount", refundAmount.toString());
+    row.set("Refund Date", today);
+    row.set("Refund Reason", refundReason);
+    row.set("Refund Method", refundMethod);
+    await row.save();
+
+    return { success: true };
+  } catch (e) {
+    console.error("Failed to write refund:", e);
+    return { success: false, error: "Failed to write refund to sheet" };
+  }
+}
+
 export async function getAllSheetsData(
   sheetsId: string,
   allTime = false

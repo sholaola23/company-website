@@ -27,6 +27,8 @@ import {
   FileCheck,
   Search,
   Phone,
+  RotateCcw,
+  X,
 } from "lucide-react";
 
 // We can't import ChefHat if it doesn't exist in this version of lucide,
@@ -524,6 +526,307 @@ function BankStatementUpload({ slug, onUploadComplete }: { slug: string; onUploa
   );
 }
 
+// ─── Refund Reasons & Methods ─────────────────────────────
+const REFUND_REASONS = [
+  "Product unavailable",
+  "Customer request",
+  "Quality issue",
+  "Overpayment",
+  "Other",
+];
+const REFUND_METHODS = ["SumUp", "Bank Transfer", "Cash"];
+
+// ─── Success Toast ───────────────────────────────────────
+function SuccessToast({ message, onDone }: { message: string; onDone: () => void }) {
+  useEffect(() => {
+    const timer = setTimeout(onDone, 4000);
+    return () => clearTimeout(timer);
+  }, [onDone]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40, scale: 0.95 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: 20, scale: 0.95 }}
+      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 max-w-sm w-[calc(100%-2rem)]"
+    >
+      <div className="flex items-center gap-3 bg-emerald-900/90 border border-emerald-500/30 rounded-xl px-4 py-3 shadow-2xl shadow-black/50 backdrop-blur-sm">
+        <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
+        <p className="text-emerald-200 text-sm">{message}</p>
+      </div>
+    </motion.div>
+  );
+}
+
+// ─── Refund Modal ────────────────────────────────────────
+interface RefundModalProps {
+  order: OrderRow;
+  orderIndex: number;
+  slug: string;
+  onClose: () => void;
+  onSuccess: (customerName: string) => void;
+}
+
+function RefundModal({ order, orderIndex, slug, onClose, onSuccess }: RefundModalProps) {
+  const [refundAmount, setRefundAmount] = useState(order.basketTotal.toString());
+  const [reason, setReason] = useState(REFUND_REASONS[0]);
+  const [otherReason, setOtherReason] = useState("");
+  const [method, setMethod] = useState(REFUND_METHODS[0]);
+  const [step, setStep] = useState<"form" | "confirm">("form");
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
+
+  const parsedAmount = parseFloat(refundAmount);
+  const isValidAmount = !isNaN(parsedAmount) && parsedAmount > 0;
+
+  const finalReason =
+    reason === "Other" && otherReason.trim()
+      ? `Other: ${otherReason.trim()}`
+      : reason;
+
+  async function handleSubmit() {
+    if (!isValidAmount) return;
+    setSubmitting(true);
+    setError("");
+
+    try {
+      const res = await fetch(`/api/client-sheets/${slug}/refund`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          rowIndex: orderIndex,
+          refundAmount: parsedAmount,
+          refundReason: finalReason,
+          refundMethod: method,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({ error: "Request failed" }));
+        throw new Error(data.error || "Failed to process refund");
+      }
+
+      onSuccess(order.fullName);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong");
+      setStep("form");
+      setSubmitting(false);
+    }
+  }
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+
+      {/* Modal card */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95, y: 16 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.95, y: 16 }}
+        transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
+        className="relative bg-zinc-900 rounded-2xl border border-zinc-700/60 shadow-2xl shadow-black/60 w-full max-w-md overflow-hidden"
+      >
+        {/* Purple accent strip */}
+        <div className="h-0.5 bg-gradient-to-r from-purple-500/60 via-purple-400/30 to-transparent" />
+
+        <div className="p-5 space-y-4">
+          {/* Header */}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2.5">
+              <RotateCcw className="w-4 h-4 text-purple-400" />
+              <h2 className="text-sm font-semibold text-white">Process Refund</h2>
+            </div>
+            <button
+              onClick={onClose}
+              className="p-1.5 rounded-lg hover:bg-zinc-800 text-zinc-500 hover:text-zinc-300 transition-colors"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* Order info */}
+          <div className="bg-zinc-800/50 rounded-xl p-3 space-y-1">
+            <p className="text-zinc-200 text-sm font-medium">{order.fullName}</p>
+            <p className="text-zinc-500 text-xs">{order.items}</p>
+            <p className="text-zinc-400 text-xs">
+              Basket total: <span className="text-white font-medium">{formatCurrency(order.basketTotal)}</span>
+            </p>
+          </div>
+
+          <AnimatePresence mode="wait">
+            {step === "form" ? (
+              <motion.div
+                key="form"
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -10 }}
+                className="space-y-3"
+              >
+                {/* Refund Amount */}
+                <div>
+                  <label className="text-xs font-medium text-zinc-400 mb-1.5 block">
+                    Refund Amount
+                  </label>
+                  <div className="relative">
+                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500 text-sm">
+                      £
+                    </span>
+                    <input
+                      type="number"
+                      step="0.01"
+                      min="0.01"
+                      value={refundAmount}
+                      onChange={(e) => setRefundAmount(e.target.value)}
+                      className="w-full pl-7 pr-3 py-2.5 bg-zinc-800/60 border border-zinc-700/60 rounded-xl text-white placeholder-zinc-600 text-sm focus:outline-none focus:ring-1 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all tabular-nums"
+                    />
+                  </div>
+                </div>
+
+                {/* Refund Reason */}
+                <div>
+                  <label className="text-xs font-medium text-zinc-400 mb-1.5 block">
+                    Reason
+                  </label>
+                  <select
+                    value={reason}
+                    onChange={(e) => setReason(e.target.value)}
+                    className="w-full px-3 py-2.5 bg-zinc-800/60 border border-zinc-700/60 rounded-xl text-white text-sm focus:outline-none focus:ring-1 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all appearance-none"
+                  >
+                    {REFUND_REASONS.map((r) => (
+                      <option key={r} value={r}>
+                        {r}
+                      </option>
+                    ))}
+                  </select>
+                  {reason === "Other" && (
+                    <input
+                      type="text"
+                      placeholder="Describe the reason..."
+                      value={otherReason}
+                      onChange={(e) => setOtherReason(e.target.value)}
+                      className="mt-2 w-full px-3 py-2.5 bg-zinc-800/60 border border-zinc-700/60 rounded-xl text-white placeholder-zinc-600 text-sm focus:outline-none focus:ring-1 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all"
+                    />
+                  )}
+                </div>
+
+                {/* Refund Method */}
+                <div>
+                  <label className="text-xs font-medium text-zinc-400 mb-1.5 block">
+                    Refund Method
+                  </label>
+                  <select
+                    value={method}
+                    onChange={(e) => setMethod(e.target.value)}
+                    className="w-full px-3 py-2.5 bg-zinc-800/60 border border-zinc-700/60 rounded-xl text-white text-sm focus:outline-none focus:ring-1 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all appearance-none"
+                  >
+                    {REFUND_METHODS.map((m) => (
+                      <option key={m} value={m}>
+                        {m}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Error */}
+                <AnimatePresence>
+                  {error && (
+                    <motion.p
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="text-red-400 text-xs flex items-center gap-1.5 overflow-hidden"
+                    >
+                      <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+                      {error}
+                    </motion.p>
+                  )}
+                </AnimatePresence>
+
+                {/* Actions */}
+                <div className="flex gap-2.5 pt-1">
+                  <button
+                    onClick={onClose}
+                    className="flex-1 py-2.5 rounded-xl border border-zinc-700/60 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/60 transition-all text-sm font-medium"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={() => setStep("confirm")}
+                    disabled={!isValidAmount || (reason === "Other" && !otherReason.trim())}
+                    className="flex-1 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 disabled:bg-zinc-800 disabled:text-zinc-600 text-white font-medium transition-all text-sm shadow-sm"
+                  >
+                    Process Refund
+                  </button>
+                </div>
+              </motion.div>
+            ) : (
+              <motion.div
+                key="confirm"
+                initial={{ opacity: 0, x: 10 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 10 }}
+                className="space-y-4"
+              >
+                {/* Confirmation */}
+                <div className="bg-purple-500/10 border border-purple-500/20 rounded-xl p-4 text-center space-y-2">
+                  <p className="text-purple-200 text-sm">
+                    Are you sure you want to process a{" "}
+                    <span className="text-white font-semibold">
+                      {formatCurrency(parsedAmount)}
+                    </span>{" "}
+                    refund for{" "}
+                    <span className="text-white font-semibold">
+                      {order.fullName}
+                    </span>
+                    ?
+                  </p>
+                  <p className="text-purple-400/70 text-xs">
+                    {finalReason} &middot; {method}
+                  </p>
+                </div>
+
+                {/* Actions */}
+                <div className="flex gap-2.5">
+                  <button
+                    onClick={() => setStep("form")}
+                    disabled={submitting}
+                    className="flex-1 py-2.5 rounded-xl border border-zinc-700/60 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/60 disabled:opacity-50 transition-all text-sm font-medium"
+                  >
+                    Go Back
+                  </button>
+                  <button
+                    onClick={handleSubmit}
+                    disabled={submitting}
+                    className="flex-1 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 disabled:bg-purple-800 text-white font-medium transition-all text-sm shadow-sm flex items-center justify-center gap-2"
+                  >
+                    {submitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        Processing...
+                      </>
+                    ) : (
+                      "Confirm Refund"
+                    )}
+                  </button>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
+
 // ─── Main Dashboard ──────────────────────────────────────────
 export default function ClientDashboard() {
   const params = useParams();
@@ -540,6 +843,8 @@ export default function ClientDashboard() {
   const [bankCopied, setBankCopied] = useState(false);
   const [viewMode, setViewMode] = useState<"week" | "all">("week");
   const viewModeRef = useRef(viewMode);
+  const [refundTarget, setRefundTarget] = useState<{ order: OrderRow; index: number } | null>(null);
+  const [toastMessage, setToastMessage] = useState("");
 
   async function fetchAll(isRefresh = false, view?: "week" | "all") {
     const currentView = view ?? viewModeRef.current;
@@ -1167,6 +1472,17 @@ export default function ClientDashboard() {
                                         </div>
                                       </div>
                                     )}
+
+                                    {/* Refund button — only if not already refunded */}
+                                    {order.refundAmount == null && !isCancelled && (
+                                      <button
+                                        onClick={() => setRefundTarget({ order, index: i })}
+                                        className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-purple-500/30 text-purple-400 hover:bg-purple-500/10 hover:text-purple-300 transition-all text-xs font-medium self-start"
+                                      >
+                                        <RotateCcw className="w-3 h-3" />
+                                        Refund
+                                      </button>
+                                    )}
                                   </div>
                                 </motion.div>
                               );
@@ -1372,6 +1688,33 @@ export default function ClientDashboard() {
           </Section>
         </motion.div>
       </div>
+
+      {/* Refund Modal */}
+      <AnimatePresence>
+        {refundTarget && (
+          <RefundModal
+            order={refundTarget.order}
+            orderIndex={refundTarget.index}
+            slug={slug}
+            onClose={() => setRefundTarget(null)}
+            onSuccess={(name) => {
+              setRefundTarget(null);
+              setToastMessage(`Refund processed for ${name}`);
+              fetchAll(true);
+            }}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Success Toast */}
+      <AnimatePresence>
+        {toastMessage && (
+          <SuccessToast
+            message={toastMessage}
+            onDone={() => setToastMessage("")}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 }
