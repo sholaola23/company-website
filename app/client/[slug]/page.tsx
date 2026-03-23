@@ -25,6 +25,8 @@ import {
   Upload,
   Loader2,
   FileCheck,
+  Search,
+  Phone,
 } from "lucide-react";
 
 // We can't import ChefHat if it doesn't exist in this version of lucide,
@@ -95,6 +97,19 @@ interface StatusData {
   workflows: WorkflowStatus[];
 }
 
+interface OrderRow {
+  fullName: string;
+  phone: string;
+  items: string;
+  deliveryAddress: string;
+  postcode: string;
+  town: string;
+  basketTotal: number;
+  paymentStatus: string;
+  outstandingBalance: number;
+  orderStatus: string;
+}
+
 interface SheetsData {
   orders: {
     totalOrders: number;
@@ -112,6 +127,7 @@ interface SheetsData {
       otherPaid: number;
       otherCount: number;
     } | null;
+    orderRows?: OrderRow[];
   } | null;
   production: { product: string; quantity: number }[] | null;
   deliveries: {
@@ -514,6 +530,8 @@ export default function ClientDashboard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [systemHealthOpen, setSystemHealthOpen] = useState(false);
+  const [ordersOpen, setOrdersOpen] = useState(false);
+  const [orderSearch, setOrderSearch] = useState("");
   const [justRefreshed, setJustRefreshed] = useState(false);
   const [bankCopied, setBankCopied] = useState(false);
   const [viewMode, setViewMode] = useState<"week" | "all">("week");
@@ -977,6 +995,169 @@ export default function ClientDashboard() {
                 </div>
               </Section>
             )}
+
+          {/* Orders Detail (Collapsible) */}
+          {sheetsData?.orders?.orderRows && sheetsData.orders.orderRows.length > 0 && (
+            <Section>
+              <div className="bg-zinc-900 rounded-2xl border border-zinc-800/60 overflow-hidden">
+                <button
+                  onClick={() => setOrdersOpen(!ordersOpen)}
+                  className="w-full px-5 py-4 flex items-center justify-between text-left hover:bg-zinc-800/30 transition-colors"
+                >
+                  <div className="flex items-center gap-3">
+                    <ShoppingCart className="w-4 h-4 text-zinc-600" />
+                    <span className="text-sm font-medium text-zinc-400">
+                      Orders
+                    </span>
+                    <span className="text-xs px-2 py-0.5 rounded-full font-medium bg-zinc-800 text-zinc-400">
+                      {sheetsData.orders.orderRows.length}
+                    </span>
+                  </div>
+                  <motion.div
+                    animate={{ rotate: ordersOpen ? 180 : 0 }}
+                    transition={{ duration: 0.25, ease: "easeInOut" }}
+                  >
+                    <ChevronDown className="w-4 h-4 text-zinc-600" />
+                  </motion.div>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {ordersOpen && (
+                    <motion.div
+                      key="orders-panel"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <div className="border-t border-zinc-800/60 px-5 py-4 space-y-3">
+                        {/* Search input */}
+                        <div className="relative">
+                          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-zinc-600" />
+                          <input
+                            type="text"
+                            placeholder="Search by name..."
+                            value={orderSearch}
+                            onChange={(e) => setOrderSearch(e.target.value)}
+                            className="w-full pl-9 pr-3 py-2.5 bg-zinc-800/60 border border-zinc-700/60 rounded-xl text-zinc-200 placeholder-zinc-600 text-sm focus:outline-none focus:ring-1 focus:ring-zinc-600 focus:border-zinc-600 transition-all"
+                          />
+                        </div>
+
+                        {/* Order cards */}
+                        <div className="space-y-2.5">
+                          {(() => {
+                            const filtered = sheetsData.orders!.orderRows!.filter(
+                              (o) =>
+                                o.fullName
+                                  .toLowerCase()
+                                  .includes(orderSearch.toLowerCase())
+                            );
+                            if (filtered.length === 0) {
+                              return (
+                                <p className="text-zinc-600 text-sm text-center py-4">
+                                  No orders match &ldquo;{orderSearch}&rdquo;
+                                </p>
+                              );
+                            }
+                            return filtered.map((order, i) => {
+                              const status = order.paymentStatus.toLowerCase();
+                              const isPaid = status === "paid";
+                              const isCancelled = order.orderStatus.toLowerCase() === "cancelled";
+                              const accentColor = isCancelled
+                                ? "border-red-500/30"
+                                : isPaid
+                                  ? "border-emerald-500/30"
+                                  : "border-amber-500/30";
+                              const accentStrip = isCancelled
+                                ? "bg-red-500/50"
+                                : isPaid
+                                  ? "bg-emerald-500/50"
+                                  : "bg-amber-500/50";
+                              const statusBadgeBg = isCancelled
+                                ? "bg-red-500/10 text-red-400"
+                                : isPaid
+                                  ? "bg-emerald-500/10 text-emerald-400"
+                                  : "bg-amber-500/10 text-amber-400";
+
+                              return (
+                                <motion.div
+                                  key={`${order.fullName}-${i}`}
+                                  initial={{ opacity: 0, y: 8 }}
+                                  animate={{ opacity: 1, y: 0 }}
+                                  transition={{ delay: i * 0.04, duration: 0.3 }}
+                                  className={`bg-zinc-800/40 rounded-xl border ${accentColor} overflow-hidden`}
+                                >
+                                  {/* Thin accent strip at top */}
+                                  <div className={`h-0.5 ${accentStrip}`} />
+                                  <div className="p-3.5 space-y-2.5">
+                                    {/* Name + status */}
+                                    <div className="flex items-center justify-between gap-2">
+                                      <h3 className="text-zinc-200 text-sm font-medium truncate">
+                                        {order.fullName}
+                                      </h3>
+                                      <span
+                                        className={`shrink-0 text-xs px-2 py-0.5 rounded-full font-medium ${statusBadgeBg}`}
+                                      >
+                                        {order.paymentStatus}
+                                      </span>
+                                    </div>
+
+                                    {/* Items */}
+                                    <p className="text-zinc-400 text-xs leading-relaxed">
+                                      {order.items}
+                                    </p>
+
+                                    {/* Address row */}
+                                    {(order.deliveryAddress || order.town) && (
+                                      <div className="flex items-start gap-1.5 text-zinc-500 text-xs">
+                                        <MapPin className="w-3 h-3 shrink-0 mt-0.5" />
+                                        <span>
+                                          {[order.deliveryAddress, order.town, order.postcode]
+                                            .filter(Boolean)
+                                            .join(", ")}
+                                        </span>
+                                      </div>
+                                    )}
+
+                                    {/* Bottom row: total + phone */}
+                                    <div className="flex items-center justify-between pt-1.5 border-t border-zinc-700/30">
+                                      <span className="text-white font-semibold tabular-nums text-sm">
+                                        {formatCurrency(order.basketTotal)}
+                                      </span>
+                                      {order.phone && (
+                                        <a
+                                          href={`https://wa.me/${order.phone.replace(/[^0-9]/g, "")}`}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="flex items-center gap-1.5 text-xs text-zinc-500 hover:text-emerald-400 transition-colors"
+                                        >
+                                          <Phone className="w-3 h-3" />
+                                          <span className="hidden sm:inline">{order.phone}</span>
+                                          <span className="sm:hidden">WhatsApp</span>
+                                        </a>
+                                      )}
+                                    </div>
+
+                                    {/* Outstanding balance for partial/unpaid */}
+                                    {!isPaid && !isCancelled && order.outstandingBalance > 0 && (
+                                      <div className="text-xs text-amber-400/80">
+                                        Outstanding: {formatCurrency(order.outstandingBalance)}
+                                      </div>
+                                    )}
+                                  </div>
+                                </motion.div>
+                              );
+                            });
+                          })()}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </Section>
+          )}
 
           {/* Deliveries */}
           {sheetsData?.deliveries && sheetsData.deliveries.totalStops > 0 ? (

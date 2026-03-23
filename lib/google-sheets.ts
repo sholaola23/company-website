@@ -7,9 +7,7 @@ const PRODUCT_KEYWORDS = [
   "Agege Bread",
   "Sardine Bread",
   "Meat Pie",
-  "Mini Loaf",
-  "Midi Loaf",
-  "Maxi Loaf",
+  // Banana bread (Mini/Midi/Maxi Loaf) removed — temporarily unavailable (Mar 2026)
 ];
 
 // Short display names for the dashboard
@@ -17,9 +15,6 @@ const PRODUCT_DISPLAY_NAMES: Record<string, string> = {
   "Agege Bread": "Agege Bread",
   "Sardine Bread": "Sardine Bread",
   "Meat Pie": "Meat Pie",
-  "Mini Loaf": "Banana Cake (Mini)",
-  "Midi Loaf": "Banana Cake (Midi)",
-  "Maxi Loaf": "Banana Cake (Maxi)",
 };
 
 /**
@@ -52,6 +47,19 @@ export interface PaymentBreakdown {
   otherCount: number;
 }
 
+export interface OrderRow {
+  fullName: string;
+  phone: string;
+  items: string;
+  deliveryAddress: string;
+  postcode: string;
+  town: string;
+  basketTotal: number;
+  paymentStatus: string;
+  outstandingBalance: number;
+  orderStatus: string;
+}
+
 export interface OrdersSummary {
   totalOrders: number;
   totalRevenue: number;
@@ -60,6 +68,7 @@ export interface OrdersSummary {
   unpaidAmount: number;
   unpaidCustomers: { name: string; amount: number; daysAgo: number }[];
   paymentBreakdown: PaymentBreakdown;
+  orderRows: OrderRow[];
 }
 
 export interface ProductionItem {
@@ -173,6 +182,7 @@ export async function getOrdersSummary(
       otherPaid: 0,
       otherCount: 0,
     };
+    const orderRows: OrderRow[] = [];
 
     for (const row of thisWeek) {
       // Calculate basket total from product quantities × prices (primary)
@@ -251,6 +261,47 @@ export async function getOrdersSummary(
           daysAgo,
         });
       }
+
+      // Build items string from product quantity columns
+      const itemParts: string[] = [];
+      for (const { header } of productPrices) {
+        const qty = parseInt(row.get(header) || "0");
+        if (qty > 0) {
+          // Extract the product display name from the header keyword
+          const keyword = PRODUCT_KEYWORDS.find((k) =>
+            header.toLowerCase().includes(k.toLowerCase())
+          );
+          const displayName = keyword
+            ? PRODUCT_DISPLAY_NAMES[keyword] || keyword
+            : header;
+          itemParts.push(`${qty}x ${displayName}`);
+        }
+      }
+
+      const outstandingRawForRow = row.get("Outstanding Balance");
+      const parsedOutstandingForRow =
+        outstandingRawForRow != null && outstandingRawForRow !== ""
+          ? parseFloat(outstandingRawForRow)
+          : NaN;
+
+      orderRows.push({
+        fullName: name,
+        phone: row.get("Phone Number (WhatsApp)") || row.get("Phone") || "",
+        items: itemParts.length > 0 ? itemParts.join(", ") : "—",
+        deliveryAddress:
+          row.get("Delivery Address (street and house number)") ||
+          row.get("Delivery Address") ||
+          row.get("Address") ||
+          "",
+        postcode: row.get("Postcode") || "",
+        town: row.get("Town / Area") || row.get("Town") || "",
+        basketTotal,
+        paymentStatus: row.get("Payment Status") || "Unknown",
+        outstandingBalance: isNaN(parsedOutstandingForRow)
+          ? 0
+          : parsedOutstandingForRow,
+        orderStatus: row.get("Order Status") || "Unknown",
+      });
     }
 
     // Sort unpaid by amount descending
@@ -278,6 +329,11 @@ export async function getOrdersSummary(
         otherPaid: round2(paymentBreakdown.otherPaid),
         otherCount: paymentBreakdown.otherCount,
       },
+      orderRows: orderRows.map((r) => ({
+        ...r,
+        basketTotal: round2(r.basketTotal),
+        outstandingBalance: round2(r.outstandingBalance),
+      })),
     };
   } catch (e) {
     console.error("Failed to fetch orders summary:", e);
