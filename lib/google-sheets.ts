@@ -419,7 +419,7 @@ export async function getProductionSummary(
       }
     }
 
-    return items.length > 0 ? items : null;
+    return items;
   } catch (e) {
     console.error("Failed to fetch production summary:", e);
     return null;
