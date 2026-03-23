@@ -58,15 +58,17 @@ curl -s -X POST "$N8N_API_BASE/workflows/ID/run" \
 ### Client: E'Manuel Bakery
 | WF | Name | ID | Expected Schedule |
 |----|------|----|-------------------|
-| WF01 | Tally -> Sheet Order Sync | *(not in current n8n instance)* | Every 30 min |
-| WF02 | HSBC CSV Bank Match | NHBBHmLemmxWbQPV | Event-driven (weekly) — fires when bank statement CSV is uploaded to Google Drive. No alert unless inactive 7+ days. |
-| WF03 | Production Summary | KtoalRNhFVKa9AVf | Every 30 min |
-| WF04 | Order Update | YfZPwpngWEg0uyYv | Thu 2pm |
+| WF02 | HSBC CSV Bank Match | NHBBHmLemmxWbQPV | Event-driven — fires when bank statement CSV is uploaded via dashboard. No alert unless inactive 14+ days. |
+| WF03 | SumUp Checkout Links | KtoalRNhFVKa9AVf | Every 30 min |
+| WF04 | Production Summary Alert | YfZPwpngWEg0uyYv | Thu 2pm |
 | WF05 | Delivery Route | xp6rs4YDco1n3oXg | Fri 2pm |
-| WF06 | Baking List | UqXddNGPu0q0IgNj | Thu 7pm |
-| WF07 | SumUp Transaction Polling / Matching Engine | fLLDdF34MDxYGlEf | Every 15 min (Thu-Sat) |
+| WF06 | Baking List / Daily Exception Alerts | UqXddNGPu0q0IgNj | Thu 7pm |
+| WF07 | SumUp Transaction Polling | fLLDdF34MDxYGlEf | **Thu-Sat ONLY.** Do NOT alert Sun-Wed — this is expected downtime per client request. Only alert if no execution Thu-Sat for 48+ hours. |
 | WF08 | SumUp Checkout Links | YYTlfccah2LHZ207 | Every 30 min (Wed-Fri) |
 | WF09 | Monday Cleanup | PDJfPcqZq8c4Za6B | Mon 8am |
+| Bank Upload | Dashboard Bank Upload | E7XYOSjWisrhQqpF | Event-driven — fires when client uploads bank statement via dashboard. No alert unless inactive 14+ days. |
+
+**NOTE:** WF01 (Tally Order Sync) does NOT exist in n8n. Tally syncs directly to Google Sheets via native integration. Do NOT alert about a missing WF01.
 
 ---
 
