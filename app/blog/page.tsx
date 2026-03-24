@@ -28,6 +28,96 @@ export const metadata = {
 
 const staticPosts = [
   {
+    id: "static-cleaning-save-time",
+    slug: "ai-save-cleaning-companies-time",
+    title: "How AI Saves UK Cleaning Companies 10+ Hours a Week",
+    excerpt:
+      "How AI automation helps UK cleaning companies save 10+ hours a week on quoting, scheduling, follow-ups, and invoice reminders. Practical guide with real examples.",
+    publishedAt: "24 March 2026",
+    tags: ["AI Automation", "Cleaning Business", "Service Business", "Industry Guide"],
+  },
+  {
+    id: "static-uk-accountants",
+    slug: "ai-for-uk-accountants",
+    title: "AI for UK Accountants: Automate Client Onboarding and Chase Invoices",
+    excerpt:
+      "How UK accounting firms use AI to automate client onboarding, document collection, invoice chasing, and deadline reminders. Save 15+ hours a month.",
+    publishedAt: "24 March 2026",
+    tags: ["AI Automation", "Accountants", "Professional Services", "Industry Guide"],
+  },
+  {
+    id: "static-follow-ups",
+    slug: "automate-customer-follow-ups",
+    title: "How to Automate Customer Follow-Ups (Without Being Annoying)",
+    excerpt:
+      "How to automate customer follow-ups across email, SMS, and WhatsApp without annoying people. Timing, personalisation, and when to stop.",
+    publishedAt: "24 March 2026",
+    tags: ["AI Automation", "Follow-Ups", "Small Business", "Guides"],
+  },
+  {
+    id: "static-church-chatbot",
+    slug: "ai-chatbot-church",
+    title: "Why Every Church Needs an AI Chatbot in 2026",
+    excerpt:
+      "How AI chatbots help churches answer visitor questions, share event info, process giving links, and manage volunteer signups — 24/7, without extra staff.",
+    publishedAt: "24 March 2026",
+    tags: ["AI Automation", "Churches", "Chatbots", "Industry Guide"],
+  },
+  {
+    id: "static-reduce-no-shows",
+    slug: "reduce-no-shows-ai-reminders",
+    title: "How to Reduce No-Shows by 60% with AI Reminders",
+    excerpt:
+      "How AI appointment reminders via SMS, WhatsApp, and Voice AI reduce no-shows by up to 60%. Includes rebooking automation and follow-up strategies for UK businesses.",
+    publishedAt: "24 March 2026",
+    tags: ["AI Automation", "No-Shows", "Appointments", "Industry Guide"],
+  },
+  {
+    id: "static-bakery-case-study",
+    slug: "bakery-saved-15-hours-ai",
+    title: "How a London Bakery Saved 15+ Hours a Week With AI",
+    excerpt:
+      "Real case study: a London wholesale bakery automated order processing, production scheduling, delivery routing, and payment tracking — saving 15+ hours a week. Built in 7 days.",
+    publishedAt: "24 March 2026",
+    tags: ["Case Study", "AI Automation", "Small Business", "Food & Beverage"],
+  },
+  {
+    id: "static-accountants-20-hours",
+    slug: "ai-accountants-save-20-hours",
+    title: "AI for UK Accountants: Reclaiming 20+ Hours a Month",
+    excerpt:
+      "5 tasks UK accounting practices can automate right now — client onboarding, document chasing, deadline reminders, appointment booking, and enquiry response.",
+    publishedAt: "24 March 2026",
+    tags: ["AI Automation", "Accountants", "Professional Services", "UK Business"],
+  },
+  {
+    id: "static-ai-adoption",
+    slug: "small-business-ai-adoption",
+    title: "Fewer Than 1 in 5 Small Businesses Are Good at AI",
+    excerpt:
+      "98% of small businesses say they use AI daily. Only 14% have embedded it into operations. Find out if you are in the 86% — and how to close the gap.",
+    publishedAt: "24 March 2026",
+    tags: ["AI Adoption", "Small Business", "AI Strategy", "UK Business"],
+  },
+  {
+    id: "static-before-after-leads",
+    slug: "before-after-automated-lead-response",
+    title: "Before and After: Automating Lead Response",
+    excerpt:
+      "What happens when a service business automates lead response. Response time drops from 12 hours to 30 seconds. Conversion doubles. Admin disappears.",
+    publishedAt: "24 March 2026",
+    tags: ["AI Automation", "Lead Response", "Service Business", "Before & After"],
+  },
+  {
+    id: "static-cleaning-automate",
+    slug: "cleaning-business-automate-first",
+    title: "AI for Cleaning Businesses: 3 Tasks to Automate First",
+    excerpt:
+      "The 3 tasks losing cleaning businesses the most revenue — after-hours lead capture, booking reminders, and quote follow-up — and how AI handles each automatically.",
+    publishedAt: "24 March 2026",
+    tags: ["AI Automation", "Cleaning Business", "Lead Generation", "Small Business"],
+  },
+  {
     id: "static-voice-ai",
     slug: "voice-ai-small-business",
     title: "Voice AI for Small Business: Never Miss a Call Again",
