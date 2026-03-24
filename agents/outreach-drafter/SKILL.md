@@ -91,7 +91,16 @@ Read `eval/checklist.md` and verify every item.
 Read `eval/advisory-board.md` — would all 3 reviewers pass this batch?
 
 ### Step 5: Write Daily Report
-Create page in Sales Agent Reports with: emails sent, templates used, quality scores, any skipped leads (with reason), stale sent warnings.
+Create page in Sales Agent Reports. **Page properties MUST be populated BEFORE writing the page body** — downstream agents read these properties directly and the body is supplementary detail only.
+
+**Required Notion properties (set on page creation):**
+- **Agent Name** (select): `outreach-drafter`
+- **Run Date** (date): today's ISO date
+- **Status** (select): `completed` (all emails sent successfully), `partial` (some skipped or failed), or `failed` (no emails sent)
+- **Output Summary** (rich text): `Sent X emails. Skipped Y. Templates: [list]. Top lead: [name] (score X).`
+- **Issues/Errors** (rich text): Any issues encountered (quality below 6, missing emails, API errors, leads skipped with reasons). If none: `No issues.`
+
+**Page body (supplementary detail):** emails sent, templates used, quality scores, any skipped leads (with reason), stale sent warnings, rotation choices.
 
 ### Step 6: Email Olushola a Daily Summary (MUST BE SENT — NOT DRAFTED)
 ⚠️ CRITICAL: This summary MUST be SENT to Olushola, NOT saved as a draft.
