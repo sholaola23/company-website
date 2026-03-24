@@ -6,7 +6,7 @@ import SectionHeading from "@/components/shared/SectionHeading";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Oladipupo Consulting — UK-based AI solutions agency for small businesses. AI automation, website development, and team training. Founded by Olushola Oladipupo. Registered in England & Wales.",
+    "Oladipupo Consulting — UK-based AI automation agency for small businesses. Founded by Olushola Oladipupo. Registered in England & Wales.",
   alternates: {
     canonical: "https://oladipupoconsulting.co.uk/about",
   },
