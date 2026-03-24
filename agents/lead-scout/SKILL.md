@@ -70,6 +70,15 @@ Use WebFetch to visit their website and assess:
 - Does it look professional or outdated?
 - Is it a template/placeholder page?
 
+**CRITICAL: If WebFetch returns 403, 401, or any error — DO NOT assume "no website."** A 403 means the website EXISTS but has bot protection. Mark website status as "UNKNOWN (403 — bot protected)" and score as if they HAVE a website. Never classify a business as "no website" unless you confirmed the domain does not resolve or returns 404.
+
+**WebFetch 403 Fallback Strategy:** When WebFetch returns 403, do NOT mark the website as "couldn't assess". Instead:
+1. Try WebSearch for `[business name] site:[domain]` to get cached/indexed page descriptions
+2. Use the Google search snippet to assess the website quality (look for: booking pages, contact forms, service pages, blog presence, social links)
+3. If that also fails, try WebSearch for `"[domain]"` without site: to find third-party mentions or directory listings that describe the site
+4. Note in Online Presence Notes: "Website exists but blocked automated access — assessed via search results only"
+5. NEVER skip a lead just because WebFetch returned 403 — use alternative data sources to complete the assessment
+
 ### 3b. Email Discovery
 Try to find their email address:
 - WebSearch: `"contact@[DOMAIN]"` or `"info@[DOMAIN]"`
@@ -138,7 +147,7 @@ If the lead scores >= 40 and is not a duplicate, create a page in the Sales Pipe
 - Domain: [extracted domain or blank]
 - Location: [city, region]
 - Country: [UK, US, Canada, Australia, Ireland, Nigeria, or Other]
-- Industry: [best match from: Plumber, Cleaner, Electrician, Handyman, Builder, Locksmith, Salon, Barber, Beauty/Spa, Gym, Personal Trainer, Therapist, Accountant, Solicitor/Legal, Financial Advisor, Consultant, Recruitment, Coach, Restaurant, Bakery, Caterer, Florist, Estate Agent, Property Manager, Construction, Architect, Church/Non-profit, Education, Childcare, Events, Media/Production, Photography, Marketing Agency, Automotive, Retail, Pet Services, Dentist, Other]
+- Industry: [best match from: Plumber, Cleaner, Electrician, Handyman, Builder, Locksmith, Salon, Barber, Beauty/Spa, Gym, Personal Trainer, Therapist, Accountant, Solicitor/Legal, Financial Advisor, Consultant, Recruitment, Coach, Restaurant, Bakery, Caterer, Florist, Estate Agent, Property Manager, Construction, Architect, Church/Non-profit, Education, Music School, Driving School, Tutoring, Childcare, Events, Media/Production, Photography, Marketing Agency, Automotive, Retail, Pet Services, Dentist, Other]
 - Source: [Google, Facebook, LinkedIn, Directory]
 - Lead Score: [0-100]
 - Status: "new"

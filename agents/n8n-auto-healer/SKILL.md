@@ -142,6 +142,14 @@ Do NOT attempt automated healing. These likely need human investigation:
 1. Log: Status -> "detected", Healing Result -> "not_attempted"
 2. Healing Action -> "No executions detected in expected window -- may be schedule drift or planned downtime"
 
+## ESCALATION DEDUP RULE (Re-Escalation Suppression)
+After escalating an issue via email, do NOT send another escalation email for the same incident unless:
+1. The severity has increased (e.g., from MEDIUM to HIGH, or HIGH to CRITICAL)
+2. A NEW incident has been detected (different Workflow ID or different error type)
+3. 48+ hours have passed since last escalation with no resolution
+
+For ongoing incidents already escalated, log updates to the System Health Notion DB only — do not re-email. The first email is enough. Olushola will address it when he can. Sending repeat emails for the same issue erodes trust in the alert system.
+
 ## STEP 5: Escalate to Olushola
 If ANY incidents are in "escalated" status or severity is "critical", SEND an email to olusholaoladipupo1@gmail.com:
 
