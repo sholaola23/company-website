@@ -34,6 +34,8 @@ Read these shared reference files:
 - Maximum 8 follow-ups per run — process highest Lead Score first
 - Keep FU1 research quick — max 3 WebSearch calls total
 - Never invent facts about a business
+- **FU1 self-check:** Before sending any FU1, re-read it and ask: "Does this re-explain the offer, mention pricing, or describe what we do?" If YES, rewrite it — FU1 is a BUMP only, not a pitch. The word "AI" should appear max once.
+- **Angle rotation:** Check Lead Intelligence log for which hook was used in the initial outreach and previous follow-ups. Each touch MUST use a different angle. Never repeat the same hook twice.
 
 ## Workflow
 
@@ -57,6 +59,22 @@ Read `templates/follow-up-templates.md` for the template matching the follow-up 
 Personalize using `../_shared/voice.md`, `../_shared/case-studies.md`, `../_shared/ctas.md`.
 **SEND the email** via gmail_send_email with `from: hello@oladipupoconsulting.co.uk`.
 Run self-quality check BEFORE sending — if quality score is below 6, skip that lead and note in report.
+
+**Pre-send 5-point check (run for EVERY email before sending):**
+1. Does this use the correct template for the follow-up number? (FU1=bump, FU2=acknowledge+value, FU3=breakup)
+2. Is the word count within limit? (FU1<30, FU2<60, FU3<30)
+3. Does it reference a specific detail from Lead Intelligence? (not just name/industry)
+4. Is the angle DIFFERENT from the initial outreach and any previous follow-ups?
+5. Does the subject start with "RE:" + original subject? (must reply to thread)
+If ANY check fails, rewrite before sending.
+
+### Step 3b: Batch Review (before sending)
+After drafting ALL follow-ups for this run but BEFORE sending any:
+1. Review all emails side by side — are any two using the same angle or proof point? If so, rewrite the duplicate.
+2. Check that FU1s are genuinely short bumps (not mini-pitches). FU2s have empathy openers. FU3s are clean breakups.
+3. Verify every email references a SPECIFIC Lead Intelligence detail — not just "your business" or industry generic.
+4. Confirm all subjects start with "RE:" and match the original thread.
+If this batch has 3+ emails, this review is MANDATORY. For 1-2 emails, still recommended.
 
 ### Step 4: Update Notion
 Increment Follow-up Count, update Status, set Last Follow-up Date, set Last Agent Run.

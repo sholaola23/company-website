@@ -37,9 +37,17 @@ Query Content Calendar: Status = "planned", Week = this week's Monday. Read brie
 ### Step 2: Write Each Piece
 Follow `instructions/blog-structure.md` for structure. All content is blog-only (no social media — we don't have company social accounts yet).
 
-### Step 3: Self-Eval
+### Step 3: Self-Eval (MANDATORY — do not skip)
 For each piece, run `eval/checklist.md`. Fix anything that fails.
 Run `eval/advisory-board.md` — would all 3 reviewers pass this piece?
+
+Then run this **hard-fail checklist** — if ANY item fails, rewrite before saving:
+1. **Stats check:** Scan for every number, percentage, or stat. Is each one from case-studies.md or a named source? If not, replace with qualitative language.
+2. **Banned terms check:** Scan for: n8n, webhook, API, automation workflow, cutting-edge, revolutionary, game-changing, game changer, groundbreaking, transformative, leverage, synergy, paradigm shift, next-level, disruptive. If any appear, replace.
+3. **Internal links check:** Count links to oladipupoconsulting.co.uk. If fewer than 2, add more from the link bank.
+4. **Word count check:** Count words. If over 800, cut. No exceptions.
+5. **CTA check:** Does the post end with a specific CTA (audit link, contact link, or "read more" to a specific page)? If not, add one.
+6. **Framing check:** Is the opening a generic listicle ("X ways...", "Top N reasons...")? If yes, reframe using a story, contrarian take, before/after, or specific problem.
 
 ### Step 4: Save to Notion
 Update each Content Calendar page: Draft = full content, Status = "drafted", Word Count = approximate.
@@ -76,3 +84,21 @@ Sales Agent Reports: pieces written, titles, formats, total words.
 - **AI is the hook.** Always mention it — but frame as a tool, not magic.
 - **No generic filler.** Every sentence earns its place.
 - **Adapt case studies.** See `../_shared/case-studies.md`.
+- **ZERO tolerance for hallucinated statistics.** NEVER invent percentages, survey results, or numerical claims. The ONLY numbers you may use are: (1) numbers from `../_shared/case-studies.md` (E'Manuel: 150+ orders/week, 8 hours saved, zero admin; QuantumFM: 12-page site in 2 weeks), (2) numbers from a source you can name and link. If you want to make a point about speed or conversion, use qualitative language instead: "most," "the majority," "in our experience." Getting caught fabricating a stat destroys trust instantly — it is the single worst thing this agent can do.
+- **Every post MUST include 2+ internal links** to other pages on oladipupoconsulting.co.uk. Weave them naturally into the text — never dump them at the end. Use this link bank (pick whichever are most relevant to the topic):
+  - `/services/ai-lead-response` — AI lead response systems
+  - `/services/ai-chatbot` — AI chatbots for customer service
+  - `/services/ai-appointment-booking` — AI appointment booking
+  - `/services/ai-email-assistant` — AI email assistant
+  - `/services/ai-content-automation` — AI content automation
+  - `/case-studies/emanuel-bakery` — E'Manuel Bakery case study
+  - `/case-studies/quantumfm` — QuantumFM case study
+  - `/audit` — free AI audit
+  - `/blog/bakery-saved-15-hours-ai` — bakery case study blog post
+  - `/blog/reduce-no-shows-ai-reminders` — no-shows blog post
+  - `/blog/ai-for-uk-accountants` — accountants blog post
+  - `/blog/cleaning-business-automate-first` — cleaning business blog post
+  - `/contact` — contact page
+- **Banned words and phrases** (NEVER use any of these): n8n, webhook, API, automation workflow, cutting-edge, revolutionary, game-changing, game changer, groundbreaking, transformative, leverage, synergy, paradigm shift, next-level, disruptive. Use plain English instead.
+- **No generic listicle framing.** NEVER write "X ways AI can help your business" or "Top N reasons to..." format. Instead, every post must use one of these angles: (1) a story — start with a real scenario or client situation, (2) a contrarian take — challenge something the reader assumes is true, (3) a before/after — show the gap between manual and AI-assisted, (4) a specific problem — name the exact pain point in the first sentence. If the content brief suggests a generic angle, reframe it before writing.
+- **Hard word limit: 800 words maximum.** Aim for 450-650. If a post is over 800, cut ruthlessly — every sentence must earn its place.

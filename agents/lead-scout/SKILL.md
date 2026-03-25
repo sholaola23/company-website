@@ -76,16 +76,22 @@ Use WebFetch to visit their website and assess:
 1. Try WebSearch for `[business name] site:[domain]` to get cached/indexed page descriptions
 2. Use the Google search snippet to assess the website quality (look for: booking pages, contact forms, service pages, blog presence, social links)
 3. If that also fails, try WebSearch for `"[domain]"` without site: to find third-party mentions or directory listings that describe the site
-4. Note in Online Presence Notes: "Website exists but blocked automated access — assessed via search results only"
-5. NEVER skip a lead just because WebFetch returned 403 — use alternative data sources to complete the assessment
+4. Try WebSearch for `"[business name]" [city] review` to find directory profiles (Yell, Checkatrade, Bark, Trustpilot, Google Maps) that often contain business details, photos, and service descriptions
+5. Check if the business appears on Checkatrade, Bark, or TrustATrader — these profiles often include services offered, areas covered, accreditations, and customer reviews even when the main website blocks bots
+6. Note in Online Presence Notes: "Website exists but blocked automated access — assessed via search results and directory listings"
+7. NEVER skip a lead just because WebFetch returned 403 — use alternative data sources to complete the assessment
 
 ### 3b. Email Discovery
-Try to find their email address:
+Try to find their email address using ALL of these methods before giving up:
 - WebSearch: `"contact@[DOMAIN]"` or `"info@[DOMAIN]"`
 - WebSearch: `"[OWNER NAME]" "[BUSINESS NAME]" email`
-- Check their website contact page
+- Check their website contact page (if accessible)
 - Check their Facebook About section
-Populate Email AND Phone fields if found.
+- Check directory listings: Yell, Checkatrade, Bark, and Google Maps listings often display email addresses
+- WebSearch: `"[BUSINESS NAME]" "[CITY]" email OR contact` — catches directory profiles that expose contact details
+- If the business has a domain, try common patterns: info@, hello@, contact@, enquiries@, bookings@
+
+Populate Email AND Phone fields if found. **You MUST try at least 3 of the above methods before marking a lead as "Needs Email: __YES__".**
 
 ### 3c. Check online presence
 - Google: `"[BUSINESS NAME]" reviews` — count reviews, check rating
@@ -104,6 +110,12 @@ Use this weighted scoring model:
 | Facebook-only presence (10) | 0-10 |
 | Serves multiple areas but has single page (10) | 0-10 |
 | Appointment-based business model (10) | 0-10 |
+
+**Score self-check (MANDATORY):** After calculating the score, verify it passes this sanity check:
+- Score 70+: The business must have clear pain points AND be reachable (email or phone found)
+- Score 50-69: The business should have at least one strong pain point
+- Score 40-49: Borderline — only add if there is a clear reason the Outreach Drafter can use
+- If the score feels wrong, re-examine your evidence. A high score with no pain points or a low score despite obvious gaps means your scoring is off.
 
 ### 3e. Tag the best-fit solution
 Match the business to one or more solutions from our catalogue:
@@ -147,7 +159,8 @@ If the lead scores >= 40 and is not a duplicate, create a page in the Sales Pipe
 - Domain: [extracted domain or blank]
 - Location: [city, region]
 - Country: [UK, US, Canada, Australia, Ireland, Nigeria, or Other]
-- Industry: [best match from: Plumber, Cleaner, Electrician, Handyman, Builder, Locksmith, Salon, Barber, Beauty/Spa, Gym, Personal Trainer, Therapist, Accountant, Solicitor/Legal, Financial Advisor, Consultant, Recruitment, Coach, Restaurant, Bakery, Caterer, Florist, Estate Agent, Property Manager, Construction, Architect, Church/Non-profit, Education, Music School, Driving School, Tutoring, Childcare, Events, Media/Production, Photography, Marketing Agency, Automotive, Retail, Pet Services, Dentist, Other]
+- Industry: [best match from list below — **verify against actual business description, not search query**. If you searched for "plumber" but the business is actually a general builder, tag as "Builder" not "Plumber". Read the business description/about page carefully.]
+  Valid industries: Plumber, Cleaner, Electrician, Handyman, Builder, Locksmith, Salon, Barber, Beauty/Spa, Gym, Personal Trainer, Therapist, Accountant, Solicitor/Legal, Financial Advisor, Consultant, Recruitment, Coach, Restaurant, Bakery, Caterer, Florist, Estate Agent, Property Manager, Construction, Architect, Church/Non-profit, Education, Music School, Driving School, Tutoring, Childcare, Events, Media/Production, Photography, Marketing Agency, Automotive, Retail, Pet Services, Dentist, Other
 - Source: [Google, Facebook, LinkedIn, Directory]
 - Lead Score: [0-100]
 - Status: "new"
@@ -161,13 +174,22 @@ If the lead scores >= 40 and is not a duplicate, create a page in the Sales Pipe
 - date:Last Agent Run:start: [today's date in ISO format]
 
 ### 3h. Write Lead Intelligence (Phase 0 — Cross-Agent Memory)
-When creating the lead, populate the **Lead Intelligence** rich text field with your scouting observations. This field is shared across ALL agents — each agent reads it before acting and appends their own observations. Format your entry as:
+When creating the lead, populate the **Lead Intelligence** rich text field with your scouting observations. This field is shared across ALL agents — each agent reads it before acting and appends their own observations.
 
+**CRITICAL: The Outreach Drafter writes personalised cold emails using ONLY this field.** If your Lead Intelligence is thin, the outreach email will be generic and get ignored. Every entry MUST cover all 5 categories below:
+
+1. **Discovery context** — how you found them, what search channel, what stood out
+2. **Digital presence assessment** — website quality (tech, design, booking capability, SSL, mobile), social media platforms + activity level, Google Business Profile status
+3. **Social proof & reputation** — review count + rating + platform, any awards/accreditations/partnerships mentioned, years in business if visible
+4. **Competitive positioning** — what they do differently from competitors (unique services, pricing visible, areas served, target customer), how busy/established they appear
+5. **Specific pain points & opportunities** — at least 2 concrete problems our solutions would fix (e.g. "no online booking — loses after-hours leads", "Facebook-only presence — no Google visibility", "responds to enquiries via DM only — slow and unscalable")
+
+Format your entry as:
 ```
-[SCOUT 2026-03-20] Found via Google. Website: basic WordPress, no booking, SSL ok. 12 Google reviews (4.3★). Facebook active (2x/week posts). Industry: Plumber. Serves: Kettering + Northampton. No online booking. Contact form only. Key pain: slow lead response, no after-hours capture.
+[SCOUT 2026-03-25] Found via Google. Website: basic WordPress, no booking system, SSL ok, mobile-responsive but slow. 12 Google reviews (4.3★), no Trustpilot. Facebook active (2x/week posts, mostly job photos), no Instagram. Est. 2019, serves Kettering + Northampton + Corby. Differentiator: 24/7 emergency callout advertised. Competitors in area (3 on Google Maps) all have online booking. Pain points: (1) no online booking — relies on phone/contact form, likely losing after-hours leads to competitors with instant booking; (2) no automated follow-up visible — contact form goes to email, probable slow response time; (3) no review generation strategy — 12 reviews vs competitors with 40+.
 ```
 
-Keep it factual, one paragraph, include source, website assessment, review count, social activity, and observed pain points. This becomes the shared memory that all downstream agents (Outreach Drafter, Qualifier, Follow-up, Proactive Audit) will read before engaging this lead.
+Keep it factual, one paragraph per lead, minimum 3 sentences. This becomes the shared memory that all downstream agents (Outreach Drafter, Qualifier, Follow-up, Proactive Audit) will read before engaging this lead. **If you cannot fill all 5 categories, explain what you tried — never leave gaps silently.**
 
 ## STEP 4: Update Agent Config
 After processing all leads:
