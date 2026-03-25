@@ -108,6 +108,62 @@ PS — if you don't get results, you don't pay — written in contract
 PPS — we just saved a bakery 10+ hours a week on orders, payments and deliveries
 ```
 
+## Script G — Dental / Medical (NO-SHOWS)
+**Use for:** Dental practices, medical clinics, physiotherapy. Lead Score 50+.
+**Subject:** [practice name] — still losing patients to no-shows?
+
+```
+{{firstName}}
+
+no-shows cost most dental practices thousands per month. and staff spends hours calling to confirm.
+
+we build AI reminder systems — automated confirmations, rebooking for cancellations, waitlist that fills gaps in minutes.
+
+one practice cut no-shows by 60% in the first month.
+
+interested? reply yes
+
+Shola
+
+PS — oladipupoconsulting.co.uk/blog/reduce-no-shows-ai-reminders
+```
+
+## Script H — Accountants / Solicitors (DOCUMENT CHASING)
+**Use for:** Accounting firms, solicitor practices, tax advisors. Lead Score 50+.
+**Subject:** [firm name] — still chasing documents manually?
+
+```
+{{firstName}}
+
+tax season means chasing 200+ clients for the same documents. every year. your team spends hours on emails that AI can handle in minutes.
+
+we automate document requests, track status per client, and send smart reminders. 80% less back-and-forth.
+
+interested? reply yes
+
+Shola
+
+PS — oladipupoconsulting.co.uk/blog/ai-for-uk-accountants
+```
+
+## Script I — Real Estate (LEAD FOLLOW-UP)
+**Use for:** Estate agents, lettings agencies, property managers. Lead Score 50+.
+**Subject:** [agency name] — leads going cold after day 2?
+
+```
+{{firstName}}
+
+most estate agents juggle 40+ leads manually. by day 3, half are cold.
+
+we build AI follow-up systems that nurture every lead automatically — texts, emails, calls — until they're ready to view.
+
+interested? reply yes
+
+Shola
+
+PS — we helped a business save 8+ hours a week on this exact problem
+```
+
 ## A/B Testing Framework
 1. Pick 3 scripts that fit the lead batch
 2. Send 30+ emails with each (same lead quality, same time)
