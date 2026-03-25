@@ -67,10 +67,12 @@ Only use long-form templates from `templates/email-templates.md` if Lead Score >
 
 1. Read the lead's full Notion page
 1b. **Read Lead Intelligence** (Phase 0 — Cross-Agent Memory): Read the Lead Intelligence field. Use observations to personalize — but keep the email SHORT. Reference ONE specific detail max.
+1c. **Deep personalisation is REQUIRED.** Your email MUST reference a SPECIFIC observation that could NOT apply to any other lead — e.g. their review count, a website issue you found, their response time, their Facebook-only presence, or a missing booking system. Mentioning only their name, industry, or location is NOT enough. If you cannot find a specific detail from Lead Intelligence, check their website or social presence for one before writing.
 2. Read `../_shared/cold-email-scripts.md` — pick the best script (A-F) for this lead
 3. Read `../_shared/ctas.md` — use "reply yes" CTA (primary). NEVER include Cal.com link in first touch.
-4. Match tone per `../_shared/voice.md`
-5. Add PS line from `../_shared/ctas.md` PS Line Bank — pick the most relevant one
+4. Match tone per `../_shared/voice.md`. **Tone check is MANDATORY:** UK leads get polite/understated language ("would it be worth...", "no pressure"), US leads get direct/friendly ("would you be open to...", "happy to show you"), Nigerian leads get warm/relational ("I'd love to connect..."). If Country is not set, default to UK tone. Before finalising, re-read the email and verify tone matches the lead's region.
+5. Add PS line from `../_shared/ctas.md` PS Line Bank — pick the most relevant one. **Every PS line in a batch MUST be unique.** Never reuse the same PS line for two leads in the same run. If the PS Line Bank runs out of options, adapt one for the lead's specific industry (e.g. "we just saved a salon 10+ hours a week on bookings and no-shows" instead of repeating the bakery line).
+5b. **Subject line MUST include the lead's business name OR a specific observation about them.** Generic subjects like "quick question" or "60 seconds a day" are BANNED. Use patterns from `../_shared/personalization.md` Subject Line Patterns, e.g. "I tested [Business Name]'s response time" or "[Business Name] — quick thought". If the script template has a generic subject, OVERRIDE it with a personalised one.
 6. **TOTAL EMAIL MUST BE UNDER 80 WORDS** (excluding signature). If it's longer, cut it.
 7. Run self-quality check — if below 6, SKIP this lead
 8. Check Gmail for existing sent emails to this address (avoid double-sending)
@@ -85,6 +87,15 @@ Only use long-form templates from `templates/email-templates.md` if Lead Score >
     - Opening Variant → which opening option you used (A / B / C / D)
     - Last Agent Run → today (use `date:Last Agent Run:start` = today's ISO date)
     - Lead Intelligence → APPEND (do not overwrite) a new line: `[OUTREACH 2026-03-20] Sent Template [X] Opening [Y]. Subject: "[subject line]". Personalization score: [N]/10. Key hook: [what specific detail you led with].`
+
+### Step 3b: Batch Quality Gate (run AFTER writing all emails, BEFORE sending)
+Review ALL emails in the batch together and verify:
+- [ ] Every subject line includes the business name or a unique observation (no generic subjects)
+- [ ] Every PS line is different from every other PS line in the batch
+- [ ] Every email body references at least ONE specific detail unique to that lead (not just name/industry/location)
+- [ ] No two emails in the batch start with the same opening line
+- [ ] Tone matches each lead's region (UK = polite/understated, US = direct, Nigeria = warm)
+If any email fails a check, rewrite it before sending.
 
 ### Step 4: Self-Eval
 Read `eval/checklist.md` and verify every item.
