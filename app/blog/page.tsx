@@ -28,6 +28,15 @@ export const metadata = {
 
 const staticPosts = [
   {
+    id: "static-63-agent-costs",
+    slug: "what-it-costs-63-agent-ai-business",
+    title: "What It Actually Costs to Run a 63-Agent AI Business",
+    excerpt:
+      "A transparent breakdown of every tool, API call, and monthly cost behind running 63 AI agents, 2 client dashboards, and 50+ daily automated emails. Real numbers, no fluff.",
+    publishedAt: "25 March 2026",
+    tags: ["Transparency", "AI Automation", "Business Costs", "Behind the Scenes"],
+  },
+  {
     id: "static-cleaning-save-time",
     slug: "ai-save-cleaning-companies-time",
     title: "How AI Saves UK Cleaning Companies 10+ Hours a Week",
