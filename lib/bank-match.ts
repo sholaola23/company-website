@@ -44,6 +44,7 @@ export interface MatchSummary {
   needsReview: number;
   unmatched: number;
   totalMatchedAmount: number;
+  saveErrors: number;
   results: MatchResult[];
 }
 
@@ -178,6 +179,7 @@ export async function matchBankStatement(
       needsReview: 0,
       unmatched: 0,
       totalMatchedAmount: 0,
+      saveErrors: 0,
       results: [],
     };
   }
@@ -310,17 +312,31 @@ export async function matchBankStatement(
 
   // 5. Update Google Sheets for auto-matched orders (Tier 1 & 2)
   const autoMatches = results.filter((r) => r.action === "auto_match");
+  let saveErrors = 0;
   for (const match of autoMatches) {
     const row = rows[match.orderRow - 2]; // Convert back to 0-based
     if (row) {
-      row.set("Payment Status", "paid");
-      row.set("Payment Amount", match.bankAmount.toString());
-      row.set(
-        "Payment Reference",
-        `BANK-${match.bankDate}-${match.bankDescription.substring(0, 30)}`
-      );
-      await row.save();
+      try {
+        row.set("Payment Status", "paid");
+        row.set("Payment Amount", match.bankAmount.toString());
+        row.set(
+          "Payment Reference",
+          `BANK-${match.bankDate}-${match.bankDescription.substring(0, 30)}`
+        );
+        await row.save();
+      } catch (saveErr) {
+        saveErrors++;
+        console.error(
+          `[bank-match] Failed to save row ${match.orderRow} for ${match.orderName}:`,
+          saveErr instanceof Error ? saveErr.message : saveErr
+        );
+      }
     }
+  }
+  if (saveErrors > 0) {
+    console.warn(
+      `[bank-match] ${saveErrors}/${autoMatches.length} row saves failed`
+    );
   }
 
   const summary: MatchSummary = {
@@ -329,6 +345,7 @@ export async function matchBankStatement(
     needsReview: results.filter((r) => r.action === "review_needed").length,
     unmatched: results.filter((r) => r.action === "unmatched").length,
     totalMatchedAmount: autoMatches.reduce((sum, r) => sum + r.bankAmount, 0),
+    saveErrors,
     results,
   };
 

@@ -3,6 +3,9 @@ import { validateClientAuth } from "@/lib/client-auth";
 import { getClient } from "@/lib/client-config";
 import { matchBankStatement, type MatchSummary } from "@/lib/bank-match";
 
+export const dynamic = "force-dynamic";
+export const maxDuration = 60;
+
 // Known HSBC CSV header keywords
 const HSBC_HEADER_KEYWORDS = [
   "date",
@@ -136,6 +139,11 @@ export async function POST(
     }
     if (summary.unmatched > 0) {
       parts.push(`${summary.unmatched} unmatched`);
+    }
+    if (summary.saveErrors > 0) {
+      parts.push(
+        `${summary.saveErrors} failed to save — please retry`
+      );
     }
 
     const message = parts.join(", ");
