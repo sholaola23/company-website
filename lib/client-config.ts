@@ -138,12 +138,28 @@ export const CLIENTS: Record<string, ClientConfig> = {
     },
     driveFolderId: "18kuxNiXgohekG9-3StB1moGveAEx3t6a",
   },
+  "emanuel-test": {
+    slug: "emanuel-test",
+    name: "E'Manuel Foods and Bakery (TEST)",
+    contactName: "Test User",
+    industry: "Bakery",
+    workflows: [],
+    sheetsId: "1HCS6jTgUznzXLsJyMZ5aAkoVS1UbboygdnmBvB8O5MA",
+    initials: "ET",
+    passwordEnvKey: "CLIENT_PASSWORD_EMANUEL_TEST",
+    bankDetails: {
+      accountName: "E'MANUEL FOODS AND BAKERY LIMITED",
+      sortCode: "40-09-06",
+      accountNumber: "82077337",
+    },
+  },
 };
 
 // Vanity slugs for clean app.oladipupoconsulting.co.uk URLs
 // Maps friendly URL path → internal client slug
 export const VANITY_SLUGS: Record<string, string> = {
   emanuelbakery: "emanuel",
+  emanueltest: "emanuel-test",
 };
 
 export function getClient(slug: string): ClientConfig | undefined {
