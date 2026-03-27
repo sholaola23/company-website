@@ -158,7 +158,21 @@ export async function getOrdersSummary(
       if (status === "cancelled") return false;
       if (allTime) return true;
       const wc = row.get("Week Code");
-      return wc === weekCode;
+      if (wc === weekCode) return true;
+      // Fallback: Week Code column may be empty for new submissions if the
+      // ARRAYFORMULA in the sheet doesn't extend far enough. Check submission date.
+      if (!wc) {
+        const submittedAt =
+          row.get("Submitted at") ||
+          row.get("Submitted At") ||
+          row.get("Timestamp");
+        if (!submittedAt) return false;
+        const orderDate = new Date(submittedAt);
+        if (isNaN(orderDate.getTime())) return false;
+        const daysDiff = (Date.now() - orderDate.getTime()) / (1000 * 60 * 60 * 24);
+        return daysDiff >= 0 && daysDiff <= 7;
+      }
+      return false;
     });
 
     // Build a map of product header → price from the column names
