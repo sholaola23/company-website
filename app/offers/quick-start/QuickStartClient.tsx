@@ -77,8 +77,8 @@ const INCLUDED = [
   },
   {
     icon: CalendarCheck,
-    title: "7-Day Delivery",
-    desc: "Fully built and running within one week of kickoff",
+    title: "14-Day Delivery",
+    desc: "Fully built and running within two weeks of kickoff",
   },
   {
     icon: Shield,
@@ -270,7 +270,7 @@ export default function QuickStartClient() {
 
         <p className="text-lg text-zinc-400 max-w-2xl mx-auto leading-relaxed">
           Everything you need to start saving hours every week with AI —
-          audit, automation build, and live dashboard. Delivered in 7 days.
+          audit, automation build, and live dashboard. Delivered in 14 days.
         </p>
       </div>
 
@@ -411,7 +411,7 @@ export default function QuickStartClient() {
             },
             {
               step: "3",
-              title: "Live in 7 days",
+              title: "Live in 14 days",
               desc: "Your AI system is built, tested, and running. You get a live dashboard to track results.",
             },
           ].map((item) => (

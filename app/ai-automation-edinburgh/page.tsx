@@ -18,7 +18,7 @@ const CANONICAL = `https://oladipupoconsulting.co.uk/${SLUG}`;
 
 export const metadata: Metadata = {
   title: `AI Automation for Small Businesses in ${CITY}`,
-  description: `AI automation services for small businesses in ${CITY}. Automate lead capture, appointment booking, email management, and more. 7-day delivery. Free AI readiness audit.`,
+  description: `AI automation services for small businesses in ${CITY}. Automate lead capture, appointment booking, email management, and more. 14-day delivery. Free AI readiness audit.`,
   keywords: [
     "Edinburgh AI automation",
     "AI automation Edinburgh small business",
@@ -59,7 +59,7 @@ const HOW_IT_WORKS = [
   {
     icon: Zap,
     step: "03",
-    title: "7-Day Build",
+    title: "14-Day Build",
     description:
       "We build and deploy your automation in a focused sprint with full documentation and SOPs.",
   },
@@ -137,7 +137,7 @@ export default function AIAutomationEdinburghPage() {
             city&apos;s established financial services hub. The businesses
             pulling ahead are the ones responding faster, following up
             automatically, and letting AI handle the admin. We build those
-            systems — delivered in 7 days, starting from £500.
+            systems — delivered in 14 days, starting from £500.
           </p>
         </div>
       </AnimatedSection>

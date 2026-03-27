@@ -59,7 +59,7 @@ const STATS = [
   { value: "2", label: "Live clients" },
   { value: "12", label: "Service offerings" },
   { value: "60+", label: "AI agents running" },
-  { value: "7 days", label: "Average delivery" },
+  { value: "14 days", label: "Average delivery" },
 ];
 
 const TRUST = [

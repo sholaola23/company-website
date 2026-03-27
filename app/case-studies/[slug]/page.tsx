@@ -102,9 +102,13 @@ export default async function CaseStudyDetailPage({
           </span>
         </div>
 
-        <h1 className="text-3xl sm:text-4xl font-bold text-zinc-50 leading-tight mb-8">
-          {study.name}
+        <h1 className="text-3xl sm:text-4xl font-bold text-zinc-50 leading-tight mb-2">
+          {study.heroHeadline ?? study.name}
         </h1>
+        {study.heroHeadline && (
+          <p className="text-sm text-zinc-500 mb-6">{study.name}</p>
+        )}
+        {!study.heroHeadline && <div className="mb-6" />}
 
         {/* Hero stat */}
         <div className="bg-gradient-to-br from-blue-500/10 to-zinc-900 border border-blue-500/20 rounded-2xl p-8 text-center">
@@ -126,7 +130,7 @@ export default async function CaseStudyDetailPage({
         >
           The Challenge
         </h2>
-        <p className="text-base text-zinc-400 leading-relaxed">{study.problem}</p>
+        <p className="text-base text-zinc-400 leading-relaxed">{study.problemExpanded ?? study.problem}</p>
       </section>
 
       <hr className="border-zinc-800 mb-10" />
@@ -139,8 +143,40 @@ export default async function CaseStudyDetailPage({
         >
           Our Solution
         </h2>
-        <p className="text-base text-zinc-400 leading-relaxed">{study.solution}</p>
+        <p className="text-base text-zinc-400 leading-relaxed">{study.solutionExpanded ?? study.solution}</p>
+
+        {/* Timeline callout */}
+        {study.timeline && (
+          <div className="mt-4 rounded-lg border border-blue-500/20 bg-blue-500/5 px-4 py-3">
+            <p className="text-sm text-blue-400 font-medium">{study.timeline}</p>
+          </div>
+        )}
       </section>
+
+      {/* Tech Stack */}
+      {study.techStack && study.techStack.length > 0 && (
+        <>
+          <hr className="border-zinc-800 mb-10" />
+          <section className="mb-10" aria-labelledby="tech-heading">
+            <h2
+              id="tech-heading"
+              className="text-xl font-semibold text-zinc-50 mb-4"
+            >
+              Technology Used
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {study.techStack.map((tech) => (
+                <span
+                  key={tech}
+                  className="text-xs bg-zinc-800 text-zinc-300 px-3 py-1.5 rounded-full border border-zinc-700"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </section>
+        </>
+      )}
 
       <hr className="border-zinc-800 mb-10" />
 

@@ -4,7 +4,7 @@ import QuickStartClient from "./QuickStartClient";
 export const metadata: Metadata = {
   title: "£297 Quick-Start AI Package | Limited Offer",
   description:
-    "Get a full AI audit + automation build for £297 (normally £500). 7-day delivery, 90-day guarantee. 3 spots only.",
+    "Get a full AI audit + automation build for £297 (normally £500). 14-day delivery, 90-day guarantee. 3 spots only.",
   robots: {
     index: false,
     follow: false,
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "£297 Quick-Start AI Package | Limited Offer | Oladipupo Consulting",
     description:
-      "Get a full AI audit + automation build for £297 (normally £500). 7-day delivery, 90-day guarantee. 3 spots only.",
+      "Get a full AI audit + automation build for £297 (normally £500). 14-day delivery, 90-day guarantee. 3 spots only.",
     url: "https://oladipupoconsulting.co.uk/offers/quick-start",
     type: "website",
   },

@@ -6,19 +6,25 @@ export type CaseStudy = {
   tier: string;
   heroStat: string;
   heroLabel: string;
+  heroHeadline?: string; // benefit-focused headline override
   problem: string;
+  problemExpanded?: string; // longer version for detail page
   solution: string;
+  solutionExpanded?: string; // longer version for detail page
   results: { label: string; value: string }[];
   deliverables: string[];
   testimonial?: string;
   beforeAfter?: { before: string; after: string }[];
   annualSaving?: string;
+  timeline?: string; // how long the project took
+  techStack?: string[]; // tools used (human-readable labels)
 };
 
 export const caseStudies: CaseStudy[] = [
   {
     slug: "emanuel-bakery",
     name: "E'Manuel Foods & Bakery",
+    heroHeadline: "How a Kettering Bakery Saved 8 Hours a Week and Automated 180 Orders",
     industry: "Food & Bakery",
     location: "Kettering, UK",
     tier: "Growth",
@@ -26,30 +32,51 @@ export const caseStudies: CaseStudy[] = [
     heroLabel: "saved per week — equivalent to ~£400/month in admin costs",
     problem:
       "Running a Nigerian-style bread bakery handling 140-180 weekly orders. Orders came in via WhatsApp messages, payments were manually tracked across SumUp and bank transfers, and production quantities were hand-tallied. The owner spent 8+ hours per week on admin instead of baking.",
+    problemExpanded:
+      "Tunmise runs E'Manuel Foods & Bakery, a Nigerian-style bakery in Kettering that delivers fresh bread across the Midlands. Before working with us, every part of the business ran on manual effort. Customers placed orders via WhatsApp messages — often incomplete, sometimes contradictory. Tunmise would spend hours every evening collating these messages into a spreadsheet, hand-tallying production quantities for each bread type, and manually tracking which customers had paid via SumUp or bank transfer. Payment reconciliation was a particular headache: SumUp generates its own transaction references, so matching a payment to an order meant cross-referencing amounts, customer names, and timing across two separate systems. Delivery routes were planned by memory. The business was growing — 140 to 180 orders per week — but the admin was growing faster. Tunmise was spending 8+ hours per week on tasks that had nothing to do with actually baking bread.",
     solution:
       "Built 9 automated workflows — online order form (Tally.so), real-time Google Sheets production dashboard (5 tabs), automated payment matching across SumUp and bank transfers, delivery route optimisation with Google Maps, WhatsApp order confirmations.",
+    solutionExpanded:
+      "We replaced the entire manual process with 9 interconnected AI workflows, built and deployed in under two weeks. First, we moved order collection from WhatsApp to a custom Tally.so form — customers fill in their name, address, products, and quantities in under 60 seconds. The form feeds directly into a Google Sheets production dashboard with 5 tabs: orders, payments, production quantities, delivery routes, and weekly summaries. The payment matching engine (our most complex workflow) polls SumUp every 30 minutes and cross-references transactions against orders using a 4-tier matching system: submission ID match, name + amount match, name-only match (for partial payments), and amount-only match with duplicate safeguards. Bank transfer matching works the same way when Tunmise uploads his bank statement CSV. Every order triggers an instant WhatsApp confirmation via Twilio so customers know their order was received. On Fridays, a delivery route optimizer groups orders by town and generates Google Maps navigation links for each stop. A Monday cleanup workflow archives the previous week and resets the dashboard for the new cycle. Tunmise now checks a single dashboard for 60 seconds each morning instead of spending hours on admin each evening.",
     results: [
       { label: "Admin time saved", value: "8 hrs/week (~£400/mo)" },
-      { label: "Orders processed automatically", value: "140-180/week" },
+      { label: "Orders processed automatically", value: "180+/week" },
       { label: "Manual payment reconciliation", value: "Zero" },
       { label: "Production tallies", value: "Automated" },
       { label: "Delivery route generation", value: "One-click" },
+      { label: "Customer order confirmations", value: "Instant (WhatsApp)" },
     ],
     deliverables: [
-      "Online order form",
-      "5-tab production dashboard",
-      "9 automated workflows",
-      "SumUp payment matching",
-      "WhatsApp Twilio integration",
-      "Google Maps route optimisation",
+      "Custom online order form replacing WhatsApp ordering",
+      "5-tab Google Sheets production dashboard with real-time data",
+      "9 automated n8n workflows running 24/7",
+      "SumUp payment matching engine with 4-tier verification",
+      "Bank transfer CSV matching via HSBC statement upload",
+      "WhatsApp order confirmations via Twilio (instant)",
+      "Friday delivery route optimiser with Google Maps links",
+      "Monday weekly cleanup and dashboard reset",
+      "Daily exception alerts for unmatched payments and errors",
+      "Password-protected client dashboard at app.oladipupoconsulting.co.uk",
     ],
     beforeAfter: [
-      { before: "8+ hours of admin every week", after: "Fully automated -- zero manual work" },
-      { before: "Manual WhatsApp order-taking", after: "Online form with auto-confirmations" },
-      { before: "Guessing production quantities", after: "Real-time dashboard with order data" },
-      { before: "Manual payment reconciliation", after: "Automated SumUp matching" },
+      { before: "8+ hours of admin every week", after: "60 seconds checking a dashboard each morning" },
+      { before: "Manual WhatsApp order-taking (incomplete, error-prone)", after: "Structured online form with instant confirmation" },
+      { before: "Guessing production quantities from WhatsApp messages", after: "Real-time dashboard auto-tallying every product" },
+      { before: "Manual SumUp + bank transfer reconciliation", after: "Automated 4-tier payment matching engine" },
+      { before: "Delivery routes planned from memory", after: "One-click Google Maps routes grouped by town" },
+      { before: "No visibility into weekly sales or outstanding payments", after: "Full financial dashboard with unpaid customer tracking" },
     ],
-    annualSaving: "Estimated annual saving: \u00A320,000+ in admin time",
+    annualSaving: "Estimated annual saving: \u00A320,000+ in admin time — equivalent to hiring a part-time administrator",
+    timeline: "Built and deployed in under 2 weeks. Phase 2 (advanced payment matching) delivered 1 week later.",
+    techStack: [
+      "Online order forms (Tally.so)",
+      "Production dashboard (Google Sheets)",
+      "Workflow automation (n8n Cloud — 9 workflows)",
+      "Payment processing (SumUp + bank transfers)",
+      "Customer messaging (WhatsApp via Twilio)",
+      "Route planning (Google Maps)",
+      "Client dashboard (Next.js on Vercel)",
+    ],
   },
   {
     slug: "quantumfm-media",

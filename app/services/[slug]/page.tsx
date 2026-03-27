@@ -9,11 +9,38 @@ import {
   Users,
   Zap,
   ArrowRight,
+  Search,
+  Wrench,
+  Rocket,
+  TrendingUp,
+  MessageSquare,
+  Brain,
+  Mail,
 } from "lucide-react";
 import CTAButton from "@/components/shared/CTAButton";
 import { services } from "@/lib/services-data";
+import type { HowItWorksStep } from "@/lib/services-data";
 import BreadcrumbJsonLd from "@/components/shared/BreadcrumbJsonLd";
+import JsonLd from "@/components/shared/JsonLd";
 import { cn } from "@/lib/utils";
+
+// ── Icon map for howItWorks steps ────────────────────────────────────────────
+const STEP_ICONS: Record<string, typeof Search> = {
+  Search,
+  Wrench,
+  Rocket,
+  TrendingUp,
+  MessageSquare,
+  CheckCircle,
+  Brain,
+  ShieldCheck,
+  Mail,
+};
+
+function StepIcon({ step }: { step: HowItWorksStep }) {
+  const Icon = STEP_ICONS[step.icon] ?? Zap;
+  return <Icon size={20} className="text-blue-400" aria-hidden="true" />;
+}
 
 // ── Static params ─────────────────────────────────────────────────────────────
 export function generateStaticParams() {
@@ -68,9 +95,27 @@ export default async function ServiceDetailPage({
   const service = services.find((s) => s.slug === slug);
   if (!service) notFound();
 
+  // Build FAQPage schema if FAQ exists
+  const faqSchema = service.faq && service.faq.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: service.faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
+
   return (
     <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
       <BreadcrumbJsonLd items={[{ name: "Services", href: "/services" }, { name: service.name, href: `/services/${slug}` }]} />
+      {faqSchema && <JsonLd data={faqSchema} />}
+
       {/* Back link */}
       <Link
         href="/services"
@@ -154,29 +199,155 @@ export default async function ServiceDetailPage({
         <p className="text-base text-zinc-400 leading-relaxed">{service.pain}</p>
       </section>
 
-      {/* What We Deliver */}
-      <section className="mb-12" aria-labelledby="deliverables-heading">
-        <h2
-          id="deliverables-heading"
-          className="text-xl font-semibold text-zinc-50 mb-6"
-        >
-          What We Deliver
-        </h2>
-        <ul className="flex flex-col gap-3" role="list">
-          {service.deliverables.map((item) => (
-            <li key={item} className="flex items-start gap-3">
-              <CheckCircle
-                size={16}
-                className="text-blue-400 shrink-0 mt-0.5"
-                aria-hidden="true"
-              />
-              <span className="text-sm text-zinc-300 leading-relaxed">
-                {item}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </section>
+      {/* How It Works (new) */}
+      {service.howItWorks && service.howItWorks.length > 0 && (
+        <>
+          <hr className="border-zinc-800 mb-10" />
+          <section className="mb-12" aria-labelledby="how-it-works-heading">
+            <h2
+              id="how-it-works-heading"
+              className="text-xl font-semibold text-zinc-50 mb-8"
+            >
+              How It Works
+            </h2>
+            <div className="grid gap-6">
+              {service.howItWorks.map((step) => (
+                <div
+                  key={step.step}
+                  className="flex gap-4 bg-zinc-900/50 border border-zinc-800 rounded-xl p-5"
+                >
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-500/10 border border-blue-500/20">
+                    <StepIcon step={step} />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-semibold text-zinc-50 mb-1">
+                      Step {step.step}: {step.title}
+                    </h3>
+                    <p className="text-sm text-zinc-400 leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        </>
+      )}
+
+      {/* What's Included (expanded deliverables) */}
+      {service.whatsIncluded && service.whatsIncluded.length > 0 ? (
+        <section className="mb-12" aria-labelledby="included-heading">
+          <h2
+            id="included-heading"
+            className="text-xl font-semibold text-zinc-50 mb-6"
+          >
+            What&apos;s Included
+          </h2>
+          <ul className="flex flex-col gap-3" role="list">
+            {service.whatsIncluded.map((item) => (
+              <li key={item} className="flex items-start gap-3">
+                <CheckCircle
+                  size={16}
+                  className="text-blue-400 shrink-0 mt-0.5"
+                  aria-hidden="true"
+                />
+                <span className="text-sm text-zinc-300 leading-relaxed">
+                  {item}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : (
+        /* Fallback to basic deliverables */
+        <section className="mb-12" aria-labelledby="deliverables-heading">
+          <h2
+            id="deliverables-heading"
+            className="text-xl font-semibold text-zinc-50 mb-6"
+          >
+            What We Deliver
+          </h2>
+          <ul className="flex flex-col gap-3" role="list">
+            {service.deliverables.map((item) => (
+              <li key={item} className="flex items-start gap-3">
+                <CheckCircle
+                  size={16}
+                  className="text-blue-400 shrink-0 mt-0.5"
+                  aria-hidden="true"
+                />
+                <span className="text-sm text-zinc-300 leading-relaxed">
+                  {item}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {/* Before & After Comparison (new) */}
+      {service.beforeAfter && service.beforeAfter.length > 0 && (
+        <>
+          <hr className="border-zinc-800 mb-10" />
+          <section className="mb-12" aria-labelledby="before-after-heading">
+            <h2
+              id="before-after-heading"
+              className="text-xl font-semibold text-zinc-50 mb-6"
+            >
+              Before &amp; After
+            </h2>
+            <div className="rounded-xl border border-zinc-800 overflow-hidden">
+              {/* Column headers */}
+              <div className="grid grid-cols-3 bg-zinc-800/60">
+                <div className="px-4 py-3 text-xs font-bold uppercase tracking-widest text-zinc-400">
+                  Metric
+                </div>
+                <div className="px-4 py-3 text-xs font-bold uppercase tracking-widest text-red-400">
+                  Before
+                </div>
+                <div className="px-4 py-3 text-xs font-bold uppercase tracking-widest text-emerald-400">
+                  After
+                </div>
+              </div>
+              {service.beforeAfter.map((row, i) => (
+                <div
+                  key={row.metric}
+                  className={cn(
+                    "grid grid-cols-3",
+                    i < service.beforeAfter!.length - 1 && "border-b border-zinc-800"
+                  )}
+                >
+                  <div className="px-4 py-3.5 text-sm text-zinc-300 font-medium">
+                    {row.metric}
+                  </div>
+                  <div className="px-4 py-3.5 text-sm text-zinc-500">
+                    {row.before}
+                  </div>
+                  <div className="px-4 py-3.5 text-sm text-emerald-400 font-medium">
+                    {row.after}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        </>
+      )}
+
+      {/* ROI Snippet (new) */}
+      {service.roiSnippet && (
+        <section className="mb-12" aria-labelledby="roi-heading">
+          <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-6">
+            <h2
+              id="roi-heading"
+              className="text-lg font-semibold text-amber-400 mb-3"
+            >
+              The Numbers: What This Costs You Today
+            </h2>
+            <p className="text-sm text-zinc-300 leading-relaxed">
+              {service.roiSnippet}
+            </p>
+          </div>
+        </section>
+      )}
 
       {/* Proof / Real Results section */}
       {service.proof && (
@@ -247,6 +418,43 @@ export default async function ServiceDetailPage({
             />
           </Link>
         </div>
+      )}
+
+      {/* FAQ Section (new) */}
+      {service.faq && service.faq.length > 0 && (
+        <>
+          <hr className="border-zinc-800 mb-10" />
+          <section className="mb-12" aria-labelledby="faq-heading">
+            <h2
+              id="faq-heading"
+              className="text-xl font-semibold text-zinc-50 mb-6"
+            >
+              Frequently Asked Questions
+            </h2>
+            <div className="flex flex-col gap-4">
+              {service.faq.map((item) => (
+                <details
+                  key={item.question}
+                  className="group rounded-xl border border-zinc-800 bg-zinc-900/50 overflow-hidden"
+                >
+                  <summary className="flex cursor-pointer items-center justify-between px-5 py-4 text-sm font-medium text-zinc-100 hover:text-zinc-50 transition-colors [&::-webkit-details-marker]:hidden list-none">
+                    {item.question}
+                    <ArrowRight
+                      size={14}
+                      className="text-zinc-600 transition-transform group-open:rotate-90 shrink-0 ml-3"
+                      aria-hidden="true"
+                    />
+                  </summary>
+                  <div className="px-5 pb-4">
+                    <p className="text-sm text-zinc-400 leading-relaxed">
+                      {item.answer}
+                    </p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </section>
+        </>
       )}
 
       {/* 90-Day Results Guarantee */}

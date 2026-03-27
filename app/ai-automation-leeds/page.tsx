@@ -18,7 +18,7 @@ const CANONICAL = `https://oladipupoconsulting.co.uk/${SLUG}`;
 
 export const metadata: Metadata = {
   title: `AI Automation for Small Businesses in ${CITY}`,
-  description: `AI automation services for small businesses in ${CITY}. Automate lead capture, appointment booking, customer follow-up, and more. 7-day delivery. Free AI readiness audit.`,
+  description: `AI automation services for small businesses in ${CITY}. Automate lead capture, appointment booking, customer follow-up, and more. 14-day delivery. Free AI readiness audit.`,
   keywords: [
     `${CITY} AI automation`,
     `AI automation ${CITY} small business`,
@@ -62,7 +62,7 @@ const HOW_IT_WORKS = [
   {
     icon: Zap,
     step: "03",
-    title: "7-Day Build",
+    title: "14-Day Build",
     description:
       "We build and deploy your automation in a focused sprint with full documentation and SOPs.",
   },
@@ -140,7 +140,7 @@ export default function AIAutomationLeedsPage() {
             beauty, property, trades, and professional services. But growth
             brings more enquiries, more admin, and more things slipping through
             the cracks. We build AI automation systems that handle the repetitive
-            work — delivered in 7 days, starting from £500.
+            work — delivered in 14 days, starting from £500.
           </p>
         </div>
       </AnimatedSection>
@@ -183,7 +183,7 @@ export default function AIAutomationLeedsPage() {
             </p>
             <p className="text-sm text-zinc-400 leading-relaxed">
               Leeds businesses value straight talking and fair dealing.
-              That&apos;s why our approach — fixed pricing, 7-day delivery,
+              That&apos;s why our approach — fixed pricing, 14-day delivery,
               no ongoing lock-in — resonates so well with Yorkshire business
               owners. You see exactly what you&apos;re getting, you see it
               working within a week, and you only continue paying if the

@@ -18,7 +18,7 @@ const CANONICAL = `https://oladipupoconsulting.co.uk/${SLUG}`;
 
 export const metadata: Metadata = {
   title: `AI Automation for Small Businesses in ${CITY}`,
-  description: `AI automation services for small businesses in ${CITY} and Northamptonshire. Automate lead capture, order processing, appointment booking, and more. 7-day delivery. Free AI readiness audit.`,
+  description: `AI automation services for small businesses in ${CITY} and Northamptonshire. Automate lead capture, order processing, appointment booking, and more. 14-day delivery. Free AI readiness audit.`,
   keywords: [
     `${CITY} AI automation`,
     `AI automation ${CITY} small business`,
@@ -61,7 +61,7 @@ const HOW_IT_WORKS = [
   {
     icon: Zap,
     step: "03",
-    title: "7-Day Build",
+    title: "14-Day Build",
     description:
       "We build and deploy your automation in a focused sprint with full documentation and SOPs.",
   },
@@ -143,7 +143,7 @@ export default function AIAutomationKetteringPage() {
             outsized impact. When every lead matters and word-of-mouth drives
             your reputation, you can&apos;t afford slow responses or missed
             follow-ups. We build AI systems that handle the repetitive work —
-            delivered in 7 days, starting from £500.
+            delivered in 14 days, starting from £500.
           </p>
         </div>
       </AnimatedSection>

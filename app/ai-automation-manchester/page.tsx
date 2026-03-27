@@ -18,7 +18,7 @@ const CANONICAL = `https://oladipupoconsulting.co.uk/${SLUG}`;
 
 export const metadata: Metadata = {
   title: `AI Automation for Small Businesses in ${CITY}`,
-  description: `AI automation services for small businesses in ${CITY}. Automate lead capture, appointment booking, customer follow-up, and more. 7-day delivery. Free AI readiness audit.`,
+  description: `AI automation services for small businesses in ${CITY}. Automate lead capture, appointment booking, customer follow-up, and more. 14-day delivery. Free AI readiness audit.`,
   keywords: [
     `${CITY} AI automation`,
     `AI automation ${CITY} small business`,
@@ -61,7 +61,7 @@ const HOW_IT_WORKS = [
   {
     icon: Zap,
     step: "03",
-    title: "7-Day Build",
+    title: "14-Day Build",
     description:
       "We build and deploy your automation in a focused sprint with full documentation and SOPs.",
   },
@@ -139,7 +139,7 @@ export default function AIAutomationManchesterPage() {
             Northern Quarter, a cleaning company in Salford, or a trades
             business in Stockport, the edge goes to whoever responds fastest
             and follows up consistently. We build AI automation systems that
-            handle that for you — delivered in 7 days, starting from
+            handle that for you — delivered in 14 days, starting from
             £500.
           </p>
         </div>
@@ -184,7 +184,7 @@ export default function AIAutomationManchesterPage() {
               results-oriented. Business owners here don&apos;t want a
               six-month consulting engagement — they want working systems
               delivered fast, at a fair price, that start saving time from week
-              one. That mindset is exactly why our 7-day delivery model
+              one. That mindset is exactly why our 14-day delivery model
               resonates so strongly with Manchester businesses.
             </p>
           </div>

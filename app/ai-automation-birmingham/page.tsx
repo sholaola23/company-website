@@ -18,7 +18,7 @@ const CANONICAL = `https://oladipupoconsulting.co.uk/${SLUG}`;
 
 export const metadata: Metadata = {
   title: `AI Automation for Small Businesses in ${CITY}`,
-  description: `AI automation services for small businesses in ${CITY}. Automate lead capture, appointment booking, customer communications, and more. 7-day delivery. Free AI readiness audit.`,
+  description: `AI automation services for small businesses in ${CITY}. Automate lead capture, appointment booking, customer communications, and more. 14-day delivery. Free AI readiness audit.`,
   keywords: [
     `${CITY} AI automation`,
     `AI automation ${CITY} small business`,
@@ -61,7 +61,7 @@ const HOW_IT_WORKS = [
   {
     icon: Zap,
     step: "03",
-    title: "7-Day Build",
+    title: "14-Day Build",
     description:
       "We build and deploy your automation in a focused sprint with full documentation and SOPs.",
   },
@@ -139,7 +139,7 @@ export default function AIAutomationBirminghamPage() {
             creative district. But many small businesses are still running on
             manual processes: chasing leads by hand, missing enquiries, and
             spending hours on admin. We build AI systems that fix that —
-            delivered in 7 days, starting from £500.
+            delivered in 14 days, starting from £500.
           </p>
         </div>
       </AnimatedSection>

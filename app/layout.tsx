@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | Oladipupo Consulting",
   },
   description:
-    "We build AI automation systems, professional websites, and deliver AI training for small businesses. From lead capture to content engines — delivered in 7 days.",
+    "We build AI automation systems, professional websites, and deliver AI training for small businesses. From lead capture to content engines — delivered in 14 days.",
   keywords: [
     "AI automation",
     "small business automation",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     siteName: "Oladipupo Consulting",
     title: "Oladipupo Consulting — AI Solutions for Small Businesses",
     description:
-      "We build AI automation systems, professional websites, and deliver AI training for small businesses. From lead capture to content engines — delivered in 7 days.",
+      "We build AI automation systems, professional websites, and deliver AI training for small businesses. From lead capture to content engines — delivered in 14 days.",
     images: [
       {
         url: "https://oladipupoconsulting.co.uk/api/og",

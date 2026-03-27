@@ -16,21 +16,21 @@ import BreadcrumbJsonLd from "@/components/shared/BreadcrumbJsonLd";
 export const metadata: Metadata = {
   title: "AI Automation Services",
   description:
-    "From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 7 days.",
+    "From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 14 days.",
   alternates: {
     canonical: "https://oladipupoconsulting.co.uk/services",
   },
   openGraph: {
     title: "AI Automation Services | Oladipupo Consulting",
     description:
-      "From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 7 days.",
+      "From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 14 days.",
     url: "https://oladipupoconsulting.co.uk/services",
     type: "website",
   },
   twitter: {
     title: "AI Automation Services | Oladipupo Consulting",
     description:
-      "From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 7 days.",
+      "From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 14 days.",
   },
 };
 
@@ -43,7 +43,7 @@ const TIERS = [
     badge: "bg-zinc-700 text-zinc-200",
     includes: [
       "Single focused automation",
-      "3–7 day delivery",
+      "7–14 day delivery",
       "Email + docs handover",
       "1 month support",
     ],
@@ -88,7 +88,7 @@ const servicesJsonLd = {
   "@type": "ItemList",
   "name": "AI Automation Services — Oladipupo Consulting",
   "description":
-    "From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 7 days.",
+    "From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 14 days.",
   "numberOfItems": services.length,
   "itemListElement": services.map((service, index) => ({
     "@type": "ListItem",
@@ -116,7 +116,7 @@ const servicesFAQs: FAQItem[] = [
   {
     question: "How long does it take to get started?",
     answer:
-      "Most solutions are live within 5–14 days. We start with a free audit, then deliver a detailed proposal within 48 hours. From approval to going live, single automations typically take 3–7 days and multi-workflow systems take 7–14 days.",
+      "Most solutions are live within 14 days. We start with a free audit, then deliver a detailed proposal within 48 hours. From approval to going live, single automations typically take 7–10 days and multi-workflow systems take 10–14 days.",
   },
   {
     question: "Do I need to be technical to use your services?",
@@ -157,7 +157,7 @@ export default function ServicesPage() {
             as="h1"
             eyebrow="Our Solutions"
             heading="AI Automation Services"
-            description="From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 7 days."
+            description="From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 14 days."
             align="center"
           />
         </div>

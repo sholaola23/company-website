@@ -14,7 +14,11 @@ const headlines = [
   },
   {
     line1: "From Conversation to",
-    highlight: "Live Automation in 7 Days",
+    highlight: "Live Automation in 14 Days",
+  },
+  {
+    line1: "Websites & Web Apps That",
+    highlight: "Win You Customers",
   },
 ];
 
@@ -31,7 +35,7 @@ export default function RotatingHeadline() {
   return (
     <h1
       className="mx-auto max-w-4xl text-5xl font-bold leading-[1.1] tracking-tight text-zinc-50 sm:text-6xl lg:mx-0 lg:text-7xl"
-      aria-label={`${headlines[index].line1} ${headlines[index].highlight} — We'll fix that in 7 days`}
+      aria-label={`${headlines[index].line1} ${headlines[index].highlight} — We'll fix that in 14 days`}
     >
       <AnimatePresence mode="wait">
         <motion.span

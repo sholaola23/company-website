@@ -63,15 +63,15 @@ function Hero() {
                   className="h-1.5 w-1.5 rounded-full bg-blue-500"
                   aria-hidden="true"
                 />
-                AI Solutions — delivered in 7 days
+                AI Solutions — delivered in 14 days
               </div>
 
               <RotatingHeadline />
 
               <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400 sm:text-xl lg:mx-0">
-                AI-powered lead capture, bookings, and follow-ups — live in 7
-                days. Your team checks a dashboard for 60 seconds. AI handles
-                the rest. Packages from £500.
+                AI automation, professional websites, and custom web apps —
+                built and delivered in 7–14 days. Your team checks a dashboard
+                for 60 seconds. AI handles the rest. Packages from £500.
               </p>
 
               {/* Social proof line */}
@@ -118,7 +118,7 @@ const stats = [
   { numeric: 8, suffix: "+", label: "Hours / ~£400 Saved", sublabel: "per client weekly" },
   { numeric: 180, suffix: "", label: "Orders Automated Weekly", sublabel: "at E'Manuel Bakery" },
   { numeric: 9, suffix: "", label: "Workflows Deployed", sublabel: "for one bakery" },
-  { numeric: 7, suffix: "", label: "Day Delivery", sublabel: "audit to live" },
+  { numeric: 14, suffix: "", label: "Day Delivery", sublabel: "audit to live" },
 ];
 
 function SocialProofBar() {
@@ -159,10 +159,10 @@ const categories = [
   },
   {
     icon: Globe,
-    title: "Website Development",
+    title: "Websites & Web Apps",
     description:
-      "Professional websites that convert visitors into customers. Mobile-first, SEO-optimised, delivered in 10-14 days.",
-    result: "12-page site built in 2 weeks",
+      "Professional websites and custom web apps that convert visitors into customers. Dashboards, booking portals, interactive tools — mobile-first, SEO-optimised, delivered in 10–14 days.",
+    result: "Full web app delivered in 2 weeks",
   },
   {
     icon: GraduationCap,
@@ -518,7 +518,7 @@ const businessJsonLd = {
   "@type": "ProfessionalService",
   "name": "Oladipupo Consulting Ltd",
   "description":
-    "AI automation systems, professional websites, and AI training for small businesses. We help SMBs save time and grow with intelligent automation — delivered in 7 days.",
+    "AI automation, professional websites, custom web apps, and AI training for small businesses. We help SMBs save time and grow with intelligent automation — delivered in 7–14 days.",
   "url": "https://oladipupoconsulting.co.uk",
   "email": "hello@oladipupoconsulting.co.uk",
   "telephone": "+447469347654",
@@ -528,7 +528,7 @@ const businessJsonLd = {
   },
   "priceRange": "£500 - £3,500",
   "areaServed": "Worldwide",
-  "serviceType": ["AI Automation", "Website Development", "AI Training"],
+  "serviceType": ["AI Automation", "Website Development", "Web App Development", "AI Training"],
   "founder": {
     "@type": "Person",
     "name": "Olushola Oladipupo",
@@ -558,7 +558,7 @@ const homepageFAQs: FAQItem[] = [
   {
     question: "How long does it take to set up AI automation?",
     answer:
-      "Most of our automation systems are delivered within 7 days, from audit to going live. More complex multi-workflow systems take 7–14 days. We start with a free audit that maps your business processes and identifies the highest-impact opportunities.",
+      "Most of our automation systems are delivered within 14 days, from audit to going live. We start with a free audit that maps your business processes and identifies the highest-impact opportunities.",
   },
   {
     question: "Is AI automation safe and reliable for my business?",
