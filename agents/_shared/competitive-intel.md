@@ -64,7 +64,7 @@
 1. **Instant, automated audit** — 10 seconds, no email required (competitors take days)
 2. **Done-for-you, not DIY** — we build it, unlike platforms that hand you tools
 3. **Flat monthly pricing** — no credit-based anxiety, no surprise bills
-4. **7-day delivery** — full system live in one week
+4. **14-day delivery** — full system live in two weeks
 5. **90-day results guarantee** — refund setup fee if no 5+ hrs/week saved
 6. **Real case studies** — E'Manuel (bakery, 15+ hrs saved), QuantumFM (media, full automation)
 7. **UK-based, UK-priced** — GBP, UK English, local market understanding

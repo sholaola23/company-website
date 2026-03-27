@@ -7,7 +7,7 @@ function isValidEmail(email: string): boolean {
 }
 
 export async function POST(req: NextRequest) {
-  let body: { email?: string };
+  let body: { email?: string; tag?: string };
 
   try {
     body = await req.json();
@@ -19,6 +19,7 @@ export async function POST(req: NextRequest) {
   }
 
   const email = body.email?.trim();
+  const tag = body.tag?.trim();
 
   if (!email || !isValidEmail(email)) {
     return NextResponse.json(
@@ -50,7 +51,8 @@ export async function POST(req: NextRequest) {
           reactivate_existing: true,
           send_welcome_email: true,
           utm_source: "website",
-          utm_medium: "newsletter_form",
+          utm_medium: tag ? "waitlist_form" : "newsletter_form",
+          ...(tag ? { custom_fields: [{ name: "source", value: tag }] } : {}),
         }),
       }
     );

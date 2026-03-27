@@ -3,7 +3,7 @@
 - [ ] Client discovery brief is complete (pain points, tools, budget, timeline)
 - [ ] Solutions mapped from catalogue (not invented)
 - [ ] Templates identified from library where possible
-- [ ] 7-day sprint plan is realistic and achievable
+- [ ] 14-day sprint plan is realistic and achievable
 - [ ] Each day has clear deliverables
 - [ ] Technical spec covers architecture, APIs, data flow, error handling
 - [ ] Client SOP is jargon-free and actionable

@@ -210,7 +210,7 @@ Fill in ALL placeholder values `[X]` with real research data. Every placeholder 
       <div class="solution-box">
         <div class="solution-tier">[Tier Name] Package</div>
         <p style="font-size: 15px; font-weight: 600; margin-bottom: 4px;">£[setup] setup + £[monthly]/month</p>
-        <p style="font-size: 13px; color: #64748b; margin-bottom: 16px;">Delivered in 7 days. No long-term contract.</p>
+        <p style="font-size: 13px; color: #64748b; margin-bottom: 16px;">Delivered in 14 days. No long-term contract.</p>
         <strong style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; color: #6366f1;">What's included:</strong>
         <ul class="deliverable-list">
           <li>[Deliverable 1]</li>

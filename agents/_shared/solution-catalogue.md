@@ -15,6 +15,10 @@
 | 9 | Voice Assistant Agent | £350 + £25/mo | Solo practitioners, clinics, tutors, PTs, therapists |
 | 10 | AI Workshop for Teams | £500-5,000/session | SMB teams of 5-50 |
 | 11 | Custom Automation Build | From £500 | Unique workflow problems |
+| 12 | AI Voice Agent (Phone Receptionist) | £500-3,500 + £150-500/mo | Trades, healthcare, salons — missed calls costing revenue |
+| 13 | AI Ads Management (Google + Meta) | £500 + £300-500/mo | Any SMB with £500+/month ad spend |
+| 14 | AI Readiness Audit | FREE (£150 after 5 audits) | Any prospect considering AI automation |
+| 15 | AI-Powered Local SEO | £300 + £50/mo | Any local service business: plumber, cleaner, salon, restaurant, trades, estate agent |
 
 ## Tier Pricing
 - **Starter:** £500 setup + £50/mo (single workflow)

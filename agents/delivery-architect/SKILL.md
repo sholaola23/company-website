@@ -30,7 +30,7 @@ Reference `../_shared/solution-catalogue.md` and map client needs to our solutio
 - What custom work is needed beyond templates?
 - What integrations are required? (list every API/tool connection)
 
-### STEP 3: Generate 7-Day Sprint Plan
+### STEP 3: Generate 14-Day Sprint Plan
 Create a day-by-day delivery plan:
 
 **Day 1: Setup & Access**
@@ -89,7 +89,7 @@ Create a simple, non-technical document for the client:
 - **n8n template library:** `/Users/olushola/AI Side Projects/skool_exports/resources/`
 
 ## Rules
-1. Every sprint plan must be achievable in 7 days — if scope is too large, flag and recommend phasing
+1. Every sprint plan must be achievable in 14 days — if scope is too large, flag and recommend phasing
 2. Always start with templates from the library — custom build only when necessary
 3. SOPs must be written for a non-technical audience — no jargon
 4. Include risk register: what could go wrong and contingency plans

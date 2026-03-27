@@ -24,7 +24,7 @@ just reply yes
 
 Shola
 
-PS — we just did this for a bakery in 7 days
+PS — we just did this for a bakery in under 2 weeks
 ```
 
 ## Script B — The Free Audit Hook (MEDIUM VOLUME, light personalization)
@@ -82,7 +82,7 @@ PS — we just built this for a food business. 150 orders a week, zero admin.
 ```
 {{firstName}}
 
-if we could automate your follow-ups and bookings in 7 days — and you don't pay if it doesn't save you 5+ hours a week — would you be open to a quick chat?
+if we could automate your follow-ups and bookings in 14 days — and you don't pay if it doesn't save you 5+ hours a week — would you be open to a quick chat?
 
 just reply yes
 
@@ -100,7 +100,7 @@ PS — 90-day results guarantee, written in the contract
 
 saw you operate in the {{location}} area — thought it was worth reaching out
 
-if we could save your team 8+ hours a week on admin in 7 days, would you be open to seeing how?
+if we could save your team 8+ hours a week on admin in 14 days, would you be open to seeing how?
 
 Shola
 
@@ -206,7 +206,7 @@ hey {{firstName}} — totally, here's a quick overview:
 
 - we build AI systems that handle bookings, follow-ups, and customer queries automatically
 - everything runs in the background — you just check a dashboard each morning
-- live in 7 days, 90-day results guarantee
+- live in 14 days, 90-day results guarantee
 
 happy to walk through it on a quick call if helpful: https://cal.com/sholastechnotes/free-ai-strategy-call
 

@@ -28,6 +28,15 @@ export const metadata = {
 
 const staticPosts = [
   {
+    id: "static-local-seo-checklist",
+    slug: "local-seo-audit-checklist",
+    title: "The Local SEO Checklist: 20 Tasks That Actually Move Rankings for Small Businesses",
+    excerpt:
+      "A 20-task local SEO framework just went viral (2.6M views). We turned it into a plain-English checklist for UK small businesses — with the tool to automate it coming soon.",
+    publishedAt: "27 March 2026",
+    tags: ["Local SEO", "Google Maps", "Small Business", "Checklist"],
+  },
+  {
     id: "static-63-agent-costs",
     slug: "what-it-costs-63-agent-ai-business",
     title: "What It Actually Costs to Run a 63-Agent AI Business",
