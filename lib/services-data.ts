@@ -14,10 +14,12 @@ export type Service = {
   deliveryDays: string;
   idealFor: string;
   pain: string;
+  metaDescription?: string; // SEO meta description (150-160 chars). Falls back to pain-based template if not set.
   deliverables: string[];
   referenceClient?: string;
   icon: string; // Lucide icon name
   proof?: ServiceProof;
+  heroHeadline?: string; // benefit-focused headline override for service detail page
   ctaText?: string; // override default "Get in Touch"
   ctaHref?: string; // override default "/contact"
   ctaSubtext?: string; // override subtitle text
@@ -34,6 +36,7 @@ export const services: Service[] = [
     deliveryDays: "7-10 days",
     idealFor: "Food businesses, bakeries, caterers",
     pain: "Manual order collection, payment chasing",
+    metaDescription: "Automate orders, payments, production schedules, and deliveries with AI. Save 8+ hours per week. Built for bakeries, caterers, and food businesses. From £1,500.",
     deliverables: [
       "Online order form",
       "Production dashboard",
@@ -69,6 +72,7 @@ export const services: Service[] = [
     deliveryDays: "10-14 days",
     idealFor: "Churches, charities, local businesses",
     pain: "No/outdated website",
+    metaDescription: "Get a professional, SEO-optimised business website built in under 2 weeks. Custom design, contact forms, and domain email included. From £1,500 setup.",
     deliverables: [
       "Custom responsive site",
       "Brand identity",
@@ -100,12 +104,14 @@ export const services: Service[] = [
   {
     slug: "lead-intake",
     name: "AI Lead Intake & Appointment Booking",
+    heroHeadline: "Never Miss Another Lead. AI Books Appointments While You Work.",
     tier: "starter",
     setupPrice: "£500",
     monthlyPrice: "£50/mo",
     deliveryDays: "5-7 days",
     idealFor: "Plumbers, cleaners, salons, gyms",
     pain: "Missing leads, slow response",
+    metaDescription: "Automate lead intake and appointment booking with AI. Respond to enquiries in seconds, book jobs automatically, and never miss a lead. Setup from £500 in 5-7 days.",
     deliverables: [
       "Lead capture form",
       "AI qualification",
@@ -138,6 +144,7 @@ export const services: Service[] = [
     deliveryDays: "7-10 days",
     idealFor: "Restaurants, takeaways, salons",
     pain: "Manual WhatsApp replies",
+    metaDescription: "AI-powered WhatsApp bot that handles customer orders, bookings, and enquiries 24/7. Perfect for restaurants, salons, and service businesses. Delivered in 7-10 days.",
     deliverables: [
       "WhatsApp API bot",
       "Order-taking",
@@ -171,6 +178,7 @@ export const services: Service[] = [
     deliveryDays: "3-5 days",
     idealFor: "Consultants, agencies, tradespeople",
     pain: "Drowning in emails",
+    metaDescription: "AI email assistant that drafts replies, sorts your inbox, and handles follow-ups automatically. Save 5+ hours per week. Built for consultants and tradespeople. From £500.",
     deliverables: [
       "AI-drafted replies",
       "Learns tone",
@@ -200,6 +208,7 @@ export const services: Service[] = [
     deliveryDays: "5-7 days",
     idealFor: "Local service businesses",
     pain: "Invisible on Google",
+    metaDescription: "AI-powered SEO content automation: keyword research, blog posts, and local landing pages published to WordPress automatically. Get found on Google. From £500 setup.",
     deliverables: [
       "AI keyword research",
       "2-4 posts/month",
@@ -233,6 +242,7 @@ export const services: Service[] = [
     deliveryDays: "3-5 days",
     idealFor: "Coaches, personal brands, restaurants",
     pain: "No time for social media",
+    metaDescription: "Turn one video into 5+ social media posts with AI. Automated captions, multi-platform formatting, and scheduling. Perfect for coaches and restaurants. From £500.",
     deliverables: [
       "Content repurposing",
       "AI captions",
@@ -263,6 +273,7 @@ export const services: Service[] = [
     deliveryDays: "5-7 days",
     idealFor: "B2B services, recruitment, marketing agencies",
     pain: "Manual prospect research",
+    metaDescription: "Automated lead scraping and enrichment with AI scoring. Get 200+ qualified leads per week with contact details, company data, and fit scores. From £500 setup.",
     deliverables: [
       "Web scraping",
       "Data enrichment",
@@ -294,6 +305,7 @@ export const services: Service[] = [
     deliveryDays: "5-7 days",
     idealFor: "Plumbers, electricians, clinics, salons, any business that relies on inbound calls",
     pain: "Missing calls, losing leads to voicemail, no after-hours coverage — every missed call is lost revenue",
+    metaDescription: "AI voice agent that answers calls 24/7, qualifies leads, and books appointments automatically. 90% booking rate, 2-second answer time. From £500 setup + £150/mo.",
     deliverables: [
       "24/7 AI phone answering (natural conversation, not IVR)",
       "Lead qualification (understands caller intent, urgency, location)",
@@ -330,6 +342,7 @@ export const services: Service[] = [
     deliveryDays: "5-7 days",
     idealFor: "Solo practitioners, clinics, tutors",
     pain: "Missing calls, no after-hours",
+    metaDescription: "AI voice assistant that picks up calls instantly, answers FAQs, and books appointments into your calendar. Recover up to 40% of missed calls. From £500 setup.",
     deliverables: [
       "AI phone/Telegram agent",
       "Calendar booking",
@@ -361,6 +374,7 @@ export const services: Service[] = [
     deliveryDays: "2-4 hours",
     idealFor: "SMB teams of 5-50",
     pain: "Know AI exists but haven't adopted",
+    metaDescription: "Hands-on AI workshop for teams of 5-50. Your team builds real AI tools in one session — email assistants, content generators, and automation workflows. From £500.",
     deliverables: [
       "In-person or virtual",
       "Hands-on",
@@ -391,6 +405,7 @@ export const services: Service[] = [
     deliveryDays: "48 hours",
     idealFor: "Any prospect",
     pain: "Unsure where AI fits — normally £150, currently free for a limited time",
+    metaDescription: "Free AI readiness audit for your business. Get an instant AI score, top automation opportunities, and projected ROI in 60 seconds. Normally £150 — free for a limited time.",
     deliverables: [
       "5-section report",
       "Business snapshot",
@@ -423,6 +438,7 @@ export const services: Service[] = [
     deliveryDays: "1-3 weeks",
     idealFor: "Businesses with unique problems",
     pain: "Unique workflow problems",
+    metaDescription: "Custom AI automation built for your unique business needs. We audit your processes, design a bespoke solution, and deliver in 1-3 weeks. From £500 setup.",
     deliverables: [
       "Audit first",
       "Custom proposal",

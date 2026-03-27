@@ -124,20 +124,31 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   const articleJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     "headline": post.title,
     "description": post.excerpt || `Read ${post.title} on the Oladipupo Consulting blog.`,
     "author": {
       "@type": "Person",
       "name": "Olushola Oladipupo",
+      "url": "https://oladipupoconsulting.co.uk/about",
     },
     "publisher": {
       "@type": "Organization",
       "name": "Oladipupo Consulting Ltd",
       "url": "https://oladipupoconsulting.co.uk",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://oladipupoconsulting.co.uk/api/og",
+      },
     },
     "datePublished": post.publishedAt,
-    "mainEntityOfPage": `https://oladipupoconsulting.co.uk/blog/${slug}`,
+    "dateModified": post.publishedAt,
+    "image": `https://oladipupoconsulting.co.uk/api/og?title=${encodeURIComponent(post.title)}`,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://oladipupoconsulting.co.uk/blog/${slug}`,
+    },
+    "inLanguage": "en-GB",
   };
 
   return (

@@ -5,6 +5,7 @@ import {
   ArrowLeft,
   CheckCircle,
   Clock,
+  ShieldCheck,
   Users,
   Zap,
   ArrowRight,
@@ -28,7 +29,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const service = services.find((s) => s.slug === slug);
   if (!service) return {};
-  const pageDescription = `${service.pain}. Delivered in ${service.deliveryDays} for ${service.setupPrice}. Ideal for ${service.idealFor}.`;
+  const pageDescription = service.metaDescription || `${service.pain}. Delivered in ${service.deliveryDays} for ${service.setupPrice}. Ideal for ${service.idealFor}.`;
   const pageUrl = `https://oladipupoconsulting.co.uk/services/${slug}`;
   return {
     title: service.name,
@@ -93,9 +94,13 @@ export default async function ServiceDetailPage({
         >
           {service.tier}
         </span>
-        <h1 className="text-3xl sm:text-4xl font-bold text-zinc-50 leading-tight mb-6">
-          {service.name}
+        <h1 className="text-3xl sm:text-4xl font-bold text-zinc-50 leading-tight mb-2">
+          {service.heroHeadline ?? service.name}
         </h1>
+        {service.heroHeadline && (
+          <p className="text-sm text-zinc-500 mb-6">{service.name}</p>
+        )}
+        {!service.heroHeadline && <div className="mb-4" />}
 
         {/* Key metrics row */}
         <div className="flex flex-wrap gap-4">
@@ -243,6 +248,24 @@ export default async function ServiceDetailPage({
           </Link>
         </div>
       )}
+
+      {/* 90-Day Results Guarantee */}
+      <div className="mb-12 rounded-xl border-2 border-emerald-500/40 bg-zinc-900/60 p-6 sm:p-8 text-center">
+        <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/10 border border-emerald-500/30">
+          <ShieldCheck
+            size={24}
+            className="text-emerald-400"
+            aria-hidden="true"
+          />
+        </div>
+        <h2 className="text-xl font-bold text-zinc-50 sm:text-2xl">
+          90-Day Results Guarantee
+        </h2>
+        <p className="mt-3 text-sm leading-relaxed text-zinc-400 max-w-md mx-auto">
+          If you don&apos;t save at least 5 hours per week within 90 days,
+          we&apos;ll refund your setup fee. No questions asked.
+        </p>
+      </div>
 
       {/* Bottom CTA */}
       <div className="bg-gradient-to-br from-blue-500/10 to-zinc-900 border border-blue-500/20 rounded-xl p-8 text-center">

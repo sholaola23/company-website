@@ -5,40 +5,16 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const headlines = [
   {
+    line1: "Save 8+ Hours a Week.",
+    highlight: "We Build the AI.",
+  },
+  {
     line1: "Stop Losing Leads to",
     highlight: "Slow Follow-Up",
   },
   {
-    line1: "Your Team Spends Hours on Work",
-    highlight: "AI Does in Minutes",
-  },
-  {
-    line1: "Your Business Should Run Itself.",
-    highlight: "60 Seconds a Day.",
-  },
-  {
-    line1: "Tried AI and",
-    highlight: "Nothing Stuck?",
-  },
-  {
-    line1: "Your Accountant Doesn\u2019t Need to",
-    highlight: "Chase Invoices Manually",
-  },
-  {
-    line1: "Still Running Everything from",
-    highlight: "WhatsApp?",
-  },
-  {
-    line1: "Your Business Deserves More Than",
-    highlight: "a Facebook Page",
-  },
-  {
-    line1: "Spending Hours on Admin You",
-    highlight: "Could Automate Today?",
-  },
-  {
-    line1: "Smart Businesses Run on AI.",
-    highlight: "Yours Should Too.",
+    line1: "From Conversation to",
+    highlight: "Live Automation in 7 Days",
   },
 ];
 
@@ -73,7 +49,7 @@ export default function RotatingHeadline() {
         </motion.span>
       </AnimatePresence>
       <span className="block mt-10 text-zinc-50">
-        We&apos;ll Fix That in 7 Days
+        You Run Your Business.
       </span>
     </h1>
   );

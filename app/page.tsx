@@ -69,9 +69,14 @@ function Hero() {
               <RotatingHeadline />
 
               <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400 sm:text-xl lg:mx-0">
-                We build AI systems that run your business on autopilot — lead
-                capture, bookings, follow-ups, order management. Your team
-                checks a dashboard. AI does the rest. Delivered in 7 days.
+                AI-powered lead capture, bookings, and follow-ups — live in 7
+                days. Your team checks a dashboard for 60 seconds. AI handles
+                the rest. Packages from £500.
+              </p>
+
+              {/* Social proof line */}
+              <p className="mx-auto mt-4 max-w-2xl text-sm font-medium text-zinc-500 lg:mx-0">
+                Already helping UK businesses save 8+ hours per week
               </p>
 
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
@@ -528,7 +533,10 @@ const businessJsonLd = {
     "@type": "Person",
     "name": "Olushola Oladipupo",
   },
-  "sameAs": [],
+  "sameAs": [
+    "https://linkedin.com/in/olushola-oladipupo/",
+    "https://linkedin.com/company/oladipupo-consulting"
+  ],
 };
 
 const homepageFAQs: FAQItem[] = [

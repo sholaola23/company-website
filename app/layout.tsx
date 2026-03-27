@@ -41,6 +41,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Oladipupo Consulting Ltd" }],
   creator: "Oladipupo Consulting Ltd",
   metadataBase: new URL("https://oladipupoconsulting.co.uk"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_GB",
