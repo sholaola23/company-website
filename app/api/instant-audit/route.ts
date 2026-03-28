@@ -1,5 +1,6 @@
 import { NextRequest } from "next/server";
 import { getAuditSystemPrompt } from "@/lib/audit-system-prompt";
+import { enrichAuditContext } from "@/lib/firecrawl";
 import { checkAuditRateLimit } from "@/lib/rate-limit";
 import { ANTHROPIC_API_URL, ANTHROPIC_VERSION } from "@/lib/constants";
 
@@ -41,10 +42,19 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    const systemPrompt = getAuditSystemPrompt(
+    // Enrich with live Firecrawl data before calling Claude.
+    // Runs in parallel-ish with a hard timeout — never blocks the audit.
+    const liveData = await enrichAuditContext(
       businessName.trim(),
       industry.trim(),
       websiteUrl?.trim() || undefined
+    );
+
+    const systemPrompt = getAuditSystemPrompt(
+      businessName.trim(),
+      industry.trim(),
+      websiteUrl?.trim() || undefined,
+      liveData
     );
 
     const upstream = await fetch(ANTHROPIC_API_URL, {
