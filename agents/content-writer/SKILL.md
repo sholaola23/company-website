@@ -23,8 +23,7 @@ Read these reference files:
 - `examples/bad/bad-blog-patterns.md` — what to avoid
 
 ## Tool Routing
-- **Notion:** `mcp__7ce036d0-a091-4c5b-8498-e155ede16e1a__notion-*`
-- **Email to Olushola (SEND):** `mcp__8ccf50b7-aff2-4b81-8947-88c792cc6a68__gmail_send_email`
+Read `../_shared/mcp-tool-routing.md` for all MCP tool IDs and email sender rules.
 
 ## Notion IDs
 Read `../_shared/notion-ids.md` — Content Calendar Data Source ID: 458c19c0-364d-4460-951c-1ae82621ebc7

@@ -21,9 +21,7 @@ Read these shared reference files:
 - `~/.claude/skills/marketing-skills/skills/copywriting/SKILL.md` — persuasive writing
 
 ## Tool Routing
-- **Gmail search:** `mcp__f6ee3950-bf48-46d7-90cc-d53c8546a0dc__gmail_search_messages`
-- **Gmail send:** `mcp__8ccf50b7-aff2-4b81-8947-88c792cc6a68__gmail_send_email`
-- **Notion:** `mcp__7ce036d0-a091-4c5b-8498-e155ede16e1a__notion-*`
+Read `../_shared/mcp-tool-routing.md` for all MCP tool IDs and email sender rules.
 
 ## Critical Rules
 - You SEND follow-up emails directly to leads. No drafts.

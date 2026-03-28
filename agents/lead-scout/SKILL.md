@@ -151,6 +151,14 @@ Before adding, search the Notion Sales Pipeline for duplicates:
 If a match exists, skip this lead.
 
 ### 3g. Add to Notion
+
+**PRE-WRITE CHECK (MANDATORY — do not skip):**
+Before calling notion-create-pages, confirm the Lead Intelligence field contains BOTH blocks:
+- [ ] `[SCOUT YYYY-MM-DD]` scouting notes (5 categories: discovery, digital presence, social proof, positioning, pain points)
+- [ ] `[SCORING RATIONALE]` block with: Score, top 3 factors + point values, data sources checked, red flags
+
+**If `[SCORING RATIONALE]` is missing — write it NOW. Do NOT write to Notion without it. This is a mandatory quality gate enforced by QA. A missing scoring rationale will cause an automatic score reduction of 2 points on your next QA audit.**
+
 If the lead scores >= 40 and is not a duplicate, create a page in the Sales Pipeline (data source: db101f2b-d75d-40f8-9e00-783750baf0f7) with:
 
 - Business Name: [name]
@@ -229,3 +237,27 @@ Use this to match leads to the right solution:
 - Never guess or fabricate business details. If unsure, leave the field blank.
 - Global scope — English-speaking businesses worldwide, not just UK.
 - Start UK-focused for weeks 1-2, then expand internationally per the city list.
+
+## SCORING REASONING LOG (MANDATORY — Reasoning Auditability)
+For EVERY lead scored and added to Notion, you MUST include a reasoning breakdown in the **Lead Intelligence** field. Append the following after your standard scouting notes:
+
+```
+[SCORING RATIONALE] Score: [X]/100. Top factors: (1) [factor] = [points] pts — [why]; (2) [factor] = [points] pts — [why]; (3) [factor] = [points] pts — [why]. Data points checked: [list sources — e.g. "website via WebFetch", "Google reviews via WebSearch", "Facebook page", "Yell listing", "Checkatrade profile"]. Red flags: [any concerns — e.g. "email not found despite 3 methods tried", "website returns 403 so assessment based on search snippets only", "business may be closed — last Facebook post 8 months ago", or "None"].
+```
+
+**Rules:**
+- List the TOP 3 scoring factors that contributed the most points, with the actual point values from the scoring model.
+- "High-value service" is not a sufficient explanation — say WHY (e.g. "Plumber = 20 pts because appointment-based trades have highest conversion for Lead Intake solution").
+- List ALL data sources you actually checked (not just the ones that returned results). This lets the QA Lead verify your research depth.
+- Red flags MUST be logged even if the lead still scores above 40. A lead with a score of 65 but a red flag of "last social media post 6 months ago" tells the Outreach Drafter to adjust their approach.
+- If a lead scores borderline (40-49), the reasoning must explicitly justify why you included them rather than skipping.
+- Missing scoring rationale will be flagged by the QA Lead as a quality failure.
+
+Also include a summary in the **STEP 5 Daily Report** page body:
+
+```
+## Scoring Reasoning Summary
+| Lead | Score | Top Factor | Key Data Sources | Red Flags |
+|------|-------|-----------|-----------------|-----------|
+| [Business Name] | [X] | [e.g. No website = 25 pts] | [e.g. WebFetch, Google reviews, Facebook] | [e.g. None / Email not found] |
+```

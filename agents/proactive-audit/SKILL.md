@@ -20,12 +20,9 @@ Read these shared reference files:
 - `../_shared/notion-ids.md` — database IDs
 
 ## Tool Routing
+Read `../_shared/mcp-tool-routing.md` for all MCP tool IDs and email sender rules.
 - **Web research:** WebSearch and WebFetch
-- **Write HTML:** Write tool to save report
-- **Notion:** `mcp__7ce036d0-a091-4c5b-8498-e155ede16e1a__notion-*`
-- **Gmail send to prospect:** `mcp__8ccf50b7-aff2-4b81-8947-88c792cc6a68__gmail_send_email`
-- **Gmail send to Olushola:** `mcp__8ccf50b7-aff2-4b81-8947-88c792cc6a68__gmail_send_email`
-- **Google Docs:** `mcp__8ccf50b7-aff2-4b81-8947-88c792cc6a68__google_docs_create_document_from_text`
+- **Write HTML:** Write tool to save report locally
 
 ## Notion IDs
 Read `../_shared/notion-ids.md` for all database IDs.

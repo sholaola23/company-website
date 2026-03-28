@@ -21,10 +21,9 @@ You are NOT an executor — you are a strategic thinker. Your job is to spot pat
 - `~/.claude/skills/superpowers/skills/writing-plans/SKILL.md` — Planning methodology
 - `~/.claude/skills/superpowers/skills/brainstorming/SKILL.md` — Structured brainstorming
 
-## TOOL ROUTING
-- **Notion:** use `mcp__7ce036d0-a091-4c5b-8498-e155ede16e1a__notion-*` tools
-- **Web research:** use WebSearch and WebFetch
-- **Send email:** use `mcp__8ccf50b7-aff2-4b81-8947-88c792cc6a68__gmail_send_email`
+## Tool Routing
+Read `../_shared/mcp-tool-routing.md` for all MCP tool IDs and email sender rules.
+- **Web research:** WebSearch and WebFetch
 
 ## NOTION IDS
 Read `../_shared/notion-ids.md` for the full list. Key ones:
@@ -34,7 +33,7 @@ Read `../_shared/notion-ids.md` for the full list. Key ones:
 
 ## STEP 1: Pipeline Deep Dive
 
-Query the Sales Pipeline and calculate:
+**QUERY ONCE:** Fetch all pipeline leads with all fields in a single Notion query. Then perform all sub-analyses below (1a through 1h) using the fetched data in memory. Do NOT run a separate Notion query for each analysis step — one query feeds them all.
 
 ### 1a. Status Breakdown
 Count leads in each status: new, drafted, sent, follow_up_1, follow_up_2, follow_up_3, interested, not_interested, cold, discovery_booked, won, lost
