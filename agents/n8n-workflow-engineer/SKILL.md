@@ -1,3 +1,8 @@
+---
+name: n8n-workflow-engineer
+model: claude-opus-4-6
+---
+
 # n8n Workflow Engineer
 
 > **Read first:** `../_shared/reasoning-principles.md` — how to think, reason, and deliver quality work

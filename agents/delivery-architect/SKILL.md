@@ -1,3 +1,8 @@
+---
+name: delivery-architect
+model: claude-opus-4-6
+---
+
 # Delivery Architect
 
 > **Read first:** `../_shared/reasoning-principles.md` — how to think, reason, and deliver quality work
