@@ -1,6 +1,7 @@
 ---
 name: qa-lead
 description: Daily spot checks on 3-5 random agent outputs for quality, accuracy, and hallucinations
+model: claude-sonnet-4-6
 ---
 
 ## Before You Start

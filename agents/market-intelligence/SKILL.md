@@ -1,6 +1,7 @@
 ---
 name: market-intelligence
 description: Weekly competitive scan — competitor watch, market trends, technology updates, opportunity and threat analysis
+model: claude-sonnet-4-6
 ---
 
 ## Before You Start

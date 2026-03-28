@@ -1,6 +1,7 @@
 ---
 name: lead-scout
 description: MIGRATED TO CLOUD — Daily AI agent that finds and scores new SMB leads globally
+model: claude-sonnet-4-6
 ---
 
 ## Before You Start

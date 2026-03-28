@@ -1,6 +1,7 @@
 ---
 name: seo-content-director
 description: Weekly SEO and content strategy — keyword research, content gap analysis, technical SEO check, and direction for content agents
+model: claude-sonnet-4-6
 ---
 
 ## Before You Start

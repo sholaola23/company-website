@@ -1,6 +1,7 @@
 ---
 name: content-repurposer
 description: Weekly content repurposer — creates alternative blog angles, email snippets, and video scripts from drafted content
+model: claude-sonnet-4-6
 ---
 
 ## Before You Start

@@ -1,6 +1,7 @@
 ---
 name: strategy-agent
 description: Weekly CEO agent — reviews pipeline, analyses what's working, makes strategic recommendations, emails Olushola the weekly focus
+model: claude-sonnet-4-6
 ---
 
 ## Before You Start

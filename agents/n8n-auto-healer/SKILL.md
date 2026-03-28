@@ -1,6 +1,7 @@
 ---
 name: n8n-auto-healer
 description: Monitors n8n workflow health, detects failures, attempts automated healing, and escalates unresolvable issues
+model: claude-haiku-4-5-20251001
 ---
 
 ## Before You Start

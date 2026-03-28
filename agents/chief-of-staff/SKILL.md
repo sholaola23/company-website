@@ -1,6 +1,7 @@
 ---
 name: chief-of-staff
 description: Weekly CEO briefing — reviews pipeline, revenue, clients, marketing, agents, risks, and recommends priorities
+model: claude-sonnet-4-6
 ---
 
 ## Before You Start

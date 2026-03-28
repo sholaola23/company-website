@@ -1,6 +1,7 @@
 ---
 name: lead-reengagement
 description: Re-engages cold leads after 30 days with a fresh angle — one final touch before permanent archive
+model: claude-sonnet-4-6
 ---
 
 ## Before You Start

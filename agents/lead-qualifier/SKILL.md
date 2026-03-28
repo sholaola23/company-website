@@ -1,6 +1,7 @@
 ---
 name: lead-qualifier
 description: AI Sales Agent 4: Scans Gmail for replies from outreach leads, classifies responses, prepares discovery briefs, and sends hot lead alerts
+model: claude-sonnet-4-6
 ---
 
 ## Before You Start

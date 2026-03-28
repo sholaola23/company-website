@@ -1,6 +1,7 @@
 ---
 name: performance-marketing-manager
 description: Daily ad spend check and weekly performance report for Meta Ads campaigns
+model: claude-sonnet-4-6
 ---
 
 ## Before You Start

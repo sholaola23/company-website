@@ -1,6 +1,7 @@
 ---
 name: agent-performance-review
 description: Weekly performance review of all sales agents — audits quality, flags issues, and recommends improvements
+model: claude-haiku-4-5-20251001
 ---
 
 ## Before You Start

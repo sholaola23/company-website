@@ -1,6 +1,7 @@
 ---
 name: needs-email-hunter
 description: Finds email addresses for leads flagged as Needs Email — runs Mon/Wed/Fri at 5:30pm, between Lead Scout (5pm) and Outreach Drafter (6pm)
+model: claude-sonnet-4-6
 ---
 
 ## Before You Start

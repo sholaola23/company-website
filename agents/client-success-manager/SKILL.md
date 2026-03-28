@@ -1,6 +1,7 @@
 ---
 name: client-success-manager
 description: Client Guardian — monitors client dashboards 3x daily, autonomously fixes issues, verifies fixes on live site
+model: claude-sonnet-4-6
 ---
 
 ## Before You Start

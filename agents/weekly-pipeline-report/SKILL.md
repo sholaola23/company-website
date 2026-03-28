@@ -1,6 +1,7 @@
 ---
 name: weekly-pipeline-report
 description: Sunday evening pipeline summary emailed to Olushola — leads found, emails sent, replies, conversion rates, top prospects
+model: claude-sonnet-4-6
 ---
 
 ## Before You Start

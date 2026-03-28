@@ -1,6 +1,7 @@
 ---
 name: ai-integration-lead
 description: Weekly AI model evaluation — cost analysis, quality assessment, new model research, prompt optimization recommendations
+model: claude-opus-4-6
 ---
 
 ## Before You Start

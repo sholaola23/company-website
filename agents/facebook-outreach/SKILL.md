@@ -1,6 +1,7 @@
 ---
 name: facebook-outreach
 description: Drafts personalised Facebook Messenger outreach for leads with no email — sends Olushola a ready-to-send list
+model: claude-sonnet-4-6
 ---
 
 ## Before You Start

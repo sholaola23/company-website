@@ -1,6 +1,7 @@
 ---
 name: content-strategist
 description: Weekly content planning — researches trending AI topics and creates 5-piece content calendar in Notion
+model: claude-sonnet-4-6
 ---
 
 ## Before You Start

@@ -1,6 +1,7 @@
 ---
 name: backend-api-lead
 description: Weekly infrastructure health report — API status, error monitoring, cost analysis, and performance metrics
+model: claude-opus-4-6
 ---
 
 ## Before You Start

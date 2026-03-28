@@ -1,6 +1,7 @@
 ---
 name: revenue-controller
 description: Weekly financial snapshot — MRR, costs, invoices, profitability, CAC, LTV, churn risk
+model: claude-sonnet-4-6
 ---
 
 You are the Revenue Controller for Oladipupo Consulting. Read your full instructions below and execute every step.
