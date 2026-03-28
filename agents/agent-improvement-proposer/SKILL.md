@@ -69,12 +69,13 @@ If the QA report is older than 48 hours, skip this run — the data is stale. Se
 
 ## STEP 2: Identify Agents Needing Improvement
 
-From the structured findings:
-- Filter for agents with SCORE < 7
-- Sort by SEVERITY (Critical first, then High, Medium, Low)
-- Take up to 5 agents
+From the structured findings, flag an agent for a proposal if EITHER condition is true:
+- **Primary trigger:** SCORE < 7
+- **Secondary trigger:** REASONING_QUALITY < 5 (even if overall SCORE ≥ 7) — treat these as High severity by default
 
-If no agents score below 7: skip to Step 5 (healthy fleet notification).
+Sort by SEVERITY (Critical first, then High, Medium, Low). Take up to 5 agents.
+
+**IMPORTANT:** If any agent has REASONING_QUALITY < 5, do NOT send a "fleet healthy" notification — proposals must be generated for those agents regardless of their overall score. Only skip to Step 5 if ALL agents score 7+ AND all REASONING_QUALITY scores are 5+.
 
 ## STEP 3: Read Agent SKILL.md and Generate Patch
 

@@ -75,6 +75,7 @@ Only use long-form templates from `templates/email-templates.md` if Lead Score >
 5b. **Subject line MUST include the lead's business name OR a specific observation about them.** Generic subjects like "quick question" or "60 seconds a day" are BANNED. Use patterns from `../_shared/personalization.md` Subject Line Patterns, e.g. "I tested [Business Name]'s response time" or "[Business Name] — quick thought". If the script template has a generic subject, OVERRIDE it with a personalised one.
 6. **TOTAL EMAIL MUST BE UNDER 80 WORDS** (excluding signature). If it's longer, cut it.
 7. Run self-quality check — if below 6, SKIP this lead
+7b. **Complete Decision Log entry NOW (mandatory, inline):** Before moving to the next lead, write the Decision Log entry for this email: Template chosen + WHY (including why alternatives were rejected), framework shape, personalisation points used + WHY, research source, subject line, confidence score with justification. Do NOT defer this to Step 5 — write it immediately after the quality check while the reasoning is fresh. A missing or incomplete Decision Log entry for any sent email = automatic 2-point QA deduction.
 8. Check Gmail for existing sent emails to this address (avoid double-sending)
 9. **SEND the email** via `mcp__8ccf50b7-aff2-4b81-8947-88c792cc6a68__gmail_send_email` with `from: hello@oladipupoconsulting.co.uk`
 10. **Update Notion immediately after sending:**
@@ -102,6 +103,16 @@ Read `eval/checklist.md` and verify every item.
 Read `eval/advisory-board.md` — would all 3 reviewers pass this batch?
 
 ### Step 5: Write Daily Report
+
+**PRE-REPORT CHECK (MANDATORY — do not skip):**
+Before calling notion-create-pages for the daily report, confirm:
+- [ ] The page body contains a `## Decision Log` section
+- [ ] EACH email sent has an entry with ALL fields: Template chosen, WHY this template, Framework shape, Personalisation points used, WHY these points, Research source, Subject line, Confidence score
+- [ ] Every confidence score has a justification (not just a number)
+- [ ] Every "WHY this template" explains why alternatives were rejected, not just why the chosen one matched
+
+**If the Decision Log is missing or incomplete — write it NOW. Do NOT write the report to Notion without it. This is a mandatory quality gate enforced by QA. A missing or shallow Decision Log will cause an automatic score reduction of 2 points on your next QA audit.**
+
 Create page in Sales Agent Reports. **Page properties MUST be populated BEFORE writing the page body** — downstream agents read these properties directly and the body is supplementary detail only.
 
 **Required Notion properties (set on page creation):**
