@@ -101,7 +101,7 @@ function RoiCalculator() {
       <h3 className="text-lg font-semibold text-slate-900 mb-1">
         What are missed implant inquiries costing Aspire?
       </h3>
-      <p className="text-sm text-slate-500 mb-6">
+      <p className="text-sm text-slate-900 mb-6">
         Adjust the numbers to match your practice. These estimates are conservative.
       </p>
 
@@ -153,19 +153,19 @@ function RoiCalculator() {
       {/* Results */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
         <div className="bg-white rounded-xl p-4 text-center border border-slate-200">
-          <p className="text-xs text-slate-500 mb-1">Lost per year</p>
+          <p className="text-xs text-slate-900 mb-1">Lost per year</p>
           <p className="text-2xl font-bold text-red-500">
             ${yearlyLost.toLocaleString()}
           </p>
         </div>
         <div className="bg-white rounded-xl p-4 text-center border border-slate-200">
-          <p className="text-xs text-slate-500 mb-1">System cost (yr 1)</p>
+          <p className="text-xs text-slate-900 mb-1">System cost (yr 1)</p>
           <p className="text-2xl font-bold text-slate-700">
             ${yearlyCost.toLocaleString()}
           </p>
         </div>
         <div className="bg-white rounded-xl p-4 text-center border border-slate-200">
-          <p className="text-xs text-slate-500 mb-1">Net gain</p>
+          <p className="text-xs text-slate-900 mb-1">Net gain</p>
           <p className={`text-2xl font-bold ${netGain > 0 ? "text-emerald-600" : "text-slate-400"}`}>
             {netGain > 0 ? `+$${netGain.toLocaleString()}` : "-"}
           </p>
@@ -202,7 +202,7 @@ function ChatDemo() {
           <p className="text-sm font-semibold text-slate-900">Aspire Dental Assistant</p>
           <div className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-            <p className="text-xs text-slate-500">Online — Tuesday 10:47pm</p>
+            <p className="text-xs text-slate-900">Online — Tuesday 10:47pm</p>
           </div>
         </div>
       </div>
@@ -312,7 +312,7 @@ function AspireContent() {
           transition={{ duration: 0.5 }}
           className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-medium mb-6"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
           Built specifically for Aspire Dental
         </motion.div>
 
@@ -333,7 +333,7 @@ function AspireContent() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-slate-500 text-base md:text-lg leading-relaxed"
+          className="text-slate-900 text-base md:text-lg leading-relaxed"
         >
           Your implant quiz is smart. Your reviews are solid. But right now,
           every patient who visits aspiredental.com after hours hits a request
@@ -358,13 +358,13 @@ function AspireContent() {
             Implant patients research at night.
             <br className="hidden md:block" /> Your website has a request form, not instant booking.
           </h2>
-          <p className="text-slate-500 leading-relaxed">
+          <p className="text-slate-900 leading-relaxed">
             A patient considering dental implants doesn&apos;t impulse-buy. They spend weeks
             researching — reading reviews, comparing costs, checking insurance coverage. And they
             do most of that research at 9pm, 10pm, 11pm. When they&apos;re ready to take
             the next step, they visit your site.
           </p>
-          <p className="text-slate-500 leading-relaxed mt-3">
+          <p className="text-slate-900 leading-relaxed mt-3">
             Right now, that patient fills out a request form and waits. By morning,
             they&apos;ve contacted 3 other practices. The first one to book a
             consultation wins the case. That case is worth $3,000 to $30,000.
@@ -399,7 +399,7 @@ function AspireContent() {
               </div>
               <div>
                 <p className="text-sm font-semibold text-slate-800 mb-0.5">{title}</p>
-                <p className="text-sm text-slate-500">{desc}</p>
+                <p className="text-sm text-slate-900">{desc}</p>
               </div>
             </div>
           ))}
@@ -421,7 +421,7 @@ function AspireContent() {
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
             An AI assistant that answers patient questions 24/7 and books consultations instantly.
           </h2>
-          <p className="text-slate-500 mb-8 text-sm">
+          <p className="text-slate-900 mb-8 text-sm">
             Here&apos;s what happens when a patient visits aspiredental.com at 10:47pm on a Tuesday.
           </p>
 
@@ -436,7 +436,7 @@ function AspireContent() {
               <Send className="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" />
               <div>
                 <p className="text-sm font-semibold text-slate-800 mb-0.5">Notification to front desk</p>
-                <p className="text-sm text-slate-500 font-mono bg-slate-50 rounded-lg p-3 mt-2 leading-relaxed">
+                <p className="text-sm text-slate-900 font-mono bg-slate-50 rounded-lg p-3 mt-2 leading-relaxed">
                   New consultation booked — Aspire Dental<br />
                   Patient: Michael Torres, (512) 555-0189<br />
                   Insurance: Delta Dental<br />
@@ -465,7 +465,7 @@ function AspireContent() {
           One missed implant inquiry = $3,000 to $30,000.
           <br className="hidden md:block" /> Our system costs $300/month.
         </h2>
-        <p className="text-slate-500 mb-8 text-sm">
+        <p className="text-slate-900 mb-8 text-sm">
           The math does itself. Slide the numbers to see what it means for Aspire.
         </p>
         <RoiCalculator />
@@ -486,7 +486,7 @@ function AspireContent() {
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
             After-hours calls answered. Emergencies triaged. Appointments booked.
           </h2>
-          <p className="text-slate-500 leading-relaxed mb-8">
+          <p className="text-slate-900 leading-relaxed mb-8">
             When a patient calls (512) 491-5244 outside office hours, they currently
             get voicemail. With Voice AI, they get a natural-sounding phone system
             that can answer questions, identify emergencies, and book appointments
@@ -525,7 +525,7 @@ function AspireContent() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-slate-800 mb-0.5">{title}</p>
-                  <p className="text-sm text-slate-500">{desc}</p>
+                  <p className="text-sm text-slate-900">{desc}</p>
                 </div>
               </div>
             ))}
@@ -547,7 +547,7 @@ function AspireContent() {
         <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
           Grow your Google reviews on autopilot.
         </h2>
-        <p className="text-slate-500 leading-relaxed mb-8">
+        <p className="text-slate-900 leading-relaxed mb-8">
           For implant practices, Google reviews are the number one trust signal.
           Patients comparing providers check review counts and ratings before
           anything else. With automated post-appointment review requests, Aspire
@@ -580,7 +580,7 @@ function AspireContent() {
                 <Icon className="w-4 h-4 text-blue-600" />
               </div>
               <p className="text-sm font-semibold text-slate-800 mb-1">{title}</p>
-              <p className="text-sm text-slate-500">{desc}</p>
+              <p className="text-sm text-slate-900">{desc}</p>
             </div>
           ))}
         </div>
@@ -607,7 +607,7 @@ function AspireContent() {
             <div className="p-6 md:p-8 border-b border-slate-100">
               <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
                 <div>
-                  <p className="text-sm text-slate-500 mb-1">One-time setup fee</p>
+                  <p className="text-sm text-slate-900 mb-1">One-time setup fee</p>
                   <div className="flex items-baseline gap-2">
                     <span className="text-4xl font-bold text-slate-900">$2,000</span>
                   </div>
@@ -616,7 +616,7 @@ function AspireContent() {
                   </p>
                 </div>
                 <div className="sm:text-right">
-                  <p className="text-sm text-slate-500 mb-1">Then monthly</p>
+                  <p className="text-sm text-slate-900 mb-1">Then monthly</p>
                   <div className="flex items-baseline gap-2 sm:justify-end">
                     <span className="text-4xl font-bold text-blue-600">$300</span>
                     <span className="text-slate-400">/mo</span>
@@ -695,11 +695,11 @@ function AspireContent() {
             </div>
             <div>
               <p className="text-sm font-semibold text-slate-800">E&apos;Manuel Bakery</p>
-              <p className="text-xs text-slate-500">Local service business, 6 employees, owner-operated</p>
+              <p className="text-xs text-slate-900">Local service business, 6 employees, owner-operated</p>
             </div>
           </div>
 
-          <p className="text-slate-500 text-sm leading-relaxed mb-6">
+          <p className="text-slate-900 text-sm leading-relaxed mb-6">
             Before working with us, the owner was manually handling every order,
             chasing unpaid invoices, and managing bookings over WhatsApp and phone.
             Every evening was admin. Every missed call was a missed sale. Sound familiar?
@@ -719,7 +719,7 @@ function AspireContent() {
             ))}
           </div>
 
-          <blockquote className="border-l-2 border-blue-500 pl-4">
+          <blockquote className="border-l-2 border-blue-600 pl-4">
             <p className="text-sm text-slate-600 italic leading-relaxed">
               &ldquo;We used to miss orders every single evening. Now the system handles everything
               while we&apos;re in the kitchen. We don&apos;t think about it anymore — it just works.&rdquo;
@@ -748,7 +748,7 @@ function AspireContent() {
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
             Ready to stop losing implant patients?
           </h2>
-          <p className="text-slate-500 text-base mb-8 max-w-md mx-auto">
+          <p className="text-slate-900 text-base mb-8 max-w-md mx-auto">
             Book a free 15-minute call. I&apos;ll walk you through a live demo
             using Aspire&apos;s details — your procedures, your scheduling, your
             patient journey. No commitment required.
@@ -759,7 +759,7 @@ function AspireContent() {
               href="https://cal.com/sholastechnotes/free-ai-strategy-call"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-all text-sm w-full sm:w-auto justify-center"
+              className="inline-flex items-center gap-2 px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all text-sm w-full sm:w-auto justify-center"
             >
               <CalendarDays className="w-4 h-4" />
               Book a free 15-minute call

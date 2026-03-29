@@ -68,13 +68,13 @@ export default function ToolsPage() {
         {/* Hero */}
         <AnimatedSection>
           <div className="max-w-2xl mx-auto text-center mb-14">
-            <span className="text-xs font-semibold tracking-widest uppercase text-blue-500 mb-4 block">
+            <span className="text-xs font-semibold tracking-widest uppercase text-blue-600 mb-4 block">
               Free Tools
             </span>
-            <h1 className="text-3xl sm:text-5xl font-bold text-zinc-50 leading-tight tracking-tight mb-5">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-slate-900 leading-tight tracking-tight mb-5">
               Tools That Help You Grow
             </h1>
-            <p className="text-lg text-zinc-400 leading-relaxed">
+            <p className="text-lg text-slate-600 leading-relaxed">
               Free, instant tools built for small business owners. No signup
               walls, no fluff — just actionable insights you can use today.
             </p>
@@ -87,16 +87,16 @@ export default function ToolsPage() {
             <AnimatedSection key={tool.href} delay={i * 0.1}>
               <Link
                 href={tool.href}
-                className="group flex flex-col h-full rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6 transition-all hover:border-blue-500/40 hover:bg-zinc-900/80"
+                className="group flex flex-col h-full rounded-2xl border border-slate-200 bg-slate-50/60 p-6 transition-all hover:border-blue-600/40 hover:bg-slate-50/80"
               >
                 <div className="text-3xl mb-4">{tool.icon}</div>
-                <h2 className="text-lg font-semibold text-zinc-100 mb-2 group-hover:text-blue-400 transition-colors">
+                <h2 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
                   {tool.title}
                 </h2>
-                <p className="text-sm text-zinc-400 leading-relaxed flex-1 mb-4">
+                <p className="text-sm text-slate-600 leading-relaxed flex-1 mb-4">
                   {tool.description}
                 </p>
-                <span className="inline-block text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full px-3 py-1 w-fit">
+                <span className="inline-block text-xs font-medium bg-blue-600/10 text-blue-600 border border-blue-600/20 rounded-full px-3 py-1 w-fit">
                   {tool.badge}
                 </span>
               </Link>
@@ -107,11 +107,11 @@ export default function ToolsPage() {
         {/* Bottom CTA */}
         <AnimatedSection delay={0.4}>
           <div className="max-w-2xl mx-auto text-center mt-16">
-            <p className="text-zinc-400 text-sm">
+            <p className="text-slate-600 text-sm">
               Want help implementing the results?{" "}
               <Link
                 href="https://cal.com/sholastechnotes/free-ai-strategy-call"
-                className="text-blue-400 hover:text-blue-300 underline underline-offset-2"
+                className="text-blue-600 hover:text-blue-600 underline underline-offset-2"
               >
                 Book a free strategy call
               </Link>

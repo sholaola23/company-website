@@ -34,7 +34,7 @@ const LOCATION_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-zinc-950 border-t border-zinc-800/60" aria-label="Site footer">
+    <footer className="bg-slate-900" aria-label="Site footer">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Main footer grid */}
         <div className="py-16 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-5">
@@ -45,19 +45,18 @@ export default function Footer() {
               className="w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg"
               aria-label="Oladipupo Consulting — home"
             >
-              <Logo size="lg" />
+              <Logo size="lg" variant="light" />
             </Link>
-            <p className="text-sm text-zinc-400 leading-relaxed max-w-xs">
+            <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
               AI solutions for small businesses — automation, websites, and
               training. We build systems that save time, capture leads, and grow
               revenue.
             </p>
-            {/* Social icons — hidden until real profiles are set up */}
           </div>
 
           {/* Services column */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-5">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-5">
               Services
             </h3>
             <ul className="flex flex-col gap-3" role="list">
@@ -65,7 +64,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-zinc-400 hover:text-zinc-50 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+                    className="text-sm text-slate-400 hover:text-white transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
                   >
                     {link.label}
                   </Link>
@@ -76,7 +75,7 @@ export default function Footer() {
 
           {/* Company column */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-5">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-5">
               Company
             </h3>
             <ul className="flex flex-col gap-3" role="list">
@@ -84,7 +83,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-zinc-400 hover:text-zinc-50 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+                    className="text-sm text-slate-400 hover:text-white transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
                   >
                     {link.label}
                   </Link>
@@ -95,7 +94,7 @@ export default function Footer() {
 
           {/* Locations column */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-5">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-5">
               Locations
             </h3>
             <ul className="flex flex-col gap-3" role="list">
@@ -103,7 +102,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-zinc-400 hover:text-zinc-50 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+                    className="text-sm text-slate-400 hover:text-white transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
                   >
                     {link.label}
                   </Link>
@@ -114,7 +113,7 @@ export default function Footer() {
 
           {/* Contact column */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-5">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-5">
               Contact
             </h3>
             <ul className="flex flex-col gap-4" role="list">
@@ -126,10 +125,10 @@ export default function Footer() {
                 >
                   <Mail
                     size={15}
-                    className="mt-0.5 text-blue-500 shrink-0"
+                    className="mt-0.5 text-blue-400 shrink-0"
                     aria-hidden="true"
                   />
-                  <span className="text-sm text-zinc-400 group-hover:text-zinc-50 transition-colors duration-150">
+                  <span className="text-sm text-slate-400 group-hover:text-white transition-colors duration-150">
                     hello@oladipupoconsulting.co.uk
                   </span>
                 </a>
@@ -142,10 +141,10 @@ export default function Footer() {
                 >
                   <Phone
                     size={15}
-                    className="text-blue-500 shrink-0"
+                    className="text-blue-400 shrink-0"
                     aria-hidden="true"
                   />
-                  <span className="text-sm text-zinc-400 group-hover:text-zinc-50 transition-colors duration-150">
+                  <span className="text-sm text-slate-400 group-hover:text-white transition-colors duration-150">
                     07469 347654
                   </span>
                 </a>
@@ -155,7 +154,7 @@ export default function Footer() {
                   href="https://wa.me/447469347654"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-zinc-400 hover:text-zinc-50 border border-zinc-700 hover:border-zinc-500 rounded-lg px-3 py-2 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-white border border-slate-700 hover:border-slate-500 rounded-full px-4 py-2 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                   aria-label="Message us on WhatsApp"
                 >
                   WhatsApp Us
@@ -166,27 +165,27 @@ export default function Footer() {
         </div>
 
         {/* Newsletter signup */}
-        <div className="py-8 border-t border-zinc-800/60">
+        <div className="py-8 border-t border-slate-800">
           <div className="max-w-md">
             <NewsletterSignup compact />
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="py-6 border-t border-zinc-800/60 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-zinc-500 text-center sm:text-left">
+        <div className="py-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-slate-500 text-center sm:text-left">
             &copy; 2026 Oladipupo Consulting Ltd. Registered in England &amp; Wales.
           </p>
           <div className="flex items-center gap-4">
             <Link
               href="/privacy"
-              className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+              className="text-xs text-slate-500 hover:text-slate-300 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+              className="text-xs text-slate-500 hover:text-slate-300 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
             >
               Terms
             </Link>

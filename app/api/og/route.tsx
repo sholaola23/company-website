@@ -13,12 +13,12 @@ export async function GET() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "#09090b",
+          backgroundColor: "#ffffff",
           position: "relative",
           overflow: "hidden",
         }}
       >
-        {/* Blue accent — top-left glow */}
+        {/* Subtle blue accent — top-left glow */}
         <div
           style={{
             position: "absolute",
@@ -28,12 +28,12 @@ export async function GET() {
             height: "480px",
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(59,130,246,0.35) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 70%)",
             display: "flex",
           }}
         />
 
-        {/* Blue accent — bottom-right glow */}
+        {/* Subtle blue accent — bottom-right glow */}
         <div
           style={{
             position: "absolute",
@@ -43,12 +43,12 @@ export async function GET() {
             height: "400px",
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(59,130,246,0.25) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(37,99,235,0.06) 0%, transparent 70%)",
             display: "flex",
           }}
         />
 
-        {/* Thin blue accent line at the top */}
+        {/* Blue accent line at the top */}
         <div
           style={{
             position: "absolute",
@@ -57,7 +57,7 @@ export async function GET() {
             right: 0,
             height: "4px",
             background:
-              "linear-gradient(90deg, transparent 0%, #3b82f6 30%, #3b82f6 70%, transparent 100%)",
+              "linear-gradient(90deg, transparent 0%, #2563eb 30%, #2563eb 70%, transparent 100%)",
             display: "flex",
           }}
         />
@@ -73,13 +73,31 @@ export async function GET() {
             zIndex: 1,
           }}
         >
+          {/* Blue monogram badge */}
+          <div
+            style={{
+              width: "64px",
+              height: "64px",
+              borderRadius: "16px",
+              backgroundColor: "#2563eb",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              color: "#ffffff",
+              fontSize: "24px",
+              fontWeight: 700,
+            }}
+          >
+            OC
+          </div>
+
           {/* Company name */}
           <div
             style={{
               fontSize: "64px",
               fontWeight: 700,
-              color: "#ffffff",
-              letterSpacing: "-1px",
+              color: "#0f172a",
+              letterSpacing: "-2px",
               lineHeight: 1.1,
               textAlign: "center",
               display: "flex",
@@ -93,7 +111,7 @@ export async function GET() {
             style={{
               width: "80px",
               height: "4px",
-              backgroundColor: "#3b82f6",
+              backgroundColor: "#2563eb",
               borderRadius: "2px",
               display: "flex",
             }}
@@ -104,7 +122,7 @@ export async function GET() {
             style={{
               fontSize: "28px",
               fontWeight: 400,
-              color: "#a1a1aa",
+              color: "#64748b",
               textAlign: "center",
               display: "flex",
             }}
@@ -119,8 +137,8 @@ export async function GET() {
             position: "absolute",
             bottom: "32px",
             fontSize: "18px",
-            fontWeight: 400,
-            color: "#52525b",
+            fontWeight: 500,
+            color: "#94a3b8",
             display: "flex",
           }}
         >
@@ -131,6 +149,6 @@ export async function GET() {
     {
       width: 1200,
       height: 630,
-    },
+    }
   );
 }

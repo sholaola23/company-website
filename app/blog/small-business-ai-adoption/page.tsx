@@ -64,7 +64,7 @@ export default function BlogPost() {
         <div className="max-w-3xl mx-auto">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-zinc-400 hover:text-white text-sm mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 text-sm mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             All Posts
@@ -74,7 +74,7 @@ export default function BlogPost() {
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded-full"
+                className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full"
               >
                 {tag}
               </span>
@@ -86,27 +86,27 @@ export default function BlogPost() {
             Are You One of Them?
           </h1>
 
-          <div className="flex items-center gap-4 text-sm text-zinc-500 mb-12">
+          <div className="flex items-center gap-4 text-sm text-slate-400 mb-12">
             <span>24 March 2026</span>
-            <span className="text-zinc-700">|</span>
+            <span className="text-slate-600">|</span>
             <span>By Olushola Oladipupo</span>
-            <span className="text-zinc-700">|</span>
+            <span className="text-slate-600">|</span>
             <span className="flex items-center gap-1">
               <Clock className="w-3 h-3" />4 min read
             </span>
           </div>
 
-          <div className="prose prose-invert max-w-none">
+          <div className="prose prose-slate max-w-none">
             {/* Hook */}
-            <p className="text-zinc-300 leading-relaxed mb-4 text-lg">
+            <p className="text-slate-500 leading-relaxed mb-4 text-lg">
               98% of small business owners say they use AI daily.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4 text-lg">
+            <p className="text-slate-500 leading-relaxed mb-4 text-lg">
               Only 14% have actually embedded it into their operations.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               Those two numbers &mdash; published by Fortune in March 2026
               &mdash; explain most of what goes wrong when business owners tell
               us AI is not working for them.
@@ -117,17 +117,17 @@ export default function BlogPost() {
               What &ldquo;Using AI&rdquo; Actually Means
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               &ldquo;Using AI&rdquo; in 2026 often means: ChatGPT for the
               occasional email. An AI image tool for social graphics. Maybe a
               chatbot on the website that nobody monitors.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               That is not wrong. But it is not embedded.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               Embedded AI means AI is running parts of your business whether you
               are at your desk or not. Lead enquiries get responded to
               automatically. Appointment reminders go out without you triggering
@@ -135,7 +135,7 @@ export default function BlogPost() {
               fills.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               The difference matters. 56% of small businesses using AI see zero
               measurable return on investment. At the same time, 91% believe AI
               is vital for future growth. The gap between belief and outcome
@@ -148,7 +148,7 @@ export default function BlogPost() {
               Why Most Businesses Stay in Experimentation Mode
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               It is not a lack of motivation. It is that the tools do not come
               pre-configured for your business. ChatGPT does not know your
               booking process, your qualification questions, or your follow-up
@@ -160,27 +160,27 @@ export default function BlogPost() {
 
             {/* Key Stats */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-              <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-5 text-center">
-                <p className="text-3xl font-bold text-blue-400 mb-1">14%</p>
-                <p className="text-zinc-400 text-sm">
+              <div className="bg-slate-50 border border-slate-200 rounded-lg p-5 text-center">
+                <p className="text-3xl font-bold text-blue-600 mb-1">14%</p>
+                <p className="text-slate-600 text-sm">
                   have embedded AI into operations
                 </p>
               </div>
-              <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-5 text-center">
-                <p className="text-3xl font-bold text-blue-400 mb-1">56%</p>
-                <p className="text-zinc-400 text-sm">
+              <div className="bg-slate-50 border border-slate-200 rounded-lg p-5 text-center">
+                <p className="text-3xl font-bold text-blue-600 mb-1">56%</p>
+                <p className="text-slate-600 text-sm">
                   see zero ROI from AI so far
                 </p>
               </div>
-              <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-5 text-center">
-                <p className="text-3xl font-bold text-blue-400 mb-1">91%</p>
-                <p className="text-zinc-400 text-sm">
+              <div className="bg-slate-50 border border-slate-200 rounded-lg p-5 text-center">
+                <p className="text-3xl font-bold text-blue-600 mb-1">91%</p>
+                <p className="text-slate-600 text-sm">
                   believe AI is vital for growth
                 </p>
               </div>
-              <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-5 text-center">
-                <p className="text-3xl font-bold text-blue-400 mb-1">98%</p>
-                <p className="text-zinc-400 text-sm">
+              <div className="bg-slate-50 border border-slate-200 rounded-lg p-5 text-center">
+                <p className="text-3xl font-bold text-blue-600 mb-1">98%</p>
+                <p className="text-slate-600 text-sm">
                   claim to use AI daily
                 </p>
               </div>
@@ -191,37 +191,37 @@ export default function BlogPost() {
               3 Questions to Honestly Check Where You Stand
             </h2>
 
-            <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-6 mb-8 space-y-4">
+            <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 mb-8 space-y-4">
               <div className="flex gap-4">
-                <span className="text-blue-400 font-bold text-lg shrink-0">
+                <span className="text-blue-600 font-bold text-lg shrink-0">
                   1.
                 </span>
-                <p className="text-zinc-300">
+                <p className="text-slate-500">
                   If you went away for a week with no internet, would your
                   business still capture and respond to new leads?
                 </p>
               </div>
               <div className="flex gap-4">
-                <span className="text-blue-400 font-bold text-lg shrink-0">
+                <span className="text-blue-600 font-bold text-lg shrink-0">
                   2.
                 </span>
-                <p className="text-zinc-300">
+                <p className="text-slate-500">
                   Are client follow-ups sent because a system sends them &mdash;
                   or because you remember to?
                 </p>
               </div>
               <div className="flex gap-4">
-                <span className="text-blue-400 font-bold text-lg shrink-0">
+                <span className="text-blue-600 font-bold text-lg shrink-0">
                   3.
                 </span>
-                <p className="text-zinc-300">
+                <p className="text-slate-500">
                   Is there AI touching any part of your operation today that you
                   did not personally trigger?
                 </p>
               </div>
             </div>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               If the answer to any of those is &ldquo;no&rdquo; or
               &ldquo;sometimes&rdquo; &mdash; you are in the 86%. That is not a
               criticism. It is a starting point.
@@ -232,18 +232,18 @@ export default function BlogPost() {
               The Gap Is Fixable &mdash; Faster Than You Think
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               Moving from &ldquo;using AI occasionally&rdquo; to &ldquo;AI
               running parts of our operation&rdquo; does not require a tech team
               or a large budget. It requires someone to build the right system
               for your specific workflows.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               Start by finding out where your biggest gap is. Our free{" "}
               <Link
                 href="/audit"
-                className="text-blue-400 hover:text-blue-300 transition-colors"
+                className="text-blue-600 hover:text-blue-600 transition-colors"
               >
                 AI readiness audit
               </Link>{" "}
@@ -253,15 +253,15 @@ export default function BlogPost() {
           </div>
 
           {/* Related Articles */}
-          <div className="mt-12 border border-zinc-800 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-4 text-zinc-100">
+          <div className="mt-12 border border-slate-200 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-4 text-slate-900">
               Related Articles
             </h3>
             <ul className="space-y-3">
               <li>
                 <Link
                   href="/blog/what-is-ai-readiness-audit"
-                  className="text-blue-400 hover:text-blue-300 transition-colors"
+                  className="text-blue-600 hover:text-blue-600 transition-colors"
                 >
                   What Is an AI Readiness Audit? (And Why It&apos;s Free)
                 </Link>
@@ -269,7 +269,7 @@ export default function BlogPost() {
               <li>
                 <Link
                   href="/blog/how-can-ai-help-my-business"
-                  className="text-blue-400 hover:text-blue-300 transition-colors"
+                  className="text-blue-600 hover:text-blue-600 transition-colors"
                 >
                   How Can AI Help My Business? 10 Real Examples
                 </Link>
@@ -277,7 +277,7 @@ export default function BlogPost() {
               <li>
                 <Link
                   href="/blog/ai-automation-roi-calculator"
-                  className="text-blue-400 hover:text-blue-300 transition-colors"
+                  className="text-blue-600 hover:text-blue-600 transition-colors"
                 >
                   AI Automation ROI: How Much Can Your Business Save?
                 </Link>
@@ -285,7 +285,7 @@ export default function BlogPost() {
               <li>
                 <Link
                   href="/audit"
-                  className="text-zinc-300 hover:text-white transition-colors"
+                  className="text-slate-500 hover:text-slate-900 transition-colors"
                 >
                   Take the free AI Readiness Audit &rarr;
                 </Link>
@@ -294,39 +294,39 @@ export default function BlogPost() {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-16 bg-gradient-to-br from-blue-500/10 to-zinc-900 border border-zinc-800 rounded-xl p-8 text-center">
+          <div className="mt-16 bg-blue-50 border border-blue-200 rounded-xl p-8 text-center">
             <h3 className="text-xl font-semibold mb-2">
               Find Out Where Your Business Actually Stands
             </h3>
-            <p className="text-zinc-400 mb-6 max-w-lg mx-auto">
+            <p className="text-slate-600 mb-6 max-w-lg mx-auto">
               Take our free AI Readiness Audit. In 2 minutes, you&apos;ll get a
               specific score and tailored recommendations &mdash; no sales call
               required.
             </p>
             <Link
               href="/audit"
-              className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
             >
               Get Your Free AI Readiness Audit
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <p className="text-zinc-500 text-sm mt-3">
+            <p className="text-slate-400 text-sm mt-3">
               Takes 2 minutes. No obligation. 90-day results guarantee.
             </p>
           </div>
 
           {/* Prev/Next Navigation */}
-          <div className="mt-12 flex justify-between items-center border-t border-zinc-800 pt-8">
+          <div className="mt-12 flex justify-between items-center border-t border-slate-200 pt-8">
             <Link
               href="/blog/ai-accountants-save-20-hours"
-              className="text-zinc-400 hover:text-white transition-colors text-sm flex items-center gap-2"
+              className="text-slate-600 hover:text-slate-900 transition-colors text-sm flex items-center gap-2"
             >
               <ArrowLeft className="w-4 h-4" />
               AI for UK Accountants
             </Link>
             <Link
               href="/blog/before-after-automated-lead-response"
-              className="text-zinc-400 hover:text-white transition-colors text-sm flex items-center gap-2"
+              className="text-slate-600 hover:text-slate-900 transition-colors text-sm flex items-center gap-2"
             >
               Automated Lead Response
               <ArrowRight className="w-4 h-4" />

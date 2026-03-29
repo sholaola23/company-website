@@ -47,7 +47,7 @@ export default function BlogPost() {
         <div className="max-w-3xl mx-auto">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-zinc-400 hover:text-white text-sm mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 text-sm mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             All Posts
@@ -57,7 +57,7 @@ export default function BlogPost() {
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded-full"
+                className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full"
               >
                 {tag}
               </span>
@@ -69,19 +69,19 @@ export default function BlogPost() {
             &amp; Compliance
           </h1>
 
-          <div className="flex items-center gap-4 text-sm text-zinc-500 mb-12">
+          <div className="flex items-center gap-4 text-sm text-slate-400 mb-12">
             <span>20 March 2026</span>
-            <span className="text-zinc-700">|</span>
+            <span className="text-slate-600">|</span>
             <span>By Olushola Oladipupo</span>
-            <span className="text-zinc-700">|</span>
+            <span className="text-slate-600">|</span>
             <span className="flex items-center gap-1">
               <Clock className="w-3 h-3" />
               7 min read
             </span>
           </div>
 
-          <div className="prose prose-invert max-w-none">
-            <p className="text-zinc-300 leading-relaxed mb-4 text-lg">
+          <div className="prose prose-slate max-w-none">
+            <p className="text-slate-500 leading-relaxed mb-4 text-lg">
               It&apos;s January. Self-assessment deadline is in 3 weeks.
               You&apos;ve got 40 clients who haven&apos;t sent their
               records yet. You&apos;ve sent reminder emails. Half of them
@@ -90,7 +90,7 @@ export default function BlogPost() {
               clients file late.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               If you run a small accounting practice or bookkeeping firm,
               this is your life every quarter. Chasing documents. Chasing
               deadlines. Onboarding new clients with the same 15-step
@@ -98,13 +98,13 @@ export default function BlogPost() {
               questions about VAT thresholds and dividend allowances.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               The technical accounting work &mdash; the stuff that actually
               requires your expertise &mdash; gets squeezed into whatever
               time is left after the admin. It shouldn&apos;t be this way.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               AI automation can take the repetitive operational work off
               your plate so you can focus on advisory, compliance, and
               growing your practice. Here are five automations that are
@@ -116,8 +116,8 @@ export default function BlogPost() {
               1. Automated Client Onboarding
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-2">
-              <strong className="text-zinc-100">Problem:</strong> Every new
+            <p className="text-slate-500 leading-relaxed mb-2">
+              <strong className="text-slate-900">Problem:</strong> Every new
               client needs an engagement letter, ID verification for AML
               checks, proof of address, UTR and company details, bank
               statements, previous accountant&apos;s handover, and
@@ -127,8 +127,8 @@ export default function BlogPost() {
               their passport and you have to ask again.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Solution:</strong> An AI
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Solution:</strong> An AI
               onboarding system that sends new clients a branded,
               step-by-step portal. It guides them through each required
               document with clear instructions and examples. The system
@@ -139,8 +139,8 @@ export default function BlogPost() {
               notification when the file is complete and ready for review.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Result:</strong> A
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Result:</strong> A
               bookkeeping firm in Bristol reduced onboarding time from 4
               hours to 45 minutes per client. With 5 new clients per month,
               that&apos;s 16 hours saved monthly. At a charge-out rate of
@@ -149,7 +149,7 @@ export default function BlogPost() {
               taking on additional clients.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               The client experience is better too. Instead of a chain of 12
               emails asking for different documents, they get one clear
               process. First impressions matter, and a smooth onboarding
@@ -161,8 +161,8 @@ export default function BlogPost() {
               2. Deadline Reminder Sequences
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-2">
-              <strong className="text-zinc-100">Problem:</strong> You&apos;re
+            <p className="text-slate-500 leading-relaxed mb-2">
+              <strong className="text-slate-900">Problem:</strong> You&apos;re
               managing deadlines for self-assessment (31 January), VAT
               returns (quarterly), Corporation Tax (9 months after year-end),
               confirmation statements, payroll submissions, CIS returns,
@@ -171,8 +171,8 @@ export default function BlogPost() {
               &pound;100 HMRC penalty (minimum) and a very unhappy client.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Solution:</strong> An
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Solution:</strong> An
               automated deadline management system that maintains a master
               calendar of every client obligation. It sends clients
               structured reminder sequences: 60 days out (&ldquo;Your VAT
@@ -184,8 +184,8 @@ export default function BlogPost() {
               tone and includes a direct link to upload documents.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Result:</strong> An
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Result:</strong> An
               accounting practice in Manchester with 120 clients went from
               8 late filings per year to zero in the first 12 months. That
               saved their clients roughly &pound;3,200 in HMRC penalties.
@@ -194,7 +194,7 @@ export default function BlogPost() {
               the system handled it automatically.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               The best part? Clients actually appreciate the reminders.
               They&apos;d rather get a structured sequence than a panicked
               email from their accountant 3 days before the deadline.
@@ -205,8 +205,8 @@ export default function BlogPost() {
               3. Receipt &amp; Invoice Processing
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-2">
-              <strong className="text-zinc-100">Problem:</strong> Your
+            <p className="text-slate-500 leading-relaxed mb-2">
+              <strong className="text-slate-900">Problem:</strong> Your
               clients send you receipts in every format imaginable. Photos
               of crumpled paper. PDF attachments. Screenshots of bank
               statements. A shoebox at year-end. You spend hours manually
@@ -215,8 +215,8 @@ export default function BlogPost() {
               bookkeeping, and it&apos;s where errors creep in.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Solution:</strong> AI-powered
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Solution:</strong> AI-powered
               receipt and invoice processing. Clients photograph receipts
               or forward invoice emails to a dedicated address. The system
               automatically extracts the date, amount, supplier, VAT, and
@@ -225,8 +225,8 @@ export default function BlogPost() {
               just approve or adjust &mdash; no manual data entry.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Result:</strong> A
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Result:</strong> A
               bookkeeping practice in London processing records for 60
               clients reduced data entry time by 70%. That freed up 25
               hours per month &mdash; the equivalent of hiring a
@@ -235,7 +235,7 @@ export default function BlogPost() {
               cover.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               Accuracy improved too. Manual data entry has an error rate
               of roughly 1&ndash;3%. AI extraction drops that below 0.5%,
               meaning fewer corrections during review and cleaner accounts.
@@ -246,8 +246,8 @@ export default function BlogPost() {
               4. Client Query Chatbot
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-2">
-              <strong className="text-zinc-100">Problem:</strong> Every week,
+            <p className="text-slate-500 leading-relaxed mb-2">
+              <strong className="text-slate-900">Problem:</strong> Every week,
               you answer the same questions. &ldquo;What&apos;s the VAT
               threshold?&rdquo; &ldquo;Can I claim for my home
               office?&rdquo; &ldquo;When is my Corporation Tax due?&rdquo;
@@ -257,8 +257,8 @@ export default function BlogPost() {
               per week across all your clients.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Solution:</strong> A branded
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Solution:</strong> A branded
               AI chatbot on your client portal or WhatsApp that handles
               common questions instantly. It&apos;s trained on UK tax rules,
               your practice&apos;s policies, and each client&apos;s
@@ -268,8 +268,8 @@ export default function BlogPost() {
               to you with a summary of what the client asked.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Result:</strong> An
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Result:</strong> An
               accounting firm in Birmingham deployed a client chatbot and
               measured a 45% reduction in routine email enquiries. That
               saved roughly 8 hours per week across the team. Clients
@@ -278,7 +278,7 @@ export default function BlogPost() {
               instead of waiting until Monday morning.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               The chatbot doesn&apos;t replace your advisory role. It
               handles the FAQ-level queries so that when clients do reach
               you, it&apos;s for the substantive work where your expertise
@@ -290,8 +290,8 @@ export default function BlogPost() {
               5. Monthly Report Generation
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-2">
-              <strong className="text-zinc-100">Problem:</strong> Your
+            <p className="text-slate-500 leading-relaxed mb-2">
+              <strong className="text-slate-900">Problem:</strong> Your
               higher-value clients expect monthly management reports.
               Pulling the data, formatting the report, writing the
               commentary, and sending it out takes 1&ndash;2 hours per
@@ -300,8 +300,8 @@ export default function BlogPost() {
               report production instead of analysis and advice.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Solution:</strong> An
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Solution:</strong> An
               automated system that pulls data from your accounting
               software (Xero, QuickBooks, FreeAgent), generates a branded
               report with key metrics (profit &amp; loss, cash position,
@@ -313,8 +313,8 @@ export default function BlogPost() {
               commentary, make any adjustments, and hit send.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Result:</strong> A practice
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Result:</strong> A practice
               in Edinburgh automated monthly reports for 20 clients and
               cut report production time from 90 minutes to 15 minutes per
               client. That&apos;s 25 hours saved per month. They used
@@ -324,7 +324,7 @@ export default function BlogPost() {
               in additional monthly revenue.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               The shift is powerful: instead of spending time producing
               reports, you spend it interpreting them. That&apos;s where
               the real value is &mdash; and what clients are willing to
@@ -332,20 +332,20 @@ export default function BlogPost() {
             </p>
 
             {/* Summary */}
-            <hr className="border-zinc-800 my-10" />
+            <hr className="border-slate-200 my-10" />
 
             <h2 className="text-2xl font-bold mt-8 mb-4">
               The Bottom Line
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               Accounting is one of the most automation-ready professions.
               The work is structured, deadline-driven, and full of
               repetitive processes. Yet most small practices are still
               running on email chains, manual data entry, and memory.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               The firms growing fastest in 2026 are the ones that have
               automated the operational grind. They onboard clients in a
               day instead of a fortnight. They never miss a deadline.
@@ -354,7 +354,7 @@ export default function BlogPost() {
               monthly reports in 15 minutes.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               That freed-up time goes into advisory work &mdash; the
               high-value, high-margin services that clients will actually
               pay more for. It&apos;s not about working harder. It&apos;s
@@ -362,7 +362,7 @@ export default function BlogPost() {
               for the high-value work.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               If you&apos;re running a small practice and feel like
               you&apos;re drowning in admin, you probably are. And the
               solution isn&apos;t hiring another person &mdash; it&apos;s
@@ -372,26 +372,26 @@ export default function BlogPost() {
           </div>
 
           {/* Related Articles */}
-          <div className="mt-12 border border-zinc-800 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-4 text-zinc-100">Related Articles</h3>
+          <div className="mt-12 border border-slate-200 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-4 text-slate-900">Related Articles</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/blog/ai-for-coaches" className="text-blue-400 hover:text-blue-300 transition-colors">
+                <Link href="/blog/ai-for-coaches" className="text-blue-600 hover:text-blue-600 transition-colors">
                   AI for Coaches and Consultants: Automate Your Admin
                 </Link>
               </li>
               <li>
-                <Link href="/blog/ai-for-dentists" className="text-blue-400 hover:text-blue-300 transition-colors">
+                <Link href="/blog/ai-for-dentists" className="text-blue-600 hover:text-blue-600 transition-colors">
                   AI for Dentists &amp; Dental Practices: Reduce No-Shows by 60%
                 </Link>
               </li>
               <li>
-                <Link href="/blog/ai-chatbot-small-business" className="text-blue-400 hover:text-blue-300 transition-colors">
+                <Link href="/blog/ai-chatbot-small-business" className="text-blue-600 hover:text-blue-600 transition-colors">
                   AI Customer Service Chatbot for Small Businesses
                 </Link>
               </li>
               <li>
-                <Link href="/services/email-assistant" className="text-zinc-300 hover:text-white transition-colors">
+                <Link href="/services/email-assistant" className="text-slate-500 hover:text-slate-900 transition-colors">
                   View our AI Email Assistant service &rarr;
                 </Link>
               </li>
@@ -399,11 +399,11 @@ export default function BlogPost() {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-16 bg-gradient-to-br from-blue-500/10 to-zinc-900 border border-zinc-800 rounded-xl p-8 text-center">
+          <div className="mt-16 bg-blue-50 border border-blue-200 rounded-xl p-8 text-center">
             <h3 className="text-xl font-semibold mb-2">
               Want to Know Which Automations Would Work for Your Practice?
             </h3>
-            <p className="text-zinc-400 mb-6 max-w-lg mx-auto">
+            <p className="text-slate-600 mb-6 max-w-lg mx-auto">
               Every accounting practice is different. Take our free AI
               Readiness Audit and we&apos;ll tell you exactly where
               automation would save you the most time &mdash; and what
@@ -411,12 +411,12 @@ export default function BlogPost() {
             </p>
             <Link
               href="/audit"
-              className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
             >
               Get Your Free AI Readiness Audit
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <p className="text-zinc-500 text-sm mt-3">
+            <p className="text-slate-400 text-sm mt-3">
               Takes 2 minutes. No obligation. Built for professional
               services.
             </p>

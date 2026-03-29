@@ -11,11 +11,14 @@ interface SectionHeadingProps {
 }
 
 /**
+ * Premium section heading with eyebrow label.
+ * Uses DM Sans for headings (set via CSS heading rules).
+ *
  * Usage:
  * <SectionHeading
  *   eyebrow="What we do"
  *   heading="AI automation that pays for itself"
- *   description="We build and maintain automation systems for UK small businesses..."
+ *   description="We build and maintain automation systems..."
  *   align="center"
  * />
  */
@@ -38,19 +41,19 @@ export default function SectionHeading({
       )}
     >
       {eyebrow && (
-        <span className="text-xs font-semibold tracking-widest uppercase text-blue-500">
+        <span className="eyebrow">
           {eyebrow}
         </span>
       )}
 
-      <Tag className="text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl">
+      <Tag className="heading-section text-3xl sm:text-4xl lg:text-[56px]">
         {heading}
       </Tag>
 
       {description && (
         <p
           className={cn(
-            "text-zinc-400 text-base leading-relaxed",
+            "text-slate-600 text-base leading-relaxed sm:text-lg",
             isCenter ? "max-w-2xl" : "max-w-xl"
           )}
         >

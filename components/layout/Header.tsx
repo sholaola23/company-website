@@ -2,26 +2,36 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import Logo from "@/components/shared/Logo";
 import CTAButton from "@/components/shared/CTAButton";
 import { cn } from "@/lib/utils";
 
+const SERVICE_LINKS = [
+  { label: "AI Lead Intake & Booking", href: "/services/lead-intake" },
+  { label: "AI Email Assistant", href: "/services/email-assistant" },
+  { label: "SEO Content Automation", href: "/services/seo-content" },
+  { label: "WhatsApp Customer Bot", href: "/services/whatsapp-bot" },
+  { label: "AI Workshops", href: "/services/ai-workshop" },
+  { label: "Website Development", href: "/services/website-development" },
+  { label: "View All Services", href: "/services" },
+];
+
 const NAV_LINKS = [
-  { label: "Services", href: "/services" },
-  { label: "ROI Calculator", href: "/tools/ai-roi-calculator" },
-  { label: "Case Studies", href: "/case-studies" },
   { label: "About", href: "/about" },
+  { label: "Case Studies", href: "/case-studies" },
   { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ];
 
 /**
- * Sticky header with semi-transparent blur on scroll.
- * Mobile: hamburger menu with slide-down nav overlay.
+ * Premium sticky header — white background, subtle shadow on scroll.
+ * Services dropdown on desktop, full-screen overlay on mobile.
  */
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 8);
@@ -29,7 +39,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile nav on route change / resize
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) setMobileOpen(false);
@@ -38,7 +47,6 @@ export default function Header() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Prevent body scroll when mobile nav is open
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => {
@@ -51,8 +59,8 @@ export default function Header() {
       className={cn(
         "fixed top-0 inset-x-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800/60"
-          : "bg-transparent"
+          ? "bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100"
+          : "bg-white"
       )}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -60,7 +68,7 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg"
+            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-lg"
             aria-label="Oladipupo Consulting — home"
           >
             <Logo size="sm" />
@@ -68,11 +76,50 @@ export default function Header() {
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
+            {/* Services dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+              <button
+                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-600 rounded-lg transition-colors duration-150 hover:text-slate-900 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+                aria-expanded={servicesOpen}
+                aria-haspopup="true"
+              >
+                Services
+                <ChevronDown size={14} className={cn("transition-transform duration-200", servicesOpen && "rotate-180")} />
+              </button>
+
+              {/* Dropdown */}
+              <div
+                className={cn(
+                  "absolute left-0 top-full mt-1 w-64 rounded-xl bg-white border border-slate-200 shadow-lg py-2 transition-all duration-200 origin-top",
+                  servicesOpen
+                    ? "opacity-100 scale-100 pointer-events-auto"
+                    : "opacity-0 scale-95 pointer-events-none"
+                )}
+              >
+                {SERVICE_LINKS.map((link, i) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={cn(
+                      "block px-4 py-2.5 text-sm text-slate-600 hover:text-blue-600 hover:bg-blue-50/50 transition-colors duration-150",
+                      i === SERVICE_LINKS.length - 1 && "border-t border-slate-100 mt-1 pt-3 font-semibold text-blue-600"
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-3 py-2 text-sm font-medium text-zinc-400 rounded-lg transition-colors duration-150 hover:text-zinc-50 hover:bg-zinc-800/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                className="px-3 py-2 text-sm font-medium text-slate-600 rounded-lg transition-colors duration-150 hover:text-slate-900 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
               >
                 {link.label}
               </Link>
@@ -88,7 +135,7 @@ export default function Header() {
 
           {/* Mobile hamburger */}
           <button
-            className="flex md:hidden items-center justify-center w-9 h-9 rounded-lg text-zinc-400 hover:text-zinc-50 hover:bg-zinc-800/60 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            className="flex md:hidden items-center justify-center w-9 h-9 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={mobileOpen}
@@ -106,23 +153,41 @@ export default function Header() {
         aria-label="Mobile navigation"
         className={cn(
           "md:hidden overflow-hidden transition-all duration-300 ease-in-out",
-          "bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800/60",
+          "bg-white border-b border-slate-200 shadow-lg",
           mobileOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         )}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 pb-6 pt-2 flex flex-col gap-1">
-          {NAV_LINKS.map((link) => (
+          {/* Services header */}
+          <p className="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-widest text-slate-400">
+            Services
+          </p>
+          {SERVICE_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="px-3 py-3 text-base font-medium text-zinc-400 rounded-lg transition-colors duration-150 hover:text-zinc-50 hover:bg-zinc-800/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+              className="px-3 py-2.5 text-sm font-medium text-slate-600 rounded-lg transition-colors duration-150 hover:text-blue-600 hover:bg-blue-50/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
             >
               {link.label}
             </Link>
           ))}
 
-          <div className="mt-3 pt-3 border-t border-zinc-800/60">
+          {/* Separator */}
+          <div className="my-2 border-t border-slate-100" />
+
+          {NAV_LINKS.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setMobileOpen(false)}
+              className="px-3 py-2.5 text-base font-medium text-slate-600 rounded-lg transition-colors duration-150 hover:text-slate-900 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+            >
+              {link.label}
+            </Link>
+          ))}
+
+          <div className="mt-3 pt-3 border-t border-slate-100">
             <CTAButton
               href="/audit"
               variant="primary"

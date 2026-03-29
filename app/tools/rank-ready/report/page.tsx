@@ -230,11 +230,11 @@ function ReportContent() {
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] gap-4">
-        <Loader2 className="h-8 w-8 text-blue-400 animate-spin" />
-        <p className="text-zinc-400 text-center">
+        <Loader2 className="h-8 w-8 text-blue-600 animate-spin" />
+        <p className="text-slate-600 text-center">
           Generating your report... This can take up to 2 minutes.
         </p>
-        <p className="text-zinc-500 text-sm text-center">
+        <p className="text-slate-400 text-sm text-center">
           We will also email it to you when it is ready.
         </p>
       </div>
@@ -245,9 +245,9 @@ function ReportContent() {
   if (!report) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] gap-4">
-        <p className="text-zinc-400 text-center">
+        <p className="text-slate-600 text-center">
           No report data found. Please{" "}
-          <Link href="/tools/rank-ready" className="text-blue-400 underline">
+          <Link href="/tools/rank-ready" className="text-blue-600 underline">
             start a new audit
           </Link>
           .
@@ -262,22 +262,22 @@ function ReportContent() {
       case "description":
         return report.gbpDescription ? (
           <div className="space-y-6">
-            <p className="text-sm text-zinc-400">
+            <p className="text-sm text-slate-600">
               Three optimised Google Business Profile descriptions ready to
               copy and paste. Each is under 750 characters.
             </p>
             {report.gbpDescription.variants.map((v, i) => (
               <div
                 key={i}
-                className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5"
+                className="rounded-xl border border-slate-200 bg-slate-50/40 p-5"
               >
                 <div className="flex items-center justify-between mb-3">
-                  <h4 className="text-sm font-semibold text-zinc-200">
+                  <h4 className="text-sm font-semibold text-slate-900">
                     {v.label}
                   </h4>
                   <button
                     onClick={() => copyText(v.text, `desc-${i}`)}
-                    className="flex items-center gap-1.5 text-xs text-blue-400 hover:text-blue-300"
+                    className="flex items-center gap-1.5 text-xs text-blue-600 hover:text-blue-600"
                   >
                     {copiedId === `desc-${i}` ? (
                       <>
@@ -290,10 +290,10 @@ function ReportContent() {
                     )}
                   </button>
                 </div>
-                <p className="text-sm text-zinc-300 leading-relaxed whitespace-pre-wrap">
+                <p className="text-sm text-slate-500 leading-relaxed whitespace-pre-wrap">
                   {v.text}
                 </p>
-                <div className="flex items-center gap-4 mt-3 text-xs text-zinc-500">
+                <div className="flex items-center gap-4 mt-3 text-xs text-slate-400">
                   <span>{v.character_count} characters</span>
                   <span>
                     Keywords: {v.keywords_used?.join(", ") || "N/A"}
@@ -302,11 +302,11 @@ function ReportContent() {
               </div>
             ))}
             {report.gbpDescription.tips?.length > 0 && (
-              <div className="rounded-xl border border-blue-500/20 bg-blue-500/5 p-4">
-                <h4 className="text-sm font-semibold text-blue-400 mb-2">
+              <div className="rounded-xl border border-blue-600/20 bg-blue-600/5 p-4">
+                <h4 className="text-sm font-semibold text-blue-600 mb-2">
                   Tips
                 </h4>
-                <ul className="text-sm text-zinc-400 space-y-1">
+                <ul className="text-sm text-slate-600 space-y-1">
                   {report.gbpDescription.tips.map((t, i) => (
                     <li key={i}>- {t}</li>
                   ))}
@@ -321,15 +321,15 @@ function ReportContent() {
           <div className="space-y-6">
             <div className="flex items-center gap-4">
               <div className="rounded-lg bg-emerald-500/10 border border-emerald-500/20 px-4 py-2">
-                <span className="text-xs text-zinc-400">Monthly Target</span>
-                <p className="text-2xl font-bold text-emerald-400">
+                <span className="text-xs text-slate-600">Monthly Target</span>
+                <p className="text-2xl font-bold text-emerald-600">
                   {report.reviewStrategy.monthly_target}
                 </p>
               </div>
             </div>
 
             <div>
-              <h4 className="text-sm font-semibold text-zinc-200 mb-3">
+              <h4 className="text-sm font-semibold text-slate-900 mb-3">
                 Review Request Templates
               </h4>
               {(
@@ -344,15 +344,15 @@ function ReportContent() {
               ).map(([label, text], i) => (
                 <div
                   key={i}
-                  className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 mb-3"
+                  className="rounded-xl border border-slate-200 bg-slate-50/40 p-4 mb-3"
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-medium text-zinc-400">
+                    <span className="text-xs font-medium text-slate-600">
                       {label}
                     </span>
                     <button
                       onClick={() => copyText(text, `review-req-${i}`)}
-                      className="flex items-center gap-1.5 text-xs text-blue-400 hover:text-blue-300"
+                      className="flex items-center gap-1.5 text-xs text-blue-600 hover:text-blue-600"
                     >
                       {copiedId === `review-req-${i}` ? (
                         <>
@@ -365,7 +365,7 @@ function ReportContent() {
                       )}
                     </button>
                   </div>
-                  <p className="text-sm text-zinc-300 whitespace-pre-wrap">
+                  <p className="text-sm text-slate-500 whitespace-pre-wrap">
                     {text}
                   </p>
                 </div>
@@ -373,7 +373,7 @@ function ReportContent() {
             </div>
 
             <div>
-              <h4 className="text-sm font-semibold text-zinc-200 mb-3">
+              <h4 className="text-sm font-semibold text-slate-900 mb-3">
                 Review Response Templates
               </h4>
               {(
@@ -385,15 +385,15 @@ function ReportContent() {
               ).map(([label, text], i) => (
                 <div
                   key={i}
-                  className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-4 mb-3"
+                  className="rounded-xl border border-slate-200 bg-slate-50/40 p-4 mb-3"
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-medium text-zinc-400">
+                    <span className="text-xs font-medium text-slate-600">
                       {label} Review
                     </span>
                     <button
                       onClick={() => copyText(text, `review-resp-${i}`)}
-                      className="flex items-center gap-1.5 text-xs text-blue-400 hover:text-blue-300"
+                      className="flex items-center gap-1.5 text-xs text-blue-600 hover:text-blue-600"
                     >
                       {copiedId === `review-resp-${i}` ? (
                         <>
@@ -406,7 +406,7 @@ function ReportContent() {
                       )}
                     </button>
                   </div>
-                  <p className="text-sm text-zinc-300 whitespace-pre-wrap">
+                  <p className="text-sm text-slate-500 whitespace-pre-wrap">
                     {text}
                   </p>
                 </div>
@@ -415,10 +415,10 @@ function ReportContent() {
 
             {report.reviewStrategy.quick_wins?.length > 0 && (
               <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-4">
-                <h4 className="text-sm font-semibold text-emerald-400 mb-2">
+                <h4 className="text-sm font-semibold text-emerald-600 mb-2">
                   Quick Wins — Do This Week
                 </h4>
-                <ol className="text-sm text-zinc-400 space-y-1 list-decimal list-inside">
+                <ol className="text-sm text-slate-600 space-y-1 list-decimal list-inside">
                   {report.reviewStrategy.quick_wins.map((w, i) => (
                     <li key={i}>{w}</li>
                   ))}
@@ -431,16 +431,16 @@ function ReportContent() {
       case "services":
         return report.serviceDescriptions ? (
           <div className="space-y-6">
-            <p className="text-sm text-zinc-400">
+            <p className="text-sm text-slate-600">
               SEO-optimised service page content ready to add to your website.
             </p>
             {report.serviceDescriptions.pages.map((page, i) => (
               <div
                 key={i}
-                className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5"
+                className="rounded-xl border border-slate-200 bg-slate-50/40 p-5"
               >
                 <div className="flex items-center justify-between mb-3">
-                  <h4 className="text-base font-semibold text-zinc-200">
+                  <h4 className="text-base font-semibold text-slate-900">
                     {page.service_name}
                   </h4>
                   <button
@@ -450,7 +450,7 @@ function ReportContent() {
                         `service-${i}`
                       )
                     }
-                    className="flex items-center gap-1.5 text-xs text-blue-400 hover:text-blue-300"
+                    className="flex items-center gap-1.5 text-xs text-blue-600 hover:text-blue-600"
                   >
                     {copiedId === `service-${i}` ? (
                       <>
@@ -464,26 +464,26 @@ function ReportContent() {
                   </button>
                 </div>
                 <div className="space-y-2 text-sm">
-                  <div className="text-xs text-zinc-500">
+                  <div className="text-xs text-slate-400">
                     <span className="font-medium">Page Title:</span>{" "}
                     {page.page_title}
                   </div>
-                  <div className="text-xs text-zinc-500">
+                  <div className="text-xs text-slate-400">
                     <span className="font-medium">Meta Description:</span>{" "}
                     {page.meta_description}
                   </div>
-                  <h5 className="text-lg font-bold text-zinc-100 mt-3">
+                  <h5 className="text-lg font-bold text-slate-900 mt-3">
                     {page.h1}
                   </h5>
-                  <p className="text-zinc-300 leading-relaxed">
+                  <p className="text-slate-500 leading-relaxed">
                     {page.intro_paragraph}
                   </p>
                   {page.sections.map((sec, j) => (
                     <div key={j} className="mt-3">
-                      <h6 className="text-sm font-semibold text-zinc-200 mb-1">
+                      <h6 className="text-sm font-semibold text-slate-900 mb-1">
                         {sec.heading}
                       </h6>
-                      <p className="text-zinc-400 leading-relaxed whitespace-pre-wrap">
+                      <p className="text-slate-600 leading-relaxed whitespace-pre-wrap">
                         {sec.content}
                       </p>
                     </div>
@@ -505,35 +505,35 @@ function ReportContent() {
         }
         return report.categoryAudit ? (
           <div className="space-y-6">
-            <p className="text-sm text-zinc-400">
+            <p className="text-sm text-slate-600">
               {report.categoryAudit.summary}
             </p>
 
             <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-4">
-              <h4 className="text-sm font-semibold text-emerald-400 mb-1">
+              <h4 className="text-sm font-semibold text-emerald-600 mb-1">
                 Recommended Primary Category
               </h4>
-              <p className="text-base font-bold text-zinc-100">
+              <p className="text-base font-bold text-slate-900">
                 {report.categoryAudit.recommended_primary.category}
               </p>
-              <p className="text-sm text-zinc-400 mt-1">
+              <p className="text-sm text-slate-600 mt-1">
                 {report.categoryAudit.recommended_primary.reason}
               </p>
             </div>
 
             <div>
-              <h4 className="text-sm font-semibold text-zinc-200 mb-3">
+              <h4 className="text-sm font-semibold text-slate-900 mb-3">
                 Recommended Secondary Categories
               </h4>
               <div className="space-y-2">
                 {report.categoryAudit.recommended_secondary.map((cat, i) => (
                   <div
                     key={i}
-                    className="rounded-lg border border-zinc-800 bg-zinc-900/40 p-3 flex items-start justify-between gap-3"
+                    className="rounded-lg border border-slate-200 bg-slate-50/40 p-3 flex items-start justify-between gap-3"
                   >
                     <div>
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-sm font-medium text-zinc-200">
+                        <span className="text-sm font-medium text-slate-900">
                           {cat.category}
                         </span>
                         <span
@@ -542,14 +542,14 @@ function ReportContent() {
                               ? "bg-red-500/15 text-red-400"
                               : cat.priority === "medium"
                                 ? "bg-yellow-500/15 text-yellow-400"
-                                : "bg-zinc-500/15 text-zinc-400"
+                                : "bg-slate-400/15 text-slate-600"
                           }`}
                         >
                           {cat.priority}
                         </span>
                       </div>
-                      <p className="text-xs text-zinc-400">{cat.reason}</p>
-                      <p className="text-xs text-zinc-500 mt-1">
+                      <p className="text-xs text-slate-600">{cat.reason}</p>
+                      <p className="text-xs text-slate-400 mt-1">
                         Searches unlocked:{" "}
                         {cat.searches_it_unlocks?.join(", ") || "N/A"}
                       </p>
@@ -561,18 +561,18 @@ function ReportContent() {
 
             {report.categoryAudit.competitor_comparison?.length > 0 && (
               <div>
-                <h4 className="text-sm font-semibold text-zinc-200 mb-3">
+                <h4 className="text-sm font-semibold text-slate-900 mb-3">
                   Competitor Comparison
                 </h4>
                 {report.categoryAudit.competitor_comparison.map((comp, i) => (
                   <div
                     key={i}
-                    className="rounded-lg border border-zinc-800 bg-zinc-900/40 p-3 mb-2"
+                    className="rounded-lg border border-slate-200 bg-slate-50/40 p-3 mb-2"
                   >
-                    <span className="text-sm font-medium text-zinc-200">
+                    <span className="text-sm font-medium text-slate-900">
                       {comp.competitor}
                     </span>
-                    <p className="text-xs text-zinc-400 mt-1">
+                    <p className="text-xs text-slate-600 mt-1">
                       Likely categories:{" "}
                       {comp.likely_categories?.join(", ") || "Unknown"}
                     </p>
@@ -594,26 +594,26 @@ function ReportContent() {
         }
         return report.postingCalendar ? (
           <div className="space-y-6">
-            <p className="text-sm text-zinc-400">
+            <p className="text-sm text-slate-600">
               {report.postingCalendar.strategy_notes}
             </p>
             {report.postingCalendar.weeks.map((week) => (
               <div key={week.week_number}>
-                <h4 className="text-sm font-semibold text-zinc-200 mb-3">
+                <h4 className="text-sm font-semibold text-slate-900 mb-3">
                   Week {week.week_number}
                 </h4>
                 <div className="space-y-3">
                   {week.posts.map((post, j) => (
                     <div
                       key={j}
-                      className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-4"
+                      className="rounded-xl border border-slate-200 bg-slate-50/40 p-4"
                     >
                       <div className="flex items-center justify-between mb-2">
                         <div className="flex items-center gap-2">
-                          <span className="text-xs font-medium text-blue-400">
+                          <span className="text-xs font-medium text-blue-600">
                             {post.day}
                           </span>
-                          <span className="text-[10px] bg-zinc-800 text-zinc-400 px-1.5 py-0.5 rounded">
+                          <span className="text-[10px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded">
                             {post.post_type}
                           </span>
                         </div>
@@ -624,7 +624,7 @@ function ReportContent() {
                               `post-${week.week_number}-${j}`
                             )
                           }
-                          className="flex items-center gap-1.5 text-xs text-blue-400 hover:text-blue-300"
+                          className="flex items-center gap-1.5 text-xs text-blue-600 hover:text-blue-600"
                         >
                           {copiedId ===
                           `post-${week.week_number}-${j}` ? (
@@ -638,13 +638,13 @@ function ReportContent() {
                           )}
                         </button>
                       </div>
-                      <h5 className="text-sm font-semibold text-zinc-100 mb-1">
+                      <h5 className="text-sm font-semibold text-slate-900 mb-1">
                         {post.title}
                       </h5>
-                      <p className="text-sm text-zinc-400 leading-relaxed whitespace-pre-wrap">
+                      <p className="text-sm text-slate-600 leading-relaxed whitespace-pre-wrap">
                         {post.body}
                       </p>
-                      <div className="flex items-center gap-4 mt-3 text-xs text-zinc-500">
+                      <div className="flex items-center gap-4 mt-3 text-xs text-slate-400">
                         <span>CTA: {post.cta_type}</span>
                         <span>Image: {post.image_suggestion}</span>
                       </div>
@@ -665,17 +665,17 @@ function ReportContent() {
         <span className="text-xs font-semibold tracking-widest uppercase text-emerald-500 mb-4 block">
           {isPreview ? "Free Preview" : "Full Report"}
         </span>
-        <h1 className="text-3xl sm:text-4xl font-bold text-zinc-50 leading-tight tracking-tight mb-3">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-slate-900 leading-tight tracking-tight mb-3">
           Local SEO Report: {report.businessName}
         </h1>
-        <p className="text-sm text-zinc-500">
+        <p className="text-sm text-slate-400">
           Generated on {new Date().toLocaleDateString("en-GB")}
         </p>
       </div>
 
       {/* Tabs */}
       <div className="max-w-3xl mx-auto">
-        <div className="flex overflow-x-auto gap-1 mb-8 border-b border-zinc-800 pb-px">
+        <div className="flex overflow-x-auto gap-1 mb-8 border-b border-slate-200 pb-px">
           {TABS.map((tab) => {
             const Icon = tab.icon;
             const active = activeTab === tab.id;
@@ -686,8 +686,8 @@ function ReportContent() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center gap-2 px-4 py-2.5 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${
                   active
-                    ? "border-blue-500 text-blue-400"
-                    : "border-transparent text-zinc-500 hover:text-zinc-300"
+                    ? "border-blue-600 text-blue-600"
+                    : "border-transparent text-slate-400 hover:text-slate-500"
                 }`}
               >
                 {locked ? (
@@ -717,10 +717,10 @@ function ReportContent() {
         {/* Upgrade CTA for preview */}
         {isPreview && (
           <div className="mt-10 rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-6 text-center">
-            <h3 className="text-lg font-semibold text-zinc-100 mb-2">
+            <h3 className="text-lg font-semibold text-slate-900 mb-2">
               Get the Complete Report
             </h3>
-            <p className="text-sm text-zinc-400 mb-4">
+            <p className="text-sm text-slate-600 mb-4">
               Unlock GBP Category Audit and 4-Week Posting Calendar — plus get
               a branded PDF emailed to you.
             </p>
@@ -735,17 +735,17 @@ function ReportContent() {
         )}
 
         {/* Bottom CTA */}
-        <div className="mt-12 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6 text-center">
-          <h3 className="text-lg font-semibold text-zinc-100 mb-2">
+        <div className="mt-12 rounded-2xl border border-slate-200 bg-slate-50/60 p-6 text-center">
+          <h3 className="text-lg font-semibold text-slate-900 mb-2">
             Want Us to Implement This for You?
           </h3>
-          <p className="text-sm text-zinc-400 mb-4">
+          <p className="text-sm text-slate-600 mb-4">
             Book a free 30-minute strategy call and we will walk through your
             report together, then handle the implementation.
           </p>
           <Link
             href="https://cal.com/sholastechnotes/free-ai-strategy-call"
-            className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-blue-500 transition-colors"
+            className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 transition-colors"
           >
             Book a Free Strategy Call
             <ArrowRight className="h-4 w-4" />
@@ -769,11 +769,11 @@ function LockedSection({
 }) {
   return (
     <div className="flex flex-col items-center justify-center py-16 text-center">
-      <div className="w-14 h-14 rounded-full bg-zinc-800 flex items-center justify-center mb-4">
-        <Lock className="h-6 w-6 text-zinc-500" />
+      <div className="w-14 h-14 rounded-full bg-slate-100 flex items-center justify-center mb-4">
+        <Lock className="h-6 w-6 text-slate-400" />
       </div>
-      <h4 className="text-lg font-semibold text-zinc-200 mb-2">{title}</h4>
-      <p className="text-sm text-zinc-400 max-w-md mb-6">{description}</p>
+      <h4 className="text-lg font-semibold text-slate-900 mb-2">{title}</h4>
+      <p className="text-sm text-slate-600 max-w-md mb-6">{description}</p>
       <Link
         href="/tools/rank-ready"
         className="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-emerald-500 transition-colors"
@@ -794,7 +794,7 @@ export default function RankReadyReportPage() {
     <Suspense
       fallback={
         <div className="flex items-center justify-center min-h-[60vh]">
-          <Loader2 className="h-8 w-8 text-blue-400 animate-spin" />
+          <Loader2 className="h-8 w-8 text-blue-600 animate-spin" />
         </div>
       }
     >

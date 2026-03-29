@@ -5,20 +5,20 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const headlines = [
   {
-    line1: "Save 8+ Hours a Week.",
+    static: "You Run Your Business.",
     highlight: "We Build the AI.",
   },
   {
-    line1: "Stop Losing Leads to",
-    highlight: "Slow Follow-Up",
+    static: "Stop Losing Leads to",
+    highlight: "Slow Follow-Up.",
   },
   {
-    line1: "From Conversation to",
-    highlight: "Live Automation in 14 Days",
+    static: "From Conversation to",
+    highlight: "Live Automation in 14 Days.",
   },
   {
-    line1: "Websites & Web Apps That",
-    highlight: "Win You Customers",
+    static: "Websites & Web Apps That",
+    highlight: "Win You Customers.",
   },
 ];
 
@@ -34,8 +34,8 @@ export default function RotatingHeadline() {
 
   return (
     <h1
-      className="mx-auto max-w-4xl text-5xl font-bold leading-[1.1] tracking-tight text-zinc-50 sm:text-6xl lg:mx-0 lg:text-7xl"
-      aria-label={`${headlines[index].line1} ${headlines[index].highlight} — We'll fix that in 14 days`}
+      className="mx-auto max-w-4xl text-4xl font-bold leading-[1.1] tracking-[-0.04em] text-slate-900 sm:text-5xl lg:mx-0 lg:text-7xl"
+      aria-label={`${headlines[index].static} ${headlines[index].highlight}`}
     >
       <AnimatePresence mode="wait">
         <motion.span
@@ -46,15 +46,12 @@ export default function RotatingHeadline() {
           transition={{ duration: 0.4, ease: "easeInOut" }}
           className="block"
         >
-          {headlines[index].line1}{" "}
-          <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+          {headlines[index].static}{" "}
+          <span className="bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">
             {headlines[index].highlight}
           </span>
         </motion.span>
       </AnimatePresence>
-      <span className="block mt-10 text-zinc-50">
-        You Run Your Business.
-      </span>
     </h1>
   );
 }

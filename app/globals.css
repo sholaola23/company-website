@@ -1,60 +1,188 @@
 @import "tailwindcss";
 
+/* ============================================================================
+   OLADIPUPO CONSULTING — DESIGN SYSTEM v2.0 (Light & Premium)
+   Inspired by: Fliweel.tech (clean, bright, generous whitespace)
+   Brand identity: Blue (trust/tech), Amber (warmth/energy), White (clarity)
+   Principles: Customer Obsession, Highest Standards, Frugality (less = more)
+   ============================================================================ */
+
 :root {
-  --background: #09090b;
-  --foreground: #fafafa;
-  --accent-primary: #3b82f6;
-  --accent-secondary: #f59e0b;
-  --surface: #18181b;
-  --surface-raised: #27272a;
-  --border: #3f3f46;
-  --text-muted: #a1a1aa;
+  /* ── Brand Colours ────────────────────────────────────────────────────── */
+  --color-primary: #2563EB;          /* Blue-600 — buttons, links, accents */
+  --color-primary-hover: #1D4ED8;    /* Blue-700 — button hover */
+  --color-primary-light: #EFF6FF;    /* Blue-50 — tinted section backgrounds */
+  --color-primary-tint: rgba(37, 99, 235, 0.05); /* Blue at 5% — subtle sections */
+
+  --color-accent: #F59E0B;           /* Amber-500 — stat counters, highlights */
+  --color-accent-light: #FFFBEB;     /* Amber-50 — accent tint backgrounds */
+
+  --color-success: #059669;          /* Emerald-600 — guarantee, positive */
+  --color-success-light: #ECFDF5;    /* Emerald-50 */
+
+  /* ── Text ─────────────────────────────────────────────────────────────── */
+  --color-heading: #0F172A;          /* Slate-900 — headings (near-black) */
+  --color-body: #334155;             /* Slate-700 — body text */
+  --color-muted: #64748B;            /* Slate-500 — secondary text */
+  --color-subtle: #94A3B8;           /* Slate-400 — tertiary text */
+
+  /* ── Surfaces ─────────────────────────────────────────────────────────── */
+  --color-bg: #FFFFFF;               /* Main background */
+  --color-bg-alt: #F8FAFC;           /* Slate-50 — alternating sections */
+  --color-surface: #F1F5F9;          /* Slate-100 — cards, inputs */
+  --color-border: #E2E8F0;           /* Slate-200 — borders */
+  --color-border-strong: #CBD5E1;    /* Slate-300 — emphasized borders */
+
+  /* ── Dark surfaces (footer, dark sections) ────────────────────────────── */
+  --color-dark: #0F172A;             /* Slate-900 */
+  --color-dark-surface: #1E293B;     /* Slate-800 */
+  --color-dark-border: #334155;      /* Slate-700 */
+  --color-dark-text: #CBD5E1;        /* Slate-300 */
+  --color-dark-muted: #64748B;       /* Slate-500 */
+
+  /* ── Shadows ──────────────────────────────────────────────────────────── */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 50px -12px rgba(0, 0, 0, 0.12);
+  --shadow-button: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-card-hover: 0 8px 30px -4px rgba(0, 0, 0, 0.1);
+  --shadow-active: 0 4px 60px 0 rgba(0, 0, 0, 0.08);
+
+  /* ── Radii ────────────────────────────────────────────────────────────── */
+  --radius-pill: 9999px;             /* Fully rounded pill buttons */
+  --radius-card: 1.5rem;              /* 24px — cards, FAQ items */
+  --radius-card-lg: 1.875rem;        /* 30px — large feature cards (Fliweel: 30px) */
+  --radius-sm: 0.5rem;               /* 8px — small elements */
+  --radius-md: 0.75rem;              /* 12px — inputs, small cards */
+
+  /* ── Spacing ──────────────────────────────────────────────────────────── */
+  --section-padding: 8rem;            /* 128px — generous section spacing (Fliweel: 130px) */
+  --section-padding-lg: 8.5rem;      /* 136px — hero-level spacing */
+  --card-padding: 2rem;              /* 32px — card internal padding */
+  --content-max: 72rem;              /* 1152px — content max width */
+
+  /* ── Legacy bridge for Tailwind v4 ────────────────────────────────────── */
+  --background: #FFFFFF;
+  --foreground: #0F172A;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-dm-sans);
 }
 
+/* ── Base ───────────────────────────────────────────────────────────────── */
+
 html {
-  color-scheme: dark;
+  color-scheme: light;
   scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-body);
+  font-family: var(--font-inter), 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.7;
 }
 
-/* Focus ring — accessible, brand-consistent */
+/* ── Headings ──────────────────────────────────────────────────────────── */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
+  color: var(--color-heading);
+  line-height: 1.15;
+}
+
+/* ── Focus ring — accessible, brand-consistent ─────────────────────────── */
+
 *:focus-visible {
-  outline: 2px solid var(--accent-primary);
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
   border-radius: 4px;
 }
 
-/* Scrollbar — subtle dark theme */
+/* ── Scrollbar — clean light theme ─────────────────────────────────────── */
+
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--background);
+  background: var(--color-bg-alt);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
+  background: var(--color-border-strong);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-muted);
+  background: var(--color-muted);
 }
 
-/* Selection */
+/* ── Selection ─────────────────────────────────────────────────────────── */
+
 ::selection {
-  background: color-mix(in srgb, var(--accent-primary) 30%, transparent);
-  color: var(--foreground);
+  background: color-mix(in srgb, var(--color-primary) 20%, transparent);
+  color: var(--color-heading);
+}
+
+/* ── Utility classes for the new design system ─────────────────────────── */
+
+.section-padding {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+.section-padding-lg {
+  padding-top: var(--section-padding-lg);
+  padding-bottom: var(--section-padding-lg);
+}
+
+/* Pill button base */
+.btn-pill {
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  transition: all 0.2s ease-out;
+  box-shadow: var(--shadow-button);
+}
+.btn-pill:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: all 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Section heading typography */
+.heading-display {
+  font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--color-heading);
+}
+
+.heading-section {
+  font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  color: var(--color-heading);
+}
+
+/* Eyebrow label */
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
 }

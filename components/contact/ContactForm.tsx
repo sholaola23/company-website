@@ -19,7 +19,7 @@ const INITIAL: FormState = {
 };
 
 const inputBase =
-  "w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-sm text-zinc-50 placeholder:text-zinc-500 transition-colors duration-150 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500";
+  "w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-colors duration-150 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600";
 
 export default function ContactForm() {
   const [form, setForm] = useState<FormState>(INITIAL);
@@ -68,7 +68,7 @@ export default function ContactForm() {
         role="alert"
         aria-live="polite"
       >
-        <div className="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center">
+        <div className="w-12 h-12 rounded-full bg-blue-600/20 border border-blue-600/30 flex items-center justify-center">
           <svg
             width="20"
             height="20"
@@ -78,14 +78,14 @@ export default function ContactForm() {
             strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-blue-400"
+            className="text-blue-600"
             aria-hidden="true"
           >
             <polyline points="20 6 9 17 4 12" />
           </svg>
         </div>
-        <h3 className="text-lg font-semibold text-zinc-50">Message sent</h3>
-        <p className="text-sm text-zinc-400 max-w-xs">
+        <h3 className="text-lg font-semibold text-slate-900">Message sent</h3>
+        <p className="text-sm text-slate-600 max-w-xs">
           Thanks! We&apos;ve sent you a confirmation email. Olushola will
           personally follow up within 24 hours.
         </p>
@@ -103,9 +103,9 @@ export default function ContactForm() {
       <div className="flex flex-col gap-1.5">
         <label
           htmlFor={`${formId}-name`}
-          className="text-sm font-medium text-zinc-300"
+          className="text-sm font-medium text-slate-500"
         >
-          Name <span className="text-blue-400">*</span>
+          Name <span className="text-blue-600">*</span>
         </label>
         <input
           id={`${formId}-name`}
@@ -123,9 +123,9 @@ export default function ContactForm() {
       <div className="flex flex-col gap-1.5">
         <label
           htmlFor={`${formId}-email`}
-          className="text-sm font-medium text-zinc-300"
+          className="text-sm font-medium text-slate-500"
         >
-          Email <span className="text-blue-400">*</span>
+          Email <span className="text-blue-600">*</span>
         </label>
         <input
           id={`${formId}-email`}
@@ -143,10 +143,10 @@ export default function ContactForm() {
       <div className="flex flex-col gap-1.5">
         <label
           htmlFor={`${formId}-phone`}
-          className="text-sm font-medium text-zinc-300"
+          className="text-sm font-medium text-slate-500"
         >
           Phone{" "}
-          <span className="text-zinc-500 font-normal">(optional)</span>
+          <span className="text-slate-400 font-normal">(optional)</span>
         </label>
         <input
           id={`${formId}-phone`}
@@ -163,9 +163,9 @@ export default function ContactForm() {
       <div className="flex flex-col gap-1.5">
         <label
           htmlFor={`${formId}-message`}
-          className="text-sm font-medium text-zinc-300"
+          className="text-sm font-medium text-slate-500"
         >
-          Message <span className="text-blue-400">*</span>
+          Message <span className="text-blue-600">*</span>
         </label>
         <textarea
           id={`${formId}-message`}
@@ -193,10 +193,10 @@ export default function ContactForm() {
         disabled={status === "loading"}
         className={cn(
           "inline-flex items-center justify-center gap-2 font-medium rounded-lg",
-          "bg-blue-500 text-white border border-blue-500",
-          "hover:bg-blue-600 hover:border-blue-600",
+          "bg-blue-600 text-white border border-blue-600",
+          "hover:bg-blue-700 hover:border-blue-600",
           "transition-all duration-200 px-6 py-3 text-sm",
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950",
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
           "disabled:opacity-60 disabled:cursor-not-allowed"
         )}
       >

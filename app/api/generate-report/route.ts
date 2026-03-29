@@ -33,6 +33,7 @@ interface Finding {
   title: string;
   description: string;
   severity: "red" | "amber" | "green";
+  automationCategory?: "data-mover" | "triggered-communicator" | "report-builder";
 }
 
 interface QuickWin {
@@ -72,8 +73,17 @@ function getReportPrompt(data: GenerateReportBody): string {
   const { businessName, industry, website, instantAuditResults } = data;
   const { score, scoreLabel, findings, quickWins, recommendedTier, tierReason, summary } = instantAuditResults;
 
+  const CATEGORY_LABELS: Record<string, string> = {
+    "data-mover": "Data-Mover",
+    "triggered-communicator": "Triggered Communicator",
+    "report-builder": "Report Builder",
+  };
+
   const findingsText = findings
-    .map((f, i) => `${i + 1}. [${f.severity.toUpperCase()}] ${f.title}: ${f.description}`)
+    .map((f, i) => {
+      const categoryTag = f.automationCategory ? ` [${CATEGORY_LABELS[f.automationCategory] ?? f.automationCategory}]` : "";
+      return `${i + 1}. [${f.severity.toUpperCase()}]${categoryTag} ${f.title}: ${f.description}`;
+    })
     .join("\n");
 
   const quickWinsText = quickWins
@@ -110,11 +120,12 @@ THE REPORT MUST CONTAIN THESE 8 SECTIONS:
 4. **Competitor Landscape** — Analysis of how competitors in the ${industry} sector are using AI. What percentage of similar businesses have adopted AI tools? What advantages are early adopters gaining? Include specific examples relevant to ${industry} businesses.
 
 5. **Opportunity Map** — For each finding, create an "opportunity card" with:
+   - A category badge showing which of the Three Automation types it belongs to: "📦 Data-Mover", "📣 Triggered Communicator", or "📊 Report Builder" (use the automationCategory from the finding; style as a small pill badge above the card title)
    - A RED panel showing the current pain point
    - A GREEN panel showing what it looks like after automation
    - Estimated hours saved per week
    - Revenue impact estimate
-   Also include the quick wins as immediately actionable items.
+   Also include the quick wins as immediately actionable items. Below the opportunity cards, add a short callout box explaining the Three Automations Framework: "Every business has three automation bottlenecks — a Data-Mover, a Triggered Communicator, and a Report Builder. Fix all three and most teams reclaim 8–20 hours every week."
 
 6. **Time Reclaimed Breakdown** — A clear, styled table breaking down EXACTLY how many hours per week/month ${businessName} would reclaim in each automation area (e.g. Lead response: 8 hrs/week, Admin & scheduling: 6 hrs/week, Follow-ups: 4 hrs/week, etc.). Show a total row. Use a visual bar chart style (CSS-only bars) to make the time savings feel tangible. End with a statement like "That's X hours back every month — equivalent to hiring a part-time employee."
 

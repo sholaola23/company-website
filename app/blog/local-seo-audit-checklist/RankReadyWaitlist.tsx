@@ -49,7 +49,7 @@ export default function RankReadyWaitlist() {
 
   if (status === "success") {
     return (
-      <div className="bg-zinc-900 border border-emerald-500/30 rounded-xl p-8 text-center">
+      <div className="bg-slate-50 border border-emerald-500/30 rounded-xl p-8 text-center">
         <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-500/30">
           <svg
             width="20"
@@ -60,17 +60,17 @@ export default function RankReadyWaitlist() {
             strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-emerald-400"
+            className="text-emerald-600"
             aria-hidden="true"
           >
             <polyline points="20 6 9 17 4 12" />
           </svg>
         </div>
-        <p className="text-lg font-semibold text-zinc-50 mb-1">
+        <p className="text-lg font-semibold text-slate-900 mb-1">
           You&apos;re on the list.
         </p>
         <p
-          className="text-sm text-zinc-400"
+          className="text-sm text-slate-600"
           role="alert"
           aria-live="polite"
         >
@@ -82,14 +82,14 @@ export default function RankReadyWaitlist() {
   }
 
   return (
-    <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-8">
-      <p className="text-xs font-semibold uppercase tracking-widest text-blue-500 mb-2">
+    <div className="bg-slate-50 border border-slate-200 rounded-xl p-8">
+      <p className="text-xs font-semibold uppercase tracking-widest text-blue-600 mb-2">
         Coming Soon
       </p>
-      <h3 className="text-xl font-bold text-zinc-50 mb-2">
+      <h3 className="text-xl font-bold text-slate-900 mb-2">
         Get Early Access to RankReady
       </h3>
-      <p className="text-zinc-400 text-sm mb-6">
+      <p className="text-slate-600 text-sm mb-6">
         The automated local SEO audit tool that runs this entire 20-task
         checklist for your business. Enter your email to be first in line.
       </p>
@@ -111,17 +111,17 @@ export default function RankReadyWaitlist() {
           placeholder="you@example.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="flex-1 min-w-0 bg-zinc-950 border border-zinc-700 rounded-lg px-4 py-3 text-sm text-zinc-50 placeholder:text-zinc-500 transition-colors duration-150 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+          className="flex-1 min-w-0 bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-colors duration-150 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600"
         />
         <button
           type="submit"
           disabled={status === "loading"}
           className={cn(
             "shrink-0 inline-flex items-center justify-center gap-2 font-medium rounded-lg",
-            "bg-blue-500 text-white border border-blue-500",
-            "hover:bg-blue-600 hover:border-blue-600",
+            "bg-blue-600 text-white border border-blue-600",
+            "hover:bg-blue-700 hover:border-blue-600",
             "transition-all duration-200 px-6 py-3 text-sm",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
             "disabled:opacity-60 disabled:cursor-not-allowed"
           )}
         >
@@ -164,7 +164,7 @@ export default function RankReadyWaitlist() {
         </p>
       )}
 
-      <p className="mt-4 text-xs text-zinc-600">
+      <p className="mt-4 text-xs text-slate-900">
         No spam. We&apos;ll only email you about RankReady.
       </p>
     </div>

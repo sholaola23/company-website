@@ -75,13 +75,13 @@ export default function AboutPage() {
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
       {/* Hero */}
       <div className="max-w-3xl mx-auto text-center mb-20 sm:mb-24">
-        <span className="text-xs font-semibold tracking-widest uppercase text-blue-500 mb-4 block">
+        <span className="text-xs font-semibold tracking-widest uppercase text-blue-600 mb-4 block">
           About Oladipupo Consulting
         </span>
-        <h1 className="text-3xl sm:text-5xl font-bold text-zinc-50 leading-tight tracking-tight mb-6">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-slate-900 leading-tight tracking-tight mb-6">
           AI Solutions, Built for Small Businesses
         </h1>
-        <p className="text-lg text-zinc-400 leading-relaxed">
+        <p className="text-lg text-slate-600 leading-relaxed">
           We are an AI-native agency — we use AI on the back end to deliver
           results that used to require a full team. The businesses we work with
           don&apos;t need to understand the technology. They just check a
@@ -97,20 +97,20 @@ export default function AboutPage() {
         <h2 id="story-heading" className="sr-only">
           Our story
         </h2>
-        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 sm:p-10 flex flex-col gap-6">
+        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 sm:p-10 flex flex-col gap-6">
           <div className="flex flex-col gap-1">
-            <span className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
+            <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">
               Founded by
             </span>
-            <h3 className="text-2xl font-bold text-zinc-50">
+            <h3 className="text-2xl font-bold text-slate-900">
               Olushola Oladipupo
             </h3>
-            <p className="text-sm text-blue-400 font-medium">
+            <p className="text-sm text-blue-600 font-medium">
               Oladipupo Consulting Ltd — Registered in England &amp; Wales
             </p>
           </div>
 
-          <div className="flex flex-col gap-4 text-sm text-zinc-400 leading-relaxed">
+          <div className="flex flex-col gap-4 text-sm text-slate-600 leading-relaxed">
             <p>
               Oladipupo Consulting was founded with one observation: small
               businesses are behind on AI not because they don&apos;t want to
@@ -118,10 +118,10 @@ export default function AboutPage() {
               at people who already know what they&apos;re doing.
             </p>
             <p>
-              We change that across three service pillars. <strong className="text-zinc-300">AI Automation</strong> — lead intake,
+              We change that across three service pillars. <strong className="text-slate-700">AI Automation</strong> — lead intake,
               appointment booking, inbox management, order processing, and content
-              production. <strong className="text-zinc-300">Website Development</strong> — professional, fast-loading sites
-              built to convert visitors into customers. <strong className="text-zinc-300">AI Training</strong> — hands-on
+              production. <strong className="text-slate-700">Website Development</strong> — professional, fast-loading sites
+              built to convert visitors into customers. <strong className="text-slate-700">AI Training</strong> — hands-on
               workshops that give your team the skills to work smarter with AI,
               tailored to your industry.
             </p>
@@ -152,21 +152,21 @@ export default function AboutPage() {
             return (
               <div
                 key={step.step}
-                className="bg-zinc-900 border border-zinc-800 rounded-xl p-6 flex flex-col gap-4 hover:border-zinc-700 transition-colors duration-200"
+                className="bg-slate-50 border border-slate-200 rounded-xl p-6 flex flex-col gap-4 hover:border-slate-200 transition-colors duration-200"
               >
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20">
-                    <Icon size={18} className="text-blue-400" aria-hidden="true" />
+                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-600/20">
+                    <Icon size={18} className="text-blue-600" aria-hidden="true" />
                   </div>
-                  <span className="text-2xl font-bold text-zinc-700 font-mono">
+                  <span className="text-2xl font-bold text-slate-600 font-mono">
                     {step.step}
                   </span>
                 </div>
                 <div>
-                  <h3 className="text-base font-semibold text-zinc-50 mb-2">
+                  <h3 className="text-base font-semibold text-slate-900 mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-sm text-zinc-400 leading-relaxed">
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -181,17 +181,17 @@ export default function AboutPage() {
         <h2 id="stats-heading" className="sr-only">
           By the numbers
         </h2>
-        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl px-8 py-10 max-w-4xl mx-auto">
-          <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 text-center mb-8">
+        <div className="bg-slate-50 border border-slate-200 rounded-2xl px-8 py-10 max-w-4xl mx-auto">
+          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 text-center mb-8">
             By the Numbers
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
             {STATS.map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="text-4xl font-bold text-zinc-50 leading-none mb-2">
+                <p className="text-4xl font-bold text-slate-900 leading-none mb-2">
                   {stat.value}
                 </p>
-                <p className="text-sm text-zinc-500">{stat.label}</p>
+                <p className="text-sm text-slate-400">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -205,7 +205,7 @@ export default function AboutPage() {
       >
         <h2
           id="trust-heading"
-          className="text-xl font-semibold text-zinc-50 mb-6 text-center"
+          className="text-xl font-semibold text-slate-900 mb-6 text-center"
         >
           Why You Can Trust Us
         </h2>
@@ -214,10 +214,10 @@ export default function AboutPage() {
             <li key={item} className="flex items-start gap-3">
               <CheckCircle
                 size={16}
-                className="text-blue-400 shrink-0 mt-0.5"
+                className="text-blue-600 shrink-0 mt-0.5"
                 aria-hidden="true"
               />
-              <span className="text-sm text-zinc-300 leading-relaxed">{item}</span>
+              <span className="text-sm text-slate-500 leading-relaxed">{item}</span>
             </li>
           ))}
         </ul>
@@ -226,13 +226,13 @@ export default function AboutPage() {
       {/* CTA */}
       <div className="text-center">
         <div className="inline-flex flex-col items-center gap-4">
-          <p className="text-zinc-400 text-base">
+          <p className="text-slate-600 text-base">
             Ready to see what&apos;s possible for your business?
           </p>
           <CTAButton href="/audit" variant="primary" size="lg">
             Get Your Free Audit
           </CTAButton>
-          <p className="text-xs text-zinc-500">
+          <p className="text-xs text-slate-400">
             48-hour turnaround. No obligation.
           </p>
         </div>

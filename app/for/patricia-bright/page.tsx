@@ -42,8 +42,8 @@ export default function PatriciaPage() {
   if (authed === null) {
     // Loading state
     return (
-      <div className="min-h-screen bg-zinc-950 flex items-center justify-center">
-        <div className="w-5 h-5 border-2 border-zinc-700 border-t-blue-500 rounded-full animate-spin" />
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="w-5 h-5 border-2 border-slate-200 border-t-blue-500 rounded-full animate-spin" />
       </div>
     );
   }
@@ -100,8 +100,8 @@ const BUSINESSES = [
     finding:
       "Brand enquiries are handled manually with no automated qualification or discovery-call booking.",
     colour: "from-blue-600/20 to-blue-600/5",
-    border: "border-blue-500/20",
-    badge: "bg-blue-500/10 text-blue-400",
+    border: "border-blue-600/20",
+    badge: "bg-blue-600/10 text-blue-600",
     detail: {
       what: "Talent management and brand consultancy connecting creators with brands across London and Dubai.",
       opportunities: [
@@ -133,7 +133,7 @@ const BUSINESSES = [
       "No live chat or AI customer support. Customer questions about products and ingredients are handled manually.",
     colour: "from-amber-500/20 to-amber-500/5",
     border: "border-amber-500/20",
-    badge: "bg-amber-500/10 text-amber-400",
+    badge: "bg-amber-500/10 text-amber-600",
     detail: {
       what: "Direct-to-consumer hair care brand on Shopify. Oils, treatments, and accessories.",
       opportunities: [
@@ -165,7 +165,7 @@ const BUSINESSES = [
       "Content and products exist in separate worlds. Glow Up Retreats have no automated booking or follow-up system.",
     colour: "from-purple-500/20 to-purple-500/5",
     border: "border-purple-500/20",
-    badge: "bg-purple-500/10 text-purple-400",
+    badge: "bg-purple-500/10 text-purple-600",
     detail: {
       what: "Content platform with blog, podcast (The Break), digital shop (Mind & Money Planner), and Glow Up Retreats.",
       opportunities: [
@@ -231,7 +231,7 @@ const QUOTE_CARDS = [
     quote: "Clarity will remove panic. You cannot fix what you refuse to look at.",
     bg: "bg-[#1B2A4A]",
     text: "text-white",
-    accent: "border-l-4 border-blue-400",
+    accent: "border-l-4 border-blue-600",
   },
   {
     quote:
@@ -249,8 +249,8 @@ const QUOTE_CARDS = [
   {
     quote: "Wealth isn't built on vibes. It's built on structure.",
     bg: "bg-[#F5F0EB]",
-    text: "text-zinc-900",
-    accent: "border-l-4 border-zinc-900",
+    text: "text-slate-800",
+    accent: "border-l-4 border-slate-800",
   },
   {
     quote: "You cannot shrink your way to wealth.",
@@ -270,17 +270,17 @@ function BusinessDetail({
   detail: (typeof BUSINESSES)[0]["detail"];
 }) {
   return (
-    <div className="mt-4 pt-4 border-t border-zinc-800 space-y-4">
-      <p className="text-sm text-zinc-400">{detail.what}</p>
+    <div className="mt-4 pt-4 border-t border-slate-200 space-y-4">
+      <p className="text-sm text-slate-600">{detail.what}</p>
       <div className="space-y-3">
         {detail.opportunities.map((op) => (
-          <div key={op.title} className="pl-3 border-l border-zinc-700">
-            <p className="text-sm font-semibold text-zinc-200 mb-0.5">{op.title}</p>
-            <p className="text-sm text-zinc-500">{op.desc}</p>
+          <div key={op.title} className="pl-3 border-l border-slate-200">
+            <p className="text-sm font-semibold text-slate-900 mb-0.5">{op.title}</p>
+            <p className="text-sm text-slate-400">{op.desc}</p>
           </div>
         ))}
       </div>
-      <p className="text-sm text-zinc-400 italic">{detail.impact}</p>
+      <p className="text-sm text-slate-600 italic">{detail.impact}</p>
     </div>
   );
 }
@@ -293,22 +293,22 @@ function BusinessCard({ biz }: { biz: (typeof BUSINESSES)[0] }) {
       className={`relative rounded-2xl bg-gradient-to-br ${biz.colour} border ${biz.border} p-5 transition-all`}
     >
       <div className="flex items-start justify-between gap-3 mb-2">
-        <h3 className="text-base font-semibold text-zinc-50">{biz.name}</h3>
+        <h3 className="text-base font-semibold text-slate-900">{biz.name}</h3>
         <span className={`text-xs font-medium px-2.5 py-1 rounded-full flex-shrink-0 flex items-center gap-1 ${biz.badge}`}>
           <Clock className="w-3 h-3" />
           {biz.hours}
         </span>
       </div>
-      <p className="text-sm text-zinc-400 mb-2">{biz.tagline}</p>
-      <p className="text-sm text-zinc-300 mb-3">{biz.finding}</p>
-      <div className="bg-zinc-900/60 rounded-lg px-3 py-2 mb-3">
-        <p className="text-xs font-medium text-zinc-400 uppercase tracking-wide mb-0.5">Top Opportunity</p>
-        <p className="text-sm text-zinc-200">{biz.topOp}</p>
+      <p className="text-sm text-slate-600 mb-2">{biz.tagline}</p>
+      <p className="text-sm text-slate-500 mb-3">{biz.finding}</p>
+      <div className="bg-slate-50/60 rounded-lg px-3 py-2 mb-3">
+        <p className="text-xs font-medium text-slate-600 uppercase tracking-wide mb-0.5">Top Opportunity</p>
+        <p className="text-sm text-slate-900">{biz.topOp}</p>
       </div>
 
       <button
         onClick={() => setExpanded((v) => !v)}
-        className="flex items-center gap-1.5 text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
+        className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-slate-500 transition-colors"
         aria-expanded={expanded}
       >
         {expanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
@@ -350,33 +350,33 @@ function ClipCard({
   caption: string;
 }) {
   const PLATFORM_STYLES: Record<string, string> = {
-    TikTok: "bg-zinc-800 text-zinc-300",
+    TikTok: "bg-slate-100 text-slate-500",
     Reels: "bg-pink-500/20 text-pink-400",
     Shorts: "bg-red-500/20 text-red-400",
-    LinkedIn: "bg-blue-500/20 text-blue-400",
-    "Twitter/X": "bg-zinc-700 text-zinc-300",
-    Facebook: "bg-blue-600/20 text-blue-400",
+    LinkedIn: "bg-blue-600/20 text-blue-600",
+    "Twitter/X": "bg-slate-200 text-slate-500",
+    Facebook: "bg-blue-600/20 text-blue-600",
   };
 
   return (
-    <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-5 space-y-3">
+    <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-3">
       <div className="flex items-center gap-2">
-        <div className="w-6 h-6 rounded-full bg-zinc-800 flex items-center justify-center">
-          <Play className="w-3 h-3 text-zinc-400 fill-zinc-400" />
+        <div className="w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center">
+          <Play className="w-3 h-3 text-slate-600 fill-slate-300" />
         </div>
-        <span className="text-xs text-zinc-500">Clip {number}</span>
+        <span className="text-xs text-slate-400">Clip {number}</span>
       </div>
-      <p className="text-base font-semibold text-zinc-50">{title}</p>
-      <div className="bg-zinc-800 rounded-lg px-3 py-2">
-        <p className="text-xs text-zinc-500 mb-0.5">Hook (first 3 seconds)</p>
-        <p className="text-sm text-zinc-200 italic">&ldquo;{hook}&rdquo;</p>
+      <p className="text-base font-semibold text-slate-900">{title}</p>
+      <div className="bg-slate-100 rounded-lg px-3 py-2">
+        <p className="text-xs text-slate-400 mb-0.5">Hook (first 3 seconds)</p>
+        <p className="text-sm text-slate-900 italic">&ldquo;{hook}&rdquo;</p>
       </div>
-      <p className="text-sm text-zinc-500 leading-relaxed">{caption}</p>
+      <p className="text-sm text-slate-400 leading-relaxed">{caption}</p>
       <div className="flex flex-wrap gap-1.5">
         {platforms.map((p) => (
           <span
             key={p}
-            className={`text-xs px-2 py-0.5 rounded-full font-medium ${PLATFORM_STYLES[p] ?? "bg-zinc-800 text-zinc-400"}`}
+            className={`text-xs px-2 py-0.5 rounded-full font-medium ${PLATFORM_STYLES[p] ?? "bg-slate-100 text-slate-600"}`}
           >
             {p}
           </span>
@@ -409,7 +409,7 @@ function PatriciaContent() {
   const [blueprintExpanded, setBlueprintExpanded] = useState(false);
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-50">
+    <div className="min-h-screen bg-white text-slate-900">
 
       {/* ------------------------------------------------------------------ */}
       {/* 1. Hero                                                              */}
@@ -426,7 +426,7 @@ function PatriciaContent() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-sm font-medium text-blue-400 uppercase tracking-widest mb-6"
+            className="text-sm font-medium text-blue-600 uppercase tracking-widest mb-6"
           >
             Built exclusively for Patricia Bright
           </motion.p>
@@ -435,7 +435,7 @@ function PatriciaContent() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-50 leading-tight tracking-tight mb-6"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight tracking-tight mb-6"
           >
             Patricia, we built this for you.
           </motion.h1>
@@ -444,7 +444,7 @@ function PatriciaContent() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg sm:text-xl text-zinc-400 leading-relaxed max-w-2xl mx-auto mb-10"
+            className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-10"
           >
             No pitch. No obligation. Just three things we thought you&apos;d find useful — built before we said a word.
           </motion.p>
@@ -456,13 +456,13 @@ function PatriciaContent() {
             className="flex flex-wrap items-center justify-center gap-3"
           >
             {[
-              { label: "AI Operations Blueprint", colour: "text-blue-400", dot: "bg-blue-500" },
-              { label: "Content Repurposing Pack", colour: "text-purple-400", dot: "bg-purple-500" },
-              { label: "Live UWA Chatbot", colour: "text-amber-400", dot: "bg-amber-500" },
+              { label: "AI Operations Blueprint", colour: "text-blue-600", dot: "bg-blue-600" },
+              { label: "Content Repurposing Pack", colour: "text-purple-600", dot: "bg-purple-500" },
+              { label: "Live UWA Chatbot", colour: "text-amber-600", dot: "bg-amber-500" },
             ].map((item) => (
               <span
                 key={item.label}
-                className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-4 py-2 rounded-full text-sm"
+                className="flex items-center gap-2 bg-slate-50 border border-slate-200 px-4 py-2 rounded-full text-sm"
               >
                 <span className={`w-2 h-2 rounded-full ${item.dot}`} />
                 <span className={item.colour}>{item.label}</span>
@@ -480,22 +480,22 @@ function PatriciaContent() {
         className="px-5 py-20 max-w-6xl mx-auto"
       >
         <div className="mb-12 text-center">
-          <div className="inline-flex items-center gap-2 bg-blue-500/10 text-blue-400 text-xs font-medium uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 bg-blue-600/10 text-blue-600 text-xs font-medium uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">
             <LayoutGrid className="w-3.5 h-3.5" />
             Deliverable 1 of 3
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-zinc-50 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-slate-900 mb-4">
             Your AI Operations Blueprint
           </h2>
-          <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             We analysed all four of your businesses and found{" "}
-            <span className="text-zinc-50 font-semibold">25–35 hours of automatable work per week</span>
+            <span className="text-slate-900 font-semibold">25–35 hours of automatable work per week</span>
             {" "}— the equivalent of a full-time employee.
           </p>
         </div>
 
         {/* Total savings banner */}
-        <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/10 border border-blue-500/20 rounded-2xl p-6 mb-10 text-center">
+        <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/10 border border-blue-600/20 rounded-2xl p-6 mb-10 text-center">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
             {[
               { label: "Hours/week automatable", value: "25–35" },
@@ -504,8 +504,8 @@ function PatriciaContent() {
               { label: "Our delivery timeline", value: "7-day sprint" },
             ].map((stat) => (
               <div key={stat.label}>
-                <p className="text-2xl font-bold text-zinc-50 mb-1">{stat.value}</p>
-                <p className="text-xs text-zinc-500">{stat.label}</p>
+                <p className="text-2xl font-bold text-slate-900 mb-1">{stat.value}</p>
+                <p className="text-xs text-slate-400">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -519,12 +519,12 @@ function PatriciaContent() {
         </div>
 
         {/* Cross-business section */}
-        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-          <h3 className="text-lg font-semibold text-zinc-50 mb-2 flex items-center gap-2">
-            <Sparkles className="w-5 h-5 text-blue-400" />
+        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+          <h3 className="text-lg font-semibold text-slate-900 mb-2 flex items-center gap-2">
+            <Sparkles className="w-5 h-5 text-blue-600" />
             Cross-Business Opportunities
           </h3>
-          <p className="text-sm text-zinc-400 mb-4">
+          <p className="text-sm text-slate-600 mb-4">
             You said something in your video that stuck with us: that the loss crept up because you
             didn&apos;t have control of what was going on overall. This is the most important section.
           </p>
@@ -543,9 +543,9 @@ function PatriciaContent() {
                 desc: "Cash flow anomalies flagged early. Unusual spending increases. Invoice payments overdue. The early warning system that catches problems before they become accountant news.",
               },
             ].map((item) => (
-              <div key={item.title} className="bg-zinc-800/50 rounded-xl p-4">
-                <p className="text-sm font-semibold text-zinc-200 mb-1.5">{item.title}</p>
-                <p className="text-sm text-zinc-500">{item.desc}</p>
+              <div key={item.title} className="bg-slate-100/50 rounded-xl p-4">
+                <p className="text-sm font-semibold text-slate-900 mb-1.5">{item.title}</p>
+                <p className="text-sm text-slate-400">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -555,7 +555,7 @@ function PatriciaContent() {
         <div className="mt-6 text-center">
           <button
             onClick={() => setBlueprintExpanded((v) => !v)}
-            className="inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-zinc-300 border border-zinc-800 hover:border-zinc-700 px-4 py-2.5 rounded-xl transition-all"
+            className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-slate-500 border border-slate-200 hover:border-slate-200 px-4 py-2.5 rounded-xl transition-all"
             aria-expanded={blueprintExpanded}
           >
             {blueprintExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
@@ -571,9 +571,9 @@ function PatriciaContent() {
                 transition={{ duration: 0.4, ease: "easeInOut" }}
                 className="overflow-hidden text-left mt-6"
               >
-                <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 space-y-6 text-sm text-zinc-400 leading-relaxed">
+                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-6 text-sm text-slate-600 leading-relaxed">
                   <div>
-                    <h4 className="text-zinc-200 font-semibold mb-2">Executive Summary</h4>
+                    <h4 className="text-slate-900 font-semibold mb-2">Executive Summary</h4>
                     <p>
                       We watched your recent video about rebuilding after discovering you were down on paper.
                       One line stood out: you said you&apos;d invested in software and tools to understand
@@ -583,7 +583,7 @@ function PatriciaContent() {
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-zinc-200 font-semibold mb-2">ROI Summary</h4>
+                    <h4 className="text-slate-900 font-semibold mb-2">ROI Summary</h4>
                     <div className="overflow-x-auto">
                       <table className="w-full text-sm">
                         <tbody>
@@ -596,9 +596,9 @@ function PatriciaContent() {
                               ["Our guarantee", "90 days — if you don't save 5+ hrs/week, we refund the setup fee"],
                             ] as [string, string][]
                           ).map(([key, val]) => (
-                            <tr key={key} className="border-b border-zinc-800">
-                              <td className="py-2 pr-4 text-zinc-500 font-medium">{key}</td>
-                              <td className="py-2 text-zinc-300">{val}</td>
+                            <tr key={key} className="border-b border-slate-200">
+                              <td className="py-2 pr-4 text-slate-400 font-medium">{key}</td>
+                              <td className="py-2 text-slate-500">{val}</td>
                             </tr>
                           ))}
                         </tbody>
@@ -606,7 +606,7 @@ function PatriciaContent() {
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-zinc-200 font-semibold mb-2">Recommended Phased Approach</h4>
+                    <h4 className="text-slate-900 font-semibold mb-2">Recommended Phased Approach</h4>
                     <ol className="space-y-2">
                       {(
                         [
@@ -617,7 +617,7 @@ function PatriciaContent() {
                         ] as [string, string][]
                       ).map(([phase, desc]) => (
                         <li key={phase} className="flex gap-3">
-                          <span className="text-zinc-500 font-medium flex-shrink-0">{phase}:</span>
+                          <span className="text-slate-400 font-medium flex-shrink-0">{phase}:</span>
                           <span>{desc}</span>
                         </li>
                       ))}
@@ -632,7 +632,7 @@ function PatriciaContent() {
 
       {/* Divider */}
       <div className="max-w-6xl mx-auto px-5">
-        <div className="h-px bg-zinc-800" />
+        <div className="h-px bg-slate-100" />
       </div>
 
       {/* ------------------------------------------------------------------ */}
@@ -640,14 +640,14 @@ function PatriciaContent() {
       {/* ------------------------------------------------------------------ */}
       <Section className="px-5 py-20 max-w-6xl mx-auto">
         <div className="mb-12 text-center">
-          <div className="inline-flex items-center gap-2 bg-purple-500/10 text-purple-400 text-xs font-medium uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 bg-purple-500/10 text-purple-600 text-xs font-medium uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">
             <Sparkles className="w-3.5 h-3.5" />
             Deliverable 2 of 3
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-zinc-50 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-slate-900 mb-4">
             One Video. 8+ Assets. Ready to Post.
           </h2>
-          <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             We took your latest YouTube video — &ldquo;If I Wanted to Make My First $100K in 2026&rdquo; — and turned
             it into a full content pack. This is what the AI engine produces for every video, automatically.
           </p>
@@ -658,21 +658,21 @@ function PatriciaContent() {
           {ASSET_TYPES.map(({ icon: Icon, label, sub }) => (
             <div
               key={label}
-              className="bg-zinc-900 border border-zinc-800 rounded-xl p-4 flex flex-col gap-2"
+              className="bg-slate-50 border border-slate-200 rounded-xl p-4 flex flex-col gap-2"
             >
-              <div className="w-8 h-8 rounded-lg bg-zinc-800 flex items-center justify-center">
-                <Icon className="w-4 h-4 text-zinc-400" />
+              <div className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center">
+                <Icon className="w-4 h-4 text-slate-600" />
               </div>
-              <p className="text-sm font-semibold text-zinc-200 leading-tight">{label}</p>
-              <p className="text-xs text-zinc-600">{sub}</p>
+              <p className="text-sm font-semibold text-slate-900 leading-tight">{label}</p>
+              <p className="text-xs text-slate-900">{sub}</p>
             </div>
           ))}
         </div>
 
         {/* Short clips */}
         <div className="mb-12">
-          <h3 className="text-lg font-semibold text-zinc-200 mb-1">Short Clips — Ready to Cut</h3>
-          <p className="text-sm text-zinc-500 mb-5">
+          <h3 className="text-lg font-semibold text-slate-900 mb-1">Short Clips — Ready to Cut</h3>
+          <p className="text-sm text-slate-400 mb-5">
             Three clips from your video, with hooks, captions, and platform recommendations.
           </p>
           <div className="grid sm:grid-cols-3 gap-4">
@@ -698,15 +698,15 @@ function PatriciaContent() {
               caption="I stopped guessing and started structuring. Software. Systems. Operators. Vibes don't build wealth — structure does. #BusinessSystems"
             />
           </div>
-          <p className="text-xs text-zinc-600 mt-3 italic">
+          <p className="text-xs text-slate-900 mt-3 italic">
             Ready to cut from your original footage — timestamps included.
           </p>
         </div>
 
         {/* Instagram Carousel */}
         <div className="mb-12">
-          <h3 className="text-lg font-semibold text-zinc-200 mb-1">Instagram Carousel — 5 Slides</h3>
-          <p className="text-sm text-zinc-500 mb-5">
+          <h3 className="text-lg font-semibold text-slate-900 mb-1">Instagram Carousel — 5 Slides</h3>
+          <p className="text-sm text-slate-400 mb-5">
             Caption: &ldquo;I lost £700K on paper. Here&apos;s the exact 3-step framework I used to rebuild. Save this.&rdquo;
           </p>
           <div className="flex gap-3 overflow-x-auto pb-2">
@@ -715,41 +715,41 @@ function PatriciaContent() {
                 n: "1",
                 title: "How I'd Make My First £100K in 2026",
                 sub: "After discovering I was £700K down",
-                bg: "bg-zinc-900",
+                bg: "bg-slate-50",
               },
               {
                 n: "2",
                 title: "Step 1: Audit Everything",
                 sub: "List every income source, expense, debt, liability. Calculate your survival number.",
-                bg: "bg-zinc-800",
+                bg: "bg-slate-100",
               },
               {
                 n: "3",
                 title: "Step 2: Stabilise the Floor",
                 sub: "Decisions rooted in fear become expensive. Build the floor first.",
-                bg: "bg-zinc-900",
+                bg: "bg-slate-50",
               },
               {
                 n: "4",
                 title: "Step 3: Income First",
                 sub: "You cannot shrink your way to wealth. Price outcomes, not time.",
-                bg: "bg-zinc-800",
+                bg: "bg-slate-100",
               },
               {
                 n: "5",
                 title: "The Framework",
                 sub: "Clarity. Cash Flow. Assets. In that order. Always.",
-                bg: "bg-zinc-900",
+                bg: "bg-slate-50",
               },
             ].map((slide) => (
               <div
                 key={slide.n}
-                className={`flex-shrink-0 w-44 h-44 rounded-xl ${slide.bg} border border-zinc-700 p-4 flex flex-col justify-between`}
+                className={`flex-shrink-0 w-44 h-44 rounded-xl ${slide.bg} border border-slate-200 p-4 flex flex-col justify-between`}
               >
-                <span className="text-xs text-zinc-600">{slide.n} / 5</span>
+                <span className="text-xs text-slate-900">{slide.n} / 5</span>
                 <div>
-                  <p className="text-sm font-semibold text-zinc-100 leading-tight mb-1">{slide.title}</p>
-                  <p className="text-xs text-zinc-500 leading-snug">{slide.sub}</p>
+                  <p className="text-sm font-semibold text-slate-900 leading-tight mb-1">{slide.title}</p>
+                  <p className="text-xs text-slate-400 leading-snug">{slide.sub}</p>
                 </div>
               </div>
             ))}
@@ -759,11 +759,11 @@ function PatriciaContent() {
         {/* Twitter thread */}
         <div className="mb-12 grid md:grid-cols-2 gap-6">
           <div>
-            <h3 className="text-lg font-semibold text-zinc-200 mb-1 flex items-center gap-2">
+            <h3 className="text-lg font-semibold text-slate-900 mb-1 flex items-center gap-2">
               <Share2 className="w-4 h-4" />
               Twitter/X Thread
             </h3>
-            <p className="text-sm text-zinc-500 mb-4">5-tweet thread, structured to drive profile visits.</p>
+            <p className="text-sm text-slate-400 mb-4">5-tweet thread, structured to drive profile visits.</p>
             <div className="space-y-2">
               {[
                 "I sat down with my accountant and found out I was £700,000 down on paper. Not from reckless spending. From not paying attention. Here's the 3-step framework I'd use to make my first £100K in 2026:",
@@ -772,22 +772,22 @@ function PatriciaContent() {
                 "Step 3: INCOME FIRST. You cannot shrink your way to wealth. Stop pricing your time. Start pricing outcomes. High earners price outcomes.",
                 "The framework is 3 words: Clarity. Cash Flow. Assets. In that order. Always. Wealth isn't built on vibes. It's built on structure.",
               ].map((tweet, i) => (
-                <div key={i} className="bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3">
-                  <p className="text-xs text-zinc-600 mb-1">Tweet {i + 1}</p>
-                  <p className="text-sm text-zinc-300 leading-relaxed">{tweet}</p>
+                <div key={i} className="bg-slate-50 border border-slate-200 rounded-xl px-4 py-3">
+                  <p className="text-xs text-slate-900 mb-1">Tweet {i + 1}</p>
+                  <p className="text-sm text-slate-500 leading-relaxed">{tweet}</p>
                 </div>
               ))}
             </div>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-zinc-200 mb-1 flex items-center gap-2">
+            <h3 className="text-lg font-semibold text-slate-900 mb-1 flex items-center gap-2">
               <Linkedin className="w-4 h-4" />
               LinkedIn Post
             </h3>
-            <p className="text-sm text-zinc-500 mb-4">Thought leadership angle for the professional audience.</p>
-            <div className="bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-4">
-              <p className="text-sm text-zinc-300 leading-relaxed whitespace-pre-line">{`I discovered I was £700,000 down on paper.
+            <p className="text-sm text-slate-400 mb-4">Thought leadership angle for the professional audience.</p>
+            <div className="bg-slate-50 border border-slate-200 rounded-xl px-4 py-4">
+              <p className="text-sm text-slate-500 leading-relaxed whitespace-pre-line">{`I discovered I was £700,000 down on paper.
 
 Not from a catastrophic decision. From a slow, creeping lack of visibility across my businesses.
 
@@ -812,8 +812,8 @@ Wealth isn't built on vibes. It's built on structure.
 
         {/* Quote cards */}
         <div className="mb-12">
-          <h3 className="text-lg font-semibold text-zinc-200 mb-1">Quote Cards — 5 Designs</h3>
-          <p className="text-sm text-zinc-500 mb-5">
+          <h3 className="text-lg font-semibold text-slate-900 mb-1">Quote Cards — 5 Designs</h3>
+          <p className="text-sm text-slate-400 mb-5">
             Each card uses the brand colours from the original design brief. Ready to export at 2x.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -823,14 +823,14 @@ Wealth isn't built on vibes. It's built on structure.
                   className={`${card.bg} ${card.text} ${card.accent} rounded-2xl p-6 min-h-[140px] flex flex-col justify-between`}
                 >
                   <p className="text-base font-semibold leading-relaxed">&ldquo;{card.quote}&rdquo;</p>
-                  <p className={`text-xs mt-3 ${card.text === "text-zinc-900" ? "text-zinc-500" : "text-zinc-400"}`}>
+                  <p className={`text-xs mt-3 ${card.text === "text-slate-800" ? "text-slate-400" : "text-slate-600"}`}>
                     — Patricia Bright
                   </p>
                 </div>
                 <a
                   href={`/api/prospect/quote-card?quote=${i + 1}`}
                   download={`quote-card-${i + 1}.png`}
-                  className="inline-flex items-center gap-1.5 text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-slate-500 transition-colors"
                 >
                   <Download className="w-3.5 h-3.5" />
                   Download PNG (1080×1080)
@@ -843,13 +843,13 @@ Wealth isn't built on vibes. It's built on structure.
         {/* Audiogram + Newsletter */}
         <div className="grid md:grid-cols-2 gap-6">
           {/* Audiogram concept */}
-          <div className="bg-gradient-to-br from-[#0D1B2A] to-[#1B3A4B] border border-zinc-800 rounded-2xl p-6">
+          <div className="bg-gradient-to-br from-[#0D1B2A] to-[#1B3A4B] border border-slate-200 rounded-2xl p-6">
             <div className="flex items-center gap-2 mb-3">
-              <Mic className="w-4 h-4 text-amber-400" />
-              <h3 className="text-base font-semibold text-zinc-100">Audiogram Concept</h3>
+              <Mic className="w-4 h-4 text-amber-600" />
+              <h3 className="text-base font-semibold text-slate-900">Audiogram Concept</h3>
             </div>
-            <p className="text-xs text-zinc-500 uppercase tracking-wide mb-2">Selected Clip</p>
-            <p className="text-sm font-semibold text-zinc-200 mb-3">&ldquo;The Audit That Changed Everything&rdquo;</p>
+            <p className="text-xs text-slate-400 uppercase tracking-wide mb-2">Selected Clip</p>
+            <p className="text-sm font-semibold text-slate-900 mb-3">&ldquo;The Audit That Changed Everything&rdquo;</p>
             {/* Fake waveform */}
             <div className="flex items-end gap-0.5 h-10 mb-4" aria-hidden="true">
               {[3, 6, 9, 12, 8, 5, 10, 14, 11, 7, 13, 9, 6, 10, 14, 8, 5, 9, 12, 7, 4, 8, 11, 6, 9, 13, 10, 7, 4, 8].map((h, i) => (
@@ -867,47 +867,47 @@ Wealth isn't built on vibes. It's built on structure.
                 "Clarity will remove panic.",
                 "You cannot fix what you refuse to look at.",
               ].map((line) => (
-                <p key={line} className="text-xs text-zinc-400">{line}</p>
+                <p key={line} className="text-xs text-slate-600">{line}</p>
               ))}
             </div>
-            <p className="text-xs text-zinc-600 mt-3">60 seconds · Instagram · TikTok · LinkedIn</p>
-            <p className="text-xs text-zinc-600 mt-1 italic">
+            <p className="text-xs text-slate-900 mt-3">60 seconds · Instagram · TikTok · LinkedIn</p>
+            <p className="text-xs text-slate-900 mt-1 italic">
               Audiogram concept — ready to produce from your original audio.
             </p>
           </div>
 
           {/* Newsletter snippet */}
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
+          <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
             <div className="flex items-center gap-2 mb-3">
-              <Mail className="w-4 h-4 text-blue-400" />
-              <h3 className="text-base font-semibold text-zinc-100">Newsletter Snippet</h3>
+              <Mail className="w-4 h-4 text-blue-600" />
+              <h3 className="text-base font-semibold text-slate-900">Newsletter Snippet</h3>
             </div>
             <div className="space-y-2 mb-4">
-              <div className="bg-zinc-800 rounded-lg px-3 py-2">
-                <p className="text-xs text-zinc-500 mb-0.5">Subject line</p>
-                <p className="text-sm text-zinc-200">I was £700K down. Here&apos;s my 3-word rebuild framework.</p>
+              <div className="bg-slate-100 rounded-lg px-3 py-2">
+                <p className="text-xs text-slate-400 mb-0.5">Subject line</p>
+                <p className="text-sm text-slate-900">I was £700K down. Here&apos;s my 3-word rebuild framework.</p>
               </div>
             </div>
-            <p className="text-sm text-zinc-400 leading-relaxed">
+            <p className="text-sm text-slate-600 leading-relaxed">
               A few months ago, I sat with my accountant and got the kind of news that rearranges your priorities.
               I was £700,000 down on paper. Not from one bad call — from a slow, creeping lack of visibility
               across my businesses.
             </p>
-            <p className="text-sm text-zinc-400 mt-2 leading-relaxed">
+            <p className="text-sm text-slate-600 mt-2 leading-relaxed">
               So I rebuilt the whole system around three words:{" "}
-              <span className="text-zinc-200 font-semibold">Clarity. Cash Flow. Assets.</span>
+              <span className="text-slate-900 font-semibold">Clarity. Cash Flow. Assets.</span>
             </p>
-            <div className="mt-4 bg-blue-600/10 border border-blue-500/20 rounded-lg px-3 py-2 text-center">
-              <p className="text-sm text-blue-400 font-medium">Watch the Full Breakdown on YouTube →</p>
+            <div className="mt-4 bg-blue-600/10 border border-blue-600/20 rounded-lg px-3 py-2 text-center">
+              <p className="text-sm text-blue-600 font-medium">Watch the Full Breakdown on YouTube →</p>
             </div>
-            <p className="text-xs text-zinc-600 mt-3">~195 words · The Break newsletter format</p>
+            <p className="text-xs text-slate-900 mt-3">~195 words · The Break newsletter format</p>
           </div>
         </div>
       </Section>
 
       {/* Divider */}
       <div className="max-w-6xl mx-auto px-5">
-        <div className="h-px bg-zinc-800" />
+        <div className="h-px bg-slate-100" />
       </div>
 
       {/* ------------------------------------------------------------------ */}
@@ -915,14 +915,14 @@ Wealth isn't built on vibes. It's built on structure.
       {/* ------------------------------------------------------------------ */}
       <Section className="px-5 py-20 max-w-6xl mx-auto">
         <div className="mb-12 text-center">
-          <div className="inline-flex items-center gap-2 bg-amber-500/10 text-amber-400 text-xs font-medium uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 bg-amber-500/10 text-amber-600 text-xs font-medium uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">
             <Video className="w-3.5 h-3.5" />
             Deliverable 3 of 3
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-zinc-50 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-slate-900 mb-4">
             Your UWA Customer Service Bot
           </h2>
-          <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Trained on your actual products. Answers in your brand voice. 24/7. Try it.
           </p>
         </div>
@@ -931,7 +931,7 @@ Wealth isn't built on vibes. It's built on structure.
           <ChatDemo />
 
           <div className="max-w-xl text-center">
-            <p className="text-sm text-zinc-500 leading-relaxed">
+            <p className="text-sm text-slate-400 leading-relaxed">
               This prototype answers questions about your product range, ingredients, and shipping.
               The production version connects directly to your Shopify store, handles returns, integrates
               with order tracking, and escalates complex issues to your team — all without any manual work.
@@ -944,9 +944,9 @@ Wealth isn't built on vibes. It's built on structure.
               { stat: "24/7", label: "availability, no staff required" },
               { stat: "4–6 hrs", label: "saved per week on support" },
             ].map((item) => (
-              <div key={item.label} className="bg-zinc-900 border border-zinc-800 rounded-xl p-4 text-center">
-                <p className="text-2xl font-bold text-amber-400 mb-1">{item.stat}</p>
-                <p className="text-xs text-zinc-500">{item.label}</p>
+              <div key={item.label} className="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center">
+                <p className="text-2xl font-bold text-amber-600 mb-1">{item.stat}</p>
+                <p className="text-xs text-slate-400">{item.label}</p>
               </div>
             ))}
           </div>
@@ -955,20 +955,20 @@ Wealth isn't built on vibes. It's built on structure.
 
       {/* Divider */}
       <div className="max-w-6xl mx-auto px-5">
-        <div className="h-px bg-zinc-800" />
+        <div className="h-px bg-slate-100" />
       </div>
 
       {/* ------------------------------------------------------------------ */}
       {/* 5. CTA                                                               */}
       {/* ------------------------------------------------------------------ */}
       <Section className="px-5 py-24 max-w-3xl mx-auto text-center">
-        <p className="text-sm font-medium text-zinc-500 uppercase tracking-widest mb-4">
+        <p className="text-sm font-medium text-slate-400 uppercase tracking-widest mb-4">
           No pitch. No strings.
         </p>
-        <h2 className="text-3xl sm:text-4xl font-bold text-zinc-50 mb-4">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-slate-900 mb-4">
           If any of this is useful, we&apos;d love 15 minutes.
         </h2>
-        <p className="text-lg text-zinc-400 leading-relaxed mb-10">
+        <p className="text-lg text-slate-600 leading-relaxed mb-10">
           No sales team. No gatekeepers. A 15-minute call to walk through what matters most
           to you right now — and you&apos;d be talking directly to the person who built everything on this page.
         </p>
@@ -978,7 +978,7 @@ Wealth isn't built on vibes. It's built on structure.
             href="https://cal.com/sholastechnotes/free-ai-strategy-call"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-xl transition-all text-sm"
+            className="inline-flex items-center gap-2 px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-xl transition-all text-sm"
             aria-label="Book a 15-minute strategy call"
           >
             <CalendarDays className="w-4 h-4" />
@@ -990,7 +990,7 @@ Wealth isn't built on vibes. It's built on structure.
             href="https://linkedin.com/in/olushola-oladipupo/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3.5 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-zinc-300 hover:text-zinc-100 font-medium rounded-xl transition-all text-sm"
+            className="inline-flex items-center gap-2 px-6 py-3.5 bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-500 hover:text-slate-900 font-medium rounded-xl transition-all text-sm"
             aria-label="Connect with Olushola on LinkedIn"
           >
             <Linkedin className="w-4 h-4" />
@@ -999,13 +999,13 @@ Wealth isn't built on vibes. It's built on structure.
           </Link>
         </div>
 
-        <p className="text-sm text-zinc-600">
+        <p className="text-sm text-slate-900">
           Built by{" "}
           <Link
             href="https://oladipupoconsulting.co.uk"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-zinc-500 hover:text-zinc-300 underline underline-offset-2 transition-colors"
+            className="text-slate-400 hover:text-slate-500 underline underline-offset-2 transition-colors"
           >
             Oladipupo Consulting
           </Link>
@@ -1016,8 +1016,8 @@ Wealth isn't built on vibes. It's built on structure.
       {/* ------------------------------------------------------------------ */}
       {/* 6. Footer                                                            */}
       {/* ------------------------------------------------------------------ */}
-      <footer className="border-t border-zinc-900 px-5 py-8 text-center">
-        <p className="text-sm text-zinc-700">
+      <footer className="border-t border-slate-800 px-5 py-8 text-center">
+        <p className="text-sm text-slate-600">
           This page was built specifically for you. No one else can see it.
         </p>
       </footer>

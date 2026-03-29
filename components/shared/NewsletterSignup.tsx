@@ -64,7 +64,7 @@ export default function NewsletterSignup({
 
     return (
       <div>
-        <h3 className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-3">
+        <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">
           The AI Operator Newsletter
         </h3>
         <form
@@ -82,15 +82,15 @@ export default function NewsletterSignup({
             placeholder="you@example.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="flex-1 min-w-0 bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm text-zinc-50 placeholder:text-zinc-500 transition-colors duration-150 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+            className="flex-1 min-w-0 bg-slate-800 border border-slate-600 rounded-lg px-3 py-2 text-sm text-white placeholder:text-slate-400 transition-colors duration-150 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
           />
           <button
             type="submit"
             disabled={status === "loading"}
             className={cn(
-              "shrink-0 rounded-lg bg-blue-500 px-4 py-2 text-sm font-medium text-white",
+              "shrink-0 rounded-full bg-blue-600 px-4 py-2 text-sm font-medium text-white",
               "hover:bg-blue-600 transition-colors duration-150",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900",
               "disabled:opacity-60 disabled:cursor-not-allowed"
             )}
           >
@@ -109,7 +109,7 @@ export default function NewsletterSignup({
   // ── Full version (homepage section) ───────────────────────────────────
   if (status === "success") {
     return (
-      <section className="bg-zinc-900/40 py-24" aria-label="Newsletter">
+      <section className="bg-slate-50 py-24" aria-label="Newsletter">
         <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
           <div className="mx-auto max-w-xl text-center">
             <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-blue-500/20 border border-blue-500/30">
@@ -128,11 +128,11 @@ export default function NewsletterSignup({
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>
-            <h3 className="text-lg font-semibold text-zinc-50">
+            <h3 className="text-lg font-semibold text-slate-900">
               You&apos;re subscribed!
             </h3>
             <p
-              className="mt-2 text-sm text-zinc-400"
+              className="mt-2 text-sm text-slate-600"
               role="alert"
               aria-live="polite"
             >
@@ -145,7 +145,7 @@ export default function NewsletterSignup({
   }
 
   return (
-    <section className="bg-zinc-900/40 py-24" aria-label="Newsletter">
+    <section className="bg-slate-50 py-24" aria-label="Newsletter">
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-xl text-center">
           {/* Icon */}
@@ -157,10 +157,10 @@ export default function NewsletterSignup({
           <span className="text-xs font-semibold uppercase tracking-widest text-blue-500">
             Newsletter
           </span>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
             Get The AI Operator
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-zinc-400">
+          <p className="mt-4 text-base leading-relaxed text-slate-600">
             Weekly AI wins for your business. No jargon. No fluff.
           </p>
 
@@ -180,17 +180,17 @@ export default function NewsletterSignup({
               placeholder="you@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full sm:w-80 bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-sm text-zinc-50 placeholder:text-zinc-500 transition-colors duration-150 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+              className="w-full sm:w-80 bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-colors duration-150 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
             />
             <button
               type="submit"
               disabled={status === "loading"}
               className={cn(
-                "inline-flex items-center justify-center gap-2 font-medium rounded-lg",
+                "inline-flex items-center justify-center gap-2 font-medium rounded-full",
                 "bg-blue-500 text-white border border-blue-500",
                 "hover:bg-blue-600 hover:border-blue-600",
                 "transition-all duration-200 px-6 py-3 text-sm",
-                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
                 "disabled:opacity-60 disabled:cursor-not-allowed"
               )}
             >
@@ -235,7 +235,7 @@ export default function NewsletterSignup({
           )}
 
           {/* Privacy note */}
-          <p className="mt-5 text-xs text-zinc-600">
+          <p className="mt-5 text-xs text-slate-500">
             No spam. Unsubscribe anytime.
           </p>
         </div>

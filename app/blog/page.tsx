@@ -411,13 +411,13 @@ export default async function BlogPage() {
       <BreadcrumbJsonLd items={[{ name: "Blog", href: "/blog" }]} />
       <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto">
-          <p className="text-blue-400 text-sm font-semibold uppercase tracking-wider mb-3">
+          <p className="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-3">
             Blog
           </p>
           <h1 className="text-4xl font-bold mb-4">
             AI Automation Insights
           </h1>
-          <p className="text-zinc-400 max-w-2xl text-lg mb-12">
+          <p className="text-slate-600 max-w-2xl text-lg mb-12">
             Practical tips, case studies, and behind-the-scenes of building AI
             automation for small businesses.
           </p>
@@ -427,31 +427,31 @@ export default async function BlogPage() {
               <Link
                 key={post.id}
                 href={`/blog/${post.slug}`}
-                className="group bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:border-zinc-700 transition-colors"
+                className="group bg-slate-50 border border-slate-200 rounded-xl p-6 hover:border-slate-200 transition-colors"
               >
                 <div className="flex flex-wrap gap-2 mb-3">
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded-full"
+                      className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-                <h2 className="text-lg font-semibold mb-2 group-hover:text-blue-400 transition-colors">
+                <h2 className="text-lg font-semibold mb-2 group-hover:text-blue-600 transition-colors">
                   {post.title}
                 </h2>
                 {post.excerpt && (
-                  <p className="text-zinc-400 text-sm mb-3 line-clamp-2">
+                  <p className="text-slate-600 text-sm mb-3 line-clamp-2">
                     {post.excerpt}
                   </p>
                 )}
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-zinc-500">
+                  <span className="text-xs text-slate-400">
                     {post.publishedAt}
                   </span>
-                  <span className="text-sm text-blue-400 flex items-center gap-1 group-hover:gap-2 transition-all">
+                  <span className="text-sm text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all">
                     Read
                     <ArrowRight className="w-3 h-3" />
                   </span>

@@ -38,7 +38,7 @@ const INITIAL: FormState = {
 };
 
 const inputBase =
-  "w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-sm text-zinc-50 placeholder:text-zinc-500 transition-colors duration-150 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500";
+  "w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-colors duration-150 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600";
 
 export default function AuditForm() {
   const [form, setForm] = useState<FormState>(INITIAL);
@@ -86,7 +86,7 @@ export default function AuditForm() {
         role="alert"
         aria-live="polite"
       >
-        <div className="w-14 h-14 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center">
+        <div className="w-14 h-14 rounded-full bg-blue-600/20 border border-blue-600/30 flex items-center justify-center">
           <svg
             width="24"
             height="24"
@@ -96,14 +96,14 @@ export default function AuditForm() {
             strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-blue-400"
+            className="text-blue-600"
             aria-hidden="true"
           >
             <polyline points="20 6 9 17 4 12" />
           </svg>
         </div>
-        <h3 className="text-xl font-semibold text-zinc-50">Audit request confirmed</h3>
-        <p className="text-zinc-400 max-w-sm text-sm leading-relaxed">
+        <h3 className="text-xl font-semibold text-slate-900">Audit request confirmed</h3>
+        <p className="text-slate-600 max-w-sm text-sm leading-relaxed">
           Your audit request is confirmed! Check your email — we&apos;ve sent
           you a confirmation. Your personalised AI Readiness Audit will be ready
           within 48 hours.
@@ -124,9 +124,9 @@ export default function AuditForm() {
         <div className="flex flex-col gap-1.5">
           <label
             htmlFor={`${formId}-businessName`}
-            className="text-sm font-medium text-zinc-300"
+            className="text-sm font-medium text-slate-500"
           >
-            Business Name <span className="text-blue-400">*</span>
+            Business Name <span className="text-blue-600">*</span>
           </label>
           <input
             id={`${formId}-businessName`}
@@ -144,9 +144,9 @@ export default function AuditForm() {
         <div className="flex flex-col gap-1.5">
           <label
             htmlFor={`${formId}-yourName`}
-            className="text-sm font-medium text-zinc-300"
+            className="text-sm font-medium text-slate-500"
           >
-            Your Name <span className="text-blue-400">*</span>
+            Your Name <span className="text-blue-600">*</span>
           </label>
           <input
             id={`${formId}-yourName`}
@@ -167,9 +167,9 @@ export default function AuditForm() {
         <div className="flex flex-col gap-1.5">
           <label
             htmlFor={`${formId}-email`}
-            className="text-sm font-medium text-zinc-300"
+            className="text-sm font-medium text-slate-500"
           >
-            Email <span className="text-blue-400">*</span>
+            Email <span className="text-blue-600">*</span>
           </label>
           <input
             id={`${formId}-email`}
@@ -187,10 +187,10 @@ export default function AuditForm() {
         <div className="flex flex-col gap-1.5">
           <label
             htmlFor={`${formId}-phone`}
-            className="text-sm font-medium text-zinc-300"
+            className="text-sm font-medium text-slate-500"
           >
             Phone{" "}
-            <span className="text-zinc-500 font-normal">(optional)</span>
+            <span className="text-slate-400 font-normal">(optional)</span>
           </label>
           <input
             id={`${formId}-phone`}
@@ -210,9 +210,9 @@ export default function AuditForm() {
         <div className="flex flex-col gap-1.5">
           <label
             htmlFor={`${formId}-industry`}
-            className="text-sm font-medium text-zinc-300"
+            className="text-sm font-medium text-slate-500"
           >
-            Industry <span className="text-blue-400">*</span>
+            Industry <span className="text-blue-600">*</span>
           </label>
           <select
             id={`${formId}-industry`}
@@ -236,10 +236,10 @@ export default function AuditForm() {
         <div className="flex flex-col gap-1.5">
           <label
             htmlFor={`${formId}-website`}
-            className="text-sm font-medium text-zinc-300"
+            className="text-sm font-medium text-slate-500"
           >
             Website URL{" "}
-            <span className="text-zinc-500 font-normal">(optional)</span>
+            <span className="text-slate-400 font-normal">(optional)</span>
           </label>
           <input
             id={`${formId}-website`}
@@ -258,10 +258,10 @@ export default function AuditForm() {
       <div className="flex flex-col gap-1.5">
         <label
           htmlFor={`${formId}-headache`}
-          className="text-sm font-medium text-zinc-300"
+          className="text-sm font-medium text-slate-500"
         >
           What&apos;s your biggest operational headache?{" "}
-          <span className="text-blue-400">*</span>
+          <span className="text-blue-600">*</span>
         </label>
         <textarea
           id={`${formId}-headache`}
@@ -288,10 +288,10 @@ export default function AuditForm() {
         disabled={status === "loading"}
         className={cn(
           "inline-flex items-center justify-center gap-2 font-medium rounded-lg",
-          "bg-blue-500 text-white border border-blue-500",
-          "hover:bg-blue-600 hover:border-blue-600",
+          "bg-blue-600 text-white border border-blue-600",
+          "hover:bg-blue-700 hover:border-blue-600",
           "transition-all duration-200 px-6 py-3.5 text-base",
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950",
+          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
           "disabled:opacity-60 disabled:cursor-not-allowed"
         )}
       >
@@ -339,7 +339,7 @@ export default function AuditForm() {
         )}
       </button>
 
-      <p className="text-xs text-zinc-500 text-center">
+      <p className="text-xs text-slate-400 text-center">
         No spam. No obligation. Just a clear, actionable report within 48 hours.
       </p>
     </form>

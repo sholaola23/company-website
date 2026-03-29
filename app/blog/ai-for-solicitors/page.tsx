@@ -47,7 +47,7 @@ export default function BlogPost() {
         <div className="max-w-3xl mx-auto">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-zinc-400 hover:text-white text-sm mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 text-sm mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             All Posts
@@ -57,7 +57,7 @@ export default function BlogPost() {
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded-full"
+                className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full"
               >
                 {tag}
               </span>
@@ -69,19 +69,19 @@ export default function BlogPost() {
             Billing &amp; Case Updates
           </h1>
 
-          <div className="flex items-center gap-4 text-sm text-zinc-500 mb-12">
+          <div className="flex items-center gap-4 text-sm text-slate-400 mb-12">
             <span>21 March 2026</span>
-            <span className="text-zinc-700">|</span>
+            <span className="text-slate-600">|</span>
             <span>By Olushola Oladipupo</span>
-            <span className="text-zinc-700">|</span>
+            <span className="text-slate-600">|</span>
             <span className="flex items-center gap-1">
               <Clock className="w-3 h-3" />
               8 min read
             </span>
           </div>
 
-          <div className="prose prose-invert max-w-none">
-            <p className="text-zinc-300 leading-relaxed mb-4 text-lg">
+          <div className="prose prose-slate max-w-none">
+            <p className="text-slate-500 leading-relaxed mb-4 text-lg">
               It&apos;s Monday morning. You&apos;ve got 14 new
               enquiries from the weekend &mdash; conveyancing, family,
               employment, commercial disputes. Half need a conflict
@@ -90,7 +90,7 @@ export default function BlogPost() {
               And three clients have chased for updates since Friday.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               If you run a high-street practice or small law firm,
               this is your reality. Client intake is slow. Time
               recording is inconsistent. Clients feel ignored. And
@@ -98,13 +98,13 @@ export default function BlogPost() {
               least expecting it.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               The actual legal work &mdash; the drafting, the advice
               your clients are paying for &mdash; gets squeezed into
               whatever time is left. It shouldn&apos;t be this way.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               AI automation can handle the repetitive operational tasks
               that consume your fee earners&apos; time, so they can
               focus on billable work, client relationships, and growing
@@ -117,8 +117,8 @@ export default function BlogPost() {
               1. Client Intake &amp; Conflict Checks Automation
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-2">
-              <strong className="text-zinc-100">Problem:</strong> Every
+            <p className="text-slate-500 leading-relaxed mb-2">
+              <strong className="text-slate-900">Problem:</strong> Every
               new matter starts the same way. You need KYC documents,
               proof of address, matter details, opposing party
               information for conflict searches, a signed client care
@@ -127,8 +127,8 @@ export default function BlogPost() {
               check flags something, you&apos;ve wasted that time.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Solution:</strong> An
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Solution:</strong> An
               AI-powered intake system that sends prospective clients a
               branded form the moment they enquire. It collects details
               and opposing party information upfront, then immediately
@@ -139,8 +139,8 @@ export default function BlogPost() {
               intervention.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Result:</strong> A
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Result:</strong> A
               four-partner firm in Leeds reduced matter setup from 50
               minutes to 8 minutes per client. With 30 new matters
               monthly, that&apos;s 21 hours saved. Conflict checks
@@ -149,7 +149,7 @@ export default function BlogPost() {
               that would have been missed manually.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               Clients notice the difference too. Instead of waiting
               days for a call back, they receive an immediate,
               professional intake process. First impressions win
@@ -162,8 +162,8 @@ export default function BlogPost() {
               2. Time Recording &amp; Billing Automation
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-2">
-              <strong className="text-zinc-100">Problem:</strong> Fee
+            <p className="text-slate-500 leading-relaxed mb-2">
+              <strong className="text-slate-900">Problem:</strong> Fee
               earners are terrible at recording time &mdash; not
               because they don&apos;t care, but because they&apos;re
               busy. A solicitor handles calls, emails, contract
@@ -174,8 +174,8 @@ export default function BlogPost() {
               &pound;300 per fee earner per day walking out the door.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Solution:</strong> An
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Solution:</strong> An
               AI time-capture system that logs activity passively
               &mdash; emails sent on a matter, documents edited, calls
               made, calendar entries. At day&apos;s end, it presents
@@ -185,8 +185,8 @@ export default function BlogPost() {
               fixed-fee caps, and queues invoices for partner review.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Result:</strong> A
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Result:</strong> A
               litigation firm in Manchester with six fee earners saw
               a 22% increase in recorded billable hours in the first
               quarter. At &pound;225/hour average, that&apos;s roughly
@@ -195,7 +195,7 @@ export default function BlogPost() {
               cash flow significantly.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               The real win is accuracy. Bill disputes are a top source
               of complaints to the Legal Ombudsman. When every entry
               has a clear narrative tied to a specific activity,
@@ -207,8 +207,8 @@ export default function BlogPost() {
               3. Case Status Updates to Clients
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-2">
-              <strong className="text-zinc-100">Problem:</strong> The
+            <p className="text-slate-500 leading-relaxed mb-2">
+              <strong className="text-slate-900">Problem:</strong> The
               number one complaint about solicitors is lack of
               communication. The SRA&apos;s data confirms it &mdash;
               &ldquo;failure to keep the client informed&rdquo;
@@ -217,8 +217,8 @@ export default function BlogPost() {
               also doing the legal work.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Solution:</strong> An
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Solution:</strong> An
               automated update system tied to your case management
               software. When a matter moves stage &mdash;
               &ldquo;searches submitted&rdquo; in conveyancing,
@@ -231,8 +231,8 @@ export default function BlogPost() {
               Thursday.&rdquo;
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Result:</strong> A
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Result:</strong> A
               conveyancing practice in Birmingham with 150 active
               matters measured a 65% reduction in chasing calls.
               That freed 12 hours per week across the team.
@@ -240,7 +240,7 @@ export default function BlogPost() {
               and Google reviews improved noticeably.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               The &ldquo;no update&rdquo; message is the secret
               weapon. Clients don&apos;t mind waiting &mdash; they
               mind not knowing. A proactive message is worth more
@@ -252,8 +252,8 @@ export default function BlogPost() {
               4. Document Assembly &amp; Template Generation
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-2">
-              <strong className="text-zinc-100">Problem:</strong> Every
+            <p className="text-slate-500 leading-relaxed mb-2">
+              <strong className="text-slate-900">Problem:</strong> Every
               area of law involves repetitive drafting. Particulars of
               claim. Tenancy agreements. Settlement agreements. Wills.
               Fee earners start with a precedent, replace client
@@ -263,8 +263,8 @@ export default function BlogPost() {
               pattern every time.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Solution:</strong> An
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Solution:</strong> An
               AI document assembly system that pulls matter data from
               your case management system and generates first drafts
               automatically. The solicitor answers guided questions
@@ -275,8 +275,8 @@ export default function BlogPost() {
               reviews and refines rather than drafting from scratch.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Result:</strong> A
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Result:</strong> A
               commercial property team in Bristol reduced first-draft
               lease preparation from 2 hours to 20 minutes. Across
               15 leases per month, that&apos;s 25 hours saved. Error
@@ -285,7 +285,7 @@ export default function BlogPost() {
               client&apos;s name in clause 14.3.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               This isn&apos;t about replacing legal judgement. The
               solicitor still reviews every document. But assembling
               a 30-page document from standard building blocks is
@@ -297,8 +297,8 @@ export default function BlogPost() {
               5. Compliance Deadline Tracking (SRA Requirements)
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-2">
-              <strong className="text-zinc-100">Problem:</strong> The
+            <p className="text-slate-500 leading-relaxed mb-2">
+              <strong className="text-slate-900">Problem:</strong> The
               SRA requires firms to meet ongoing obligations:
               practising certificate renewals, PII renewal, CPD records
               for every solicitor, AML risk assessments, complaints
@@ -308,8 +308,8 @@ export default function BlogPost() {
               spreadsheet &mdash; or worse, from memory.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Solution:</strong> An
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Solution:</strong> An
               automated compliance calendar that tracks every SRA
               deadline, CPD requirement, and insurance renewal for the
               firm and each solicitor. It sends structured reminders:
@@ -320,8 +320,8 @@ export default function BlogPost() {
               report automatically.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Result:</strong> A
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Result:</strong> A
               six-partner firm in Edinburgh eliminated the annual panic
               around practising certificate renewals and PII. CPD
               compliance went from 70% on time to 100% within the
@@ -330,7 +330,7 @@ export default function BlogPost() {
               spreadsheets and chasing fee earners by hand.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               Regulatory non-compliance isn&apos;t just an
               inconvenience &mdash; it&apos;s a risk to the
               firm&apos;s practising status. Automating compliance
@@ -339,13 +339,13 @@ export default function BlogPost() {
             </p>
 
             {/* Summary */}
-            <hr className="border-zinc-800 my-10" />
+            <hr className="border-slate-200 my-10" />
 
             <h2 className="text-2xl font-bold mt-8 mb-4">
               The Bottom Line
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               Legal practice is built on process, precedent, and
               deadlines &mdash; which makes it exceptionally well
               suited to automation. Yet most high-street firms still
@@ -353,7 +353,7 @@ export default function BlogPost() {
               reactive client communication.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               The firms winning instructions in 2026 respond to
               enquiries in minutes, not days. They open files without
               paper. They bill accurately and promptly. They keep
@@ -361,7 +361,7 @@ export default function BlogPost() {
               never miss a regulatory deadline.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               That freed-up capacity goes into advocacy, negotiation,
               and strategic advice &mdash; the work clients value and
               pay a premium for. It&apos;s not about replacing fee
@@ -369,7 +369,7 @@ export default function BlogPost() {
               shouldn&apos;t require a qualified solicitor.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               If your fee earners spend more time on process than
               practice, the solution isn&apos;t another hire &mdash;
               it&apos;s automating the operational work so your team
@@ -378,26 +378,26 @@ export default function BlogPost() {
           </div>
 
           {/* Related Articles */}
-          <div className="mt-12 border border-zinc-800 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-4 text-zinc-100">Related Articles</h3>
+          <div className="mt-12 border border-slate-200 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-4 text-slate-900">Related Articles</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/blog/ai-for-accountants" className="text-blue-400 hover:text-blue-300 transition-colors">
+                <Link href="/blog/ai-for-accountants" className="text-blue-600 hover:text-blue-600 transition-colors">
                   AI for Accountants &amp; Bookkeepers: Automate Client Onboarding &amp; Compliance
                 </Link>
               </li>
               <li>
-                <Link href="/blog/ai-for-coaches" className="text-blue-400 hover:text-blue-300 transition-colors">
+                <Link href="/blog/ai-for-coaches" className="text-blue-600 hover:text-blue-600 transition-colors">
                   AI for Coaches and Consultants: Automate Your Admin
                 </Link>
               </li>
               <li>
-                <Link href="/blog/ai-chatbot-small-business" className="text-blue-400 hover:text-blue-300 transition-colors">
+                <Link href="/blog/ai-chatbot-small-business" className="text-blue-600 hover:text-blue-600 transition-colors">
                   AI Customer Service Chatbot for Small Businesses
                 </Link>
               </li>
               <li>
-                <Link href="/services/lead-intake" className="text-zinc-300 hover:text-white transition-colors">
+                <Link href="/services/lead-intake" className="text-slate-500 hover:text-slate-900 transition-colors">
                   View our AI Lead Intake service &rarr;
                 </Link>
               </li>
@@ -405,11 +405,11 @@ export default function BlogPost() {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-16 bg-gradient-to-br from-blue-500/10 to-zinc-900 border border-zinc-800 rounded-xl p-8 text-center">
+          <div className="mt-16 bg-blue-50 border border-blue-200 rounded-xl p-8 text-center">
             <h3 className="text-xl font-semibold mb-2">
               Want to Know Which Automations Would Work for Your Firm?
             </h3>
-            <p className="text-zinc-400 mb-6 max-w-lg mx-auto">
+            <p className="text-slate-600 mb-6 max-w-lg mx-auto">
               Every law firm is different. Take our free AI Readiness
               Audit and we&apos;ll tell you exactly where automation
               would save your fee earners the most time &mdash; and
@@ -417,12 +417,12 @@ export default function BlogPost() {
             </p>
             <Link
               href="/audit"
-              className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
             >
               Get Your Free AI Readiness Audit
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <p className="text-zinc-500 text-sm mt-3">
+            <p className="text-slate-400 text-sm mt-3">
               Takes 2 minutes. No obligation. Built for professional
               services.
             </p>

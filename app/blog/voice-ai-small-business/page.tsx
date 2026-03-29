@@ -63,7 +63,7 @@ export default function BlogPost() {
         <div className="max-w-3xl mx-auto">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-zinc-400 hover:text-white text-sm mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 text-sm mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             All Posts
@@ -73,7 +73,7 @@ export default function BlogPost() {
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded-full"
+                className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full"
               >
                 {tag}
               </span>
@@ -84,40 +84,40 @@ export default function BlogPost() {
             Voice AI for Small Business: Never Miss a Call Again
           </h1>
 
-          <div className="flex items-center gap-4 text-sm text-zinc-500 mb-12">
+          <div className="flex items-center gap-4 text-sm text-slate-400 mb-12">
             <span>23 March 2026</span>
-            <span className="text-zinc-700">|</span>
+            <span className="text-slate-600">|</span>
             <span>By Olushola Oladipupo</span>
-            <span className="text-zinc-700">|</span>
+            <span className="text-slate-600">|</span>
             <span className="flex items-center gap-1">
               <Clock className="w-3 h-3" />
               8 min read
             </span>
           </div>
 
-          <div className="prose prose-invert max-w-none">
+          <div className="prose prose-slate max-w-none">
             {/* Section 1: The Problem */}
-            <p className="text-zinc-300 leading-relaxed mb-4 text-lg">
+            <p className="text-slate-500 leading-relaxed mb-4 text-lg">
               Your phone rings while you&apos;re elbow-deep in a boiler repair.
               It rings again while you&apos;re driving between jobs. By the time
               you check, the customer&apos;s already booked someone else.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               This isn&apos;t a minor inconvenience. It&apos;s a revenue leak.
               Research shows that 67% of callers hang up if nobody answers
               within 30 seconds. They don&apos;t leave voicemails. They call the
               next business on Google.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               For a typical plumbing or electrical business, missed calls add up
               to roughly &pound;50,000 in lost revenue per year. That&apos;s not
               a typo. When your average job is &pound;200&ndash;500 and you miss
               2&ndash;3 calls a day, the maths gets painful fast.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               After-hours calls are the worst. A homeowner discovers a leak at
               9pm. They need someone now, not tomorrow morning. If you
               don&apos;t answer, they call someone who does.
@@ -128,21 +128,21 @@ export default function BlogPost() {
               What Voice AI Actually Is (Not What You Think)
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               When most people hear &ldquo;automated phone system,&rdquo; they
               picture the robotic menus from the 1990s. &ldquo;Press 1 for
               sales. Press 2 for support. Press 3 to lose the will to
               live.&rdquo;
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               Voice AI is nothing like that. It&apos;s an AI agent that has a
               natural, human-sounding conversation with your callers. It
               understands context. It asks follow-up questions. It adapts based
               on what the caller says.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               Think of it as a receptionist who never takes a break, never calls
               in sick, and answers every single call in under 2 seconds &mdash;
               at 2pm or 2am. The caller doesn&apos;t press buttons. They just
@@ -154,28 +154,28 @@ export default function BlogPost() {
               How It Works: Step by Step
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               Here&apos;s what happens when someone calls your business number
               with Voice AI set up:
             </p>
 
-            <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-6 mb-8 space-y-4">
+            <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 mb-8 space-y-4">
               <div className="flex gap-4">
-                <span className="text-blue-400 font-bold text-lg shrink-0">
+                <span className="text-blue-600 font-bold text-lg shrink-0">
                   1.
                 </span>
-                <p className="text-zinc-300">
-                  <strong className="text-zinc-100">Customer calls.</strong>{" "}
+                <p className="text-slate-500">
+                  <strong className="text-slate-900">Customer calls.</strong>{" "}
                   They dial your normal business number. Nothing changes on
                   their end.
                 </p>
               </div>
               <div className="flex gap-4">
-                <span className="text-blue-400 font-bold text-lg shrink-0">
+                <span className="text-blue-600 font-bold text-lg shrink-0">
                   2.
                 </span>
-                <p className="text-zinc-300">
-                  <strong className="text-zinc-100">
+                <p className="text-slate-500">
+                  <strong className="text-slate-900">
                     AI answers in under 2 seconds.
                   </strong>{" "}
                   No ringing out. No voicemail. A natural voice picks up
@@ -183,11 +183,11 @@ export default function BlogPost() {
                 </p>
               </div>
               <div className="flex gap-4">
-                <span className="text-blue-400 font-bold text-lg shrink-0">
+                <span className="text-blue-600 font-bold text-lg shrink-0">
                   3.
                 </span>
-                <p className="text-zinc-300">
-                  <strong className="text-zinc-100">
+                <p className="text-slate-500">
+                  <strong className="text-slate-900">
                     Natural conversation.
                   </strong>{" "}
                   The caller says something like &ldquo;Hi, I&apos;ve got a
@@ -196,11 +196,11 @@ export default function BlogPost() {
                 </p>
               </div>
               <div className="flex gap-4">
-                <span className="text-blue-400 font-bold text-lg shrink-0">
+                <span className="text-blue-600 font-bold text-lg shrink-0">
                   4.
                 </span>
-                <p className="text-zinc-300">
-                  <strong className="text-zinc-100">
+                <p className="text-slate-500">
+                  <strong className="text-slate-900">
                     Lead qualification.
                   </strong>{" "}
                   The AI gathers what it needs: What&apos;s the issue? Where are
@@ -208,21 +208,21 @@ export default function BlogPost() {
                 </p>
               </div>
               <div className="flex gap-4">
-                <span className="text-blue-400 font-bold text-lg shrink-0">
+                <span className="text-blue-600 font-bold text-lg shrink-0">
                   5.
                 </span>
-                <p className="text-zinc-300">
-                  <strong className="text-zinc-100">Books the appointment.</strong>{" "}
+                <p className="text-slate-500">
+                  <strong className="text-slate-900">Books the appointment.</strong>{" "}
                   Checks your live calendar and offers available slots. The
                   caller picks a time that works.
                 </p>
               </div>
               <div className="flex gap-4">
-                <span className="text-blue-400 font-bold text-lg shrink-0">
+                <span className="text-blue-600 font-bold text-lg shrink-0">
                   6.
                 </span>
-                <p className="text-zinc-300">
-                  <strong className="text-zinc-100">
+                <p className="text-slate-500">
+                  <strong className="text-slate-900">
                     SMS confirmation sent.
                   </strong>{" "}
                   The customer gets an instant text confirming the appointment
@@ -230,11 +230,11 @@ export default function BlogPost() {
                 </p>
               </div>
               <div className="flex gap-4">
-                <span className="text-blue-400 font-bold text-lg shrink-0">
+                <span className="text-blue-600 font-bold text-lg shrink-0">
                   7.
                 </span>
-                <p className="text-zinc-300">
-                  <strong className="text-zinc-100">
+                <p className="text-slate-500">
+                  <strong className="text-slate-900">
                     You get notified.
                   </strong>{" "}
                   A summary lands in your inbox or WhatsApp: caller name,
@@ -243,7 +243,7 @@ export default function BlogPost() {
               </div>
             </div>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               Total call time: 2&ndash;3 minutes. Cost per call: 20&ndash;60p.
               The caller gets a great experience. You get a qualified, booked
               lead &mdash; without lifting your phone.
@@ -254,39 +254,39 @@ export default function BlogPost() {
               Real Results: The Numbers
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               Voice AI isn&apos;t theoretical. Businesses using it are seeing
               measurable results:
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-              <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-5 text-center">
-                <p className="text-3xl font-bold text-blue-400 mb-1">3.6x</p>
-                <p className="text-zinc-400 text-sm">
+              <div className="bg-slate-50 border border-slate-200 rounded-lg p-5 text-center">
+                <p className="text-3xl font-bold text-blue-600 mb-1">3.6x</p>
+                <p className="text-slate-600 text-sm">
                   more after-hours bookings
                 </p>
               </div>
-              <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-5 text-center">
-                <p className="text-3xl font-bold text-blue-400 mb-1">90%</p>
-                <p className="text-zinc-400 text-sm">
+              <div className="bg-slate-50 border border-slate-200 rounded-lg p-5 text-center">
+                <p className="text-3xl font-bold text-blue-600 mb-1">90%</p>
+                <p className="text-slate-600 text-sm">
                   booking rate on answered calls
                 </p>
               </div>
-              <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-5 text-center">
-                <p className="text-3xl font-bold text-blue-400 mb-1">64%</p>
-                <p className="text-zinc-400 text-sm">
+              <div className="bg-slate-50 border border-slate-200 rounded-lg p-5 text-center">
+                <p className="text-3xl font-bold text-blue-600 mb-1">64%</p>
+                <p className="text-slate-600 text-sm">
                   call-to-appointment conversion
                 </p>
               </div>
-              <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-5 text-center">
-                <p className="text-3xl font-bold text-blue-400 mb-1">
+              <div className="bg-slate-50 border border-slate-200 rounded-lg p-5 text-center">
+                <p className="text-3xl font-bold text-blue-600 mb-1">
                   &lt;2s
                 </p>
-                <p className="text-zinc-400 text-sm">average answer time</p>
+                <p className="text-slate-600 text-sm">average answer time</p>
               </div>
             </div>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               To put that in context: the best human receptionists convert about
               60% of inbound calls to bookings. Voice AI hits 64% &mdash; and
               it works at 2am on a Sunday without overtime pay.
@@ -297,7 +297,7 @@ export default function BlogPost() {
               What It Costs: Honest Breakdown
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               No hidden fees. Here&apos;s what Voice AI actually costs for a
               small business:
             </p>
@@ -305,31 +305,31 @@ export default function BlogPost() {
             <div className="overflow-x-auto mb-6">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="border-b border-zinc-800">
-                    <th className="py-3 pr-4 text-zinc-100 font-semibold">
+                  <tr className="border-b border-slate-200">
+                    <th className="py-3 pr-4 text-slate-900 font-semibold">
                       Item
                     </th>
-                    <th className="py-3 text-zinc-100 font-semibold">Cost</th>
+                    <th className="py-3 text-slate-900 font-semibold">Cost</th>
                   </tr>
                 </thead>
-                <tbody className="text-zinc-300">
-                  <tr className="border-b border-zinc-800/50">
+                <tbody className="text-slate-500">
+                  <tr className="border-b border-slate-200/50">
                     <td className="py-3 pr-4">Setup (one-time)</td>
                     <td className="py-3">
                       &pound;500 &ndash; &pound;3,500
                     </td>
                   </tr>
-                  <tr className="border-b border-zinc-800/50">
+                  <tr className="border-b border-slate-200/50">
                     <td className="py-3 pr-4">Monthly management</td>
                     <td className="py-3">
                       &pound;150 &ndash; &pound;500
                     </td>
                   </tr>
-                  <tr className="border-b border-zinc-800/50">
+                  <tr className="border-b border-slate-200/50">
                     <td className="py-3 pr-4">Per call</td>
                     <td className="py-3">20p &ndash; 60p</td>
                   </tr>
-                  <tr className="border-b border-zinc-800/50">
+                  <tr className="border-b border-slate-200/50">
                     <td className="py-3 pr-4">
                       Hiring a receptionist (comparison)
                     </td>
@@ -339,19 +339,19 @@ export default function BlogPost() {
               </table>
             </div>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               Setup cost depends on complexity. A straightforward
               &ldquo;answer, qualify, book&rdquo; system is at the lower end.
               If you need multi-location routing, CRM integration, or custom
               qualification logic, it costs more.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               The monthly fee covers monitoring, updates, and optimisation
               &mdash; making sure your AI gets better over time, not worse.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               Compare that to a full-time receptionist at &pound;25,000+ per
               year (who still doesn&apos;t answer calls at midnight). Or a call
               answering service at &pound;1&ndash;2 per call with no booking
@@ -363,35 +363,35 @@ export default function BlogPost() {
               Who Voice AI Works Best For
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               Voice AI isn&apos;t for every business. It works best when phone
               calls are directly tied to revenue. That means:
             </p>
 
             <ul className="space-y-3 mb-6">
-              <li className="flex gap-3 text-zinc-300">
-                <span className="text-blue-400 font-bold shrink-0">
+              <li className="flex gap-3 text-slate-500">
+                <span className="text-blue-600 font-bold shrink-0">
                   &bull;
                 </span>
                 <span>
-                  <strong className="text-zinc-100">Trades</strong> &mdash;
+                  <strong className="text-slate-900">Trades</strong> &mdash;
                   plumbers, electricians, roofers, builders. You&apos;re on site
                   all day and can&apos;t answer the phone. Every missed call is
                   a missed job.
                 </span>
               </li>
-              <li className="flex gap-3 text-zinc-300">
-                <span className="text-blue-400 font-bold shrink-0">
+              <li className="flex gap-3 text-slate-500">
+                <span className="text-blue-600 font-bold shrink-0">
                   &bull;
                 </span>
                 <span>
-                  <strong className="text-zinc-100">
+                  <strong className="text-slate-900">
                     Healthcare and dental
                   </strong>{" "}
                   &mdash;{" "}
                   <Link
                     href="/blog/ai-for-dentists"
-                    className="text-blue-400 hover:text-blue-300 transition-colors"
+                    className="text-blue-600 hover:text-blue-600 transition-colors"
                   >
                     dental practices
                   </Link>
@@ -399,34 +399,34 @@ export default function BlogPost() {
                   and patients expect immediate answers.
                 </span>
               </li>
-              <li className="flex gap-3 text-zinc-300">
-                <span className="text-blue-400 font-bold shrink-0">
+              <li className="flex gap-3 text-slate-500">
+                <span className="text-blue-600 font-bold shrink-0">
                   &bull;
                 </span>
                 <span>
-                  <strong className="text-zinc-100">Salons and spas</strong>{" "}
+                  <strong className="text-slate-900">Salons and spas</strong>{" "}
                   &mdash; stylists can&apos;t pick up the phone mid-haircut.
                   Online booking helps, but many customers still prefer to call.
                 </span>
               </li>
-              <li className="flex gap-3 text-zinc-300">
-                <span className="text-blue-400 font-bold shrink-0">
+              <li className="flex gap-3 text-slate-500">
+                <span className="text-blue-600 font-bold shrink-0">
                   &bull;
                 </span>
                 <span>
-                  <strong className="text-zinc-100">
+                  <strong className="text-slate-900">
                     Property and lettings
                   </strong>{" "}
                   &mdash; high-value leads calling about viewings. Speed of
                   response determines who gets the deal.
                 </span>
               </li>
-              <li className="flex gap-3 text-zinc-300">
-                <span className="text-blue-400 font-bold shrink-0">
+              <li className="flex gap-3 text-slate-500">
+                <span className="text-blue-600 font-bold shrink-0">
                   &bull;
                 </span>
                 <span>
-                  <strong className="text-zinc-100">
+                  <strong className="text-slate-900">
                     Any service business
                   </strong>{" "}
                   that relies on inbound phone calls for bookings and loses
@@ -435,12 +435,12 @@ export default function BlogPost() {
               </li>
             </ul>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               If your customers mostly book online or through a website form,
               you might get more value from a{" "}
               <Link
                 href="/blog/ai-chatbot-small-business"
-                className="text-blue-400 hover:text-blue-300 transition-colors"
+                className="text-blue-600 hover:text-blue-600 transition-colors"
               >
                 website chatbot
               </Link>{" "}
@@ -448,29 +448,29 @@ export default function BlogPost() {
             </p>
 
             {/* Section 7: Guarantee */}
-            <hr className="border-zinc-800 my-10" />
+            <hr className="border-slate-200 my-10" />
 
             <h2 className="text-2xl font-bold mt-8 mb-4">
               Our 90-Day Results Guarantee
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               We stand behind the systems we build. If your Voice AI setup
               doesn&apos;t save you at least 5 hours per week within 90 days,
               we refund your setup fee. No arguments, no small print.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               That&apos;s possible because these systems work. When every call
               gets answered, qualified, and booked automatically, the time
               savings are immediate and obvious.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               We&apos;ve already delivered results for businesses like{" "}
               <Link
                 href="/case-studies/emanuel-bakery"
-                className="text-blue-400 hover:text-blue-300 transition-colors"
+                className="text-blue-600 hover:text-blue-600 transition-colors"
               >
                 E&apos;Manuel Bakery
               </Link>
@@ -483,12 +483,12 @@ export default function BlogPost() {
               Want to Hear What Your AI Receptionist Would Sound Like?
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               The best way to understand Voice AI is to experience it. We
               offer a free{" "}
               <Link
                 href="/audit"
-                className="text-blue-400 hover:text-blue-300 transition-colors"
+                className="text-blue-600 hover:text-blue-600 transition-colors"
               >
                 AI Readiness Audit
               </Link>{" "}
@@ -497,22 +497,22 @@ export default function BlogPost() {
               conversion rates, and projected ROI.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               No obligation. No hard sell. Just a clear picture of what&apos;s
               possible and what it would cost.
             </p>
           </div>
 
           {/* Related Articles */}
-          <div className="mt-12 border border-zinc-800 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-4 text-zinc-100">
+          <div className="mt-12 border border-slate-200 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-4 text-slate-900">
               Related Articles
             </h3>
             <ul className="space-y-3">
               <li>
                 <Link
                   href="/blog/ai-for-plumbers"
-                  className="text-blue-400 hover:text-blue-300 transition-colors"
+                  className="text-blue-600 hover:text-blue-600 transition-colors"
                 >
                   AI for Plumbers: 5 Automations That Win More Jobs
                 </Link>
@@ -520,7 +520,7 @@ export default function BlogPost() {
               <li>
                 <Link
                   href="/blog/automate-appointment-booking"
-                  className="text-blue-400 hover:text-blue-300 transition-colors"
+                  className="text-blue-600 hover:text-blue-600 transition-colors"
                 >
                   Automate Appointment Booking for Your Business
                 </Link>
@@ -528,7 +528,7 @@ export default function BlogPost() {
               <li>
                 <Link
                   href="/blog/ai-chatbot-small-business"
-                  className="text-blue-400 hover:text-blue-300 transition-colors"
+                  className="text-blue-600 hover:text-blue-600 transition-colors"
                 >
                   AI Chatbots for Small Business: Complete Guide
                 </Link>
@@ -536,7 +536,7 @@ export default function BlogPost() {
               <li>
                 <Link
                   href="/services/lead-intake"
-                  className="text-zinc-300 hover:text-white transition-colors"
+                  className="text-slate-500 hover:text-slate-900 transition-colors"
                 >
                   View our AI Lead Intake &amp; Appointment Booking service
                   &rarr;
@@ -546,23 +546,23 @@ export default function BlogPost() {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-16 bg-gradient-to-br from-blue-500/10 to-zinc-900 border border-zinc-800 rounded-xl p-8 text-center">
+          <div className="mt-16 bg-blue-50 border border-blue-200 rounded-xl p-8 text-center">
             <h3 className="text-xl font-semibold mb-2">
               Find Out If Voice AI Is Right for Your Business
             </h3>
-            <p className="text-zinc-400 mb-6 max-w-lg mx-auto">
+            <p className="text-slate-600 mb-6 max-w-lg mx-auto">
               Take our free AI Readiness Audit. In 2 minutes, you&apos;ll
               know exactly where automation would make the biggest impact
               &mdash; and what it would cost.
             </p>
             <Link
               href="/audit"
-              className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
             >
               Get Your Free AI Readiness Audit
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <p className="text-zinc-500 text-sm mt-3">
+            <p className="text-slate-400 text-sm mt-3">
               Takes 2 minutes. No obligation. 90-day results guarantee.
             </p>
           </div>

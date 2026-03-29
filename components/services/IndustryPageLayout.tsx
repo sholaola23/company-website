@@ -52,7 +52,7 @@ export default function IndustryPageLayout({ page }: { page: IndustryPage }) {
         <div className="mx-auto max-w-3xl">
           <Link
             href="/services"
-            className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-50 transition-colors duration-150 mb-10 group"
+            className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900 transition-colors duration-150 mb-10 group"
           >
             <ArrowLeft
               size={15}
@@ -62,13 +62,13 @@ export default function IndustryPageLayout({ page }: { page: IndustryPage }) {
             All Services
           </Link>
 
-          <span className="inline-block text-xs font-semibold uppercase tracking-widest text-blue-400 mb-4">
+          <span className="inline-block text-xs font-semibold uppercase tracking-widest text-blue-600 mb-4">
             AI for {page.industry}
           </span>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-zinc-50 leading-tight mb-6">
+          <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-[-0.04em] text-slate-900 leading-tight mb-6">
             {page.heroHeadline}
           </h1>
-          <p className="text-lg text-zinc-400 leading-relaxed mb-8 max-w-2xl">
+          <p className="text-lg text-slate-600 leading-relaxed mb-8 max-w-2xl">
             {page.heroSubheadline}
           </p>
           <div className="flex flex-wrap gap-4">
@@ -87,22 +87,22 @@ export default function IndustryPageLayout({ page }: { page: IndustryPage }) {
       </section>
 
       {/* ── The Problem ──────────────────────────────────────────────────── */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-zinc-900/50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50/50">
         <div className="mx-auto max-w-3xl">
           <div className="flex items-center gap-3 mb-6">
             <AlertTriangle
               size={20}
-              className="text-amber-400 shrink-0"
+              className="text-amber-600 shrink-0"
               aria-hidden="true"
             />
-            <h2 className="text-2xl font-bold text-zinc-50">
+            <h2 className="text-2xl font-bold text-slate-900">
               {page.problemHeading}
             </h2>
           </div>
           {page.problemParagraphs.map((p, i) => (
             <p
               key={i}
-              className="text-base text-zinc-400 leading-relaxed mb-4 last:mb-0"
+              className="text-base text-slate-600 leading-relaxed mb-4 last:mb-0"
             >
               {p}
             </p>
@@ -116,10 +116,10 @@ export default function IndustryPageLayout({ page }: { page: IndustryPage }) {
           <div className="flex items-center gap-3 mb-8">
             <Wrench
               size={20}
-              className="text-blue-400 shrink-0"
+              className="text-blue-600 shrink-0"
               aria-hidden="true"
             />
-            <h2 className="text-2xl font-bold text-zinc-50">
+            <h2 className="text-2xl font-bold text-slate-900">
               {page.whatWeBuildHeading}
             </h2>
           </div>
@@ -127,18 +127,18 @@ export default function IndustryPageLayout({ page }: { page: IndustryPage }) {
             {page.whatWeBuildItems.map((item) => (
               <div
                 key={item.title}
-                className="flex items-start gap-4 bg-zinc-900 border border-zinc-800 rounded-xl p-5"
+                className="flex items-start gap-4 bg-slate-50 border border-slate-200 rounded-xl p-5"
               >
                 <CheckCircle
                   size={20}
-                  className="text-blue-400 shrink-0 mt-0.5"
+                  className="text-blue-600 shrink-0 mt-0.5"
                   aria-hidden="true"
                 />
                 <div>
-                  <h3 className="text-base font-semibold text-zinc-50 mb-1">
+                  <h3 className="text-base font-semibold text-slate-900 mb-1">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-zinc-400 leading-relaxed">
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -149,15 +149,15 @@ export default function IndustryPageLayout({ page }: { page: IndustryPage }) {
       </section>
 
       {/* ── ROI ──────────────────────────────────────────────────────────── */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-zinc-900/50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50/50">
         <div className="mx-auto max-w-3xl">
           <div className="flex items-center gap-3 mb-8">
             <TrendingUp
               size={20}
-              className="text-emerald-400 shrink-0"
+              className="text-emerald-600 shrink-0"
               aria-hidden="true"
             />
-            <h2 className="text-2xl font-bold text-zinc-50">
+            <h2 className="text-2xl font-bold text-slate-900">
               {page.roiHeading}
             </h2>
           </div>
@@ -166,15 +166,15 @@ export default function IndustryPageLayout({ page }: { page: IndustryPage }) {
             {page.roiStats.map((stat) => (
               <div
                 key={stat.label}
-                className="bg-zinc-900 border border-zinc-800 rounded-lg p-4 text-center"
+                className="bg-slate-50 border border-slate-200 rounded-lg p-4 text-center"
               >
-                <p className="text-xl font-bold text-blue-400">{stat.value}</p>
-                <p className="text-xs text-zinc-500 mt-1">{stat.label}</p>
+                <p className="text-xl font-bold text-blue-600">{stat.value}</p>
+                <p className="text-xs text-slate-400 mt-1">{stat.label}</p>
               </div>
             ))}
           </div>
 
-          <p className="text-base text-zinc-400 leading-relaxed">
+          <p className="text-base text-slate-600 leading-relaxed">
             {page.roiDescription}
           </p>
         </div>
@@ -183,14 +183,14 @@ export default function IndustryPageLayout({ page }: { page: IndustryPage }) {
       {/* ── Proof ────────────────────────────────────────────────────────── */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-2xl font-bold text-zinc-50 mb-6">
+          <h2 className="text-2xl font-bold text-slate-900 mb-6">
             {page.proofHeading}
           </h2>
-          <p className="text-base text-zinc-400 leading-relaxed mb-4">
+          <p className="text-base text-slate-600 leading-relaxed mb-4">
             {page.proofDescription}
           </p>
           {page.proofSource && (
-            <p className="text-xs text-zinc-600">— {page.proofSource}</p>
+            <p className="text-xs text-slate-900">— {page.proofSource}</p>
           )}
         </div>
       </section>
@@ -201,10 +201,10 @@ export default function IndustryPageLayout({ page }: { page: IndustryPage }) {
           <div className="flex items-center gap-4 rounded-xl border border-emerald-500/30 bg-emerald-500/5 px-6 py-5">
             <ShieldCheck
               size={24}
-              className="text-emerald-400 shrink-0"
+              className="text-emerald-600 shrink-0"
               aria-hidden="true"
             />
-            <p className="text-sm text-zinc-300">{page.guaranteeText}</p>
+            <p className="text-sm text-slate-500">{page.guaranteeText}</p>
           </div>
         </div>
       </section>
@@ -216,10 +216,10 @@ export default function IndustryPageLayout({ page }: { page: IndustryPage }) {
             <div className="flex items-center gap-3 mb-6">
               <BookOpen
                 size={20}
-                className="text-zinc-400 shrink-0"
+                className="text-slate-600 shrink-0"
                 aria-hidden="true"
               />
-              <h2 className="text-xl font-semibold text-zinc-50">
+              <h2 className="text-xl font-semibold text-slate-900">
                 Further Reading
               </h2>
             </div>
@@ -228,7 +228,7 @@ export default function IndustryPageLayout({ page }: { page: IndustryPage }) {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="inline-flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors group"
+                    className="inline-flex items-center gap-2 text-sm text-blue-600 hover:text-blue-600 transition-colors group"
                   >
                     <ArrowRight
                       size={14}
@@ -246,9 +246,9 @@ export default function IndustryPageLayout({ page }: { page: IndustryPage }) {
 
       {/* ── Related Services ─────────────────────────────────────────────── */}
       {relatedServices.length > 0 && (
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-zinc-900/50">
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-50/50">
           <div className="mx-auto max-w-3xl">
-            <h2 className="text-xl font-semibold text-zinc-50 mb-6">
+            <h2 className="text-xl font-semibold text-slate-900 mb-6">
               Related Services
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -256,12 +256,12 @@ export default function IndustryPageLayout({ page }: { page: IndustryPage }) {
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}`}
-                  className="bg-zinc-900 border border-zinc-800 rounded-xl p-5 hover:border-blue-500/40 transition-colors group"
+                  className="bg-slate-50 border border-slate-200 rounded-xl p-5 hover:border-blue-600/40 transition-colors group"
                 >
-                  <h3 className="text-sm font-semibold text-zinc-50 mb-1 group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-sm font-semibold text-slate-900 mb-1 group-hover:text-blue-600 transition-colors">
                     {s.name}
                   </h3>
-                  <p className="text-xs text-zinc-500">
+                  <p className="text-xs text-slate-400">
                     {s.setupPrice} + {s.monthlyPrice}
                   </p>
                 </Link>
@@ -274,11 +274,11 @@ export default function IndustryPageLayout({ page }: { page: IndustryPage }) {
       {/* ── Bottom CTA ───────────────────────────────────────────────────── */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
-          <div className="bg-gradient-to-br from-blue-500/10 to-zinc-900 border border-blue-500/20 rounded-xl p-8 text-center">
-            <h2 className="text-2xl font-bold text-zinc-50 mb-3">
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-8 text-center">
+            <h2 className="text-2xl font-bold text-slate-900 mb-3">
               Ready to Automate Your {page.industry}?
             </h2>
-            <p className="text-sm text-zinc-400 mb-6 max-w-md mx-auto">
+            <p className="text-sm text-slate-600 mb-6 max-w-md mx-auto">
               Take our free 60-second AI audit and see exactly where automation
               can save you time and money.
             </p>

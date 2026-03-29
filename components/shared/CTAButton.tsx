@@ -30,20 +30,23 @@ type CTAButtonProps = LinkProps | ClickProps;
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-blue-500 text-white hover:bg-blue-600 border border-blue-500 hover:border-blue-600",
+    "bg-blue-600 text-white hover:bg-slate-900 border border-blue-600 hover:border-slate-900 shadow-[0_1px_6px_-1px_rgba(37,99,235,0.4)] hover:shadow-[0_2px_10px_-2px_rgba(15,23,42,0.3)]",
   secondary:
-    "bg-zinc-800 text-zinc-50 border border-zinc-600 hover:bg-zinc-700 hover:border-zinc-500",
+    "bg-white text-blue-600 border-2 border-slate-200 hover:bg-slate-900 hover:text-white hover:border-slate-900 shadow-sm hover:shadow-md",
   ghost:
-    "bg-transparent text-zinc-300 border border-transparent hover:text-white hover:bg-zinc-800/60",
+    "bg-transparent text-slate-700 border border-transparent hover:text-blue-600 hover:bg-blue-50/50",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
-  sm: "px-4 py-2 text-sm gap-1.5",
-  md: "px-5 py-2.5 text-sm gap-2",
-  lg: "px-6 py-3 text-base gap-2",
+  sm: "px-6 py-2.5 text-sm gap-1.5",
+  md: "px-7 py-3.5 text-base gap-2",
+  lg: "px-8 py-4 text-base gap-2.5",
 };
 
 /**
+ * Premium pill-shaped CTA button with arrow icon.
+ * Inspired by Fliweel's button pattern: pill shape, shadow, hover → black.
+ *
  * Usage:
  * <CTAButton href="/audit" variant="primary" size="md">Get Free Audit</CTAButton>
  * <CTAButton onClick={handleClick} variant="secondary" showArrow={false}>Learn More</CTAButton>
@@ -58,9 +61,9 @@ export default function CTAButton({
   ...rest
 }: CTAButtonProps) {
   const baseStyles = cn(
-    "inline-flex items-center justify-center font-medium rounded-lg",
+    "inline-flex items-center justify-center font-semibold rounded-full",
     "transition-all duration-200 ease-out",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
     "group cursor-pointer select-none",
     variantStyles[variant],
     sizeStyles[size],

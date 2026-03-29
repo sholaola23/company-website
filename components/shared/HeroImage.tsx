@@ -17,8 +17,8 @@ const CARDS = [
   {
     label: "Lead Captured",
     sub: "New enquiry from website",
-    color: "border-blue-500/40 bg-blue-500/5",
-    dot: "bg-blue-400",
+    color: "border-blue-600/40 bg-blue-600/5",
+    dot: "bg-blue-600",
     delay: 0,
     top: "top-0",
     left: "left-0",
@@ -27,7 +27,7 @@ const CARDS = [
     label: "AI Qualified",
     sub: "High intent — budget confirmed",
     color: "border-emerald-500/40 bg-emerald-500/5",
-    dot: "bg-emerald-400",
+    dot: "bg-emerald-600",
     delay: 0.15,
     top: "top-24",
     left: "left-36",
@@ -94,9 +94,9 @@ function FloatingCard({
             className={`w-2 h-2 rounded-full ${card.dot} shrink-0`}
             aria-hidden="true"
           />
-          <p className="text-xs font-semibold text-zinc-100">{card.label}</p>
+          <p className="text-xs font-semibold text-slate-900">{card.label}</p>
         </div>
-        <p className="text-xs text-zinc-500 pl-4">{card.sub}</p>
+        <p className="text-xs text-slate-500 pl-4">{card.sub}</p>
       </motion.div>
     </motion.div>
   );
@@ -123,7 +123,7 @@ export default function HeroImage() {
             y1={line.y1}
             x2={line.x2}
             y2={line.y2}
-            stroke="rgb(63 63 70)"
+            stroke="rgb(203 213 225)"
             strokeWidth="1"
             strokeDasharray="4 4"
           />
@@ -157,8 +157,8 @@ export default function HeroImage() {
               cx={node.cx}
               cy={node.cy}
               r="10"
-              fill="rgb(24 24 27)"
-              stroke="rgb(63 63 70)"
+              fill="rgb(241 245 249)"
+              stroke="rgb(203 213 225)"
               strokeWidth="1.5"
               animate={{ r: [10, 13, 10] }}
               transition={{

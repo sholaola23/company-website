@@ -22,45 +22,31 @@ import FAQSection from "@/components/shared/FAQSection";
 import type { FAQItem } from "@/components/shared/FAQSection";
 
 // ---------------------------------------------------------------------------
-// Hero
+// Hero — clean, bright, text-dominant (Fliweel pattern: text left, image right)
 // ---------------------------------------------------------------------------
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-zinc-950">
-      {/* Floating gradient blobs for depth */}
+    <section className="relative overflow-hidden bg-white">
+      {/* Subtle gradient blobs for depth — very low opacity on white */}
       <GradientBlob
         className="w-[700px] h-[700px] bg-blue-600 -top-60 -left-40"
         duration={10}
       />
       <GradientBlob
-        className="w-[500px] h-[500px] bg-purple-700 top-20 -right-40"
+        className="w-[500px] h-[500px] bg-amber-300 top-20 -right-40"
         duration={12}
         delay={2}
       />
-      <GradientBlob
-        className="w-[400px] h-[400px] bg-blue-400 bottom-0 left-1/2"
-        duration={9}
-        delay={4}
-      />
-
-      {/* Subtle radial glow behind the heading */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 flex items-center justify-center"
-      >
-        <div className="h-[600px] w-[900px] rounded-full bg-blue-500/5 blur-3xl" />
-      </div>
 
       <div className="relative mx-auto max-w-6xl px-6 pb-28 pt-32 sm:px-8 lg:px-12">
-        {/* Desktop: text left, illustration right. Mobile: stacked, centered */}
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
           {/* Left: copy */}
           <div className="flex-1 text-center lg:text-left">
             <AnimatedSection delay={0}>
               {/* Eyebrow pill */}
-              <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/80 px-4 py-1.5 text-xs font-medium tracking-wide text-zinc-400">
+              <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-semibold tracking-wide text-slate-600 shadow-sm">
                 <span
-                  className="h-1.5 w-1.5 rounded-full bg-blue-500"
+                  className="h-1.5 w-1.5 rounded-full bg-blue-600"
                   aria-hidden="true"
                 />
                 AI Solutions — delivered in 14 days
@@ -68,21 +54,21 @@ function Hero() {
 
               <RotatingHeadline />
 
-              <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400 sm:text-xl lg:mx-0">
+              <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl lg:mx-0">
                 AI automation, professional websites, and custom web apps —
-                built and delivered in 7–14 days. Your team checks a dashboard
+                built and delivered in 7-14 days. Your team checks a dashboard
                 for 60 seconds. AI handles the rest. Packages from £500.
               </p>
 
               {/* Social proof line */}
-              <p className="mx-auto mt-4 max-w-2xl text-sm font-medium text-zinc-500 lg:mx-0">
+              <p className="mx-auto mt-4 max-w-2xl text-sm font-medium text-slate-900 lg:mx-0">
                 Already helping UK businesses save 8+ hours per week
               </p>
 
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
                 <Link
                   href="/audit"
-                  className="inline-flex items-center gap-2 rounded-lg bg-blue-500 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-blue-500/20 transition-all duration-200 hover:bg-blue-600 hover:shadow-blue-500/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 group"
+                  className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 text-base font-semibold text-white shadow-[0_1px_6px_-1px_rgba(37,99,235,0.4)] transition-all duration-200 hover:bg-slate-900 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 group"
                 >
                   Get Your Free AI Audit
                   <ArrowRight
@@ -93,7 +79,7 @@ function Hero() {
                 </Link>
                 <Link
                   href="/services"
-                  className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-transparent px-6 py-3 text-base font-semibold text-zinc-300 transition-all duration-200 hover:border-zinc-500 hover:bg-zinc-800/60 hover:text-zinc-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
+                  className="inline-flex items-center gap-2 rounded-full border-2 border-slate-200 bg-white px-7 py-3.5 text-base font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:border-slate-900 hover:bg-slate-900 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
                 >
                   View Services
                 </Link>
@@ -101,7 +87,7 @@ function Hero() {
             </AnimatedSection>
           </div>
 
-          {/* Right: animated AI flow illustration (desktop only) */}
+          {/* Right: animated AI flow illustration */}
           <AnimatedSection delay={0.3} className="shrink-0">
             <HeroImage />
           </AnimatedSection>
@@ -112,31 +98,31 @@ function Hero() {
 }
 
 // ---------------------------------------------------------------------------
-// Social proof bar
+// Social proof bar — impact numbers with amber accents
 // ---------------------------------------------------------------------------
 const stats = [
-  { numeric: 8, suffix: "+", label: "Hours / ~£400 Saved", sublabel: "per client weekly" },
-  { numeric: 180, suffix: "", label: "Orders Automated Weekly", sublabel: "at E'Manuel Bakery" },
+  { numeric: 8, suffix: "+", label: "Hours Saved Weekly", sublabel: "per client" },
+  { numeric: 180, suffix: "", label: "Orders Automated", sublabel: "weekly at E'Manuel" },
   { numeric: 9, suffix: "", label: "Workflows Deployed", sublabel: "for one bakery" },
   { numeric: 14, suffix: "", label: "Day Delivery", sublabel: "audit to live" },
 ];
 
 function SocialProofBar() {
   return (
-    <div className="border-b border-t border-zinc-800 bg-zinc-900">
+    <div className="border-b border-t border-slate-100 bg-slate-50">
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
-        <dl className="grid grid-cols-2 divide-x divide-zinc-800 md:grid-cols-4">
+        <dl className="grid grid-cols-2 divide-x divide-slate-200 md:grid-cols-4">
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="flex flex-col items-center justify-center py-6 px-4 text-center"
+              className="flex flex-col items-center justify-center py-8 px-4 text-center"
             >
-              <dt className="text-2xl font-bold text-zinc-50 sm:text-3xl">
+              <dt className="text-3xl font-bold text-blue-600 sm:text-4xl">
                 <AnimatedCounter target={stat.numeric} suffix={stat.suffix} />
               </dt>
-              <dd className="mt-1 text-sm text-zinc-400 font-medium">{stat.label}</dd>
+              <dd className="mt-1.5 text-sm text-slate-700 font-medium">{stat.label}</dd>
               {"sublabel" in stat && stat.sublabel && (
-                <dd className="mt-0.5 text-xs text-zinc-600">{stat.sublabel}</dd>
+                <dd className="mt-0.5 text-xs text-slate-400">{stat.sublabel}</dd>
               )}
             </div>
           ))}
@@ -147,7 +133,7 @@ function SocialProofBar() {
 }
 
 // ---------------------------------------------------------------------------
-// What We Build — results-first category cards (replaces tier pricing cards)
+// What We Build — service category cards with hover inversion
 // ---------------------------------------------------------------------------
 const categories = [
   {
@@ -161,7 +147,7 @@ const categories = [
     icon: Globe,
     title: "Websites & Web Apps",
     description:
-      "Professional websites and custom web apps that convert visitors into customers. Dashboards, booking portals, interactive tools — mobile-first, SEO-optimised, delivered in 10–14 days.",
+      "Professional websites and custom web apps that convert visitors into customers. Dashboards, booking portals, interactive tools — mobile-first, SEO-optimised, delivered in 10-14 days.",
     result: "Full web app delivered in 2 weeks",
   },
   {
@@ -175,69 +161,66 @@ const categories = [
 
 function WhatWeBuild() {
   return (
-    <section className="bg-zinc-950 py-24" aria-labelledby="services-heading">
+    <section className="bg-blue-600/[0.03] py-28" aria-labelledby="services-heading">
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
-        {/* Section heading */}
         <AnimatedSection>
           <div className="flex flex-col items-center gap-4 text-center">
-            <span className="text-xs font-semibold uppercase tracking-widest text-blue-500">
-              What We Build
-            </span>
+            <span className="eyebrow">What We Build</span>
             <h2
               id="services-heading"
-              className="text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl"
+              className="heading-section text-3xl sm:text-4xl lg:text-[56px]"
             >
               Real Tools. Real Results.
             </h2>
-            <p className="max-w-2xl text-base leading-relaxed text-zinc-400">
+            <p className="max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
               We help small businesses save time, win more customers, and look
               professional — delivered fast and built to last.
             </p>
           </div>
         </AnimatedSection>
 
-        {/* Category cards */}
+        {/* Category cards — bordered with hover inversion (Fliweel pattern) */}
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           {categories.map((cat, index) => {
             const Icon = cat.icon;
             return (
               <AnimatedSection key={cat.title} delay={0.1 * (index + 1)}>
-                <div className="flex h-full flex-col rounded-2xl border border-zinc-800 bg-zinc-900/50 p-8 transition-all duration-300 hover:scale-[1.02] hover:border-zinc-700 hover:bg-zinc-900">
+                <div className="group flex h-full flex-col rounded-[30px] border-2 border-slate-900 bg-transparent p-8 transition-all duration-300 hover:bg-slate-900 hover:text-white cursor-pointer">
                   {/* Icon */}
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 group-hover:bg-blue-700/20 transition-colors duration-300">
                     <Icon
                       size={22}
-                      className="text-blue-400"
+                      className="text-blue-600 group-hover:text-blue-600 transition-colors duration-300"
                       aria-hidden="true"
                     />
                   </div>
 
                   {/* Title */}
-                  <h3 className="mt-5 text-lg font-bold text-zinc-50">
+                  <h3 className="mt-5 text-lg font-bold text-slate-900 group-hover:text-white transition-colors duration-300">
                     {cat.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-zinc-400">
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600 group-hover:text-slate-300 transition-colors duration-300">
                     {cat.description}
                   </p>
 
                   {/* Result badge */}
                   <div className="mt-6">
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-400">
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 group-hover:border-emerald-500/30 group-hover:bg-emerald-500/10 group-hover:text-emerald-600 transition-colors duration-300">
                       {cat.result}
                     </span>
                   </div>
 
-                  {/* Learn more */}
+                  {/* Arrow link */}
                   <Link
                     href="/services"
-                    className="group mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-blue-400 transition-colors duration-200 hover:text-blue-300"
+                    className="group/link mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 group-hover:text-blue-600 transition-colors duration-200"
                   >
                     Learn more
                     <ArrowRight
                       size={14}
-                      className="transition-transform duration-200 group-hover:translate-x-0.5"
+                      className="transition-transform duration-200 group-hover/link:translate-x-0.5"
                       aria-hidden="true"
                     />
                   </Link>
@@ -247,13 +230,12 @@ function WhatWeBuild() {
           })}
         </div>
 
-        {/* Pricing signal + all solutions link */}
         <AnimatedSection delay={0.45}>
-          <p className="mt-10 text-center text-sm text-zinc-500">
+          <p className="mt-10 text-center text-sm text-slate-900">
             Packages from £500.{" "}
             <Link
               href="/services"
-              className="inline-flex items-center gap-1 font-medium text-blue-400 transition-colors duration-200 hover:text-blue-300 group"
+              className="inline-flex items-center gap-1 font-semibold text-blue-600 transition-colors duration-200 hover:text-blue-700 group"
             >
               View all 12 solutions
               <ArrowRight
@@ -264,7 +246,6 @@ function WhatWeBuild() {
             </Link>
           </p>
         </AnimatedSection>
-
       </div>
     </section>
   );
@@ -276,66 +257,62 @@ function WhatWeBuild() {
 function CaseStudiesPreview() {
   return (
     <section
-      className="bg-zinc-900/40 py-24"
+      className="bg-white py-28"
       aria-labelledby="case-studies-heading"
     >
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
-        {/* Section heading */}
         <AnimatedSection>
           <div className="flex flex-col items-center gap-4 text-center">
-            <span className="text-xs font-semibold uppercase tracking-widest text-blue-500">
-              Proof It Works
-            </span>
+            <span className="eyebrow">Proof It Works</span>
             <h2
               id="case-studies-heading"
-              className="text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl"
+              className="heading-section text-3xl sm:text-4xl lg:text-[56px]"
             >
               Real Results for Real Businesses
             </h2>
-            <p className="max-w-xl text-base leading-relaxed text-zinc-400">
+            <p className="max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
               Not case studies written for marketing — actual numbers from live
               clients.
             </p>
           </div>
         </AnimatedSection>
 
-        {/* Cards */}
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           {caseStudies.map((study, index) => (
             <AnimatedSection key={study.slug} delay={0.15 * (index + 1)}>
               <Link
                 href={`/case-studies/${study.slug}`}
-                className="group flex flex-col justify-between rounded-2xl border border-zinc-700 bg-zinc-900 p-8 shadow-lg transition-all duration-200 hover:border-blue-500/40 hover:bg-zinc-900 hover:shadow-blue-500/5"
+                className="group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:border-blue-200 hover:shadow-lg card-hover"
               >
                 <div>
                   {/* Industry tag */}
-                  <span className="inline-block rounded-md border border-zinc-700 bg-zinc-800 px-2.5 py-0.5 text-xs font-medium text-zinc-400">
+                  <span className="inline-block rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600">
                     {study.industry}
                   </span>
 
-                  {/* Hero stat — larger, more prominent */}
+                  {/* Hero stat */}
                   <div className="mt-6">
-                    <p className="text-6xl font-bold tracking-tight text-zinc-50">
+                    <p className="text-5xl font-bold tracking-tight text-slate-900 lg:text-6xl">
                       {study.heroStat}
                     </p>
-                    <p className="mt-1.5 text-base font-semibold text-blue-400">
+                    <p className="mt-1.5 text-base font-semibold text-blue-600">
                       {study.heroLabel}
                     </p>
                   </div>
 
                   {/* Business name + location */}
-                  <h3 className="mt-5 text-xl font-semibold text-zinc-50">
+                  <h3 className="mt-5 text-xl font-semibold text-slate-900">
                     {study.name}
                   </h3>
-                  <p className="mt-1 text-sm text-zinc-500">{study.location}</p>
+                  <p className="mt-1 text-sm text-slate-900">{study.location}</p>
 
-                  {/* One-liner summary */}
-                  <p className="mt-4 text-sm leading-relaxed text-zinc-400 line-clamp-2">
+                  {/* Summary */}
+                  <p className="mt-4 text-sm leading-relaxed text-slate-600 line-clamp-2">
                     {study.solution}
                   </p>
                 </div>
 
-                <div className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-400 transition-colors duration-200 group-hover:text-blue-300">
+                <div className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 transition-colors duration-200 group-hover:text-blue-700">
                   Read case study
                   <ArrowRight
                     size={14}
@@ -348,12 +325,11 @@ function CaseStudiesPreview() {
           ))}
         </div>
 
-        {/* View all CTA */}
         <AnimatedSection delay={0.4}>
           <p className="mt-10 text-center">
             <Link
               href="/case-studies"
-              className="group inline-flex items-center gap-1.5 text-sm font-medium text-zinc-400 transition-colors duration-200 hover:text-zinc-200"
+              className="group inline-flex items-center gap-1.5 text-sm font-medium text-slate-900 transition-colors duration-200 hover:text-slate-700"
             >
               View all case studies
               <ArrowRight
@@ -374,28 +350,28 @@ function CaseStudiesPreview() {
 // ---------------------------------------------------------------------------
 function ResultsGuarantee() {
   return (
-    <section className="bg-zinc-950 py-24" aria-labelledby="guarantee-heading">
+    <section className="bg-slate-50 py-28" aria-labelledby="guarantee-heading">
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
         <AnimatedSection>
-          <div className="mx-auto max-w-2xl rounded-2xl border-2 border-emerald-500/40 bg-zinc-900/60 p-8 sm:p-10 text-center">
-            <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500/10 border border-emerald-500/30">
+          <div className="mx-auto max-w-2xl rounded-2xl border-2 border-emerald-200 bg-white p-8 sm:p-10 text-center shadow-sm">
+            <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-50 border border-emerald-200">
               <ShieldCheck
                 size={28}
-                className="text-emerald-400"
+                className="text-emerald-600"
                 aria-hidden="true"
               />
             </div>
             <h2
               id="guarantee-heading"
-              className="text-2xl font-bold text-zinc-50 sm:text-3xl"
+              className="heading-section text-2xl sm:text-3xl"
             >
               90-Day Results Guarantee
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-zinc-400">
+            <p className="mt-4 text-base leading-relaxed text-slate-600">
               If you don&apos;t save at least 5 hours per week within 90 days,
               we&apos;ll refund your setup fee. No questions asked.
             </p>
-            <p className="mt-3 text-sm font-medium text-emerald-400">
+            <p className="mt-3 text-sm font-semibold text-emerald-600">
               Every project we deliver is backed by this guarantee.
             </p>
           </div>
@@ -442,29 +418,25 @@ const steps = [
 function HowItWorks() {
   return (
     <section
-      className="bg-zinc-950 py-24"
+      className="bg-white py-28"
       aria-labelledby="how-it-works-heading"
     >
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
-        {/* Section heading */}
         <AnimatedSection>
           <div className="flex flex-col items-center gap-4 text-center">
-            <span className="text-xs font-semibold uppercase tracking-widest text-blue-500">
-              How It Works
-            </span>
+            <span className="eyebrow">How It Works</span>
             <h2
               id="how-it-works-heading"
-              className="text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl"
+              className="heading-section text-3xl sm:text-4xl lg:text-[56px]"
             >
               From conversation to live automation
             </h2>
-            <p className="max-w-xl text-base leading-relaxed text-zinc-400">
+            <p className="max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
               A structured 4-step process that gets you live in under two weeks.
             </p>
           </div>
         </AnimatedSection>
 
-        {/* Steps */}
         <ol className="mt-16 grid gap-0 md:grid-cols-4" role="list">
           {steps.map((step, index) => {
             const Icon = step.icon;
@@ -472,32 +444,32 @@ function HowItWorks() {
             return (
               <AnimatedSection key={step.number} delay={0.1 * (index + 1)}>
                 <li className="relative flex flex-col items-center px-4 text-center">
-                  {/* Connector line between steps */}
+                  {/* Connector line */}
                   {!isLast && (
                     <div
                       aria-hidden="true"
-                      className="absolute left-1/2 top-6 hidden h-px w-full translate-x-6 bg-gradient-to-r from-zinc-700 to-transparent md:block"
+                      className="absolute left-1/2 top-6 hidden h-px w-full translate-x-6 bg-gradient-to-r from-slate-300 to-transparent md:block"
                     />
                   )}
 
                   {/* Icon badge */}
-                  <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-xl border border-zinc-800 bg-zinc-900">
+                  <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-white shadow-sm">
                     <Icon
                       size={20}
-                      className="text-blue-500"
+                      className="text-blue-600"
                       aria-hidden="true"
                     />
                   </div>
 
                   {/* Step number */}
-                  <span className="mt-4 text-xs font-bold tracking-widest text-zinc-600">
+                  <span className="mt-4 text-xs font-bold tracking-widest text-slate-400">
                     {step.number}
                   </span>
 
-                  <h3 className="mt-2 text-base font-semibold text-zinc-50">
+                  <h3 className="mt-2 text-base font-semibold text-slate-900">
                     {step.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">
                     {step.description}
                   </p>
                 </li>
@@ -518,7 +490,7 @@ const businessJsonLd = {
   "@type": "ProfessionalService",
   "name": "Oladipupo Consulting Ltd",
   "description":
-    "AI automation, professional websites, custom web apps, and AI training for small businesses. We help SMBs save time and grow with intelligent automation — delivered in 7–14 days.",
+    "AI automation, professional websites, custom web apps, and AI training for small businesses. We help SMBs save time and grow with intelligent automation — delivered in 7-14 days.",
   "url": "https://oladipupoconsulting.co.uk",
   "email": "hello@oladipupoconsulting.co.uk",
   "telephone": "+447469347654",
@@ -582,7 +554,7 @@ export default function HomePage() {
       <CaseStudiesPreview />
       <ResultsGuarantee />
       <HowItWorks />
-      <section className="bg-zinc-950 py-24">
+      <section className="bg-slate-50 py-28">
         <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
           <AnimatedSection>
             <FAQSection

@@ -38,18 +38,18 @@ export default function PasswordGate({ slug, onAuthenticated }: PasswordGateProp
   }
 
   return (
-    <div className="min-h-screen bg-zinc-950 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-white flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         <div className="flex items-center justify-center mb-8">
-          <div className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 flex items-center justify-center">
-            <Lock className="w-5 h-5 text-zinc-400" />
+          <div className="w-12 h-12 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center">
+            <Lock className="w-5 h-5 text-slate-600" />
           </div>
         </div>
 
-        <h1 className="text-xl font-semibold text-zinc-50 text-center mb-2">
+        <h1 className="text-xl font-semibold text-slate-900 text-center mb-2">
           Enter access code
         </h1>
-        <p className="text-sm text-zinc-500 text-center mb-8">
+        <p className="text-sm text-slate-400 text-center mb-8">
           This page was built specifically for you.
         </p>
 
@@ -61,7 +61,7 @@ export default function PasswordGate({ slug, onAuthenticated }: PasswordGateProp
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Access code"
               autoFocus
-              className="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-xl text-zinc-50 placeholder:text-zinc-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/20 transition-all text-sm"
+              className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600/20 transition-all text-sm"
               aria-label="Access code"
               required
             />
@@ -76,7 +76,7 @@ export default function PasswordGate({ slug, onAuthenticated }: PasswordGateProp
           <button
             type="submit"
             disabled={loading || !password}
-            className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-blue-600 hover:bg-blue-500 disabled:opacity-50 disabled:cursor-not-allowed text-white rounded-xl text-sm font-medium transition-all"
+            className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed text-white rounded-xl text-sm font-medium transition-all"
             aria-label="Unlock page"
           >
             {loading ? (
@@ -90,7 +90,7 @@ export default function PasswordGate({ slug, onAuthenticated }: PasswordGateProp
           </button>
         </form>
 
-        <p className="text-xs text-zinc-700 text-center mt-8">
+        <p className="text-xs text-slate-600 text-center mt-8">
           Oladipupo Consulting Ltd
         </p>
       </div>

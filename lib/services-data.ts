@@ -681,6 +681,101 @@ export const services: Service[] = [
     ctaHref: "/audit",
     ctaSubtext: "Tell us what's broken — we'll show you what we can build.",
   },
+  {
+    slug: "three-automations-audit",
+    name: "Three Automations Scoping Session",
+    tier: "starter",
+    setupPrice: "£497",
+    monthlyPrice: "one-off",
+    deliveryDays: "1 session",
+    idealFor: "Business owners who know they need to automate but don't know where to start",
+    pain: "Unsure which processes to automate first — or how much it should cost",
+    metaDescription: "A 60-minute strategy session to identify the 3 highest-ROI automations for your business. Written scope, time-saved estimates, and a clear build plan. £497 one-off.",
+    deliverables: [
+      "60-minute discovery call",
+      "Written scoping document for 3 automations",
+      "Estimated hours saved per automation",
+      "Recommended tool stack",
+      "Build complexity + cost estimate",
+      "Prioritised build roadmap",
+    ],
+    referenceClient: undefined,
+    icon: "Search",
+    heroHeadline: "Know Exactly Which 3 Automations Will Save Your Business the Most Time",
+    proof: {
+      heading: "The Three Automations Framework",
+      description:
+        "Every business — regardless of industry — has the same three bottlenecks: a Data-Mover, a Triggered Communicator, and a Report Builder. In a 60-minute session, we identify yours, map the logic in plain English, and give you a written plan you can hand to any developer — or bring straight back to us to build.",
+      stats: [
+        { label: "Average time recovered", value: "8–20 hrs/week" },
+        { label: "Session length", value: "60 minutes" },
+        { label: "Deliverable", value: "Written scope" },
+      ],
+    },
+    ctaText: "Book a Scoping Session",
+    ctaHref: "https://cal.com/sholastechnotes/free-ai-strategy-call",
+    ctaSubtext: "£497 one-off. No obligation to build with us.",
+    howItWorks: [
+      {
+        step: 1,
+        title: "Book & Brief",
+        description: "Book your 60-minute session. We send a short pre-call questionnaire so we arrive knowing your tools, team size, and biggest time sinks.",
+        icon: "MessageSquare",
+      },
+      {
+        step: 2,
+        title: "Discovery Call",
+        description: "We map your current workflows across the three categories: what moves data, what sends messages, and what builds reports. We identify the highest-frequency repetitive tasks in each.",
+        icon: "Search",
+      },
+      {
+        step: 3,
+        title: "Scope Document Delivered",
+        description: "Within 24 hours you receive a written scoping document for each of your three automations — plain English description, recommended tool stack, estimated time saved, and build complexity rating.",
+        icon: "FileSearch",
+      },
+      {
+        step: 4,
+        title: "Build or Take It Anywhere",
+        description: "The document is yours. Take it to any developer, or bring it back to us for a fixed-price build. If you build with us, the £497 is deducted from your build fee.",
+        icon: "Rocket",
+      },
+    ],
+    faq: [
+      {
+        question: "What do I actually get at the end?",
+        answer: "A written PDF scoping document covering your three highest-ROI automations. Each one includes a plain-English description of what it does, the recommended tool stack, an estimate of hours saved per week, and a build complexity rating (simple / moderate / complex) with an indicative cost range.",
+      },
+      {
+        question: "Can I take the document to another developer?",
+        answer: "Yes, completely. The scope document is yours. That said, if you decide to build with us, the £497 session fee is deducted from your build invoice.",
+      },
+      {
+        question: "How is this different from the free AI audit?",
+        answer: "The free audit gives you an AI readiness score and top-level findings. The Scoping Session goes three levels deeper: we map the exact logic of each automation, identify edge cases, specify the tools, and produce a document detailed enough to hand to a developer and get a real quote.",
+      },
+      {
+        question: "What if I only have one or two bottlenecks, not three?",
+        answer: "We'll scope whatever we find. Most businesses have all three, but if you only have two meaningful automation opportunities right now, you leave with two well-scoped plans — not filler.",
+      },
+      {
+        question: "Is this suitable if I've never automated anything before?",
+        answer: "That's exactly who this is for. You don't need any technical knowledge — just an honest picture of how your team spends its time. We ask the questions, you answer in plain English.",
+      },
+    ],
+    roiSnippet: "A single automation that recovers 90 minutes per week saves 78 hours per year. At UK average hourly costs, that's £1,500–2,500 of staff time. Three automations running together typically recover 8–20 hours per week — the equivalent of a part-time hire, without the hire.",
+    whatsIncluded: [
+      "Pre-call questionnaire to maximise session value",
+      "60-minute live discovery call (Zoom or Google Meet)",
+      "Scoping document for automation #1 — your Data-Mover",
+      "Scoping document for automation #2 — your Triggered Communicator",
+      "Scoping document for automation #3 — your Report Builder",
+      "Tool stack recommendations for each",
+      "Estimated weekly time saved per automation",
+      "Build complexity rating + indicative cost range",
+      "Prioritised build roadmap (which to build first and why)",
+    ],
+  },
 ];
 
 export const servicesByTier = {

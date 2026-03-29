@@ -39,7 +39,7 @@ const STEP_ICONS: Record<string, typeof Search> = {
 
 function StepIcon({ step }: { step: HowItWorksStep }) {
   const Icon = STEP_ICONS[step.icon] ?? Zap;
-  return <Icon size={20} className="text-blue-400" aria-hidden="true" />;
+  return <Icon size={20} className="text-blue-600" aria-hidden="true" />;
 }
 
 // ── Static params ─────────────────────────────────────────────────────────────
@@ -79,10 +79,10 @@ export async function generateMetadata({
 
 // ── Tier badge styles ─────────────────────────────────────────────────────────
 const TIER_BADGE: Record<string, string> = {
-  starter: "bg-zinc-700 text-zinc-200",
-  growth: "bg-blue-500/20 text-blue-400 border border-blue-500/30",
-  scale: "bg-amber-500/20 text-amber-400 border border-amber-500/30",
-  premium: "bg-purple-500/20 text-purple-400 border border-purple-500/30",
+  starter: "bg-slate-200 text-slate-900",
+  growth: "bg-blue-600/20 text-blue-600 border border-blue-600/30",
+  scale: "bg-amber-500/20 text-amber-600 border border-amber-500/30",
+  premium: "bg-purple-500/20 text-purple-600 border border-purple-500/30",
 };
 
 // ── Page ──────────────────────────────────────────────────────────────────────
@@ -119,7 +119,7 @@ export default async function ServiceDetailPage({
       {/* Back link */}
       <Link
         href="/services"
-        className="inline-flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-50 transition-colors duration-150 mb-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded group"
+        className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900 transition-colors duration-150 mb-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded group"
       >
         <ArrowLeft
           size={15}
@@ -139,32 +139,32 @@ export default async function ServiceDetailPage({
         >
           {service.tier}
         </span>
-        <h1 className="text-3xl sm:text-4xl font-bold text-zinc-50 leading-tight mb-2">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-slate-900 leading-tight mb-2">
           {service.heroHeadline ?? service.name}
         </h1>
         {service.heroHeadline && (
-          <p className="text-sm text-zinc-500 mb-6">{service.name}</p>
+          <p className="text-sm text-slate-400 mb-6">{service.name}</p>
         )}
         {!service.heroHeadline && <div className="mb-4" />}
 
         {/* Key metrics row */}
         <div className="flex flex-wrap gap-4">
-          <div className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-2.5">
-            <Zap size={15} className="text-blue-400" aria-hidden="true" />
-            <span className="text-sm font-semibold text-zinc-50">
+          <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5">
+            <Zap size={15} className="text-blue-600" aria-hidden="true" />
+            <span className="text-sm font-semibold text-slate-900">
               {service.setupPrice}
             </span>
-            <span className="text-xs text-zinc-500">setup</span>
+            <span className="text-xs text-slate-400">setup</span>
           </div>
-          <div className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-2.5">
-            <Zap size={15} className="text-amber-400" aria-hidden="true" />
-            <span className="text-sm font-semibold text-zinc-50">
+          <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5">
+            <Zap size={15} className="text-amber-600" aria-hidden="true" />
+            <span className="text-sm font-semibold text-slate-900">
               {service.monthlyPrice}
             </span>
           </div>
-          <div className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-2.5">
-            <Clock size={15} className="text-zinc-400" aria-hidden="true" />
-            <span className="text-sm text-zinc-300">{service.deliveryDays}</span>
+          <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5">
+            <Clock size={15} className="text-slate-600" aria-hidden="true" />
+            <span className="text-sm text-slate-500">{service.deliveryDays}</span>
           </div>
         </div>
       </header>
@@ -172,41 +172,41 @@ export default async function ServiceDetailPage({
       {/* Ideal for */}
       <section className="mb-10" aria-labelledby="ideal-for-heading">
         <div className="flex items-center gap-2 mb-3">
-          <Users size={16} className="text-blue-400" aria-hidden="true" />
+          <Users size={16} className="text-blue-600" aria-hidden="true" />
           <h2
             id="ideal-for-heading"
-            className="text-xs font-semibold uppercase tracking-widest text-zinc-500"
+            className="text-xs font-semibold uppercase tracking-widest text-slate-400"
           >
             Ideal For
           </h2>
         </div>
-        <p className="text-base text-zinc-200 leading-relaxed">
+        <p className="text-base text-slate-900 leading-relaxed">
           {service.idealFor}
         </p>
       </section>
 
       {/* Divider */}
-      <hr className="border-zinc-800 mb-10" />
+      <hr className="border-slate-200 mb-10" />
 
       {/* The Problem */}
       <section className="mb-10" aria-labelledby="problem-heading">
         <h2
           id="problem-heading"
-          className="text-xl font-semibold text-zinc-50 mb-4"
+          className="text-xl font-semibold text-slate-900 mb-4"
         >
           The Problem
         </h2>
-        <p className="text-base text-zinc-400 leading-relaxed">{service.pain}</p>
+        <p className="text-base text-slate-600 leading-relaxed">{service.pain}</p>
       </section>
 
       {/* How It Works (new) */}
       {service.howItWorks && service.howItWorks.length > 0 && (
         <>
-          <hr className="border-zinc-800 mb-10" />
+          <hr className="border-slate-200 mb-10" />
           <section className="mb-12" aria-labelledby="how-it-works-heading">
             <h2
               id="how-it-works-heading"
-              className="text-xl font-semibold text-zinc-50 mb-8"
+              className="text-xl font-semibold text-slate-900 mb-8"
             >
               How It Works
             </h2>
@@ -214,16 +214,16 @@ export default async function ServiceDetailPage({
               {service.howItWorks.map((step) => (
                 <div
                   key={step.step}
-                  className="flex gap-4 bg-zinc-900/50 border border-zinc-800 rounded-xl p-5"
+                  className="flex gap-4 bg-slate-50/50 border border-slate-200 rounded-xl p-5"
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-500/10 border border-blue-500/20">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-600/10 border border-blue-600/20">
                     <StepIcon step={step} />
                   </div>
                   <div>
-                    <h3 className="text-sm font-semibold text-zinc-50 mb-1">
+                    <h3 className="text-sm font-semibold text-slate-900 mb-1">
                       Step {step.step}: {step.title}
                     </h3>
-                    <p className="text-sm text-zinc-400 leading-relaxed">
+                    <p className="text-sm text-slate-600 leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -239,7 +239,7 @@ export default async function ServiceDetailPage({
         <section className="mb-12" aria-labelledby="included-heading">
           <h2
             id="included-heading"
-            className="text-xl font-semibold text-zinc-50 mb-6"
+            className="text-xl font-semibold text-slate-900 mb-6"
           >
             What&apos;s Included
           </h2>
@@ -248,10 +248,10 @@ export default async function ServiceDetailPage({
               <li key={item} className="flex items-start gap-3">
                 <CheckCircle
                   size={16}
-                  className="text-blue-400 shrink-0 mt-0.5"
+                  className="text-blue-600 shrink-0 mt-0.5"
                   aria-hidden="true"
                 />
-                <span className="text-sm text-zinc-300 leading-relaxed">
+                <span className="text-sm text-slate-500 leading-relaxed">
                   {item}
                 </span>
               </li>
@@ -263,7 +263,7 @@ export default async function ServiceDetailPage({
         <section className="mb-12" aria-labelledby="deliverables-heading">
           <h2
             id="deliverables-heading"
-            className="text-xl font-semibold text-zinc-50 mb-6"
+            className="text-xl font-semibold text-slate-900 mb-6"
           >
             What We Deliver
           </h2>
@@ -272,10 +272,10 @@ export default async function ServiceDetailPage({
               <li key={item} className="flex items-start gap-3">
                 <CheckCircle
                   size={16}
-                  className="text-blue-400 shrink-0 mt-0.5"
+                  className="text-blue-600 shrink-0 mt-0.5"
                   aria-hidden="true"
                 />
-                <span className="text-sm text-zinc-300 leading-relaxed">
+                <span className="text-sm text-slate-500 leading-relaxed">
                   {item}
                 </span>
               </li>
@@ -287,24 +287,24 @@ export default async function ServiceDetailPage({
       {/* Before & After Comparison (new) */}
       {service.beforeAfter && service.beforeAfter.length > 0 && (
         <>
-          <hr className="border-zinc-800 mb-10" />
+          <hr className="border-slate-200 mb-10" />
           <section className="mb-12" aria-labelledby="before-after-heading">
             <h2
               id="before-after-heading"
-              className="text-xl font-semibold text-zinc-50 mb-6"
+              className="text-xl font-semibold text-slate-900 mb-6"
             >
               Before &amp; After
             </h2>
-            <div className="rounded-xl border border-zinc-800 overflow-hidden">
+            <div className="rounded-xl border border-slate-200 overflow-hidden">
               {/* Column headers */}
-              <div className="grid grid-cols-3 bg-zinc-800/60">
-                <div className="px-4 py-3 text-xs font-bold uppercase tracking-widest text-zinc-400">
+              <div className="grid grid-cols-3 bg-slate-100/60">
+                <div className="px-4 py-3 text-xs font-bold uppercase tracking-widest text-slate-600">
                   Metric
                 </div>
                 <div className="px-4 py-3 text-xs font-bold uppercase tracking-widest text-red-400">
                   Before
                 </div>
-                <div className="px-4 py-3 text-xs font-bold uppercase tracking-widest text-emerald-400">
+                <div className="px-4 py-3 text-xs font-bold uppercase tracking-widest text-emerald-600">
                   After
                 </div>
               </div>
@@ -313,16 +313,16 @@ export default async function ServiceDetailPage({
                   key={row.metric}
                   className={cn(
                     "grid grid-cols-3",
-                    i < service.beforeAfter!.length - 1 && "border-b border-zinc-800"
+                    i < service.beforeAfter!.length - 1 && "border-b border-slate-200"
                   )}
                 >
-                  <div className="px-4 py-3.5 text-sm text-zinc-300 font-medium">
+                  <div className="px-4 py-3.5 text-sm text-slate-500 font-medium">
                     {row.metric}
                   </div>
-                  <div className="px-4 py-3.5 text-sm text-zinc-500">
+                  <div className="px-4 py-3.5 text-sm text-slate-400">
                     {row.before}
                   </div>
-                  <div className="px-4 py-3.5 text-sm text-emerald-400 font-medium">
+                  <div className="px-4 py-3.5 text-sm text-emerald-600 font-medium">
                     {row.after}
                   </div>
                 </div>
@@ -338,11 +338,11 @@ export default async function ServiceDetailPage({
           <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-6">
             <h2
               id="roi-heading"
-              className="text-lg font-semibold text-amber-400 mb-3"
+              className="text-lg font-semibold text-amber-600 mb-3"
             >
               The Numbers: What This Costs You Today
             </h2>
-            <p className="text-sm text-zinc-300 leading-relaxed">
+            <p className="text-sm text-slate-500 leading-relaxed">
               {service.roiSnippet}
             </p>
           </div>
@@ -354,7 +354,7 @@ export default async function ServiceDetailPage({
         <section className="mb-12" aria-labelledby="proof-heading">
           <h2
             id="proof-heading"
-            className="text-xl font-semibold text-zinc-50 mb-6"
+            className="text-xl font-semibold text-slate-900 mb-6"
           >
             {service.proof.heading}
           </h2>
@@ -368,23 +368,23 @@ export default async function ServiceDetailPage({
               {service.proof.stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="bg-zinc-900 border border-zinc-800 rounded-lg p-4 text-center"
+                  className="bg-slate-50 border border-slate-200 rounded-lg p-4 text-center"
                 >
-                  <p className="text-lg font-bold text-blue-400">
+                  <p className="text-lg font-bold text-blue-600">
                     {stat.value}
                   </p>
-                  <p className="text-xs text-zinc-500 mt-1">{stat.label}</p>
+                  <p className="text-xs text-slate-400 mt-1">{stat.label}</p>
                 </div>
               ))}
             </div>
           )}
 
-          <p className="text-sm text-zinc-400 leading-relaxed">
+          <p className="text-sm text-slate-600 leading-relaxed">
             {service.proof.description}
           </p>
 
           {service.proof.clientName && (
-            <p className="text-xs text-zinc-600 mt-3">
+            <p className="text-xs text-slate-900 mt-3">
               — {service.proof.clientName}
             </p>
           )}
@@ -393,14 +393,14 @@ export default async function ServiceDetailPage({
 
       {/* Reference client callout (links to case study) */}
       {service.referenceClient && (
-        <div className="mb-12 bg-zinc-900 border border-zinc-800 rounded-xl p-5 flex items-center justify-between gap-4">
+        <div className="mb-12 bg-slate-50 border border-slate-200 rounded-xl p-5 flex items-center justify-between gap-4">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-1">
+            <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-1">
               Real Client
             </p>
-            <p className="text-sm text-zinc-300">
+            <p className="text-sm text-slate-500">
               See how{" "}
-              <span className="text-zinc-50 font-medium">
+              <span className="text-slate-900 font-medium">
                 {service.referenceClient}
               </span>{" "}
               uses this solution.
@@ -408,7 +408,7 @@ export default async function ServiceDetailPage({
           </div>
           <Link
             href="/case-studies"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded group shrink-0"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:text-blue-600 transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded group shrink-0"
           >
             View case study
             <ArrowRight
@@ -423,11 +423,11 @@ export default async function ServiceDetailPage({
       {/* FAQ Section (new) */}
       {service.faq && service.faq.length > 0 && (
         <>
-          <hr className="border-zinc-800 mb-10" />
+          <hr className="border-slate-200 mb-10" />
           <section className="mb-12" aria-labelledby="faq-heading">
             <h2
               id="faq-heading"
-              className="text-xl font-semibold text-zinc-50 mb-6"
+              className="text-xl font-semibold text-slate-900 mb-6"
             >
               Frequently Asked Questions
             </h2>
@@ -435,18 +435,18 @@ export default async function ServiceDetailPage({
               {service.faq.map((item) => (
                 <details
                   key={item.question}
-                  className="group rounded-xl border border-zinc-800 bg-zinc-900/50 overflow-hidden"
+                  className="group rounded-xl border border-slate-200 bg-slate-50/50 overflow-hidden"
                 >
-                  <summary className="flex cursor-pointer items-center justify-between px-5 py-4 text-sm font-medium text-zinc-100 hover:text-zinc-50 transition-colors [&::-webkit-details-marker]:hidden list-none">
+                  <summary className="flex cursor-pointer items-center justify-between px-5 py-4 text-sm font-medium text-slate-900 hover:text-slate-900 transition-colors [&::-webkit-details-marker]:hidden list-none">
                     {item.question}
                     <ArrowRight
                       size={14}
-                      className="text-zinc-600 transition-transform group-open:rotate-90 shrink-0 ml-3"
+                      className="text-slate-900 transition-transform group-open:rotate-90 shrink-0 ml-3"
                       aria-hidden="true"
                     />
                   </summary>
                   <div className="px-5 pb-4">
-                    <p className="text-sm text-zinc-400 leading-relaxed">
+                    <p className="text-sm text-slate-600 leading-relaxed">
                       {item.answer}
                     </p>
                   </div>
@@ -458,29 +458,29 @@ export default async function ServiceDetailPage({
       )}
 
       {/* 90-Day Results Guarantee */}
-      <div className="mb-12 rounded-xl border-2 border-emerald-500/40 bg-zinc-900/60 p-6 sm:p-8 text-center">
+      <div className="mb-12 rounded-xl border-2 border-emerald-500/40 bg-slate-50/60 p-6 sm:p-8 text-center">
         <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/10 border border-emerald-500/30">
           <ShieldCheck
             size={24}
-            className="text-emerald-400"
+            className="text-emerald-600"
             aria-hidden="true"
           />
         </div>
-        <h2 className="text-xl font-bold text-zinc-50 sm:text-2xl">
+        <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">
           90-Day Results Guarantee
         </h2>
-        <p className="mt-3 text-sm leading-relaxed text-zinc-400 max-w-md mx-auto">
+        <p className="mt-3 text-sm leading-relaxed text-slate-600 max-w-md mx-auto">
           If you don&apos;t save at least 5 hours per week within 90 days,
           we&apos;ll refund your setup fee. No questions asked.
         </p>
       </div>
 
       {/* Bottom CTA */}
-      <div className="bg-gradient-to-br from-blue-500/10 to-zinc-900 border border-blue-500/20 rounded-xl p-8 text-center">
-        <h2 className="text-xl font-semibold text-zinc-50 mb-3">
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-8 text-center">
+        <h2 className="text-xl font-semibold text-slate-900 mb-3">
           {service.ctaText ? `Ready? ${service.ctaText}` : `Interested in ${service.name}?`}
         </h2>
-        <p className="text-sm text-zinc-400 mb-6 max-w-sm mx-auto">
+        <p className="text-sm text-slate-600 mb-6 max-w-sm mx-auto">
           {service.ctaSubtext ?? "Tell us about your business and what you need \u2014 we\u2019ll get back to you within a few hours."}
         </p>
         <CTAButton href={service.ctaHref ?? "/contact"} variant="primary" size="lg">

@@ -38,8 +38,8 @@ export default function PearlDentalPage() {
 
   if (authed === null) {
     return (
-      <div className="min-h-screen bg-zinc-950 flex items-center justify-center">
-        <div className="w-5 h-5 border-2 border-zinc-800 border-t-teal-500 rounded-full animate-spin" />
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="w-5 h-5 border-2 border-slate-200 border-t-teal-500 rounded-full animate-spin" />
       </div>
     );
   }
@@ -98,11 +98,11 @@ function RoiCalculator() {
   const roi = Math.round((netGain / yearlyCost) * 100);
 
   return (
-    <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 md:p-8">
-      <h3 className="text-lg font-semibold text-zinc-50 mb-1">
+    <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 md:p-8">
+      <h3 className="text-lg font-semibold text-slate-900 mb-1">
         What are those 3 closed days costing Pearl Dental?
       </h3>
-      <p className="text-sm text-zinc-500 mb-6">
+      <p className="text-sm text-slate-400 mb-6">
         Adjust the numbers to match your practice. The math is conservative.
       </p>
 
@@ -110,8 +110,8 @@ function RoiCalculator() {
         {/* Missed patients slider */}
         <div>
           <div className="flex justify-between items-baseline mb-2">
-            <label className="text-sm text-zinc-400">Potential patients lost per week (Fri-Sun)</label>
-            <span className="text-2xl font-bold text-teal-400">{missedPatientsPerWeek}</span>
+            <label className="text-sm text-slate-600">Potential patients lost per week (Fri-Sun)</label>
+            <span className="text-2xl font-bold text-teal-600">{missedPatientsPerWeek}</span>
           </div>
           <input
             type="range"
@@ -122,7 +122,7 @@ function RoiCalculator() {
             className="w-full accent-teal-500 cursor-pointer"
             aria-label="Potential patients lost per week"
           />
-          <div className="flex justify-between text-xs text-zinc-600 mt-1">
+          <div className="flex justify-between text-xs text-slate-900 mt-1">
             <span>1</span>
             <span>10</span>
           </div>
@@ -131,8 +131,8 @@ function RoiCalculator() {
         {/* Patient lifetime value slider */}
         <div>
           <div className="flex justify-between items-baseline mb-2">
-            <label className="text-sm text-zinc-400">Average patient lifetime value</label>
-            <span className="text-2xl font-bold text-teal-400">${patientLifetimeValue.toLocaleString()}</span>
+            <label className="text-sm text-slate-600">Average patient lifetime value</label>
+            <span className="text-2xl font-bold text-teal-600">${patientLifetimeValue.toLocaleString()}</span>
           </div>
           <input
             type="range"
@@ -144,7 +144,7 @@ function RoiCalculator() {
             className="w-full accent-teal-500 cursor-pointer"
             aria-label="Average patient lifetime value in dollars"
           />
-          <div className="flex justify-between text-xs text-zinc-600 mt-1">
+          <div className="flex justify-between text-xs text-slate-900 mt-1">
             <span>$500</span>
             <span>$5,000</span>
           </div>
@@ -153,21 +153,21 @@ function RoiCalculator() {
 
       {/* Results */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-        <div className="bg-zinc-800/60 rounded-xl p-4 text-center">
-          <p className="text-xs text-zinc-500 mb-1">Lost per year</p>
+        <div className="bg-slate-100/60 rounded-xl p-4 text-center">
+          <p className="text-xs text-slate-400 mb-1">Lost per year</p>
           <p className="text-2xl font-bold text-red-400">
             ${yearlyLost.toLocaleString()}
           </p>
         </div>
-        <div className="bg-zinc-800/60 rounded-xl p-4 text-center">
-          <p className="text-xs text-zinc-500 mb-1">System cost (yr 1)</p>
-          <p className="text-2xl font-bold text-zinc-300">
+        <div className="bg-slate-100/60 rounded-xl p-4 text-center">
+          <p className="text-xs text-slate-400 mb-1">System cost (yr 1)</p>
+          <p className="text-2xl font-bold text-slate-500">
             ${yearlyCost.toLocaleString()}
           </p>
         </div>
-        <div className="bg-zinc-800/60 rounded-xl p-4 text-center">
-          <p className="text-xs text-zinc-500 mb-1">Net gain</p>
-          <p className={`text-2xl font-bold ${netGain > 0 ? "text-green-400" : "text-zinc-400"}`}>
+        <div className="bg-slate-100/60 rounded-xl p-4 text-center">
+          <p className="text-xs text-slate-400 mb-1">Net gain</p>
+          <p className={`text-2xl font-bold ${netGain > 0 ? "text-green-400" : "text-slate-600"}`}>
             {netGain > 0 ? `+$${netGain.toLocaleString()}` : "-"}
           </p>
         </div>
@@ -175,8 +175,8 @@ function RoiCalculator() {
 
       {netGain > 0 && (
         <div className="flex items-start gap-3 bg-teal-500/10 border border-teal-500/20 rounded-xl px-4 py-3">
-          <TrendingUp className="w-4 h-4 text-teal-400 mt-0.5 flex-shrink-0" />
-          <p className="text-sm text-teal-200">
+          <TrendingUp className="w-4 h-4 text-teal-600 mt-0.5 flex-shrink-0" />
+          <p className="text-sm text-teal-700">
             At these numbers, the system pays for itself and returns{" "}
             <strong>{roi}% ROI in year one.</strong> That is just from
             the patients Pearl is already losing on closed days.
@@ -193,7 +193,7 @@ function RoiCalculator() {
 
 function PearlContent() {
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-50">
+    <div className="min-h-screen bg-white text-slate-900">
 
       {/* ------------------------------------------------------------------ */}
       {/* HERO                                                                  */}
@@ -205,7 +205,7 @@ function PearlContent() {
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-medium mb-6"
+          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 text-xs font-medium mb-6"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
           Built specifically for Pearl Dental Center
@@ -215,11 +215,11 @@ function PearlContent() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-3xl md:text-4xl font-bold text-zinc-50 leading-tight mb-4"
+          className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-4"
         >
           Dr. Downie, we built this for Pearl Dental.
           <br />
-          <span className="text-teal-400">
+          <span className="text-teal-600">
             Your patients deserve an answer&nbsp;&mdash; even on Fridays.
           </span>
         </motion.h1>
@@ -228,7 +228,7 @@ function PearlContent() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-zinc-400 text-base md:text-lg leading-relaxed"
+          className="text-slate-600 text-base md:text-lg leading-relaxed"
         >
           Pearl Dental has 385 reviews and 4.9 stars. Patients love the warmth
           and honesty. But right now, every call from Thursday afternoon to
@@ -249,16 +249,16 @@ function PearlContent() {
           <p className="text-xs font-semibold uppercase tracking-widest text-teal-500 mb-3">
             The problem
           </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-zinc-50 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
             72 hours every week with no one answering the phone.
           </h2>
-          <p className="text-zinc-400 leading-relaxed">
+          <p className="text-slate-600 leading-relaxed">
             Pearl Dental is open Monday through Thursday, 7am to 4pm. That means
             from Thursday at 4pm until Monday at 7am&nbsp;&mdash; 87 hours&nbsp;&mdash; your
             phone either goes to voicemail or rings out. Friday, Saturday, and
             Sunday are completely dark.
           </p>
-          <p className="text-zinc-400 leading-relaxed mt-3">
+          <p className="text-slate-600 leading-relaxed mt-3">
             When a Tampa resident chips a tooth on Friday night, needs an
             emergency appointment on Saturday, or finally decides to book that
             cleaning on Sunday evening, they call Pearl Dental and hear nothing.
@@ -292,14 +292,14 @@ function PearlContent() {
           ].map(({ icon: Icon, title, desc }) => (
             <div
               key={title}
-              className="flex items-start gap-4 p-4 bg-zinc-900 border border-zinc-800 rounded-xl"
+              className="flex items-start gap-4 p-4 bg-slate-50 border border-slate-200 rounded-xl"
             >
               <div className="w-9 h-9 rounded-lg bg-red-500/10 border border-red-500/20 flex items-center justify-center flex-shrink-0">
                 <Icon className="w-4 h-4 text-red-400" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-zinc-200 mb-0.5">{title}</p>
-                <p className="text-sm text-zinc-500">{desc}</p>
+                <p className="text-sm font-semibold text-slate-900 mb-0.5">{title}</p>
+                <p className="text-sm text-slate-400">{desc}</p>
               </div>
             </div>
           ))}
@@ -312,32 +312,32 @@ function PearlContent() {
 
       <Section
         id="voice-ai"
-        className="px-5 py-12 md:py-16 bg-zinc-900/40 border-y border-zinc-800/50"
+        className="px-5 py-12 md:py-16 bg-slate-50/40 border-y border-slate-200/50"
       >
         <div className="max-w-2xl mx-auto">
           <p className="text-xs font-semibold uppercase tracking-widest text-teal-500 mb-3">
             Voice AI for Pearl Dental
           </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-zinc-50 mb-2">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
             Here&apos;s what happens when someone calls Pearl at 7pm on a Friday.
           </h2>
-          <p className="text-zinc-400 mb-8 text-sm">
+          <p className="text-slate-600 mb-8 text-sm">
             This is the exact conversation. Word for word.
           </p>
 
           {/* Call transcript */}
-          <div className="bg-zinc-950 border border-zinc-800 rounded-2xl overflow-hidden mb-8">
+          <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden mb-8">
 
             {/* Header */}
-            <div className="flex items-center gap-3 px-4 py-3 border-b border-zinc-800 bg-zinc-900">
+            <div className="flex items-center gap-3 px-4 py-3 border-b border-slate-200 bg-slate-50">
               <div className="w-8 h-8 rounded-full bg-teal-500/15 border border-teal-500/25 flex items-center justify-center flex-shrink-0">
-                <Phone className="w-4 h-4 text-teal-400" />
+                <Phone className="w-4 h-4 text-teal-600" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-zinc-50">Incoming call — (813) 803-5767</p>
+                <p className="text-sm font-semibold text-slate-900">Incoming call — (813) 803-5767</p>
                 <div className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-                  <p className="text-xs text-zinc-500">Friday 7:12pm — call answered in 2 rings</p>
+                  <p className="text-xs text-slate-400">Friday 7:12pm — call answered in 2 rings</p>
                 </div>
               </div>
             </div>
@@ -398,18 +398,18 @@ function PearlContent() {
                   <div
                     className={`w-7 h-7 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-bold ${
                       line.role === "ai"
-                        ? "bg-teal-500/15 border border-teal-500/25 text-teal-400"
-                        : "bg-zinc-700 text-zinc-300"
+                        ? "bg-teal-500/15 border border-teal-500/25 text-teal-600"
+                        : "bg-slate-200 text-slate-500"
                     }`}
                   >
                     {line.role === "ai" ? "P" : "C"}
                   </div>
                   <div className={`flex flex-col gap-1 max-w-[82%] ${line.role === "customer" ? "items-end" : ""}`}>
-                    <span className="text-xs text-zinc-600">{line.speaker}</span>
+                    <span className="text-xs text-slate-900">{line.speaker}</span>
                     <div
                       className={`px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed ${
                         line.role === "ai"
-                          ? "bg-zinc-800 text-zinc-200 rounded-tl-sm"
+                          ? "bg-slate-100 text-slate-900 rounded-tl-sm"
                           : "bg-teal-600 text-white rounded-tr-sm"
                       }`}
                     >
@@ -421,15 +421,15 @@ function PearlContent() {
             </div>
 
             {/* Footer stats */}
-            <div className="grid grid-cols-3 border-t border-zinc-800">
+            <div className="grid grid-cols-3 border-t border-slate-200">
               {[
                 { label: "Call duration", value: "2m 08s" },
                 { label: "Appointment booked", value: "Yes" },
                 { label: "Cost to Pearl", value: "~$0.40" },
               ].map(({ label, value }) => (
-                <div key={label} className="px-4 py-3 text-center border-r border-zinc-800 last:border-0">
-                  <p className="text-xs text-zinc-600 mb-0.5">{label}</p>
-                  <p className="text-sm font-semibold text-zinc-200">{value}</p>
+                <div key={label} className="px-4 py-3 text-center border-r border-slate-200 last:border-0">
+                  <p className="text-xs text-slate-900 mb-0.5">{label}</p>
+                  <p className="text-sm font-semibold text-slate-900">{value}</p>
                 </div>
               ))}
             </div>
@@ -437,14 +437,14 @@ function PearlContent() {
 
           {/* What Dr. Downie gets */}
           <div className="grid gap-3">
-            <p className="text-sm font-semibold text-zinc-400 uppercase tracking-wide">
+            <p className="text-sm font-semibold text-slate-600 uppercase tracking-wide">
               What Dr. Downie receives immediately after
             </p>
-            <div className="flex items-start gap-3 p-4 bg-zinc-900 border border-zinc-800 rounded-xl">
-              <MessageSquare className="w-4 h-4 text-teal-400 mt-0.5 flex-shrink-0" />
+            <div className="flex items-start gap-3 p-4 bg-slate-50 border border-slate-200 rounded-xl">
+              <MessageSquare className="w-4 h-4 text-teal-600 mt-0.5 flex-shrink-0" />
               <div>
-                <p className="text-sm font-semibold text-zinc-200 mb-0.5">SMS notification</p>
-                <p className="text-sm text-zinc-400 font-mono bg-zinc-950 rounded-lg p-3 mt-2 leading-relaxed">
+                <p className="text-sm font-semibold text-slate-900 mb-0.5">SMS notification</p>
+                <p className="text-sm text-slate-600 font-mono bg-white rounded-lg p-3 mt-2 leading-relaxed">
                   New booking — Pearl Dental<br />
                   Patient: Maria Gonzalez, (813) 555-0142<br />
                   Issue: Chipped front tooth, minor sensitivity<br />
@@ -469,10 +469,10 @@ function PearlContent() {
         <p className="text-xs font-semibold uppercase tracking-widest text-teal-500 mb-3">
           Online booking
         </p>
-        <h2 className="text-2xl md:text-3xl font-bold text-zinc-50 mb-4">
+        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
           Replace the request form with instant booking.
         </h2>
-        <p className="text-zinc-400 leading-relaxed mb-8">
+        <p className="text-slate-600 leading-relaxed mb-8">
           Right now, patients fill out a form and wait for a callback. That made
           sense 10 years ago. Today, patients expect to pick a time slot and get
           a confirmed appointment in under 30 seconds&nbsp;&mdash; the same way they
@@ -500,14 +500,14 @@ function PearlContent() {
           ].map(({ icon: Icon, title, desc }) => (
             <div
               key={title}
-              className="flex items-start gap-4 p-4 bg-zinc-900 border border-zinc-800 rounded-xl"
+              className="flex items-start gap-4 p-4 bg-slate-50 border border-slate-200 rounded-xl"
             >
               <div className="w-9 h-9 rounded-lg bg-teal-500/10 border border-teal-500/20 flex items-center justify-center flex-shrink-0">
-                <Icon className="w-4 h-4 text-teal-400" />
+                <Icon className="w-4 h-4 text-teal-600" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-zinc-200 mb-0.5">{title}</p>
-                <p className="text-sm text-zinc-500">{desc}</p>
+                <p className="text-sm font-semibold text-slate-900 mb-0.5">{title}</p>
+                <p className="text-sm text-slate-400">{desc}</p>
               </div>
             </div>
           ))}
@@ -520,16 +520,16 @@ function PearlContent() {
 
       <Section
         id="reviews"
-        className="px-5 py-12 md:py-16 bg-zinc-900/40 border-y border-zinc-800/50"
+        className="px-5 py-12 md:py-16 bg-slate-50/40 border-y border-slate-200/50"
       >
         <div className="max-w-2xl mx-auto">
           <p className="text-xs font-semibold uppercase tracking-widest text-teal-500 mb-3">
             Review growth
           </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-zinc-50 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
             4.9 stars is incredible. Let&apos;s make sure the world sees it.
           </h2>
-          <p className="text-zinc-400 leading-relaxed mb-8">
+          <p className="text-slate-600 leading-relaxed mb-8">
             Pearl Dental has roughly 100-200 Google reviews. That is solid, but
             Tampa competitors with 500+ reviews rank higher and look more
             established. Your patients already love the practice&nbsp;&mdash;
@@ -556,14 +556,14 @@ function PearlContent() {
             ].map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}
-                className="flex items-start gap-4 p-4 bg-zinc-900 border border-zinc-800 rounded-xl"
+                className="flex items-start gap-4 p-4 bg-slate-50 border border-slate-200 rounded-xl"
               >
                 <div className="w-9 h-9 rounded-lg bg-teal-500/10 border border-teal-500/20 flex items-center justify-center flex-shrink-0">
-                  <Icon className="w-4 h-4 text-teal-400" />
+                  <Icon className="w-4 h-4 text-teal-600" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-zinc-200 mb-0.5">{title}</p>
-                  <p className="text-sm text-zinc-500">{desc}</p>
+                  <p className="text-sm font-semibold text-slate-900 mb-0.5">{title}</p>
+                  <p className="text-sm text-slate-400">{desc}</p>
                 </div>
               </div>
             ))}
@@ -582,30 +582,30 @@ function PearlContent() {
         <p className="text-xs font-semibold uppercase tracking-widest text-teal-500 mb-3">
           Pricing
         </p>
-        <h2 className="text-2xl md:text-3xl font-bold text-zinc-50 mb-8">
+        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8">
           Simple. No surprises.
         </h2>
 
-        <div className="bg-zinc-900 border border-teal-500/30 rounded-2xl overflow-hidden">
+        <div className="bg-slate-50 border border-teal-500/30 rounded-2xl overflow-hidden">
           {/* Pricing header */}
-          <div className="p-6 md:p-8 border-b border-zinc-800">
+          <div className="p-6 md:p-8 border-b border-slate-200">
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
               <div>
-                <p className="text-sm text-zinc-500 mb-1">One-time setup fee</p>
+                <p className="text-sm text-slate-400 mb-1">One-time setup fee</p>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-4xl font-bold text-zinc-50">$2,000</span>
+                  <span className="text-4xl font-bold text-slate-900">$2,000</span>
                 </div>
-                <p className="text-xs text-zinc-600 mt-1">
+                <p className="text-xs text-slate-900 mt-1">
                   Covers setup, testing, and approval
                 </p>
               </div>
               <div className="sm:text-right">
-                <p className="text-sm text-zinc-500 mb-1">Then monthly</p>
+                <p className="text-sm text-slate-400 mb-1">Then monthly</p>
                 <div className="flex items-baseline gap-2 sm:justify-end">
-                  <span className="text-4xl font-bold text-teal-400">$300</span>
-                  <span className="text-zinc-500">/mo</span>
+                  <span className="text-4xl font-bold text-teal-600">$300</span>
+                  <span className="text-slate-400">/mo</span>
                 </div>
-                <p className="text-xs text-zinc-600 mt-1">
+                <p className="text-xs text-slate-900 mt-1">
                   That is $10 a day
                 </p>
               </div>
@@ -614,7 +614,7 @@ function PearlContent() {
 
           {/* What's covered */}
           <div className="p-6 md:p-8">
-            <p className="text-xs font-semibold uppercase tracking-wide text-zinc-600 mb-4">
+            <p className="text-xs font-semibold uppercase tracking-wide text-slate-900 mb-4">
               Everything included
             </p>
             <div className="grid sm:grid-cols-2 gap-2">
@@ -630,7 +630,7 @@ function PearlContent() {
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
-                  <span className="text-sm text-zinc-300">{item}</span>
+                  <span className="text-sm text-slate-500">{item}</span>
                 </div>
               ))}
             </div>
@@ -639,12 +639,12 @@ function PearlContent() {
           {/* Context callout */}
           <div className="px-6 pb-6 md:px-8 md:pb-8">
             <div className="flex items-start gap-3 bg-teal-500/8 border border-teal-500/15 rounded-xl px-4 py-3">
-              <DollarSign className="w-4 h-4 text-teal-400 mt-0.5 flex-shrink-0" />
-              <p className="text-sm text-zinc-400">
+              <DollarSign className="w-4 h-4 text-teal-600 mt-0.5 flex-shrink-0" />
+              <p className="text-sm text-slate-600">
                 One new patient has a lifetime value of{" "}
-                <span className="text-zinc-200 font-medium">$1,000+</span>.
+                <span className="text-slate-900 font-medium">$1,000+</span>.
                 This system costs{" "}
-                <span className="text-zinc-200 font-medium">$300/month</span>.
+                <span className="text-slate-900 font-medium">$300/month</span>.
                 Capturing just one extra patient per month means it pays for
                 itself more than 3x over.
               </p>
@@ -659,16 +659,16 @@ function PearlContent() {
 
       <Section
         id="roi"
-        className="px-5 py-12 md:py-16 bg-zinc-900/40 border-y border-zinc-800/50"
+        className="px-5 py-12 md:py-16 bg-slate-50/40 border-y border-slate-200/50"
       >
         <div className="max-w-2xl mx-auto">
           <p className="text-xs font-semibold uppercase tracking-widest text-teal-500 mb-3">
             The numbers
           </p>
-          <h2 className="text-2xl md:text-3xl font-bold text-zinc-50 mb-2">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
             3 closed days = how much lost revenue?
           </h2>
-          <p className="text-zinc-400 mb-8 text-sm">
+          <p className="text-slate-600 mb-8 text-sm">
             Dental practices lose 20-30% of inbound calls to voicemail on average.
             With Pearl closed Fri-Sun, the number is likely higher. Slide the
             numbers to see what that means.
@@ -688,23 +688,23 @@ function PearlContent() {
         <p className="text-xs font-semibold uppercase tracking-widest text-teal-500 mb-3">
           Real results
         </p>
-        <h2 className="text-2xl md:text-3xl font-bold text-zinc-50 mb-8">
+        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8">
           What happens when a small business plugs this in.
         </h2>
 
         {/* Case study card */}
-        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 md:p-8">
+        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 md:p-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-full bg-teal-500/15 border border-teal-500/20 flex items-center justify-center">
-              <span className="text-sm font-bold text-teal-400">E</span>
+              <span className="text-sm font-bold text-teal-600">E</span>
             </div>
             <div>
-              <p className="text-sm font-semibold text-zinc-200">E&apos;Manuel Bakery</p>
-              <p className="text-xs text-zinc-500">Local service business, 6 employees, owner-operated</p>
+              <p className="text-sm font-semibold text-slate-900">E&apos;Manuel Bakery</p>
+              <p className="text-xs text-slate-400">Local service business, 6 employees, owner-operated</p>
             </div>
           </div>
 
-          <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+          <p className="text-slate-600 text-sm leading-relaxed mb-6">
             Before working with us, E&apos;Manuel&apos;s owner was manually taking every
             order, chasing unpaid invoices, and managing bookings over WhatsApp and phone.
             Every evening was admin. Every missed call was a missed sale.
@@ -716,26 +716,26 @@ function PearlContent() {
               { label: "Admin hours saved", before: "8hrs/week", after: "0hrs/week" },
               { label: "Missed enquiries", before: "~30%", after: "~0%" },
             ].map(({ label, before, after }) => (
-              <div key={label} className="bg-zinc-800/60 rounded-xl p-3">
-                <p className="text-xs text-zinc-600 mb-2">{label}</p>
-                <p className="text-xs text-zinc-500 line-through mb-0.5">{before}</p>
+              <div key={label} className="bg-slate-100/60 rounded-xl p-3">
+                <p className="text-xs text-slate-900 mb-2">{label}</p>
+                <p className="text-xs text-slate-400 line-through mb-0.5">{before}</p>
                 <p className="text-sm font-semibold text-green-400">{after}</p>
               </div>
             ))}
           </div>
 
           <blockquote className="border-l-2 border-teal-500 pl-4">
-            <p className="text-sm text-zinc-300 italic leading-relaxed">
+            <p className="text-sm text-slate-500 italic leading-relaxed">
               &ldquo;We used to miss orders every single evening. Now the system handles everything
               while we&apos;re in the kitchen. We don&apos;t think about it anymore — it just works.&rdquo;
             </p>
-            <footer className="mt-2 text-xs text-zinc-600">
+            <footer className="mt-2 text-xs text-slate-900">
               — Tunmise, Owner, E&apos;Manuel Bakery
             </footer>
           </blockquote>
         </div>
 
-        <p className="text-sm text-zinc-600 mt-4 text-center">
+        <p className="text-sm text-slate-900 mt-4 text-center">
           The same logic applies to any service business where patients call to book.
           The phone has to be answered.
         </p>
@@ -749,10 +749,10 @@ function PearlContent() {
         id="cta"
         className="px-5 py-16 md:py-20 max-w-2xl mx-auto text-center"
       >
-        <h2 className="text-2xl md:text-3xl font-bold text-zinc-50 mb-3">
+        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
           Ready to stop losing weekend patients?
         </h2>
-        <p className="text-zinc-400 text-base mb-8 max-w-md mx-auto">
+        <p className="text-slate-600 text-base mb-8 max-w-md mx-auto">
           Book a free 15-minute call. I&apos;ll walk you through a live demo
           using Pearl Dental&apos;s actual details&nbsp;&mdash; your number, your
           hours, your typical patient calls. No commitment required.
@@ -763,7 +763,7 @@ function PearlContent() {
             href="https://cal.com/sholastechnotes/free-ai-strategy-call"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3.5 bg-teal-500 hover:bg-teal-400 text-zinc-950 font-semibold rounded-xl transition-all text-sm w-full sm:w-auto justify-center"
+            className="inline-flex items-center gap-2 px-6 py-3.5 bg-teal-500 hover:bg-teal-400 text-slate-900 font-semibold rounded-xl transition-all text-sm w-full sm:w-auto justify-center"
           >
             <CalendarDays className="w-4 h-4" />
             Book a free 15-minute call
@@ -773,7 +773,7 @@ function PearlContent() {
             href="https://linkedin.com/in/olushola-oladipupo"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3.5 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-zinc-200 font-medium rounded-xl transition-all text-sm w-full sm:w-auto justify-center"
+            className="inline-flex items-center gap-2 px-6 py-3.5 bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-900 font-medium rounded-xl transition-all text-sm w-full sm:w-auto justify-center"
           >
             <Linkedin className="w-4 h-4" />
             Connect on LinkedIn
@@ -781,7 +781,7 @@ function PearlContent() {
         </div>
 
         {/* Contact details */}
-        <div className="inline-flex flex-col items-center gap-1.5 text-sm text-zinc-600">
+        <div className="inline-flex flex-col items-center gap-1.5 text-sm text-slate-900">
           <p>Olushola Oladipupo — Oladipupo Consulting Ltd</p>
           <p>+44 7469 347654 &bull; olusholaoladipupo1@gmail.com</p>
         </div>
@@ -791,8 +791,8 @@ function PearlContent() {
       {/* FOOTER                                                                */}
       {/* ------------------------------------------------------------------ */}
 
-      <footer className="border-t border-zinc-800/50 px-5 py-8">
-        <div className="max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-700">
+      <footer className="border-t border-slate-200/50 px-5 py-8">
+        <div className="max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-600">
           <p>Oladipupo Consulting Ltd</p>
           <p className="text-center">
             This page was built specifically for Pearl Dental Center.

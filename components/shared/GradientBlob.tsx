@@ -12,12 +12,12 @@ interface GradientBlobProps {
 
 /**
  * A floating, animated gradient blob for hero section depth.
- * Pair with `absolute` positioning and a colour class on the parent.
+ * Uses very low opacity for the light theme — subtle and elegant.
  *
  * Usage:
  *   <div className="relative overflow-hidden">
  *     <GradientBlob className="w-[600px] h-[600px] bg-blue-600 -top-40 -left-32" />
- *     <GradientBlob className="w-[400px] h-[400px] bg-purple-600 top-10 right-0" delay={2} />
+ *     <GradientBlob className="w-[400px] h-[400px] bg-amber-300 top-10 right-0" delay={2} />
  *   </div>
  */
 export default function GradientBlob({
@@ -28,7 +28,7 @@ export default function GradientBlob({
   return (
     <motion.div
       aria-hidden="true"
-      className={`absolute rounded-full blur-3xl opacity-20 pointer-events-none ${className}`}
+      className={`absolute rounded-full blur-3xl opacity-[0.07] pointer-events-none ${className}`}
       animate={{
         scale: [1, 1.2, 1],
         x: [0, 30, 0],

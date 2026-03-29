@@ -15,6 +15,10 @@ interface FAQSectionProps {
   eyebrow?: string;
 }
 
+/**
+ * Premium FAQ accordion section — clean white cards with subtle borders.
+ * Active item gets elevated shadow (inspired by Fliweel's FAQ pattern).
+ */
 export default function FAQSection({
   items,
   heading = "Frequently Asked Questions",
@@ -41,40 +45,44 @@ export default function FAQSection({
 
       <div className="mx-auto max-w-3xl">
         {eyebrow && (
-          <span className="mb-4 block text-center text-xs font-semibold uppercase tracking-widest text-blue-500">
+          <span className="mb-4 block text-center eyebrow">
             {eyebrow}
           </span>
         )}
         <h2
           id="faq-section-heading"
-          className="mb-8 text-center text-2xl font-bold text-zinc-50 sm:text-3xl"
+          className="mb-10 text-center heading-section text-2xl sm:text-3xl lg:text-[48px]"
         >
           {heading}
         </h2>
 
-        <div className="space-y-3">
+        <div className="space-y-4">
           {items.map((item, index) => {
             const isOpen = openIndex === index;
             return (
               <div
                 key={index}
-                className="rounded-xl border border-zinc-800 bg-zinc-900 transition-colors duration-200 hover:border-zinc-700"
+                className={`rounded-xl border transition-all duration-200 ${
+                  isOpen
+                    ? "border-slate-200 bg-white shadow-lg"
+                    : "border-slate-200 bg-white hover:border-slate-300"
+                }`}
               >
                 <button
                   type="button"
                   id={`faq-button-${index}`}
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="flex w-full items-center justify-between gap-4 p-5 text-left"
+                  className="flex w-full items-center justify-between gap-4 p-6 text-left"
                   aria-expanded={isOpen}
                   aria-controls={`faq-panel-${index}`}
                 >
-                  <span className="text-sm font-medium text-zinc-100">
+                  <span className="text-base font-semibold text-slate-900">
                     {item.question}
                   </span>
                   <ChevronDown
                     size={18}
-                    className={`shrink-0 text-zinc-500 transition-transform duration-200 ${
-                      isOpen ? "rotate-180" : ""
+                    className={`shrink-0 text-slate-400 transition-transform duration-200 ${
+                      isOpen ? "rotate-180 text-blue-600" : ""
                     }`}
                     aria-hidden="true"
                   />
@@ -88,7 +96,7 @@ export default function FAQSection({
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="px-5 pb-5 text-sm leading-relaxed text-zinc-400">
+                    <div className="px-6 pb-6 text-base leading-relaxed text-slate-600">
                       {item.answer}
                     </div>
                   </div>

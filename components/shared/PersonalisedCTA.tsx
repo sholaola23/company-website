@@ -131,7 +131,7 @@ export default function PersonalisedCTA() {
 
   return (
     <section
-      className="relative overflow-hidden bg-zinc-950 py-28"
+      className="relative overflow-hidden bg-white py-28"
       aria-labelledby="cta-heading"
     >
       {/* Background glow — matches original BottomCTA */}
@@ -139,13 +139,13 @@ export default function PersonalisedCTA() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 flex items-center justify-center"
       >
-        <div className="h-[400px] w-[700px] rounded-full bg-blue-500/8 blur-3xl" />
+        <div className="h-[400px] w-[700px] rounded-full bg-blue-600/8 blur-3xl" />
       </div>
 
       <div className="relative mx-auto max-w-3xl px-6 text-center sm:px-8">
         {/* Clock icon */}
-        <div className="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-zinc-800 bg-zinc-900">
-          <Clock size={22} className="text-blue-500" aria-hidden="true" />
+        <div className="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-slate-50">
+          <Clock size={22} className="text-blue-600" aria-hidden="true" />
         </div>
 
         {/*
@@ -163,12 +163,12 @@ export default function PersonalisedCTA() {
           >
             <h2
               id="cta-heading"
-              className="text-4xl font-bold tracking-tight text-zinc-50 sm:text-5xl"
+              className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl"
             >
               {variant.heading}
             </h2>
 
-            <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-zinc-400">
+            <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-slate-600">
               {variant.subtext}
             </p>
 
@@ -176,7 +176,7 @@ export default function PersonalisedCTA() {
               <Link
                 href={variant.buttonHref}
                 onClick={() => trackCTAClicked("bottom-cta", variant.key)}
-                className="inline-flex items-center gap-2 rounded-lg bg-blue-500 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-blue-500/25 transition-all duration-200 hover:bg-blue-600 hover:shadow-blue-500/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 group"
+                className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-blue-500/25 transition-all duration-200 hover:bg-slate-900 hover:shadow-blue-500/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white group"
               >
                 {variant.buttonLabel}
                 <ArrowRight
@@ -185,7 +185,7 @@ export default function PersonalisedCTA() {
                   aria-hidden="true"
                 />
               </Link>
-              <p className="mt-3 text-xs text-zinc-500">
+              <p className="mt-3 text-xs text-slate-400">
                 Free audit — normally £150, available at no cost for a limited time
               </p>
             </div>
@@ -193,11 +193,11 @@ export default function PersonalisedCTA() {
         </AnimatePresence>
 
         {/* Fallback contact line — always visible */}
-        <p className="mt-6 text-sm text-zinc-500">
+        <p className="mt-6 text-sm text-slate-400">
           or email{" "}
           <a
             href="mailto:hello@oladipupoconsulting.co.uk"
-            className="text-zinc-400 underline underline-offset-2 transition-colors duration-200 hover:text-zinc-200"
+            className="text-slate-600 underline underline-offset-2 transition-colors duration-200 hover:text-slate-900"
           >
             hello@oladipupoconsulting.co.uk
           </a>

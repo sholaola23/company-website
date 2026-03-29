@@ -42,7 +42,7 @@ export default function BlogPost() {
         <div className="max-w-3xl mx-auto">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-zinc-400 hover:text-white text-sm mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 text-sm mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             All Posts
@@ -52,7 +52,7 @@ export default function BlogPost() {
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded-full"
+                className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full"
               >
                 {tag}
               </span>
@@ -64,19 +64,19 @@ export default function BlogPost() {
             Less on Admin
           </h1>
 
-          <div className="flex items-center gap-4 text-sm text-zinc-500 mb-12">
+          <div className="flex items-center gap-4 text-sm text-slate-400 mb-12">
             <span>20 March 2026</span>
-            <span className="text-zinc-700">|</span>
+            <span className="text-slate-600">|</span>
             <span>By Olushola Oladipupo</span>
-            <span className="text-zinc-700">|</span>
+            <span className="text-slate-600">|</span>
             <span className="flex items-center gap-1">
               <Clock className="w-3 h-3" />
               7 min read
             </span>
           </div>
 
-          <div className="prose prose-invert max-w-none">
-            <p className="text-zinc-300 leading-relaxed mb-4 text-lg">
+          <div className="prose prose-slate max-w-none">
+            <p className="text-slate-500 leading-relaxed mb-4 text-lg">
               A property manager emails you at 9am asking for a quote on a
               12-unit office block. You&apos;re on-site supervising a team.
               You make a mental note to reply later. By 3pm, they&apos;ve
@@ -84,7 +84,7 @@ export default function BlogPost() {
               someone else. You never even got a chance.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               This happens every week in the cleaning industry. Not because
               the work isn&apos;t good enough, but because the business
               side moves too slowly. Enquiries go cold. Staff schedules are
@@ -93,13 +93,13 @@ export default function BlogPost() {
               already started looking elsewhere.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               AI automation fixes all of this. Not by replacing your
               cleaners or your managers, but by handling the administrative
               grind that costs you contracts and wastes your time.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               Here are five automations that are helping cleaning companies
               across the UK grow faster while spending less on admin.
             </p>
@@ -109,8 +109,8 @@ export default function BlogPost() {
               1. Instant Quote Response for Commercial Enquiries
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-2">
-              <strong className="text-zinc-100">Problem:</strong> Commercial
+            <p className="text-slate-500 leading-relaxed mb-2">
+              <strong className="text-slate-900">Problem:</strong> Commercial
               cleaning enquiries are high-value &mdash; a single office
               contract can be worth &pound;1,000&ndash;5,000 per month. But
               facility managers and property companies send the same enquiry
@@ -120,8 +120,8 @@ export default function BlogPost() {
               lost.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Solution:</strong> An AI
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Solution:</strong> An AI
               system that monitors your enquiry channels &mdash; email,
               website forms, WhatsApp &mdash; and responds within 2 minutes.
               Not with a generic &ldquo;we&apos;ll get back to you&rdquo;
@@ -132,8 +132,8 @@ export default function BlogPost() {
               and books a site visit into your calendar.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Result:</strong> A cleaning
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Result:</strong> A cleaning
               company in London implemented instant quote responses and
               increased their enquiry-to-quote rate from 40% to 78%. In
               real terms, they won 3 extra commercial contracts in the first
@@ -142,7 +142,7 @@ export default function BlogPost() {
               system that cost &pound;150 per month to run.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               Speed wins in commercial cleaning. If you&apos;re the first
               to respond professionally, you&apos;re already halfway to
               winning the contract.
@@ -153,8 +153,8 @@ export default function BlogPost() {
               2. Job Scheduling &amp; Staff Allocation
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-2">
-              <strong className="text-zinc-100">Problem:</strong> You&apos;ve
+            <p className="text-slate-500 leading-relaxed mb-2">
+              <strong className="text-slate-900">Problem:</strong> You&apos;ve
               got 15 cleaners, 30 regular clients, and a spreadsheet
               that&apos;s held together with hope. Someone calls in sick and
               the whole schedule collapses. You spend 45 minutes
@@ -163,8 +163,8 @@ export default function BlogPost() {
               even know there&apos;s a problem.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Solution:</strong> AI-powered
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Solution:</strong> AI-powered
               scheduling that allocates staff based on location, skills,
               availability, and client preferences. When someone calls in
               sick, the system automatically identifies the best replacement,
@@ -173,8 +173,8 @@ export default function BlogPost() {
               sites so cleaners aren&apos;t rushing across town.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Result:</strong> A cleaning
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Result:</strong> A cleaning
               company in Birmingham with 20 staff reduced scheduling time
               from 5 hours a week to 45 minutes. Sick day disruptions went
               from &ldquo;panic mode&rdquo; to &ldquo;handled in 10
@@ -184,7 +184,7 @@ export default function BlogPost() {
               staff time.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               As you grow, scheduling complexity grows exponentially. AI
               handles the complexity so you can take on more clients without
               hiring more office staff.
@@ -195,8 +195,8 @@ export default function BlogPost() {
               3. Quality Check Follow-Up Surveys
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-2">
-              <strong className="text-zinc-100">Problem:</strong> You think
+            <p className="text-slate-500 leading-relaxed mb-2">
+              <strong className="text-slate-900">Problem:</strong> You think
               your cleaning teams are doing a great job. The client thinks
               otherwise but doesn&apos;t tell you &mdash; they just
               don&apos;t renew. By the time you find out there&apos;s a
@@ -205,8 +205,8 @@ export default function BlogPost() {
               cancellation notice.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Solution:</strong> After
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Solution:</strong> After
               each clean (or weekly for regular contracts), the client
               automatically receives a quick 3-question survey: &ldquo;How
               was today&apos;s clean? (1&ndash;5 stars) Any areas that
@@ -216,8 +216,8 @@ export default function BlogPost() {
               hours.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Result:</strong> A cleaning
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Result:</strong> A cleaning
               firm in Manchester started automated quality surveys and
               caught 6 quality issues in the first month that would have
               gone unreported. They addressed each one within 48 hours.
@@ -227,7 +227,7 @@ export default function BlogPost() {
               &pound;57,000 per year.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               The best cleaning companies don&apos;t wait for complaints.
               They proactively check quality and fix issues before the
               client even considers looking elsewhere.
@@ -238,8 +238,8 @@ export default function BlogPost() {
               4. Automated Review Collection
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-2">
-              <strong className="text-zinc-100">Problem:</strong> When a
+            <p className="text-slate-500 leading-relaxed mb-2">
+              <strong className="text-slate-900">Problem:</strong> When a
               facility manager is choosing a new cleaning company, they
               check Google reviews first. If you&apos;ve got 12 reviews
               and the competition has 80, you&apos;re losing before
@@ -248,8 +248,8 @@ export default function BlogPost() {
               never systematically ask for them.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Solution:</strong> For
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Solution:</strong> For
               residential clients, a review request goes out 24 hours after
               each clean. For commercial clients, the system waits for a
               quality survey score of 4+ stars, then sends a personalised
@@ -259,8 +259,8 @@ export default function BlogPost() {
               timing and personalisation make all the difference.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Result:</strong> A domestic
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Result:</strong> A domestic
               cleaning company in Leeds went from 28 Google reviews to 94
               in four months. They moved from page 2 to the top 3 for
               &ldquo;cleaning company Leeds&rdquo; and started getting 8
@@ -269,7 +269,7 @@ export default function BlogPost() {
               those is &pound;2,880 in new monthly revenue.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               Reviews compound. The more you have, the higher you rank.
               The higher you rank, the more enquiries you get. AI makes
               this flywheel spin automatically.
@@ -280,8 +280,8 @@ export default function BlogPost() {
               5. Recurring Contract Renewal Reminders
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-2">
-              <strong className="text-zinc-100">Problem:</strong> Your
+            <p className="text-slate-500 leading-relaxed mb-2">
+              <strong className="text-slate-900">Problem:</strong> Your
               biggest commercial contract is up for renewal in 60 days.
               Nobody in your team notices. The client puts the contract out
               to tender. Three competitors quote. You scramble to put
@@ -290,8 +290,8 @@ export default function BlogPost() {
               price.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Solution:</strong> An
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Solution:</strong> An
               automated system that tracks every contract renewal date and
               triggers a structured renewal process. 90 days out: an
               internal alert to review the account and prepare a renewal
@@ -301,8 +301,8 @@ export default function BlogPost() {
               ever catches you by surprise.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
-              <strong className="text-zinc-100">Result:</strong> A
+            <p className="text-slate-500 leading-relaxed mb-4">
+              <strong className="text-slate-900">Result:</strong> A
               commercial cleaning firm in London with 45 active contracts
               implemented automated renewal tracking. In the first year,
               they retained 4 contracts worth a combined &pound;6,200/month
@@ -312,7 +312,7 @@ export default function BlogPost() {
               contract value protected and grown.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               The cleaning companies that grow aren&apos;t just winning new
               contracts &mdash; they&apos;re keeping and expanding the ones
               they have. Automated renewal management makes that happen
@@ -320,27 +320,27 @@ export default function BlogPost() {
             </p>
 
             {/* Summary */}
-            <hr className="border-zinc-800 my-10" />
+            <hr className="border-slate-200 my-10" />
 
             <h2 className="text-2xl font-bold mt-8 mb-4">
               The Bottom Line
             </h2>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               The cleaning industry is fiercely competitive. Margins are
               tight. Clients have plenty of options. The businesses that
               win are the ones that respond fastest, deliver consistently,
               and never let a good client slip away.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               AI automation doesn&apos;t replace your cleaners or your
               management team. It handles the operational overhead that
               slows you down &mdash; the late replies, the scheduling
               chaos, the missed renewals, the reviews you never collect.
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-4">
+            <p className="text-slate-500 leading-relaxed mb-4">
               Start with the automation that addresses your biggest
               bottleneck. For most cleaning companies, that&apos;s either
               instant quote response (because speed wins contracts) or
@@ -348,7 +348,7 @@ export default function BlogPost() {
               acquisition).
             </p>
 
-            <p className="text-zinc-300 leading-relaxed mb-8">
+            <p className="text-slate-500 leading-relaxed mb-8">
               The cleaning companies growing fastest in 2026 aren&apos;t
               necessarily the cheapest. They&apos;re the ones that run
               like clockwork &mdash; because AI handles the clock.
@@ -356,26 +356,26 @@ export default function BlogPost() {
           </div>
 
           {/* Related Articles */}
-          <div className="mt-12 border border-zinc-800 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-4 text-zinc-100">Related Articles</h3>
+          <div className="mt-12 border border-slate-200 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-4 text-slate-900">Related Articles</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/blog/ai-for-plumbers" className="text-blue-400 hover:text-blue-300 transition-colors">
+                <Link href="/blog/ai-for-plumbers" className="text-blue-600 hover:text-blue-600 transition-colors">
                   AI for Plumbers: 5 Automations That Win More Jobs
                 </Link>
               </li>
               <li>
-                <Link href="/blog/get-more-google-reviews" className="text-blue-400 hover:text-blue-300 transition-colors">
+                <Link href="/blog/get-more-google-reviews" className="text-blue-600 hover:text-blue-600 transition-colors">
                   How to Get More Google Reviews Automatically
                 </Link>
               </li>
               <li>
-                <Link href="/blog/ai-for-electricians" className="text-blue-400 hover:text-blue-300 transition-colors">
+                <Link href="/blog/ai-for-electricians" className="text-blue-600 hover:text-blue-600 transition-colors">
                   AI for Electricians &amp; Tradespeople: Save 10+ Hours a Week
                 </Link>
               </li>
               <li>
-                <Link href="/services/lead-intake" className="text-zinc-300 hover:text-white transition-colors">
+                <Link href="/services/lead-intake" className="text-slate-500 hover:text-slate-900 transition-colors">
                   View our AI Lead Intake &amp; Appointment Booking service &rarr;
                 </Link>
               </li>
@@ -383,11 +383,11 @@ export default function BlogPost() {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-16 bg-gradient-to-br from-blue-500/10 to-zinc-900 border border-zinc-800 rounded-xl p-8 text-center">
+          <div className="mt-16 bg-blue-50 border border-blue-200 rounded-xl p-8 text-center">
             <h3 className="text-xl font-semibold mb-2">
               Want to Know Which Automations Would Work for Your Cleaning Business?
             </h3>
-            <p className="text-zinc-400 mb-6 max-w-lg mx-auto">
+            <p className="text-slate-600 mb-6 max-w-lg mx-auto">
               Every cleaning company is different. Take our free AI
               Readiness Audit and we&apos;ll tell you exactly where
               automation would make the biggest impact on your contracts
@@ -395,12 +395,12 @@ export default function BlogPost() {
             </p>
             <Link
               href="/audit"
-              className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
             >
               Get Your Free AI Readiness Audit
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <p className="text-zinc-500 text-sm mt-3">
+            <p className="text-slate-400 text-sm mt-3">
               Takes 2 minutes. No obligation. Built for service businesses.
             </p>
           </div>

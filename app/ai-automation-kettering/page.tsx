@@ -131,13 +131,13 @@ export default function AIAutomationKetteringPage() {
       {/* Hero */}
       <AnimatedSection>
         <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
-          <span className="text-xs font-semibold tracking-widest uppercase text-blue-500 mb-4 block">
+          <span className="text-xs font-semibold tracking-widest uppercase text-blue-600 mb-4 block">
             AI Automation in {CITY}
           </span>
-          <h1 className="text-3xl sm:text-5xl font-bold text-zinc-50 leading-tight tracking-tight mb-6">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-slate-900 leading-tight tracking-tight mb-6">
             AI Automation for Small Businesses in {CITY}
           </h1>
-          <p className="text-lg text-zinc-400 leading-relaxed">
+          <p className="text-lg text-slate-600 leading-relaxed">
             Kettering&apos;s growing service sector and tight-knit business
             community make it the perfect place for AI automation to have an
             outsized impact. When every lead matters and word-of-mouth drives
@@ -150,14 +150,14 @@ export default function AIAutomationKetteringPage() {
 
       {/* Case study callout */}
       <AnimatedSection delay={0.05}>
-        <div className="bg-zinc-900 border border-blue-500/30 rounded-2xl p-8 sm:p-10 max-w-3xl mx-auto mb-16 sm:mb-20">
-          <span className="text-xs font-semibold tracking-widest uppercase text-blue-500 mb-3 block">
+        <div className="bg-slate-50 border border-blue-600/30 rounded-2xl p-8 sm:p-10 max-w-3xl mx-auto mb-16 sm:mb-20">
+          <span className="text-xs font-semibold tracking-widest uppercase text-blue-600 mb-3 block">
             Local Case Study
           </span>
-          <h2 className="text-xl font-bold text-zinc-50 mb-3">
+          <h2 className="text-xl font-bold text-slate-900 mb-3">
             E&apos;Manuel Bakery, Kettering
           </h2>
-          <p className="text-sm text-zinc-400 leading-relaxed mb-4">
+          <p className="text-sm text-slate-600 leading-relaxed mb-4">
             We built an AI-powered loyalty and order automation system for
             E&apos;Manuel Bakery right here in Kettering. The system tracks
             customer purchases via their POS, automatically sends personalised
@@ -166,7 +166,7 @@ export default function AIAutomationKetteringPage() {
           </p>
           <Link
             href="/case-studies"
-            className="text-sm text-blue-400 hover:text-blue-300 transition-colors font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+            className="text-sm text-blue-600 hover:text-blue-600 transition-colors font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded"
           >
             View our case studies
           </Link>
@@ -188,17 +188,17 @@ export default function AIAutomationKetteringPage() {
             {SERVICES.map((service) => (
               <div
                 key={service.title}
-                className="bg-zinc-900 border border-zinc-800 rounded-xl p-7 flex flex-col gap-4 hover:border-zinc-700 transition-colors duration-200"
+                className="bg-slate-50 border border-slate-200 rounded-xl p-7 flex flex-col gap-4 hover:border-slate-200 transition-colors duration-200"
               >
-                <h3 className="text-base font-semibold text-zinc-50">
+                <h3 className="text-base font-semibold text-slate-900">
                   {service.title}
                 </h3>
-                <p className="text-sm text-zinc-400 leading-relaxed flex-1">
+                <p className="text-sm text-slate-600 leading-relaxed flex-1">
                   {service.description}
                 </p>
                 <Link
                   href={service.href}
-                  className="text-sm text-blue-400 hover:text-blue-300 transition-colors font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded w-fit"
+                  className="text-sm text-blue-600 hover:text-blue-600 transition-colors font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded w-fit"
                 >
                   Learn more
                 </Link>
@@ -225,25 +225,25 @@ export default function AIAutomationKetteringPage() {
               return (
                 <div
                   key={step.step}
-                  className="bg-zinc-900 border border-zinc-800 rounded-xl p-6 flex flex-col gap-4 hover:border-zinc-700 transition-colors duration-200"
+                  className="bg-slate-50 border border-slate-200 rounded-xl p-6 flex flex-col gap-4 hover:border-slate-200 transition-colors duration-200"
                 >
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-600/20">
                       <Icon
                         size={18}
-                        className="text-blue-400"
+                        className="text-blue-600"
                         aria-hidden="true"
                       />
                     </div>
-                    <span className="text-2xl font-bold text-zinc-700 font-mono">
+                    <span className="text-2xl font-bold text-slate-600 font-mono">
                       {step.step}
                     </span>
                   </div>
                   <div>
-                    <h3 className="text-base font-semibold text-zinc-50 mb-2">
+                    <h3 className="text-base font-semibold text-slate-900 mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-sm text-zinc-400 leading-relaxed">
+                    <p className="text-sm text-slate-600 leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -256,8 +256,8 @@ export default function AIAutomationKetteringPage() {
 
       {/* Social proof */}
       <AnimatedSection delay={0.3}>
-        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 sm:p-10 max-w-3xl mx-auto mb-20 sm:mb-24 text-center">
-          <p className="text-sm text-zinc-400 leading-relaxed">
+        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 sm:p-10 max-w-3xl mx-auto mb-20 sm:mb-24 text-center">
+          <p className="text-sm text-slate-600 leading-relaxed">
             Already helping businesses in Kettering and across Northamptonshire
             automate their operations. From bakery loyalty systems to lead
             intake automation, we deliver solutions that pay for themselves
@@ -266,10 +266,10 @@ export default function AIAutomationKetteringPage() {
           <div className="flex items-center justify-center gap-2 mt-4">
             <CheckCircle
               size={16}
-              className="text-blue-400"
+              className="text-blue-600"
               aria-hidden="true"
             />
-            <span className="text-sm font-medium text-zinc-300">
+            <span className="text-sm font-medium text-slate-500">
               UK-registered company. Real results. Real references.
             </span>
           </div>
@@ -280,13 +280,13 @@ export default function AIAutomationKetteringPage() {
       <AnimatedSection delay={0.4}>
         <div className="text-center">
           <div className="inline-flex flex-col items-center gap-4">
-            <p className="text-zinc-400 text-base">
+            <p className="text-slate-600 text-base">
               Ready to automate your {CITY} business?
             </p>
             <CTAButton href="/audit" variant="primary" size="lg">
               Get Your Free AI Audit
             </CTAButton>
-            <p className="text-xs text-zinc-500">
+            <p className="text-xs text-slate-400">
               48-hour turnaround. No obligation. No jargon.
             </p>
           </div>

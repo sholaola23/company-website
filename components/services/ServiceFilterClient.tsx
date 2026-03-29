@@ -38,10 +38,10 @@ const ICON_MAP: Record<string, LucideIcon> = {
 };
 
 const TIER_BADGE: Record<string, string> = {
-  starter: "bg-zinc-700 text-zinc-200",
-  growth: "bg-blue-500/20 text-blue-400 border border-blue-500/30",
-  scale: "bg-amber-500/20 text-amber-400 border border-amber-500/30",
-  premium: "bg-purple-500/20 text-purple-400 border border-purple-500/30",
+  starter: "bg-slate-200 text-slate-900",
+  growth: "bg-blue-600/20 text-blue-600 border border-blue-600/30",
+  scale: "bg-amber-500/20 text-amber-600 border border-amber-500/30",
+  premium: "bg-purple-500/20 text-purple-600 border border-purple-500/30",
 };
 
 const TABS = [
@@ -82,10 +82,10 @@ export default function ServiceFilterClient({
             aria-selected={activeFilter === tab.value}
             onClick={() => setActiveFilter(tab.value)}
             className={cn(
-              "px-4 py-2 text-sm font-medium rounded-lg border transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500",
+              "px-4 py-2 text-sm font-medium rounded-lg border transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600",
               activeFilter === tab.value
-                ? "bg-blue-500 border-blue-500 text-white"
-                : "bg-zinc-900 border-zinc-700 text-zinc-400 hover:border-zinc-500 hover:text-zinc-200"
+                ? "bg-blue-600 border-blue-600 text-white"
+                : "bg-slate-50 border-slate-200 text-slate-600 hover:border-slate-400 hover:text-slate-900"
             )}
           >
             {tab.label}
@@ -100,10 +100,10 @@ export default function ServiceFilterClient({
           return (
             <article
               key={service.slug}
-              className="bg-zinc-900 rounded-xl border border-zinc-800 p-6 flex flex-col gap-4 hover:border-zinc-700 transition-colors duration-200"
+              className="bg-slate-50 rounded-xl border border-slate-200 p-6 flex flex-col gap-4 hover:border-slate-200 transition-colors duration-200"
             >
               <div className="flex items-start justify-between gap-3">
-                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-zinc-800 text-blue-400 shrink-0">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-slate-100 text-blue-600 shrink-0">
                   <Icon size={20} aria-hidden="true" />
                 </div>
                 <span
@@ -117,24 +117,24 @@ export default function ServiceFilterClient({
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <h3 className="text-base font-semibold text-zinc-50 leading-snug">
+                <h3 className="text-base font-semibold text-slate-900 leading-snug">
                   {service.name}
                 </h3>
-                <p className="text-sm text-zinc-400 leading-relaxed">
+                <p className="text-sm text-slate-600 leading-relaxed">
                   {service.idealFor}
                 </p>
               </div>
 
               <div className="flex items-baseline gap-1.5 mt-auto">
-                <span className="text-xl font-bold text-zinc-50">
+                <span className="text-xl font-bold text-slate-900">
                   {service.setupPrice}
                 </span>
-                <span className="text-sm text-zinc-500">setup</span>
+                <span className="text-sm text-slate-400">setup</span>
               </div>
 
               <Link
                 href={`/services/${service.slug}`}
-                className="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors duration-150 inline-flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+                className="text-sm font-medium text-blue-600 hover:text-blue-600 transition-colors duration-150 inline-flex items-center gap-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded"
                 aria-label={`Learn more about ${service.name}`}
               >
                 Learn more
@@ -146,7 +146,7 @@ export default function ServiceFilterClient({
       </div>
 
       {filtered.length === 0 && (
-        <p className="text-zinc-400 text-center py-16">
+        <p className="text-slate-600 text-center py-16">
           No services in this tier yet.
         </p>
       )}

@@ -34,8 +34,8 @@ export default function RangeBeautyPage() {
 
   if (authed === null) {
     return (
-      <div className="min-h-screen bg-zinc-950 flex items-center justify-center">
-        <div className="w-5 h-5 border-2 border-zinc-700 border-t-rose-500 rounded-full animate-spin" />
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="w-5 h-5 border-2 border-slate-200 border-t-rose-500 rounded-full animate-spin" />
       </div>
     );
   }
@@ -172,17 +172,17 @@ function RangeBeautyChatbot() {
   );
 
   return (
-    <div className="w-full max-w-md mx-auto bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl">
+    <div className="w-full max-w-md mx-auto bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-2xl">
       {/* Chat header */}
-      <div className="flex items-center gap-3 px-4 py-3 bg-zinc-900 border-b border-zinc-800">
+      <div className="flex items-center gap-3 px-4 py-3 bg-slate-50 border-b border-slate-200">
         <div className="w-8 h-8 rounded-full bg-gradient-to-br from-rose-400 to-rose-600 flex items-center justify-center flex-shrink-0">
           <Bot className="w-4 h-4 text-white" />
         </div>
         <div>
-          <p className="text-sm font-semibold text-zinc-50">Range Shade Finder</p>
+          <p className="text-sm font-semibold text-slate-900">Range Shade Finder</p>
           <div className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-            <p className="text-xs text-zinc-500">Online — ready to match</p>
+            <p className="text-xs text-slate-400">Online — ready to match</p>
           </div>
         </div>
       </div>
@@ -198,7 +198,7 @@ function RangeBeautyChatbot() {
               className={`max-w-[80%] px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed whitespace-pre-line ${
                 msg.role === "user"
                   ? "bg-rose-600 text-white rounded-br-sm"
-                  : "bg-zinc-800 text-zinc-100 rounded-bl-sm"
+                  : "bg-slate-100 text-slate-900 rounded-bl-sm"
               }`}
             >
               {msg.text}
@@ -208,11 +208,11 @@ function RangeBeautyChatbot() {
 
         {typing && (
           <div className="flex justify-start">
-            <div className="bg-zinc-800 px-4 py-3 rounded-2xl rounded-bl-sm">
+            <div className="bg-slate-100 px-4 py-3 rounded-2xl rounded-bl-sm">
               <div className="flex gap-1 items-center h-4">
-                <span className="w-1.5 h-1.5 rounded-full bg-zinc-500 animate-bounce [animation-delay:0ms]" />
-                <span className="w-1.5 h-1.5 rounded-full bg-zinc-500 animate-bounce [animation-delay:150ms]" />
-                <span className="w-1.5 h-1.5 rounded-full bg-zinc-500 animate-bounce [animation-delay:300ms]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce [animation-delay:0ms]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce [animation-delay:150ms]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce [animation-delay:300ms]" />
               </div>
             </div>
           </div>
@@ -225,14 +225,14 @@ function RangeBeautyChatbot() {
       <form
         action="#"
         onSubmit={sendMessage}
-        className="flex items-center gap-2 px-3 py-3 border-t border-zinc-800 bg-zinc-900"
+        className="flex items-center gap-2 px-3 py-3 border-t border-slate-200 bg-slate-50"
       >
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask about shades, products, ingredients..."
-          className="flex-1 bg-zinc-800 border border-zinc-700 rounded-xl px-3.5 py-2.5 text-sm text-zinc-50 placeholder:text-zinc-600 focus:outline-none focus:border-rose-500 transition-all"
+          className="flex-1 bg-slate-100 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-900 focus:outline-none focus:border-rose-500 transition-all"
           aria-label="Chat message"
         />
         <button
@@ -254,7 +254,7 @@ function RangeBeautyChatbot() {
 
 function RangeBeautyContent() {
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-50">
+    <div className="min-h-screen bg-white text-slate-900">
 
       {/* ------------------------------------------------------------------ */}
       {/* 1. Hero                                                              */}
@@ -280,7 +280,7 @@ function RangeBeautyContent() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-50 leading-tight tracking-tight mb-6"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight tracking-tight mb-6"
           >
             Alicia, we built this for Range Beauty.
           </motion.h1>
@@ -289,7 +289,7 @@ function RangeBeautyContent() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg sm:text-xl text-zinc-400 leading-relaxed max-w-2xl mx-auto mb-10"
+            className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-10"
           >
             Your customers struggle to pick the right shade from 21 options. We built an AI that solves it in 60 seconds — and it already knows your entire product line.
           </motion.p>
@@ -302,12 +302,12 @@ function RangeBeautyContent() {
           >
             {[
               { label: "AI Shade Matching Chatbot", colour: "text-rose-400", dot: "bg-rose-500" },
-              { label: "Customer Service Analysis", colour: "text-amber-400", dot: "bg-amber-500" },
-              { label: "ROI Breakdown", colour: "text-emerald-400", dot: "bg-emerald-500" },
+              { label: "Customer Service Analysis", colour: "text-amber-600", dot: "bg-amber-500" },
+              { label: "ROI Breakdown", colour: "text-emerald-600", dot: "bg-emerald-500" },
             ].map((item) => (
               <span
                 key={item.label}
-                className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-4 py-2 rounded-full text-sm"
+                className="flex items-center gap-2 bg-slate-50 border border-slate-200 px-4 py-2 rounded-full text-sm"
               >
                 <span className={`w-2 h-2 rounded-full ${item.dot}`} />
                 <span className={item.colour}>{item.label}</span>
@@ -326,10 +326,10 @@ function RangeBeautyContent() {
             <MessageSquare className="w-3.5 h-3.5" />
             Live Demo
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-zinc-50 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-slate-900 mb-4">
             AI Shade Matching Assistant
           </h2>
-          <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Your customers ask &ldquo;which shade am I?&rdquo; more than anything else. This chatbot knows all 21 shades, every undertone, and recommends the perfect match in under 60 seconds. Try it.
           </p>
         </div>
@@ -338,7 +338,7 @@ function RangeBeautyContent() {
           <RangeBeautyChatbot />
 
           <div className="max-w-xl text-center">
-            <p className="text-sm text-zinc-500 leading-relaxed">
+            <p className="text-sm text-slate-400 leading-relaxed">
               This prototype is trained on your full product range — all 21 foundation shades, the setting powder, primer, and Bali Glow. The production version would live on rangebeauty.com, integrate with Shopify for real-time inventory, and handle order tracking and returns.
             </p>
           </div>
@@ -349,9 +349,9 @@ function RangeBeautyContent() {
               { stat: "24/7", label: "always available, no staff needed" },
               { stat: "21", label: "shades it knows inside out" },
             ].map((item) => (
-              <div key={item.label} className="bg-zinc-900 border border-zinc-800 rounded-xl p-4 text-center">
+              <div key={item.label} className="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center">
                 <p className="text-2xl font-bold text-rose-400 mb-1">{item.stat}</p>
-                <p className="text-xs text-zinc-500">{item.label}</p>
+                <p className="text-xs text-slate-400">{item.label}</p>
               </div>
             ))}
           </div>
@@ -360,7 +360,7 @@ function RangeBeautyContent() {
 
       {/* Divider */}
       <div className="max-w-6xl mx-auto px-5">
-        <div className="h-px bg-zinc-800" />
+        <div className="h-px bg-slate-100" />
       </div>
 
       {/* ------------------------------------------------------------------ */}
@@ -368,14 +368,14 @@ function RangeBeautyContent() {
       {/* ------------------------------------------------------------------ */}
       <Section className="px-5 py-20 max-w-6xl mx-auto">
         <div className="mb-12 text-center">
-          <div className="inline-flex items-center gap-2 bg-amber-500/10 text-amber-400 text-xs font-medium uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 bg-amber-500/10 text-amber-600 text-xs font-medium uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">
             <Sparkles className="w-3.5 h-3.5" />
             Analysis
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-zinc-50 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-slate-900 mb-4">
             Customer Service: Where You&apos;re Losing Sales
           </h2>
-          <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             We reviewed Range Beauty&apos;s customer experience from the outside. Here&apos;s what we found.
           </p>
         </div>
@@ -383,10 +383,10 @@ function RangeBeautyContent() {
         {/* Current vs Future */}
         <div className="grid md:grid-cols-2 gap-6 mb-10">
           {/* Current state */}
-          <div className="bg-zinc-900 border border-red-500/20 rounded-2xl p-6">
+          <div className="bg-slate-50 border border-red-500/20 rounded-2xl p-6">
             <div className="flex items-center gap-2 mb-4">
               <AlertTriangle className="w-5 h-5 text-red-400" />
-              <h3 className="text-lg font-semibold text-zinc-100">Current State</h3>
+              <h3 className="text-lg font-semibold text-slate-900">Current State</h3>
             </div>
             <div className="space-y-3">
               {[
@@ -398,8 +398,8 @@ function RangeBeautyContent() {
                 <div key={item.text} className="flex gap-3 items-start">
                   <item.icon className="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="text-sm text-zinc-200">{item.text}</p>
-                    <p className="text-xs text-zinc-500">{item.sub}</p>
+                    <p className="text-sm text-slate-900">{item.text}</p>
+                    <p className="text-xs text-slate-400">{item.sub}</p>
                   </div>
                 </div>
               ))}
@@ -407,10 +407,10 @@ function RangeBeautyContent() {
           </div>
 
           {/* What we'd build */}
-          <div className="bg-zinc-900 border border-emerald-500/20 rounded-2xl p-6">
+          <div className="bg-slate-50 border border-emerald-500/20 rounded-2xl p-6">
             <div className="flex items-center gap-2 mb-4">
-              <CheckCircle2 className="w-5 h-5 text-emerald-400" />
-              <h3 className="text-lg font-semibold text-zinc-100">What We&apos;d Build</h3>
+              <CheckCircle2 className="w-5 h-5 text-emerald-600" />
+              <h3 className="text-lg font-semibold text-slate-900">What We&apos;d Build</h3>
             </div>
             <div className="space-y-3">
               {[
@@ -420,10 +420,10 @@ function RangeBeautyContent() {
                 { icon: TrendingUp, text: "Shopify integration + analytics", sub: "Track which shades get recommended most, cart recovery, conversion data" },
               ].map((item) => (
                 <div key={item.text} className="flex gap-3 items-start">
-                  <item.icon className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
+                  <item.icon className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="text-sm text-zinc-200">{item.text}</p>
-                    <p className="text-xs text-zinc-500">{item.sub}</p>
+                    <p className="text-sm text-slate-900">{item.text}</p>
+                    <p className="text-xs text-slate-400">{item.sub}</p>
                   </div>
                 </div>
               ))}
@@ -432,15 +432,15 @@ function RangeBeautyContent() {
         </div>
 
         {/* Support channels comparison */}
-        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
-          <h3 className="text-base font-semibold text-zinc-200 mb-4">Current Support Channels</h3>
+        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+          <h3 className="text-base font-semibold text-slate-900 mb-4">Current Support Channels</h3>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-zinc-800">
-                  <th className="text-left py-2 pr-4 text-zinc-500 font-medium">Channel</th>
-                  <th className="text-left py-2 pr-4 text-zinc-500 font-medium">Status</th>
-                  <th className="text-left py-2 text-zinc-500 font-medium">Impact</th>
+                <tr className="border-b border-slate-200">
+                  <th className="text-left py-2 pr-4 text-slate-400 font-medium">Channel</th>
+                  <th className="text-left py-2 pr-4 text-slate-400 font-medium">Status</th>
+                  <th className="text-left py-2 text-slate-400 font-medium">Impact</th>
                 </tr>
               </thead>
               <tbody>
@@ -451,10 +451,10 @@ function RangeBeautyContent() {
                   ["Phone Support", "None", "No voice channel for urgent issues"],
                   ["FAQ Page", "Exists but basic", "Doesn't address shade-specific questions"],
                 ].map(([channel, status, impact]) => (
-                  <tr key={channel} className="border-b border-zinc-800/50">
-                    <td className="py-2.5 pr-4 text-zinc-300">{channel}</td>
-                    <td className="py-2.5 pr-4 text-zinc-400">{status}</td>
-                    <td className="py-2.5 text-zinc-500">{impact}</td>
+                  <tr key={channel} className="border-b border-slate-200/50">
+                    <td className="py-2.5 pr-4 text-slate-500">{channel}</td>
+                    <td className="py-2.5 pr-4 text-slate-600">{status}</td>
+                    <td className="py-2.5 text-slate-400">{impact}</td>
                   </tr>
                 ))}
               </tbody>
@@ -465,7 +465,7 @@ function RangeBeautyContent() {
 
       {/* Divider */}
       <div className="max-w-6xl mx-auto px-5">
-        <div className="h-px bg-zinc-800" />
+        <div className="h-px bg-slate-100" />
       </div>
 
       {/* ------------------------------------------------------------------ */}
@@ -473,14 +473,14 @@ function RangeBeautyContent() {
       {/* ------------------------------------------------------------------ */}
       <Section className="px-5 py-20 max-w-6xl mx-auto">
         <div className="mb-12 text-center">
-          <div className="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-400 text-xs font-medium uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-600 text-xs font-medium uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">
             <TrendingUp className="w-3.5 h-3.5" />
             ROI Estimate
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-zinc-50 mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-slate-900 mb-4">
             The Numbers
           </h2>
-          <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
             Conservative estimates based on your product range, price point, and traffic.
           </p>
         </div>
@@ -493,19 +493,19 @@ function RangeBeautyContent() {
             { value: "30%", label: "Fewer wrong-shade returns", sub: "Right shade recommended upfront = fewer returns" },
           ].map((item) => (
             <div key={item.label} className="bg-gradient-to-br from-emerald-600/10 to-emerald-600/5 border border-emerald-500/20 rounded-2xl p-5 text-center">
-              <p className="text-3xl font-bold text-emerald-400 mb-2">{item.value}</p>
-              <p className="text-sm font-medium text-zinc-200 mb-1">{item.label}</p>
-              <p className="text-xs text-zinc-500">{item.sub}</p>
+              <p className="text-3xl font-bold text-emerald-600 mb-2">{item.value}</p>
+              <p className="text-sm font-medium text-slate-900 mb-1">{item.label}</p>
+              <p className="text-xs text-slate-400">{item.sub}</p>
             </div>
           ))}
         </div>
 
-        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 text-center">
-          <p className="text-sm text-zinc-400 mb-2">At an average order value of $33 and recovering even 50 abandoned carts per month:</p>
-          <p className="text-2xl font-bold text-zinc-50">
+        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 text-center">
+          <p className="text-sm text-slate-600 mb-2">At an average order value of $33 and recovering even 50 abandoned carts per month:</p>
+          <p className="text-2xl font-bold text-slate-900">
             ~$1,650/month in recovered revenue
           </p>
-          <p className="text-sm text-zinc-500 mt-1">
+          <p className="text-sm text-slate-400 mt-1">
             The chatbot pays for itself many times over.
           </p>
         </div>
@@ -513,20 +513,20 @@ function RangeBeautyContent() {
 
       {/* Divider */}
       <div className="max-w-6xl mx-auto px-5">
-        <div className="h-px bg-zinc-800" />
+        <div className="h-px bg-slate-100" />
       </div>
 
       {/* ------------------------------------------------------------------ */}
       {/* 5. CTA                                                               */}
       {/* ------------------------------------------------------------------ */}
       <Section className="px-5 py-24 max-w-3xl mx-auto text-center">
-        <p className="text-sm font-medium text-zinc-500 uppercase tracking-widest mb-4">
+        <p className="text-sm font-medium text-slate-400 uppercase tracking-widest mb-4">
           No pitch. No strings.
         </p>
-        <h2 className="text-3xl sm:text-4xl font-bold text-zinc-50 mb-4">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-slate-900 mb-4">
           If this is useful, we&apos;d love 15 minutes.
         </h2>
-        <p className="text-lg text-zinc-400 leading-relaxed mb-10">
+        <p className="text-lg text-slate-600 leading-relaxed mb-10">
           No sales team. No gatekeepers. A quick call to walk through how this would work on rangebeauty.com — and you&apos;d be talking directly to the person who built everything on this page.
         </p>
 
@@ -547,7 +547,7 @@ function RangeBeautyContent() {
             href="https://linkedin.com/in/olushola-oladipupo/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3.5 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-zinc-300 hover:text-zinc-100 font-medium rounded-xl transition-all text-sm"
+            className="inline-flex items-center gap-2 px-6 py-3.5 bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-500 hover:text-slate-900 font-medium rounded-xl transition-all text-sm"
             aria-label="Connect with Olushola on LinkedIn"
           >
             <Linkedin className="w-4 h-4" />
@@ -556,13 +556,13 @@ function RangeBeautyContent() {
           </Link>
         </div>
 
-        <p className="text-sm text-zinc-600">
+        <p className="text-sm text-slate-900">
           Built by{" "}
           <Link
             href="https://oladipupoconsulting.co.uk"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-zinc-500 hover:text-zinc-300 underline underline-offset-2 transition-colors"
+            className="text-slate-400 hover:text-slate-500 underline underline-offset-2 transition-colors"
           >
             Oladipupo Consulting
           </Link>
@@ -573,8 +573,8 @@ function RangeBeautyContent() {
       {/* ------------------------------------------------------------------ */}
       {/* 6. Footer                                                            */}
       {/* ------------------------------------------------------------------ */}
-      <footer className="border-t border-zinc-900 px-5 py-8 text-center">
-        <p className="text-sm text-zinc-700">
+      <footer className="border-t border-slate-800 px-5 py-8 text-center">
+        <p className="text-sm text-slate-600">
           This page was built specifically for you. No one else can see it.
         </p>
       </footer>
