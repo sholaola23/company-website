@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     "AI automation agency costs",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "What It Actually Costs to Run a 63-Agent AI Business",
     description:
       "A transparent breakdown of every tool, API call, and monthly cost behind running 63 AI agents, 2 client dashboards, and 50+ daily automated emails. Real numbers, no fluff.",

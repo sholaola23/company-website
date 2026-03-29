@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "plumbing business software",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "AI for Plumbers: 5 Automations That Win More Jobs",
     description:
       "5 practical AI automations that help plumbing businesses win more jobs, get more reviews, and spend less time on admin.",

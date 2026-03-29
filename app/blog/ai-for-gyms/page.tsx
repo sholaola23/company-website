@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "automate gym bookings",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title:
       "AI for Gyms: Automate Bookings & Retention",
     description:

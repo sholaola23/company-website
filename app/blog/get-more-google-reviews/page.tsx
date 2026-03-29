@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "automated review requests",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "How to Get More Google Reviews Automatically",
     description:
       "3x your Google reviews without awkward asks. Here's how small businesses automate review collection and climb Google rankings.",

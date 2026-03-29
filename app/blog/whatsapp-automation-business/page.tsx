@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "WhatsApp ordering system",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "WhatsApp Automation for Business: The Complete Guide",
     description:
       "How small businesses use WhatsApp automation to handle orders, bookings, and customer questions — without lifting a finger.",

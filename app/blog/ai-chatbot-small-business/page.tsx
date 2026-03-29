@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     "WhatsApp business automation",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title:
       "AI Chatbots for Small Business: Complete Guide",
     description:

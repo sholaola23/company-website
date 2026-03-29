@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     canonical: "https://oladipupoconsulting.co.uk/case-studies",
   },
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "Case Studies | Oladipupo Consulting",
     description:
       "See how we've helped small businesses save time and grow with AI automation. Real results, real clients.",

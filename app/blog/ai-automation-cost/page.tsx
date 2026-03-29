@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "AI ROI small business",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "How Much Does AI Automation Cost for a Small Business?",
     description:
       "An honest pricing guide for AI automation. Compare options, see real ROI numbers, and find out what small businesses actually pay.",

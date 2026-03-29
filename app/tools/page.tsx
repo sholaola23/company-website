@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://oladipupoconsulting.co.uk/tools",
   },
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "Free AI Tools for Small Businesses | Oladipupo Consulting",
     description:
       "Free tools to audit your AI readiness, local SEO, and calculate your automation ROI.",

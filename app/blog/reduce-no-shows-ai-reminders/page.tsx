@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "WhatsApp booking reminders",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "Reduce No-Shows by 60% With AI Reminders",
     description:
       "How AI appointment reminders via SMS, WhatsApp, and Voice AI reduce no-shows by up to 60%. Rebooking automation and follow-up strategies.",

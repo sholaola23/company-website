@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "build AI automation yourself",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "AI Automation Agency vs DIY: Which Is Right for Your Business?",
     description:
       "Compare hiring an AI automation agency vs building it yourself. Honest cost, time, and outcome breakdown for small business owners.",

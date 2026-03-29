@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     "local SEO UK",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "Does Your Business Need a Website in 2026?",
     description:
       "46% of UK small businesses still don't have a website. Here's why that's costing you customers and what it actually costs to fix.",

@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     canonical: "https://oladipupoconsulting.co.uk/services",
   },
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "AI Automation Services | Oladipupo Consulting",
     description:
       "From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 14 days.",

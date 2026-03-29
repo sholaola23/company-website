@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     "dental practice software",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "AI for Dentists & Dental Practices: Reduce No-Shows by 60%",
     description:
       "5 practical AI automations that help dental practices reduce no-shows by 60%, fill cancellations instantly, and grow patient numbers.",

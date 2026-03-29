@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "follow-up automation UK",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "Automate Customer Follow-Ups Without Being Annoying",
     description:
       "How to automate customer follow-ups across email, SMS, and WhatsApp without annoying people. Timing, personalisation, and when to stop.",

@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     "AI email automation",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "5 Ways AI Can Save Your Small Business 10+ Hours a Week",
     description:
       "Discover how AI automation helps UK small businesses save 10+ hours every week. Practical examples for plumbers, salons, cleaners and more.",

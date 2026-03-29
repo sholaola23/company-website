@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "reduce no-shows cleaning",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "AI for Cleaning Businesses: 3 Tasks to Automate",
     description:
       "The 3 tasks losing cleaning businesses the most revenue — after-hours lead capture, booking reminders, and quote follow-up — and how AI handles each automatically.",

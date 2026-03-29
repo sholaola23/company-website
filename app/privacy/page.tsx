@@ -7,6 +7,7 @@ export const metadata: Metadata = {
     canonical: "https://oladipupoconsulting.co.uk/privacy",
   },
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "Privacy Policy | Oladipupo Consulting",
     description: "Privacy policy for Oladipupo Consulting Ltd.",
     url: "https://oladipupoconsulting.co.uk/privacy",

@@ -32,6 +32,7 @@ export const metadata: Metadata = {
     canonical: CANONICAL,
   },
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: `AI Automation for Small Businesses in ${CITY}`,
     description: `AI automation services for small businesses in ${CITY}. Automate lead capture, appointment booking, customer communications, and more.`,
     url: CANONICAL,

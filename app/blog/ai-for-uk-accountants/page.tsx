@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "accounting AI UK",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "AI for UK Accountants: Automate Onboarding & Invoices",
     description:
       "How UK accounting firms use AI to automate client onboarding, document collection, invoice chasing, and deadline reminders.",

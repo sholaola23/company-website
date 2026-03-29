@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "n8n automation case study",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "London Bakery Saved 15+ Hours/Week With AI",
     description:
       "How a London wholesale bakery automated order processing, production scheduling, and delivery routing with AI — saving 15+ hours a week. Built in 7 days, no tech team.",

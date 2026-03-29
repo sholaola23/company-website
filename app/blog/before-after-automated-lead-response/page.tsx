@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "plumber AI automation",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "Before & After: Automated Lead Response",
     description:
       "See the before and after when a service business automates lead response. Response time drops from 12 hours to 30 seconds. Conversion doubles. Admin disappears.",

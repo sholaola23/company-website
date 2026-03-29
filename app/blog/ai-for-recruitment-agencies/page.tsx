@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "recruitment agency automation UK",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title:
       "AI for Recruitment Agencies: Automate Screening",
     description:

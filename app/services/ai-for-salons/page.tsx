@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     canonical: `https://oladipupoconsulting.co.uk/services/${page.slug}`,
   },
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: `${page.metaTitle} | Oladipupo Consulting`,
     description: page.metaDescription,
     url: `https://oladipupoconsulting.co.uk/services/${page.slug}`,

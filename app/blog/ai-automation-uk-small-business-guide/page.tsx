@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     "business automation guide",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "AI Automation for UK Small Businesses (2026)",
     description:
       "Everything UK small businesses need to know about AI automation in 2026. What it is, what it costs, and how to get started.",

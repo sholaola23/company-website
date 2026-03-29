@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "AI readiness",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "1 in 5 Small Businesses Are Good at AI",
     description:
       "98% of small businesses say they use AI daily, but only 14% have embedded it into operations. Find out if you are in the 86% — and how to close the gap.",

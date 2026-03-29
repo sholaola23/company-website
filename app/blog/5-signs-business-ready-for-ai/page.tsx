@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     "AI automation UK SMB",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "5 Signs Your Business Is Ready for AI Automation",
     description:
       "Not sure if AI is right for your business? Here are 5 clear signs you're ready — and what to do about each one.",

@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "voice AI UK",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "Voice AI for Small Business: Never Miss a Call Again",
     description:
       "How Voice AI agents answer your business calls 24/7, qualify leads, and book appointments automatically — while you focus on the job. Real costs and real results.",

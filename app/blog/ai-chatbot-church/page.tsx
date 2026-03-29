@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "church volunteer automation",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "Why Every Church Needs an AI Chatbot in 2026",
     description:
       "How AI chatbots help churches answer visitor questions, share event info, process giving links, and manage volunteer signups — 24/7.",

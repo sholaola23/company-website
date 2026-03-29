@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     canonical: "https://oladipupoconsulting.co.uk/contact",
   },
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "Contact Us | Oladipupo Consulting",
     description:
       "Get in touch with Oladipupo Consulting. Whether you have a question or you're ready to get started with AI automation.",

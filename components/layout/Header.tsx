@@ -13,7 +13,7 @@ const SERVICE_LINKS = [
   { label: "SEO Content Automation", href: "/services/seo-content" },
   { label: "WhatsApp Customer Bot", href: "/services/whatsapp-bot" },
   { label: "AI Workshops", href: "/services/ai-workshop" },
-  { label: "Website Development", href: "/services/website-development" },
+  { label: "Website Development", href: "/services/business-website" },
   { label: "View All Services", href: "/services" },
 ];
 

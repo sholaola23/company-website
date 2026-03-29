@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     "local search ranking",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title:
       "Local SEO Audit Checklist 2026: 20-Task Framework for Google Maps Rankings",
     description:

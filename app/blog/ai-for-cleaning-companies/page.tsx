@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "cleaning business growth",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title:
       "AI for Cleaning Companies: Win More Contracts",
     description:

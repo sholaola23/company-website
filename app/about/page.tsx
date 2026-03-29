@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     canonical: "https://oladipupoconsulting.co.uk/about",
   },
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "About Us | Oladipupo Consulting",
     description:
       "UK-based AI solutions agency for small businesses. AI automation, website development, and team training. Founded by Olushola Oladipupo.",

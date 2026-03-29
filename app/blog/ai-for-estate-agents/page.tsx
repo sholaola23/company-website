@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     "estate agent software",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "AI for Estate Agents: Automate Leads & Viewings",
     description:
       "5 practical AI automations that help estate agencies respond faster, book more viewings, and close more sales.",

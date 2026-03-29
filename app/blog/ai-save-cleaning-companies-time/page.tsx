@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "automated quoting cleaning",
   ],
   openGraph: {
+    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
     title: "AI Saves UK Cleaning Companies 10+ Hours/Week",
     description:
       "How AI automation helps UK cleaning companies save 10+ hours a week on quoting, scheduling, follow-ups, and invoice reminders.",
