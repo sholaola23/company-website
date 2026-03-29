@@ -32,7 +32,8 @@ export default function AnimatedCounter({
   useEffect(() => {
     if (!isInView || hasAnimated.current) return;
     hasAnimated.current = true;
-    // Reset to 0 then animate up — only on the client once visible
+    // Reset to 0 then animate up — guarded by hasAnimated.current, safe to call here
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDisplay("0");
     const controls = animate(0, target, {
       duration: 1.5,
