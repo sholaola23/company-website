@@ -158,6 +158,9 @@ export async function POST(
   } catch (error) {
     const errMsg = error instanceof Error ? error.message : String(error);
     console.error("[client-upload] matching error:", errMsg);
-    return fail(`Matching failed: ${errMsg}`, 500);
+    return fail(
+      "Something went wrong processing your statement. Please try again or contact support.",
+      500
+    );
   }
 }
