@@ -61,9 +61,9 @@ export const metadata: Metadata = {
       "We build AI automation systems, professional websites, and deliver AI training for small businesses. From lead capture to content engines — delivered in 14 days.",
     images: [
       {
-        url: "https://oladipupoconsulting.co.uk/api/og",
-        width: 1200,
-        height: 630,
+        url: "https://oladipupoconsulting.co.uk/og-image.png",
+        width: 1332,
+        height: 750,
         alt: "Oladipupo Consulting — AI Automation for Small Businesses",
       },
     ],
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     title: "Oladipupo Consulting — AI Solutions for Small Businesses",
     description:
       "AI automation, websites, and team training for small businesses. Delivered in 7 days.",
-    images: ["https://oladipupoconsulting.co.uk/api/og"],
+    images: ["https://oladipupoconsulting.co.uk/og-image.png"],
   },
   robots: {
     index: true,
