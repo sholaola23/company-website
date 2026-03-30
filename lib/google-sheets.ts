@@ -115,19 +115,18 @@ async function getDoc(sheetsId: string): Promise<GoogleSpreadsheet | null> {
 }
 
 /**
- * Get the current week code in the format used by E'Manuel sheets: "Fri DD Mon"
- * This matches the ARRAYFORMULA in column Y of the Orders tab.
+ * Calculate the week code for a given date in the format used by E'Manuel sheets: "Fri DD Mon"
+ * Week code = the Friday that "owns" this date.
+ * Mon-Fri → that week's Friday. Sat-Sun → the previous Friday.
  */
-function getCurrentWeekCode(): string {
-  const now = new Date();
-  // Find the Friday of the current week (or next Friday if before Friday)
-  const day = now.getDay(); // 0=Sun, 5=Fri
+function getWeekCodeForDate(date: Date): string {
+  const day = date.getDay(); // 0=Sun, 5=Fri
   const daysUntilFriday = (5 - day + 7) % 7;
-  const friday = new Date(now);
-  friday.setDate(now.getDate() + daysUntilFriday);
+  const friday = new Date(date);
+  friday.setDate(date.getDate() + daysUntilFriday);
   // If it's Saturday or Sunday, use the previous Friday
-  if (day === 6) friday.setDate(now.getDate() - 1);
-  if (day === 0) friday.setDate(now.getDate() - 2);
+  if (day === 6) friday.setDate(date.getDate() - 1);
+  if (day === 0) friday.setDate(date.getDate() - 2);
 
   const months = [
     "Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -136,6 +135,14 @@ function getCurrentWeekCode(): string {
   const dd = friday.getDate();
   const mon = months[friday.getMonth()];
   return `Fri ${dd} ${mon}`;
+}
+
+/**
+ * Get the current week code in the format used by E'Manuel sheets: "Fri DD Mon"
+ * This matches the ARRAYFORMULA in column Y of the Orders tab.
+ */
+function getCurrentWeekCode(): string {
+  return getWeekCodeForDate(new Date());
 }
 
 export async function getOrdersSummary(
@@ -160,7 +167,10 @@ export async function getOrdersSummary(
       const wc = row.get("Week Code");
       if (wc === weekCode) return true;
       // Fallback: Week Code column may be empty for new submissions if the
-      // ARRAYFORMULA in the sheet doesn't extend far enough. Check submission date.
+      // ARRAYFORMULA in the sheet doesn't extend far enough. Calculate the
+      // correct week code from the submission date and only include if it
+      // matches the current week — prevents old orders leaking into the
+      // wrong week.
       if (!wc) {
         const submittedAt =
           row.get("Submitted at") ||
@@ -169,8 +179,8 @@ export async function getOrdersSummary(
         if (!submittedAt) return false;
         const orderDate = new Date(submittedAt);
         if (isNaN(orderDate.getTime())) return false;
-        const daysDiff = (Date.now() - orderDate.getTime()) / (1000 * 60 * 60 * 24);
-        return daysDiff >= 0 && daysDiff <= 7;
+        const calculatedWeekCode = getWeekCodeForDate(orderDate);
+        return calculatedWeekCode === weekCode;
       }
       return false;
     });
