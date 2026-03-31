@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { ANTHROPIC_API_URL, ANTHROPIC_VERSION } from "@/lib/constants";
+import { ANTHROPIC_API_URL, ANTHROPIC_VERSION, heliconeHeaders } from "@/lib/constants";
 
 export const runtime = "edge";
 
@@ -270,7 +270,7 @@ export async function POST(req: NextRequest) {
       headers: {
         "Content-Type": "application/json",
         "x-api-key": apiKey,
-        "anthropic-version": ANTHROPIC_VERSION,
+        ...heliconeHeaders(), "anthropic-version": ANTHROPIC_VERSION,
       },
       body: JSON.stringify({
         model: "claude-haiku-4-5-20250514",

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "AI ROI small business",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "How Much Does AI Automation Cost for a Small Business?",
     description:
       "An honest pricing guide for AI automation. Compare options, see real ROI numbers, and find out what small businesses actually pay.",
@@ -220,7 +220,7 @@ export default function BlogPost() {
             </h2>
 
             <p className="text-slate-500 leading-relaxed mb-4">
-              This is what we do at Oladipupo Consulting. We specialise in AI
+              This is what we do at WorkCrew. We specialise in AI
               automation for small businesses, which means our pricing and
               processes are designed specifically for you.
             </p>

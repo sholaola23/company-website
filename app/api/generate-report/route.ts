@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-import { ANTHROPIC_API_URL, ANTHROPIC_VERSION } from "@/lib/constants";
+import { ANTHROPIC_API_URL, ANTHROPIC_VERSION, heliconeHeaders } from "@/lib/constants";
 
 // Allow up to 300s on Pro plan for full report generation
 export const maxDuration = 300;
@@ -15,13 +15,13 @@ const resend = process.env.RESEND_API_KEY
 
 const FROM_REPORT =
   process.env.RESEND_DOMAIN_VERIFIED === "true"
-    ? "Oladipupo Consulting <reports@oladipupoconsulting.co.uk>"
-    : "Oladipupo Consulting <onboarding@resend.dev>";
+    ? "WorkCrew <reports@workcrew.io>"
+    : "WorkCrew <onboarding@resend.dev>";
 
 const FROM_NOTIFY =
   process.env.RESEND_DOMAIN_VERIFIED === "true"
-    ? "Oladipupo Consulting <notifications@oladipupoconsulting.co.uk>"
-    : "Oladipupo Consulting <onboarding@resend.dev>";
+    ? "WorkCrew <notifications@workcrew.io>"
+    : "WorkCrew <onboarding@resend.dev>";
 
 const OWNER_EMAIL = "olusholaoladipupo1@gmail.com";
 
@@ -90,7 +90,7 @@ function getReportPrompt(data: GenerateReportBody): string {
     .map((w, i) => `${i + 1}. ${w.title}: ${w.description}`)
     .join("\n");
 
-  return `You are an expert AI automation consultant at Oladipupo Consulting Ltd, a firm that builds AI automation systems for small businesses worldwide.
+  return `You are an expert AI automation consultant at WorkCrew Ltd, a firm that builds AI automation systems for small businesses worldwide.
 
 Generate a COMPLETE, self-contained HTML document for a professional AI Readiness Audit Report. The HTML must have ALL CSS embedded in a <style> tag — no external stylesheets or scripts.
 
@@ -148,7 +148,7 @@ DESIGN REQUIREMENTS:
 - Styled comparison tables with alternating row colours
 - Dark ROI calculation box (#1e293b background)
 - Phase grid showing Starter/Growth/Scale tiers with the recommended one highlighted
-- Professional footer with Oladipupo Consulting branding, website (oladipupoconsulting.co.uk), and "Book Your Free Strategy Call" CTA
+- Professional footer with WorkCrew branding, website (workcrew.io), and "Book Your Free Strategy Call" CTA
 - Fully self-contained — ALL CSS embedded in <style>, no external dependencies
 - Print-friendly (add @media print styles so it looks good when saved as PDF via Cmd+P)
 - Responsive — looks good on both desktop and mobile
@@ -259,7 +259,7 @@ async function sendReportToProspect(
           </div>
           <div style="padding: 20px 24px; text-align: center; border-radius: 0 0 12px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-top: none;">
             <p style="color: #94a3b8; font-size: 12px; margin: 0;">
-              Oladipupo Consulting Ltd | oladipupoconsulting.co.uk
+              WorkCrew Ltd | workcrew.io
             </p>
           </div>
         </div>
@@ -360,7 +360,7 @@ export async function POST(req: NextRequest) {
       headers: {
         "Content-Type": "application/json",
         "x-api-key": apiKey,
-        "anthropic-version": ANTHROPIC_VERSION,
+        ...heliconeHeaders(), "anthropic-version": ANTHROPIC_VERSION,
       },
       body: JSON.stringify({
         model: "claude-sonnet-4-20250514",
@@ -408,7 +408,7 @@ export async function POST(req: NextRequest) {
 
     // Use our clean proxy URL instead of raw blob URL (renders in browser, no download)
     const reportUrl = blobUrl
-      ? `https://oladipupoconsulting.co.uk/reports/${slug}`
+      ? `https://workcrew.io/reports/${slug}`
       : null;
 
     if (reportUrl) {

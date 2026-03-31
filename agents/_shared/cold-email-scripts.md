@@ -2,7 +2,7 @@
 
 ## Source
 Adapted from "The Cold Email Scripts Vault" by James (scaledifylabs). Original had 20 scripts for agency/lead gen.
-Rewritten for Oladipupo Consulting's AI automation offer targeting local service businesses.
+Rewritten for WorkCrew's AI automation offer targeting local service businesses.
 
 ## Universal Rules (MUST follow)
 1. **5 lines max** (including signature) — wall of text = ignored
@@ -125,7 +125,7 @@ interested? reply yes
 
 Shola
 
-PS — oladipupoconsulting.co.uk/blog/reduce-no-shows-ai-reminders
+PS — workcrew.io/blog/reduce-no-shows-ai-reminders
 ```
 
 ## Script H — Accountants / Solicitors (DOCUMENT CHASING)
@@ -143,7 +143,7 @@ interested? reply yes
 
 Shola
 
-PS — oladipupoconsulting.co.uk/blog/ai-for-uk-accountants
+PS — workcrew.io/blog/ai-for-uk-accountants
 ```
 
 ## Script I — Real Estate (LEAD FOLLOW-UP)

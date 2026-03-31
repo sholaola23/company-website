@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "AI for UK businesses",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "How Can AI Help My Business? 10 Real Examples from UK SMBs",
     description:
       "10 real-world examples of UK small businesses using AI to save time, win customers, and cut costs.",

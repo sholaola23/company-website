@@ -41,7 +41,7 @@ export default function Logo({ size = "sm", className, variant = "dark" }: LogoP
             isLight ? "text-white" : "text-slate-900"
           )}
         >
-          Oladipupo Consulting
+          WorkCrew
         </span>
         {!isSm && (
           <span className={cn(

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "automate bakery orders",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "How a Kettering Bakery Automated 90% of Their Admin with AI",
     description:
       "E'Manuel Bakery went from 8+ hours of weekly admin to 60 seconds. Real numbers, real workflows, real results.",

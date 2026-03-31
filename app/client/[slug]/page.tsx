@@ -344,7 +344,7 @@ function LoginForm({ slug }: { slug: string }) {
         </form>
 
         <p className="text-zinc-700 text-xs text-center mt-6">
-          Powered by Oladipupo Consulting
+          Powered by WorkCrew
         </p>
       </motion.div>
     </div>
@@ -1675,14 +1675,14 @@ export default function ClientDashboard() {
               <p className="text-zinc-600 text-xs">
                 Questions?{" "}
                 <a
-                  href="mailto:hello@oladipupoconsulting.co.uk"
+                  href="mailto:hello@workcrew.io"
                   className="text-zinc-400 hover:text-white transition-colors underline underline-offset-2 decoration-zinc-700"
                 >
-                  hello@oladipupoconsulting.co.uk
+                  hello@workcrew.io
                 </a>
               </p>
               <p className="text-zinc-800 text-xs">
-                Powered by Oladipupo Consulting
+                Powered by WorkCrew
               </p>
             </div>
           </Section>

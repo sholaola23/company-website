@@ -30,8 +30,8 @@ Your Free AI Readiness Audit — [Business Name]
 5. Signature:
 ```
 Olushola Oladipupo
-Oladipupo Consulting Ltd
-oladipupoconsulting.co.uk
-hello@oladipupoconsulting.co.uk
+WorkCrew Ltd
+workcrew.io
+hello@workcrew.io
 07469 347654
 ```

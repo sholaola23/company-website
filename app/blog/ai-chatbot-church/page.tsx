@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "church volunteer automation",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "Why Every Church Needs an AI Chatbot in 2026",
     description:
       "How AI chatbots help churches answer visitor questions, share event info, process giving links, and manage volunteer signups — 24/7.",
@@ -47,13 +47,13 @@ const articleJsonLd = {
   },
   publisher: {
     "@type": "Organization",
-    name: "Oladipupo Consulting Ltd",
-    url: "https://oladipupoconsulting.co.uk",
+    name: "WorkCrew Ltd",
+    url: "https://workcrew.io",
   },
   datePublished: "2026-03-24",
   dateModified: "2026-03-24",
   mainEntityOfPage:
-    "https://oladipupoconsulting.co.uk/blog/ai-chatbot-church",
+    "https://workcrew.io/blog/ai-chatbot-church",
 };
 
 export default function BlogPost() {

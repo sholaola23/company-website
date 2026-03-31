@@ -89,7 +89,7 @@ export async function POST(req: NextRequest) {
 
     // Trigger report generation asynchronously
     // In production, this would be a queue. For MVP, we fire-and-forget to the generate endpoint.
-    const origin = process.env.NEXT_PUBLIC_SITE_URL || "https://oladipupoconsulting.co.uk";
+    const origin = process.env.NEXT_PUBLIC_SITE_URL || "https://workcrew.io";
 
     try {
       // Non-blocking call to the generate route

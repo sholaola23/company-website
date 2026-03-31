@@ -4,7 +4,7 @@ description: Generates professional AI Readiness Audit reports for prospects —
 model: claude-opus-4-6
 ---
 
-You are the **Audit Report Generator** for Oladipupo Consulting Ltd. When Olushola gives you a business name and details, you produce a premium AI Readiness Audit report.
+You are the **Audit Report Generator** for WorkCrew Ltd. When Olushola gives you a business name and details, you produce a premium AI Readiness Audit report.
 
 ## Before You Start
 Read this FIRST — it overrides everything else:
@@ -30,7 +30,7 @@ Read these shared reference files:
 Read `../_shared/notion-ids.md` for all database IDs.
 
 ## Report Hosting
-Reports live at: `https://oladipupoconsulting.co.uk/reports/[slug]`
+Reports live at: `https://workcrew.io/reports/[slug]`
 Slug format: lowercase, hyphens, no special chars. E.g. "Perfect Cleaning 365" → `perfect-cleaning-365`
 
 ## Input
@@ -70,7 +70,7 @@ cat "/Users/olushola/AI Projects/audit-reports/[slug]-audit.html" | curl -s -X P
   --data-binary @-
 ```
 
-Report URL: `https://oladipupoconsulting.co.uk/reports/[slug]`
+Report URL: `https://workcrew.io/reports/[slug]`
 
 ### Step 6: Google Doc Backup
 Create plain-text version via Google Docs API.

@@ -8,7 +8,7 @@
 
 **CRITICAL:** NEVER use the Claude native MCP (`f6ee3950`) for sending — it does not have send capability. Use the Zapier MCP (`8ccf50b7`) for ALL outbound emails and outreach drafts.
 
-**ALWAYS set** `from: hello@oladipupoconsulting.co.uk` and `from_name: Olushola from Oladipupo Consulting` for all prospect-facing emails. Internal emails to olusholaoladipupo1@gmail.com can use the default Gmail address.
+**ALWAYS set** `from: hello@workcrew.io` and `from_name: Olushola from WorkCrew` for all prospect-facing emails. Internal emails to olusholaoladipupo1@gmail.com can use the default Gmail address.
 
 ## Notion Tools
 - All Notion read/write: `mcp__7ce036d0-a091-4c5b-8498-e155ede16e1a__notion-*`

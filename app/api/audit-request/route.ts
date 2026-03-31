@@ -9,13 +9,13 @@ const resend = process.env.RESEND_API_KEY
 
 const FROM_NOTIFY =
   process.env.RESEND_DOMAIN_VERIFIED === "true"
-    ? "Oladipupo Consulting <notifications@oladipupoconsulting.co.uk>"
-    : "Oladipupo Consulting <onboarding@resend.dev>";
+    ? "WorkCrew <notifications@workcrew.io>"
+    : "WorkCrew <onboarding@resend.dev>";
 
 const FROM_REPLY =
   process.env.RESEND_DOMAIN_VERIFIED === "true"
-    ? "Oladipupo Consulting <hello@oladipupoconsulting.co.uk>"
-    : "Oladipupo Consulting <onboarding@resend.dev>";
+    ? "WorkCrew <hello@workcrew.io>"
+    : "WorkCrew <onboarding@resend.dev>";
 
 interface AuditRequestBody {
   businessName: string;
@@ -68,7 +68,7 @@ async function generateAuditAutoReply({
       body: JSON.stringify({
         model: "claude-haiku-4-5-20251001",
         max_tokens: 500,
-        system: `You are the AI assistant for Oladipupo Consulting Ltd, a company that builds AI automation systems, professional websites, and delivers AI training for small businesses worldwide.
+        system: `You are the AI assistant for WorkCrew Ltd, a company that builds AI automation systems, professional websites, and delivers AI training for small businesses worldwide.
 
 Your job is to write a warm, professional acknowledgement email to someone who has just requested a free AI Readiness Audit. The reply should:
 - Thank them by first name for requesting the audit
@@ -76,7 +76,7 @@ Your job is to write a warm, professional acknowledgement email to someone who h
 - Confirm you'll have their personalised AI Readiness Audit ready within 48 hours
 - Briefly mention what they'll receive: a 5-section report covering their biggest opportunities for AI automation, time savings, and quick wins specific to their business
 - Keep it under 150 words, warm but professional
-- Sign off as "The Oladipupo Consulting Team"
+- Sign off as "The WorkCrew Team"
 - Use UK English
 
 DO NOT make specific promises, quote prices, or commit to exact outcomes. Just acknowledge, reassure, and build anticipation.`,
@@ -112,7 +112,7 @@ Keep an eye on your inbox — we'll send it directly to you.
 If you have any questions in the meantime, feel free to reply to this email.
 
 Best regards,
-The Oladipupo Consulting Team`;
+The WorkCrew Team`;
 }
 
 async function notifyOwnerAudit({
@@ -204,7 +204,7 @@ async function notifyOwnerAudit({
     await resend?.emails.send({
       from: FROM_REPLY,
       to: email,
-      subject: `Your AI Readiness Audit is on its way, ${yourName} — Oladipupo Consulting`,
+      subject: `Your AI Readiness Audit is on its way, ${yourName} — WorkCrew`,
       text: aiReply,
     });
   } catch (err) {

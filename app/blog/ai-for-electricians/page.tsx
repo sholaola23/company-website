@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "automate trades business",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "AI for Electricians & Tradespeople: Save 10+ Hours a Week",
     description:
       "5 practical AI automations that help electricians save 10+ hours a week on quoting, scheduling, compliance, reviews, and invoicing.",

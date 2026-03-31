@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "AI appointment system",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "Automate Appointment Booking for Your Business",
     description:
       "Stop missing calls and double-booking. Learn how AI appointment booking works for small businesses — and how to set it up.",

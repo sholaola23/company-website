@@ -5,7 +5,7 @@ interface BreadcrumbItem {
   href: string;
 }
 
-const BASE_URL = "https://oladipupoconsulting.co.uk";
+const BASE_URL = "https://workcrew.io";
 
 export default function BreadcrumbJsonLd({ items }: { items: BreadcrumbItem[] }) {
   const breadcrumbData = {

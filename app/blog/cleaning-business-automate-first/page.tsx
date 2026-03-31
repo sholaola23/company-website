@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "reduce no-shows cleaning",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "AI for Cleaning Businesses: 3 Tasks to Automate",
     description:
       "The 3 tasks losing cleaning businesses the most revenue — after-hours lead capture, booking reminders, and quote follow-up — and how AI handles each automatically.",
@@ -53,13 +53,13 @@ const articleJsonLd = {
   },
   publisher: {
     "@type": "Organization",
-    name: "Oladipupo Consulting Ltd",
-    url: "https://oladipupoconsulting.co.uk",
+    name: "WorkCrew Ltd",
+    url: "https://workcrew.io",
   },
   datePublished: "2026-03-24",
   dateModified: "2026-03-24",
   mainEntityOfPage:
-    "https://oladipupoconsulting.co.uk/blog/cleaning-business-automate-first",
+    "https://workcrew.io/blog/cleaning-business-automate-first",
 };
 
 export default function BlogPost() {

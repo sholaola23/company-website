@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "zapier alternative UK",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "n8n vs Zapier vs Make: Best for UK Business?",
     description:
       "Honest comparison of the three most popular automation tools. Which one is right for your business?",

@@ -5,22 +5,22 @@ import ContactForm from "@/components/contact/ContactForm";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Oladipupo Consulting. Whether you have a question or you're ready to get started with AI automation.",
+    "Get in touch with WorkCrew. Whether you have a question or you're ready to get started with AI automation.",
   alternates: {
-    canonical: "https://oladipupoconsulting.co.uk/contact",
+    canonical: "https://workcrew.io/contact",
   },
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
-    title: "Contact Us | Oladipupo Consulting",
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
+    title: "Contact Us | WorkCrew",
     description:
-      "Get in touch with Oladipupo Consulting. Whether you have a question or you're ready to get started with AI automation.",
-    url: "https://oladipupoconsulting.co.uk/contact",
+      "Get in touch with WorkCrew. Whether you have a question or you're ready to get started with AI automation.",
+    url: "https://workcrew.io/contact",
     type: "website",
   },
   twitter: {
-    title: "Contact Us | Oladipupo Consulting",
+    title: "Contact Us | WorkCrew",
     description:
-      "Get in touch with Oladipupo Consulting. Whether you have a question or you're ready to get started with AI automation.",
+      "Get in touch with WorkCrew. Whether you have a question or you're ready to get started with AI automation.",
   },
 };
 
@@ -65,9 +65,9 @@ export default function ContactPage() {
             <div className="flex flex-col gap-5">
               {/* Email */}
               <a
-                href="mailto:hello@oladipupoconsulting.co.uk"
+                href="mailto:hello@workcrew.io"
                 className="flex items-start gap-4 p-4 bg-slate-50 border border-slate-200 rounded-xl hover:border-slate-200 transition-colors duration-150 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
-                aria-label="Send email to hello@oladipupoconsulting.co.uk"
+                aria-label="Send email to hello@workcrew.io"
               >
                 <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-600/20 shrink-0">
                   <Mail size={16} className="text-blue-600" aria-hidden="true" />
@@ -77,7 +77,7 @@ export default function ContactPage() {
                     Email
                   </p>
                   <p className="text-sm text-slate-900 group-hover:text-slate-900 transition-colors">
-                    hello@oladipupoconsulting.co.uk
+                    hello@workcrew.io
                   </p>
                 </div>
               </a>

@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     "Use our free AI ROI calculator to estimate how much time and money your small business could save with AI automation. Get instant results in 60 seconds.",
   alternates: {
-    canonical: "https://oladipupoconsulting.co.uk/tools/ai-roi-calculator",
+    canonical: "https://workcrew.io/tools/ai-roi-calculator",
   },
   keywords: [
     "AI ROI calculator",
@@ -16,14 +16,14 @@ export const metadata: Metadata = {
     "small business AI calculator",
   ],
   openGraph: {
-    title: "AI ROI Calculator — Estimate Your AI Savings | Oladipupo Consulting",
+    title: "AI ROI Calculator — Estimate Your AI Savings | WorkCrew",
     description:
       "Use our free AI ROI calculator to estimate how much time and money your small business could save with AI automation. Get instant results in 60 seconds.",
-    url: "https://oladipupoconsulting.co.uk/tools/ai-roi-calculator",
+    url: "https://workcrew.io/tools/ai-roi-calculator",
     type: "website",
   },
   twitter: {
-    title: "AI ROI Calculator — Estimate Your AI Savings | Oladipupo Consulting",
+    title: "AI ROI Calculator — Estimate Your AI Savings | WorkCrew",
     description:
       "Free AI ROI calculator for small businesses. Estimate how much time and money you could save with AI automation in 60 seconds.",
   },

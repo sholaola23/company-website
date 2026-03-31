@@ -408,7 +408,7 @@ export const industryPages: IndustryPage[] = [
     proofHeading: "Built on Real Client Dashboard Technology",
     proofDescription:
       "We have already built a live client-facing dashboard for E'Manuel Bakery — tracking orders, production, deliveries, and payments in real time. The same dashboard technology, GPS tracking concepts, and automated notification systems power our cleaning company solution. This is not theoretical — it is adapted from production infrastructure.",
-    proofSource: "E'Manuel Bakery client dashboard — live at app.oladipupoconsulting.co.uk",
+    proofSource: "E'Manuel Bakery client dashboard — live at app.workcrew.io",
     guaranteeText:
       "Every project comes with our 90-Day Results Guarantee. If you do not save at least 5 hours per week within 90 days, we refund your setup fee. No questions asked.",
     blogLinks: [

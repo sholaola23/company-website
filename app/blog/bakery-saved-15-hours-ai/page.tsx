@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "n8n automation case study",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "London Bakery Saved 15+ Hours/Week With AI",
     description:
       "How a London wholesale bakery automated order processing, production scheduling, and delivery routing with AI — saving 15+ hours a week. Built in 7 days, no tech team.",
@@ -47,13 +47,13 @@ const articleJsonLd = {
   },
   publisher: {
     "@type": "Organization",
-    name: "Oladipupo Consulting Ltd",
-    url: "https://oladipupoconsulting.co.uk",
+    name: "WorkCrew Ltd",
+    url: "https://workcrew.io",
   },
   datePublished: "2026-03-24",
   dateModified: "2026-03-24",
   mainEntityOfPage:
-    "https://oladipupoconsulting.co.uk/blog/bakery-saved-15-hours-ai",
+    "https://workcrew.io/blog/bakery-saved-15-hours-ai",
 };
 
 export default function BlogPost() {
@@ -400,7 +400,7 @@ export default function BlogPost() {
                 href="/"
                 className="text-blue-600 hover:text-blue-600 transition-colors"
               >
-                Oladipupo Consulting
+                WorkCrew
               </Link>
               , we build these systems for small businesses. Get in touch if you
               want one.

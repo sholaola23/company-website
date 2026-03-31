@@ -381,7 +381,7 @@ export default function QuickStartClient() {
             <div className="mt-6 pt-6 border-t border-slate-200 text-center">
               <p className="text-xs text-slate-400 mb-2">Prefer email?</p>
               <a
-                href="mailto:hello@oladipupoconsulting.co.uk?subject=Quick-Start%20AI%20Package%20-%20Claim%20My%20Spot&body=Hi%2C%20I%27d%20like%20to%20claim%20a%20spot%20on%20the%20%C2%A3297%20Quick-Start%20AI%20Package.%0A%0AMy%20business%3A%20%0AMy%20name%3A%20"
+                href="mailto:hello@workcrew.io?subject=Quick-Start%20AI%20Package%20-%20Claim%20My%20Spot&body=Hi%2C%20I%27d%20like%20to%20claim%20a%20spot%20on%20the%20%C2%A3297%20Quick-Start%20AI%20Package.%0A%0AMy%20business%3A%20%0AMy%20name%3A%20"
                 className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:text-blue-600 transition-colors"
               >
                 <Mail size={14} aria-hidden="true" />

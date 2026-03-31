@@ -18,7 +18,7 @@ TOP 3 FINDINGS:
 2. [Second finding]
 3. [Third finding]
 
-VIEW REPORT: https://reports.oladipupoconsulting.co.uk/reports/[slug].html
+VIEW REPORT: https://reports.workcrew.io/reports/[slug].html
 Google Doc backup: [link]
 
 CLIENT DRAFT STATUS: Ready in your Gmail Drafts

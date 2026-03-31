@@ -1,6 +1,6 @@
 # Meta (Facebook/Instagram) Ads Campaign Plan
 
-**Oladipupo Consulting Ltd**
+**WorkCrew Ltd**
 **Goal:** Drive small business owners to the free AI audit at https://oladipupoconsulting.co.uk/audit
 **Budget:** £50-£100
 **Created:** 2026-03-18
@@ -340,7 +340,7 @@ Your site is built with Next.js. Here is how to install the Meta Pixel:
 **Step 1: Get your Pixel ID**
 1. Go to https://business.facebook.com/events_manager
 2. Click "Connect Data Sources" > "Web" > "Meta Pixel"
-3. Name it "Oladipupo Consulting Pixel"
+3. Name it "WorkCrew Pixel"
 4. Copy the Pixel ID (a number like `123456789012345`)
 
 **Step 2: Create the Pixel component**
@@ -526,7 +526,7 @@ Follow these steps exactly. Total setup time: 30-45 minutes.
 ### Prerequisites (Do These First)
 
 - [ ] A personal Facebook account
-- [ ] A Facebook Business Page for Oladipupo Consulting (create at facebook.com/pages/create if you do not have one)
+- [ ] A Facebook Business Page for WorkCrew (create at facebook.com/pages/create if you do not have one)
 - [ ] A payment method (debit card, credit card, or PayPal)
 - [ ] Ad images/videos created (use Canva — free tier is fine)
 - [ ] Meta Pixel installed on your website (see Section 6 above)
@@ -535,7 +535,7 @@ Follow these steps exactly. Total setup time: 30-45 minutes.
 
 1. Go to **https://business.facebook.com**
 2. Click **"Create Account"** (if you do not already have one)
-3. Enter business name: **Oladipupo Consulting Ltd**
+3. Enter business name: **WorkCrew Ltd**
 4. Enter your name and business email
 5. Click **"Submit"**
 6. You will land in Meta Business Suite — this is your hub for everything
@@ -545,14 +545,14 @@ Follow these steps exactly. Total setup time: 30-45 minutes.
 1. In Business Suite, click **Settings** (gear icon, bottom left)
 2. Click **"Business Assets"** > **"Pages"**
 3. Click **"Add Page"**
-4. Search for your Oladipupo Consulting page and connect it
+4. Search for your WorkCrew page and connect it
 5. If you do not have a page, click **"Create New Page"** and set one up
 
 ### Step 3: Set Up Your Ad Account
 
 1. In Business Suite, click **Settings** > **"Business Assets"** > **"Ad Accounts"**
 2. Click **"Add Ad Account"** > **"Create a new ad account"**
-3. Name it: **"Oladipupo Consulting Ads"**
+3. Name it: **"WorkCrew Ads"**
 4. Currency: **GBP (£)**
 5. Time zone: **London (GMT)**
 6. Click **"Create"**
@@ -570,7 +570,7 @@ Follow these steps exactly. Total setup time: 30-45 minutes.
 1. Go to **https://business.facebook.com/events_manager**
 2. Click **"Connect Data Sources"** (green button)
 3. Select **"Web"** > **"Meta Pixel"** > **"Connect"**
-4. Name: **"Oladipupo Consulting Pixel"**
+4. Name: **"WorkCrew Pixel"**
 5. Enter your website URL: **oladipupoconsulting.co.uk**
 6. Choose **"Install code manually"**
 7. Copy the Pixel ID
@@ -617,7 +617,7 @@ You will create 3 ads within this ad set:
 
 **For each ad:**
 1. Ad name: **"Ad 1 - Problem Focused"** (or Ad 2, Ad 3)
-2. Identity: Select your Oladipupo Consulting Facebook Page
+2. Identity: Select your WorkCrew Facebook Page
 3. Connect your Instagram account (if you have one)
 4. **Ad setup:** Select **"Single image or video"**
 5. **Media:** Upload your image (1080x1080px for feed, 1080x1920px for stories)
@@ -686,7 +686,7 @@ This is where you close the deal:
 | Placements | Advantage+ (automatic) |
 | Advantage Campaign Budget | ON |
 | Conversion event | Lead |
-| Pixel | Oladipupo Consulting Pixel |
+| Pixel | WorkCrew Pixel |
 
 ---
 

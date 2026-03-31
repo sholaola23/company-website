@@ -778,7 +778,7 @@ function AspireContent() {
 
           {/* Contact details */}
           <div className="inline-flex flex-col items-center gap-1.5 text-sm text-slate-400">
-            <p>Olushola Oladipupo — Oladipupo Consulting Ltd</p>
+            <p>Olushola Oladipupo — WorkCrew Ltd</p>
             <p>+44 7469 347654 &bull; olusholaoladipupo1@gmail.com</p>
           </div>
         </div>
@@ -790,7 +790,7 @@ function AspireContent() {
 
       <footer className="border-t border-slate-200 px-5 py-8">
         <div className="max-w-2xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
-          <p>Oladipupo Consulting Ltd</p>
+          <p>WorkCrew Ltd</p>
           <p className="text-center">
             This page was built specifically for Aspire Dental.
           </p>

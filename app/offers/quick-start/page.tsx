@@ -10,14 +10,14 @@ export const metadata: Metadata = {
     follow: false,
   },
   alternates: {
-    canonical: "https://oladipupoconsulting.co.uk/offers/quick-start",
+    canonical: "https://workcrew.io/offers/quick-start",
   },
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
-    title: "£297 Quick-Start AI Package | Limited Offer | Oladipupo Consulting",
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
+    title: "£297 Quick-Start AI Package | Limited Offer | WorkCrew",
     description:
       "Get a full AI audit + automation build for £297 (normally £500). 14-day delivery, 90-day guarantee. 3 spots only.",
-    url: "https://oladipupoconsulting.co.uk/offers/quick-start",
+    url: "https://workcrew.io/offers/quick-start",
     type: "website",
   },
 };

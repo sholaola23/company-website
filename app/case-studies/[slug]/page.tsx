@@ -25,7 +25,7 @@ export async function generateMetadata({
   if (!study) return {};
   const pageTitle = `${study.name} — Case Study`;
   const pageDescription = study.problem.slice(0, 155);
-  const pageUrl = `https://oladipupoconsulting.co.uk/case-studies/${slug}`;
+  const pageUrl = `https://workcrew.io/case-studies/${slug}`;
   return {
     title: pageTitle,
     description: pageDescription,
@@ -33,13 +33,13 @@ export async function generateMetadata({
       canonical: pageUrl,
     },
     openGraph: {
-      title: `${pageTitle} | Oladipupo Consulting`,
+      title: `${pageTitle} | WorkCrew`,
       description: pageDescription,
       url: pageUrl,
       type: "article",
     },
     twitter: {
-      title: `${pageTitle} | Oladipupo Consulting`,
+      title: `${pageTitle} | WorkCrew`,
       description: pageDescription,
     },
   };

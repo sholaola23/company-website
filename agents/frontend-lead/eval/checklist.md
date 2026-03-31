@@ -17,7 +17,7 @@
 
 ## Trust & Conversion
 - [ ] Stats/proof section shows real numbers
-- [ ] Contact email is branded (hello@oladipupoconsulting.co.uk)
+- [ ] Contact email is branded (hello@workcrew.io)
 - [ ] No personal Gmail visible on public pages
 - [ ] CTAs are clear and working
 

@@ -9,18 +9,18 @@ export const metadata: Metadata = {
   description:
     "Get instant AI analysis of your business in 10 seconds. See your AI readiness score, key findings, and quick wins — no email required.",
   alternates: {
-    canonical: "https://oladipupoconsulting.co.uk/audit",
+    canonical: "https://workcrew.io/audit",
   },
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
-    title: "Free AI Readiness Audit | Oladipupo Consulting",
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
+    title: "Free AI Readiness Audit | WorkCrew",
     description:
       "Get instant AI analysis of your business in 10 seconds. See your AI readiness score, key findings, and quick wins — no email required.",
-    url: "https://oladipupoconsulting.co.uk/audit",
+    url: "https://workcrew.io/audit",
     type: "website",
   },
   twitter: {
-    title: "Free AI Readiness Audit | Oladipupo Consulting",
+    title: "Free AI Readiness Audit | WorkCrew",
     description:
       "Get instant AI analysis of your business in 10 seconds. See your AI readiness score, key findings, and quick wins — no email required.",
   },

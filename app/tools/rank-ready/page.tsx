@@ -425,7 +425,7 @@ export default function RankReadyPage() {
       {/* Hero */}
       <div className="max-w-2xl mx-auto text-center mb-10">
         <span className="text-xs font-semibold tracking-widest uppercase text-emerald-500 mb-4 block">
-          RankReady by Oladipupo Consulting
+          RankReady by WorkCrew
         </span>
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-slate-900 leading-tight tracking-tight mb-5">
           Get Your Local SEO Action Plan in 10&nbsp;Minutes

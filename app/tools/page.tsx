@@ -6,16 +6,16 @@ import JsonLd from "@/components/shared/JsonLd";
 export const metadata: Metadata = {
   title: "Free AI Tools for Small Businesses",
   description:
-    "Free tools to audit your AI readiness, local SEO, and calculate your automation ROI. Built by Oladipupo Consulting for UK small businesses.",
+    "Free tools to audit your AI readiness, local SEO, and calculate your automation ROI. Built by WorkCrew for UK small businesses.",
   alternates: {
-    canonical: "https://oladipupoconsulting.co.uk/tools",
+    canonical: "https://workcrew.io/tools",
   },
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
-    title: "Free AI Tools for Small Businesses | Oladipupo Consulting",
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
+    title: "Free AI Tools for Small Businesses | WorkCrew",
     description:
       "Free tools to audit your AI readiness, local SEO, and calculate your automation ROI.",
-    url: "https://oladipupoconsulting.co.uk/tools",
+    url: "https://workcrew.io/tools",
     type: "website",
   },
 };
@@ -57,10 +57,10 @@ export default function ToolsPage() {
           name: "Free AI Tools for Small Businesses",
           description:
             "Free tools to audit your AI readiness, local SEO, and calculate your automation ROI.",
-          url: "https://oladipupoconsulting.co.uk/tools",
+          url: "https://workcrew.io/tools",
           publisher: {
             "@type": "Organization",
-            name: "Oladipupo Consulting Ltd",
+            name: "WorkCrew Ltd",
           },
         }}
       />

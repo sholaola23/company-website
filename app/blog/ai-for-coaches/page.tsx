@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "consultant scheduling automation",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "AI for Coaches and Consultants: Automate Your Admin",
     description:
       "Stop spending half your time on admin. Here's how coaches and consultants use AI to automate booking, onboarding, content, and invoicing.",

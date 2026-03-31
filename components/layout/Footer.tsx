@@ -43,7 +43,7 @@ export default function Footer() {
             <Link
               href="/"
               className="w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg"
-              aria-label="Oladipupo Consulting — home"
+              aria-label="WorkCrew — home"
             >
               <Logo size="lg" variant="light" />
             </Link>
@@ -119,7 +119,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-4" role="list">
               <li>
                 <a
-                  href="mailto:hello@oladipupoconsulting.co.uk"
+                  href="mailto:hello@workcrew.io"
                   className="flex items-start gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
                   aria-label="Send us an email"
                 >
@@ -129,7 +129,7 @@ export default function Footer() {
                     aria-hidden="true"
                   />
                   <span className="text-sm text-slate-400 group-hover:text-white transition-colors duration-150">
-                    hello@oladipupoconsulting.co.uk
+                    hello@workcrew.io
                   </span>
                 </a>
               </li>
@@ -174,7 +174,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="py-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-slate-500 text-center sm:text-left">
-            &copy; 2026 Oladipupo Consulting Ltd. Registered in England &amp; Wales.
+            &copy; 2026 WorkCrew Ltd. Registered in England &amp; Wales.
           </p>
           <div className="flex items-center gap-4">
             <Link

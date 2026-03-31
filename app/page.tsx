@@ -488,11 +488,11 @@ function HowItWorks() {
 const businessJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "Oladipupo Consulting Ltd",
+  "name": "WorkCrew Ltd",
   "description":
     "AI automation, professional websites, custom web apps, and AI training for small businesses. We help SMBs save time and grow with intelligent automation — delivered in 7-14 days.",
-  "url": "https://oladipupoconsulting.co.uk",
-  "email": "hello@oladipupoconsulting.co.uk",
+  "url": "https://workcrew.io",
+  "email": "hello@workcrew.io",
   "telephone": "+447469347654",
   "address": {
     "@type": "PostalAddress",

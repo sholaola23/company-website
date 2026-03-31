@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { ANTHROPIC_API_URL, ANTHROPIC_VERSION } from "@/lib/constants";
+import { ANTHROPIC_API_URL, ANTHROPIC_VERSION, heliconeHeaders } from "@/lib/constants";
 import {
   getGBPDescriptionPrompt,
   getReviewStrategyPrompt,
@@ -22,7 +22,7 @@ async function callClaude(systemPrompt: string, userMessage: string): Promise<st
     headers: {
       "Content-Type": "application/json",
       "x-api-key": apiKey,
-      "anthropic-version": ANTHROPIC_VERSION,
+      ...heliconeHeaders(), "anthropic-version": ANTHROPIC_VERSION,
     },
     body: JSON.stringify({
       model: "claude-sonnet-4-20250514",

@@ -18,18 +18,18 @@ export const metadata: Metadata = {
   description:
     "From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 14 days.",
   alternates: {
-    canonical: "https://oladipupoconsulting.co.uk/services",
+    canonical: "https://workcrew.io/services",
   },
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
-    title: "AI Automation Services | Oladipupo Consulting",
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
+    title: "AI Automation Services | WorkCrew",
     description:
       "From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 14 days.",
-    url: "https://oladipupoconsulting.co.uk/services",
+    url: "https://workcrew.io/services",
     type: "website",
   },
   twitter: {
-    title: "AI Automation Services | Oladipupo Consulting",
+    title: "AI Automation Services | WorkCrew",
     description:
       "From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 14 days.",
   },
@@ -87,7 +87,7 @@ const TIERS = [
 const servicesJsonLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "AI Automation Services — Oladipupo Consulting",
+  "name": "AI Automation Services — WorkCrew",
   "description":
     "From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 14 days.",
   "numberOfItems": services.length,
@@ -98,10 +98,10 @@ const servicesJsonLd = {
       "@type": "Service",
       "name": service.name,
       "description": service.pain,
-      "url": `https://oladipupoconsulting.co.uk/services/${service.slug}`,
+      "url": `https://workcrew.io/services/${service.slug}`,
       "provider": {
         "@type": "Organization",
-        "name": "Oladipupo Consulting Ltd",
+        "name": "WorkCrew Ltd",
       },
       "offers": {
         "@type": "Offer",

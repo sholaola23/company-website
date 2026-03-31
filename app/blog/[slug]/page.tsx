@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = await fetchPostBySlug(slug);
   if (!post) return { title: "Post Not Found" };
-  const pageDescription = post.excerpt || `Read ${post.title} on the Oladipupo Consulting blog.`;
-  const pageUrl = `https://oladipupoconsulting.co.uk/blog/${slug}`;
+  const pageDescription = post.excerpt || `Read ${post.title} on the WorkCrew blog.`;
+  const pageUrl = `https://workcrew.io/blog/${slug}`;
   return {
     title: post.title,
     description: pageDescription,
@@ -25,13 +25,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       canonical: pageUrl,
     },
     openGraph: {
-      title: `${post.title} | Oladipupo Consulting`,
+      title: `${post.title} | WorkCrew`,
       description: pageDescription,
       url: pageUrl,
       type: "article",
     },
     twitter: {
-      title: `${post.title} | Oladipupo Consulting`,
+      title: `${post.title} | WorkCrew`,
       description: pageDescription,
     },
   };
@@ -126,27 +126,27 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": post.title,
-    "description": post.excerpt || `Read ${post.title} on the Oladipupo Consulting blog.`,
+    "description": post.excerpt || `Read ${post.title} on the WorkCrew blog.`,
     "author": {
       "@type": "Person",
       "name": "Olushola Oladipupo",
-      "url": "https://oladipupoconsulting.co.uk/about",
+      "url": "https://workcrew.io/about",
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Oladipupo Consulting Ltd",
-      "url": "https://oladipupoconsulting.co.uk",
+      "name": "WorkCrew Ltd",
+      "url": "https://workcrew.io",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://oladipupoconsulting.co.uk/api/og",
+        "url": "https://workcrew.io/api/og",
       },
     },
     "datePublished": post.publishedAt,
     "dateModified": post.publishedAt,
-    "image": `https://oladipupoconsulting.co.uk/api/og?title=${encodeURIComponent(post.title)}`,
+    "image": `https://workcrew.io/api/og?title=${encodeURIComponent(post.title)}`,
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://oladipupoconsulting.co.uk/blog/${slug}`,
+      "@id": `https://workcrew.io/blog/${slug}`,
     },
     "inLanguage": "en-GB",
   };

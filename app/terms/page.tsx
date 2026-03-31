@@ -2,20 +2,20 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "Terms of service for Oladipupo Consulting Ltd.",
+  description: "Terms of service for WorkCrew Ltd.",
   alternates: {
-    canonical: "https://oladipupoconsulting.co.uk/terms",
+    canonical: "https://workcrew.io/terms",
   },
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
-    title: "Terms of Service | Oladipupo Consulting",
-    description: "Terms of service for Oladipupo Consulting Ltd.",
-    url: "https://oladipupoconsulting.co.uk/terms",
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
+    title: "Terms of Service | WorkCrew",
+    description: "Terms of service for WorkCrew Ltd.",
+    url: "https://workcrew.io/terms",
     type: "website",
   },
   twitter: {
-    title: "Terms of Service | Oladipupo Consulting",
-    description: "Terms of service for Oladipupo Consulting Ltd.",
+    title: "Terms of Service | WorkCrew",
+    description: "Terms of service for WorkCrew Ltd.",
   },
 };
 
@@ -30,7 +30,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-xl font-semibold text-slate-900 mb-3">Agreement</h2>
             <p>
-              By using the Oladipupo Consulting website (oladipupoconsulting.co.uk),
+              By using the WorkCrew website (workcrew.io),
               you agree to these terms. If you do not agree, please do not use our
               website or services.
             </p>
@@ -39,7 +39,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-xl font-semibold text-slate-900 mb-3">Services</h2>
             <p>
-              Oladipupo Consulting Ltd provides AI automation, website development, and
+              WorkCrew Ltd provides AI automation, website development, and
               AI training services for businesses. Service details, pricing, and
               deliverables are agreed upon individually for each client engagement.
             </p>
@@ -68,7 +68,7 @@ export default function TermsPage() {
             <h2 className="text-xl font-semibold text-slate-900 mb-3">Intellectual Property</h2>
             <p>
               All content on this website, including text, design, and code, is the
-              property of Oladipupo Consulting Ltd unless otherwise stated. You may not
+              property of WorkCrew Ltd unless otherwise stated. You may not
               reproduce or redistribute our content without permission.
             </p>
           </section>
@@ -76,7 +76,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-xl font-semibold text-slate-900 mb-3">Limitation of Liability</h2>
             <p>
-              Oladipupo Consulting Ltd is not liable for any indirect, incidental, or
+              WorkCrew Ltd is not liable for any indirect, incidental, or
               consequential damages arising from the use of our website or services. Our
               total liability is limited to the amount you have paid us for services.
             </p>
@@ -95,8 +95,8 @@ export default function TermsPage() {
             <h2 className="text-xl font-semibold text-slate-900 mb-3">Contact</h2>
             <p>
               Questions about these terms? Email us at{" "}
-              <a href="mailto:hello@oladipupoconsulting.co.uk" className="text-blue-600 hover:underline">
-                hello@oladipupoconsulting.co.uk
+              <a href="mailto:hello@workcrew.io" className="text-blue-600 hover:underline">
+                hello@workcrew.io
               </a>.
             </p>
           </section>

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "AI readiness",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "1 in 5 Small Businesses Are Good at AI",
     description:
       "98% of small businesses say they use AI daily, but only 14% have embedded it into operations. Find out if you are in the 86% — and how to close the gap.",
@@ -48,13 +48,13 @@ const articleJsonLd = {
   },
   publisher: {
     "@type": "Organization",
-    name: "Oladipupo Consulting Ltd",
-    url: "https://oladipupoconsulting.co.uk",
+    name: "WorkCrew Ltd",
+    url: "https://workcrew.io",
   },
   datePublished: "2026-03-24",
   dateModified: "2026-03-24",
   mainEntityOfPage:
-    "https://oladipupoconsulting.co.uk/blog/small-business-ai-adoption",
+    "https://workcrew.io/blog/small-business-ai-adoption",
 };
 
 export default function BlogPost() {

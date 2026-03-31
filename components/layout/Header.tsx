@@ -69,7 +69,7 @@ export default function Header() {
           <Link
             href="/"
             className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-lg"
-            aria-label="Oladipupo Consulting — home"
+            aria-label="WorkCrew — home"
           >
             <Logo size="sm" />
           </Link>

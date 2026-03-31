@@ -7,8 +7,8 @@ const resend = process.env.RESEND_API_KEY
 
 const FROM =
   process.env.RESEND_DOMAIN_VERIFIED === "true"
-    ? "Olushola from Oladipupo Consulting <hello@oladipupoconsulting.co.uk>"
-    : "Oladipupo Consulting <onboarding@resend.dev>";
+    ? "Olushola from WorkCrew <hello@workcrew.io>"
+    : "WorkCrew <onboarding@resend.dev>";
 
 const OWNER_EMAIL = "olusholaoladipupo1@gmail.com";
 
@@ -221,12 +221,12 @@ function buildDay2Email(name: string): string {
 
       <p>
         Olushola<br/>
-        <span style="color: #64748b;">Oladipupo Consulting</span>
+        <span style="color: #64748b;">WorkCrew</span>
       </p>
 
       <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 24px 0;" />
       <p style="font-size: 12px; color: #94a3b8;">
-        You're receiving this because you completed an AI readiness audit at oladipupoconsulting.co.uk.
+        You're receiving this because you completed an AI readiness audit at workcrew.io.
         If you'd prefer not to receive follow-ups, simply reply and let me know.
       </p>
     </div>
@@ -260,12 +260,12 @@ function buildDay5Email(name: string): string {
 
       <p>
         Olushola<br/>
-        <span style="color: #64748b;">Oladipupo Consulting</span>
+        <span style="color: #64748b;">WorkCrew</span>
       </p>
 
       <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 24px 0;" />
       <p style="font-size: 12px; color: #94a3b8;">
-        You're receiving this because you completed an AI readiness audit at oladipupoconsulting.co.uk.
+        You're receiving this because you completed an AI readiness audit at workcrew.io.
         This is the last automated follow-up — no more emails after this.
       </p>
     </div>

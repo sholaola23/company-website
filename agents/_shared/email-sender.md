@@ -1,8 +1,8 @@
 # Email Sender Identity
 
 ## For ALL client/prospect-facing emails (sends AND drafts)
-- **from:** `hello@oladipupoconsulting.co.uk`
-- **from_name:** `Olushola from Oladipupo Consulting`
+- **from:** `hello@workcrew.io`
+- **from_name:** `Olushola from WorkCrew`
 
 ## For internal notifications to Olushola
 - **to:** `olusholaoladipupo1@gmail.com`

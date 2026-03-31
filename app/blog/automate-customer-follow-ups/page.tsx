@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "follow-up automation UK",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "Automate Customer Follow-Ups Without Being Annoying",
     description:
       "How to automate customer follow-ups across email, SMS, and WhatsApp without annoying people. Timing, personalisation, and when to stop.",
@@ -47,13 +47,13 @@ const articleJsonLd = {
   },
   publisher: {
     "@type": "Organization",
-    name: "Oladipupo Consulting Ltd",
-    url: "https://oladipupoconsulting.co.uk",
+    name: "WorkCrew Ltd",
+    url: "https://workcrew.io",
   },
   datePublished: "2026-03-24",
   dateModified: "2026-03-24",
   mainEntityOfPage:
-    "https://oladipupoconsulting.co.uk/blog/automate-customer-follow-ups",
+    "https://workcrew.io/blog/automate-customer-follow-ups",
 };
 
 export default function BlogPost() {

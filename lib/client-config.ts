@@ -155,7 +155,7 @@ export const CLIENTS: Record<string, ClientConfig> = {
   },
 };
 
-// Vanity slugs for clean app.oladipupoconsulting.co.uk URLs
+// Vanity slugs for clean app.workcrew.io URLs
 // Maps friendly URL path → internal client slug
 export const VANITY_SLUGS: Record<string, string> = {
   emanuelbakery: "emanuel",

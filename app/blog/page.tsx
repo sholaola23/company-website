@@ -10,18 +10,18 @@ export const metadata = {
   description:
     "AI automation insights, case studies, and tips for small businesses.",
   alternates: {
-    canonical: "https://oladipupoconsulting.co.uk/blog",
+    canonical: "https://workcrew.io/blog",
   },
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
-    title: "Blog | Oladipupo Consulting",
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
+    title: "Blog | WorkCrew",
     description:
       "AI automation insights, case studies, and tips for small businesses.",
-    url: "https://oladipupoconsulting.co.uk/blog",
+    url: "https://workcrew.io/blog",
     type: "website",
   },
   twitter: {
-    title: "Blog | Oladipupo Consulting",
+    title: "Blog | WorkCrew",
     description:
       "AI automation insights, case studies, and tips for small businesses.",
   },

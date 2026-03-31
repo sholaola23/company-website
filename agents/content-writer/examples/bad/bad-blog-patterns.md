@@ -18,7 +18,7 @@
 **Why it fails:** No numbers, no proof, no specificity. "Dramatically" means nothing.
 
 ## 4. The Self-Centred Post
-- "At Oladipupo Consulting, we believe in the power of AI to transform..."
+- "At WorkCrew, we believe in the power of AI to transform..."
 
 **Why it fails:** Nobody cares what we believe. Start with THEIR problem.
 

@@ -6,20 +6,20 @@ import SectionHeading from "@/components/shared/SectionHeading";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Oladipupo Consulting — UK-based AI automation agency for small businesses. Founded by Olushola Oladipupo. Registered in England & Wales.",
+    "WorkCrew — UK-based AI automation agency for small businesses. Founded by Olushola Oladipupo. Registered in England & Wales.",
   alternates: {
-    canonical: "https://oladipupoconsulting.co.uk/about",
+    canonical: "https://workcrew.io/about",
   },
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
-    title: "About Us | Oladipupo Consulting",
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
+    title: "About Us | WorkCrew",
     description:
       "UK-based AI solutions agency for small businesses. AI automation, website development, and team training. Founded by Olushola Oladipupo.",
-    url: "https://oladipupoconsulting.co.uk/about",
+    url: "https://workcrew.io/about",
     type: "website",
   },
   twitter: {
-    title: "About Us | Oladipupo Consulting",
+    title: "About Us | WorkCrew",
     description:
       "UK-based AI solutions agency for small businesses. AI automation, website development, and team training. Founded by Olushola Oladipupo.",
   },
@@ -77,7 +77,7 @@ export default function AboutPage() {
       {/* Hero */}
       <div className="max-w-3xl mx-auto text-center mb-20 sm:mb-24">
         <span className="text-xs font-semibold tracking-widest uppercase text-blue-600 mb-4 block">
-          About Oladipupo Consulting
+          About WorkCrew
         </span>
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-slate-900 leading-tight tracking-tight mb-6">
           AI Solutions, Built for Small Businesses
@@ -107,13 +107,13 @@ export default function AboutPage() {
               Olushola Oladipupo
             </h3>
             <p className="text-sm text-blue-600 font-medium">
-              Oladipupo Consulting Ltd — Registered in England &amp; Wales
+              WorkCrew Ltd — Registered in England &amp; Wales
             </p>
           </div>
 
           <div className="flex flex-col gap-4 text-sm text-slate-600 leading-relaxed">
             <p>
-              Oladipupo Consulting was founded with one observation: small
+              WorkCrew was founded with one observation: small
               businesses are behind on AI not because they don&apos;t want to
               adopt it, but because every tool, platform, and consultant is aimed
               at people who already know what they&apos;re doing.

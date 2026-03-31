@@ -8,7 +8,7 @@
 - **Score badge:** Large coloured circle for digital presence score
 - **ROI highlight box:** Prominent call-out for key ROI numbers
 - **Opportunity cards:** Each in its own card with icon, title, hours saved
-- **Footer:** Oladipupo Consulting branding + contact details
+- **Footer:** WorkCrew branding + contact details
 - **Print styles:** `@media print` — hide nothing, page breaks before sections
 
 ## Template
@@ -108,7 +108,7 @@ Fill in ALL placeholder values `[X]` with real research data. Every placeholder 
   <div class="header">
     <div class="container" style="padding-top:0; padding-bottom:0;">
       <div class="header-top">
-        <div class="logo">Oladipupo Consulting Ltd</div>
+        <div class="logo">WorkCrew Ltd</div>
         <div class="confidential">Confidential</div>
       </div>
       <h1>AI Readiness Audit</h1>
@@ -117,7 +117,7 @@ Fill in ALL placeholder values `[X]` with real research data. Every placeholder 
         <div class="meta-item"><div class="meta-label">Business</div><div class="meta-value">[Business Name]</div></div>
         <div class="meta-item"><div class="meta-label">Industry</div><div class="meta-value">[Industry]</div></div>
         <div class="meta-item"><div class="meta-label">Location</div><div class="meta-value">[Location]</div></div>
-        <div class="meta-item"><div class="meta-label">Prepared by</div><div class="meta-value">Oladipupo Consulting Ltd</div></div>
+        <div class="meta-item"><div class="meta-label">Prepared by</div><div class="meta-value">WorkCrew Ltd</div></div>
       </div>
     </div>
   </div>
@@ -225,7 +225,7 @@ Fill in ALL placeholder values `[X]` with real research data. Every placeholder 
       <h3>Ready to get started?</h3>
       <p>Book a free 30-minute discovery call. No obligation — just a conversation.</p>
       <div class="cta-contact">
-        <div class="cta-item">📧 <a href="mailto:hello@oladipupoconsulting.co.uk">hello@oladipupoconsulting.co.uk</a></div>
+        <div class="cta-item">📧 <a href="mailto:hello@workcrew.io">hello@workcrew.io</a></div>
         <div class="cta-item">📱 <a href="tel:+447469347654">07469 347654</a></div>
       </div>
     </div>
@@ -233,9 +233,9 @@ Fill in ALL placeholder values `[X]` with real research data. Every placeholder 
   </div>
 
   <div class="footer">
-    This is a complimentary AI Readiness Audit prepared by Oladipupo Consulting Ltd &nbsp;·&nbsp;
+    This is a complimentary AI Readiness Audit prepared by WorkCrew Ltd &nbsp;·&nbsp;
     Registered in England & Wales &nbsp;·&nbsp;
-    hello@oladipupoconsulting.co.uk &nbsp;·&nbsp; 07469 347654
+    hello@workcrew.io &nbsp;·&nbsp; 07469 347654
   </div>
 
 </body>

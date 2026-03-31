@@ -28,18 +28,18 @@
 ## Email Signature (SHORT — for vault-style emails)
 ```
 Shola
-Oladipupo Consulting
-oladipupoconsulting.co.uk
+WorkCrew
+workcrew.io
 ```
 
 ## Email Signature (FULL — for longer template emails)
 ```
 Best,
 Olushola Oladipupo
-Oladipupo Consulting Ltd
-oladipupoconsulting.co.uk
+WorkCrew Ltd
+workcrew.io
 07469 347654
-hello@oladipupoconsulting.co.uk
+hello@workcrew.io
 
 If this isn't relevant, just let me know and I won't follow up.
 ```

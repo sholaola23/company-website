@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "accounting AI UK",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "AI for UK Accountants: Automate Onboarding & Invoices",
     description:
       "How UK accounting firms use AI to automate client onboarding, document collection, invoice chasing, and deadline reminders.",
@@ -47,13 +47,13 @@ const articleJsonLd = {
   },
   publisher: {
     "@type": "Organization",
-    name: "Oladipupo Consulting Ltd",
-    url: "https://oladipupoconsulting.co.uk",
+    name: "WorkCrew Ltd",
+    url: "https://workcrew.io",
   },
   datePublished: "2026-03-24",
   dateModified: "2026-03-24",
   mainEntityOfPage:
-    "https://oladipupoconsulting.co.uk/blog/ai-for-uk-accountants",
+    "https://workcrew.io/blog/ai-for-uk-accountants",
 };
 
 export default function BlogPost() {

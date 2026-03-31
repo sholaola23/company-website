@@ -71,7 +71,7 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    const origin = req.headers.get("origin") || "https://oladipupoconsulting.co.uk";
+    const origin = req.headers.get("origin") || "https://workcrew.io";
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",

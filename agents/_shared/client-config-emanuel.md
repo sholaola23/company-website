@@ -36,7 +36,7 @@
 
 ## Dashboard
 
-- **URL:** app.oladipupoconsulting.co.uk/emanuelbakery
+- **URL:** app.workcrew.io/emanuelbakery
 - **Password:** emanuel2026 (client), 0ladipup0Admin! (admin)
 - **Features:** Orders, production, payments (SumUp + bank), deliveries, unpaid tracking, bank statement upload, one-click refund, This Week / All Time toggle
 - **Health banner:** Shows "All systems running" when all workflows currently healthy. Past errors don't count.

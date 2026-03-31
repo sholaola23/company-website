@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "domiciliary care automation",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title:
       "AI for Care Homes: Automate Rotas & Compliance",
     description:

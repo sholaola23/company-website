@@ -5,7 +5,7 @@ const resend = process.env.RESEND_API_KEY
   ? new Resend(process.env.RESEND_API_KEY)
   : null;
 
-const FROM = "Oladipupo Consulting <hello@oladipupoconsulting.co.uk>";
+const FROM = "WorkCrew <hello@workcrew.io>";
 const OWNER_EMAIL = "olusholaoladipupo1@gmail.com";
 const VERIFY_TOKEN = process.env.META_VERIFY_TOKEN || "oladipupo-meta-leads";
 
@@ -143,7 +143,7 @@ function getString(val: unknown): string {
  * with hub.mode, hub.verify_token, and hub.challenge query parameters.
  * We must respond with hub.challenge if the token matches.
  *
- * URL: https://oladipupoconsulting.co.uk/api/leads/meta-webhook
+ * URL: https://workcrew.io/api/leads/meta-webhook
  */
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
@@ -163,7 +163,7 @@ export async function GET(req: NextRequest) {
   // Non-verification GET — return status
   return NextResponse.json({
     status: "active",
-    service: "Oladipupo Consulting — Meta Lead Webhook",
+    service: "WorkCrew — Meta Lead Webhook",
     timestamp: new Date().toISOString(),
   });
 }

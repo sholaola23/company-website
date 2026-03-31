@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "plumber AI automation",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "Before & After: Automated Lead Response",
     description:
       "See the before and after when a service business automates lead response. Response time drops from 12 hours to 30 seconds. Conversion doubles. Admin disappears.",
@@ -53,13 +53,13 @@ const articleJsonLd = {
   },
   publisher: {
     "@type": "Organization",
-    name: "Oladipupo Consulting Ltd",
-    url: "https://oladipupoconsulting.co.uk",
+    name: "WorkCrew Ltd",
+    url: "https://workcrew.io",
   },
   datePublished: "2026-03-24",
   dateModified: "2026-03-24",
   mainEntityOfPage:
-    "https://oladipupoconsulting.co.uk/blog/before-after-automated-lead-response",
+    "https://workcrew.io/blog/before-after-automated-lead-response",
 };
 
 export default function BlogPost() {

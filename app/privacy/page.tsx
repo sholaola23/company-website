@@ -2,20 +2,20 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Privacy policy for Oladipupo Consulting Ltd.",
+  description: "Privacy policy for WorkCrew Ltd.",
   alternates: {
-    canonical: "https://oladipupoconsulting.co.uk/privacy",
+    canonical: "https://workcrew.io/privacy",
   },
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
-    title: "Privacy Policy | Oladipupo Consulting",
-    description: "Privacy policy for Oladipupo Consulting Ltd.",
-    url: "https://oladipupoconsulting.co.uk/privacy",
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
+    title: "Privacy Policy | WorkCrew",
+    description: "Privacy policy for WorkCrew Ltd.",
+    url: "https://workcrew.io/privacy",
     type: "website",
   },
   twitter: {
-    title: "Privacy Policy | Oladipupo Consulting",
-    description: "Privacy policy for Oladipupo Consulting Ltd.",
+    title: "Privacy Policy | WorkCrew",
+    description: "Privacy policy for WorkCrew Ltd.",
   },
 };
 
@@ -30,9 +30,9 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-xl font-semibold text-slate-900 mb-3">Who We Are</h2>
             <p>
-              Oladipupo Consulting Ltd is a UK-registered company that provides AI
+              WorkCrew Ltd is a UK-registered company that provides AI
               automation services, website development, and AI training for small
-              businesses. Our website is oladipupoconsulting.co.uk.
+              businesses. Our website is workcrew.io.
             </p>
           </section>
 
@@ -82,7 +82,7 @@ export default function PrivacyPage() {
             <p>
               Under UK data protection law (UK GDPR), you have the right to access,
               correct, or delete your personal data. To exercise these rights, contact
-              us at hello@oladipupoconsulting.co.uk.
+              us at hello@workcrew.io.
             </p>
           </section>
 
@@ -90,8 +90,8 @@ export default function PrivacyPage() {
             <h2 className="text-xl font-semibold text-slate-900 mb-3">Contact</h2>
             <p>
               If you have questions about this policy, email us at{" "}
-              <a href="mailto:hello@oladipupoconsulting.co.uk" className="text-blue-600 hover:underline">
-                hello@oladipupoconsulting.co.uk
+              <a href="mailto:hello@workcrew.io" className="text-blue-600 hover:underline">
+                hello@workcrew.io
               </a>.
             </p>
           </section>

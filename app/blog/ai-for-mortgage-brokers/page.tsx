@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "FCA compliance automation",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title:
       "AI for Mortgage Brokers: Qualify Leads Faster",
     description:

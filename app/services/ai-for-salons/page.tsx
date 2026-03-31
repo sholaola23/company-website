@@ -9,17 +9,17 @@ export const metadata: Metadata = {
   description: page.metaDescription,
   keywords: page.keywords,
   alternates: {
-    canonical: `https://oladipupoconsulting.co.uk/services/${page.slug}`,
+    canonical: `https://workcrew.io/services/${page.slug}`,
   },
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
-    title: `${page.metaTitle} | Oladipupo Consulting`,
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
+    title: `${page.metaTitle} | WorkCrew`,
     description: page.metaDescription,
-    url: `https://oladipupoconsulting.co.uk/services/${page.slug}`,
+    url: `https://workcrew.io/services/${page.slug}`,
     type: "website",
   },
   twitter: {
-    title: `${page.metaTitle} | Oladipupo Consulting`,
+    title: `${page.metaTitle} | WorkCrew`,
     description: page.metaDescription,
   },
 };

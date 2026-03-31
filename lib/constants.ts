@@ -32,5 +32,12 @@ export const INDUSTRIES = [
 
 export type Industry = (typeof INDUSTRIES)[number];
 
-export const ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages";
+// Route all Claude API calls through Helicone for observability (cost, latency, errors)
+export const ANTHROPIC_API_URL = "https://anthropic.helicone.ai/v1/messages";
 export const ANTHROPIC_VERSION = "2023-06-01";
+
+export function heliconeHeaders(): Record<string, string> {
+  const key = process.env.HELICONE_API_KEY;
+  if (!key) return {};
+  return { "Helicone-Auth": `Bearer ${key}` };
+}

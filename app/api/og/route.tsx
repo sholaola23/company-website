@@ -103,7 +103,7 @@ export async function GET() {
               display: "flex",
             }}
           >
-            Oladipupo Consulting
+            WorkCrew
           </div>
 
           {/* Divider */}
@@ -142,7 +142,7 @@ export async function GET() {
             display: "flex",
           }}
         >
-          oladipupoconsulting.co.uk
+          workcrew.io
         </div>
       </div>
     ),

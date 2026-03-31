@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "patient follow-up automation",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "AI for Healthcare: Automating Patient Bookings and Follow-Ups",
     description:
       "How clinics, dentists, and healthcare practices use AI to automate patient bookings, reduce no-shows, and streamline admin.",

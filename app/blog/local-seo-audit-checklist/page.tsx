@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "local search ranking",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title:
       "Local SEO Audit Checklist 2026: 20-Task Framework for Google Maps Rankings",
     description:
@@ -59,13 +59,13 @@ const articleJsonLd = {
   },
   publisher: {
     "@type": "Organization",
-    name: "Oladipupo Consulting Ltd",
-    url: "https://oladipupoconsulting.co.uk",
+    name: "WorkCrew Ltd",
+    url: "https://workcrew.io",
   },
   datePublished: "2026-03-27",
   dateModified: "2026-03-27",
   mainEntityOfPage:
-    "https://oladipupoconsulting.co.uk/blog/local-seo-audit-checklist",
+    "https://workcrew.io/blog/local-seo-audit-checklist",
 };
 
 function TaskItem({

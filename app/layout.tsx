@@ -30,8 +30,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Oladipupo Consulting — AI Solutions for Small Businesses",
-    template: "%s | Oladipupo Consulting",
+    default: "WorkCrew — AI Solutions for Small Businesses",
+    template: "%s | WorkCrew",
   },
   description:
     "We build AI automation systems, professional websites, and deliver AI training for small businesses. From lead capture to content engines — delivered in 14 days.",
@@ -45,35 +45,35 @@ export const metadata: Metadata = {
     "UK AI consultancy",
     "n8n automation",
   ],
-  authors: [{ name: "Oladipupo Consulting Ltd" }],
-  creator: "Oladipupo Consulting Ltd",
-  metadataBase: new URL("https://oladipupoconsulting.co.uk"),
+  authors: [{ name: "WorkCrew Ltd" }],
+  creator: "WorkCrew Ltd",
+  metadataBase: new URL("https://workcrew.io"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "en_GB",
-    url: "https://oladipupoconsulting.co.uk",
-    siteName: "Oladipupo Consulting",
-    title: "Oladipupo Consulting — AI Solutions for Small Businesses",
+    url: "https://workcrew.io",
+    siteName: "WorkCrew",
+    title: "WorkCrew — AI Solutions for Small Businesses",
     description:
       "We build AI automation systems, professional websites, and deliver AI training for small businesses. From lead capture to content engines — delivered in 14 days.",
     images: [
       {
-        url: "https://oladipupoconsulting.co.uk/og-image.png",
+        url: "https://workcrew.io/og-image.png",
         width: 1332,
         height: 750,
-        alt: "Oladipupo Consulting — AI Automation for Small Businesses",
+        alt: "WorkCrew — AI Automation for Small Businesses",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Oladipupo Consulting — AI Solutions for Small Businesses",
+    title: "WorkCrew — AI Solutions for Small Businesses",
     description:
       "AI automation, websites, and team training for small businesses. Delivered in 7 days.",
-    images: ["https://oladipupoconsulting.co.uk/og-image.png"],
+    images: ["https://workcrew.io/og-image.png"],
   },
   robots: {
     index: true,

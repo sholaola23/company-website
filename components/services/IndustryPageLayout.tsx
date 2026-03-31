@@ -25,11 +25,11 @@ export default function IndustryPageLayout({ page }: { page: IndustryPage }) {
     "@type": "Service",
     name: `AI Automation for ${page.industry}`,
     description: page.metaDescription,
-    url: `https://oladipupoconsulting.co.uk/services/${page.slug}`,
+    url: `https://workcrew.io/services/${page.slug}`,
     provider: {
       "@type": "Organization",
-      name: "Oladipupo Consulting Ltd",
-      url: "https://oladipupoconsulting.co.uk",
+      name: "WorkCrew Ltd",
+      url: "https://workcrew.io",
     },
     areaServed: {
       "@type": "Country",

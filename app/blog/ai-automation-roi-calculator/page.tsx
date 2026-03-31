@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "AI automation payback",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "AI Automation ROI: How Much Can Your Business Actually Save?",
     description:
       "The real maths behind AI automation for small businesses. Specific savings, payback periods, and ROI scenarios.",

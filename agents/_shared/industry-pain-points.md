@@ -1,5 +1,5 @@
 # Industry Pain Points & What to Sell
-## Source: Luke Pierce (80+ companies, 4 years) — adapted for Oladipupo Consulting
+## Source: Luke Pierce (80+ companies, 4 years) — adapted for WorkCrew
 
 **Rule: Never pitch "AI automation." Pitch the fix for THAT industry's specific bottleneck.**
 
@@ -11,30 +11,30 @@
 **Pain:** Missed calls = missed revenue. Phone rings, nobody answers, job goes to competitor.
 **Sell:** AI phone answering that captures caller info, books appointments, routes urgent requests. No receptionist needed.
 **Our proof:** Voice AI service page + Heritage HVAC prospect page
-**Blog:** oladipupoconsulting.co.uk/blog/voice-ai-small-business
+**Blog:** workcrew.io/blog/voice-ai-small-business
 
 ### 2. Medical & Dental Practices
 **Pain:** No-shows and scheduling chaos. Staff spends hours calling patients to confirm, reschedule, fill gaps.
 **Sell:** Automated appointment reminders, AI rescheduling, waitlist management that fills cancellations in minutes.
 **Our proof:** Aspire Dental + Pearl Dental prospect pages
-**Blog:** oladipupoconsulting.co.uk/blog/reduce-no-shows-ai-reminders
+**Blog:** workcrew.io/blog/reduce-no-shows-ai-reminders
 
 ### 3. Accounting Firms
 **Pain:** Client document collection is painful. Tax season = chasing 200+ clients for the same documents every year.
 **Sell:** Automated document request workflows, status tracking per client, AI reminders that reduce back-and-forth by 80%.
 **Our proof:** 3 accounting leads in pipeline (WK, P&L, Gardner Webb)
-**Blog:** oladipupoconsulting.co.uk/blog/ai-for-uk-accountants
+**Blog:** workcrew.io/blog/ai-for-uk-accountants
 
 ### 4. Salons / Barbers / Beauty
 **Pain:** No-shows (15-20%), last-minute cancellations, manual rebooking, no review collection.
 **Sell:** AI reminder systems — WhatsApp confirmations, automated rebooking for cancellations, review requests after every appointment.
 **Our proof:** 10 Instagram DMs sent to local salons
-**Blog:** oladipupoconsulting.co.uk/blog/ai-for-salons
+**Blog:** workcrew.io/blog/ai-for-salons
 
 ### 5. Commercial Cleaning Companies
 **Pain:** Scheduling and quality verification are manual. Supervisors drive between sites to confirm work was done.
 **Sell:** Automated scheduling, GPS check-in/check-out, photo verification, client-facing dashboards.
-**Blog:** oladipupoconsulting.co.uk/blog/ai-save-cleaning-companies-time
+**Blog:** workcrew.io/blog/ai-save-cleaning-companies-time
 
 ### 6. E-Commerce / D2C Brands
 **Pain:** Customer support volume scales faster than team. Returns, order status, "where's my package" eat 60%+ of tickets.

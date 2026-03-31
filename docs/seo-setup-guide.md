@@ -1,4 +1,4 @@
-# SEO Setup Guide — Oladipupo Consulting
+# SEO Setup Guide — WorkCrew
 
 Complete guide for search engine submission, directory listings, and technical SEO for oladipupoconsulting.co.uk.
 
@@ -125,9 +125,9 @@ These help Google display rich results (star ratings, pricing, service lists) in
 List your business on these directories for SEO citation building and direct traffic. **Keep NAP (Name, Address, Phone) consistent across ALL listings.**
 
 **Business details to use everywhere:**
-- **Name:** Oladipupo Consulting Ltd
+- **Name:** WorkCrew Ltd
 - **Website:** https://oladipupoconsulting.co.uk
-- **Email:** hello@oladipupoconsulting.co.uk
+- **Email:** hello@workcrew.io
 - **Phone:** +44 7469 347654
 - **Category:** IT Consulting / AI Automation / Business Consulting
 - **Description:** AI automation systems, professional websites, and AI training for small businesses. We help SMBs save time and grow with intelligent automation — delivered in 7 days.
@@ -142,7 +142,7 @@ List your business on these directories for SEO citation building and direct tra
 - **Steps:**
   1. Go to business.google.com, sign in
   2. Click "Add your business"
-  3. Enter "Oladipupo Consulting Ltd"
+  3. Enter "WorkCrew Ltd"
   4. Select category "IT Consulting" (add "Business Consulting Service" as secondary)
   5. Since you serve clients remotely, select "I deliver goods and services to my customers" and choose "Yes" for service area
   6. Set service area to "United Kingdom" or specific cities

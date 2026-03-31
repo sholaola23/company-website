@@ -56,7 +56,7 @@ export const caseStudies: CaseStudy[] = [
       "Friday delivery route optimiser with Google Maps links",
       "Monday weekly cleanup and dashboard reset",
       "Daily exception alerts for unmatched payments and errors",
-      "Password-protected client dashboard at app.oladipupoconsulting.co.uk",
+      "Password-protected client dashboard at app.workcrew.io",
     ],
     beforeAfter: [
       { before: "8+ hours of admin every week", after: "60 seconds checking a dashboard each morning" },
@@ -114,7 +114,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "seo-sprint",
-    name: "SEO Sprint — Oladipupo Consulting",
+    name: "SEO Sprint — WorkCrew",
     industry: "Professional Services",
     location: "UK (Nationwide)",
     tier: "Scale",

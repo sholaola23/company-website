@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "local SEO UK",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "Does Your Business Need a Website in 2026?",
     description:
       "46% of UK small businesses still don't have a website. Here's why that's costing you customers and what it actually costs to fix.",
@@ -50,13 +50,13 @@ const articleJsonLd = {
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Oladipupo Consulting Ltd",
-    "url": "https://oladipupoconsulting.co.uk",
+    "name": "WorkCrew Ltd",
+    "url": "https://workcrew.io",
   },
   "datePublished": "2026-03-18",
   "dateModified": "2026-03-18",
   "mainEntityOfPage":
-    "https://oladipupoconsulting.co.uk/blog/local-business-website-2026",
+    "https://workcrew.io/blog/local-business-website-2026",
 };
 
 export default function BlogPost() {
@@ -323,7 +323,7 @@ export default function BlogPost() {
                   </tr>
                   <tr className="border-b border-slate-200/50 bg-blue-600/5">
                     <td className="py-3 px-4 font-medium text-blue-600">
-                      Us (Oladipupo Consulting)
+                      Us (WorkCrew)
                     </td>
                     <td className="py-3 px-4 text-slate-900">
                       From &pound;1,500

@@ -4,18 +4,18 @@ Use this profile information when signing up to each directory. Keep the details
 
 ## Standard Business Information
 
-- **Business Name:** Oladipupo Consulting Ltd
+- **Business Name:** WorkCrew Ltd
 - **Website:** https://oladipupoconsulting.co.uk
-- **Email:** hello@oladipupoconsulting.co.uk
+- **Email:** hello@workcrew.io
 - **Phone:** +44 7469 347654
 - **Location:** United Kingdom (service-area business — no physical storefront)
 - **Categories:** IT Consultant, AI Automation, Business Consultant, Web Development
 
 ## Short Description (50-100 words)
-Oladipupo Consulting builds AI automation systems for small businesses across the UK. We help service businesses save 8+ hours per week by automating lead capture, appointment booking, customer follow-ups, and admin tasks. We also build professional websites and deliver AI training workshops for teams. Most projects delivered within 7 days.
+WorkCrew builds AI automation systems for small businesses across the UK. We help service businesses save 8+ hours per week by automating lead capture, appointment booking, customer follow-ups, and admin tasks. We also build professional websites and deliver AI training workshops for teams. Most projects delivered within 7 days.
 
 ## Long Description (150-250 words)
-Oladipupo Consulting Ltd helps small businesses save time and grow using AI automation. We build custom AI systems that handle lead capture, appointment booking, customer follow-ups, order management, and admin tasks — so you can focus on running your business.
+WorkCrew Ltd helps small businesses save time and grow using AI automation. We build custom AI systems that handle lead capture, appointment booking, customer follow-ups, order management, and admin tasks — so you can focus on running your business.
 
 Our services include AI automation setup, professional website development, WhatsApp and email bots, SEO content automation, and AI training workshops for teams.
 

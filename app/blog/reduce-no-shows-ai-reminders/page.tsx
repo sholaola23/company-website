@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "WhatsApp booking reminders",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "Reduce No-Shows by 60% With AI Reminders",
     description:
       "How AI appointment reminders via SMS, WhatsApp, and Voice AI reduce no-shows by up to 60%. Rebooking automation and follow-up strategies.",
@@ -47,13 +47,13 @@ const articleJsonLd = {
   },
   publisher: {
     "@type": "Organization",
-    name: "Oladipupo Consulting Ltd",
-    url: "https://oladipupoconsulting.co.uk",
+    name: "WorkCrew Ltd",
+    url: "https://workcrew.io",
   },
   datePublished: "2026-03-24",
   dateModified: "2026-03-24",
   mainEntityOfPage:
-    "https://oladipupoconsulting.co.uk/blog/reduce-no-shows-ai-reminders",
+    "https://workcrew.io/blog/reduce-no-shows-ai-reminders",
 };
 
 export default function BlogPost() {

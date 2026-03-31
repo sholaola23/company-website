@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@mendable/firecrawl-js": "^4.18.0",
     "@notionhq/client": "2.2.15",
     "@vercel/analytics": "^2.0.1",
     "@vercel/blob": "^2.3.1",
@@ -21,6 +22,7 @@
     "google-spreadsheet": "^5.2.0",
     "googleapis": "^171.4.0",
     "lucide-react": "^0.577.0",
+    "mem0ai": "^2.4.4",
     "next": "16.1.7",
     "react": "19.2.3",
     "react-dom": "19.2.3",
@@ -43,6 +45,8 @@
     "unrs-resolver"
   ],
   "trustedDependencies": [
+    "better-sqlite3",
+    "protobufjs",
     "sharp",
     "unrs-resolver"
   ]

@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { services } from "@/lib/services-data";
 import { caseStudies } from "@/lib/case-studies-data";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://oladipupoconsulting.co.uk";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://workcrew.io";
 
 const CITY_SLUGS = [
   "ai-automation-london",

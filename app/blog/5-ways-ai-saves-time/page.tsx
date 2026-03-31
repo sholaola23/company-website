@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "AI email automation",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "5 Ways AI Can Save Your Small Business 10+ Hours a Week",
     description:
       "Discover how AI automation helps UK small businesses save 10+ hours every week. Practical examples for plumbers, salons, cleaners and more.",
@@ -49,12 +49,12 @@ const articleJsonLd = {
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Oladipupo Consulting Ltd",
-    "url": "https://oladipupoconsulting.co.uk",
+    "name": "WorkCrew Ltd",
+    "url": "https://workcrew.io",
   },
   "datePublished": "2026-03-18",
   "dateModified": "2026-03-18",
-  "mainEntityOfPage": "https://oladipupoconsulting.co.uk/blog/5-ways-ai-saves-time",
+  "mainEntityOfPage": "https://workcrew.io/blog/5-ways-ai-saves-time",
 };
 
 export default function BlogPost() {

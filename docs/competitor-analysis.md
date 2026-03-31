@@ -1,4 +1,4 @@
-# Competitor Analysis Report — Oladipupo Consulting Ltd
+# Competitor Analysis Report — WorkCrew Ltd
 
 **Date:** March 2026
 **Prepared for:** Olushola Oladipupo
@@ -284,7 +284,7 @@
 - Bonus: Auto-generate a branded PDF report for each submission
 
 **6. Create a "How We Compare" page**
-- Title: "Oladipupo Consulting vs Hiring a Freelancer vs DIY Tools vs Big Agencies"
+- Title: "WorkCrew vs Hiring a Freelancer vs DIY Tools vs Big Agencies"
 - Four columns comparing: cost, speed, ongoing support, customization, expertise
 - Purpose: Captures comparison-shopping traffic ("AI automation agency vs Zapier", "hire AI freelancer vs agency")
 - AI Agency Plus already ranks for comparison terms — we should compete

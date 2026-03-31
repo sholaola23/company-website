@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "salon business software",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "AI for Salons: Fill Empty Chairs Automatically",
     description:
       "Fewer no-shows, more rebookings, and a full diary — without chasing clients. Here's how AI automation works for salons.",

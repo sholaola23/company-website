@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "AI lead generation London",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "AI Automation for Small Businesses in London",
     description:
       "AI automation services for London small businesses. Save 8+ hours per week. Local agency, 7-day delivery, from £500.",

@@ -1,4 +1,4 @@
-# Oladipupo Consulting — Website Quality Standard
+# WorkCrew — Website Quality Standard
 
 **Created:** 27 March 2026
 **Source:** Deep research on 30 top Vercel/Next.js websites + 2026 design trends
@@ -26,7 +26,7 @@ Users form opinions in 0.05 seconds. The hero decides whether they stay or bounc
 **Hero patterns to choose from (match to client):**
 | Pattern | Best For | Example |
 |---------|----------|---------|
-| Type-first (big headline, minimal imagery) | Service businesses, consultancies | Oladipupo Consulting |
+| Type-first (big headline, minimal imagery) | Service businesses, consultancies | WorkCrew |
 | Photo-forward (full-bleed image + overlay text) | Churches, restaurants, venues, events | KCC, E'Manuel |
 | Product-led (screenshot or demo in hero) | SaaS, apps, tools | Resume Radar |
 | Video background | Entertainment, creative, high-energy brands | QuantumFM |

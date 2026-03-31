@@ -14,7 +14,7 @@ import JsonLd from "@/components/shared/JsonLd";
 
 const CITY = "Birmingham";
 const SLUG = "ai-automation-birmingham";
-const CANONICAL = `https://oladipupoconsulting.co.uk/${SLUG}`;
+const CANONICAL = `https://workcrew.io/${SLUG}`;
 
 export const metadata: Metadata = {
   title: `AI Automation for Small Businesses in ${CITY}`,
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     canonical: CANONICAL,
   },
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: `AI Automation for Small Businesses in ${CITY}`,
     description: `AI automation services for small businesses in ${CITY}. Automate lead capture, appointment booking, customer communications, and more.`,
     url: CANONICAL,
@@ -99,11 +99,11 @@ const SERVICES = [
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Oladipupo Consulting Ltd",
+  "name": "WorkCrew Ltd",
   "description": `AI automation services for small businesses in ${CITY}. Lead capture, appointment booking, SEO content, and WhatsApp bots.`,
   "url": CANONICAL,
   "telephone": "+447469347654",
-  "email": "hello@oladipupoconsulting.co.uk",
+  "email": "hello@workcrew.io",
   "areaServed": {
     "@type": "City",
     "name": CITY,
@@ -117,7 +117,7 @@ const jsonLd = {
     "@type": "PostalAddress",
     "addressCountry": "GB",
   },
-  "sameAs": ["https://oladipupoconsulting.co.uk"],
+  "sameAs": ["https://workcrew.io"],
 };
 
 export default function AIAutomationBirminghamPage() {

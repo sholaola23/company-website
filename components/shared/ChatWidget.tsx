@@ -33,7 +33,7 @@ const INITIAL_MESSAGE: Message = {
   id: "init",
   role: "assistant",
   content:
-    "Hi! I'm the Oladipupo Consulting AI assistant. I can help with questions about our services, pricing, or figuring out if AI automation is right for your business. What can I help with?",
+    "Hi! I'm the WorkCrew AI assistant. I can help with questions about our services, pricing, or figuring out if AI automation is right for your business. What can I help with?",
 };
 
 function generateId() {
@@ -258,7 +258,7 @@ export default function ChatWidget() {
           id: generateId(),
           role: "assistant",
           content:
-            "I lost connection for a moment. Please try again, or reach us at hello@oladipupoconsulting.co.uk",
+            "I lost connection for a moment. Please try again, or reach us at hello@workcrew.io",
         },
       ]);
     } finally {

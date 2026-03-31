@@ -7,7 +7,7 @@
 4. **The solution** — how AI fixes it, with specific detail
 5. **Case study** — E'Manuel or QuantumFM reference with real numbers (see `../_shared/case-studies.md`)
 6. **Practical next step** — what the reader can do today
-7. **CTA** — "At Oladipupo Consulting, we build these systems for small businesses. Get in touch if you want one."
+7. **CTA** — "At WorkCrew, we build these systems for small businesses. Get in touch if you want one."
 
 ## Deep Dive Blog Post (600-900 words)
 Same structure but with:

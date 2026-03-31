@@ -2,8 +2,8 @@ import { NextRequest } from "next/server";
 
 export const runtime = "edge";
 
-const SITEMAP_URL = "https://oladipupoconsulting.co.uk/sitemap.xml";
-const SITE_URL = "https://oladipupoconsulting.co.uk";
+const SITEMAP_URL = "https://workcrew.io/sitemap.xml";
+const SITE_URL = "https://workcrew.io";
 
 export async function GET(req: NextRequest) {
   // Verify the request is from Vercel Cron

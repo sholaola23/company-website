@@ -168,7 +168,7 @@ function ReportContent() {
       if (id) {
         try {
           const res = await fetch(
-            `https://oladipupoconsulting.co.uk/api/rank-ready/report-data?id=${encodeURIComponent(id)}`
+            `https://workcrew.io/api/rank-ready/report-data?id=${encodeURIComponent(id)}`
           );
           if (res.ok) {
             const data = await res.json();

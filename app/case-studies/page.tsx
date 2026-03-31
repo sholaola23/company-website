@@ -13,18 +13,18 @@ export const metadata: Metadata = {
   description:
     "See how we've helped small businesses save time and grow with AI automation. Real results, real clients.",
   alternates: {
-    canonical: "https://oladipupoconsulting.co.uk/case-studies",
+    canonical: "https://workcrew.io/case-studies",
   },
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
-    title: "Case Studies | Oladipupo Consulting",
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
+    title: "Case Studies | WorkCrew",
     description:
       "See how we've helped small businesses save time and grow with AI automation. Real results, real clients.",
-    url: "https://oladipupoconsulting.co.uk/case-studies",
+    url: "https://workcrew.io/case-studies",
     type: "website",
   },
   twitter: {
-    title: "Case Studies | Oladipupo Consulting",
+    title: "Case Studies | WorkCrew",
     description:
       "See how we've helped small businesses save time and grow with AI automation. Real results, real clients.",
   },

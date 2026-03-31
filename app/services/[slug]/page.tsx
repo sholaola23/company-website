@@ -57,7 +57,7 @@ export async function generateMetadata({
   const service = services.find((s) => s.slug === slug);
   if (!service) return {};
   const pageDescription = service.metaDescription || `${service.pain}. Delivered in ${service.deliveryDays} for ${service.setupPrice}. Ideal for ${service.idealFor}.`;
-  const pageUrl = `https://oladipupoconsulting.co.uk/services/${slug}`;
+  const pageUrl = `https://workcrew.io/services/${slug}`;
   return {
     title: service.name,
     description: pageDescription,
@@ -65,13 +65,13 @@ export async function generateMetadata({
       canonical: pageUrl,
     },
     openGraph: {
-      title: `${service.name} | Oladipupo Consulting`,
+      title: `${service.name} | WorkCrew`,
       description: pageDescription,
       url: pageUrl,
       type: "website",
     },
     twitter: {
-      title: `${service.name} | Oladipupo Consulting`,
+      title: `${service.name} | WorkCrew`,
       description: pageDescription,
     },
   };

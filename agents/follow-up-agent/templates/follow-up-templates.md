@@ -148,7 +148,7 @@ going to assume the timing isn't right
 if anything changes on your end, feel free to reach out
 
 Shola
-oladipupoconsulting.co.uk
+workcrew.io
 ```
 
 **Alternate (with a light Lead Intelligence reference — subtle FOMO):**
@@ -162,7 +162,7 @@ going to assume now's not the right time for [brief reference to their pain poin
 door's always open if that changes
 
 Shola
-oladipupoconsulting.co.uk
+workcrew.io
 ```
 
 **Rules:**

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "automate plumbing admin",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "How AI Saves Plumbers 10+ Hours a Week",
     description:
       "Practical AI automations for plumbing businesses. Real examples from UK tradespeople saving 10+ hours every week.",

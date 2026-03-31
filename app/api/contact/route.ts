@@ -7,13 +7,13 @@ const resend = process.env.RESEND_API_KEY
 
 const FROM_NOTIFY =
   process.env.RESEND_DOMAIN_VERIFIED === "true"
-    ? "Oladipupo Consulting <notifications@oladipupoconsulting.co.uk>"
-    : "Oladipupo Consulting <onboarding@resend.dev>";
+    ? "WorkCrew <notifications@workcrew.io>"
+    : "WorkCrew <onboarding@resend.dev>";
 
 const FROM_REPLY =
   process.env.RESEND_DOMAIN_VERIFIED === "true"
-    ? "Oladipupo Consulting <hello@oladipupoconsulting.co.uk>"
-    : "Oladipupo Consulting <onboarding@resend.dev>";
+    ? "WorkCrew <hello@workcrew.io>"
+    : "WorkCrew <onboarding@resend.dev>";
 
 interface ContactBody {
   name: string;
@@ -51,16 +51,16 @@ async function generateAutoReply({
       body: JSON.stringify({
         model: "claude-haiku-4-5-20251001",
         max_tokens: 500,
-        system: `You are the AI assistant for Oladipupo Consulting Ltd, a company that builds AI automation systems, professional websites, and delivers AI training for small businesses worldwide.
+        system: `You are the AI assistant for WorkCrew Ltd, a company that builds AI automation systems, professional websites, and delivers AI training for small businesses worldwide.
 
 Your job is to write a warm, professional auto-reply to a website enquiry. The reply should:
 - Thank them by name for reaching out
 - Acknowledge their specific message/question (show you understood it)
-- Briefly mention how Oladipupo Consulting might help based on what they said
+- Briefly mention how WorkCrew might help based on what they said
 - Let them know Olushola (the founder) will personally follow up within 24 hours
-- Offer to book a free discovery call: https://oladipupoconsulting.co.uk/audit
+- Offer to book a free discovery call: https://workcrew.io/audit
 - Keep it under 150 words, warm but professional
-- Sign off as "The Oladipupo Consulting Team"
+- Sign off as "The WorkCrew Team"
 - Use UK English
 
 DO NOT make specific promises, quote prices, or commit to timelines. Just acknowledge and reassure.`,
@@ -87,12 +87,12 @@ DO NOT make specific promises, quote prices, or commit to timelines. Just acknow
 function getFallbackReply(name: string): string {
   return `Hi ${name},
 
-Thank you for reaching out to Oladipupo Consulting. We've received your message and Olushola, our founder, will personally get back to you within 24 hours.
+Thank you for reaching out to WorkCrew. We've received your message and Olushola, our founder, will personally get back to you within 24 hours.
 
-In the meantime, if you'd like to get a head start, you can request a free AI Readiness Audit at https://oladipupoconsulting.co.uk/audit — it only takes 2 minutes and gives you a clear picture of where AI can help your business.
+In the meantime, if you'd like to get a head start, you can request a free AI Readiness Audit at https://workcrew.io/audit — it only takes 2 minutes and gives you a clear picture of where AI can help your business.
 
 Best regards,
-The Oladipupo Consulting Team`;
+The WorkCrew Team`;
 }
 
 async function notifyOwner({
@@ -151,7 +151,7 @@ async function notifyOwner({
     await resend?.emails.send({
       from: FROM_REPLY,
       to: email,
-      subject: `Thanks for reaching out, ${name} — Oladipupo Consulting`,
+      subject: `Thanks for reaching out, ${name} — WorkCrew`,
       text: aiReply,
     });
   } catch (err) {

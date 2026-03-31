@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-import { ANTHROPIC_API_URL, ANTHROPIC_VERSION } from "@/lib/constants";
+import { ANTHROPIC_API_URL, ANTHROPIC_VERSION, heliconeHeaders } from "@/lib/constants";
 import {
   getCategoryAuditPrompt,
   getGBPDescriptionPrompt,
@@ -23,8 +23,8 @@ const resend = process.env.RESEND_API_KEY
 
 const FROM_REPORT =
   process.env.RESEND_DOMAIN_VERIFIED === "true"
-    ? "Oladipupo Consulting <reports@oladipupoconsulting.co.uk>"
-    : "Oladipupo Consulting <onboarding@resend.dev>";
+    ? "WorkCrew <reports@workcrew.io>"
+    : "WorkCrew <onboarding@resend.dev>";
 
 const OWNER_EMAIL = "olusholaoladipupo1@gmail.com";
 
@@ -41,7 +41,7 @@ async function callClaude(systemPrompt: string, userMessage: string): Promise<st
     headers: {
       "Content-Type": "application/json",
       "x-api-key": apiKey,
-      "anthropic-version": ANTHROPIC_VERSION,
+      ...heliconeHeaders(), "anthropic-version": ANTHROPIC_VERSION,
     },
     body: JSON.stringify({
       model: "claude-sonnet-4-20250514",
@@ -157,7 +157,7 @@ async function sendReportEmail(
           </div>
           <div style="padding: 20px 24px; text-align: center; border-radius: 0 0 12px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-top: none;">
             <p style="color: #94a3b8; font-size: 12px; margin: 0;">
-              Oladipupo Consulting Ltd | oladipupoconsulting.co.uk
+              WorkCrew Ltd | workcrew.io
             </p>
           </div>
         </div>
@@ -295,7 +295,7 @@ export async function POST(req: NextRequest) {
     const blobUrl = await uploadToBlob(slug, report);
 
     const reportUrl = blobUrl
-      ? `https://oladipupoconsulting.co.uk/tools/rank-ready/report?id=${slug}`
+      ? `https://workcrew.io/tools/rank-ready/report?id=${slug}`
       : null;
 
     // Send emails in parallel

@@ -91,7 +91,7 @@ export default function PasswordGate({ slug, onAuthenticated }: PasswordGateProp
         </form>
 
         <p className="text-xs text-slate-600 text-center mt-8">
-          Oladipupo Consulting Ltd
+          WorkCrew Ltd
         </p>
       </div>
     </div>

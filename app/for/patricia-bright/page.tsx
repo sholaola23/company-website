@@ -1002,12 +1002,12 @@ Wealth isn't built on vibes. It's built on structure.
         <p className="text-sm text-slate-900">
           Built by{" "}
           <Link
-            href="https://oladipupoconsulting.co.uk"
+            href="https://workcrew.io"
             target="_blank"
             rel="noopener noreferrer"
             className="text-slate-400 hover:text-slate-500 underline underline-offset-2 transition-colors"
           >
-            Oladipupo Consulting
+            WorkCrew
           </Link>
           {" "}— AI Automation for Growing Businesses
         </p>

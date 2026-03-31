@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "restaurant review automation",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "AI for Restaurants: Automate Orders, Bookings, and Reviews",
     description:
       "Practical AI automations for restaurants — from WhatsApp ordering to review collection. Save hours and serve more customers.",

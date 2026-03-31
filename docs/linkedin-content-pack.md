@@ -33,7 +33,7 @@ And my AI co-founder built most of it.
 
 No, seriously.
 
-I run Oladipupo Consulting with Claude — an AI from Anthropic — as my technical co-founder.
+I run WorkCrew with Claude — an AI from Anthropic — as my technical co-founder.
 
 Claude writes the code.
 Claude builds the automations.
@@ -214,7 +214,7 @@ Let me explain.
 
 I work a full-time job.
 
-Oladipupo Consulting runs on the side.
+WorkCrew runs on the side.
 
 But "on the side" doesn't mean I'm up until 2am doing everything manually.
 
@@ -475,7 +475,7 @@ They're still doing everything manually.
 
 That's the gap we're filling.
 
-Oladipupo Consulting exists to make AI automation accessible to the businesses that need it most.
+WorkCrew exists to make AI automation accessible to the businesses that need it most.
 
 Productised solutions — not custom projects that take months.
 7-day delivery — not "we'll circle back in Q3."
@@ -536,7 +536,7 @@ Use these to engage on other people's posts about AI, automation, small business
 - Friday: Post goes live + review analytics (which posts got the most impressions/engagement)
 
 **Profile optimisation (do once):**
-- Headline: "AI Automation for Small Businesses | Founder @ Oladipupo Consulting"
+- Headline: "AI Automation for Small Businesses | Founder @ WorkCrew"
 - Banner image: Website URL prominently displayed
 - Featured section: Pin the website launch post (Post 1) and the E'Manuel case study (Post 2)
 - About section: Include the website URL and a line about the free audit

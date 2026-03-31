@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "build AI automation yourself",
   ],
   openGraph: {
-    images: [{ url: "https://oladipupoconsulting.co.uk/api/og", width: 1200, height: 630 }],
+    images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "AI Automation Agency vs DIY: Which Is Right for Your Business?",
     description:
       "Compare hiring an AI automation agency vs building it yourself. Honest cost, time, and outcome breakdown for small business owners.",
@@ -289,7 +289,7 @@ export default function BlogPost() {
             <p className="text-slate-500 leading-relaxed mb-4">
               At{" "}
               <Link href="/services" className="text-blue-600 hover:underline">
-                Oladipupo Consulting
+                WorkCrew
               </Link>
               , we offer a productised done-for-you service starting at &pound;500 setup + &pound;50/month. Here is what that means in practice:
             </p>
