@@ -149,22 +149,20 @@ export default async function ServiceDetailPage({
 
         {/* Key metrics row */}
         <div className="flex flex-wrap gap-4">
-          <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5">
+          <Link
+            href="/contact"
+            className="flex items-center gap-2 bg-blue-50 border border-blue-200 rounded-lg px-4 py-2.5 hover:bg-blue-100 transition-colors"
+          >
             <Zap size={15} className="text-blue-600" aria-hidden="true" />
-            <span className="text-sm font-semibold text-slate-900">
-              {service.setupPrice}
+            <span className="text-sm font-semibold text-blue-700">
+              Get a tailored quote
             </span>
-            <span className="text-xs text-slate-400">setup</span>
-          </div>
-          <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5">
-            <Zap size={15} className="text-amber-600" aria-hidden="true" />
-            <span className="text-sm font-semibold text-slate-900">
-              {service.monthlyPrice}
+          </Link>
+          <div className="flex items-center gap-2 bg-emerald-50 border border-emerald-200 rounded-lg px-4 py-2.5">
+            <ShieldCheck size={15} className="text-emerald-600" aria-hidden="true" />
+            <span className="text-sm font-semibold text-emerald-700">
+              90-day guarantee
             </span>
-          </div>
-          <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5">
-            <Clock size={15} className="text-slate-600" aria-hidden="true" />
-            <span className="text-sm text-slate-500">{service.deliveryDays}</span>
           </div>
         </div>
       </header>
