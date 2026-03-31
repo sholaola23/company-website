@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: "%s | WorkCrew",
   },
   description:
-    "We build AI automation systems, professional websites, and deliver AI training for small businesses. From lead capture to content engines — delivered in 14 days.",
+    "We build AI automation systems, professional websites, and deliver AI training for small businesses. From lead capture to content engines — built to last.",
   keywords: [
     "AI automation",
     "small business automation",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     siteName: "WorkCrew",
     title: "WorkCrew — AI Solutions for Small Businesses",
     description:
-      "We build AI automation systems, professional websites, and deliver AI training for small businesses. From lead capture to content engines — delivered in 14 days.",
+      "We build AI automation systems, professional websites, and deliver AI training for small businesses. From lead capture to content engines — built to last.",
     images: [
       {
         url: "https://workcrew.io/og-image.png",
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "WorkCrew — AI Solutions for Small Businesses",
     description:
-      "AI automation, websites, and team training for small businesses. Delivered in 7 days.",
+      "AI automation, websites, and team training for small businesses. Built for results.",
     images: ["https://workcrew.io/og-image.png"],
   },
   robots: {

@@ -133,8 +133,8 @@ THE REPORT MUST CONTAIN THESE 8 SECTIONS:
 
 8. **Recommended Solution & Next Steps** — Based on the ${recommendedTier} tier recommendation:
    - What's included in this tier
-   - Implementation timeline (7-day sprint)
-   - Phase grid showing Starter/Growth/Scale tiers with the recommended one highlighted
+   - Implementation approach and next steps
+   - A clear recommendation for the right approach based on their needs, with a 'Book a Call' CTA to discuss specifics
    - A "Before vs After" narrative: 2 short paragraphs contrasting their business today (manual, slow, overwhelmed) vs 30 days from now (automated, fast, in control)
    - Clear CTA to book a call
 

@@ -18,7 +18,7 @@ const CANONICAL = `https://workcrew.io/${SLUG}`;
 
 export const metadata: Metadata = {
   title: `AI Automation for Small Businesses in ${CITY}`,
-  description: `AI automation services for small businesses in ${CITY} and Northamptonshire. Automate lead capture, order processing, appointment booking, and more. 14-day delivery. Free AI readiness audit.`,
+  description: `AI automation services for small businesses in ${CITY} and Northamptonshire. Automate lead capture, order processing, appointment booking, and more. Free AI readiness audit.`,
   keywords: [
     `${CITY} AI automation`,
     `AI automation ${CITY} small business`,
@@ -62,9 +62,9 @@ const HOW_IT_WORKS = [
   {
     icon: Zap,
     step: "03",
-    title: "14-Day Build",
+    title: "Fast Delivery",
     description:
-      "We build and deploy your automation in a focused sprint with full documentation and SOPs.",
+      "We build and launch your automation quickly so you see results fast — with full documentation and SOPs.",
   },
   {
     icon: RefreshCw,
@@ -116,7 +116,6 @@ const jsonLd = {
       },
     },
   },
-  "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "GB",
@@ -143,8 +142,8 @@ export default function AIAutomationKetteringPage() {
             community make it the perfect place for AI automation to have an
             outsized impact. When every lead matters and word-of-mouth drives
             your reputation, you can&apos;t afford slow responses or missed
-            follow-ups. We build AI systems that handle the repetitive work —
-            delivered in 14 days, starting from £500.
+            follow-ups. We build those systems — tailored to your business and
+            ready to deliver results.
           </p>
         </div>
       </AnimatedSection>

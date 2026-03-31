@@ -483,7 +483,7 @@ function HeritageContent() {
             What&apos;s included
           </p>
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8">
-            Everything set up and running in 7 days.
+            Everything set up and running for you.
             <br className="hidden md:block" /> Zero work required from Jeff.
           </h2>
 

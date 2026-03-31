@@ -215,7 +215,7 @@ function buildDay2Email(name: string): string {
 
       <p><strong>Result: 8 hours saved per week.</strong> That's over 400 hours a year they got back.</p>
 
-      <p>If your audit showed opportunities for automation, this is the kind of result that's possible — usually within 7 days of starting.</p>
+      <p>If your audit showed opportunities for automation, this is the kind of result that's possible — once automation is in place.</p>
 
       <p>Happy to chat if you'd like to explore what this could look like for your business.</p>
 

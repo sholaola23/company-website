@@ -18,7 +18,7 @@ const CANONICAL = `https://workcrew.io/${SLUG}`;
 
 export const metadata: Metadata = {
   title: `AI Automation for Small Businesses in ${CITY}`,
-  description: `AI automation services for small businesses in ${CITY}. Automate lead capture, appointment booking, email management, and more. 14-day delivery. Free AI readiness audit.`,
+  description: `AI automation services for small businesses in ${CITY}. Automate lead capture, appointment booking, email management, and more. Free AI readiness audit.`,
   keywords: [
     `${CITY} AI automation`,
     `AI automation ${CITY} small business`,
@@ -62,9 +62,9 @@ const HOW_IT_WORKS = [
   {
     icon: Zap,
     step: "03",
-    title: "14-Day Build",
+    title: "Fast Delivery",
     description:
-      "We build and deploy your automation in a focused sprint with full documentation and SOPs.",
+      "We build and launch your automation quickly so you see results fast — with full documentation and SOPs.",
   },
   {
     icon: RefreshCw,
@@ -112,7 +112,6 @@ const jsonLd = {
       "name": "United Kingdom",
     },
   },
-  "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "GB",
@@ -139,8 +138,8 @@ export default function AIAutomationLondonPage() {
             attention in one of the world&apos;s most dynamic markets. From
             salons in Shoreditch to tradespeople in Croydon, the businesses
             winning are the ones responding faster, following up automatically,
-            and letting AI handle the admin. We build those systems — delivered
-            in 14 days, starting from £500.
+            and letting AI handle the admin. We build those systems — tailored to
+            your business and ready to deliver results.
           </p>
         </div>
       </AnimatedSection>

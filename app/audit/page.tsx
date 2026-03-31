@@ -41,7 +41,7 @@ const auditFAQs: FAQItem[] = [
   {
     question: "Is the AI readiness audit really free?",
     answer:
-      "Yes, completely free with no obligation. You do not even need to provide an email address to get your instant results. The full audit is normally valued at £150, but we offer it free because it helps us understand your business and demonstrate what AI automation can do for you.",
+      "Yes, completely free with no obligation. You do not even need to provide an email address to get your instant results. We offer it free because it helps us understand your business and demonstrate what AI automation can do for you.",
   },
   {
     question: "What information do I need to provide for the audit?",
@@ -56,7 +56,7 @@ const auditFAQs: FAQItem[] = [
   {
     question: "What happens after I complete the audit?",
     answer:
-      "You can unlock the full detailed report by providing your email. From there, if you would like to explore implementation, we will send you a custom proposal with a fixed price and timeline — typically within 48 hours. There is absolutely no pressure to proceed.",
+      "You can unlock the full detailed report by providing your email. From there, if you would like to explore implementation, we will send you a custom proposal — typically within 48 hours. There is absolutely no pressure to proceed.",
   },
   {
     question: "Is the audit relevant to my specific industry?",
@@ -122,7 +122,7 @@ export default function AuditPage() {
         <div className="max-w-2xl mx-auto">
           <InstantAudit />
           <p className="text-center text-xs text-slate-400 mt-4">
-            Free for a limited time — normally £150
+            Free — no obligation
           </p>
           <p className="text-center text-xs text-slate-400 mt-2">
             Backed by our{" "}

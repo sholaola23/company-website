@@ -208,7 +208,7 @@ function GorgContent() {
             What we&apos;d build
           </p>
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
-            Three systems. Set up in 7 days.
+            Three systems. Built and launched for you.
             <br className="hidden md:block" /> Zero extra work for your team.
           </h2>
           <p className="text-slate-600 mb-8 text-sm">
@@ -423,7 +423,7 @@ function GorgContent() {
                     <span className="text-4xl font-bold text-slate-900">$2,000</span>
                   </div>
                   <p className="text-xs text-slate-900 mt-1">
-                    Everything built, tested, and live in 7 days
+                    Everything built, tested, and live for you
                   </p>
                 </div>
                 <div className="sm:text-right">

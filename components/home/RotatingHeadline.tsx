@@ -13,8 +13,8 @@ const headlines = [
     highlight: "Slow Follow-Up.",
   },
   {
-    static: "From Conversation to",
-    highlight: "Live Automation in 14 Days.",
+    static: "Digital Systems That",
+    highlight: "Run Your Business.",
   },
   {
     static: "Websites & Web Apps That",

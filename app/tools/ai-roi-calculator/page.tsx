@@ -82,7 +82,7 @@ const faqs: FAQItem[] = [
   {
     question: "What does the AI investment include?",
     answer:
-      "The calculator assumes a one-off £500 setup fee plus £50 per month for ongoing optimisation and support. This covers the design, build, and deployment of your AI automation system, plus monthly monitoring, updates, and priority support. There are no hidden costs.",
+      "The calculator uses industry-standard AI implementation costs to estimate your return on investment. Actual pricing is tailored to your specific needs — book a free consultation to get an exact quote. Every project includes design, build, deployment, and ongoing support.",
   },
   {
     question: "What happens after I see my ROI estimate?",

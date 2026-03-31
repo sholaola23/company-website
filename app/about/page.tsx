@@ -29,30 +29,30 @@ const HOW_WE_WORK = [
   {
     icon: FileSearch,
     step: "01",
-    title: "Free Audit",
+    title: "Free Consultation",
     description:
-      "We start with a free AI readiness audit to understand your business, your processes, and where automation will have the biggest impact.",
+      "We assess your business and identify operational bottlenecks and the biggest opportunities for automation — at no cost to you.",
   },
   {
     icon: CheckCircle,
     step: "02",
-    title: "Clear Proposal",
+    title: "Analysis & Proposal",
     description:
-      "You receive a specific solution with exact deliverables, timeline, and projected ROI. No vague consulting — a real proposal you can say yes or no to.",
+      "We quantify the time and cost savings, then propose tailored solutions with clear deliverables and projected ROI. A real proposal you can say yes or no to.",
   },
   {
     icon: Zap,
     step: "03",
-    title: "7-Day Build",
+    title: "Build & Launch",
     description:
-      "We build and deploy your automation in a focused sprint. You're informed at every stage, and we hand over full documentation and SOPs.",
+      "We build, test, and deploy your solution with full documentation, SOPs, and a training walkthrough. You are informed at every stage.",
   },
   {
     icon: RefreshCw,
     step: "04",
-    title: "Monthly Optimisation",
+    title: "Ongoing Optimisation",
     description:
-      "We monitor performance, fix issues, and improve the system every month. Automation isn't a one-time job — it gets better over time.",
+      "We monitor performance, fix issues, and improve the system continuously. Automation is not a one-time job — it gets better over time.",
   },
 ];
 
@@ -60,7 +60,7 @@ const STATS = [
   { value: "2", label: "Live clients" },
   { value: "12", label: "Service offerings" },
   { value: "60+", label: "AI agents running" },
-  { value: "14 days", label: "Average delivery" },
+  { value: "90 days", label: "Results guarantee" },
 ];
 
 const TRUST = [

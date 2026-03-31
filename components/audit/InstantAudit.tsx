@@ -121,9 +121,9 @@ function reducer(state: State, action: Action): State {
 // ---------------------------------------------------------------------------
 
 const TIER_CONFIG = {
-  starter: { label: "Starter", price: "£500 setup + £50/mo" },
-  growth: { label: "Growth", price: "£1,500 setup + £150/mo" },
-  scale: { label: "Scale", price: "£3,500 setup + £350/mo" },
+  starter: { label: "Starter", price: "Get a tailored quote" },
+  growth: { label: "Growth", price: "Get a tailored quote" },
+  scale: { label: "Scale", price: "Get a tailored quote" },
 } as const;
 
 // ---------------------------------------------------------------------------

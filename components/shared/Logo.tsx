@@ -29,7 +29,7 @@ export default function Logo({ size = "sm", className, variant = "dark" }: LogoP
         )}
         aria-hidden="true"
       >
-        OC
+        WC
       </div>
 
       {/* Wordmark */}

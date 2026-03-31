@@ -186,7 +186,7 @@ export default function PersonalisedCTA() {
                 />
               </Link>
               <p className="mt-3 text-xs text-slate-400">
-                Free audit — normally £150, available at no cost for a limited time
+                Free audit — no obligation, no strings attached
               </p>
             </div>
           </motion.div>

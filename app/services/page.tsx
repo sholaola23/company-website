@@ -16,7 +16,7 @@ import BreadcrumbJsonLd from "@/components/shared/BreadcrumbJsonLd";
 export const metadata: Metadata = {
   title: "AI Automation Services",
   description:
-    "From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 14 days.",
+    "From single workflows to full automation fleets. We build AI systems tailored to your business.",
   alternates: {
     canonical: "https://workcrew.io/services",
   },
@@ -24,27 +24,26 @@ export const metadata: Metadata = {
     images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "AI Automation Services | WorkCrew",
     description:
-      "From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 14 days.",
+      "From single workflows to full automation fleets. We build AI systems tailored to your business.",
     url: "https://workcrew.io/services",
     type: "website",
   },
   twitter: {
     title: "AI Automation Services | WorkCrew",
     description:
-      "From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 14 days.",
+      "From single workflows to full automation fleets. We build AI systems tailored to your business.",
   },
 };
 
 const TIERS = [
   {
     name: "Starter",
-    price: "£500",
-    monthly: "+ £50/mo",
+    price: "Get a Quote",
+    monthly: "",
     color: "border-slate-200",
     badge: "bg-slate-200 text-slate-900",
     includes: [
       "Single focused automation",
-      "7–14 day delivery",
       "Email + docs handover",
       "1 month support",
     ],
@@ -52,13 +51,12 @@ const TIERS = [
   },
   {
     name: "Growth",
-    price: "£1,500",
-    monthly: "+ £150/mo",
+    price: "Get a Quote",
+    monthly: "",
     color: "border-blue-600",
     badge: "bg-blue-600/20 text-blue-600 border border-blue-600/30",
     includes: [
       "Multi-workflow system",
-      "7–14 day delivery",
       "Full SOP documentation",
       "3 months support",
       "Monthly optimisation",
@@ -68,13 +66,12 @@ const TIERS = [
   },
   {
     name: "Scale",
-    price: "£3,500",
-    monthly: "+ £350/mo",
+    price: "Get a Quote",
+    monthly: "",
     color: "border-amber-500",
     badge: "bg-amber-500/20 text-amber-600 border border-amber-500/30",
     includes: [
       "Full automation fleet",
-      "2–4 week delivery",
       "Dedicated account manager",
       "KPI dashboard",
       "Ongoing optimisation",
@@ -89,7 +86,7 @@ const servicesJsonLd = {
   "@type": "ItemList",
   "name": "AI Automation Services — WorkCrew",
   "description":
-    "From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 14 days.",
+    "From single workflows to full automation fleets. We build AI systems tailored to your business.",
   "numberOfItems": services.length,
   "itemListElement": services.map((service, index) => ({
     "@type": "ListItem",
@@ -105,9 +102,8 @@ const servicesJsonLd = {
       },
       "offers": {
         "@type": "Offer",
-        "price": service.setupPrice.replace(/[^0-9]/g, ""),
-        "priceCurrency": "GBP",
-        "description": `${service.setupPrice} setup + ${service.monthlyPrice}`,
+        "availability": "https://schema.org/InStock",
+        "description": "Contact us for a tailored quote",
       },
     },
   })),
@@ -117,7 +113,7 @@ const servicesFAQs: FAQItem[] = [
   {
     question: "How long does it take to get started?",
     answer:
-      "Most solutions are live within 14 days. We start with a free audit, then deliver a detailed proposal within 48 hours. From approval to going live, single automations typically take 7–10 days and multi-workflow systems take 10–14 days.",
+      "Timelines depend on the scope and complexity of your project. Single automations are typically faster than multi-workflow systems. We provide a clear timeline in every custom proposal after your free audit.",
   },
   {
     question: "Do I need to be technical to use your services?",
@@ -158,7 +154,7 @@ export default function ServicesPage() {
             as="h1"
             eyebrow="Our Solutions"
             heading="AI Automation Services"
-            description="From single workflows to full automation fleets. Pick the tier that fits, and we'll have it running in 14 days."
+            description="From single workflows to full automation fleets. We build AI systems tailored to your business."
             align="center"
           />
         </div>

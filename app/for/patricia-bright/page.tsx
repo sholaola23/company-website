@@ -501,7 +501,7 @@ function PatriciaContent() {
               { label: "Hours/week automatable", value: "25–35" },
               { label: "Annual equivalent", value: "1,800 hrs" },
               { label: "Cost if done with people", value: "£35K/yr" },
-              { label: "Our delivery timeline", value: "7-day sprint" },
+              { label: "Our delivery", value: "Fast turnaround" },
             ].map((stat) => (
               <div key={stat.label}>
                 <p className="text-2xl font-bold text-slate-900 mb-1">{stat.value}</p>
@@ -592,7 +592,7 @@ function PatriciaContent() {
                               ["Total automatable hours", "25–35 hours/week across all 4 businesses"],
                               ["Annual equivalent", "1,300–1,800 hours/year"],
                               ["Cost of doing this with people", "Equivalent to 1 FTE at £25–35K/year"],
-                              ["Our implementation timeline", "7-day sprint per business"],
+                              ["Our implementation", "Fast, focused delivery per business"],
                               ["Our guarantee", "90 days — if you don't save 5+ hrs/week, we refund the setup fee"],
                             ] as [string, string][]
                           ).map(([key, val]) => (

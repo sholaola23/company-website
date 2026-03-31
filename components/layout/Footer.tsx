@@ -48,9 +48,9 @@ export default function Footer() {
               <Logo size="lg" variant="light" />
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
-              AI solutions for small businesses — automation, websites, and
-              training. We build systems that save time, capture leads, and grow
-              revenue.
+              Our mission is to help small businesses save time and grow — with
+              AI automation, professional websites, and intelligent systems that
+              work while you sleep.
             </p>
           </div>
 

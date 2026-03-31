@@ -49,20 +49,13 @@ function Hero() {
                   className="h-1.5 w-1.5 rounded-full bg-blue-600"
                   aria-hidden="true"
                 />
-                AI Solutions — delivered in 14 days
+                AI Automation · Websites · Training
               </div>
 
               <RotatingHeadline />
 
               <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl lg:mx-0">
-                AI automation, professional websites, and custom web apps —
-                built and delivered in 7-14 days. Your team checks a dashboard
-                for 60 seconds. AI handles the rest. Packages from £500.
-              </p>
-
-              {/* Social proof line */}
-              <p className="mx-auto mt-4 max-w-2xl text-sm font-medium text-slate-900 lg:mx-0">
-                Already helping UK businesses save 8+ hours per week
+                WorkCrew builds the digital systems that run your business — from AI automation to apps and websites.
               </p>
 
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
@@ -78,10 +71,10 @@ function Hero() {
                   />
                 </Link>
                 <Link
-                  href="/services"
+                  href="https://cal.com/sholastechnotes/free-ai-strategy-call"
                   className="inline-flex items-center gap-2 rounded-full border-2 border-slate-200 bg-white px-7 py-3.5 text-base font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:border-slate-900 hover:bg-slate-900 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
                 >
-                  View Services
+                  Schedule a Call
                 </Link>
               </div>
             </AnimatedSection>
@@ -104,7 +97,7 @@ const stats = [
   { numeric: 8, suffix: "+", label: "Hours Saved Weekly", sublabel: "per client" },
   { numeric: 180, suffix: "", label: "Orders Automated", sublabel: "weekly at E'Manuel" },
   { numeric: 9, suffix: "", label: "Workflows Deployed", sublabel: "for one bakery" },
-  { numeric: 14, suffix: "", label: "Day Delivery", sublabel: "audit to live" },
+  { numeric: 90, suffix: "", label: "Day Guarantee", sublabel: "results or refund" },
 ];
 
 function SocialProofBar() {
@@ -139,20 +132,23 @@ const categories = [
   {
     icon: Zap,
     title: "AI Automation",
+    href: "/services/lead-intake",
     description:
       "Automate repetitive tasks. Lead capture, email responses, appointment booking, follow-ups — all running on autopilot.",
-    result: "8+ hours saved per week",
+    result: "Save 8+ hours every week",
   },
   {
     icon: Globe,
     title: "Websites & Web Apps",
+    href: "/services/business-website",
     description:
-      "Professional websites and custom web apps that convert visitors into customers. Dashboards, booking portals, interactive tools — mobile-first, SEO-optimised, delivered in 10-14 days.",
-    result: "Full web app delivered in 2 weeks",
+      "Professional websites and custom web apps that convert visitors into customers. Dashboards, booking portals, interactive tools — mobile-first and SEO-optimised.",
+    result: "Professional online presence",
   },
   {
     icon: GraduationCap,
     title: "AI Training",
+    href: "/services/ai-workshop",
     description:
       "Hands-on workshops that get your team using AI tools confidently. Tailored to your industry and skill level.",
     result: "Teams productive with AI in one session",
@@ -214,7 +210,7 @@ function WhatWeBuild() {
 
                   {/* Arrow link */}
                   <Link
-                    href="/services"
+                    href={cat.href}
                     className="group/link mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 group-hover:text-blue-600 transition-colors duration-200"
                   >
                     Learn more
@@ -231,11 +227,10 @@ function WhatWeBuild() {
         </div>
 
         <AnimatedSection delay={0.45}>
-          <p className="mt-10 text-center text-sm text-slate-900">
-            Packages from £500.{" "}
+          <p className="mt-10 text-center">
             <Link
               href="/services"
-              className="inline-flex items-center gap-1 font-semibold text-blue-600 transition-colors duration-200 hover:text-blue-700 group"
+              className="group inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 transition-colors duration-200 hover:text-blue-700"
             >
               View all 12 solutions
               <ArrowRight
@@ -246,6 +241,7 @@ function WhatWeBuild() {
             </Link>
           </p>
         </AnimatedSection>
+
       </div>
     </section>
   );
@@ -389,21 +385,21 @@ const steps = [
     number: "01",
     title: "Free AI Audit",
     description:
-      "We map your business in 48 hours and identify your highest-impact automation opportunities.",
+      "We assess your business and identify the highest-impact automation opportunities — at no cost.",
     icon: FileSearch,
   },
   {
     number: "02",
     title: "Custom Proposal",
     description:
-      "You get a clear scope, fixed price, and timeline — no vague quotes, no surprises.",
+      "You get a clear scope with exact deliverables and projected ROI — no vague quotes, no surprises.",
     icon: Users,
   },
   {
     number: "03",
-    title: "7-Day Build",
+    title: "Build & Launch",
     description:
-      "We build, test, and hand over your automation with full documentation and an SOP.",
+      "We build, test, and deploy your solution with full documentation, SOPs, and a training walkthrough.",
     icon: Zap,
   },
   {
@@ -432,7 +428,7 @@ function HowItWorks() {
               From conversation to live automation
             </h2>
             <p className="max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
-              A structured 4-step process that gets you live in under two weeks.
+              A structured 4-step process — from first conversation to a system that runs itself.
             </p>
           </div>
         </AnimatedSection>
@@ -483,6 +479,85 @@ function HowItWorks() {
 }
 
 // ---------------------------------------------------------------------------
+// Latest Blog Posts
+// ---------------------------------------------------------------------------
+const FEATURED_POSTS = [
+  {
+    slug: "5-ways-ai-saves-time",
+    title: "5 Ways AI Can Save Your Small Business 10+ Hours a Week",
+    excerpt:
+      "Discover the five AI automations that save small businesses the most time — from appointment booking to social media management.",
+    date: "2026-03-15",
+  },
+  {
+    slug: "local-business-website-2026",
+    title: "Why Every Local Business Needs a Website in 2026",
+    excerpt:
+      "Your website isn't just a brochure — it's your hardest-working employee. Here's why it matters more than ever.",
+    date: "2026-03-18",
+  },
+];
+
+function LatestBlogPosts() {
+  return (
+    <section className="bg-slate-50 py-28" aria-labelledby="blog-heading">
+      <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
+        <AnimatedSection>
+          <div className="flex flex-col items-center gap-4 text-center">
+            <span className="eyebrow">From the Blog</span>
+            <h2
+              id="blog-heading"
+              className="heading-section text-3xl sm:text-4xl lg:text-[56px]"
+            >
+              Latest Insights
+            </h2>
+          </div>
+        </AnimatedSection>
+
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
+          {FEATURED_POSTS.map((post, index) => (
+            <AnimatedSection key={post.slug} delay={0.1 * (index + 1)}>
+              <Link
+                href={`/blog/${post.slug}`}
+                className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:border-blue-200 hover:shadow-lg"
+              >
+                <p className="text-xs text-slate-400">
+                  {new Date(post.date).toLocaleDateString("en-GB", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                  })}
+                </p>
+                <h3 className="mt-3 text-lg font-semibold text-slate-900 group-hover:text-blue-600 transition-colors duration-200">
+                  {post.title}
+                </h3>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600">
+                  {post.excerpt}
+                </p>
+                <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 transition-colors duration-200 group-hover:text-blue-700">
+                  Read more →
+                </span>
+              </Link>
+            </AnimatedSection>
+          ))}
+        </div>
+
+        <AnimatedSection delay={0.3}>
+          <p className="mt-10 text-center">
+            <Link
+              href="/blog"
+              className="group inline-flex items-center gap-1.5 text-sm font-medium text-slate-900 transition-colors duration-200 hover:text-slate-700"
+            >
+              View all posts →
+            </Link>
+          </p>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+}
+
+// ---------------------------------------------------------------------------
 // Page
 // ---------------------------------------------------------------------------
 const businessJsonLd = {
@@ -490,7 +565,7 @@ const businessJsonLd = {
   "@type": "ProfessionalService",
   "name": "WorkCrew Ltd",
   "description":
-    "AI automation, professional websites, custom web apps, and AI training for small businesses. We help SMBs save time and grow with intelligent automation — delivered in 7-14 days.",
+    "AI automation, professional websites, custom web apps, and AI training for small businesses. We build the digital systems that run your business.",
   "url": "https://workcrew.io",
   "email": "hello@workcrew.io",
   "telephone": "+447469347654",
@@ -498,7 +573,6 @@ const businessJsonLd = {
     "@type": "PostalAddress",
     "addressCountry": "GB",
   },
-  "priceRange": "£500 - £3,500",
   "areaServed": "Worldwide",
   "serviceType": ["AI Automation", "Website Development", "Web App Development", "AI Training"],
   "founder": {
@@ -520,7 +594,7 @@ const homepageFAQs: FAQItem[] = [
   {
     question: "How much does AI automation cost for a small business in the UK?",
     answer:
-      "Our packages start from £500 for a single automation workflow, with monthly retainers from £50. Most small businesses see a return on investment within the first month through time savings alone. We offer a free AI readiness audit so you can see the potential impact before spending anything.",
+      "Every project is scoped individually based on your needs and complexity. We start with a free audit to understand your business, then provide a detailed proposal with a fixed price — no hidden costs. Book a free consultation to get a tailored quote.",
   },
   {
     question: "Do I need technical skills to use AI automation?",
@@ -530,7 +604,7 @@ const homepageFAQs: FAQItem[] = [
   {
     question: "How long does it take to set up AI automation?",
     answer:
-      "Most of our automation systems are delivered within 14 days, from audit to going live. We start with a free audit that maps your business processes and identifies the highest-impact opportunities.",
+      "Timelines depend on the scope and complexity of your project. We start with a free audit that maps your business processes and identifies the highest-impact opportunities. You'll receive a clear timeline in your custom proposal.",
   },
   {
     question: "Is AI automation safe and reliable for my business?",
@@ -554,7 +628,8 @@ export default function HomePage() {
       <CaseStudiesPreview />
       <ResultsGuarantee />
       <HowItWorks />
-      <section className="bg-slate-50 py-28">
+      <LatestBlogPosts />
+      <section className="bg-white py-28">
         <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
           <AnimatedSection>
             <FAQSection

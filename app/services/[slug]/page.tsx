@@ -56,7 +56,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const service = services.find((s) => s.slug === slug);
   if (!service) return {};
-  const pageDescription = service.metaDescription || `${service.pain}. Delivered in ${service.deliveryDays} for ${service.setupPrice}. Ideal for ${service.idealFor}.`;
+  const pageDescription = service.metaDescription || `${service.pain}. Tailored solutions for ${service.idealFor}. Book a free consultation.`;
   const pageUrl = `https://workcrew.io/services/${slug}`;
   return {
     title: service.name,
