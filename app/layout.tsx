@@ -59,21 +59,12 @@ export const metadata: Metadata = {
     title: "WorkCrew — AI Solutions for Small Businesses",
     description:
       "We build AI automation systems, professional websites, and deliver AI training for small businesses. From lead capture to content engines — built to last.",
-    images: [
-      {
-        url: "https://workcrew.io/og-image.png",
-        width: 1332,
-        height: 750,
-        alt: "WorkCrew — AI Automation for Small Businesses",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "WorkCrew — AI Solutions for Small Businesses",
     description:
       "AI automation, websites, and team training for small businesses. Built for results.",
-    images: ["https://workcrew.io/og-image.png"],
   },
   robots: {
     index: true,
