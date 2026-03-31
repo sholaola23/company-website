@@ -1,6 +1,6 @@
 # SEO Setup Guide — WorkCrew
 
-Complete guide for search engine submission, directory listings, and technical SEO for oladipupoconsulting.co.uk.
+Complete guide for search engine submission, directory listings, and technical SEO for workcrew.io.
 
 ---
 
@@ -16,14 +16,14 @@ Complete guide for search engine submission, directory listings, and technical S
 2. **Add Property:**
    - Click "Add property" (top-left dropdown)
    - Choose **"URL prefix"** method
-   - Enter: `https://oladipupoconsulting.co.uk`
+   - Enter: `https://workcrew.io`
    - Click "Continue"
 
 3. **Verify Ownership** (choose ONE method):
 
    **Option A — DNS TXT Record (Recommended for Cloudflare):**
    - Google will show you a TXT record value like `google-site-verification=XXXXXXXXXXXX`
-   - Go to Cloudflare dashboard > oladipupoconsulting.co.uk > DNS
+   - Go to Cloudflare dashboard > workcrew.io > DNS
    - Click "Add record"
    - Type: `TXT`
    - Name: `@`
@@ -54,12 +54,12 @@ Complete guide for search engine submission, directory listings, and technical S
 5. **Request Indexing for Key Pages:**
    - Go to the URL inspection tool (top search bar)
    - Enter each key URL one by one and click "Request Indexing":
-     - `https://oladipupoconsulting.co.uk/`
-     - `https://oladipupoconsulting.co.uk/services`
-     - `https://oladipupoconsulting.co.uk/case-studies`
-     - `https://oladipupoconsulting.co.uk/audit`
-     - `https://oladipupoconsulting.co.uk/blog`
-     - `https://oladipupoconsulting.co.uk/contact`
+     - `https://workcrew.io/`
+     - `https://workcrew.io/services`
+     - `https://workcrew.io/case-studies`
+     - `https://workcrew.io/audit`
+     - `https://workcrew.io/blog`
+     - `https://workcrew.io/contact`
 
 ---
 
@@ -75,12 +75,12 @@ Complete guide for search engine submission, directory listings, and technical S
 2. **Import from Google Search Console (Fastest):**
    - If GSC is already set up, click "Import from GSC"
    - Sign in with the same Google account
-   - Select oladipupoconsulting.co.uk
+   - Select workcrew.io
    - Click Import — verification is automatic
 
    **OR Manual Setup:**
    - Click "Add your site manually"
-   - Enter: `https://oladipupoconsulting.co.uk`
+   - Enter: `https://workcrew.io`
    - Verify via XML file upload or HTML meta tag
    - For meta tag, add to `app/layout.tsx`:
      ```ts
@@ -98,7 +98,7 @@ Complete guide for search engine submission, directory listings, and technical S
 3. **Submit Sitemap:**
    - Go to Sitemaps in the left menu
    - Click "Submit sitemap"
-   - Enter: `https://oladipupoconsulting.co.uk/sitemap.xml`
+   - Enter: `https://workcrew.io/sitemap.xml`
    - Click Submit
 
 4. **Enable IndexNow (optional but recommended):**
@@ -126,7 +126,7 @@ List your business on these directories for SEO citation building and direct tra
 
 **Business details to use everywhere:**
 - **Name:** WorkCrew Ltd
-- **Website:** https://oladipupoconsulting.co.uk
+- **Website:** https://workcrew.io
 - **Email:** hello@workcrew.io
 - **Phone:** +44 7469 347654
 - **Category:** IT Consulting / AI Automation / Business Consulting

@@ -1,6 +1,6 @@
 # LinkedIn Content Pack — Olushola Oladipupo
 **Period:** 18 March - 1 April 2026 (2 weeks)
-**Goal:** Drive free traffic to oladipupoconsulting.co.uk
+**Goal:** Drive free traffic to workcrew.io
 **Voice:** Personal brand. Conversational. Real. No corporate fluff.
 
 ---
@@ -57,7 +57,7 @@ If you run a small business and you're curious what AI could do for you — the 
 
 Takes 10 seconds. No sales call required.
 
-Have a look: oladipupoconsulting.co.uk
+Have a look: workcrew.io
 
 I'd love to hear what you think.
 
@@ -106,7 +106,7 @@ If you're a business owner spending hours on admin that a system could handle �
 
 For free.
 
-Drop me a message or visit oladipupoconsulting.co.uk/audit
+Drop me a message or visit workcrew.io/audit
 
 **Hashtags:** #SmallBusinessUK #AIAutomation #CaseStudy #Bakery #Productivity
 **Image:** Yes — a clean graphic showing "Before vs After" stats. Left side: "8 hrs/week on admin, manual WhatsApp orders, spreadsheet chaos." Right side: "9 automated workflows, orders on autopilot, owner back in the kitchen." Keep it simple, use brand colours.
@@ -152,7 +152,7 @@ Just a report that shows you what's possible.
 
 I'm offering this to the first 20 businesses who request one.
 
-oladipupoconsulting.co.uk/audit
+workcrew.io/audit
 
 **Hashtags:** #FreeAudit #AIForSmallBusiness #SmallBusinessUK #Automation
 **Image:** Yes — a mockup or snippet of what the audit report looks like. Even a blurred/redacted version of a real one. Shows credibility.
@@ -198,7 +198,7 @@ The boring stuff is where the money is.
 
 Want to know what "boring automation" would save you the most time?
 
-Free audit: oladipupoconsulting.co.uk/audit
+Free audit: workcrew.io/audit
 
 **Hashtags:** #Automation #SmallBusiness #HotTake #AIHype #Productivity
 **Image:** No image needed. Text-only posts with a strong hook often outperform image posts on LinkedIn. Let the copy do the work.
@@ -248,7 +248,7 @@ If I can run a business with AI agents alongside a full-time job — imagine wha
 
 Curious what agents could run for you?
 
-oladipupoconsulting.co.uk/audit
+workcrew.io/audit
 
 **Hashtags:** #AIAgents #SideHustle #Automation #BuildInPublic #SmallBusinessUK
 **Image:** Yes — a simple diagram or flowchart showing the agent fleet. Boxes with agent names and arrows showing how they connect. Doesn't need to be fancy — a clean whiteboard-style sketch works great.
@@ -294,7 +294,7 @@ Need a website that actually works for your business?
 
 Or want to see what AI could do for your operations?
 
-Start here: oladipupoconsulting.co.uk/audit
+Start here: workcrew.io/audit
 
 **Hashtags:** #WebDesign #SmallBusinessUK #CaseStudy #DigitalPresence #AI
 **Image:** Yes — a screenshot of the QuantumFM website on desktop and mobile. Side by side. Shows the quality of the work.
@@ -348,7 +348,7 @@ And it's the single biggest ROI improvement most small businesses can make.
 
 Want to know your current response time gaps?
 
-oladipupoconsulting.co.uk/audit
+workcrew.io/audit
 
 **Hashtags:** #LeadGeneration #SmallBusinessTips #ResponseTime #Automation #Sales
 **Image:** No image. Strong stat-driven posts perform well as text-only. The "9x" number is the visual hook.
@@ -393,7 +393,7 @@ It tells you exactly which tier makes sense for your business.
 
 No guesswork. No overselling.
 
-oladipupoconsulting.co.uk/audit
+workcrew.io/audit
 
 **Hashtags:** #Pricing #Transparency #SmallBusinessUK #AIAutomation #ROI
 **Image:** Yes — a clean pricing table graphic. Three columns (Starter / Growth / Scale) with the prices and key features. Professional but simple.
@@ -439,7 +439,7 @@ There's a difference.
 
 If that sounds like the kind of partner you want — start with a free audit.
 
-oladipupoconsulting.co.uk/audit
+workcrew.io/audit
 
 **Hashtags:** #BusinessEthics #SmallBusiness #AIConsulting #Transparency #Trust
 **Image:** No image. The "anti-sales" angle works best as raw text. Feels more authentic.
@@ -491,7 +491,7 @@ But early clients get something special:
 
 If you've been thinking about AI for your business but didn't know where to start —
 
-Start here: oladipupoconsulting.co.uk/audit
+Start here: workcrew.io/audit
 
 The future is coming whether you're ready or not.
 
@@ -546,7 +546,7 @@ Use these to engage on other people's posts about AI, automation, small business
 ## Notes
 
 - All posts are copy-paste ready. No placeholders.
-- Every post drives to oladipupoconsulting.co.uk or oladipupoconsulting.co.uk/audit
+- Every post drives to workcrew.io or workcrew.io/audit
 - Posts alternate between social proof (case studies), value (tips), and offers (audit CTA)
 - No emojis in posts — keeps it professional and avoids the "LinkedIn bro" aesthetic
 - Line breaks are intentional — LinkedIn truncates after ~3 lines, so the hook must stand alone

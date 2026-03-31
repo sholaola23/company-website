@@ -1,7 +1,7 @@
 # Meta (Facebook/Instagram) Ads Campaign Plan
 
 **WorkCrew Ltd**
-**Goal:** Drive small business owners to the free AI audit at https://oladipupoconsulting.co.uk/audit
+**Goal:** Drive small business owners to the free AI audit at https://workcrew.io/audit
 **Budget:** £50-£100
 **Created:** 2026-03-18
 
@@ -240,7 +240,7 @@ If the UK audience exhausts quickly (you will see frequency > 2.0), test:
 
 ## 4. Landing Page Optimisation Tips
 
-Your audit page at https://oladipupoconsulting.co.uk/audit already exists with an instant AI tool. Here are tweaks specifically for ad traffic:
+Your audit page at https://workcrew.io/audit already exists with an instant AI tool. Here are tweaks specifically for ad traffic:
 
 ### Must-Have Tweaks
 
@@ -256,17 +256,17 @@ Use these UTM parameters on every ad link to track performance in your analytics
 
 **Ad 1 (Problem-focused):**
 ```
-https://oladipupoconsulting.co.uk/audit?utm_source=meta&utm_medium=paid&utm_campaign=ai-audit-q1-2026&utm_content=problem-focused&utm_term=uk-smb
+https://workcrew.io/audit?utm_source=meta&utm_medium=paid&utm_campaign=ai-audit-q1-2026&utm_content=problem-focused&utm_term=uk-smb
 ```
 
 **Ad 2 (Result-focused):**
 ```
-https://oladipupoconsulting.co.uk/audit?utm_source=meta&utm_medium=paid&utm_campaign=ai-audit-q1-2026&utm_content=result-focused&utm_term=uk-smb
+https://workcrew.io/audit?utm_source=meta&utm_medium=paid&utm_campaign=ai-audit-q1-2026&utm_content=result-focused&utm_term=uk-smb
 ```
 
 **Ad 3 (Curiosity-driven):**
 ```
-https://oladipupoconsulting.co.uk/audit?utm_source=meta&utm_medium=paid&utm_campaign=ai-audit-q1-2026&utm_content=curiosity-driven&utm_term=uk-smb
+https://workcrew.io/audit?utm_source=meta&utm_medium=paid&utm_campaign=ai-audit-q1-2026&utm_content=curiosity-driven&utm_term=uk-smb
 ```
 
 ### If Using Instant Forms (Recommended)
@@ -275,7 +275,7 @@ Configure the Instant Form with these fields:
 - **Full Name** (pre-filled from Facebook)
 - **Email** (pre-filled from Facebook)
 - **Business Type** (dropdown: Salon/Barber, Restaurant/Cafe, Trades/Services, Retail, Health/Fitness, Other)
-- **Thank You Screen:** redirect to `https://oladipupoconsulting.co.uk/audit?utm_source=meta&utm_medium=paid&utm_campaign=ai-audit-q1-2026&utm_content=instant-form`
+- **Thank You Screen:** redirect to `https://workcrew.io/audit?utm_source=meta&utm_medium=paid&utm_campaign=ai-audit-q1-2026&utm_content=instant-form`
 
 ---
 
@@ -571,7 +571,7 @@ Follow these steps exactly. Total setup time: 30-45 minutes.
 2. Click **"Connect Data Sources"** (green button)
 3. Select **"Web"** > **"Meta Pixel"** > **"Connect"**
 4. Name: **"WorkCrew Pixel"**
-5. Enter your website URL: **oladipupoconsulting.co.uk**
+5. Enter your website URL: **workcrew.io**
 6. Choose **"Install code manually"**
 7. Copy the Pixel ID
 8. Follow the Next.js installation guide in Section 6a above

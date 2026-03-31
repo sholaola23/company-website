@@ -1,4 +1,4 @@
-# SEO Sprint Case Study: oladipupoconsulting.co.uk
+# SEO Sprint Case Study: workcrew.io
 
 **Date:** 21 March 2026
 **Duration:** ~1.5 hours

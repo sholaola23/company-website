@@ -2,20 +2,22 @@ import { NextRequest, NextResponse } from "next/server";
 import { VANITY_SLUGS } from "@/lib/client-config";
 
 /**
- * Middleware for app.oladipupoconsulting.co.uk subdomain routing.
+ * Middleware for app.workcrew.io subdomain routing.
+ * (Also supports legacy app.oladipupoconsulting.co.uk for backward compatibility)
  *
  * Rewrites:
- *   app.oladipupoconsulting.co.uk/emanuelbakery  →  /client/emanuel
- *   app.oladipupoconsulting.co.uk/emanuelbakery/… →  /client/emanuel/…
+ *   app.workcrew.io/emanuelbakery  →  /client/emanuel
+ *   app.workcrew.io/emanuelbakery/… →  /client/emanuel/…
  *
  * Also handles the API routes needed by the dashboard:
- *   app.oladipupoconsulting.co.uk/api/…  →  passes through normally
+ *   app.workcrew.io/api/…  →  passes through normally
  *
- * The main domain (oladipupoconsulting.co.uk) is unaffected.
+ * The main domain (workcrew.io) is unaffected.
  */
 export function middleware(req: NextRequest) {
   const host = req.headers.get("host") || "";
   const isAppSubdomain =
+    host.startsWith("app.workcrew.io") ||
     host.startsWith("app.oladipupoconsulting.co.uk") ||
     host.startsWith("app.oladipupoconsulting.com") ||
     host.startsWith("app.localhost");

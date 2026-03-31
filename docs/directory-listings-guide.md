@@ -5,7 +5,7 @@ Use this profile information when signing up to each directory. Keep the details
 ## Standard Business Information
 
 - **Business Name:** WorkCrew Ltd
-- **Website:** https://oladipupoconsulting.co.uk
+- **Website:** https://workcrew.io
 - **Email:** hello@workcrew.io
 - **Phone:** +44 7469 347654
 - **Location:** United Kingdom (service-area business — no physical storefront)
@@ -25,7 +25,7 @@ Every project starts with a free AI Readiness Audit, where we analyse your busin
 
 We offer three tiers to fit any budget: Starter (single automation, £500), Growth (multi-workflow system, £1,500), and Scale (full automation fleet with dashboard, £3,500). All tiers include monthly optimisation retainers.
 
-Visit oladipupoconsulting.co.uk to book your free audit.
+Visit workcrew.io to book your free audit.
 
 ## Directories to Register On
 
