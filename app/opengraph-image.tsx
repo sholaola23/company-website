@@ -99,10 +99,11 @@ export default function OGImage() {
             marginBottom: 28,
             letterSpacing: "-1.5px",
             maxWidth: 900,
+            display: "flex",
+            flexDirection: "column",
           }}
         >
-          AI Systems That Run
-          <br />
+          <span>AI Systems That Run</span>
           <span style={{ color: "#2563eb" }}>Your Business</span>
         </div>
 
