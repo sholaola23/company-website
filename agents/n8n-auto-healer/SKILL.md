@@ -60,7 +60,6 @@ curl -s -X POST "$N8N_API_BASE/workflows/ID/run" \
 ### Client: E'Manuel Bakery
 | WF | Name | ID | Expected Schedule |
 |----|------|----|-------------------|
-| WF02 | HSBC CSV Bank Match | NHBBHmLemmxWbQPV | Event-driven — fires when bank statement CSV is uploaded via dashboard. No alert unless inactive 14+ days. |
 | WF03 | SumUp Checkout Links | KtoalRNhFVKa9AVf | Every 30 min |
 | WF04 | Production Summary Alert | YfZPwpngWEg0uyYv | Thu 2pm |
 | WF05 | Delivery Route | xp6rs4YDco1n3oXg | Fri 2pm |
@@ -103,7 +102,9 @@ Call the n8n API to get recent executions (limit=50). For each monitored workflo
 
 ### Event-Driven Workflow Rules
 Some workflows are **event-driven** (triggered by external file uploads, webhooks, etc.) rather than running on a fixed schedule. These include:
-- **WF02 (HSBC CSV Bank Match)** — Polls Google Drive for new bank statement CSV uploads. Tunmise uploads ~once per week.
+- **Bank Upload (Dashboard Bank Upload)** — Event-driven webhook trigger from client dashboard.
+
+**NOTE:** WF02 (HSBC CSV Bank Match — NHBBHmLemmxWbQPV) was archived on 31 March 2026. Bank matching is now handled by Next.js (`lib/bank-match.ts`). Do NOT monitor or alert on WF02.
 
 For event-driven workflows:
 - Do NOT apply the 24h schedule_missed rule. These workflows legitimately go days without executing.

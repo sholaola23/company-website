@@ -57,16 +57,8 @@ export const CLIENTS: Record<string, ClientConfig> = {
         expectedScheduleHuman: "Every 30 minutes",
         icon: "ShoppingCart",
       },
-      {
-        id: "NHBBHmLemmxWbQPV",
-        name: "HSBC CSV Bank Match",
-        shortName: "Bank Match",
-        schedule: "Event-driven (weekly)",
-        businessName: "Bank payments matching to orders",
-        statusVerb: "Matching",
-        expectedScheduleHuman: "When you upload a bank statement",
-        icon: "Landmark",
-      },
+      // WF02 (HSBC CSV Bank Match — NHBBHmLemmxWbQPV) REMOVED 31 March 2026
+      // Bank matching ported to Next.js (lib/bank-match.ts). n8n workflow archived.
       {
         id: "KtoalRNhFVKa9AVf",
         name: "Production Summary",
