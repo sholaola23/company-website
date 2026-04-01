@@ -25,16 +25,20 @@ Read these shared reference files:
 - `../_shared/notion-ids.md` — database IDs
 
 ## Tool Routing (CRITICAL — follow exactly)
-⚠️ There are TWO Gmail MCPs. You MUST use the correct one:
-- **Gmail SEARCH/READ (Claude native):** `mcp__f6ee3950-bf48-46d7-90cc-d53c8546a0dc__gmail_search_messages` — this one can ONLY search, read, and create drafts. It CANNOT send.
-- **Gmail SEND (Zapier):** `mcp__8ccf50b7-aff2-4b81-8947-88c792cc6a68__gmail_send_email` — this is the ONLY tool that can SEND emails. Use this for sending the summary notification to Olushola.
-- **Gmail CREATE DRAFT (Zapier):** `mcp__8ccf50b7-aff2-4b81-8947-88c792cc6a68__gmail_create_draft` — use this for drafting outreach emails to leads.
-- **Notion:** `mcp__7ce036d0-a091-4c5b-8498-e155ede16e1a__notion-*`
+Read `../_shared/mcp-tool-routing.md` for full environment mapping (local UUID names vs cloud short names).
 
-NEVER use the Claude native Gmail MCP (`f6ee3950`) for sending or drafting outreach — it does NOT have send capability. Always use the Zapier MCP (`8ccf50b7`) for all email creation and sending.
+⚠️ There are TWO Gmail tools. You MUST use the correct one:
+- **Gmail SEARCH/READ:** `gmail_search_messages` — can ONLY search and read. It CANNOT send.
+- **Gmail SEND (Zapier):** `gmail_send_email` — the ONLY tool that can SEND emails. Use this for sending the summary notification to Olushola AND for sending outreach emails.
+- **Gmail CREATE DRAFT (Zapier):** `gmail_create_draft` — use this for drafting outreach emails to leads.
+- **Notion:** use `notion-fetch`, `notion-search`, `notion-create-pages`, `notion-update-page` etc. directly — do NOT use ToolSearch to find these, call them directly by name.
+
+⚠️ IMPORTANT — Cloud Environment: These tools are pre-loaded. Do NOT use ToolSearch to find them. Just call `gmail_send_email`, `notion-fetch`, etc. directly.
+
+NEVER use the native Gmail search tool for sending — it does NOT have send capability. Always use `gmail_send_email` (Zapier) for all outbound emails.
 
 ## Critical Rules
-- You SEND emails directly to leads via `mcp__8ccf50b7-aff2-4b81-8947-88c792cc6a68__gmail_send_email`.
+- You SEND emails directly to leads via `gmail_send_email`.
 - The SUMMARY email to Olushola MUST also be SENT (not drafted) — see Step 6.
 - **ALWAYS set `from` to `hello@workcrew.io`** and `from_name` to `Olushola from WorkCrew` when creating emails to leads. Never send from the personal Gmail address.
 - Never invent facts about a business.
@@ -78,7 +82,7 @@ Only use long-form templates from `templates/email-templates.md` if Lead Score >
 7. Run self-quality check — if below 6, SKIP this lead
 7b. **Complete Decision Log entry NOW (mandatory, inline):** Before moving to the next lead, write the Decision Log entry for this email: Template chosen + WHY (including why alternatives were rejected), framework shape, personalisation points used + WHY, research source, subject line, confidence score with justification. Do NOT defer this to Step 5 — write it immediately after the quality check while the reasoning is fresh. A missing or incomplete Decision Log entry for any sent email = automatic 2-point QA deduction.
 8. Check Gmail for existing sent emails to this address (avoid double-sending)
-9. **SEND the email** via `mcp__8ccf50b7-aff2-4b81-8947-88c792cc6a68__gmail_send_email` with `from: hello@workcrew.io`
+9. **SEND the email** via `gmail_send_email` with `from: hello@workcrew.io`
 10. **Update Notion immediately after sending:**
     - Status → "sent"
     - Sent Date → today (use `date:Sent Date:start` = today's ISO date)
@@ -127,8 +131,8 @@ Create page in Sales Agent Reports. **Page properties MUST be populated BEFORE w
 
 ### Step 6: Email Olushola a Daily Summary (MUST BE SENT — NOT DRAFTED)
 ⚠️ CRITICAL: This summary MUST be SENT to Olushola, NOT saved as a draft.
-- Use `mcp__8ccf50b7-aff2-4b81-8947-88c792cc6a68__gmail_send_email` to SEND this email.
-- If that tool is unavailable, use `mcp__f6ee3950-bf48-46d7-90cc-d53c8546a0dc__gmail_create_draft` AND THEN use `mcp__f6ee3950-bf48-46d7-90cc-d53c8546a0dc__gmail_send_draft` to send the draft.
+- Use `gmail_send_email` to SEND this email.
+- If that tool is unavailable, use `gmail_create_draft` AND THEN send the draft via Zapier.
 - Do NOT leave this as a draft. Olushola needs to be notified that outreach emails are waiting for review.
 
 SEND to olusholaoladipupo1@gmail.com:
