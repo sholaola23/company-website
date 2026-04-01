@@ -1404,9 +1404,9 @@ export default function ClientDashboard() {
                                   <div className="p-3.5 space-y-2.5">
                                     {/* Name + status */}
                                     <div className="flex items-center justify-between gap-2">
-                                      <h3 className="text-white text-sm font-semibold truncate">
+                                      <p className="text-white text-sm font-semibold truncate">
                                         {order.fullName}
-                                      </h3>
+                                      </p>
                                       <span
                                         className={`shrink-0 text-xs px-2 py-0.5 rounded-full font-medium ${statusBadgeBg}`}
                                       >
