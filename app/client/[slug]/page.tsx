@@ -295,9 +295,9 @@ function LoginForm({ slug }: { slug: string }) {
         </div>
 
         <div className="text-center mb-8">
-          <h1 className="text-xl font-semibold text-white mb-1">
+          <p className="text-xl font-semibold text-white mb-1">
             E&apos;Manuel Foods and Bakery
-          </h1>
+          </p>
           <p className="text-zinc-500 text-sm leading-relaxed">
             Enter your password to see how things are going.
           </p>
@@ -645,7 +645,7 @@ function RefundModal({ order, orderIndex, slug, onClose, onSuccess }: RefundModa
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2.5">
               <RotateCcw className="w-4 h-4 text-purple-400" />
-              <h2 className="text-sm font-semibold text-white">Process Refund</h2>
+              <p className="text-sm font-semibold text-white">Process Refund</p>
             </div>
             <button
               onClick={onClose}
@@ -982,9 +982,9 @@ export default function ClientDashboard() {
               <p className="text-zinc-500 text-sm">
                 {greeting}, {statusData.client.contactName}
               </p>
-              <h1 className="text-lg font-semibold mt-0.5 text-white leading-tight">
+              <p className="text-lg font-semibold mt-0.5 text-white leading-tight">
                 {statusData.client.name}
-              </h1>
+              </p>
             </div>
           </div>
 
@@ -1072,9 +1072,9 @@ export default function ClientDashboard() {
           {sheetsData?.orders ? (
             <Section>
               <div className="bg-gradient-to-br from-zinc-900 to-zinc-900/60 rounded-2xl border border-zinc-800/60 p-5">
-                <h2 className="text-xs font-semibold text-zinc-500 uppercase tracking-widest mb-4">
+                <p className="text-xs font-semibold text-zinc-500 uppercase tracking-widest mb-4">
                   This Week
-                </h2>
+                </p>
                 <div className="grid grid-cols-2 gap-5">
                   <AnimatedStat
                     value={sheetsData.orders.totalOrders}
@@ -1125,9 +1125,9 @@ export default function ClientDashboard() {
                 <div className="p-5">
                   <div className="flex items-center gap-2 mb-4">
                     <Landmark className="w-4 h-4 text-emerald-400/80" />
-                    <h2 className="text-xs font-semibold text-zinc-500 uppercase tracking-widest">
+                    <p className="text-xs font-semibold text-zinc-500 uppercase tracking-widest">
                       Payments
-                    </h2>
+                    </p>
                   </div>
 
                   {/* Total paid — large animated figure */}
@@ -1197,9 +1197,9 @@ export default function ClientDashboard() {
                 <div className="p-5">
                   <div className="flex items-center gap-2 mb-4">
                     <ChefHat className="w-4 h-4 text-amber-400/80" />
-                    <h2 className="text-xs font-semibold text-zinc-500 uppercase tracking-widest">
+                    <p className="text-xs font-semibold text-zinc-500 uppercase tracking-widest">
                       What to Bake
-                    </h2>
+                    </p>
                   </div>
                   <div className="space-y-2.5">
                     {sheetsData.production.map((item, i) => (
@@ -1240,9 +1240,9 @@ export default function ClientDashboard() {
                   <div className="p-5">
                     <div className="flex items-center gap-2 mb-4">
                       <CreditCard className="w-4 h-4 text-amber-400/80" />
-                      <h2 className="text-xs font-semibold text-amber-500/80 uppercase tracking-widest">
+                      <p className="text-xs font-semibold text-amber-500/80 uppercase tracking-widest">
                         Unpaid Orders
-                      </h2>
+                      </p>
                     </div>
                     <div className="space-y-3">
                       {sheetsData.orders.unpaidCustomers.map((c, i) => (
@@ -1507,9 +1507,9 @@ export default function ClientDashboard() {
                 <div className="p-5">
                   <div className="flex items-center gap-2 mb-4">
                     <MapPin className="w-4 h-4 text-blue-400/70" />
-                    <h2 className="text-xs font-semibold text-zinc-500 uppercase tracking-widest">
+                    <p className="text-xs font-semibold text-zinc-500 uppercase tracking-widest">
                       Deliveries
-                    </h2>
+                    </p>
                   </div>
                   <div className="space-y-2.5">
                     {sheetsData.deliveries.byTown.map((t) => (
@@ -1541,9 +1541,9 @@ export default function ClientDashboard() {
               <div className="bg-zinc-900/60 rounded-2xl border border-zinc-800/60 p-5">
                 <div className="flex items-center gap-2 mb-2">
                   <MapPin className="w-4 h-4 text-zinc-600" />
-                  <h2 className="text-xs font-semibold text-zinc-500 uppercase tracking-widest">
+                  <p className="text-xs font-semibold text-zinc-500 uppercase tracking-widest">
                     Deliveries
-                  </h2>
+                  </p>
                 </div>
                 <p className="text-zinc-600 text-sm pl-6">
                   No deliveries scheduled yet this week
