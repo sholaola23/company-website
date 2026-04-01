@@ -12,6 +12,7 @@ import {
   Truck,
   CreditCard,
   Sparkles,
+  Link,
   CheckCircle,
   AlertTriangle,
   XCircle,
@@ -52,6 +53,7 @@ const ICON_MAP: Record<string, typeof ShoppingCart> = {
   ChefHat,
   CreditCard,
   Sparkles,
+  Link,
 };
 
 // ─── Types ───────────────────────────────────────────────────

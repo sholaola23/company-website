@@ -382,7 +382,8 @@ export async function getOrdersSummary(
 }
 
 export async function getProductionSummary(
-  sheetsId: string
+  sheetsId: string,
+  allTime = false
 ): Promise<ProductionItem[] | null> {
   try {
     const doc = await getDoc(sheetsId);
@@ -392,8 +393,19 @@ export async function getProductionSummary(
     const prodSheet = doc.sheetsByTitle["Production Summary"];
     if (prodSheet) {
       const rows = await prodSheet.getRows();
+      // Filter by week code if the column exists and we're not in all-time mode
+      const weekCode = getCurrentWeekCode();
+      const hasWeekCode = prodSheet.headerValues.some(
+        (h) => h.toLowerCase().replace(/\s+/g, "") === "weekcode"
+      );
+      const filtered = allTime
+        ? rows
+        : hasWeekCode
+          ? rows.filter((row) => row.get("Week Code") === weekCode)
+          : rows;
+
       const items: ProductionItem[] = [];
-      for (const row of rows) {
+      for (const row of filtered) {
         const product = row.get("Product") || row.get("Item");
         const qty = parseInt(row.get("Quantity") || row.get("Total") || "0");
         if (product && qty > 0) {
@@ -451,12 +463,60 @@ export async function getProductionSummary(
 }
 
 export async function getDeliverySummary(
-  sheetsId: string
+  sheetsId: string,
+  allTime = false
 ): Promise<DeliverySummary | null> {
   try {
     const doc = await getDoc(sheetsId);
     if (!doc) return null;
 
+    // When filtering by week, derive deliveries from the Orders tab (which has
+    // Week Code). The Delivery Manifest sheet has no date/week column, so it
+    // always shows stale data from the last Friday run.
+    if (!allTime) {
+      const ordersSheet = doc.sheetsByTitle["Orders"];
+      if (ordersSheet) {
+        const rows = await ordersSheet.getRows();
+        const weekCode = getCurrentWeekCode();
+        const townCounts: Record<string, number> = {};
+        let stops = 0;
+
+        for (const row of rows) {
+          const wc = row.get("Week Code");
+          const status = (row.get("Order Status") || "").toLowerCase();
+          if (status === "cancelled") continue;
+
+          let isThisWeek = wc === weekCode;
+          if (!isThisWeek && !wc) {
+            const submittedAt =
+              row.get("Submitted at") ||
+              row.get("Submitted At") ||
+              row.get("Timestamp");
+            if (submittedAt) {
+              const d = new Date(submittedAt);
+              if (!isNaN(d.getTime())) {
+                isThisWeek = getWeekCodeForDate(d) === weekCode;
+              }
+            }
+          }
+          if (!isThisWeek) continue;
+
+          const town = row.get("Town") || row.get("Area") || "Unknown";
+          if (town && town !== "Unknown") {
+            townCounts[town] = (townCounts[town] || 0) + 1;
+            stops++;
+          }
+        }
+
+        const byTown = Object.entries(townCounts)
+          .map(([town, count]) => ({ town, count }))
+          .sort((a, b) => b.count - a.count);
+
+        return { totalStops: stops, byTown };
+      }
+    }
+
+    // All-time view: use the Delivery Manifest sheet directly
     const sheet = doc.sheetsByTitle["Delivery Manifest"];
     if (!sheet) return null;
 
@@ -530,8 +590,8 @@ export async function getAllSheetsData(
   // Fetch all three in parallel for speed
   const [orders, production, deliveries] = await Promise.all([
     getOrdersSummary(sheetsId, allTime),
-    getProductionSummary(sheetsId),
-    getDeliverySummary(sheetsId),
+    getProductionSummary(sheetsId, allTime),
+    getDeliverySummary(sheetsId, allTime),
   ]);
 
   return { orders, production, deliveries };
