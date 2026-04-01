@@ -9,7 +9,7 @@ MCP tools have **different names** depending on where the agent runs:
 | **Local** (Claude Code desktop) | Deferred — findable via ToolSearch | UUID-prefixed names (see below) |
 | **Cloud** (claude.ai/code scheduled tasks) | Pre-loaded — NOT findable via ToolSearch | Short names, no UUID prefix (see below) |
 
-**Rule for cloud agents:** Do NOT use ToolSearch to find Notion or Gmail tools — they are already loaded. Call them directly by their short names listed in the Cloud section below.
+**Rule for cloud agents:** Do NOT use ToolSearch to find Notion or Gmail tools — ToolSearch only finds deferred (unloaded) tools and will always return "No matching deferred tools found" for these connectors. The tools are already loaded in the session. **Call them directly by their short names** listed in the Cloud section below — just use the tool name as if it were any other tool.
 
 ---
 
