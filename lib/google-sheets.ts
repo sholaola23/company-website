@@ -501,7 +501,11 @@ export async function getDeliverySummary(
           }
           if (!isThisWeek) continue;
 
-          const town = row.get("Town") || row.get("Area") || "Unknown";
+          const town =
+            row.get("Town / Area") ||
+            row.get("Town") ||
+            row.get("Area") ||
+            "Unknown";
           if (town && town !== "Unknown") {
             townCounts[town] = (townCounts[town] || 0) + 1;
             stops++;
