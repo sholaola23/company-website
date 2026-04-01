@@ -51,10 +51,10 @@ export const CLIENTS: Record<string, ClientConfig> = {
         id: "fLLDdF34MDxYGlEf",
         name: "SumUp Transaction Polling",
         shortName: "Transactions",
-        schedule: "Every 15 min (Thu–Sat)",
+        schedule: "Every 15 min (Wed–Sat)",
         businessName: "SumUp payments matched to orders",
         statusVerb: "Matched",
-        expectedScheduleHuman: "Thu–Sat, every 15 min",
+        expectedScheduleHuman: "Wed–Sat, every 15 min",
         icon: "CreditCard",
       },
       // WF02 (HSBC CSV Bank Match — NHBBHmLemmxWbQPV) REMOVED 31 March 2026
