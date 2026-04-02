@@ -86,7 +86,7 @@ export default function AboutPage() {
           We are an AI-native agency — we use AI on the back end to deliver
           results that used to require a full team. The businesses we work with
           don&apos;t need to understand the technology. They just check a
-          dashboard, save 8+ hours a week, and watch their business run itself.
+          dashboard, save hours of admin every week, and watch their business run itself.
         </p>
       </div>
 

@@ -261,7 +261,7 @@ export default function BlogPost() {
                       </Link>
                     </td>
                     <td className="px-4 py-3">Food &amp; Bakery</td>
-                    <td className="px-4 py-3 text-emerald-600">8 hrs/week saved, 180+ orders automated, &pound;20k+ annual saving</td>
+                    <td className="px-4 py-3 text-emerald-600">50+ min/day saved, 180+ orders automated, &pound;20k+ annual saving</td>
                   </tr>
                   <tr className="border-t border-slate-200">
                     <td className="px-4 py-3">

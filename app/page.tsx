@@ -4,7 +4,7 @@ import {
   FileSearch,
   Globe,
   GraduationCap,
-  ShieldCheck,
+  Star,
   TrendingUp,
   Users,
   Zap,
@@ -16,7 +16,6 @@ import GradientBlob from "@/components/shared/GradientBlob";
 import HeroImage from "@/components/shared/HeroImage";
 import PersonalisedCTA from "@/components/shared/PersonalisedCTA";
 import RotatingHeadline from "@/components/home/RotatingHeadline";
-import NewsletterSignup from "@/components/shared/NewsletterSignup";
 import JsonLd from "@/components/shared/JsonLd";
 import FAQSection from "@/components/shared/FAQSection";
 import type { FAQItem } from "@/components/shared/FAQSection";
@@ -55,7 +54,7 @@ function Hero() {
               <RotatingHeadline />
 
               <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl lg:mx-0">
-                WorkCrew builds the digital systems that run your business — from AI automation to apps and websites.
+                AI automation, websites, and custom apps — built fast, built to last. 90-day results guarantee.
               </p>
 
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
@@ -71,7 +70,7 @@ function Hero() {
                   />
                 </Link>
                 <Link
-                  href="https://cal.com/sholastechnotes/free-ai-strategy-call"
+                  href="https://cal.com/workcrew/free-ai-strategy-call"
                   className="inline-flex items-center gap-2 rounded-full border-2 border-slate-200 bg-white px-7 py-3.5 text-base font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:border-slate-900 hover:bg-slate-900 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
                 >
                   Schedule a Call
@@ -94,9 +93,9 @@ function Hero() {
 // Social proof bar — impact numbers with amber accents
 // ---------------------------------------------------------------------------
 const stats = [
-  { numeric: 8, suffix: "+", label: "Hours Saved Weekly", sublabel: "per client" },
-  { numeric: 180, suffix: "", label: "Orders Automated", sublabel: "weekly at E'Manuel" },
-  { numeric: 9, suffix: "", label: "Workflows Deployed", sublabel: "for one bakery" },
+  { numeric: 50, suffix: "+", label: "Minutes Saved Daily", sublabel: "at E'Manuel Bakery" },
+  { numeric: 9, suffix: "", label: "Workflows Deployed", sublabel: "and counting" },
+  { numeric: 2, suffix: "", label: "Projects Delivered", sublabel: "and growing" },
   { numeric: 90, suffix: "", label: "Day Guarantee", sublabel: "results or refund" },
 ];
 
@@ -135,7 +134,7 @@ const categories = [
     href: "/services/lead-intake",
     description:
       "Automate repetitive tasks. Lead capture, email responses, appointment booking, follow-ups — all running on autopilot.",
-    result: "Save 8+ hours every week",
+    result: "Save hours of admin every week",
   },
   {
     icon: Globe,
@@ -166,10 +165,10 @@ function WhatWeBuild() {
               id="services-heading"
               className="heading-section text-3xl sm:text-4xl lg:text-[56px]"
             >
-              Real Tools. Real Results.
+              Tools That Deliver.
             </h2>
             <p className="max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
-              We help small businesses save time, win more customers, and look
+              We help businesses save time, win more customers, and look
               professional — delivered fast and built to last.
             </p>
           </div>
@@ -226,22 +225,6 @@ function WhatWeBuild() {
           })}
         </div>
 
-        <AnimatedSection delay={0.45}>
-          <p className="mt-10 text-center">
-            <Link
-              href="/services"
-              className="group inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 transition-colors duration-200 hover:text-blue-700"
-            >
-              View all 12 solutions
-              <ArrowRight
-                size={13}
-                className="transition-transform duration-200 group-hover:translate-x-0.5"
-                aria-hidden="true"
-              />
-            </Link>
-          </p>
-        </AnimatedSection>
-
       </div>
     </section>
   );
@@ -253,32 +236,28 @@ function WhatWeBuild() {
 function CaseStudiesPreview() {
   return (
     <section
-      className="bg-white py-28"
+      className="bg-white py-24"
       aria-labelledby="case-studies-heading"
     >
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
         <AnimatedSection>
-          <div className="flex flex-col items-center gap-4 text-center">
+          <div className="flex flex-col items-center gap-3 text-center mb-12">
             <span className="eyebrow">Proof It Works</span>
             <h2
               id="case-studies-heading"
-              className="heading-section text-3xl sm:text-4xl lg:text-[56px]"
+              className="heading-section text-2xl sm:text-3xl"
             >
-              Real Results for Real Businesses
+              Numbers That Speak for Themselves
             </h2>
-            <p className="max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
-              Not case studies written for marketing — actual numbers from live
-              clients.
-            </p>
           </div>
         </AnimatedSection>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
-          {caseStudies.map((study, index) => (
-            <AnimatedSection key={study.slug} delay={0.15 * (index + 1)}>
+        <div className="grid gap-5 md:grid-cols-2">
+          {caseStudies.slice(0, 2).map((study, index) => (
+            <AnimatedSection key={study.slug} delay={0.1 * (index + 1)}>
               <Link
                 href={`/case-studies/${study.slug}`}
-                className="group flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:border-blue-200 hover:shadow-lg card-hover"
+                className="group flex h-full flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-blue-200 hover:shadow-lg card-hover"
               >
                 <div>
                   {/* Industry tag */}
@@ -287,28 +266,23 @@ function CaseStudiesPreview() {
                   </span>
 
                   {/* Hero stat */}
-                  <div className="mt-6">
-                    <p className="text-5xl font-bold tracking-tight text-slate-900 lg:text-6xl">
+                  <div className="mt-4">
+                    <p className="text-3xl font-bold tracking-tight text-slate-900 lg:text-4xl">
                       {study.heroStat}
                     </p>
-                    <p className="mt-1.5 text-base font-semibold text-blue-600">
+                    <p className="mt-1 text-sm font-semibold text-blue-600">
                       {study.heroLabel}
                     </p>
                   </div>
 
-                  {/* Business name + location */}
-                  <h3 className="mt-5 text-xl font-semibold text-slate-900">
+                  {/* Business name */}
+                  <h3 className="mt-4 text-base font-semibold text-slate-900">
                     {study.name}
                   </h3>
-                  <p className="mt-1 text-sm text-slate-900">{study.location}</p>
-
-                  {/* Summary */}
-                  <p className="mt-4 text-sm leading-relaxed text-slate-600 line-clamp-2">
-                    {study.solution}
-                  </p>
+                  <p className="mt-0.5 text-xs text-slate-500">{study.location}</p>
                 </div>
 
-                <div className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 transition-colors duration-200 group-hover:text-blue-700">
+                <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 transition-colors duration-200 group-hover:text-blue-700">
                   Read case study
                   <ArrowRight
                     size={14}
@@ -321,57 +295,6 @@ function CaseStudiesPreview() {
           ))}
         </div>
 
-        <AnimatedSection delay={0.4}>
-          <p className="mt-10 text-center">
-            <Link
-              href="/case-studies"
-              className="group inline-flex items-center gap-1.5 text-sm font-medium text-slate-900 transition-colors duration-200 hover:text-slate-700"
-            >
-              View all case studies
-              <ArrowRight
-                size={14}
-                className="transition-transform duration-200 group-hover:translate-x-0.5"
-                aria-hidden="true"
-              />
-            </Link>
-          </p>
-        </AnimatedSection>
-      </div>
-    </section>
-  );
-}
-
-// ---------------------------------------------------------------------------
-// 90-Day Results Guarantee
-// ---------------------------------------------------------------------------
-function ResultsGuarantee() {
-  return (
-    <section className="bg-slate-50 py-28" aria-labelledby="guarantee-heading">
-      <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
-        <AnimatedSection>
-          <div className="mx-auto max-w-2xl rounded-2xl border-2 border-emerald-200 bg-white p-8 sm:p-10 text-center shadow-sm">
-            <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-50 border border-emerald-200">
-              <ShieldCheck
-                size={28}
-                className="text-emerald-600"
-                aria-hidden="true"
-              />
-            </div>
-            <h2
-              id="guarantee-heading"
-              className="heading-section text-2xl sm:text-3xl"
-            >
-              90-Day Results Guarantee
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-slate-600">
-              If you don&apos;t save at least 5 hours per week within 90 days,
-              we&apos;ll refund your setup fee. No questions asked.
-            </p>
-            <p className="mt-3 text-sm font-semibold text-emerald-600">
-              Every project we deliver is backed by this guarantee.
-            </p>
-          </div>
-        </AnimatedSection>
       </div>
     </section>
   );
@@ -479,85 +402,6 @@ function HowItWorks() {
 }
 
 // ---------------------------------------------------------------------------
-// Latest Blog Posts
-// ---------------------------------------------------------------------------
-const FEATURED_POSTS = [
-  {
-    slug: "5-ways-ai-saves-time",
-    title: "5 Ways AI Can Save Your Small Business 10+ Hours a Week",
-    excerpt:
-      "Discover the five AI automations that save small businesses the most time — from appointment booking to social media management.",
-    date: "2026-03-15",
-  },
-  {
-    slug: "local-business-website-2026",
-    title: "Why Every Local Business Needs a Website in 2026",
-    excerpt:
-      "Your website isn't just a brochure — it's your hardest-working employee. Here's why it matters more than ever.",
-    date: "2026-03-18",
-  },
-];
-
-function LatestBlogPosts() {
-  return (
-    <section className="bg-slate-50 py-28" aria-labelledby="blog-heading">
-      <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
-        <AnimatedSection>
-          <div className="flex flex-col items-center gap-4 text-center">
-            <span className="eyebrow">From the Blog</span>
-            <h2
-              id="blog-heading"
-              className="heading-section text-3xl sm:text-4xl lg:text-[56px]"
-            >
-              Latest Insights
-            </h2>
-          </div>
-        </AnimatedSection>
-
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {FEATURED_POSTS.map((post, index) => (
-            <AnimatedSection key={post.slug} delay={0.1 * (index + 1)}>
-              <Link
-                href={`/blog/${post.slug}`}
-                className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:border-blue-200 hover:shadow-lg"
-              >
-                <p className="text-xs text-slate-400">
-                  {new Date(post.date).toLocaleDateString("en-GB", {
-                    day: "numeric",
-                    month: "long",
-                    year: "numeric",
-                  })}
-                </p>
-                <h3 className="mt-3 text-lg font-semibold text-slate-900 group-hover:text-blue-600 transition-colors duration-200">
-                  {post.title}
-                </h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600">
-                  {post.excerpt}
-                </p>
-                <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-600 transition-colors duration-200 group-hover:text-blue-700">
-                  Read more →
-                </span>
-              </Link>
-            </AnimatedSection>
-          ))}
-        </div>
-
-        <AnimatedSection delay={0.3}>
-          <p className="mt-10 text-center">
-            <Link
-              href="/blog"
-              className="group inline-flex items-center gap-1.5 text-sm font-medium text-slate-900 transition-colors duration-200 hover:text-slate-700"
-            >
-              View all posts →
-            </Link>
-          </p>
-        </AnimatedSection>
-      </div>
-    </section>
-  );
-}
-
-// ---------------------------------------------------------------------------
 // Page
 // ---------------------------------------------------------------------------
 const businessJsonLd = {
@@ -565,7 +409,7 @@ const businessJsonLd = {
   "@type": "ProfessionalService",
   "name": "WorkCrew Ltd",
   "description":
-    "AI automation, professional websites, custom web apps, and AI training for small businesses. We build the digital systems that run your business.",
+    "AI automation, professional websites, custom web apps, and AI training for businesses. We build the digital systems that run your business.",
   "url": "https://workcrew.io",
   "email": "hello@workcrew.io",
   "telephone": "+447469347654",
@@ -587,12 +431,12 @@ const businessJsonLd = {
 
 const homepageFAQs: FAQItem[] = [
   {
-    question: "What is AI automation for small businesses?",
+    question: "What is AI automation for businesses?",
     answer:
       "AI automation uses artificial intelligence to handle repetitive business tasks — things like responding to enquiries, booking appointments, sending follow-ups, and managing orders. Instead of hiring extra staff, you deploy AI systems that run 24/7 and free your team to focus on higher-value work.",
   },
   {
-    question: "How much does AI automation cost for a small business in the UK?",
+    question: "How much does AI automation cost for a business in the UK?",
     answer:
       "Every project is scoped individually based on your needs and complexity. We start with a free audit to understand your business, then provide a detailed proposal with a fixed price — no hidden costs. Book a free consultation to get a tailored quote.",
   },
@@ -618,6 +462,79 @@ const homepageFAQs: FAQItem[] = [
   },
 ];
 
+// ---------------------------------------------------------------------------
+// Client testimonial — E'Manuel Bakery (Google review)
+// ---------------------------------------------------------------------------
+function TestimonialSection() {
+  return (
+    <section className="bg-slate-50 py-24" aria-labelledby="testimonial-heading">
+      <div className="mx-auto max-w-3xl px-6 sm:px-8 lg:px-12">
+        <AnimatedSection>
+          <div className="flex flex-col items-center text-center gap-4 mb-12">
+            <span className="eyebrow">What Our Clients Say</span>
+            <h2
+              id="testimonial-heading"
+              className="heading-section text-3xl sm:text-4xl"
+            >
+              Hear From Our Clients
+            </h2>
+          </div>
+
+          {/* Testimonial card */}
+          <div className="rounded-2xl border border-slate-200 bg-white p-10 shadow-sm text-center">
+            {/* Stars */}
+            <div className="flex justify-center gap-1 mb-6" aria-label="5 out of 5 stars">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  size={18}
+                  className="fill-amber-400 text-amber-400"
+                  aria-hidden="true"
+                />
+              ))}
+            </div>
+
+            {/* Quote */}
+            <blockquote className="text-lg font-medium leading-relaxed text-slate-800 sm:text-xl">
+              &ldquo;They moved us from manual order tracking to a fully automated
+              system — orders come in digitally, responses to customers are instant,
+              and payments match our statements automatically. It&rsquo;s saving us
+              over 50 minutes every day. Highly recommended!&rdquo;
+            </blockquote>
+
+            {/* Divider */}
+            <div className="my-8 h-px w-16 bg-slate-200 mx-auto" aria-hidden="true" />
+
+            {/* Attribution */}
+            <div className="flex flex-col items-center gap-1">
+              {/* Avatar initials */}
+              <div
+                className="h-12 w-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-sm mb-2"
+                aria-hidden="true"
+              >
+                TA
+              </div>
+              <p className="font-semibold text-slate-900">Tunmise Ajao</p>
+              <p className="text-sm text-slate-500">Founder, E&rsquo;Manuel Bakery — Kettering</p>
+
+              {/* Google badge */}
+              <div className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-500">
+                <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                  <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                  <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                  <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                </svg>
+                Verified Google Review
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+}
+
 export default function HomePage() {
   return (
     <>
@@ -625,10 +542,9 @@ export default function HomePage() {
       <Hero />
       <SocialProofBar />
       <WhatWeBuild />
+      <TestimonialSection />
       <CaseStudiesPreview />
-      <ResultsGuarantee />
       <HowItWorks />
-      <LatestBlogPosts />
       <section className="bg-white py-28">
         <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
           <AnimatedSection>
@@ -640,7 +556,6 @@ export default function HomePage() {
           </AnimatedSection>
         </div>
       </section>
-      <NewsletterSignup />
       <PersonalisedCTA />
     </>
   );

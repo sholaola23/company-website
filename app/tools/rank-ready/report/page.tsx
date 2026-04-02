@@ -744,7 +744,7 @@ function ReportContent() {
             report together, then handle the implementation.
           </p>
           <Link
-            href="https://cal.com/sholastechnotes/free-ai-strategy-call"
+            href="https://cal.com/workcrew/free-ai-strategy-call"
             className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 transition-colors"
           >
             Book a Free Strategy Call

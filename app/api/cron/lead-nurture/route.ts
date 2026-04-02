@@ -121,7 +121,7 @@ export async function GET(req: NextRequest) {
         await resend.emails.send({
           from: FROM,
           to: email,
-          subject: `How a bakery saved 8 hours a week with AI`,
+          subject: `How a bakery saves 50+ minutes every day with AI`,
           html: buildDay2Email(name),
         });
 
@@ -204,7 +204,7 @@ function buildDay2Email(name: string): string {
 
       <p>I wanted to share a quick story that might be relevant to your results.</p>
 
-      <p>We worked with a local bakery called E'Manuel. They were spending <strong>8 hours every week</strong> on manual tasks: tracking loyalty customers, sending thank-you messages, managing their calendar.</p>
+      <p>We worked with a local bakery called E'Manuel. They were spending a significant amount of time every day on manual tasks: tracking loyalty customers, sending thank-you messages, managing their calendar.</p>
 
       <p>We set up an AI system that now handles all of it automatically:</p>
       <ul>
@@ -213,7 +213,7 @@ function buildDay2Email(name: string): string {
         <li>Calendar and appointments sync without manual input</li>
       </ul>
 
-      <p><strong>Result: 8 hours saved per week.</strong> That's over 400 hours a year they got back.</p>
+      <p><strong>Result: 50+ minutes saved every day</strong> — in Tunmise's own words. That adds up to hundreds of hours a year they got back.</p>
 
       <p>If your audit showed opportunities for automation, this is the kind of result that's possible — once automation is in place.</p>
 
@@ -250,7 +250,7 @@ function buildDay5Email(name: string): string {
       </ul>
 
       <p>
-        <a href="https://cal.com/sholastechnotes/free-ai-strategy-call"
+        <a href="https://cal.com/workcrew/free-ai-strategy-call"
            style="background: #3b82f6; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; display: inline-block; font-weight: 500;">
           Book a Free 15-Min Call
         </a>

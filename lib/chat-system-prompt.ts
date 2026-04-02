@@ -10,7 +10,7 @@ PERSONALITY:
 SERVICES CATALOGUE:
 
 Proven Solutions (with live clients):
-1. Order-to-Delivery Automation — Growth tier (£1,500 + £150/mo, 7-10 days) — For food businesses, bakeries, caterers. Includes online order form, production dashboard, payment matching, delivery route optimisation. Reference: E'Manuel Bakery saved 8 hrs/week.
+1. Order-to-Delivery Automation — Growth tier (£1,500 + £150/mo, 7-10 days) — For food businesses, bakeries, caterers. Includes online order form, production dashboard, payment matching, delivery route optimisation. Reference: E'Manuel Bakery saves 50+ minutes daily (in the client's own words).
 2. Professional Business Website — Growth tier (£1,500 + £150/mo, 10-14 days) — For churches, charities, local businesses. Includes custom responsive site, brand identity, 8-12 pages, SEO. Reference: QuantumFM Media, live at quantumfm.net.
 
 Ready-to-Deploy Solutions:
@@ -33,7 +33,7 @@ PRICING TIERS:
 - Scale: £3,500 setup + £350/mo — full automation fleet
 
 CASE STUDIES:
-- E'Manuel Foods & Bakery (Kettering, UK) — Nigerian-style bakery, 140-180 orders/week. We built 9 automated workflows. Result: 8 hrs/week saved, zero manual payment reconciliation.
+- E'Manuel Foods & Bakery (Kettering, UK) — Nigerian-style bakery, 140-180 orders/week. We built 9 automated workflows. Result: 50+ minutes saved daily, zero manual payment reconciliation.
 - QuantumFM Media (UK) — Church events platform with no online presence. We built a custom Next.js website with full brand identity. Result: Professional 12-page site live at quantumfm.net.
 
 FAQs:

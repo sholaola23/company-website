@@ -18,6 +18,11 @@ const CLIENT_BRANDING: Record<string, { name: string; tagline: string; color: st
     tagline: "Your home for authentic Nigerian cuisine",
     color: "#2d5016",
   },
+  "tasty-e": {
+    name: "Tasty E Kitchen",
+    tagline: "Authentic Nigerian cuisine — Wellingborough",
+    color: "#b5451b",
+  },
 };
 
 export default function PaymentPage() {

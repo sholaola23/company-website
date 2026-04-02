@@ -76,7 +76,7 @@ export default function IndustryPageLayout({ page }: { page: IndustryPage }) {
               Get Your Free AI Audit
             </CTAButton>
             <CTAButton
-              href="https://cal.com/sholastechnotes/free-ai-strategy-call"
+              href="https://cal.com/workcrew/free-ai-strategy-call"
               variant="secondary"
               size="lg"
             >
@@ -287,7 +287,7 @@ export default function IndustryPageLayout({ page }: { page: IndustryPage }) {
                 Get Your Free AI Audit
               </CTAButton>
               <CTAButton
-                href="https://cal.com/sholastechnotes/free-ai-strategy-call"
+                href="https://cal.com/workcrew/free-ai-strategy-call"
                 variant="secondary"
                 size="lg"
               >

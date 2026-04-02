@@ -77,7 +77,7 @@ const faqs: FAQItem[] = [
   {
     question: "Are these savings realistic for a small business?",
     answer:
-      "Yes. The figures are conservative. Many of our clients see results that exceed these estimates within the first 90 days. For example, one restaurant client saved over 8 hours per week on order management alone, and an estate agent reduced admin time by 12 hours per week after implementing AI lead qualification.",
+      "Yes. The figures are conservative. Many of our clients see results that exceed these estimates within the first 90 days. For example, one restaurant client saved 50+ minutes every day on order management alone, and an estate agent reduced admin time by 12 hours per week after implementing AI lead qualification.",
   },
   {
     question: "What does the AI investment include?",

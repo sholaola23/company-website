@@ -532,7 +532,7 @@ function RangeBeautyContent() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
           <Link
-            href="https://cal.com/sholastechnotes/free-ai-strategy-call"
+            href="https://cal.com/workcrew/free-ai-strategy-call"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3.5 bg-rose-600 hover:bg-rose-500 text-white font-medium rounded-xl transition-all text-sm"

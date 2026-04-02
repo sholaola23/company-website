@@ -48,7 +48,7 @@ const faqSchema = {
       name: "How much did the bakery automation cost?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The setup cost was £1,500 (Growth tier) with £150/month for ongoing optimisation and support. The system saves approximately £400/month in admin time (8 hours per week), making the ROI positive from the first month. Estimated annual saving is £20,000+ when accounting for the full value of the owner's time.",
+        text: "The setup cost was £1,500 (Growth tier) with £150/month for ongoing optimisation and support. The system saves Tunmise 50+ minutes every day (in his own words), making the ROI positive from the first month. Estimated annual saving is £20,000+ when accounting for the full value of the owner's time.",
       },
     },
     {
@@ -107,8 +107,8 @@ export default function BlogPost() {
             {/* Key stats callout */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
               <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center">
-                <p className="text-2xl font-bold text-blue-600">8 hrs</p>
-                <p className="text-xs text-slate-400 mt-1">saved per week</p>
+                <p className="text-2xl font-bold text-blue-600">50+ min</p>
+                <p className="text-xs text-slate-400 mt-1">saved every day</p>
               </div>
               <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center">
                 <p className="text-2xl font-bold text-blue-600">180+</p>
@@ -134,7 +134,7 @@ export default function BlogPost() {
 
             {/* The Before */}
             <h2 className="text-2xl font-bold mt-10 mb-4">
-              The Problem: 8 Hours of Admin Every Week
+              The Problem: Hours of Admin Every Evening
             </h2>
 
             <p className="text-slate-500 leading-relaxed mb-4">
@@ -350,7 +350,7 @@ export default function BlogPost() {
                   How much did the bakery automation cost?
                 </h3>
                 <p className="text-slate-500 leading-relaxed">
-                  The setup cost was &pound;1,500 (Growth tier) with &pound;150/month for ongoing optimisation and support. The system saves approximately &pound;400/month in admin time (8 hours per week), making the ROI positive from the first month. Estimated annual saving is &pound;20,000+ when accounting for the full value of the owner&apos;s time.
+                  The setup cost was &pound;1,500 (Growth tier) with &pound;150/month for ongoing optimisation and support. The system saves Tunmise 50+ minutes every day (in his own words), making the ROI positive from the first month. Estimated annual saving is &pound;20,000+ when accounting for the full value of the owner&apos;s time.
                 </p>
               </div>
               <div>

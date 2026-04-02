@@ -217,7 +217,7 @@ export default function BlogPost() {
               <Link href="/case-studies/emanuel-bakery" className="text-blue-600 hover:underline">
                 E&apos;Manuel Bakery in Kettering
               </Link>{" "}
-              that save the owner 8 hours every week. That&apos;s over 400 hours per year &mdash; worth approximately &pound;20,000 in admin time. The setup cost was &pound;1,500. The ROI paid for itself in the first month.
+              that save the owner 50+ minutes every day. That&apos;s over 300 hours per year &mdash; worth approximately &pound;20,000 in admin time. The setup cost was &pound;1,500. The ROI paid for itself in the first month.
             </p>
 
             {/* The hidden cost of DIY */}

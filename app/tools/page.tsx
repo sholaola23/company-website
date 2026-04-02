@@ -111,7 +111,7 @@ export default function ToolsPage() {
             <p className="text-slate-600 text-sm">
               Want help implementing the results?{" "}
               <Link
-                href="https://cal.com/sholastechnotes/free-ai-strategy-call"
+                href="https://cal.com/workcrew/free-ai-strategy-call"
                 className="text-blue-600 hover:text-blue-600 underline underline-offset-2"
               >
                 Book a free strategy call

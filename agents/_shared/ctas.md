@@ -21,7 +21,7 @@
 1. **ONE CTA per email** — never ask them to do two things
 2. **"Reply yes" beats "book a call"** — send Cal.com link AFTER they reply
 3. **Never include Cal.com link in cold outreach** — it's too much friction for first touch
-4. **Cal.com link goes in the REPLY** when they respond positively: `https://cal.com/sholastechnotes/free-ai-strategy-call`
+4. **Cal.com link goes in the REPLY** when they respond positively: `https://cal.com/workcrew/free-ai-strategy-call`
 5. Always low-pressure: "No cost", "No strings", "No obligation"
 6. Always include opt-out: "If this isn't relevant, just let me know and I won't follow up."
 

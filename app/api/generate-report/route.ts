@@ -162,7 +162,7 @@ IMPORTANT:
 - Include real, specific, actionable recommendations — not generic fluff
 - All monetary values in GBP (£)
 - Include a "Report generated on [today's date]" line in the footer
-- The footer CTA should be a "Book a Free Strategy Call" button linking to https://cal.com/sholastechnotes/free-ai-strategy-call`;
+- The footer CTA should be a "Book a Free Strategy Call" button linking to https://cal.com/workcrew/free-ai-strategy-call`;
 }
 
 // ---------------------------------------------------------------------------
@@ -251,7 +251,7 @@ async function sendReportToProspect(
                 If you'd like to discuss the findings and explore how we can implement these improvements, book a free 30-minute strategy call:
               </p>
               <div style="text-align: center; margin: 24px 0;">
-                <a href="https://cal.com/sholastechnotes/free-ai-strategy-call" style="display: inline-block; background: #0f172a; color: #ffffff; text-decoration: none; padding: 12px 28px; border-radius: 8px; font-weight: 600; font-size: 14px;">
+                <a href="https://cal.com/workcrew/free-ai-strategy-call" style="display: inline-block; background: #0f172a; color: #ffffff; text-decoration: none; padding: 12px 28px; border-radius: 8px; font-weight: 600; font-size: 14px;">
                   Book a Strategy Call
                 </a>
               </div>

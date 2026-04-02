@@ -756,7 +756,7 @@ function AspireContent() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
             <Link
-              href="https://cal.com/sholastechnotes/free-ai-strategy-call"
+              href="https://cal.com/workcrew/free-ai-strategy-call"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all text-sm w-full sm:w-auto justify-center"

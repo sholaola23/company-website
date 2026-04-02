@@ -82,7 +82,7 @@ export default function AuditPage() {
             No email required.
           </p>
           <p className="text-slate-600 text-sm mt-6">
-            We helped E&apos;Manuel Bakery save 8 hours per week and built QuantumFM Media a 12-page professional website.{" "}
+            We helped E&apos;Manuel Bakery save 50+ minutes every day and built QuantumFM Media a 12-page professional website.{" "}
             <span className="text-blue-600">Let&apos;s find your wins.</span>
           </p>
         </div>

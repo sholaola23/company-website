@@ -250,7 +250,7 @@ export async function POST(req: NextRequest) {
                   <br/><br/>
                   <a href="mailto:${lead.email}" style="background: #3b82f6; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; display: inline-block;">Reply to Lead</a>
                   &nbsp;
-                  <a href="https://cal.com/sholastechnotes/free-ai-strategy-call" style="background: #0f172a; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; display: inline-block;">Send Booking Link</a>
+                  <a href="https://cal.com/workcrew/free-ai-strategy-call" style="background: #0f172a; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; display: inline-block;">Send Booking Link</a>
                 </p>
               </div>
             </div>

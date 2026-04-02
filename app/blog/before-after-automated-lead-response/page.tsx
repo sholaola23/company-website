@@ -314,7 +314,7 @@ export default function BlogPost() {
             <p className="text-slate-500 leading-relaxed mb-8">
               Book a{" "}
               <Link
-                href="https://cal.com/sholastechnotes/free-ai-strategy-call"
+                href="https://cal.com/workcrew/free-ai-strategy-call"
                 className="text-blue-600 hover:text-blue-600 transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"

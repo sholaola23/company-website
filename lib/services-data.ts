@@ -713,7 +713,7 @@ export const services: Service[] = [
       ],
     },
     ctaText: "Book a Scoping Session",
-    ctaHref: "https://cal.com/sholastechnotes/free-ai-strategy-call",
+    ctaHref: "https://cal.com/workcrew/free-ai-strategy-call",
     ctaSubtext: "One-off session. No obligation to build with us.",
     howItWorks: [
       {

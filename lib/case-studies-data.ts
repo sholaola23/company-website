@@ -24,22 +24,22 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "emanuel-bakery",
     name: "E'Manuel Foods & Bakery",
-    heroHeadline: "How a Kettering Bakery Saved 8 Hours a Week and Automated 180 Orders",
+    heroHeadline: "How a Kettering Bakery Automated 180 Orders and Now Saves 50+ Minutes Every Day",
     industry: "Food & Bakery",
     location: "Kettering, UK",
     tier: "Growth",
-    heroStat: "8 hrs",
-    heroLabel: "saved per week — equivalent to ~£400/month in admin costs",
+    heroStat: "50+ min",
+    heroLabel: "saved every day — in Tunmise's own words",
     problem:
-      "Running a Nigerian-style bread bakery handling 140-180 weekly orders. Orders came in via WhatsApp messages, payments were manually tracked across SumUp and bank transfers, and production quantities were hand-tallied. The owner spent 8+ hours per week on admin instead of baking.",
+      "Running a Nigerian-style bread bakery handling 140-180 weekly orders. Orders came in via WhatsApp messages, payments were manually tracked across SumUp and bank transfers, and production quantities were hand-tallied. The owner spent hours each evening on admin instead of baking.",
     problemExpanded:
-      "Tunmise runs E'Manuel Foods & Bakery, a Nigerian-style bakery in Kettering that delivers fresh bread across the Midlands. Before working with us, every part of the business ran on manual effort. Customers placed orders via WhatsApp messages — often incomplete, sometimes contradictory. Tunmise would spend hours every evening collating these messages into a spreadsheet, hand-tallying production quantities for each bread type, and manually tracking which customers had paid via SumUp or bank transfer. Payment reconciliation was a particular headache: SumUp generates its own transaction references, so matching a payment to an order meant cross-referencing amounts, customer names, and timing across two separate systems. Delivery routes were planned by memory. The business was growing — 140 to 180 orders per week — but the admin was growing faster. Tunmise was spending 8+ hours per week on tasks that had nothing to do with actually baking bread.",
+      "Tunmise runs E'Manuel Foods & Bakery, a Nigerian-style bakery in Kettering that delivers fresh bread across the Midlands. Before working with us, every part of the business ran on manual effort. Customers placed orders via WhatsApp messages — often incomplete, sometimes contradictory. Tunmise would spend hours every evening collating these messages into a spreadsheet, hand-tallying production quantities for each bread type, and manually tracking which customers had paid via SumUp or bank transfer. Payment reconciliation was a particular headache: SumUp generates its own transaction references, so matching a payment to an order meant cross-referencing amounts, customer names, and timing across two separate systems. Delivery routes were planned by memory. The business was growing — 140 to 180 orders per week — but the admin was growing faster. In his own words, Tunmise was saving 50+ minutes every day once the system was in place — time previously spent on tasks that had nothing to do with actually baking bread.",
     solution:
       "Built 9 automated workflows — online order form (Tally.so), real-time Google Sheets production dashboard (5 tabs), automated payment matching across SumUp and bank transfers, delivery route optimisation with Google Maps, WhatsApp order confirmations.",
     solutionExpanded:
       "We replaced the entire manual process with 9 interconnected AI workflows, built and deployed in under two weeks. First, we moved order collection from WhatsApp to a custom Tally.so form — customers fill in their name, address, products, and quantities in under 60 seconds. The form feeds directly into a Google Sheets production dashboard with 5 tabs: orders, payments, production quantities, delivery routes, and weekly summaries. The payment matching engine (our most complex workflow) polls SumUp every 30 minutes and cross-references transactions against orders using a 4-tier matching system: submission ID match, name + amount match, name-only match (for partial payments), and amount-only match with duplicate safeguards. Bank transfer matching works the same way when Tunmise uploads his bank statement CSV. Every order triggers an instant WhatsApp confirmation via Twilio so customers know their order was received. On Fridays, a delivery route optimizer groups orders by town and generates Google Maps navigation links for each stop. A Monday cleanup workflow archives the previous week and resets the dashboard for the new cycle. Tunmise now checks a single dashboard for 60 seconds each morning instead of spending hours on admin each evening.",
     results: [
-      { label: "Admin time saved", value: "8 hrs/week (~£400/mo)" },
+      { label: "Admin time saved", value: "50+ min/day (client's own words)" },
       { label: "Orders processed automatically", value: "180+/week" },
       { label: "Manual payment reconciliation", value: "Zero" },
       { label: "Production tallies", value: "Automated" },
@@ -59,7 +59,7 @@ export const caseStudies: CaseStudy[] = [
       "Password-protected client dashboard at app.workcrew.io",
     ],
     beforeAfter: [
-      { before: "8+ hours of admin every week", after: "60 seconds checking a dashboard each morning" },
+      { before: "Hours of admin every evening", after: "60 seconds checking a dashboard each morning" },
       { before: "Manual WhatsApp order-taking (incomplete, error-prone)", after: "Structured online form with instant confirmation" },
       { before: "Guessing production quantities from WhatsApp messages", after: "Real-time dashboard auto-tallying every product" },
       { before: "Manual SumUp + bank transfer reconciliation", after: "Automated 4-tier payment matching engine" },

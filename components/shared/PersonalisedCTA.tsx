@@ -40,7 +40,7 @@ interface CTAVariant {
 
 const DEFAULT_VARIANT: CTAVariant = {
   key: "default",
-  heading: "Ready to Save 8+ Hours a Week?",
+  heading: "Ready to Automate Your Business?",
   subtext:
     "Get your free AI Readiness Audit — no obligation, just a clear picture of where AI can help",
   buttonLabel: "Start Your Free Audit",

@@ -149,7 +149,7 @@ async function sendReportEmail(
                 Book a free 30-minute strategy call and we will walk through the report together.
               </p>
               <div style="text-align: center;">
-                <a href="https://cal.com/sholastechnotes/free-ai-strategy-call" style="display: inline-block; background: #0f172a; color: #ffffff; text-decoration: none; padding: 12px 28px; border-radius: 8px; font-weight: 600; font-size: 14px;">
+                <a href="https://cal.com/workcrew/free-ai-strategy-call" style="display: inline-block; background: #0f172a; color: #ffffff; text-decoration: none; padding: 12px 28px; border-radius: 8px; font-weight: 600; font-size: 14px;">
                   Book a Strategy Call
                 </a>
               </div>

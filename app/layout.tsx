@@ -30,14 +30,14 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "WorkCrew — AI Solutions for Small Businesses",
+    default: "WorkCrew — Digital Systems for Your Business",
     template: "%s | WorkCrew",
   },
   description:
-    "We build AI automation systems, professional websites, and deliver AI training for small businesses. From lead capture to content engines — built to last.",
+    "We build AI automation systems, professional websites, and deliver AI training for businesses. From lead capture to content engines — built to last.",
   keywords: [
     "AI automation",
-    "small business automation",
+    "business automation",
     "AI training for teams",
     "website development",
     "lead intake system",
@@ -56,15 +56,15 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: "https://workcrew.io",
     siteName: "WorkCrew",
-    title: "WorkCrew — AI Solutions for Small Businesses",
+    title: "WorkCrew — Digital Systems for Your Business",
     description:
-      "We build AI automation systems, professional websites, and deliver AI training for small businesses. From lead capture to content engines — built to last.",
+      "We build AI automation systems, professional websites, and deliver AI training for businesses. From lead capture to content engines — built to last.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "WorkCrew — AI Solutions for Small Businesses",
+    title: "WorkCrew — Digital Systems for Your Business",
     description:
-      "AI automation, websites, and team training for small businesses. Built for results.",
+      "AI automation, websites, and team training for businesses. Built for results.",
   },
   robots: {
     index: true,

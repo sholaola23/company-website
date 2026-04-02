@@ -184,7 +184,7 @@ PS — we helped a business save 8+ hours a week on this exact problem
 ```
 hey {{firstName}} — appreciate you getting back
 
-here's a link to book a quick 15-min call: https://cal.com/sholastechnotes/free-ai-strategy-call
+here's a link to book a quick 15-min call: https://cal.com/workcrew/free-ai-strategy-call
 
 or just let me know what time works and i'll send an invite
 
@@ -195,7 +195,7 @@ Shola
 ```
 {{firstName}} — just bumping this up
 
-here's that link again if it's easier: https://cal.com/sholastechnotes/free-ai-strategy-call
+here's that link again if it's easier: https://cal.com/workcrew/free-ai-strategy-call
 
 Shola
 ```
@@ -208,7 +208,7 @@ hey {{firstName}} — totally, here's a quick overview:
 - everything runs in the background — you just check a dashboard each morning
 - live in 14 days, 90-day results guarantee
 
-happy to walk through it on a quick call if helpful: https://cal.com/sholastechnotes/free-ai-strategy-call
+happy to walk through it on a quick call if helpful: https://cal.com/workcrew/free-ai-strategy-call
 
 Shola
 ```
