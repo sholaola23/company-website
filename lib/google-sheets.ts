@@ -587,6 +587,40 @@ export async function writeRefund(
   }
 }
 
+/**
+ * Update payment status on an order row matched by Submission ID.
+ * Called by the SumUp webhook when a hosted checkout is paid.
+ * Searches both production and test sheets automatically.
+ */
+export async function updatePaymentStatus(
+  sheetsId: string,
+  submissionId: string,
+  checkoutId: string,
+  amount: number
+): Promise<{ success: boolean; error?: string }> {
+  try {
+    const doc = await getDoc(sheetsId);
+    if (!doc) return { success: false, error: "Could not connect to Google Sheets" };
+
+    const sheet = doc.sheetsByTitle["Orders"];
+    if (!sheet) return { success: false, error: "Orders sheet not found" };
+
+    const rows = await sheet.getRows();
+    const row = rows.find((r) => r.get("Submission ID") === submissionId);
+    if (!row) return { success: false, error: `Row not found for submission ID: ${submissionId}` };
+
+    row.set("Payment Status", "paid");
+    row.set("Payment Reference", checkoutId);
+    row.set("Payment Amount", amount.toString());
+    await row.save();
+
+    return { success: true };
+  } catch (e) {
+    console.error("Failed to update payment status:", e);
+    return { success: false, error: "Failed to update payment status in sheet" };
+  }
+}
+
 export async function getAllSheetsData(
   sheetsId: string,
   allTime = false
