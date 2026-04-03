@@ -25,20 +25,24 @@ Read these shared reference files:
 - `../_shared/notion-ids.md` — database IDs
 
 ## Tool Routing (CRITICAL — follow exactly)
-Read `../_shared/mcp-tool-routing.md` for full environment mapping (local UUID names vs cloud short names).
+Read `../_shared/mcp-tool-routing.md` for full environment mapping.
 
-⚠️ There are TWO Gmail tools. You MUST use the correct one:
-- **Gmail SEARCH/READ:** `gmail_search_messages` — can ONLY search and read. It CANNOT send.
-- **Gmail SEND (Zapier):** `gmail_send_email` — the ONLY tool that can SEND emails. Use this for sending the summary notification to Olushola AND for sending outreach emails.
-- **Gmail CREATE DRAFT (Zapier):** `gmail_create_draft` — use this for drafting outreach emails to leads.
-- **Notion:** use `notion-fetch`, `notion-search`, `notion-create-pages`, `notion-update-page` etc. directly — do NOT use ToolSearch to find these, call them directly by name.
+**Cloud environment tool loading (MANDATORY — do this first):**
+```
+ToolSearch  select:mcp__Notion__notion-fetch,mcp__Notion__notion-search,mcp__Notion__notion-create-pages,mcp__Notion__notion-update-page
+ToolSearch  select:mcp__Zapier__gmail_send_email,mcp__Zapier__gmail_create_draft,mcp__Zapier__gmail_find_email
+```
+Use `select:` syntax ONLY — keyword search (`ToolSearch gmail`) will NOT find these tools.
 
-⚠️ IMPORTANT — Cloud Environment: These tools are pre-loaded. Do NOT use ToolSearch to find them. Just call `gmail_send_email`, `notion-fetch`, etc. directly.
+⚠️ There are TWO Gmail connector types. You MUST use the correct one:
+- **Gmail SEND (Zapier):** `mcp__Zapier__gmail_send_email` — the ONLY tool that can SEND emails.
+- **Gmail CREATE DRAFT (Zapier):** `mcp__Zapier__gmail_create_draft` — use for drafting outreach emails.
+- **Notion:** `mcp__Notion__notion-fetch`, `mcp__Notion__notion-search`, `mcp__Notion__notion-create-pages`, `mcp__Notion__notion-update-page`
 
-NEVER use the native Gmail search tool for sending — it does NOT have send capability. Always use `gmail_send_email` (Zapier) for all outbound emails.
+NEVER use the native Gmail read tools for sending — they do not have send capability.
 
 ## Critical Rules
-- You SEND emails directly to leads via `gmail_send_email`.
+- You SEND emails directly to leads via `mcp__Zapier__gmail_send_email`.
 - The SUMMARY email to Olushola MUST also be SENT (not drafted) — see Step 6.
 - **ALWAYS set `from` to `hello@workcrew.io`** and `from_name` to `Olushola from WorkCrew` when creating emails to leads. Never send from the personal Gmail address.
 - Never invent facts about a business.
@@ -82,7 +86,7 @@ Only use long-form templates from `templates/email-templates.md` if Lead Score >
 7. Run self-quality check — if below 6, SKIP this lead
 7b. **Complete Decision Log entry NOW (mandatory, inline):** Before moving to the next lead, write the Decision Log entry for this email: Template chosen + WHY (including why alternatives were rejected), framework shape, personalisation points used + WHY, research source, subject line, confidence score with justification. Do NOT defer this to Step 5 — write it immediately after the quality check while the reasoning is fresh. A missing or incomplete Decision Log entry for any sent email = automatic 2-point QA deduction.
 8. Check Gmail for existing sent emails to this address (avoid double-sending)
-9. **SEND the email** via `gmail_send_email` with `from: hello@workcrew.io`
+9. **SEND the email** via `mcp__Zapier__gmail_send_email` with `from: hello@workcrew.io`
 10. **Update Notion immediately after sending:**
     - Status → "sent"
     - Sent Date → today (use `date:Sent Date:start` = today's ISO date)
@@ -110,7 +114,7 @@ Read `eval/advisory-board.md` — would all 3 reviewers pass this batch?
 ### Step 5: Write Daily Report
 
 **PRE-REPORT CHECK (MANDATORY — do not skip):**
-Before calling notion-create-pages for the daily report, confirm:
+Before calling `mcp__Notion__notion-create-pages` for the daily report, confirm:
 - [ ] The page body contains a `## Decision Log` section
 - [ ] EACH email sent has an entry with ALL fields: Template chosen, WHY this template, Framework shape, Personalisation points used, WHY these points, Research source, Subject line, Confidence score
 - [ ] Every confidence score has a justification (not just a number)
@@ -131,8 +135,8 @@ Create page in Sales Agent Reports. **Page properties MUST be populated BEFORE w
 
 ### Step 6: Email Olushola a Daily Summary (MUST BE SENT — NOT DRAFTED)
 ⚠️ CRITICAL: This summary MUST be SENT to Olushola, NOT saved as a draft.
-- Use `gmail_send_email` to SEND this email.
-- If that tool is unavailable, use `gmail_create_draft` AND THEN send the draft via Zapier.
+- Use `mcp__Zapier__gmail_send_email` to SEND this email.
+- If that tool is unavailable, use `mcp__Zapier__gmail_create_draft` AND THEN send the draft via Zapier.
 - Do NOT leave this as a draft. Olushola needs to be notified that outreach emails are waiting for review.
 
 SEND to olusholaoladipupo1@gmail.com:

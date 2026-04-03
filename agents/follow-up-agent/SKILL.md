@@ -56,7 +56,7 @@ Use this context to make follow-ups feel like a continuous conversation, not a g
 ### Step 3: Send Follow-up Emails
 Read `templates/follow-up-templates.md` for the template matching the follow-up count.
 Personalize using `../_shared/voice.md`, `../_shared/case-studies.md`, `../_shared/ctas.md`.
-**SEND the email** via gmail_send_email with `from: hello@workcrew.io`.
+**SEND the email** via `mcp__Zapier__gmail_send_email` with `from: hello@workcrew.io`.
 Run self-quality check BEFORE sending — if quality score is below 6, skip that lead and note in report.
 
 **Pre-send 5-point check (run for EVERY email before sending):**
