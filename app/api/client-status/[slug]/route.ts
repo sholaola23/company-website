@@ -4,7 +4,7 @@ import { getClient } from "@/lib/client-config";
 
 export const dynamic = "force-dynamic";
 
-const N8N_API_BASE = "https://oladipupo-consulting.app.n8n.cloud/api/v1";
+const N8N_API_BASE = process.env.N8N_API_BASE || "https://n8n-production-d877.up.railway.app/api/v1";
 
 interface WorkflowStatus {
   id: string;
