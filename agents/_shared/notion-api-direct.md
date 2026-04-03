@@ -1,7 +1,103 @@
 # Notion API Direct Access (Cloud Agents)
 
 ## Why This Exists
-The built-in Notion MCP connector does NOT work in Claude Code scheduled task sessions (Anthropic platform bug as of April 2026). Use the Notion REST API directly via `curl` in Bash instead.
+The built-in Notion MCP connector does NOT work in Claude Code scheduled task sessions (Anthropic platform bug as of April 2026). Cloud sessions also block outbound `curl` to `api.notion.com` directly.
+
+**Use the Notion Proxy instead** — a lightweight API route on the WorkCrew website that forwards requests to Notion. Cloud agents can call it via WebFetch (POST requests supported).
+
+## Notion Proxy (PRIMARY — use this first)
+
+**Endpoint:** `https://oladipupoconsulting.co.uk/api/notion-proxy`
+
+**Headers required:**
+- `X-Proxy-Secret: <NOTION_PROXY_SECRET value from task instructions>`
+- `Content-Type: application/json`
+
+**Request body:**
+```json
+{
+  "path": "/databases/{database_id}/query",
+  "method": "POST",
+  "body": { ...notion filter/sort object... }
+}
+```
+
+**Supported paths:** `/databases/`, `/pages`, `/blocks/`
+
+### Example — Query Sales Pipeline
+```json
+POST https://oladipupoconsulting.co.uk/api/notion-proxy
+Headers: X-Proxy-Secret: <secret>, Content-Type: application/json
+Body:
+{
+  "path": "/databases/34cbc272c1904ac887542435270bea79/query",
+  "method": "POST",
+  "body": {
+    "filter": { "property": "Status", "select": { "equals": "new" } },
+    "sorts": [{ "property": "Lead Score", "direction": "descending" }],
+    "page_size": 10
+  }
+}
+```
+
+### Example — Update a Page
+```json
+{
+  "path": "/pages/{page_id}",
+  "method": "PATCH",
+  "body": {
+    "properties": {
+      "Status": { "select": { "name": "sent" } }
+    }
+  }
+}
+```
+
+### Example — Append to Page Body (Lead Intelligence)
+```json
+{
+  "path": "/blocks/{page_id}/children",
+  "method": "PATCH",
+  "body": {
+    "children": [{
+      "object": "block",
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [{ "text": { "content": "[SCOUT 2026-04-04] Found via Google..." } }]
+      }
+    }]
+  }
+}
+```
+
+### Example — Create a Report Page
+```json
+{
+  "path": "/pages",
+  "method": "POST",
+  "body": {
+    "parent": { "database_id": "2e5017a6fa3c419590e1c26fe14bfc6f" },
+    "properties": {
+      "Name": { "title": [{ "text": { "content": "Lead Scout Report — 2026-04-04" } }] },
+      "Agent": { "select": { "name": "Lead Scout" } },
+      "Date": { "date": { "start": "2026-04-04" } }
+    },
+    "children": [{
+      "object": "block",
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [{ "text": { "content": "Report content here..." } }]
+      }
+    }]
+  }
+}
+```
+
+**Note:** The NOTION_PROXY_SECRET is passed in the task instructions alongside the NOTION_API_KEY.
+
+---
+
+## Fallback: Direct curl (local agents only — blocked in cloud)
 
 ## Authentication
 The NOTION_API_KEY is passed in the **task instructions** (not in this file — the repo is public). Read it from your initial prompt. It starts with `ntn_`.
