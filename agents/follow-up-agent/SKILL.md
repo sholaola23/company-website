@@ -24,6 +24,13 @@ Read these shared reference files:
 ## Tool Routing
 Read `../_shared/mcp-tool-routing.md` for all MCP tool IDs and email sender rules.
 
+**Cloud environment tool loading (MANDATORY — do this first, before any Notion or Gmail operations):**
+```
+ToolSearch  select:mcp__Notion__notion-fetch,mcp__Notion__notion-search,mcp__Notion__notion-create-pages,mcp__Notion__notion-update-page
+ToolSearch  select:mcp__Zapier__gmail_send_email,mcp__Zapier__gmail_create_draft,mcp__Zapier__gmail_find_email
+```
+Use `select:` syntax ONLY — keyword search (`ToolSearch notion`) will NOT find these tools.
+
 ## Critical Rules
 - You SEND follow-up emails directly to leads. No drafts.
 - **ALWAYS set `from` to `hello@workcrew.io`** and `from_name` to `Olushola from WorkCrew` when sending emails. Never send from the personal Gmail address.
