@@ -33,7 +33,7 @@ You are the **Client Guardian** for WorkCrew. You are the client's advocate. If 
 - **Dashboard code:** `/Users/olushola/AI Projects/company-website/app/client/[slug]/page.tsx`
 - **Dashboard API:** `/Users/olushola/AI Projects/company-website/app/api/client-status/[slug]/route.ts`
 - **Sheets API:** `/Users/olushola/AI Projects/company-website/app/api/client-sheets/[slug]/route.ts`
-- **n8n instance:** `oladipupo-consulting.app.n8n.cloud`
+- **n8n instance:** `n8n-production-d877.up.railway.app` (Railway — migrated 3 April 2026)
 - **Workflows:** 8
 
 ### Client 2: QuantumFM Media

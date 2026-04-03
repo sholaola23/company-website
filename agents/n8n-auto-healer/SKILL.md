@@ -29,7 +29,7 @@ Read `../_shared/notion-ids.md` for all database IDs. Key ones:
 - **Gmail send (escalations):** `mcp__8ccf50b7-aff2-4b81-8947-88c792cc6a68__gmail_send_email`
 
 ## N8N API
-Base URL: `https://oladipupo-consulting.app.n8n.cloud/api/v1`
+Base URL: `https://n8n-production-d877.up.railway.app/api/v1`
 API Key: Read from the n8n credentials memory file at `/Users/olushola/.claude/projects/-Users-olushola-AI-Projects/memory/n8n-credentials.md`
 
 ```bash
@@ -42,11 +42,17 @@ curl -s "$N8N_API_BASE/executions?limit=50" -H "X-N8N-API-KEY: $API_KEY"
 # Get executions for specific workflow
 curl -s "$N8N_API_BASE/executions?workflowId=ID&limit=10" -H "X-N8N-API-KEY: $API_KEY"
 
-# Activate a workflow
-curl -s -X PATCH "$N8N_API_BASE/workflows/ID" \
+# Activate a workflow — MUST include versionId (GET workflow first to extract it)
+WF=$(curl -s "$N8N_API_BASE/workflows/ID" -H "X-N8N-API-KEY: $API_KEY")
+VERSION_ID=$(echo "$WF" | python3 -c "import sys,json; print(json.load(sys.stdin)['versionId'])")
+curl -s -X POST "$N8N_API_BASE/workflows/ID/activate" \
   -H "X-N8N-API-KEY: $API_KEY" \
   -H "Content-Type: application/json" \
-  -d '{"active": true}'
+  -d "{\"versionId\": \"$VERSION_ID\"}"
+
+# Deactivate a workflow
+curl -s -X POST "$N8N_API_BASE/workflows/ID/deactivate" \
+  -H "X-N8N-API-KEY: $API_KEY"
 
 # Retry/execute a workflow manually
 curl -s -X POST "$N8N_API_BASE/workflows/ID/run" \
@@ -60,14 +66,16 @@ curl -s -X POST "$N8N_API_BASE/workflows/ID/run" \
 ### Client: E'Manuel Bakery
 | WF | Name | ID | Expected Schedule |
 |----|------|----|-------------------|
-| WF03 | SumUp Checkout Links | KtoalRNhFVKa9AVf | Every 30 min |
+| WF03 | SumUp Checkout Link Generator | KtoalRNhFVKa9AVf | Every 30 min |
 | WF04 | Production Summary Alert | YfZPwpngWEg0uyYv | Thu 2pm |
-| WF05 | Delivery Route | xp6rs4YDco1n3oXg | Fri 2pm |
-| WF06 | Baking List / Daily Exception Alerts | UqXddNGPu0q0IgNj | Thu 7pm |
+| WF05 | Friday Delivery Route Optimizer | xp6rs4YDco1n3oXg | Fri 2pm |
+| WF06 | Daily Exception Alerts | UqXddNGPu0q0IgNj | Thu 7pm |
 | WF07 | SumUp Transaction Polling | fLLDdF34MDxYGlEf | **Thu-Sat ONLY.** Do NOT alert Sun-Wed — this is expected downtime per client request. Only alert if no execution Thu-Sat for 48+ hours. |
-| WF08 | SumUp Checkout Links | YYTlfccah2LHZ207 | Every 30 min (Wed-Fri) |
-| WF09 | Monday Cleanup | PDJfPcqZq8c4Za6B | Mon 8am |
+| WF09 | Monday Order Cleanup | PDJfPcqZq8c4Za6B | Mon 8am |
 | Bank Upload | Dashboard Bank Upload | E7XYOSjWisrhQqpF | Event-driven — fires when client uploads bank statement via dashboard. No alert unless inactive 14+ days. |
+| Error Handler | Central Error Handler | jkb5R4E7KzifXvHj | Event-driven — triggered by other workflow failures. Only alert if workflow is **inactive**. Do NOT alert on execution count. |
+
+**NOTE:** WF08 (YYTlfccah2LHZ207) was a duplicate SumUp Checkout — **archived 31 March 2026. Do NOT monitor.**
 
 **NOTE:** WF01 (Tally Order Sync) does NOT exist in n8n. Tally syncs directly to Google Sheets via native integration. Do NOT alert about a missing WF01.
 
@@ -123,7 +131,7 @@ Query System Health Notion DB for open incidents (Status NOT "healed" AND NOT "f
 ### 4a. Workflow Inactive -> Reactivate
 If a workflow should be active but isn't:
 1. Log: Status -> "healing", Healing Action -> "Attempting reactivation"
-2. Call `PATCH /workflows/{id}` with `{"active": true}`
+2. GET `/workflows/{id}` to extract `versionId`, then POST `/workflows/{id}/activate` with `{"versionId": "..."}`
 3. If API returns success -> Status -> "healed", Healing Result -> "success"
 4. If API returns error -> Status -> "escalated", Healing Result -> "failed"
 
