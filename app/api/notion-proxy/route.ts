@@ -6,9 +6,14 @@ import { NextRequest } from "next/server";
  * Cloud scheduled task sessions block outbound curl to api.notion.com.
  * This proxy accepts requests from agents, forwards them to Notion, and returns results.
  *
- * Security: requests must include X-Proxy-Secret header matching NOTION_PROXY_SECRET env var.
+ * Security: requests must include secret via X-Proxy-Secret header OR "secret" field in JSON body.
+ * Body auth is needed because cloud WebFetch can't set custom headers.
  *
- * Usage (from agent via WebFetch or curl):
+ * Usage (from agent via WebFetch):
+ *   POST /api/notion-proxy
+ *   Body: { "secret": "<secret>", "path": "/databases/xxx/query", "method": "POST", "body": { ... } }
+ *
+ * Usage (from agent via curl — local only):
  *   POST /api/notion-proxy
  *   Headers: X-Proxy-Secret: <secret>, Content-Type: application/json
  *   Body: { "path": "/databases/xxx/query", "method": "POST", "body": { ... } }
@@ -31,8 +36,6 @@ function isAllowedPath(path: string): boolean {
 }
 
 export async function POST(req: NextRequest) {
-  // Auth check
-  const secret = req.headers.get("x-proxy-secret");
   const expectedSecret = process.env.NOTION_PROXY_SECRET;
 
   if (!expectedSecret) {
@@ -42,12 +45,9 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  if (!secret || secret !== expectedSecret) {
-    return Response.json({ error: "Unauthorized" }, { status: 401 });
-  }
-
-  // Parse body
+  // Parse body first (secret may be inside it)
   let requestBody: {
+    secret?: string;
     path?: string;
     method?: string;
     body?: unknown;
@@ -57,6 +57,13 @@ export async function POST(req: NextRequest) {
     requestBody = await req.json();
   } catch {
     return Response.json({ error: "Invalid JSON body" }, { status: 400 });
+  }
+
+  // Auth check — accept secret from header OR body (WebFetch can't set headers)
+  const secret = req.headers.get("x-proxy-secret") || requestBody.secret;
+
+  if (!secret || secret !== expectedSecret) {
+    return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
 
   const { path, method = "GET", body } = requestBody;
