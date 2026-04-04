@@ -42,9 +42,9 @@ const DEFAULT_VARIANT: CTAVariant = {
   key: "default",
   heading: "Ready to Automate Your Business?",
   subtext:
-    "Get your free AI Readiness Audit — no obligation, just a clear picture of where AI can help",
-  buttonLabel: "Start Your Free Audit",
-  buttonHref: "/audit",
+    "Get your free AI Blueprint in 2 minutes — see exactly where AI can save you time and money",
+  buttonLabel: "Get Your Free Blueprint",
+  buttonHref: "/blueprint",
 };
 
 function resolveVariant(profile: VisitorProfile): CTAVariant {
@@ -52,10 +52,10 @@ function resolveVariant(profile: VisitorProfile): CTAVariant {
   if (profile.hasStartedAudit && !profile.hasCompletedAudit) {
     return {
       key: "audit-incomplete",
-      heading: "Your Audit is Waiting",
-      subtext: "Pick up where you left off — it only takes 30 seconds",
-      buttonLabel: "Complete Your Audit",
-      buttonHref: "/audit",
+      heading: "Your Blueprint is Waiting",
+      subtext: "Pick up where you left off — it only takes 2 minutes",
+      buttonLabel: "Get Your Blueprint",
+      buttonHref: "/blueprint",
     };
   }
 
@@ -77,9 +77,9 @@ function resolveVariant(profile: VisitorProfile): CTAVariant {
       key: "return-visitor",
       heading: "Welcome Back",
       subtext:
-        "Let's get your AI audit done today — no obligation, just a conversation",
-      buttonLabel: "Get Your Audit Now",
-      buttonHref: "/audit",
+        "Get your personalised AI Blueprint today — no obligation, just clarity",
+      buttonLabel: "Get Your Blueprint",
+      buttonHref: "/blueprint",
     };
   }
 
@@ -89,9 +89,9 @@ function resolveVariant(profile: VisitorProfile): CTAVariant {
       key: "saw-case-studies",
       heading: "Want Results Like These?",
       subtext:
-        "Get your free audit and see what AI can do for your business",
-      buttonLabel: "Get Your Audit",
-      buttonHref: "/audit",
+        "Get your free AI Blueprint and see what automation can do for your business",
+      buttonLabel: "Get Your Blueprint",
+      buttonHref: "/blueprint",
     };
   }
 
@@ -101,9 +101,9 @@ function resolveVariant(profile: VisitorProfile): CTAVariant {
       key: "saw-services",
       heading: "Ready to Pick a Package?",
       subtext:
-        "Start with a free audit and we'll recommend the right tier",
-      buttonLabel: "Get Your Free Audit",
-      buttonHref: "/audit",
+        "Start with a free AI Blueprint and we'll recommend the right tier",
+      buttonLabel: "Get Your Free Blueprint",
+      buttonHref: "/blueprint",
     };
   }
 
@@ -186,7 +186,7 @@ export default function PersonalisedCTA() {
                 />
               </Link>
               <p className="mt-3 text-xs text-slate-400">
-                Free audit — no obligation, no strings attached
+                Free blueprint — no obligation, no strings attached
               </p>
             </div>
           </motion.div>

@@ -128,8 +128,8 @@ export default function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center">
-            <CTAButton href="/audit" variant="primary" size="sm">
-              Get Free Audit
+            <CTAButton href="/blueprint" variant="primary" size="sm">
+              Get Free Blueprint
             </CTAButton>
           </div>
 
@@ -189,12 +189,12 @@ export default function Header() {
 
           <div className="mt-3 pt-3 border-t border-slate-100">
             <CTAButton
-              href="/audit"
+              href="/blueprint"
               variant="primary"
               size="md"
               className="w-full justify-center"
             >
-              Get Free Audit
+              Get Free Blueprint
             </CTAButton>
           </div>
         </div>

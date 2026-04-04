@@ -59,10 +59,10 @@ function Hero() {
 
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
                 <Link
-                  href="/audit"
+                  href="/blueprint"
                   className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 text-base font-semibold text-white shadow-[0_1px_6px_-1px_rgba(37,99,235,0.4)] transition-all duration-200 hover:bg-slate-900 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 group"
                 >
-                  Get Your Free AI Audit
+                  Get Your Free AI Blueprint
                   <ArrowRight
                     size={18}
                     className="transition-transform duration-200 group-hover:translate-x-0.5"
@@ -438,7 +438,7 @@ const homepageFAQs: FAQItem[] = [
   {
     question: "How much does AI automation cost for a business in the UK?",
     answer:
-      "Every project is scoped individually based on your needs and complexity. We start with a free audit to understand your business, then provide a detailed proposal with a fixed price — no hidden costs. Book a free consultation to get a tailored quote.",
+      "Every project is scoped individually based on your needs and complexity. We start with a free AI blueprint to understand your business, then provide a detailed proposal with a fixed price — no hidden costs. Book a free consultation to get a tailored quote.",
   },
   {
     question: "Do I need technical skills to use AI automation?",
@@ -448,7 +448,7 @@ const homepageFAQs: FAQItem[] = [
   {
     question: "How long does it take to set up AI automation?",
     answer:
-      "Timelines depend on the scope and complexity of your project. We start with a free audit that maps your business processes and identifies the highest-impact opportunities. You'll receive a clear timeline in your custom proposal.",
+      "Timelines depend on the scope and complexity of your project. We start with a free AI blueprint that maps your business processes and identifies the highest-impact opportunities. You'll receive a clear timeline in your custom proposal.",
   },
   {
     question: "Is AI automation safe and reliable for my business?",

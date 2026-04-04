@@ -82,8 +82,8 @@ export const services: Service[] = [
         "E'Manuel Foods & Bakery in Kettering went from manually collecting orders via WhatsApp and spreadsheets to a fully automated pipeline — order intake, payment matching (SumUp + bank transfer), production schedules, delivery routes, and customer confirmations. All built and live in under two weeks.",
       clientName: "E'Manuel Foods & Bakery",
     },
-    ctaText: "Get a Free AI Audit",
-    ctaHref: "/audit",
+    ctaText: "Get Your Free AI Blueprint",
+    ctaHref: "/blueprint",
     ctaSubtext: "See exactly how automation would work for your business — takes 60 seconds.",
   },
   {
@@ -154,8 +154,8 @@ export const services: Service[] = [
       ],
       clientName: "E'Manuel Foods & Bakery",
     },
-    ctaText: "Get a Free AI Audit",
-    ctaHref: "/audit",
+    ctaText: "Get Your Free AI Blueprint",
+    ctaHref: "/blueprint",
     ctaSubtext: "See exactly where automation would save you time — takes 60 seconds.",
     howItWorks: [
       {
@@ -259,8 +259,8 @@ export const services: Service[] = [
       ],
       clientName: "E'Manuel Foods & Bakery",
     },
-    ctaText: "Get a Free AI Audit",
-    ctaHref: "/audit",
+    ctaText: "Get Your Free AI Blueprint",
+    ctaHref: "/blueprint",
     ctaSubtext: "Find out if a WhatsApp bot is right for your business — 60-second audit.",
     heroHeadline: "Your Customers Are Already on WhatsApp. Now Your Business Can Be Too.",
     howItWorks: [
@@ -352,8 +352,8 @@ export const services: Service[] = [
         { label: "Admin time recovered", value: "5-8 hrs/week" },
       ],
     },
-    ctaText: "Get a Free AI Audit",
-    ctaHref: "/audit",
+    ctaText: "Get Your Free AI Blueprint",
+    ctaHref: "/blueprint",
     ctaSubtext: "We'll show you exactly how much email time you can get back.",
     heroHeadline: "Stop Drowning in Emails. Let AI Handle the Replies.",
     howItWorks: [
@@ -512,8 +512,8 @@ export const services: Service[] = [
         { label: "Manual research replaced", value: "10+ hrs/week" },
       ],
     },
-    ctaText: "Get a Free AI Audit",
-    ctaHref: "/audit",
+    ctaText: "Get Your Free AI Blueprint",
+    ctaHref: "/blueprint",
     ctaSubtext: "We'll assess your pipeline and show where scraping can fill the gaps.",
   },
   {
@@ -549,8 +549,8 @@ export const services: Service[] = [
       description:
         "A plumber gets a call at 9pm about a leaking pipe. The AI answers in 2 seconds, asks the right questions, books a morning appointment, sends the customer an SMS confirmation, and texts you the details. By the time you check your phone, the job is already booked.",
     },
-    ctaText: "Get a Free AI Audit",
-    ctaHref: "/audit",
+    ctaText: "Get Your Free AI Blueprint",
+    ctaHref: "/blueprint",
     ctaSubtext: "See how many leads you're losing to missed calls — takes 60 seconds.",
   },
   {
@@ -581,8 +581,8 @@ export const services: Service[] = [
         { label: "After-hours coverage", value: "24/7" },
       ],
     },
-    ctaText: "Get a Free AI Audit",
-    ctaHref: "/audit",
+    ctaText: "Get Your Free AI Blueprint",
+    ctaHref: "/blueprint",
     ctaSubtext: "Find out how many leads you're losing to missed calls.",
   },
   {
@@ -645,8 +645,8 @@ export const services: Service[] = [
         { label: "Full report delivery", value: "48 hours" },
       ],
     },
-    ctaText: "Take the Free Audit Now",
-    ctaHref: "/audit",
+    ctaText: "Get Your Free AI Blueprint",
+    ctaHref: "/blueprint",
     ctaSubtext: "60 seconds. No email required. Instant AI readiness score.",
   },
   {
@@ -677,8 +677,8 @@ export const services: Service[] = [
       ],
       clientName: "E'Manuel Foods & Bakery",
     },
-    ctaText: "Get a Free AI Audit",
-    ctaHref: "/audit",
+    ctaText: "Get Your Free AI Blueprint",
+    ctaHref: "/blueprint",
     ctaSubtext: "Tell us what's broken — we'll show you what we can build.",
   },
   {
