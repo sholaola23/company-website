@@ -127,14 +127,14 @@ export const services: Service[] = [
   {
     slug: "lead-intake",
     name: "AI Lead Intake & Appointment Booking",
-    heroHeadline: "Never Miss Another Lead. AI Books Appointments While You Work.",
+    heroHeadline: "Speed-to-Lead: Respond in 60 Seconds, Book Jobs While You Sleep.",
     tier: "starter",
     setupPrice: "Get a quote",
     monthlyPrice: "",
     deliveryDays: "Fast turnaround",
     idealFor: "Plumbers, cleaners, salons, gyms",
-    pain: "Missing leads, slow response",
-    metaDescription: "Automate lead intake and appointment booking with AI. Respond to enquiries in seconds, book jobs automatically, and never miss a lead.",
+    pain: "Missing leads, slow response — 78% of customers buy from whoever responds first",
+    metaDescription: "Speed-to-Lead AI agent that responds to enquiries in under 60 seconds, qualifies leads automatically, and books appointments 24/7. Never lose a lead to slow response times again.",
     deliverables: [
       "Lead capture form",
       "AI qualification",
@@ -147,7 +147,7 @@ export const services: Service[] = [
     proof: {
       heading: "Real Results",
       description:
-        "We built exactly this for E'Manuel Bakery — automated order intake that replaced manual WhatsApp collection. 180+ orders per week now flow through automatically with zero admin time. The same approach works for appointment-based businesses: a lead comes in, AI qualifies them, books the calendar slot, and sends a confirmation — all in under 60 seconds.",
+        "We built exactly this for E'Manuel Bakery — automated order intake that replaced manual WhatsApp collection. 180+ orders per week now flow through automatically with zero admin time. The same Speed-to-Lead approach works for any service business: an enquiry comes in, AI responds instantly with intelligent qualifying questions, books the calendar slot, and sends a confirmation — all in under 60 seconds while you're on a job site.",
       stats: [
         { label: "Response time", value: "Under 60 seconds" },
         { label: "Proven with", value: "180+ orders/week" },
@@ -161,7 +161,7 @@ export const services: Service[] = [
       {
         step: 1,
         title: "Audit Your Current Process",
-        description: "We map how leads reach you today — phone, email, website, social — and identify where you're losing them. Most businesses lose 30-40% of leads to slow response times.",
+        description: "We map how leads reach you today — phone, email, website, social — and measure your response time. Research shows a 5-minute response makes you 21x more likely to win the job. Most businesses take hours or never respond at all.",
         icon: "Search",
       },
       {
@@ -173,7 +173,7 @@ export const services: Service[] = [
       {
         step: 3,
         title: "Launch & Test",
-        description: "Your system goes live. Every new lead gets an instant response, qualification questions, and a booking link — all within 60 seconds. We test with real enquiries before you go fully live.",
+        description: "Your Speed-to-Lead agent goes live. Every new enquiry gets an intelligent response in under 60 seconds — not a generic auto-reply, but a personalised message that asks the right qualifying questions and books them straight into your calendar.",
         icon: "Rocket",
       },
       {

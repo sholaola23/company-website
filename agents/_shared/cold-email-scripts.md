@@ -27,20 +27,22 @@ Shola
 PS — we just did this for a bakery in under 2 weeks
 ```
 
-## Script B — The Free Audit Hook (MEDIUM VOLUME, light personalization)
+## Script B — The Free Diagnostic Hook (MEDIUM VOLUME, light personalization)
 **Use for:** Leads with websites or online presence. Lead Score 50+.
 **Subject:** {{companyName}} — quick thought
 
 ```
 {{firstName}}
 
-just ran a quick AI readiness check on {{companyName}} — you're leaving time on the table
+just looked at how {{companyName}} handles {{specificProcess}} — i can see a few hours a week being lost
 
-want me to send the full breakdown? it's free
+happy to do a free 20-min diagnostic — no pitch, just a map of what's fixable
+
+worth a look?
 
 Shola
 
-PS — our audits show exactly how many hours you'd save, with real numbers
+PS — our diagnostics show exactly how many hours you'd save, with real numbers
 ```
 
 ## Script C — The Competitor FOMO (PERSONALIZED, needs Clay/research)
@@ -163,6 +165,57 @@ Shola
 
 PS — we helped a business save 8+ hours a week on this exact problem
 ```
+
+## Script J — Hiring Signal (JOB AD TRIGGER)
+**Use for:** Leads actively hiring for ops, admin, coordinator, or customer service roles. Signals manual work overload. Lead Score 40+.
+**Subject:** before you hire that [role] at {{companyName}}
+
+```
+{{firstName}}
+
+saw {{companyName}} is hiring a {{roleTitle}}
+
+based on what most {{industry}} businesses do manually, 60-70% of that role could probably be automated — {{specificExample: chasing leads / updating records / handling enquiries}}
+
+happy to do a free 20-min diagnostic — i'll map exactly where the time is going and what's fixable
+
+worth a look?
+
+Shola
+
+PS — we just saved a business 10+ hours a week doing exactly this
+```
+
+**Signal sources:** LinkedIn job postings, Indeed, company /careers pages
+**Trigger roles:** Operations Coordinator, Admin Assistant, Customer Service, Office Manager, Bookings Manager, Data Entry, Receptionist
+
+## Script K — Response Time Proof (SPEED-TO-LEAD)
+**Use for:** Any lead where Lead Scout noted slow response time, no contact form, or no online booking. Lead Score 50+. HIGHLY effective — leads with measurable response time gaps convert best.
+**Subject:** I tested {{companyName}}'s response time
+
+```
+{{firstName}}
+
+I submitted an enquiry to {{companyName}} {{timeAgo}} ago. {{responseDetail}}.
+
+{{statLine}}
+
+we build AI systems that respond to leads in under 60 seconds, qualify them, and book them into your calendar — 24/7.
+
+interested? reply yes
+
+Shola
+
+PS — {{psLine}}
+```
+
+**Variable guide:**
+- `{{timeAgo}}` — "3 days" / "last week" / "5 days" (from Lead Intelligence scouting date vs response)
+- `{{responseDetail}}` — "still haven't heard back" / "got a generic auto-reply but no follow-up" / "the contact form didn't even work"
+- `{{statLine}}` — Pick ONE: "78% of customers buy from whoever responds first" / "a 5-minute response makes you 21x more likely to win the job" / "the average business takes 42 hours to respond — by then the lead's gone"
+- `{{psLine}}` — "one of our clients went from 4-hour response times to under 60 seconds — and doubled their booking rate" / "we just built this for a bakery — 180+ orders a week now flow through automatically"
+
+**When NOT to use:** If Lead Scout noted fast response time or the business clearly has online booking already. Don't fabricate response time data.
 
 ## A/B Testing Framework
 1. Pick 3 scripts that fit the lead batch

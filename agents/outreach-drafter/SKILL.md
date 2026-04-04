@@ -98,7 +98,7 @@ Only use long-form templates from `templates/email-templates.md` if Lead Score >
     - Status → "sent"
     - Sent Date → today (use `date:Sent Date:start` = today's ISO date)
     - Outreach Date → today (use `date:Outreach Date:start` = today's ISO date)
-    - Template Used → which script/template (vault_a / vault_b / vault_c / vault_d / vault_e / vault_f / response_time / no_website / website_harder / free_demo / audit_offer / case_study)
+    - Template Used → which script/template (vault_a / vault_b / vault_c / vault_d / vault_e / vault_f / response_time / speed_to_lead / no_website / website_harder / free_demo / audit_offer / case_study)
     - Email Subject Line → the EXACT subject line you sent (for A/B analysis)
     - Personalization Score → your self-assessed score 1-10 (from quality check in step 8)
     - Opening Variant → which opening option you used (A / B / C / D)
