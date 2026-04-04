@@ -7,29 +7,33 @@ The built-in Notion MCP connector does NOT work in Claude Code scheduled task se
 
 ## Notion Proxy (PRIMARY — use this first)
 
-**Endpoint:** `https://oladipupoconsulting.co.uk/api/notion-proxy`
+**Endpoint:** `https://workcrew.io/api/notion-proxy`
 
-**Headers required:**
-- `X-Proxy-Secret: <NOTION_PROXY_SECRET value from task instructions>`
-- `Content-Type: application/json`
+**How to call (WebFetch — cloud agents):**
+Use `WebFetch` with a POST request. Include the `secret` field INSIDE the JSON body (WebFetch cannot set custom headers).
 
-**Request body:**
+```
+WebFetch url="https://workcrew.io/api/notion-proxy" method="POST" body='{"secret":"<NOTION_PROXY_SECRET>","path":"/databases/34cbc272c1904ac887542435270bea79/query","method":"POST","body":{"page_size":10}}'
+```
+
+**Request body format:**
 ```json
 {
+  "secret": "<NOTION_PROXY_SECRET from task instructions>",
   "path": "/databases/{database_id}/query",
   "method": "POST",
   "body": { ...notion filter/sort object... }
 }
 ```
 
-**Supported paths:** `/databases/`, `/pages`, `/blocks/`
+**IMPORTANT:** The `secret` field goes IN the JSON body, NOT as a header. This is required because cloud WebFetch cannot set custom headers. curl is blocked in cloud sessions.
+
+**Supported paths:** `/databases/`, `/pages`, `/blocks/`, `/search`
 
 ### Example — Query Sales Pipeline
 ```json
-POST https://oladipupoconsulting.co.uk/api/notion-proxy
-Headers: X-Proxy-Secret: <secret>, Content-Type: application/json
-Body:
 {
+  "secret": "<NOTION_PROXY_SECRET>",
   "path": "/databases/34cbc272c1904ac887542435270bea79/query",
   "method": "POST",
   "body": {
@@ -40,9 +44,19 @@ Body:
 }
 ```
 
+### Example — Fetch a Page (Agent Config / Lead Details)
+```json
+{
+  "secret": "<NOTION_PROXY_SECRET>",
+  "path": "/pages/326c6399294e8197b25dfa35c6e51669",
+  "method": "GET"
+}
+```
+
 ### Example — Update a Page
 ```json
 {
+  "secret": "<NOTION_PROXY_SECRET>",
   "path": "/pages/{page_id}",
   "method": "PATCH",
   "body": {
@@ -56,6 +70,7 @@ Body:
 ### Example — Append to Page Body (Lead Intelligence)
 ```json
 {
+  "secret": "<NOTION_PROXY_SECRET>",
   "path": "/blocks/{page_id}/children",
   "method": "PATCH",
   "body": {
@@ -73,6 +88,7 @@ Body:
 ### Example — Create a Report Page
 ```json
 {
+  "secret": "<NOTION_PROXY_SECRET>",
   "path": "/pages",
   "method": "POST",
   "body": {
@@ -93,7 +109,7 @@ Body:
 }
 ```
 
-**Note:** The NOTION_PROXY_SECRET is passed in the task instructions alongside the NOTION_API_KEY.
+**Note:** The NOTION_PROXY_SECRET is passed in the task instructions. curl and Python requests are BLOCKED in cloud sessions — always use WebFetch.
 
 ---
 
