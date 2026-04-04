@@ -105,9 +105,9 @@ async function createNotionLead(data: SaveRequest): Promise<string | null> {
   });
 
   if (!response.ok) {
-    const err = await response.text();
-    console.error("[blueprint/save] Notion error:", err);
-    throw new Error("Notion create failed");
+    const errBody = await response.text();
+    console.error("[blueprint/save] Notion error:", response.status, errBody.slice(0, 500));
+    throw new Error(`Notion create failed: ${response.status} ${errBody.slice(0, 200)}`);
   }
 
   const page = await response.json();
