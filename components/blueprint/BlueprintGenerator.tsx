@@ -189,8 +189,11 @@ export default function BlueprintGenerator() {
             headline: blueprint.headline,
             totalHoursSaved: blueprint.totalHoursSaved,
             monthlyRevenuePotential: blueprint.monthlyRevenuePotential,
+            roiMultiple: blueprint.roiMultiple,
             recommendedTier: blueprint.recommendedTier,
-            opportunities: blueprint.opportunities.map((o) => ({ title: o.title, solution: o.solution })),
+            tierReason: blueprint.tierReason,
+            beforeAfter: blueprint.beforeAfter,
+            opportunities: blueprint.opportunities.map((o) => ({ title: o.title, solution: o.solution, impact: o.impact, hoursSavedPerWeek: o.hoursSavedPerWeek, description: o.description })),
           },
         }),
       });
@@ -369,8 +372,11 @@ export default function BlueprintGenerator() {
             </div>
             <div className="border border-t-0 border-slate-200 rounded-b-2xl p-6 bg-slate-50">
               <div className="flex flex-col sm:flex-row gap-3">
+                <button onClick={() => window.print()} className="flex-1 px-5 py-3 rounded-xl bg-slate-900 text-white text-sm font-bold hover:bg-slate-800 flex items-center justify-center gap-2"><ArrowRight className="w-4 h-4" /> Download as PDF</button>
                 <button onClick={() => setStep("email")} className="flex-1 px-5 py-3 rounded-xl bg-indigo-600 text-white text-sm font-bold hover:bg-indigo-700 flex items-center justify-center gap-2"><Mail className="w-4 h-4" /> Email Me This Blueprint</button>
-                <a href="https://cal.com/workcrew/free-ai-strategy-call" target="_blank" rel="noopener noreferrer" className="flex-1 px-5 py-3 rounded-xl border-2 border-indigo-600 text-indigo-600 text-sm font-bold hover:bg-indigo-50 flex items-center justify-center gap-2"><Calendar className="w-4 h-4" /> Book a Strategy Call</a>
+              </div>
+              <div className="mt-3 text-center">
+                <a href="https://cal.com/workcrew/free-ai-strategy-call" target="_blank" rel="noopener noreferrer" className="text-sm text-indigo-600 font-semibold hover:text-indigo-800 inline-flex items-center gap-1"><Calendar className="w-4 h-4" /> Book a Free Strategy Call</a>
               </div>
               <p className="text-xs text-slate-400 text-center mt-3">Recommended: {blueprint.recommendedTier} tier — {blueprint.tierReason}</p>
             </div>
