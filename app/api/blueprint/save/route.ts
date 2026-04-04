@@ -88,7 +88,7 @@ async function createNotionLead(data: SaveRequest): Promise<string | null> {
         Status: { select: { name: "new" } },
         "Lead Score": { number: calculateLeadScore(data) },
         "Best Solution": {
-          rich_text: [{ text: { content: JSON.stringify(solutionNames) } }],
+          multi_select: solutionNames.map((name: string) => ({ name })),
         },
         "Pain Points": {
           rich_text: [{ text: { content: painPointsText } }],
@@ -96,7 +96,7 @@ async function createNotionLead(data: SaveRequest): Promise<string | null> {
         "Online Presence Notes": {
           rich_text: [{ text: { content: `Channels: ${channelsText}. Volume: ${data.enquiryVolume}/month.` } }],
         },
-        "Needs Email": { select: { name: "__NO__" } },
+        "Needs Email": { checkbox: false },
         "Lead Intelligence": {
           rich_text: [{ text: { content: leadIntelligence } }],
         },
