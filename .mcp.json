@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "tavily": {
+      "command": "npx",
+      "args": ["-y", "tavily-mcp"],
+      "env": {
+        "TAVILY_API_KEY": "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"
+      }
+    },
+    "firecrawl": {
+      "command": "npx",
+      "args": ["-y", "firecrawl-mcp"],
+      "env": {
+        "FIRECRAWL_API_KEY": "fc-934c30d4b585467a91ec4299127afa16"
+      }
+    }
+  }
+}
