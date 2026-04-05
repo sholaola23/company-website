@@ -209,7 +209,11 @@ async function sendBlueprintEmail(data: SaveRequest): Promise<void> {
         addRandomSuffix: false,
         cacheControlMaxAge: 31536000,
       });
-      reportUrl = blob.url;
+      // Use proxy URL so it displays inline instead of downloading
+      const blobPathname = blob.pathname; // e.g. "blueprints/the-green-plate-kitchen-1775307687708.html"
+      const slugWithTimestamp = blobPathname.replace("blueprints/", "").replace(".html", "");
+      const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://workcrew.io";
+      reportUrl = `${baseUrl}/blueprints/${slugWithTimestamp}`;
     } catch (err) {
       console.error("[blueprint/save] Blob upload failed:", err);
     }
