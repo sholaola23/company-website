@@ -404,30 +404,87 @@ function HowItWorks() {
 // ---------------------------------------------------------------------------
 // Page
 // ---------------------------------------------------------------------------
-const businessJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "WorkCrew Ltd",
-  "description":
-    "AI automation, professional websites, custom web apps, and AI training for businesses. We build the digital systems that run your business.",
-  "url": "https://workcrew.io",
-  "email": "hello@workcrew.io",
-  "telephone": "+447469347654",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "GB",
+const businessJsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": ["ProfessionalService", "Organization"],
+    "@id": "https://workcrew.io/#organization",
+    "name": "WorkCrew Ltd",
+    "legalName": "WorkCrew Ltd",
+    "description":
+      "AI automation, professional websites, custom web apps, and AI training for UK small businesses. We build digital systems that save your team 5+ hours per week.",
+    "url": "https://workcrew.io",
+    "logo": "https://workcrew.io/icon.png",
+    "email": "hello@workcrew.io",
+    "telephone": "+447469347654",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "GB",
+    },
+    "areaServed": [
+      { "@type": "City", "name": "London" },
+      { "@type": "City", "name": "Manchester" },
+      { "@type": "City", "name": "Birmingham" },
+      { "@type": "City", "name": "Leeds" },
+      { "@type": "City", "name": "Liverpool" },
+      { "@type": "City", "name": "Bristol" },
+      { "@type": "City", "name": "Edinburgh" },
+      { "@type": "City", "name": "Glasgow" },
+      { "@type": "City", "name": "Sheffield" },
+      { "@type": "City", "name": "Kettering" },
+      { "@type": "Country", "name": "United Kingdom" },
+    ],
+    "serviceType": ["AI Automation", "Website Development", "Web App Development", "AI Training", "WhatsApp Bot Development", "SEO Content Automation"],
+    "foundingDate": "2025",
+    "founder": {
+      "@type": "Person",
+      "name": "Olushola Oladipupo",
+      "url": "https://linkedin.com/in/olushola-oladipupo/",
+    },
+    "sameAs": [
+      "https://linkedin.com/in/olushola-oladipupo/",
+      "https://linkedin.com/company/workcrew-ltd",
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "1",
+      "bestRating": "5",
+      "worstRating": "1",
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Tunmise Ajao",
+      },
+      "reviewBody":
+        "They moved us from manual order tracking to a fully automated system — orders come in digitally, responses to customers are instant, and payments match our statements automatically. It's saving us over 50 minutes every day.",
+    },
   },
-  "areaServed": "Worldwide",
-  "serviceType": ["AI Automation", "Website Development", "Web App Development", "AI Training"],
-  "founder": {
-    "@type": "Person",
-    "name": "Olushola Oladipupo",
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://workcrew.io/#website",
+    "url": "https://workcrew.io",
+    "name": "WorkCrew",
+    "description": "AI automation, websites, and training for UK small businesses.",
+    "publisher": { "@id": "https://workcrew.io/#organization" },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://workcrew.io/blog?q={search_term_string}",
+      },
+      "query-input": "required name=search_term_string",
+    },
   },
-  "sameAs": [
-    "https://linkedin.com/in/olushola-oladipupo/",
-    "https://linkedin.com/company/oladipupo-consulting"
-  ],
-};
+];
 
 const homepageFAQs: FAQItem[] = [
   {

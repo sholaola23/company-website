@@ -1,8 +1,17 @@
-export default function JsonLd({ data }: { data: Record<string, unknown> }) {
+type JsonLdData = Record<string, unknown> | Record<string, unknown>[];
+
+export default function JsonLd({ data }: { data: JsonLdData }) {
+  // Support both single schema objects and arrays of schemas
+  const schemas = Array.isArray(data) ? data : [data];
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-    />
+    <>
+      {schemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+    </>
   );
 }

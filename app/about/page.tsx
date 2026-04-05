@@ -4,24 +4,25 @@ import CTAButton from "@/components/shared/CTAButton";
 import SectionHeading from "@/components/shared/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About WorkCrew | UK AI Automation Agency for Small Businesses",
   description:
-    "WorkCrew — UK-based AI automation agency for small businesses. Founded by Olushola Oladipupo. Registered in England & Wales.",
+    "WorkCrew Ltd is a UK AI automation agency helping small businesses save 5+ hours per week. Founded by Olushola Oladipupo. Registered in England & Wales. 90-day results guarantee.",
   alternates: {
     canonical: "https://workcrew.io/about",
   },
   openGraph: {
     images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
-    title: "About Us | WorkCrew",
+    title: "About WorkCrew | UK AI Automation Agency for Small Businesses",
     description:
-      "UK-based AI solutions agency for small businesses. AI automation, website development, and team training. Founded by Olushola Oladipupo.",
+      "WorkCrew Ltd builds AI automation, websites, and custom apps for UK small businesses. Founded by Olushola Oladipupo. 90-day results guarantee. Serving businesses across the UK.",
     url: "https://workcrew.io/about",
     type: "website",
   },
   twitter: {
-    title: "About Us | WorkCrew",
+    card: "summary_large_image",
+    title: "About WorkCrew | UK AI Automation Agency for Small Businesses",
     description:
-      "UK-based AI solutions agency for small businesses. AI automation, website development, and team training. Founded by Olushola Oladipupo.",
+      "WorkCrew Ltd builds AI automation, websites, and custom apps for UK small businesses. 90-day results guarantee.",
   },
 };
 
