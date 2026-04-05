@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import { INDUSTRIES } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { trackBlueprintStarted, trackBlueprintGenerated, trackBlueprintEmailSubmitted } from "@/lib/analytics";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -162,6 +163,7 @@ export default function BlueprintGenerator() {
 
       const data = await res.json();
       setBlueprint(data.blueprint);
+      trackBlueprintGenerated(industry, data.blueprint.recommendedTier ?? "unknown");
       setStep("result");
     } catch {
       setError("Something went wrong generating your blueprint. Please try again.");
@@ -198,6 +200,7 @@ export default function BlueprintGenerator() {
         }),
       });
 
+      trackBlueprintEmailSubmitted(industry);
       setEmailStatus("done");
       setStep("complete");
     } catch {
@@ -236,10 +239,10 @@ export default function BlueprintGenerator() {
             <p className="text-slate-500 mb-6">Pick the closest match — we'll tailor your blueprint to your industry.</p>
             <div className="grid grid-cols-3 sm:grid-cols-4 gap-3 mb-4">
               {POPULAR_INDUSTRIES.map((ind) => (
-                <button key={ind} onClick={() => { setIndustry(ind); setDirection(1); setStep("painPoints"); }} className={cn("p-3 rounded-xl border-2 text-sm font-medium transition-all text-center hover:border-indigo-400 hover:bg-indigo-50", industry === ind ? "border-indigo-500 bg-indigo-50 text-indigo-700" : "border-slate-200 text-slate-700")}>{ind}</button>
+                <button key={ind} onClick={() => { setIndustry(ind); trackBlueprintStarted(ind); setDirection(1); setStep("painPoints"); }} className={cn("p-3 rounded-xl border-2 text-sm font-medium transition-all text-center hover:border-indigo-400 hover:bg-indigo-50", industry === ind ? "border-indigo-500 bg-indigo-50 text-indigo-700" : "border-slate-200 text-slate-700")}>{ind}</button>
               ))}
             </div>
-            <select value={POPULAR_INDUSTRIES.includes(industry) ? "" : industry} onChange={(e) => { setIndustry(e.target.value); if (e.target.value) { setDirection(1); setStep("painPoints"); } }} className="w-full p-3 rounded-xl border-2 border-slate-200 text-sm text-slate-600 focus:border-indigo-400 focus:outline-none">
+            <select value={POPULAR_INDUSTRIES.includes(industry) ? "" : industry} onChange={(e) => { setIndustry(e.target.value); if (e.target.value) { trackBlueprintStarted(e.target.value); setDirection(1); setStep("painPoints"); } }} className="w-full p-3 rounded-xl border-2 border-slate-200 text-sm text-slate-600 focus:border-indigo-400 focus:outline-none">
               <option value="">Other industry...</option>
               {INDUSTRIES.filter((i) => !POPULAR_INDUSTRIES.includes(i)).map((ind) => (<option key={ind} value={ind}>{ind}</option>))}
             </select>

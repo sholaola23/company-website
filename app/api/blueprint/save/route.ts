@@ -276,7 +276,7 @@ async function sendBlueprintEmail(data: SaveRequest): Promise<void> {
       </div>
 
       <p style="color: #94a3b8; font-size: 11px; text-align: center; margin: 16px 0 0;">
-        WorkCrew Ltd &middot; workcrew.io &middot; <a href="https://workcrew.io" style="color:#94a3b8;">Unsubscribe</a>
+        WorkCrew Ltd &middot; <a href="https://workcrew.io" style="color:#94a3b8;">workcrew.io</a> &middot; This is a transactional email sent because you requested an AI Blueprint.
       </p>
     </div>
   `;

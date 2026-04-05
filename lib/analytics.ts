@@ -54,6 +54,20 @@ export function trackCaseStudyViewed(slug: string) {
   track("case_study_viewed", { slug });
 }
 
+// ── Blueprint funnel ──────────────────────────────────────────────────────────
+
+export function trackBlueprintStarted(industry: string) {
+  track("blueprint_started", { industry });
+}
+
+export function trackBlueprintGenerated(industry: string, tier: string) {
+  track("blueprint_generated", { industry, tier });
+}
+
+export function trackBlueprintEmailSubmitted(industry: string) {
+  track("blueprint_email_submitted", { industry });
+}
+
 // ── CTA clicks ────────────────────────────────────────────────────────────────
 
 export function trackCTAClicked(location: string, variant: string) {

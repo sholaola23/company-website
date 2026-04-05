@@ -27,7 +27,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     { url: BASE_URL, lastModified: REDESIGN_DATE, changeFrequency: "weekly" as const, priority: 1 },
     { url: `${BASE_URL}/services`, lastModified: REDESIGN_DATE, changeFrequency: "weekly" as const, priority: 0.9 },
-    { url: `${BASE_URL}/audit`, lastModified: REDESIGN_DATE, changeFrequency: "monthly" as const, priority: 0.9 },
+    { url: `${BASE_URL}/blueprint`, lastModified: new Date("2026-04-05"), changeFrequency: "monthly" as const, priority: 0.9 },
+    { url: `${BASE_URL}/audit`, lastModified: REDESIGN_DATE, changeFrequency: "monthly" as const, priority: 0.7 },
     { url: `${BASE_URL}/case-studies`, lastModified: REDESIGN_DATE, changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${BASE_URL}/about`, lastModified: REDESIGN_DATE, changeFrequency: "monthly" as const, priority: 0.6 },
     { url: `${BASE_URL}/blog`, lastModified: new Date(), changeFrequency: "daily" as const, priority: 0.7 },
