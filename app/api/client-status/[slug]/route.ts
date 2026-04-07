@@ -81,10 +81,10 @@ export async function GET(
 
   // Fetch all workflows to get active/inactive status
   const allWorkflows = await fetchN8nWorkflows(apiKey);
-  const workflowMap = new Map<string, { active: boolean }>();
+  const workflowMap = new Map<string, { active: boolean; updatedAt?: string }>();
   if (allWorkflows?.data) {
     for (const wf of allWorkflows.data) {
-      workflowMap.set(wf.id, { active: wf.active });
+      workflowMap.set(wf.id, { active: wf.active, updatedAt: wf.updatedAt });
     }
   }
 
@@ -149,16 +149,27 @@ export async function GET(
   const activeCount = workflowStatuses.filter((w) => w.active).length;
 
   // Health is based ONLY on current state — a workflow is "currently failing" only if:
-  // 1. Its last execution status was "error", AND
-  // 2. That error happened within the last 48 hours (not a stale old error from a weekly workflow)
+  // 1. The workflow is currently active (inactive workflows are intentionally paused, not failing)
+  // 2. Its last execution status was "error", AND
+  // 3. That error happened within the last 48 hours (not a stale old error from a weekly workflow)
+  // 4. The error happened AFTER the workflow was last updated (a deactivate/reactivate cycle
+  //    or node fix after an error means the issue has been addressed — treat as acknowledged)
   const now = Date.now();
   const FORTY_EIGHT_HOURS = 48 * 60 * 60 * 1000;
   const currentlyFailingCount = workflowStatuses.filter((w) => {
+    if (!w.active) return false;
     if (w.lastExecution?.status !== "error") return false;
     const lastRun = w.lastExecution?.startedAt
       ? new Date(w.lastExecution.startedAt).getTime()
       : 0;
-    return now - lastRun < FORTY_EIGHT_HOURS;
+    if (now - lastRun >= FORTY_EIGHT_HOURS) return false;
+    // If workflow was updated after the error, the issue has been addressed
+    const wfData = workflowMap.get(w.id) as { active: boolean; updatedAt?: string } | undefined;
+    if (wfData?.updatedAt) {
+      const updatedAt = new Date(wfData.updatedAt).getTime();
+      if (updatedAt > lastRun) return false;
+    }
+    return true;
   }).length;
 
   const overallHealth: "green" | "amber" | "red" =
