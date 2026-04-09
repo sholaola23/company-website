@@ -221,7 +221,7 @@ export async function getOrdersSummary(
         if (qty > 0) basketTotal += qty * price;
       }
       if (basketTotal === 0) {
-        const rawBT = parseFloat(row.get("Basket Total") || "0");
+        const rawBT = parseFloat((row.get("Basket Total") || "0").replace(/[£$,]/g, ""));
         if (!isNaN(rawBT) && rawBT > 0) basketTotal = rawBT;
       }
 
@@ -229,22 +229,37 @@ export async function getOrdersSummary(
       const name =
         row.get("Full Name") || row.get("Name") || row.get("Customer") || "Unknown";
 
-      totalRevenue += basketTotal;
+      // Parse Payment Amount early — strip currency symbols (£2.00 → 2.00)
+      const paymentAmountRaw = parseFloat((row.get("Payment Amount") || "").replace(/[£$,]/g, ""));
+      const hasPaymentAmount = !isNaN(paymentAmountRaw) && paymentAmountRaw > 0;
+
+      // For paid orders with a Payment Amount, use that for revenue; else use basketTotal
+      if (hasPaymentAmount && (paymentStatus === "paid" || paymentStatus === "partial")) {
+        totalRevenue += paymentAmountRaw;
+      } else {
+        totalRevenue += basketTotal;
+      }
+
+      // Also backfill basketTotal from Payment Amount if products didn't populate it
+      if (basketTotal === 0 && hasPaymentAmount) {
+        basketTotal = paymentAmountRaw;
+      }
 
       if (paymentStatus === "paid" || paymentStatus === "partial") {
         if (paymentStatus === "paid") paidCount++;
 
         // Determine actual amount paid
-        const paymentAmountRaw = parseFloat(row.get("Payment Amount") || "");
-        const paidAmount = !isNaN(paymentAmountRaw) && paymentAmountRaw > 0
-          ? paymentAmountRaw
-          : basketTotal;
+        const paidAmount = hasPaymentAmount ? paymentAmountRaw : basketTotal;
 
         // Categorize by payment method using Payment Match (column X)
         // Values: SUMUP-T1-95%, SUMUP-T2-70%, UNPAID, HSBC-..., BANK-..., MATCHED, PARTIAL
         const paymentMatch = (row.get("Payment Match") || "").toUpperCase();
 
-        if (paymentMatch.startsWith("SUMUP")) {
+        // Payment Reference starting with a UUID = SumUp checkout payment
+        const paymentRef = (row.get("Payment Reference") || "").toLowerCase();
+        const isSumupCheckout = paymentRef.match(/^[0-9a-f]{8}-/);
+
+        if (paymentMatch.startsWith("SUMUP") || isSumupCheckout) {
           paymentBreakdown.sumupPaid += paidAmount;
           paymentBreakdown.sumupCount++;
         } else if (paymentMatch.startsWith("HSBC") || paymentMatch.startsWith("BANK")) {
