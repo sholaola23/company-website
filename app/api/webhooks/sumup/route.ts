@@ -30,6 +30,51 @@ async function fetchCheckout(checkoutId: string) {
   }>;
 }
 
+/**
+ * Shared handler — processes a checkout ID, verifies payment via SumUp API,
+ * and writes payment status to the Google Sheet.
+ */
+async function processCheckout(checkoutId: string): Promise<{ updated: boolean; checkout: { checkout_reference: string; amount: number; status: string } | null }> {
+  if (!SUMUP_API_KEY) return { updated: false, checkout: null };
+
+  const checkout = await fetchCheckout(checkoutId);
+  if (!checkout) return { updated: false, checkout: null };
+  if (checkout.status !== "PAID") return { updated: false, checkout };
+
+  if (!process.env.GOOGLE_SERVICE_ACCOUNT) return { updated: false, checkout };
+
+  for (const sheetId of SHEET_IDS) {
+    const result = await updatePaymentStatus(
+      sheetId,
+      checkout.checkout_reference,
+      checkout.id,
+      checkout.amount
+    );
+    if (result.success) {
+      console.log(`SumUp: updated ${checkout.checkout_reference} as PAID (£${checkout.amount}) in sheet ${sheetId}`);
+      return { updated: true, checkout };
+    }
+  }
+  return { updated: false, checkout };
+}
+
+/**
+ * GET handler — SumUp redirects the customer's browser here after payment.
+ * The checkout_id comes as a query param. We process the payment and redirect
+ * to a thank-you page.
+ */
+export async function GET(req: NextRequest) {
+  const { searchParams } = new URL(req.url);
+  const checkoutId = searchParams.get("checkout_id") || searchParams.get("id") || "";
+
+  if (checkoutId) {
+    await processCheckout(checkoutId);
+  }
+
+  // Redirect customer to a friendly thank-you page
+  return NextResponse.redirect(new URL("/pay/emanuel-bakery/success", req.url));
+}
+
 export async function POST(req: NextRequest) {
   let payload: { event_type?: string; id?: string };
 
@@ -49,48 +94,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ received: true });
   }
 
-  // Verify actual payment status via SumUp API (never trust webhook payload alone)
-  if (!SUMUP_API_KEY) {
-    console.error("SumUp webhook: SUMUP_API_KEY not configured");
-    return NextResponse.json({ error: "SumUp API key not configured" }, { status: 500 });
-  }
-
-  const checkout = await fetchCheckout(checkoutId);
-  if (!checkout) {
-    console.error(`SumUp webhook: could not fetch checkout ${checkoutId}`);
-    return NextResponse.json({ error: "Could not verify checkout" }, { status: 502 });
-  }
-
-  // Only update sheet for paid checkouts
-  if (checkout.status !== "PAID") {
-    console.log(`SumUp webhook: checkout ${checkoutId} status is ${checkout.status}, skipping`);
-    return NextResponse.json({ received: true });
-  }
-
-  if (!process.env.GOOGLE_SERVICE_ACCOUNT) {
-    console.error("SumUp webhook: GOOGLE_SERVICE_ACCOUNT not configured");
-    return NextResponse.json({ error: "Sheet credentials not configured" }, { status: 500 });
-  }
-
-  // Try each sheet — bot orders could land in test or production
-  let updated = false;
-  for (const sheetId of SHEET_IDS) {
-    const result = await updatePaymentStatus(
-      sheetId,
-      checkout.checkout_reference,
-      checkout.id,
-      checkout.amount
-    );
-    if (result.success) {
-      console.log(`SumUp webhook: updated ${checkout.checkout_reference} as PAID (£${checkout.amount}) in sheet ${sheetId}`);
-      updated = true;
-      break;
-    }
-  }
-
-  if (!updated) {
-    console.warn(`SumUp webhook: no matching order for checkout_reference=${checkout.checkout_reference}`);
-  }
-
+  await processCheckout(checkoutId);
   return NextResponse.json({ received: true });
 }
