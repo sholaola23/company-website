@@ -361,11 +361,20 @@ export async function POST(req: NextRequest) {
         "Content-Type": "application/json",
         "x-api-key": apiKey,
         ...heliconeHeaders(), "anthropic-version": ANTHROPIC_VERSION,
+        "anthropic-beta": "advisor-tool-2026-03-01",
       },
       body: JSON.stringify({
         model: "claude-sonnet-4-20250514",
         max_tokens: 16000,
         system: prompt,
+        tools: [
+          {
+            type: "advisor_20260301",
+            name: "advisor",
+            model: "claude-opus-4-6",
+            max_uses: 2,
+          },
+        ],
         messages: [
           {
             role: "user",
