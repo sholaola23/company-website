@@ -15,6 +15,7 @@ export default function ClientLayout({
       header.fixed, footer, #chat-widget-root,
       [aria-label="Open AI assistant chat"] { display: none !important; }
       #main-content { padding-top: 0 !important; }
+      html, body { background: #09090b !important; }
     `;
     document.head.appendChild(style);
 
