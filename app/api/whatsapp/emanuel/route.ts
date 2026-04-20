@@ -273,7 +273,7 @@ export async function POST(req: NextRequest) {
         ...heliconeHeaders(), "anthropic-version": ANTHROPIC_VERSION,
       },
       body: JSON.stringify({
-        model: "claude-haiku-4-5-20250514",
+        model: "claude-haiku-4-5-20251001",
         max_tokens: 300,
         temperature: 0.3,
         system: SYSTEM_PROMPT,

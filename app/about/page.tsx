@@ -70,6 +70,7 @@ const TRUST = [
   "Real client references available on request",
   "Human-in-the-loop on all outbound communications",
   "Full SOP documentation handed over on every project",
+  "Published in TechTrends Africa — AI thought leadership",
 ];
 
 export default function AboutPage() {

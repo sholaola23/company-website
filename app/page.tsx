@@ -1,6 +1,8 @@
 import Link from "next/link";
 import {
   ArrowRight,
+  Calendar,
+  CheckCircle2,
   FileSearch,
   Globe,
   GraduationCap,
@@ -306,7 +308,7 @@ function CaseStudiesPreview() {
 const steps = [
   {
     number: "01",
-    title: "Free AI Audit",
+    title: "Free AI Blueprint",
     description:
       "We assess your business and identify the highest-impact automation opportunities — at no cost.",
     icon: FileSearch,
@@ -396,6 +398,107 @@ function HowItWorks() {
             );
           })}
         </ol>
+      </div>
+    </section>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Strategy Call CTA — dedicated section to drive call bookings
+// ---------------------------------------------------------------------------
+const callPoints = [
+  "We map out where you're losing the most time right now",
+  "We show you exactly what AI can (and can't) do for your business",
+  "You leave with a prioritised action plan — whether you work with us or not",
+];
+
+function StrategyCallCTA() {
+  return (
+    <section className="bg-slate-900 py-28" aria-labelledby="strategy-call-heading">
+      <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
+        <div className="flex flex-col items-center gap-10 lg:flex-row lg:gap-16">
+          {/* Left: copy */}
+          <AnimatedSection className="flex-1 text-center lg:text-left">
+            <span className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800 px-4 py-1.5 text-xs font-semibold tracking-wide text-slate-400 mb-6">
+              <Calendar size={12} aria-hidden="true" />
+              Free 30-Minute Strategy Call
+            </span>
+
+            <h2
+              id="strategy-call-heading"
+              className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-[44px] lg:leading-tight"
+            >
+              See exactly what AI can do for{" "}
+              <span className="text-blue-400">Your Business</span> — in 30 minutes.
+            </h2>
+
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-400 sm:text-lg lg:mx-0 mx-auto">
+              No slides. No sales pitch. Just a focused conversation about your business and where automation makes a real difference.
+            </p>
+
+            <ul className="mt-8 flex flex-col gap-3" role="list">
+              {callPoints.map((point) => (
+                <li key={point} className="flex items-start gap-3 text-sm text-slate-300">
+                  <CheckCircle2
+                    size={18}
+                    className="mt-0.5 shrink-0 text-blue-400"
+                    aria-hidden="true"
+                  />
+                  {point}
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:items-center">
+              <Link
+                href="https://cal.com/workcrew/free-ai-strategy-call"
+                className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 text-base font-semibold text-white shadow-[0_1px_6px_-1px_rgba(37,99,235,0.5)] transition-all duration-200 hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 group"
+              >
+                Book Your Free Strategy Call
+                <ArrowRight
+                  size={18}
+                  className="transition-transform duration-200 group-hover:translate-x-0.5"
+                  aria-hidden="true"
+                />
+              </Link>
+              <p className="text-xs text-slate-500">No obligation. No credit card.</p>
+            </div>
+          </AnimatedSection>
+
+          {/* Right: call details card */}
+          <AnimatedSection delay={0.2} className="w-full lg:w-80 shrink-0">
+            <div className="rounded-2xl border border-slate-700 bg-slate-800 p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600/20">
+                  <Calendar size={20} className="text-blue-400" aria-hidden="true" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-white">Free Strategy Call</p>
+                  <p className="text-xs text-slate-400">30 minutes · Google Meet</p>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-600/10 text-xs font-bold text-blue-400">1</span>
+                  <p className="text-sm text-slate-300">Tell us about your biggest manual pain points</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-600/10 text-xs font-bold text-blue-400">2</span>
+                  <p className="text-sm text-slate-300">We show you the 2–3 highest-impact automations for your business</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-600/10 text-xs font-bold text-blue-400">3</span>
+                  <p className="text-sm text-slate-300">Walk away with a clear plan, regardless of next steps</p>
+                </div>
+              </div>
+
+              <div className="mt-6 rounded-xl border border-slate-700 bg-slate-900/50 px-4 py-3 text-center">
+                <p className="text-xs text-slate-400">Booked by <span className="text-white font-semibold">UK business owners</span> who want clarity before they commit</p>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
       </div>
     </section>
   );
@@ -598,10 +701,25 @@ export default function HomePage() {
       <JsonLd data={businessJsonLd} />
       <Hero />
       <SocialProofBar />
+      <section className="bg-[var(--color-bg-alt)] border-y border-[var(--color-border)] py-6">
+        <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12 flex items-center justify-center gap-3 text-sm text-[var(--color-muted)]">
+          <span className="text-[10px] font-semibold tracking-widest uppercase text-[var(--color-subtle)]">As featured in</span>
+          <span className="text-[var(--color-border-strong)]">|</span>
+          <a
+            href="https://techtrends.africa/ai-automation-for-african-smbs-lessons/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-[var(--color-heading)] hover:text-[var(--color-primary)] transition-colors"
+          >
+            TechTrends Africa
+          </a>
+        </div>
+      </section>
       <WhatWeBuild />
       <TestimonialSection />
       <CaseStudiesPreview />
       <HowItWorks />
+      <StrategyCallCTA />
       <section className="bg-white py-28">
         <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
           <AnimatedSection>

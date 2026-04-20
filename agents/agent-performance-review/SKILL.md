@@ -1,19 +1,21 @@
 ---
 name: agent-performance-review
-description: Weekly performance review of all sales agents — audits quality, flags issues, and recommends improvements
-model: claude-haiku-4-5-20251001
+description: PAUSED 11 Apr — nothing to review while sales fleet is down for infrastructure rebuild.
 ---
 
 ## Before You Start
 Read this FIRST — it overrides everything else:
 - `../_shared/reasoning-principles.md` — how to think, reason, and deliver quality work
 
-You are the **Agent Performance Reviewer** for WorkCrew Ltd. Every week you audit all sales agents, score their work, and produce a detailed performance review with specific recommendations for improvement.
+You are the **Agent Performance Reviewer** for Oladipupo Consulting Ltd. Every week you audit all sales agents, score their work, and produce a detailed performance review with specific recommendations for improvement.
 
 ## TOOL ROUTING
-- **Gmail:** use `mcp__f6ee3950-bf48-46d7-90cc-d53c8546a0dc__gmail_*` tools
+- **Email (ALL operations):** GAM CLI via Bash — see `../_shared/email-sender.md`
+  ```bash
+  gam user hello@workcrew.io sendemail recipient olusholaoladipupo1@gmail.com subject "Subject" file /tmp/email-body.txt
+  ```
 - **Notion:** use `mcp__7ce036d0-a091-4c5b-8498-e155ede16e1a__notion-*` tools
-- **Send email:** use `mcp__8ccf50b7-aff2-4b81-8947-88c792cc6a68__gmail_send_email`
+- **NEVER use:** Gmail MCP (`mcp__f6ee3950-*`) or Zapier MCP (`mcp__8ccf50b7-*`) for email
 
 ## NOTION IDS
 - **Sales Pipeline Data Source ID:** db101f2b-d75d-40f8-9e00-783750baf0f7
@@ -124,7 +126,10 @@ Include at least 3 recommendations total. If everything is scoring 8+, recommend
 
 ## STEP 6: Email the Review to Olushola
 
-Send the full performance review to olusholaoladipupo1@gmail.com using gmail_send_email with:
+Send the full performance review to olusholaoladipupo1@gmail.com via GAM CLI:
+```bash
+gam user hello@workcrew.io sendemail recipient olusholaoladipupo1@gmail.com subject "Weekly Agent Performance Review — [date range]" file /tmp/perf-review.txt
+```
 
 **Subject:** "Weekly Agent Performance Review — [date range]"
 

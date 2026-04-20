@@ -172,23 +172,33 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="py-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-slate-500 text-center sm:text-left">
-            &copy; 2026 WorkCrew Ltd. Registered in England &amp; Wales.
+        <div className="py-6 border-t border-slate-800 flex flex-col gap-4">
+          {/* Statutory disclosures — Companies Act 2006 s.82 + Trading Disclosures Regs 2008 */}
+          <p className="text-xs text-slate-500 text-center sm:text-left leading-relaxed">
+            WorkCrew Ltd — Registered in England &amp; Wales, company number{" "}
+            <span className="text-slate-400">16501246</span>. Registered office:{" "}
+            5 Fotheringhay Road, Wellingborough, Northamptonshire NN8 1FN, United Kingdom.
+            {/* ICO data controller registration — update number once ICO confirmation email arrives */}
+            {" "}ICO registration: application pending (C1914939).
           </p>
-          <div className="flex items-center gap-4">
-            <Link
-              href="/privacy"
-              className="text-xs text-slate-500 hover:text-slate-300 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms"
-              className="text-xs text-slate-500 hover:text-slate-300 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
-            >
-              Terms
-            </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p className="text-xs text-slate-500 text-center sm:text-left">
+              &copy; 2026 WorkCrew Ltd. All rights reserved.
+            </p>
+            <div className="flex items-center gap-4">
+              <Link
+                href="/privacy"
+                className="text-xs text-slate-500 hover:text-slate-300 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/terms"
+                className="text-xs text-slate-500 hover:text-slate-300 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+              >
+                Terms
+              </Link>
+            </div>
           </div>
         </div>
       </div>

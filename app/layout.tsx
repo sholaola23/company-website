@@ -5,9 +5,8 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import PageTracker from "@/components/shared/PageTracker";
 import ChatWidgetLoader from "@/components/shared/ChatWidgetLoader";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import MetaPixel from "@/components/shared/MetaPixel";
+import ConsentGate from "@/components/shared/ConsentGate";
+import CookieBanner from "@/components/shared/CookieBanner";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -98,9 +97,8 @@ export default function RootLayout({
         </main>
         <Footer />
         <ChatWidgetLoader />
-        <MetaPixel />
-        <Analytics />
-        <SpeedInsights />
+        <CookieBanner />
+        <ConsentGate />
       </body>
     </html>
   );

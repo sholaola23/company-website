@@ -83,6 +83,35 @@ I'd love to show you 2-3 specific things that could make a difference for [Busin
 [SIGNATURE]
 ```
 
+## Template 5: Hiring Signal (Job Ad Trigger)
+**Use when:** Lead is actively hiring for an ops, admin, coordinator, or customer service role — signals manual work overload.
+
+**Subject lines:**
+- "The role you're hiring for — AI could do 60% of it"
+- "Saw [Business Name] is hiring a [role] — worth a chat first?"
+- "Before you hire an ops coordinator at [Business Name]"
+
+**Body:**
+```
+Hi [Name],
+
+Noticed [Business Name] is hiring a [role title].
+
+Based on how most [industry] businesses handle [process], there's a good chance 60–70% of what that role does daily could be automated — things like [specific example: chasing leads, updating records, sending follow-ups, scheduling].
+
+I've built systems for [similar businesses] that cut that kind of manual work down from hours to minutes. Before you take on a salary, it might be worth a 20-minute call to see what's actually fixable.
+
+Happy to do a free diagnostic — I'll map out exactly where the time is going and what's automatable. No cost, no pitch.
+
+Worth a look?
+
+[SIGNATURE — see ../_shared/ctas.md]
+```
+
+**Signal sources to watch:** LinkedIn job postings, Indeed, company websites with a /careers page. Look for: "Operations Coordinator", "Admin Assistant", "Customer Service", "Office Manager", "Bookings Manager", "Data Entry".
+
+---
+
 ## Template 4: Free Demo
 **Use when:** Lead Score >= 80 and you want to invest extra effort.
 

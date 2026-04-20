@@ -6,14 +6,15 @@
 - "interested? just reply yes"
 - "would you be open to seeing how? just reply yes"
 
-## Secondary: Free AI Readiness Audit (use for leads with websites)
-- "Can I put together a free AI audit for [Business Name]? It'll show you exactly how many hours you could save."
-- "I do free AI Readiness Audits for businesses like yours — shows the specific opportunities with ROI numbers. Want one?"
+## Secondary: Free 20-Min Diagnostic (use for leads with websites or hiring signals)
+- "Happy to do a free 20-min diagnostic — I'll map exactly where the time is going and what's automatable. Worth a look?"
+- "I offer a free 20-min diagnostic call — no pitch, just a map of what's fixable and what it's worth."
+- "Can I run a free diagnostic on [Business Name]'s workflow? Shows the specific bottlenecks with time/cost numbers."
 
 ## For High Scorers (80+)
-- "I've already started putting together an AI audit for [Business Name] — want me to finish it and send it over?"
+- "I've already mapped out what I think is happening at [Business Name] — want me to walk you through it on a quick call?"
 
-## Fallback (if audit feels too heavy)
+## Fallback (if diagnostic feels too heavy)
 - "Can I send a 2-minute demo?"
 - "happy to share what's working for businesses in your space"
 
