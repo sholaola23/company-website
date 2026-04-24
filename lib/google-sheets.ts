@@ -62,6 +62,7 @@ export interface OrderRow {
   refundDate: string | null;
   refundReason: string | null;
   refundMethod: string | null;
+  sheetRowIndex: number;
 }
 
 export interface OrdersSummary {
@@ -159,8 +160,8 @@ export async function getOrdersSummary(
     const rows = await sheet.getRows();
     const weekCode = getCurrentWeekCode();
 
-    // Filter orders — current week or all time
-    const thisWeek = rows.filter((row) => {
+    // Filter orders — current week or all time, preserving absolute row index
+    const thisWeek = rows.map((row, idx) => ({ row, idx })).filter(({ row }) => {
       const status = (row.get("Order Status") || "").toLowerCase();
       if (status === "cancelled") return false;
       if (allTime) return true;
@@ -212,7 +213,7 @@ export async function getOrdersSummary(
     };
     const orderRows: OrderRow[] = [];
 
-    for (const row of thisWeek) {
+    for (const { row, idx: sheetRowIndex } of thisWeek) {
       // Calculate basket total from product quantities × prices (primary)
       // Fall back to pre-calculated "Basket Total" column if products give 0
       let basketTotal = 0;
@@ -355,6 +356,7 @@ export async function getOrdersSummary(
         refundDate: row.get("Refund Date") || null,
         refundReason: row.get("Refund Reason") || null,
         refundMethod: row.get("Refund Method") || null,
+        sheetRowIndex,
       });
     }
 
