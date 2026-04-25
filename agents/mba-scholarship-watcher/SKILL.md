@@ -11,6 +11,49 @@ Run every Sunday 17:00 BST (16:00 UTC). Read the **MBA Scholarship Pipeline** No
 - **Data Source ID:** `e0e7cf5b-9665-459b-a0ca-6476e648fa6a`
 - **Parent page (for context links):** https://www.notion.so/34dc6399294e810394b7f1477331aa87
 
+## Email Verification Protocol (HARD RULE — never invent admissions emails)
+
+**Every admissions email surfaced by this agent MUST be sourced from the school's own admissions/contact page, NOT guessed from common patterns.** Best-guess emails bounce, bounces are evidence Olushola sees, and they erode trust in this agent's output.
+
+### When this rule applies
+- When you add a NEW programme row to the Notion DB during a delta scan
+- When you surface an "Email admissions" action in the weekly brief
+- When you propose any outreach email address to Olushola
+
+### Required protocol
+1. **Fetch the school's official admissions/contact page directly** via WebFetch — start with the programme page itself (look for `mailto:` links), then the school's `/admissions` and `/contact` pages, then the programme FAQ.
+2. **Capture the exact source URL** where you found the email.
+3. **Prefer programme-specific emails over general admissions** when both exist (e.g., `gomba@queensu.ca` over `mba@queensu.ca`).
+4. **Watch for sub-brand domains** — some schools route their online programmes through a separate domain (e.g., Aston Online uses `astononline.ac.uk`, not `aston.ac.uk`). Always check the live programme page, not just the main university domain.
+
+### What to do when you can't verify
+- **Contact form only (no email):** log `FORM_ONLY: <form-url>` in the row's Source URL field. Do NOT guess an email.
+- **Cannot find any contact info:** log `NOT_FOUND — escalate via <url-of-school-page>` in Notes. Do NOT proceed with a fabricated address.
+
+### Storage in Notion
+For every row, the `Notes` field MUST include:
+```
+Inquiry email: <verified-email> (verified at <source-url>, <YYYY-MM-DD>)
+```
+
+If only a contact form, replace with:
+```
+Inquiry: FORM_ONLY at <form-url> (no email available, verified <YYYY-MM-DD>)
+```
+
+### Patterns that DO bounce (forbidden — empirically verified 25 April 2026)
+- `business-school@aston.ac.uk` (correct: `enquiries@astononline.ac.uk` — sub-brand domain)
+- `dimba@ust.hk` (correct: `mba@ust.hk` — no programme-specific inbox)
+- `online-mba@esmt.org` (correct: `sira@esmt.org` — named recruitment lead)
+- `onlinemba@illinois.edu` (correct: `giesonline@illinois.edu`)
+- `business-school@open.ac.uk` (correct: `oubs@open.ac.uk`)
+- `enquiries@ebsglobal.net` (correct: `ebs.enquiries@hw.ac.uk` — old vs current brand)
+- `admissions@carey.jhu.edu` (correct: `carey.admissions@jhu.edu` — domain order matters)
+
+These are what happens when you guess. NEVER guess.
+
+---
+
 ## Outstanding-Action Filter (apply ALL conditions per row)
 
 A row is "outstanding" if ANY of these are true:
