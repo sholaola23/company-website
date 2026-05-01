@@ -11,6 +11,49 @@ Run every Sunday 17:00 BST (16:00 UTC). Read the **MBA Scholarship Pipeline** No
 - **Data Source ID:** `e0e7cf5b-9665-459b-a0ca-6476e648fa6a`
 - **Parent page (for context links):** https://www.notion.so/34dc6399294e810394b7f1477331aa87
 
+## Email Verification Protocol (HARD RULE — never invent admissions emails)
+
+**Every admissions email surfaced by this agent MUST be sourced from the school's own admissions/contact page, NOT guessed from common patterns.** Best-guess emails bounce, bounces are evidence Olushola sees, and they erode trust in this agent's output.
+
+### When this rule applies
+- When you add a NEW programme row to the Notion DB during a delta scan
+- When you surface an "Email admissions" action in the weekly brief
+- When you propose any outreach email address to Olushola
+
+### Required protocol
+1. **Fetch the school's official admissions/contact page directly** via WebFetch — start with the programme page itself (look for `mailto:` links), then the school's `/admissions` and `/contact` pages, then the programme FAQ.
+2. **Capture the exact source URL** where you found the email.
+3. **Prefer programme-specific emails over general admissions** when both exist (e.g., `gomba@queensu.ca` over `mba@queensu.ca`).
+4. **Watch for sub-brand domains** — some schools route their online programmes through a separate domain (e.g., Aston Online uses `astononline.ac.uk`, not `aston.ac.uk`). Always check the live programme page, not just the main university domain.
+
+### What to do when you can't verify
+- **Contact form only (no email):** log `FORM_ONLY: <form-url>` in the row's Source URL field. Do NOT guess an email.
+- **Cannot find any contact info:** log `NOT_FOUND — escalate via <url-of-school-page>` in Notes. Do NOT proceed with a fabricated address.
+
+### Storage in Notion
+For every row, the `Notes` field MUST include:
+```
+Inquiry email: <verified-email> (verified at <source-url>, <YYYY-MM-DD>)
+```
+
+If only a contact form, replace with:
+```
+Inquiry: FORM_ONLY at <form-url> (no email available, verified <YYYY-MM-DD>)
+```
+
+### Patterns that DO bounce (forbidden — empirically verified 25 April 2026)
+- `business-school@aston.ac.uk` (correct: `enquiries@astononline.ac.uk` — sub-brand domain)
+- `dimba@ust.hk` (correct: `mba@ust.hk` — no programme-specific inbox)
+- `online-mba@esmt.org` (correct: `sira@esmt.org` — named recruitment lead)
+- `onlinemba@illinois.edu` (correct: `giesonline@illinois.edu`)
+- `business-school@open.ac.uk` (correct: `oubs@open.ac.uk`)
+- `enquiries@ebsglobal.net` (correct: `ebs.enquiries@hw.ac.uk` — old vs current brand)
+- `admissions@carey.jhu.edu` (correct: `carey.admissions@jhu.edu` — domain order matters)
+
+These are what happens when you guess. NEVER guess.
+
+---
+
 ## Outstanding-Action Filter (apply ALL conditions per row)
 
 A row is "outstanding" if ANY of these are true:
@@ -41,24 +84,42 @@ This agent is for Olushola's PERSONAL MBA pursuit. It must NOT touch business/wo
 
 ### Sandbox capabilities
 - ❌ **GAM CLI is NOT installed** in this sandbox (`gam: command not found`)
-- ❌ **External APIs blocked:** `api.resend.com`, `api.instantly.ai`, Supabase project domains
+- ❌ **`api.resend.com` is BLOCKED from this sandbox** — do NOT call Resend API directly. Use the Worker proxy below.
+- ❌ **`api.instantly.ai`, Supabase project domains** also blocked
 - ❌ **Zapier MCP `gmail_send_email`** — Olushola's Zapier free tier is OUT of tasks. Do NOT use.
-- ✅ **External APIs allowed:** `api.anthropic.com`, `github.com`, Anthropic Gmail MCP
+- ❌ **Anthropic Gmail MCP `send_email` does NOT exist** — only `create_draft`. Verified empirically. Don't waste time trying.
+- ✅ **External APIs allowed:** `api.anthropic.com`, `github.com`, Anthropic Notion MCP, Anthropic Gmail MCP (drafts only), AND `*.workers.dev` domains (this is how the email-relay Worker is reachable)
 - ⚠️ **Notion MCP tools are DEFERRED** — read files first to give MCP time to authenticate, then ToolSearch.
 
-### Email mechanism (PRIMARY — Gmail MCP via personal account)
-- Anthropic's Gmail MCP at `https://gmail.mcp.claude.com/mcp` is OAuth-connected to Olushola's personal Gmail
-- Connector UUID: `f6ee3950-bf48-46d7-90cc-d53c8546a0dc` — MUST be attached to the routine
-- The cloud routine context exposes a `send_email` tool (not visible in local Claude Code tool inventory)
-- **Send FROM `olusholaoladipupo1@gmail.com` TO `olusholaoladipupo1@gmail.com`** (personal-to-personal — yes, you can email yourself; Gmail handles this fine)
-- **Do NOT specify any "from alias" or sender override** — let Gmail send as the OAuth account default (= personal)
-- Display sender will be Olushola's personal Gmail name + address
+### Email mechanism (PRIMARY — personal Cloudflare Worker + Resend)
 
-### Email mechanism (FALLBACK — if Gmail MCP send is unavailable in cloud)
-If `gmail_send_email` is not exposed in the cloud tool space after attachment, fall back to:
-1. Use Gmail MCP `create_draft` to draft the email in his personal Gmail
-2. Send a `ntfy` push to alert Olushola to manually send the draft
-3. Note: this is not ideal — it's a stop-gap until a proper personal email-relay (e.g., a personal Cloudflare Worker + Resend on a personal Resend account) is set up. See `agents/mba-scholarship-watcher/REFERENCE.md` for the v2 plan.
+**Verified empirically**: Anthropic's Gmail MCP only exposes `create_draft` in the cloud routine context (no `send_email`). Same for the local tool inventory. So we use a small personal Cloudflare Worker that proxies to Resend.
+
+The Worker:
+- Hosted at the URL provided in your routine prompt (under `WORKER_URL`)
+- Lives in Olushola's PERSONAL Cloudflare account (`olusholaoladipupo1@gmail.com`) — not WorkCrew
+- Calls Resend with a dedicated MBA-only API key from Olushola's PERSONAL Resend account
+- Sends FROM `MBA Hunt <onboarding@resend.dev>` (Resend's free dev sender — no domain attached, zero workcrew.io contamination)
+- Allowlist enforces TO == `olusholaoladipupo1@gmail.com` only
+
+**To send an email from this agent:**
+```bash
+curl -sS -X POST "$WORKER_URL" \
+  -H "X-Auth-Token: $WORKER_AUTH_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"to":"olusholaoladipupo1@gmail.com","subject":"[MBA Hunt] ...","html":"..."}'
+```
+
+`WORKER_URL` and `WORKER_AUTH_TOKEN` are provided in your routine prompt at runtime — do NOT hard-code them in the repo.
+
+Response shape:
+- Success: `{"ok": true, "status": 200, "resend_response": {"id": "..."}}`
+- Failure: `{"ok": false, "status": <4xx/5xx>, "resend_response": {...}}` or `{"ok": false, "error": "..."}`
+
+### Email fallback (only if the Worker is unreachable)
+If the Worker POST fails or returns a 5xx:
+1. Use Gmail MCP `create_draft` to put the email as a draft in personal Gmail
+2. ntfy push to `ntfy.sh/oladipupo-mba-alerts` (NOT the WorkCrew P1 channel)
 
 ---
 
@@ -185,29 +246,68 @@ Update DB: <a href="https://www.notion.so/3f57a80303fd4a8ba39550f7973f33a5">MBA 
 - 8-30 → "in N days"
 - past → "PASSED N days ago — review status"
 
-### Step 8 — Send the email (personal Gmail only)
+### Step 8 — Send the email (personal Worker → Resend)
 
-Load Gmail MCP send tool: `ToolSearch select:mcp__Gmail__send_email` (also try keyword `send_email` and `gmail_send_email` since the exposed tool name in cloud may vary). The connector UUID prefix may also be needed: `mcp__f6ee3950-bf48-46d7-90cc-d53c8546a0dc__send_email`.
+POST the HTML body from Step 7 to the personal email-relay Worker. `WORKER_URL` and `WORKER_AUTH_TOKEN` are provided in your routine prompt — read them from there, do NOT hard-code.
 
-Call it with these args (adapt to the actual schema returned by the tool):
+```bash
+# Save the HTML body to /tmp first (large bodies don't survive shell escaping)
+cat > /tmp/mba-email-body.json <<'JSON_EOF'
+{
+  "to": "olusholaoladipupo1@gmail.com",
+  "subject": "[MBA Hunt] {N_OUTSTANDING} action(s) outstanding — w/c {TODAY_YMD}",
+  "html": "{ESCAPED_HTML_BODY_FROM_STEP_7}"
+}
+JSON_EOF
 
+# POST to the Worker
+curl -sS -X POST "$WORKER_URL" \
+  -H "X-Auth-Token: $WORKER_AUTH_TOKEN" \
+  -H "Content-Type: application/json" \
+  --data-binary @/tmp/mba-email-body.json
 ```
-to: "olusholaoladipupo1@gmail.com"
-subject: "[MBA Hunt] {N_OUTSTANDING} action(s) outstanding — w/c {TODAY_YMD}"
-body: {HTML_BODY_FROM_STEP_7}
-body_type: "html"   (try this; if rejected, also try bodyType="html" or content_type="text/html")
+
+**Better — use Python for proper JSON escaping** (avoid shell-quoting hell with HTML containing quotes/newlines):
+
+```bash
+python3 <<PY_EOF
+import json, urllib.request, os
+
+worker_url = os.environ["WORKER_URL"]
+auth_token = os.environ["WORKER_AUTH_TOKEN"]
+
+with open("/tmp/mba-email-body.html", "r") as f:
+    html_body = f.read()
+
+payload = json.dumps({
+    "to": "olusholaoladipupo1@gmail.com",
+    "subject": "[MBA Hunt] {N_OUTSTANDING} action(s) outstanding — w/c {TODAY_YMD}",
+    "html": html_body,
+}).encode()
+
+req = urllib.request.Request(worker_url, data=payload, method="POST", headers={
+    "X-Auth-Token": auth_token,
+    "Content-Type": "application/json",
+})
+
+try:
+    with urllib.request.urlopen(req, timeout=30) as r:
+        print("STATUS:", r.status)
+        print("BODY:", r.read().decode())
+except urllib.error.HTTPError as e:
+    print("ERROR_STATUS:", e.code)
+    print("ERROR_BODY:", e.read().decode())
+PY_EOF
 ```
 
-**Do NOT pass any `from`, `sender`, `from_alias`, or `send_as` parameters.** The OAuth-connected Gmail account (Olushola's personal Gmail) sends as itself by default — exactly what we want.
+A successful response is `{"ok": true, "status": 200, "resend_response": {"id": "..."}}`.
 
-If the first call errors, try ONE adaptation of param names. If that fails, send a plain-text fallback summarising outstanding actions.
-
-If email send fails after 2 attempts, fall back to:
-1. Use Gmail MCP `create_draft` to draft the same email in his personal Gmail (drafts are visible in inbox)
-2. Send a ntfy push to a SEPARATE personal MBA topic (NOT the WorkCrew P1 channel):
+**Fallback if Worker POST fails (after 2 retries with brief sleep):**
+1. Use Gmail MCP `create_draft` to put the email as a draft in personal Gmail (visible in your Drafts folder)
+2. ntfy push to the personal MBA topic:
 ```bash
 curl -s -H "Title: [MBA Hunt] Email send failed" -H "Priority: high" -H "Tags: warning" \
-  -d "Email send failed for week of {TODAY_YMD}. {N_OUTSTANDING} actions waiting. Draft created in personal Gmail. DB: https://www.notion.so/3f57a80303fd4a8ba39550f7973f33a5" \
+  -d "Email-relay Worker unreachable for week of {TODAY_YMD}. {N_OUTSTANDING} actions waiting. Draft created in personal Gmail. DB: https://www.notion.so/3f57a80303fd4a8ba39550f7973f33a5" \
   ntfy.sh/oladipupo-mba-alerts
 ```
 
@@ -248,7 +348,7 @@ If `len(OUTSTANDING) == 0`:
 
 1. **Never email anyone except `olusholaoladipupo1@gmail.com`.** No client emails, no admissions emails — those are Olushola's personal action.
 2. **Never modify rows with terminal status** (Submitted/Awarded/Rejected/Dropped) — they're frozen for record-keeping.
-3. **Use Gmail MCP `send_email` (personal Gmail OAuth) for ALL emails** in this sandbox. NEVER use GAM, NEVER use Zapier (out of tasks), NEVER use Resend (blocked + business infra), NEVER use the hello@workcrew.io alias.
+3. **Use the personal email-relay Worker for ALL emails** in this sandbox (POST to `WORKER_URL` from your routine prompt). NEVER use GAM (not installed), NEVER use Zapier (out of tasks), NEVER call `api.resend.com` directly (blocked from sandbox), NEVER use Anthropic Gmail MCP send (does not exist — only create_draft), NEVER use the hello@workcrew.io alias.
 4. **Use `date` command output — never guess the date.**
 5. **If Notion MCP can't be loaded after 3 retries**, log the failure and skip this run with a ntfy push to `ntfy.sh/oladipupo-mba-alerts`. Do NOT use the workcrew.io Notion proxy — it's business infrastructure.
 6. **AWS COI red line:** if your delta scan surfaces a new scholarship funded by Microsoft, Google, Oracle, or IBM, mark it as `Status: Dropped` with note "AWS competitor — COI exclusion".
