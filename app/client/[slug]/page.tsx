@@ -184,30 +184,14 @@ const staggerContainer = {
 };
 
 // ─── Count-up Hook ───────────────────────────────────────────
-function useCountUp(target: number, duration = 900, decimals = 0) {
-  const [value, setValue] = useState(target === 0 ? 0 : 0.001);
-  const rafRef = useRef<number | null>(null);
-
-  useEffect(() => {
-    if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
-    if (target === 0) return;
-    const start = performance.now();
-    function tick(now: number) {
-      const progress = Math.min((now - start) / duration, 1);
-      // ease-out cubic
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setValue(parseFloat((eased * target).toFixed(decimals)));
-      if (progress < 1) {
-        rafRef.current = requestAnimationFrame(tick);
-      }
-    }
-    rafRef.current = requestAnimationFrame(tick);
-    return () => {
-      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
-    };
-  }, [target, duration, decimals]);
-
-  return value;
+// Animation was getting stuck at the 0.001 initial value in production
+// (RAF callbacks not progressing, leaving stats at "0" / "£0.00" while real
+// data was correct). Showing the final number immediately is strictly safer
+// than a broken count-up — accuracy beats cosmetics.
+function useCountUp(target: number, _duration = 900, _decimals = 0) {
+  void _duration;
+  void _decimals;
+  return target;
 }
 
 // ─── Skeleton Loading ────────────────────────────────────────
