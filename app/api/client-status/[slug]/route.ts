@@ -63,7 +63,16 @@ export async function GET(
   // Auth check
   const isAuthed = await validateClientAuth(slug);
   if (!isAuthed) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    const clientForLogin = getClient(slug);
+    return NextResponse.json(
+      {
+        error: "Unauthorized",
+        clientInfo: clientForLogin
+          ? { name: clientForLogin.name, initials: clientForLogin.initials }
+          : null,
+      },
+      { status: 401 }
+    );
   }
 
   const client = getClient(slug);

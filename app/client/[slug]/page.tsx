@@ -232,7 +232,7 @@ function LoadingScreen() {
 }
 
 // ─── Login Form ──────────────────────────────────────────────
-function LoginForm({ slug }: { slug: string }) {
+function LoginForm({ slug, clientInfo }: { slug: string; clientInfo: { name: string; initials: string } | null }) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -275,13 +275,13 @@ function LoginForm({ slug }: { slug: string }) {
         {/* Logo mark */}
         <div className="flex justify-center mb-6">
           <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-zinc-700 to-zinc-900 border border-zinc-700 flex items-center justify-center shadow-lg">
-            <span className="text-lg font-bold text-zinc-200 tracking-tight">EM</span>
+            <span className="text-lg font-bold text-zinc-200 tracking-tight">{clientInfo?.initials || "W"}</span>
           </div>
         </div>
 
         <div className="text-center mb-8">
           <p className="text-xl font-semibold text-white mb-1">
-            E&apos;Manuel Foods and Bakery
+            {clientInfo?.name || "Your Dashboard"}
           </p>
           <p className="text-zinc-500 text-sm leading-relaxed">
             Enter your password to see how things are going.
@@ -821,6 +821,7 @@ export default function ClientDashboard() {
   const [statusData, setStatusData] = useState<StatusData | null>(null);
   const [sheetsData, setSheetsData] = useState<SheetsData | null>(null);
   const [needsLogin, setNeedsLogin] = useState(false);
+  const [loginClientInfo, setLoginClientInfo] = useState<{ name: string; initials: string } | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [systemHealthOpen, setSystemHealthOpen] = useState(false);
@@ -844,6 +845,8 @@ export default function ClientDashboard() {
       ]);
 
       if (statusRes.status === 401) {
+        const body = await statusRes.json().catch(() => ({}));
+        if (body.clientInfo) setLoginClientInfo(body.clientInfo);
         setNeedsLogin(true);
         setLoading(false);
         return;
@@ -878,7 +881,7 @@ export default function ClientDashboard() {
   }, [slug]);
 
   if (loading) return <LoadingScreen />;
-  if (needsLogin) return <LoginForm slug={slug} />;
+  if (needsLogin) return <LoginForm slug={slug} clientInfo={loginClientInfo} />;
 
   if (error || !statusData) {
     return (
