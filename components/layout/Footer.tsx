@@ -178,8 +178,7 @@ export default function Footer() {
             WorkCrew Ltd — Registered in England &amp; Wales, company number{" "}
             <span className="text-slate-400">16501246</span>. Registered office:{" "}
             71-75 Shelton Street, Covent Garden, London, WC2H 9JQ.
-            {/* ICO data controller registration — update number once ICO confirmation email arrives */}
-            {" "}ICO registration: application pending (C1914939).
+            {" "}ICO registration: ZC129468.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             <p className="text-xs text-slate-500 text-center sm:text-left">

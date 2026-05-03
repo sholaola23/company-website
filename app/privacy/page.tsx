@@ -39,7 +39,7 @@ export default function PrivacyPage() {
             <ul className="list-disc pl-6 space-y-1 mt-3 text-slate-600">
               <li><strong className="text-slate-500">Company:</strong> WorkCrew Ltd, England &amp; Wales</li>
               <li><strong className="text-slate-500">Data Controller:</strong> WorkCrew Ltd</li>
-              <li><strong className="text-slate-500">ICO Registration:</strong> Pending (application in progress — reference to be added once issued)</li>
+              <li><strong className="text-slate-500">ICO Registration:</strong> ZC129468 (registered 21 April 2026)</li>
               <li><strong className="text-slate-500">Contact:</strong> <a href="mailto:hello@workcrew.io" className="text-blue-600 hover:underline">hello@workcrew.io</a></li>
             </ul>
           </section>
