@@ -10,22 +10,26 @@
 
 :root {
   /* ── Brand Colours ────────────────────────────────────────────────────── */
-  --color-primary: #C2451E;          /* Clay — Pantone 7579 U uncoated */
-  --color-primary-hover: #A8341F;    /* Ember — same family, deeper for press */
+  /* Note: --color-primary uses Ember (#A8341F, ~5.6:1 on Bone) instead of
+     pure Clay (#C2451E, 4.33:1) so links + body-sized accent text pass WCAG AA.
+     Pure Clay is reserved for large-text-only and decorative rules. */
+  --color-primary: #A8341F;          /* Ember — passes WCAG AA on Bone for normal text */
+  --color-primary-hover: #8C2A14;    /* Ember-deeper — hover/press */
   --color-primary-light: #FAEFE8;    /* Bone-tinted-Clay — subtle section bg */
-  --color-primary-tint: rgba(194, 69, 30, 0.05); /* Clay at 5% */
+  --color-primary-tint: rgba(168, 52, 31, 0.06); /* Ember at 6% — section ground */
 
-  --color-accent: #E8896B;           /* Clay-tint-60 — ONLY for soft accents */
-  --color-accent-light: #FAEFE8;     /* Same family as primary-light */
+  --color-clay-display: #C2451E;     /* PURE CLAY — large-text-only (≥18pt or 14pt bold), card decoration, hairline rules. NEVER for body text. */
+  --color-accent: #E8896B;           /* Clay-tint-60 — DECORATION ONLY. Fails 2.19:1 — never as text */
+  --color-accent-light: #FAEFE8;
 
   --color-success: #3F6B4E;          /* Forest — functional only, never decorative */
-  --color-success-light: #EEF3EF;    /* Forest tint */
+  --color-success-light: #EEF3EF;
 
   /* ── Text ─────────────────────────────────────────────────────────────── */
-  --color-heading: #1C1814;          /* Char — warm-shifted ink, never pure black */
+  --color-heading: #1C1814;          /* Char — warm-shifted ink */
   --color-body: #2C2823;             /* Char-tint — body copy */
-  --color-muted: #8B8278;            /* Stone — secondary text */
-  --color-subtle: #B0A89E;           /* Stone-tint — tertiary */
+  --color-muted: #6B6459;            /* Stone-darkened — passes AA at 12px on Bone */
+  --color-subtle: #B0A89E;           /* DECORATION ONLY — borders/hairlines. Fails 2.02:1 — NEVER as text */
 
   /* ── Surfaces ─────────────────────────────────────────────────────────── */
   --color-bg: #F4EDE0;               /* Bone — main ground */

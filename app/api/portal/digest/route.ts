@@ -76,7 +76,12 @@ export async function GET(req: Request) {
       // Build HTML email
       const html = buildDigestEmail(org, leads.length, newLeads, qualifiedLeads, deliveredLeads);
 
-      // Send via Resend
+      // Send via Resend (skip if key not configured — preview env, dev)
+      if (!resend) {
+        results.push({ org: org.name, status: "skipped (no RESEND_API_KEY)" });
+        continue;
+      }
+
       const { error: emailError } = await resend.emails.send({
         from: "Leads4U <hello@workcrew.io>",
         to: [org.contact_email],
