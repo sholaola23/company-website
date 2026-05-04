@@ -16,7 +16,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "WorkCrew — We run the AI that runs your business.",
+    default: "WorkCrew — We run the back-of-house. You run the business.",
     template: "%s | WorkCrew",
   },
   description:
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: "https://workcrew.io",
     siteName: "WorkCrew",
-    title: "WorkCrew — We run the AI that runs your business.",
+    title: "WorkCrew — We run the back-of-house. You run the business.",
     description:
       "AI automation for small businesses. Lead intake, content engines, customer ops — set up in 7 days. 90-day results guarantee.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "WorkCrew — We run the AI that runs your business.",
+    title: "WorkCrew — We run the back-of-house. You run the business.",
     description:
       "AI automation for small businesses. Lead intake, content engines, customer ops. Set up in 7 days.",
   },

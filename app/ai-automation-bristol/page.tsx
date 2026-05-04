@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "Bristol AI automation",
     "AI automation Bristol small business",
     "Bristol business automation",
-    "AI consultancy Bristol",
+    "AI automation agency Bristol",
   ],
   alternates: {
     canonical: CANONICAL,
@@ -233,8 +233,8 @@ export default function AIAutomationBristolPage() {
         <section className="mb-20 sm:mb-24" aria-labelledby="services-heading">
           <div className="mb-12">
             <SectionHeading
-              eyebrow={`Top Solutions for ${CITY} Businesses`}
-              heading="Services That Drive Results"
+              eyebrow={`What we run for ${CITY} Businesses`}
+              heading="What we ship"
               align="center"
             />
           </div>
@@ -314,8 +314,8 @@ export default function AIAutomationBristolPage() {
         <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 sm:p-10 max-w-3xl mx-auto mb-20 sm:mb-24 text-center">
           <p className="text-sm text-slate-600 leading-relaxed">
             Already helping businesses across the South West automate their
-            operations. From lead intake systems to AI-powered content engines,
-            we deliver solutions that pay for themselves within weeks.
+            operations. From lead intake systems to AI content engines,
+            most pay for themselves within weeks.
           </p>
           <div className="flex items-center justify-center gap-2 mt-4">
             <CheckCircle

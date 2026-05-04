@@ -26,12 +26,12 @@ Your Free AI Readiness Audit — [Business Name]
 ```html
 <a href="[report-url]" style="display:inline-block; background:#6366f1; color:white; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:700; font-size:15px;">View Your AI Readiness Report →</a>
 ```
-4. Single soft CTA: "If anything resonates, reply here or WhatsApp me on 07469 347654 to book a quick call."
+4. Single soft CTA: "If anything resonates, reply here or WhatsApp me on +44 7469 347 654 to book a quick call."
 5. Signature:
 ```
 Olushola Oladipupo
 WorkCrew Ltd
 workcrew.io
 hello@workcrew.io
-07469 347654
++44 7469 347 654
 ```

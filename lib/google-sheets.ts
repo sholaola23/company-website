@@ -117,16 +117,32 @@ async function getDoc(sheetsId: string): Promise<GoogleSpreadsheet | null> {
 /**
  * Calculate the week code for a given date in the format used by E'Manuel sheets: "Fri DD Mon"
  * Week code = the Friday that "owns" this date.
- * Mon-Fri → that week's Friday. Sat-Sun → the previous Friday.
+ *
+ * Policy:
+ *   Mon-Thu → upcoming Friday (this week's delivery day)
+ *   Fri     → today
+ *   Sat-Sun → previous Friday (the week just delivered) — keeps dashboard showing
+ *             "this past week" through the weekend; rolls over to next Friday on Monday.
+ *
+ * Uses epoch arithmetic to avoid `setDate()` cross-month boundary bugs
+ * (e.g. on Sun 26 Apr, setDate(24) on a May-1 friday object would yield 24 May, not 24 Apr).
  */
 function getWeekCodeForDate(date: Date): string {
-  const day = date.getDay(); // 0=Sun, 5=Fri
-  const daysUntilFriday = (5 - day + 7) % 7;
-  const friday = new Date(date);
-  friday.setDate(date.getDate() + daysUntilFriday);
-  // If it's Saturday or Sunday, use the previous Friday
-  if (day === 6) friday.setDate(date.getDate() - 1);
-  if (day === 0) friday.setDate(date.getDate() - 2);
+  const day = date.getDay(); // 0=Sun, 1=Mon, ..., 5=Fri, 6=Sat
+  const ONE_DAY_MS = 24 * 60 * 60 * 1000;
+
+  let offsetDays: number;
+  if (day === 0) {
+    offsetDays = -2;          // Sunday → previous Friday
+  } else if (day === 6) {
+    offsetDays = -1;          // Saturday → previous Friday
+  } else if (day === 5) {
+    offsetDays = 0;           // Friday → today
+  } else {
+    offsetDays = 5 - day;     // Mon-Thu → upcoming Friday
+  }
+
+  const friday = new Date(date.getTime() + offsetDays * ONE_DAY_MS);
 
   const months = [
     "Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -606,6 +622,10 @@ export async function writeRefund(
  * Update payment status on an order row matched by Submission ID.
  * Called by the SumUp webhook when a hosted checkout is paid.
  * Searches both production and test sheets automatically.
+ *
+ * Tolerant lookup: column A's header in live sheet may be garbled (emoji/frozen-row quirks
+ * render it as 'b50PER2' to some readers). Try canonical header first, then known aliases,
+ * then fall back to scanning all columns for the submission-ID pattern in the first cell.
  */
 export async function updatePaymentStatus(
   sheetsId: string,
@@ -621,14 +641,47 @@ export async function updatePaymentStatus(
     if (!sheet) return { success: false, error: "Orders sheet not found" };
 
     const rows = await sheet.getRows();
-    const row = rows.find((r) => r.get("Submission ID") === submissionId);
-    if (!row) return { success: false, error: `Row not found for submission ID: ${submissionId}` };
+
+    // Known header aliases for the Submission ID column (A). The live sheet header
+    // can drift — emojis, frozen rows, and manual edits produce weird auto-names.
+    const SUBMISSION_ID_HEADERS = [
+      "Submission ID",
+      "SubmissionId",
+      "Submission Id",
+      "submission_id",
+      "b50PER2", // observed garble on live sheet
+    ];
+
+    // Primary path: try each known header
+    let row = rows.find((r) => {
+      for (const h of SUBMISSION_ID_HEADERS) {
+        const v = r.get(h);
+        if (v && String(v) === submissionId) return true;
+      }
+      return false;
+    });
+
+    // Last-resort fallback: scan every header and match on value shape
+    if (!row) {
+      const headers = sheet.headerValues || [];
+      row = rows.find((r) =>
+        headers.some((h) => String(r.get(h) || "") === submissionId)
+      );
+    }
+
+    if (!row) {
+      console.error(`updatePaymentStatus: submission ID '${submissionId}' not found in ${rows.length} rows. Headers: ${JSON.stringify(sheet.headerValues)}`);
+      return { success: false, error: `Row not found for submission ID: ${submissionId}` };
+    }
 
     row.set("Payment Status", "paid");
     row.set("Payment Reference", checkoutId);
     row.set("Payment Amount", amount.toString());
+    // Mark as SumUp-origin so matcher skips it + dashboard categorises correctly
+    row.set("Payment Match", `SUMUP-WEBHOOK-${checkoutId.slice(0, 8)}`);
     await row.save();
 
+    console.log(`updatePaymentStatus: marked ${submissionId} paid (£${amount}, checkout ${checkoutId})`);
     return { success: true };
   } catch (e) {
     console.error("Failed to update payment status:", e);

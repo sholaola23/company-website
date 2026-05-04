@@ -1,12 +1,23 @@
 import { NextRequest } from "next/server";
 import { getAuditSystemPrompt } from "@/lib/audit-system-prompt";
 import { enrichAuditContext } from "@/lib/firecrawl";
-import { checkAuditRateLimit } from "@/lib/rate-limit";
+import { requireGuard } from "@/lib/api-guard";
 import { ANTHROPIC_API_URL, ANTHROPIC_VERSION, heliconeHeaders } from "@/lib/constants";
 
 export const runtime = "edge";
 
 export async function POST(req: NextRequest) {
+  // Guard FIRST — kill-switch + origin + global cap + per-IP. Prevents the
+  // 29 Apr 2026 burn pattern where this Sonnet+Opus endpoint was hit
+  // overnight and ran up ~$178 in 33 minutes.
+  const guard = requireGuard(req, {
+    endpoint: "instant-audit",
+    perIpLimit: 5,
+  });
+  if (!guard.ok) {
+    return Response.json({ error: guard.message }, { status: guard.status });
+  }
+
   let body: { businessName?: string; industry?: string; websiteUrl?: string };
 
   try {
@@ -21,17 +32,6 @@ export async function POST(req: NextRequest) {
     return Response.json(
       { error: "Missing required fields: businessName and industry." },
       { status: 400 }
-    );
-  }
-
-  // Rate limiting — 5 audits per IP per hour
-  const ip =
-    req.headers.get("x-forwarded-for")?.split(",")[0].trim() || "unknown";
-  const { allowed } = checkAuditRateLimit(ip);
-  if (!allowed) {
-    return Response.json(
-      { error: "Rate limit exceeded. Try again in an hour." },
-      { status: 429 }
     );
   }
 

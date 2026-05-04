@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { requireGuard } from "@/lib/api-guard";
 
 const resend = process.env.RESEND_API_KEY
   ? new Resend(process.env.RESEND_API_KEY)
@@ -160,6 +161,19 @@ async function notifyOwner({
 }
 
 export async function POST(req: NextRequest) {
+  // Guard FIRST — contact form triggers a Haiku auto-reply, low per-call cost
+  // but high abuse potential (form-spam bots).
+  const guard = requireGuard(req, {
+    endpoint: "contact",
+    perIpLimit: 5,
+  });
+  if (!guard.ok) {
+    return NextResponse.json(
+      { success: false, message: guard.message },
+      { status: guard.status }
+    );
+  }
+
   let body: Partial<ContactBody>;
 
   try {

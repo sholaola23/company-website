@@ -226,7 +226,7 @@ Fill in ALL placeholder values `[X]` with real research data. Every placeholder 
       <p>Book a free 30-minute discovery call. No obligation — just a conversation.</p>
       <div class="cta-contact">
         <div class="cta-item">📧 <a href="mailto:hello@workcrew.io">hello@workcrew.io</a></div>
-        <div class="cta-item">📱 <a href="tel:+447469347654">07469 347654</a></div>
+        <div class="cta-item">📱 <a href="tel:+447469347654">+44 7469 347 654</a></div>
       </div>
     </div>
 
@@ -235,7 +235,7 @@ Fill in ALL placeholder values `[X]` with real research data. Every placeholder 
   <div class="footer">
     This is a complimentary AI Readiness Audit prepared by WorkCrew Ltd &nbsp;·&nbsp;
     Registered in England & Wales &nbsp;·&nbsp;
-    hello@workcrew.io &nbsp;·&nbsp; 07469 347654
+    hello@workcrew.io &nbsp;·&nbsp; +44 7469 347 654
   </div>
 
 </body>

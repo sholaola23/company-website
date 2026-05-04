@@ -78,17 +78,25 @@ export default function AboutPage() {
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
       {/* Hero */}
       <div className="max-w-3xl mx-auto text-center mb-20 sm:mb-24">
-        <span className="text-xs font-semibold tracking-widest uppercase text-blue-600 mb-4 block">
+        <span
+          className="text-xs font-semibold tracking-widest uppercase mb-4 block"
+          style={{ color: "var(--color-muted)" }}
+        >
           About WorkCrew
         </span>
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-slate-900 leading-tight tracking-tight mb-6">
-          AI Solutions, Built for Small Businesses
+        <h1
+          className="text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em] leading-tight mb-6"
+          style={{ color: "var(--color-heading)" }}
+        >
+          AI for the small businesses behind on AI
         </h1>
-        <p className="text-lg text-slate-600 leading-relaxed">
-          We are an AI-native agency — we use AI on the back end to deliver
-          results that used to require a full team. The businesses we work with
-          don&apos;t need to understand the technology. They just check a
-          dashboard, save hours of admin every week, and watch their business run itself.
+        <p
+          className="text-lg leading-relaxed"
+          style={{ color: "var(--color-body)" }}
+        >
+          We run the AI on the back end. You check a dashboard for 60 seconds in
+          the morning. That&apos;s the deal. Three things, mostly: lead intake
+          and booking, content engines, customer ops.
         </p>
       </div>
 
@@ -115,10 +123,9 @@ export default function AboutPage() {
 
           <div className="flex flex-col gap-4 text-sm text-slate-600 leading-relaxed">
             <p>
-              WorkCrew was founded with one observation: small
-              businesses are behind on AI not because they don&apos;t want to
-              adopt it, but because every tool, platform, and consultant is aimed
-              at people who already know what they&apos;re doing.
+              WorkCrew was founded on one observation: small businesses are
+              behind on AI because every tool and consultant is built for people
+              who already know what they&apos;re doing.
             </p>
             <p>
               We change that across three service pillars. <strong className="text-slate-700">AI Automation</strong> — lead intake,
@@ -143,8 +150,8 @@ export default function AboutPage() {
       <section className="mb-20 sm:mb-24" aria-labelledby="how-heading">
         <div className="mb-12">
           <SectionHeading
-            eyebrow="Our Process"
-            heading="How We Work"
+            eyebrow="Our process"
+            heading="How we work"
             align="center"
           />
         </div>

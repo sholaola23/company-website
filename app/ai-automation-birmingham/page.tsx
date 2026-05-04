@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     "AI lead capture Birmingham",
     "appointment booking automation Birmingham",
     "small business AI Birmingham",
-    "AI consultancy Birmingham",
+    "AI automation agency Birmingham",
   ],
   alternates: {
     canonical: CANONICAL,
@@ -234,8 +234,8 @@ export default function AIAutomationBirminghamPage() {
         <section className="mb-20 sm:mb-24" aria-labelledby="services-heading">
           <div className="mb-12">
             <SectionHeading
-              eyebrow={`Top Solutions for ${CITY} Businesses`}
-              heading="Services That Drive Results"
+              eyebrow={`What we run for ${CITY} Businesses`}
+              heading="What we ship"
               align="center"
             />
           </div>

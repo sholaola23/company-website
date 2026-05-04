@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     "AI lead capture Manchester",
     "appointment booking automation Manchester",
     "small business AI Manchester",
-    "AI consultancy Manchester",
+    "AI automation agency Manchester",
   ],
   alternates: {
     canonical: CANONICAL,
@@ -163,7 +163,7 @@ export default function AIAutomationManchesterPage() {
               expanded by over 80% in the past decade, with MediaCityUK,
               Manchester Science Park, and the Oxford Road innovation district
               attracting billions in investment. But this growth isn&apos;t just
-              about big corporates — it&apos;s created a booming ecosystem of
+              about big corporates — it&apos;s created a booming cluster of
               independent service businesses, freelancers, and micro-agencies
               who need to compete on speed and professionalism without the
               headcount of larger firms.
@@ -234,8 +234,8 @@ export default function AIAutomationManchesterPage() {
         <section className="mb-20 sm:mb-24" aria-labelledby="services-heading">
           <div className="mb-12">
             <SectionHeading
-              eyebrow={`Top Solutions for ${CITY} Businesses`}
-              heading="Services That Drive Results"
+              eyebrow={`What we run for ${CITY} Businesses`}
+              heading="What we ship"
               align="center"
             />
           </div>

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ANTHROPIC_API_URL, ANTHROPIC_VERSION, heliconeHeaders } from "@/lib/constants";
+import { requireGuard } from "@/lib/api-guard";
 import {
   getGBPDescriptionPrompt,
   getReviewStrategyPrompt,
@@ -55,6 +56,18 @@ function parseJSON<T>(raw: string): T {
 // ---------------------------------------------------------------------------
 
 export async function POST(req: NextRequest) {
+  // Guard FIRST — rank-ready/preview uses Sonnet (mid-cost).
+  const guard = requireGuard(req, {
+    endpoint: "rank-ready-preview",
+    perIpLimit: 5,
+  });
+  if (!guard.ok) {
+    return NextResponse.json(
+      { message: guard.message },
+      { status: guard.status }
+    );
+  }
+
   let body: Partial<RankReadyFormData & { email: string }>;
 
   try {

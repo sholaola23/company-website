@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { ANTHROPIC_API_URL, ANTHROPIC_VERSION, heliconeHeaders } from "@/lib/constants";
+import { requireGuard } from "@/lib/api-guard";
 import {
   getCategoryAuditPrompt,
   getGBPDescriptionPrompt,
@@ -200,6 +201,18 @@ async function notifyOwner(
 // ---------------------------------------------------------------------------
 
 export async function POST(req: NextRequest) {
+  // Guard FIRST — rank-ready/generate uses Sonnet (mid-cost).
+  const guard = requireGuard(req, {
+    endpoint: "rank-ready-generate",
+    perIpLimit: 5,
+  });
+  if (!guard.ok) {
+    return NextResponse.json(
+      { message: guard.message },
+      { status: guard.status }
+    );
+  }
+
   let body: {
     sessionId?: string;
     email?: string;

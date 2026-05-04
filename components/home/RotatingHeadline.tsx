@@ -4,9 +4,9 @@ export default function RotatingHeadline() {
       className="mx-auto max-w-4xl text-4xl font-semibold leading-[1.05] tracking-[-0.03em] sm:text-5xl lg:mx-0 lg:text-7xl"
       style={{ color: "var(--color-heading)" }}
     >
-      You run the business.{" "}
+      You Run Your Business.{" "}
       <span style={{ color: "var(--color-primary)" }}>
-        We run the back-of-house.
+        We Build the Systems.
       </span>
     </h1>
   );

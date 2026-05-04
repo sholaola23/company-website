@@ -86,7 +86,7 @@ export default function ContactPage() {
               <a
                 href="tel:+447469347654"
                 className="flex items-start gap-4 p-4 bg-slate-50 border border-slate-200 rounded-xl hover:border-slate-200 transition-colors duration-150 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
-                aria-label="Call +44 7469 347654"
+                aria-label="Call +44 7469 347 654"
               >
                 <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-600/20 shrink-0">
                   <Phone size={16} className="text-blue-600" aria-hidden="true" />
@@ -96,7 +96,7 @@ export default function ContactPage() {
                     Phone
                   </p>
                   <p className="text-sm text-slate-900 group-hover:text-slate-900 transition-colors">
-                    +44 7469 347654
+                    +44 7469 347 654
                   </p>
                 </div>
               </a>

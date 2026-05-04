@@ -78,8 +78,10 @@ No pressure at all — just thought it was worth mentioning.
 
 Best,
 Olushola
-WorkCrew Ltd
-07469 347654
+
+Founder, WorkCrew
+hello@workcrew.io · +44 7469 347 654 · workcrew.io
+Book a call: cal.com/workcrew
 ```
 
 ### B) Seasonal / Timely
@@ -98,7 +100,7 @@ If it's something you've been thinking about, I'm happy to chat. If not, no worr
 Cheers,
 Olushola
 WorkCrew Ltd
-07469 347654
++44 7469 347 654
 ```
 
 ### C) New Capability
@@ -118,7 +120,7 @@ Either way, wishing you and [Business Name] all the best.
 
 Olushola
 WorkCrew Ltd
-07469 347654
++44 7469 347 654
 ```
 
 **Personalization rules:**

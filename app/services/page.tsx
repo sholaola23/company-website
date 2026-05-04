@@ -152,9 +152,9 @@ export default function ServicesPage() {
         <div className="mb-16 sm:mb-20">
           <SectionHeading
             as="h1"
-            eyebrow="Our Solutions"
-            heading="AI Automation Services"
-            description="From single workflows to full automation fleets. We build AI systems tailored to your business."
+            eyebrow="What we run"
+            heading="AI automation services"
+            description="From a single workflow to a full crew. Built around your business, not a template."
             align="center"
           />
         </div>

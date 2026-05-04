@@ -27,57 +27,69 @@ import type { FAQItem } from "@/components/shared/FAQSection";
 // ---------------------------------------------------------------------------
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-white">
-      {/* Subtle gradient blobs for depth — very low opacity on white */}
-      <GradientBlob
-        className="w-[700px] h-[700px] bg-blue-600 -top-60 -left-40"
-        duration={10}
-      />
-      <GradientBlob
-        className="w-[500px] h-[500px] bg-amber-300 top-20 -right-40"
-        duration={12}
-        delay={2}
-      />
-
+    <section
+      className="relative overflow-hidden"
+      style={{ background: "var(--color-bg)" }}
+    >
       <div className="relative mx-auto max-w-6xl px-6 pb-28 pt-32 sm:px-8 lg:px-12">
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
           {/* Left: copy */}
           <div className="flex-1 text-center lg:text-left">
             <AnimatedSection delay={0}>
-              {/* Eyebrow pill */}
-              <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-semibold tracking-wide text-slate-600 shadow-sm">
-                <span
-                  className="h-1.5 w-1.5 rounded-full bg-blue-600"
-                  aria-hidden="true"
-                />
+              {/* Eyebrow — flat text, small caps, no pill */}
+              <div
+                className="mb-8 text-xs font-semibold uppercase"
+                style={{
+                  color: "var(--color-muted)",
+                  letterSpacing: "0.14em",
+                }}
+              >
                 AI Automation · Websites · Training
               </div>
 
               <RotatingHeadline />
 
-              <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl lg:mx-0">
+              <p
+                className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed sm:text-xl lg:mx-0"
+                style={{ color: "var(--color-body)" }}
+              >
                 We run your inbox, your bookings, and your weekly reports. Set up in 7 days. Results in 90 or your money back.
               </p>
 
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
+                {/* Single primary CTA — Stripe-style rectangle */}
                 <Link
-                  href="/blueprint"
-                  className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 text-base font-semibold text-white shadow-[0_1px_6px_-1px_rgba(37,99,235,0.4)] transition-all duration-200 hover:bg-slate-900 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 group"
+                  href="https://cal.com/workcrew/free-ai-strategy-call"
+                  className="inline-flex items-center gap-2 rounded-sm px-7 py-3.5 text-base font-semibold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 group"
+                  style={{
+                    background: "var(--color-primary)",
+                    color: "var(--color-bg)",
+                    outlineColor: "var(--color-primary)",
+                  }}
                 >
-                  Get Your Free AI Blueprint
+                  Book a 30-minute call
                   <ArrowRight
                     size={18}
                     className="transition-transform duration-200 group-hover:translate-x-0.5"
                     aria-hidden="true"
                   />
                 </Link>
-                <Link
-                  href="https://cal.com/workcrew/free-ai-strategy-call"
-                  className="inline-flex items-center gap-2 rounded-full border-2 border-slate-200 bg-white px-7 py-3.5 text-base font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:border-slate-900 hover:bg-slate-900 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
-                >
-                  Schedule a Call
-                </Link>
               </div>
+
+              {/* Tertiary text link — consolation door */}
+              <p
+                className="mt-6 text-sm"
+                style={{ color: "var(--color-muted)" }}
+              >
+                Not ready?{" "}
+                <Link
+                  href="/blueprint"
+                  className="underline underline-offset-2 transition-opacity hover:opacity-70"
+                  style={{ color: "var(--color-primary)" }}
+                >
+                  Get the free AI blueprint
+                </Link>
+              </p>
             </AnimatedSection>
           </div>
 

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     `${CITY} business automation`,
     "AI Northamptonshire",
     "small business AI Kettering",
-    "AI consultancy Kettering",
+    "AI automation agency Kettering",
     "Northamptonshire business automation",
   ],
   alternates: {
@@ -158,7 +158,7 @@ export default function AIAutomationKetteringPage() {
             E&apos;Manuel Bakery, Kettering
           </h2>
           <p className="text-sm text-slate-600 leading-relaxed mb-4">
-            We built an AI-powered loyalty and order automation system for
+            We built an loyalty and order automation system for
             E&apos;Manuel Bakery right here in Kettering. The system tracks
             customer purchases via their POS, automatically sends personalised
             loyalty rewards, and handles tier-based promotions — saving hours of
@@ -178,8 +178,8 @@ export default function AIAutomationKetteringPage() {
         <section className="mb-20 sm:mb-24" aria-labelledby="services-heading">
           <div className="mb-12">
             <SectionHeading
-              eyebrow={`Top Solutions for ${CITY} Businesses`}
-              heading="Services That Drive Results"
+              eyebrow={`What we run for ${CITY} Businesses`}
+              heading="What we ship"
               align="center"
             />
           </div>
@@ -260,7 +260,7 @@ export default function AIAutomationKetteringPage() {
           <p className="text-sm text-slate-600 leading-relaxed">
             Already helping businesses in Kettering and across Northamptonshire
             automate their operations. From bakery loyalty systems to lead
-            intake automation, we deliver solutions that pay for themselves
+            intake automation, most pay for themselves
             within weeks.
           </p>
           <div className="flex items-center justify-center gap-2 mt-4">

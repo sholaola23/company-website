@@ -62,7 +62,7 @@ const FAQ_SCHEMA = {
       name: "Where is my data stored?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "All data is stored in London-region servers (AWS eu-west-2). Your data never leaves the UK without your explicit consent. We are fully UK GDPR compliant.",
+        text: "All data is stored in UK-region servers (London, eu-west-2). Your data never leaves the UK without your explicit consent. We are fully UK GDPR compliant.",
       },
     },
     {
@@ -185,7 +185,7 @@ const SECTIONS = [
     points: [
       {
         icon: Server,
-        text: "All data stored in London-region servers (AWS eu-west-2)",
+        text: "All data stored in UK-region servers (London, eu-west-2)",
       },
       {
         icon: ShieldCheck,
