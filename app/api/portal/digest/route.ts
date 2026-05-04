@@ -5,7 +5,9 @@ import type { Organisation, Lead } from "@/lib/supabase/types";
 
 export const maxDuration = 60;
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = process.env.RESEND_API_KEY
+  ? new Resend(process.env.RESEND_API_KEY)
+  : null;
 
 /**
  * GET /api/portal/digest
