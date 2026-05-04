@@ -271,7 +271,7 @@ export default function AIROICalculatorPage() {
                     className={`rounded-lg border px-4 py-2.5 text-sm font-medium transition-all duration-200 ${
                       teamSize === size
                         ? "border-[var(--color-primary)] bg-[var(--color-primary)]/15 text-[var(--color-primary)]"
-                        : "border-[var(--color-border)] bg-[var(--color-bg-alt)] text-[var(--color-body)] hover:border-slate-400 hover:text-[var(--color-heading)]"
+                        : "border-[var(--color-border)] bg-[var(--color-bg-alt)] text-[var(--color-body)] hover:border-[var(--color-border-strong)] hover:text-[var(--color-heading)]"
                     }`}
                   >
                     {size}

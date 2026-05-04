@@ -309,7 +309,7 @@ export default function ChatWidget() {
             <div className="flex items-center justify-between px-4 py-3 border-b border-zinc-800 flex-shrink-0">
               <div className="flex items-center gap-2.5">
                 <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-accent)] opacity-75" />
                   <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500" />
                 </span>
                 <span className="text-sm font-semibold text-zinc-100">
@@ -374,7 +374,7 @@ export default function ChatWidget() {
                     "flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center",
                     "bg-blue-500 text-[var(--color-bg)] transition-all",
                     "disabled:opacity-40 disabled:cursor-not-allowed disabled:scale-100",
-                    "hover:bg-blue-400",
+                    "hover:bg-[var(--color-accent)]",
                   ].join(" ")}
                 >
                   <ArrowUp size={16} />
@@ -404,7 +404,7 @@ export default function ChatWidget() {
           "w-14 h-14 rounded-full",
           "bg-blue-500 text-[var(--color-bg)] shadow-lg shadow-blue-500/25",
           "flex items-center justify-center",
-          "transition-colors hover:bg-blue-400",
+          "transition-colors hover:bg-[var(--color-accent)]",
           // Pulse ring
           "ring-2 ring-[var(--color-primary)]/30",
           isOpen ? "" : "animate-pulse-ring",
@@ -452,7 +452,7 @@ export default function ChatWidget() {
               className="absolute -top-0.5 -right-0.5 flex h-3.5 w-3.5"
             >
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-300 opacity-75" />
-              <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-blue-400 border-2 border-zinc-900" />
+              <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[var(--color-accent)] border-2 border-zinc-900" />
             </motion.span>
           )}
         </AnimatePresence>

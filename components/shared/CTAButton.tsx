@@ -30,9 +30,9 @@ type CTAButtonProps = LinkProps | ClickProps;
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-[var(--color-primary)] text-[var(--color-bg)] hover:bg-[var(--color-dark)] border border-[var(--color-primary)] hover:border-slate-900 shadow-[0_1px_6px_-1px_rgba(37,99,235,0.4)] hover:shadow-[0_2px_10px_-2px_rgba(15,23,42,0.3)]",
+    "bg-[var(--color-primary)] text-[var(--color-bg)] hover:bg-[var(--color-dark)] border border-[var(--color-primary)] hover:border-[var(--color-dark)] shadow-[0_1px_6px_-1px_rgba(37,99,235,0.4)] hover:shadow-[0_2px_10px_-2px_rgba(15,23,42,0.3)]",
   secondary:
-    "bg-[var(--color-bg)] text-[var(--color-primary)] border-2 border-[var(--color-border)] hover:bg-[var(--color-dark)] hover:text-[var(--color-bg)] hover:border-slate-900 shadow-sm hover:shadow-md",
+    "bg-[var(--color-bg)] text-[var(--color-primary)] border-2 border-[var(--color-border)] hover:bg-[var(--color-dark)] hover:text-[var(--color-bg)] hover:border-[var(--color-dark)] shadow-sm hover:shadow-md",
   ghost:
     "bg-transparent text-[var(--color-body)] border border-transparent hover:text-[var(--color-primary)] hover:bg-[var(--color-primary-light)]/50",
 };

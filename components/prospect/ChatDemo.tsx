@@ -135,9 +135,9 @@ export default function ChatDemo() {
           <div className="flex justify-start">
             <div className="bg-[var(--color-surface)] px-4 py-3 rounded-2xl rounded-bl-sm">
               <div className="flex gap-1 items-center h-4">
-                <span className="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce [animation-delay:0ms]" />
-                <span className="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce [animation-delay:150ms]" />
-                <span className="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce [animation-delay:300ms]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-muted)] animate-bounce [animation-delay:0ms]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-muted)] animate-bounce [animation-delay:150ms]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-muted)] animate-bounce [animation-delay:300ms]" />
               </div>
             </div>
           </div>

@@ -200,7 +200,7 @@ function WhatWeBuild() {
             const Icon = cat.icon;
             return (
               <AnimatedSection key={cat.title} delay={0.1 * (index + 1)}>
-                <div className="group flex h-full flex-col rounded-[30px] border-2 border-slate-900 bg-transparent p-8 transition-all duration-300 hover:bg-[var(--color-dark)] hover:text-[var(--color-bg)] cursor-pointer">
+                <div className="group flex h-full flex-col rounded-[30px] border-2 border-[var(--color-dark)] bg-transparent p-8 transition-all duration-300 hover:bg-[var(--color-dark)] hover:text-[var(--color-bg)] cursor-pointer">
                   {/* Icon */}
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--color-primary-light)] group-hover:bg-[var(--color-primary-hover)]/20 transition-colors duration-300">
                     <Icon
@@ -484,7 +484,7 @@ function StrategyCallCTA() {
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:items-center">
               <Link
                 href="https://cal.com/workcrew/free-ai-strategy-call"
-                className="inline-flex items-center gap-2 rounded-full bg-[var(--color-primary)] px-7 py-3.5 text-base font-semibold text-[var(--color-bg)] shadow-[0_1px_6px_-1px_rgba(37,99,235,0.5)] transition-all duration-200 hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 group"
+                className="inline-flex items-center gap-2 rounded-full bg-[var(--color-primary)] px-7 py-3.5 text-base font-semibold text-[var(--color-bg)] shadow-[0_1px_6px_-1px_rgba(37,99,235,0.5)] transition-all duration-200 hover:bg-[var(--color-primary-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-dark)] group"
               >
                 Book Your Free Strategy Call
                 <ArrowRight

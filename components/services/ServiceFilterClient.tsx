@@ -85,7 +85,7 @@ export default function ServiceFilterClient({
               "px-4 py-2 text-sm font-medium rounded-lg border transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]",
               activeFilter === tab.value
                 ? "bg-[var(--color-primary)] border-[var(--color-primary)] text-[var(--color-bg)]"
-                : "bg-[var(--color-bg-alt)] border-[var(--color-border)] text-[var(--color-body)] hover:border-slate-400 hover:text-[var(--color-heading)]"
+                : "bg-[var(--color-bg-alt)] border-[var(--color-border)] text-[var(--color-body)] hover:border-[var(--color-border-strong)] hover:text-[var(--color-heading)]"
             )}
           >
             {tab.label}

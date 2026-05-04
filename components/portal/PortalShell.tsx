@@ -92,7 +92,7 @@ export default function PortalShell({
         {/* User + sign out */}
         <div className="px-4 py-4 border-t border-[var(--color-dark-border)]">
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-xs font-medium">
+            <div className="w-8 h-8 rounded-full bg-[var(--color-dark-border)] flex items-center justify-center text-xs font-medium">
               {profile.full_name.charAt(0)}
             </div>
             <div className="min-w-0">

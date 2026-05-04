@@ -405,7 +405,7 @@ function InputStep({ state, dispatch, formId, onSubmit }: InputStepProps) {
               type="checkbox"
               checked={state.noWebsite}
               onChange={() => dispatch({ type: "TOGGLE_NO_WEBSITE" })}
-              className="w-4 h-4 rounded border-slate-500 bg-[var(--color-bg-alt)] accent-blue-500 cursor-pointer"
+              className="w-4 h-4 rounded border-[var(--color-border-strong)] bg-[var(--color-bg-alt)] accent-blue-500 cursor-pointer"
             />
             <span className="text-sm text-[var(--color-body)]">I don&apos;t have a website</span>
           </label>

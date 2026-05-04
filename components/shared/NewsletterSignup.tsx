@@ -90,7 +90,7 @@ export default function NewsletterSignup({
             className={cn(
               "shrink-0 rounded-full bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-bg)]",
               "hover:bg-[var(--color-primary)] transition-colors duration-150",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-dark)]",
               "disabled:opacity-60 disabled:cursor-not-allowed"
             )}
           >

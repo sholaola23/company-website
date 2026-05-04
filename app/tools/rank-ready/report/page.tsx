@@ -542,7 +542,7 @@ function ReportContent() {
                               ? "bg-red-500/15 text-red-400"
                               : cat.priority === "medium"
                                 ? "bg-yellow-500/15 text-yellow-400"
-                                : "bg-slate-400/15 text-[var(--color-body)]"
+                                : "bg-[var(--color-muted)]/15 text-[var(--color-body)]"
                           }`}
                         >
                           {cat.priority}
