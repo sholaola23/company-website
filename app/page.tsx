@@ -56,7 +56,7 @@ function Hero() {
               <RotatingHeadline />
 
               <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl lg:mx-0">
-                AI automation, websites, and custom apps — built fast, built to last. 90-day results guarantee.
+                We run your inbox, your bookings, and your weekly reports. Set up in 7 days. Results in 90 or your money back.
               </p>
 
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
@@ -135,43 +135,49 @@ const categories = [
     title: "AI Automation",
     href: "/services/lead-intake",
     description:
-      "Automate repetitive tasks. Lead capture, email responses, appointment booking, follow-ups — all running on autopilot.",
-    result: "Save hours of admin every week",
+      "Lead capture, email replies, appointment booking, follow-ups — running while you sleep. Built on n8n, hosted on Railway, alerts on Telegram.",
+    result: "E'Manuel saves 50 minutes a day",
   },
   {
     icon: Globe,
     title: "Websites & Web Apps",
     href: "/services/business-website",
     description:
-      "Professional websites and custom web apps that convert visitors into customers. Dashboards, booking portals, interactive tools — mobile-first and SEO-optimised.",
-    result: "Professional online presence",
+      "Sites and tools that turn visitors into customers. Dashboards, booking portals, calculators — mobile-first, fast, indexed.",
+    result: "Live in 7 days from kickoff",
   },
   {
     icon: GraduationCap,
     title: "AI Training",
     href: "/services/ai-workshop",
     description:
-      "Hands-on workshops that get your team using AI tools confidently. Tailored to your industry and skill level.",
-    result: "Teams productive with AI in one session",
+      "Workshops that get your team using AI tools the same week. Tailored to your industry. We bring the prompts that already work.",
+    result: "Walked out with one test by Friday",
   },
 ];
 
 function WhatWeBuild() {
   return (
-    <section className="bg-blue-600/[0.03] py-28" aria-labelledby="services-heading">
+    <section
+      className="py-28"
+      style={{ background: "var(--color-primary-tint)" }}
+      aria-labelledby="services-heading"
+    >
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
         <AnimatedSection>
           <div className="flex flex-col items-center gap-4 text-center">
-            <span className="eyebrow">What We Build</span>
+            <span className="eyebrow">What we run</span>
             <h2
               id="services-heading"
               className="heading-section text-3xl sm:text-4xl lg:text-[56px]"
             >
-              Tools That Deliver.
+              What we run for you.
             </h2>
-            <p className="max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
-              We help businesses save time, win more customers, and look
-              professional — delivered fast and built to last.
+            <p
+              className="max-w-2xl text-base leading-relaxed sm:text-lg"
+              style={{ color: "var(--color-body)" }}
+            >
+              Three things, mostly. Each one set up in days, not months — measured in hours saved and leads booked, not features shipped.
             </p>
           </div>
         </AnimatedSection>
@@ -419,20 +425,34 @@ function StrategyCallCTA() {
         <div className="flex flex-col items-center gap-10 lg:flex-row lg:gap-16">
           {/* Left: copy */}
           <AnimatedSection className="flex-1 text-center lg:text-left">
-            <span className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800 px-4 py-1.5 text-xs font-semibold tracking-wide text-slate-400 mb-6">
+            <span
+              className="inline-flex items-center gap-2 rounded-sm border px-4 py-1.5 text-xs font-semibold tracking-wide mb-6"
+              style={{
+                borderColor: "var(--color-dark-border)",
+                background: "var(--color-dark-surface)",
+                color: "var(--color-dark-muted)",
+              }}
+            >
               <Calendar size={12} aria-hidden="true" />
-              Free 30-Minute Strategy Call
+              Free 30-minute call
             </span>
 
             <h2
               id="strategy-call-heading"
-              className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-[44px] lg:leading-tight"
+              className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-[44px] lg:leading-tight"
+              style={{ color: "var(--color-bg)", letterSpacing: "-0.025em" }}
             >
-              See exactly what AI can do for{" "}
-              <span className="text-blue-400">Your Business</span> — in 30 minutes.
+              30 minutes.{" "}
+              <span style={{ color: "var(--color-accent)" }}>
+                We tell you what's broken
+              </span>{" "}
+              and what we'd fix first.
             </h2>
 
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-400 sm:text-lg lg:mx-0 mx-auto">
+            <p
+              className="mt-6 max-w-xl text-base leading-relaxed sm:text-lg lg:mx-0 mx-auto"
+              style={{ color: "var(--color-dark-text)" }}
+            >
               No slides. No sales pitch. Just a focused conversation about your business and where automation makes a real difference.
             </p>
 
