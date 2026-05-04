@@ -115,20 +115,20 @@ const stats = [
 
 function SocialProofBar() {
   return (
-    <div className="border-b border-t border-slate-100 bg-slate-50">
+    <div className="border-b border-t border-[var(--color-border)] bg-[var(--color-bg-alt)]">
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
-        <dl className="grid grid-cols-2 divide-x divide-slate-200 md:grid-cols-4">
+        <dl className="grid grid-cols-2 divide-x divide-[var(--color-border)] md:grid-cols-4">
           {stats.map((stat) => (
             <div
               key={stat.label}
               className="flex flex-col items-center justify-center py-8 px-4 text-center"
             >
-              <dt className="text-3xl font-bold text-blue-600 sm:text-4xl">
+              <dt className="text-3xl font-bold text-[var(--color-primary)] sm:text-4xl">
                 <AnimatedCounter target={stat.numeric} suffix={stat.suffix} />
               </dt>
-              <dd className="mt-1.5 text-sm text-slate-700 font-medium">{stat.label}</dd>
+              <dd className="mt-1.5 text-sm text-[var(--color-body)] font-medium">{stat.label}</dd>
               {"sublabel" in stat && stat.sublabel && (
-                <dd className="mt-0.5 text-xs text-slate-400">{stat.sublabel}</dd>
+                <dd className="mt-0.5 text-xs text-[var(--color-muted)]">{stat.sublabel}</dd>
               )}
             </div>
           ))}
@@ -200,29 +200,29 @@ function WhatWeBuild() {
             const Icon = cat.icon;
             return (
               <AnimatedSection key={cat.title} delay={0.1 * (index + 1)}>
-                <div className="group flex h-full flex-col rounded-[30px] border-2 border-slate-900 bg-transparent p-8 transition-all duration-300 hover:bg-slate-900 hover:text-white cursor-pointer">
+                <div className="group flex h-full flex-col rounded-[30px] border-2 border-slate-900 bg-transparent p-8 transition-all duration-300 hover:bg-[var(--color-dark)] hover:text-[var(--color-bg)] cursor-pointer">
                   {/* Icon */}
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 group-hover:bg-blue-700/20 transition-colors duration-300">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--color-primary-light)] group-hover:bg-[var(--color-primary-hover)]/20 transition-colors duration-300">
                     <Icon
                       size={22}
-                      className="text-blue-600 group-hover:text-blue-600 transition-colors duration-300"
+                      className="text-[var(--color-primary)] group-hover:text-[var(--color-primary)] transition-colors duration-300"
                       aria-hidden="true"
                     />
                   </div>
 
                   {/* Title */}
-                  <h3 className="mt-5 text-lg font-bold text-slate-900 group-hover:text-white transition-colors duration-300">
+                  <h3 className="mt-5 text-lg font-bold text-[var(--color-heading)] group-hover:text-[var(--color-bg)] transition-colors duration-300">
                     {cat.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600 group-hover:text-slate-300 transition-colors duration-300">
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--color-body)] group-hover:text-[var(--color-dark-text)] transition-colors duration-300">
                     {cat.description}
                   </p>
 
                   {/* Result badge */}
                   <div className="mt-6">
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 group-hover:border-emerald-500/30 group-hover:bg-emerald-500/10 group-hover:text-emerald-600 transition-colors duration-300">
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border)] bg-[var(--color-success-light)] px-3 py-1 text-xs font-semibold text-emerald-700 group-hover:border-emerald-500/30 group-hover:bg-emerald-500/10 group-hover:text-[var(--color-success)] transition-colors duration-300">
                       {cat.result}
                     </span>
                   </div>
@@ -230,7 +230,7 @@ function WhatWeBuild() {
                   {/* Arrow link */}
                   <Link
                     href={cat.href}
-                    className="group/link mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 group-hover:text-blue-600 transition-colors duration-200"
+                    className="group/link mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-primary)] group-hover:text-[var(--color-primary)] transition-colors duration-200"
                   >
                     Learn more
                     <ArrowRight
@@ -256,7 +256,7 @@ function WhatWeBuild() {
 function CaseStudiesPreview() {
   return (
     <section
-      className="bg-white py-24"
+      className="bg-[var(--color-bg)] py-24"
       aria-labelledby="case-studies-heading"
     >
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
@@ -277,32 +277,32 @@ function CaseStudiesPreview() {
             <AnimatedSection key={study.slug} delay={0.1 * (index + 1)}>
               <Link
                 href={`/case-studies/${study.slug}`}
-                className="group flex h-full flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-blue-200 hover:shadow-lg card-hover"
+                className="group flex h-full flex-col justify-between rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6 shadow-sm transition-all duration-300 hover:border-[var(--color-primary-light)] hover:shadow-lg card-hover"
               >
                 <div>
                   {/* Industry tag */}
-                  <span className="inline-block rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600">
+                  <span className="inline-block rounded-full border border-[var(--color-border)] bg-[var(--color-bg-alt)] px-3 py-1 text-xs font-medium text-[var(--color-body)]">
                     {study.industry}
                   </span>
 
                   {/* Hero stat */}
                   <div className="mt-4">
-                    <p className="text-3xl font-bold tracking-tight text-slate-900 lg:text-4xl">
+                    <p className="text-3xl font-bold tracking-tight text-[var(--color-heading)] lg:text-4xl">
                       {study.heroStat}
                     </p>
-                    <p className="mt-1 text-sm font-semibold text-blue-600">
+                    <p className="mt-1 text-sm font-semibold text-[var(--color-primary)]">
                       {study.heroLabel}
                     </p>
                   </div>
 
                   {/* Business name */}
-                  <h3 className="mt-4 text-base font-semibold text-slate-900">
+                  <h3 className="mt-4 text-base font-semibold text-[var(--color-heading)]">
                     {study.name}
                   </h3>
-                  <p className="mt-0.5 text-xs text-slate-500">{study.location}</p>
+                  <p className="mt-0.5 text-xs text-[var(--color-muted)]">{study.location}</p>
                 </div>
 
-                <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 transition-colors duration-200 group-hover:text-blue-700">
+                <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-primary)] transition-colors duration-200 group-hover:text-[var(--color-primary-hover)]">
                   Read case study
                   <ArrowRight
                     size={14}
@@ -357,7 +357,7 @@ const steps = [
 function HowItWorks() {
   return (
     <section
-      className="bg-white py-28"
+      className="bg-[var(--color-bg)] py-28"
       aria-labelledby="how-it-works-heading"
     >
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
@@ -370,7 +370,7 @@ function HowItWorks() {
             >
               From conversation to live automation
             </h2>
-            <p className="max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
+            <p className="max-w-xl text-base leading-relaxed text-[var(--color-body)] sm:text-lg">
               A structured 4-step process — from first conversation to a system that runs itself.
             </p>
           </div>
@@ -392,23 +392,23 @@ function HowItWorks() {
                   )}
 
                   {/* Icon badge */}
-                  <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-white shadow-sm">
+                  <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] shadow-sm">
                     <Icon
                       size={20}
-                      className="text-blue-600"
+                      className="text-[var(--color-primary)]"
                       aria-hidden="true"
                     />
                   </div>
 
                   {/* Step number */}
-                  <span className="mt-4 text-xs font-bold tracking-widest text-slate-400">
+                  <span className="mt-4 text-xs font-bold tracking-widest text-[var(--color-muted)]">
                     {step.number}
                   </span>
 
-                  <h3 className="mt-2 text-base font-semibold text-slate-900">
+                  <h3 className="mt-2 text-base font-semibold text-[var(--color-heading)]">
                     {step.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                  <p className="mt-2 text-sm leading-relaxed text-[var(--color-body)]">
                     {step.description}
                   </p>
                 </li>
@@ -432,7 +432,7 @@ const callPoints = [
 
 function StrategyCallCTA() {
   return (
-    <section className="bg-slate-900 py-28" aria-labelledby="strategy-call-heading">
+    <section className="bg-[var(--color-dark)] py-28" aria-labelledby="strategy-call-heading">
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
         <div className="flex flex-col items-center gap-10 lg:flex-row lg:gap-16">
           {/* Left: copy */}
@@ -470,10 +470,10 @@ function StrategyCallCTA() {
 
             <ul className="mt-8 flex flex-col gap-3" role="list">
               {callPoints.map((point) => (
-                <li key={point} className="flex items-start gap-3 text-sm text-slate-300">
+                <li key={point} className="flex items-start gap-3 text-sm text-[var(--color-dark-text)]">
                   <CheckCircle2
                     size={18}
-                    className="mt-0.5 shrink-0 text-blue-400"
+                    className="mt-0.5 shrink-0 text-[var(--color-accent)]"
                     aria-hidden="true"
                   />
                   {point}
@@ -484,7 +484,7 @@ function StrategyCallCTA() {
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:items-center">
               <Link
                 href="https://cal.com/workcrew/free-ai-strategy-call"
-                className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 text-base font-semibold text-white shadow-[0_1px_6px_-1px_rgba(37,99,235,0.5)] transition-all duration-200 hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 group"
+                className="inline-flex items-center gap-2 rounded-full bg-[var(--color-primary)] px-7 py-3.5 text-base font-semibold text-[var(--color-bg)] shadow-[0_1px_6px_-1px_rgba(37,99,235,0.5)] transition-all duration-200 hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 group"
               >
                 Book Your Free Strategy Call
                 <ArrowRight
@@ -493,40 +493,40 @@ function StrategyCallCTA() {
                   aria-hidden="true"
                 />
               </Link>
-              <p className="text-xs text-slate-500">No obligation. No credit card.</p>
+              <p className="text-xs text-[var(--color-muted)]">No obligation. No credit card.</p>
             </div>
           </AnimatedSection>
 
           {/* Right: call details card */}
           <AnimatedSection delay={0.2} className="w-full lg:w-80 shrink-0">
-            <div className="rounded-2xl border border-slate-700 bg-slate-800 p-8">
+            <div className="rounded-2xl border border-[var(--color-dark-border)] bg-[var(--color-dark-surface)] p-8">
               <div className="flex items-center gap-3 mb-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600/20">
-                  <Calendar size={20} className="text-blue-400" aria-hidden="true" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--color-primary)]/20">
+                  <Calendar size={20} className="text-[var(--color-accent)]" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-white">Free Strategy Call</p>
-                  <p className="text-xs text-slate-400">30 minutes · Google Meet</p>
+                  <p className="text-sm font-semibold text-[var(--color-bg)]">Free Strategy Call</p>
+                  <p className="text-xs text-[var(--color-muted)]">30 minutes · Google Meet</p>
                 </div>
               </div>
 
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-600/10 text-xs font-bold text-blue-400">1</span>
-                  <p className="text-sm text-slate-300">Tell us about your biggest manual pain points</p>
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--color-primary)]/10 text-xs font-bold text-[var(--color-accent)]">1</span>
+                  <p className="text-sm text-[var(--color-dark-text)]">Tell us about your biggest manual pain points</p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-600/10 text-xs font-bold text-blue-400">2</span>
-                  <p className="text-sm text-slate-300">We show you the 2–3 highest-impact automations for your business</p>
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--color-primary)]/10 text-xs font-bold text-[var(--color-accent)]">2</span>
+                  <p className="text-sm text-[var(--color-dark-text)]">We show you the 2–3 highest-impact automations for your business</p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-600/10 text-xs font-bold text-blue-400">3</span>
-                  <p className="text-sm text-slate-300">Walk away with a clear plan, regardless of next steps</p>
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--color-primary)]/10 text-xs font-bold text-[var(--color-accent)]">3</span>
+                  <p className="text-sm text-[var(--color-dark-text)]">Walk away with a clear plan, regardless of next steps</p>
                 </div>
               </div>
 
-              <div className="mt-6 rounded-xl border border-slate-700 bg-slate-900/50 px-4 py-3 text-center">
-                <p className="text-xs text-slate-400">Booked by <span className="text-white font-semibold">UK business owners</span> who want clarity before they commit</p>
+              <div className="mt-6 rounded-xl border border-[var(--color-dark-border)] bg-[var(--color-dark)]/50 px-4 py-3 text-center">
+                <p className="text-xs text-[var(--color-muted)]">Booked by <span className="text-[var(--color-bg)] font-semibold">UK business owners</span> who want clarity before they commit</p>
               </div>
             </div>
           </AnimatedSection>
@@ -659,7 +659,7 @@ const homepageFAQs: FAQItem[] = [
 // ---------------------------------------------------------------------------
 function TestimonialSection() {
   return (
-    <section className="bg-slate-50 py-24" aria-labelledby="testimonial-heading">
+    <section className="bg-[var(--color-bg-alt)] py-24" aria-labelledby="testimonial-heading">
       <div className="mx-auto max-w-3xl px-6 sm:px-8 lg:px-12">
         <AnimatedSection>
           <div className="flex flex-col items-center text-center gap-4 mb-12">
@@ -673,21 +673,21 @@ function TestimonialSection() {
           </div>
 
           {/* Testimonial card */}
-          <div className="rounded-2xl border border-slate-200 bg-white p-10 shadow-sm text-center">
+          <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-10 shadow-sm text-center">
             {/* Stars */}
             <div className="flex justify-center gap-1 mb-6" aria-label="5 out of 5 stars">
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
                   size={18}
-                  className="fill-amber-400 text-amber-400"
+                  className="fill-amber-400 text-[var(--color-primary)]"
                   aria-hidden="true"
                 />
               ))}
             </div>
 
             {/* Quote */}
-            <blockquote className="text-lg font-medium leading-relaxed text-slate-800 sm:text-xl">
+            <blockquote className="text-lg font-medium leading-relaxed text-[var(--color-heading)] sm:text-xl">
               &ldquo;They moved us from manual order tracking to a fully automated
               system — orders come in digitally, responses to customers are instant,
               and payments match our statements automatically. It&rsquo;s saving us
@@ -695,22 +695,22 @@ function TestimonialSection() {
             </blockquote>
 
             {/* Divider */}
-            <div className="my-8 h-px w-16 bg-slate-200 mx-auto" aria-hidden="true" />
+            <div className="my-8 h-px w-16 bg-[var(--color-border)] mx-auto" aria-hidden="true" />
 
             {/* Attribution */}
             <div className="flex flex-col items-center gap-1">
               {/* Avatar initials */}
               <div
-                className="h-12 w-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-sm mb-2"
+                className="h-12 w-12 rounded-full bg-[var(--color-primary)] flex items-center justify-center text-[var(--color-bg)] font-bold text-sm mb-2"
                 aria-hidden="true"
               >
                 TA
               </div>
-              <p className="font-semibold text-slate-900">Tunmise Ajao</p>
-              <p className="text-sm text-slate-500">Founder, E&rsquo;Manuel Bakery — Kettering</p>
+              <p className="font-semibold text-[var(--color-heading)]">Tunmise Ajao</p>
+              <p className="text-sm text-[var(--color-muted)]">Founder, E&rsquo;Manuel Bakery — Kettering</p>
 
               {/* Google badge */}
-              <div className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-500">
+              <div className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border)] bg-[var(--color-bg-alt)] px-3 py-1 text-xs font-medium text-[var(--color-muted)]">
                 <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
                   <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                   <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -752,7 +752,7 @@ export default function HomePage() {
       <CaseStudiesPreview />
       <HowItWorks />
       <StrategyCallCTA />
-      <section className="bg-white py-28">
+      <section className="bg-[var(--color-bg)] py-28">
         <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
           <AnimatedSection>
             <FAQSection

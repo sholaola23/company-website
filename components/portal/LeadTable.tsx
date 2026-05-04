@@ -82,10 +82,10 @@ export default function LeadTable({
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search leads..."
-              className="w-full pl-10 pr-4 py-2.5 border border-slate-300 rounded-lg text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full pl-10 pr-4 py-2.5 border border-[var(--color-border-strong)] rounded-lg text-sm text-[var(--color-heading)] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent"
             />
             <svg
-              className="absolute left-3 top-3 w-4 h-4 text-slate-400"
+              className="absolute left-3 top-3 w-4 h-4 text-[var(--color-muted)]"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -104,7 +104,7 @@ export default function LeadTable({
         <select
           value={currentFilters.stage || ""}
           onChange={(e) => updateFilter("stage", e.target.value)}
-          className="px-4 py-2.5 border border-slate-300 rounded-lg text-sm text-slate-700 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="px-4 py-2.5 border border-[var(--color-border-strong)] rounded-lg text-sm text-[var(--color-body)] bg-[var(--color-bg)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
         >
           <option value="">All Stages</option>
           {STAGES.map((s) => (
@@ -119,7 +119,7 @@ export default function LeadTable({
           <select
             value={currentFilters.campaign || ""}
             onChange={(e) => updateFilter("campaign", e.target.value)}
-            className="px-4 py-2.5 border border-slate-300 rounded-lg text-sm text-slate-700 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="px-4 py-2.5 border border-[var(--color-border-strong)] rounded-lg text-sm text-[var(--color-body)] bg-[var(--color-bg)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
           >
             <option value="">All Campaigns</option>
             {campaigns.map((c) => (
@@ -132,66 +132,66 @@ export default function LeadTable({
       </div>
 
       {/* Table */}
-      <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
+      <div className="bg-[var(--color-bg)] rounded-xl border border-[var(--color-border)] overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="bg-slate-50 text-left">
+              <tr className="bg-[var(--color-bg-alt)] text-left">
                 <th
-                  className="px-6 py-3 font-medium text-slate-500 cursor-pointer hover:text-slate-700"
+                  className="px-6 py-3 font-medium text-[var(--color-muted)] cursor-pointer hover:text-[var(--color-body)]"
                   onClick={() => handleSort("company_name")}
                 >
                   Company <SortIndicator field="company_name" />
                 </th>
                 <th
-                  className="px-6 py-3 font-medium text-slate-500 cursor-pointer hover:text-slate-700"
+                  className="px-6 py-3 font-medium text-[var(--color-muted)] cursor-pointer hover:text-[var(--color-body)]"
                   onClick={() => handleSort("contact_name")}
                 >
                   Contact <SortIndicator field="contact_name" />
                 </th>
                 <th
-                  className="px-6 py-3 font-medium text-slate-500 cursor-pointer hover:text-slate-700"
+                  className="px-6 py-3 font-medium text-[var(--color-muted)] cursor-pointer hover:text-[var(--color-body)]"
                   onClick={() => handleSort("stage")}
                 >
                   Stage <SortIndicator field="stage" />
                 </th>
                 <th
-                  className="px-6 py-3 font-medium text-slate-500 cursor-pointer hover:text-slate-700"
+                  className="px-6 py-3 font-medium text-[var(--color-muted)] cursor-pointer hover:text-[var(--color-body)]"
                   onClick={() => handleSort("score")}
                 >
                   Score <SortIndicator field="score" />
                 </th>
-                <th className="px-6 py-3 font-medium text-slate-500">
+                <th className="px-6 py-3 font-medium text-[var(--color-muted)]">
                   Source
                 </th>
                 <th
-                  className="px-6 py-3 font-medium text-slate-500 cursor-pointer hover:text-slate-700"
+                  className="px-6 py-3 font-medium text-[var(--color-muted)] cursor-pointer hover:text-[var(--color-body)]"
                   onClick={() => handleSort("created_at")}
                 >
                   Date <SortIndicator field="created_at" />
                 </th>
-                <th className="px-6 py-3 font-medium text-slate-500">
+                <th className="px-6 py-3 font-medium text-[var(--color-muted)]">
                   Location
                 </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100">
+            <tbody className="divide-y divide-[var(--color-border)]">
               {sortedLeads.map((lead) => (
-                <tr key={lead.id} className="hover:bg-slate-50 transition">
+                <tr key={lead.id} className="hover:bg-[var(--color-bg-alt)] transition">
                   <td className="px-6 py-4">
-                    <p className="font-medium text-slate-900">
+                    <p className="font-medium text-[var(--color-heading)]">
                       {lead.company_name}
                     </p>
                     {lead.contact_email && (
-                      <p className="text-xs text-slate-400 mt-0.5">
+                      <p className="text-xs text-[var(--color-muted)] mt-0.5">
                         {lead.contact_email}
                       </p>
                     )}
                   </td>
-                  <td className="px-6 py-4 text-slate-600">
+                  <td className="px-6 py-4 text-[var(--color-body)]">
                     <p>{lead.contact_name}</p>
                     {lead.contact_phone && (
-                      <p className="text-xs text-slate-400 mt-0.5">
+                      <p className="text-xs text-[var(--color-muted)] mt-0.5">
                         {lead.contact_phone}
                       </p>
                     )}
@@ -210,7 +210,7 @@ export default function LeadTable({
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-2">
-                      <div className="w-12 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                      <div className="w-12 h-1.5 bg-[var(--color-surface)] rounded-full overflow-hidden">
                         <div
                           className="h-full rounded-full"
                           style={{
@@ -224,21 +224,21 @@ export default function LeadTable({
                           }}
                         />
                       </div>
-                      <span className="text-slate-600 text-xs">
+                      <span className="text-[var(--color-body)] text-xs">
                         {lead.score}
                       </span>
                     </div>
                   </td>
-                  <td className="px-6 py-4 text-slate-500 capitalize text-xs">
+                  <td className="px-6 py-4 text-[var(--color-muted)] capitalize text-xs">
                     {lead.source}
                   </td>
-                  <td className="px-6 py-4 text-slate-400 text-xs">
+                  <td className="px-6 py-4 text-[var(--color-muted)] text-xs">
                     {new Date(lead.created_at).toLocaleDateString("en-GB", {
                       day: "numeric",
                       month: "short",
                     })}
                   </td>
-                  <td className="px-6 py-4 text-slate-500 text-xs">
+                  <td className="px-6 py-4 text-[var(--color-muted)] text-xs">
                     {lead.location || "-"}
                   </td>
                 </tr>
@@ -248,8 +248,8 @@ export default function LeadTable({
 
           {sortedLeads.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-slate-500">No leads found</p>
-              <p className="text-sm text-slate-400 mt-1">
+              <p className="text-[var(--color-muted)]">No leads found</p>
+              <p className="text-sm text-[var(--color-muted)] mt-1">
                 {currentFilters.q || currentFilters.stage || currentFilters.campaign
                   ? "Try adjusting your filters"
                   : "Leads will appear here as they come in"}

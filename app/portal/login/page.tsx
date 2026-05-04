@@ -84,15 +84,15 @@ export default function PortalLoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-[var(--color-bg-alt)] flex items-center justify-center px-4">
       <div className="w-full max-w-md">
         {/* Logo / Brand */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-blue-600 text-white font-bold text-xl mb-4">
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-[var(--color-primary)] text-[var(--color-bg)] font-bold text-xl mb-4">
             L4U
           </div>
-          <h1 className="text-2xl font-bold text-slate-900">Client Portal</h1>
-          <p className="text-slate-500 mt-1">
+          <h1 className="text-2xl font-bold text-[var(--color-heading)]">Client Portal</h1>
+          <p className="text-[var(--color-muted)] mt-1">
             Sign in to view your leads and reports
           </p>
         </div>
@@ -100,7 +100,7 @@ export default function PortalLoginPage() {
         {/* Login Form */}
         <form
           onSubmit={handleLogin}
-          className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 space-y-5"
+          className="bg-[var(--color-bg)] rounded-2xl shadow-sm border border-[var(--color-border)] p-8 space-y-5"
         >
           {error && (
             <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
@@ -111,7 +111,7 @@ export default function PortalLoginPage() {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-slate-700 mb-1.5"
+              className="block text-sm font-medium text-[var(--color-body)] mb-1.5"
             >
               Email address
             </label>
@@ -122,7 +122,7 @@ export default function PortalLoginPage() {
               onChange={(e) => setEmail(e.target.value)}
               required
               autoComplete="email"
-              className="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+              className="w-full px-4 py-2.5 border border-[var(--color-border-strong)] rounded-lg text-[var(--color-heading)] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent transition"
               placeholder="you@company.com"
             />
           </div>
@@ -130,7 +130,7 @@ export default function PortalLoginPage() {
           <div>
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-slate-700 mb-1.5"
+              className="block text-sm font-medium text-[var(--color-body)] mb-1.5"
             >
               Password
             </label>
@@ -141,7 +141,7 @@ export default function PortalLoginPage() {
               onChange={(e) => setPassword(e.target.value)}
               required
               autoComplete="current-password"
-              className="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+              className="w-full px-4 py-2.5 border border-[var(--color-border-strong)] rounded-lg text-[var(--color-heading)] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent transition"
               placeholder="Enter your password"
             />
           </div>
@@ -149,17 +149,17 @@ export default function PortalLoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-4 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-[var(--color-bg)] font-semibold py-2.5 px-4 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? "Signing in..." : "Sign in"}
           </button>
         </form>
 
-        <p className="text-center text-sm text-slate-400 mt-6">
+        <p className="text-center text-sm text-[var(--color-muted)] mt-6">
           Powered by{" "}
           <a
             href="https://workcrew.io"
-            className="text-blue-500 hover:underline"
+            className="text-[var(--color-primary)] hover:underline"
             target="_blank"
             rel="noopener noreferrer"
           >

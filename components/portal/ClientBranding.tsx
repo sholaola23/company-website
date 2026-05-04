@@ -31,7 +31,7 @@ export default function ClientBranding({
 
   return (
     <div
-      className={`${s.container} ${s.rounded} flex items-center justify-center text-white font-bold ${s.text}`}
+      className={`${s.container} ${s.rounded} flex items-center justify-center text-[var(--color-bg)] font-bold ${s.text}`}
       style={{ backgroundColor: org.brand_color }}
     >
       {org.name.charAt(0).toUpperCase()}

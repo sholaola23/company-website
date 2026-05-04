@@ -83,13 +83,13 @@ export default function AuditPage() {
           >
             Your free AI readiness audit
           </h1>
-          <p className="text-lg text-slate-600 leading-relaxed">
+          <p className="text-lg text-[var(--color-body)] leading-relaxed">
             Get instant AI analysis of your business in 10&nbsp;seconds.
             No email required.
           </p>
-          <p className="text-slate-600 text-sm mt-6">
+          <p className="text-[var(--color-body)] text-sm mt-6">
             We helped E&apos;Manuel Bakery save 50+ minutes every day and built QuantumFM Media a 12-page professional website.{" "}
-            <span className="text-blue-600">Let&apos;s find your wins.</span>
+            <span className="text-[var(--color-primary)]">Let&apos;s find your wins.</span>
           </p>
         </div>
       </AnimatedSection>
@@ -104,14 +104,14 @@ export default function AuditPage() {
             {HOW_IT_WORKS.map(({ step, label }, i) => (
               <li key={step} className="flex items-center gap-3 sm:gap-0">
                 <div className="flex items-center gap-3">
-                  <div className="flex items-center justify-center w-7 h-7 rounded-full bg-blue-600/15 border border-blue-600/30 shrink-0">
-                    <span className="text-xs font-bold text-blue-600">{step}</span>
+                  <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[var(--color-primary)]/15 border border-[var(--color-primary)]/30 shrink-0">
+                    <span className="text-xs font-bold text-[var(--color-primary)]">{step}</span>
                   </div>
-                  <span className="text-sm text-slate-600 font-medium">{label}</span>
+                  <span className="text-sm text-[var(--color-body)] font-medium">{label}</span>
                 </div>
                 {i < HOW_IT_WORKS.length - 1 && (
                   <span
-                    className="hidden sm:inline text-slate-600 mx-4 select-none"
+                    className="hidden sm:inline text-[var(--color-body)] mx-4 select-none"
                     aria-hidden="true"
                   >
                     →
@@ -127,12 +127,12 @@ export default function AuditPage() {
       <AnimatedSection delay={0.2}>
         <div className="max-w-2xl mx-auto">
           <InstantAudit />
-          <p className="text-center text-xs text-slate-400 mt-4">
+          <p className="text-center text-xs text-[var(--color-muted)] mt-4">
             Free — no obligation
           </p>
-          <p className="text-center text-xs text-slate-400 mt-2">
+          <p className="text-center text-xs text-[var(--color-muted)] mt-2">
             Backed by our{" "}
-            <span className="text-emerald-600 font-medium">
+            <span className="text-[var(--color-success)] font-medium">
               90-Day Results Guarantee
             </span>{" "}
             — if you don&apos;t see results, we refund your setup fee.

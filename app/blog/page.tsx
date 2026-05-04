@@ -412,13 +412,13 @@ export default async function BlogPage() {
       <BreadcrumbJsonLd items={[{ name: "Blog", href: "/blog" }]} />
       <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto">
-          <p className="text-blue-600 text-sm font-semibold uppercase tracking-wider mb-3">
+          <p className="text-[var(--color-primary)] text-sm font-semibold uppercase tracking-wider mb-3">
             Blog
           </p>
           <h1 className="text-4xl font-bold mb-4">
             AI Automation Insights
           </h1>
-          <p className="text-slate-600 max-w-2xl text-lg mb-12">
+          <p className="text-[var(--color-body)] max-w-2xl text-lg mb-12">
             Practical tips, case studies, and behind-the-scenes of building AI
             automation for small businesses.
           </p>
@@ -428,31 +428,31 @@ export default async function BlogPage() {
               <Link
                 key={post.id}
                 href={`/blog/${post.slug}`}
-                className="group bg-slate-50 border border-slate-200 rounded-xl p-6 hover:border-slate-200 transition-colors"
+                className="group bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-xl p-6 hover:border-[var(--color-border)] transition-colors"
               >
                 <div className="flex flex-wrap gap-2 mb-3">
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full"
+                      className="text-xs bg-[var(--color-surface)] text-[var(--color-body)] px-2 py-0.5 rounded-full"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-                <h2 className="text-lg font-semibold mb-2 group-hover:text-blue-600 transition-colors">
+                <h2 className="text-lg font-semibold mb-2 group-hover:text-[var(--color-primary)] transition-colors">
                   {post.title}
                 </h2>
                 {post.excerpt && (
-                  <p className="text-slate-600 text-sm mb-3 line-clamp-2">
+                  <p className="text-[var(--color-body)] text-sm mb-3 line-clamp-2">
                     {post.excerpt}
                   </p>
                 )}
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-slate-400">
+                  <span className="text-xs text-[var(--color-muted)]">
                     {post.publishedAt}
                   </span>
-                  <span className="text-sm text-blue-600 flex items-center gap-1 group-hover:gap-2 transition-all">
+                  <span className="text-sm text-[var(--color-primary)] flex items-center gap-1 group-hover:gap-2 transition-all">
                     Read
                     <ArrowRight className="w-3 h-3" />
                   </span>

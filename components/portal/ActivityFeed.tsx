@@ -11,9 +11,9 @@ export default function ActivityFeed({
 }) {
   if (activities.length === 0) {
     return (
-      <div className="bg-white rounded-xl border border-slate-200 p-6">
-        <h3 className="font-semibold text-slate-900 mb-4">Recent Activity</h3>
-        <p className="text-sm text-slate-400 text-center py-8">
+      <div className="bg-[var(--color-bg)] rounded-xl border border-[var(--color-border)] p-6">
+        <h3 className="font-semibold text-[var(--color-heading)] mb-4">Recent Activity</h3>
+        <p className="text-sm text-[var(--color-muted)] text-center py-8">
           No activity yet. Leads will appear here as they progress.
         </p>
       </div>
@@ -33,8 +33,8 @@ export default function ActivityFeed({
   };
 
   return (
-    <div className="bg-white rounded-xl border border-slate-200 p-6">
-      <h3 className="font-semibold text-slate-900 mb-4">Recent Activity</h3>
+    <div className="bg-[var(--color-bg)] rounded-xl border border-[var(--color-border)] p-6">
+      <h3 className="font-semibold text-[var(--color-heading)] mb-4">Recent Activity</h3>
       <div className="space-y-4">
         {activities.map((activity, i) => {
           const icon = typeIcons[activity.type] || {
@@ -46,20 +46,20 @@ export default function ActivityFeed({
               {/* Timeline line + dot */}
               <div className="flex flex-col items-center">
                 <div
-                  className="w-7 h-7 rounded-full flex items-center justify-center text-white text-xs font-bold shrink-0"
+                  className="w-7 h-7 rounded-full flex items-center justify-center text-[var(--color-bg)] text-xs font-bold shrink-0"
                   style={{ backgroundColor: icon.color }}
                 >
                   {icon.emoji}
                 </div>
                 {i < activities.length - 1 && (
-                  <div className="w-px h-full bg-slate-200 mt-1" />
+                  <div className="w-px h-full bg-[var(--color-border)] mt-1" />
                 )}
               </div>
 
               {/* Content */}
               <div className="pb-4 min-w-0">
-                <p className="text-sm text-slate-700">{activity.description}</p>
-                <p className="text-xs text-slate-400 mt-0.5">
+                <p className="text-sm text-[var(--color-body)]">{activity.description}</p>
+                <p className="text-xs text-[var(--color-muted)] mt-0.5">
                   {formatRelativeTime(activity.created_at)}
                 </p>
               </div>

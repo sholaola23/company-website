@@ -127,13 +127,13 @@ export default function AIAutomationLondonPage() {
       {/* Hero */}
       <AnimatedSection>
         <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
-          <span className="text-xs font-semibold tracking-widest uppercase text-blue-600 mb-4 block">
+          <span className="text-xs font-semibold tracking-widest uppercase text-[var(--color-primary)] mb-4 block">
             AI Automation in {CITY}
           </span>
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-slate-900 leading-tight tracking-tight mb-6">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-[var(--color-heading)] leading-tight tracking-tight mb-6">
             AI Automation for Small Businesses in {CITY}
           </h1>
-          <p className="text-lg text-slate-600 leading-relaxed">
+          <p className="text-lg text-[var(--color-body)] leading-relaxed">
             London is home to over 500,000 small businesses competing for
             attention in one of the world&apos;s most dynamic markets. From
             salons in Shoreditch to tradespeople in Croydon, the businesses
@@ -156,7 +156,7 @@ export default function AIAutomationLondonPage() {
           </div>
 
           <div className="max-w-3xl mx-auto space-y-6">
-            <p className="text-sm text-slate-600 leading-relaxed">
+            <p className="text-sm text-[var(--color-body)] leading-relaxed">
               London&apos;s economy is uniquely demanding. With over 1 million
               registered businesses competing across 32 boroughs, response speed
               is everything. A potential customer in Canary Wharf who fills in a
@@ -166,7 +166,7 @@ export default function AIAutomationLondonPage() {
               businesses that communicate faster and more consistently than
               their rivals.
             </p>
-            <p className="text-sm text-slate-600 leading-relaxed">
+            <p className="text-sm text-[var(--color-body)] leading-relaxed">
               Yet many London SMBs are caught in a productivity trap. High rents
               and staffing costs mean teams are stretched thin, handling
               everything from lead follow-up to invoicing manually. The result
@@ -176,7 +176,7 @@ export default function AIAutomationLondonPage() {
               handling time-sensitive tasks around the clock, so your team can
               focus on the high-value work that actually grows revenue.
             </p>
-            <p className="text-sm text-slate-600 leading-relaxed">
+            <p className="text-sm text-[var(--color-body)] leading-relaxed">
               London&apos;s diversity is also a strength. A Hackney-based design
               studio faces completely different operational bottlenecks compared
               to an estate agency in Richmond or a dental practice in Harley
@@ -213,12 +213,12 @@ export default function AIAutomationLondonPage() {
             ].map((industry) => (
               <div
                 key={industry.name}
-                className="bg-slate-50 border border-slate-200 rounded-xl p-5 hover:border-slate-200 transition-colors duration-200"
+                className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-xl p-5 hover:border-[var(--color-border)] transition-colors duration-200"
               >
-                <h3 className="text-sm font-semibold text-slate-900 mb-2">
+                <h3 className="text-sm font-semibold text-[var(--color-heading)] mb-2">
                   {industry.name}
                 </h3>
-                <p className="text-xs text-slate-400 leading-relaxed">
+                <p className="text-xs text-[var(--color-muted)] leading-relaxed">
                   {industry.description}
                 </p>
               </div>
@@ -242,17 +242,17 @@ export default function AIAutomationLondonPage() {
             {SERVICES.map((service) => (
               <div
                 key={service.title}
-                className="bg-slate-50 border border-slate-200 rounded-xl p-7 flex flex-col gap-4 hover:border-slate-200 transition-colors duration-200"
+                className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-xl p-7 flex flex-col gap-4 hover:border-[var(--color-border)] transition-colors duration-200"
               >
-                <h3 className="text-base font-semibold text-slate-900">
+                <h3 className="text-base font-semibold text-[var(--color-heading)]">
                   {service.title}
                 </h3>
-                <p className="text-sm text-slate-600 leading-relaxed flex-1">
+                <p className="text-sm text-[var(--color-body)] leading-relaxed flex-1">
                   {service.description}
                 </p>
                 <Link
                   href={service.href}
-                  className="text-sm text-blue-600 hover:text-blue-600 transition-colors font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded w-fit"
+                  className="text-sm text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] rounded w-fit"
                 >
                   Learn more
                 </Link>
@@ -279,25 +279,25 @@ export default function AIAutomationLondonPage() {
               return (
                 <div
                   key={step.step}
-                  className="bg-slate-50 border border-slate-200 rounded-xl p-6 flex flex-col gap-4 hover:border-slate-200 transition-colors duration-200"
+                  className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-xl p-6 flex flex-col gap-4 hover:border-[var(--color-border)] transition-colors duration-200"
                 >
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-600/20">
+                    <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20">
                       <Icon
                         size={18}
-                        className="text-blue-600"
+                        className="text-[var(--color-primary)]"
                         aria-hidden="true"
                       />
                     </div>
-                    <span className="text-2xl font-bold text-slate-600 font-mono">
+                    <span className="text-2xl font-bold text-[var(--color-body)] font-mono">
                       {step.step}
                     </span>
                   </div>
                   <div>
-                    <h3 className="text-base font-semibold text-slate-900 mb-2">
+                    <h3 className="text-base font-semibold text-[var(--color-heading)] mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-sm text-slate-600 leading-relaxed">
+                    <p className="text-sm text-[var(--color-body)] leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -310,8 +310,8 @@ export default function AIAutomationLondonPage() {
 
       {/* Social proof */}
       <AnimatedSection delay={0.4}>
-        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 sm:p-10 max-w-3xl mx-auto mb-20 sm:mb-24 text-center">
-          <p className="text-sm text-slate-600 leading-relaxed">
+        <div className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-2xl p-8 sm:p-10 max-w-3xl mx-auto mb-20 sm:mb-24 text-center">
+          <p className="text-sm text-[var(--color-body)] leading-relaxed">
             Already helping businesses across the South East automate their
             operations. From lead intake systems to AI content engines,
             most pay for themselves within weeks.
@@ -319,10 +319,10 @@ export default function AIAutomationLondonPage() {
           <div className="flex items-center justify-center gap-2 mt-4">
             <CheckCircle
               size={16}
-              className="text-blue-600"
+              className="text-[var(--color-primary)]"
               aria-hidden="true"
             />
-            <span className="text-sm font-medium text-slate-500">
+            <span className="text-sm font-medium text-[var(--color-muted)]">
               UK-registered company. Real results. Real references.
             </span>
           </div>
@@ -333,13 +333,13 @@ export default function AIAutomationLondonPage() {
       <AnimatedSection delay={0.5}>
         <div className="text-center">
           <div className="inline-flex flex-col items-center gap-4">
-            <p className="text-slate-600 text-base">
+            <p className="text-[var(--color-body)] text-base">
               Ready to automate your {CITY} business?
             </p>
             <CTAButton href="/audit" variant="primary" size="lg">
               Get Your Free AI Audit
             </CTAButton>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-[var(--color-muted)]">
               48-hour turnaround. No obligation. No jargon.
             </p>
           </div>

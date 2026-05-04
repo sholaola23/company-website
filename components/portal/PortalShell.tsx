@@ -46,11 +46,11 @@ export default function PortalShell({
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 flex">
+    <div className="min-h-screen bg-[var(--color-bg-alt)] flex">
       {/* Sidebar — hidden on mobile, visible on lg+ */}
-      <aside className="hidden lg:flex lg:w-64 lg:flex-col lg:fixed lg:inset-y-0 bg-slate-900 text-white">
+      <aside className="hidden lg:flex lg:w-64 lg:flex-col lg:fixed lg:inset-y-0 bg-[var(--color-dark)] text-[var(--color-bg)]">
         {/* Org branding */}
-        <div className="flex items-center gap-3 px-6 py-5 border-b border-slate-800">
+        <div className="flex items-center gap-3 px-6 py-5 border-b border-[var(--color-dark-border)]">
           {org.logo_url ? (
             <img
               src={org.logo_url}
@@ -59,7 +59,7 @@ export default function PortalShell({
             />
           ) : (
             <div
-              className="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-sm text-white"
+              className="w-9 h-9 rounded-lg flex items-center justify-center font-bold text-sm text-[var(--color-bg)]"
               style={{ backgroundColor: org.brand_color }}
             >
               {org.name.charAt(0)}
@@ -67,7 +67,7 @@ export default function PortalShell({
           )}
           <div className="min-w-0">
             <p className="text-sm font-semibold truncate">{org.name}</p>
-            <p className="text-xs text-slate-400 truncate">{org.industry}</p>
+            <p className="text-xs text-[var(--color-muted)] truncate">{org.industry}</p>
           </div>
         </div>
 
@@ -79,8 +79,8 @@ export default function PortalShell({
               href={item.href}
               className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition ${
                 item.active
-                  ? "bg-slate-800 text-white"
-                  : "text-slate-400 hover:bg-slate-800 hover:text-white"
+                  ? "bg-[var(--color-dark-surface)] text-[var(--color-bg)]"
+                  : "text-[var(--color-muted)] hover:bg-[var(--color-dark-surface)] hover:text-[var(--color-bg)]"
               }`}
             >
               <item.icon active={item.active} brandColor={org.brand_color} />
@@ -90,7 +90,7 @@ export default function PortalShell({
         </nav>
 
         {/* User + sign out */}
-        <div className="px-4 py-4 border-t border-slate-800">
+        <div className="px-4 py-4 border-t border-[var(--color-dark-border)]">
           <div className="flex items-center gap-3 mb-3">
             <div className="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-xs font-medium">
               {profile.full_name.charAt(0)}
@@ -99,12 +99,12 @@ export default function PortalShell({
               <p className="text-sm font-medium truncate">
                 {profile.full_name}
               </p>
-              <p className="text-xs text-slate-400 truncate">{profile.email}</p>
+              <p className="text-xs text-[var(--color-muted)] truncate">{profile.email}</p>
             </div>
           </div>
           <button
             onClick={handleSignOut}
-            className="w-full text-left text-sm text-slate-400 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800 transition"
+            className="w-full text-left text-sm text-[var(--color-muted)] hover:text-[var(--color-bg)] px-3 py-2 rounded-lg hover:bg-[var(--color-dark-surface)] transition"
           >
             Sign out
           </button>
@@ -112,7 +112,7 @@ export default function PortalShell({
       </aside>
 
       {/* Mobile header */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-40 bg-slate-900 text-white px-4 py-3 flex items-center justify-between">
+      <div className="lg:hidden fixed top-0 left-0 right-0 z-40 bg-[var(--color-dark)] text-[var(--color-bg)] px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div
             className="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-xs"
@@ -127,8 +127,8 @@ export default function PortalShell({
             href={`/portal/${slug}`}
             className={`px-3 py-1.5 rounded-lg text-xs font-medium ${
               pathname === `/portal/${slug}`
-                ? "bg-slate-800 text-white"
-                : "text-slate-400"
+                ? "bg-[var(--color-dark-surface)] text-[var(--color-bg)]"
+                : "text-[var(--color-muted)]"
             }`}
           >
             Dashboard
@@ -137,15 +137,15 @@ export default function PortalShell({
             href={`/portal/${slug}/leads`}
             className={`px-3 py-1.5 rounded-lg text-xs font-medium ${
               pathname.includes("/leads")
-                ? "bg-slate-800 text-white"
-                : "text-slate-400"
+                ? "bg-[var(--color-dark-surface)] text-[var(--color-bg)]"
+                : "text-[var(--color-muted)]"
             }`}
           >
             Leads
           </Link>
           <button
             onClick={handleSignOut}
-            className="text-xs text-slate-400 px-2 py-1.5"
+            className="text-xs text-[var(--color-muted)] px-2 py-1.5"
           >
             Sign out
           </button>

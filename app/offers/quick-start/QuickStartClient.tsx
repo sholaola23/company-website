@@ -48,10 +48,10 @@ function useCountdown() {
 function CountdownBlock({ value, label }: { value: number; label: string }) {
   return (
     <div className="flex flex-col items-center">
-      <span className="text-2xl sm:text-3xl font-bold tabular-nums text-slate-900">
+      <span className="text-2xl sm:text-3xl font-bold tabular-nums text-[var(--color-heading)]">
         {String(value).padStart(2, "0")}
       </span>
-      <span className="text-[10px] uppercase tracking-widest text-slate-400 mt-1">{label}</span>
+      <span className="text-[10px] uppercase tracking-widest text-[var(--color-muted)] mt-1">{label}</span>
     </div>
   );
 }
@@ -100,7 +100,7 @@ interface FormState {
 const INITIAL: FormState = { name: "", email: "", business: "", phone: "" };
 
 const inputBase =
-  "w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-colors duration-150 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600";
+  "w-full bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-lg px-4 py-3 text-sm text-[var(--color-heading)] placeholder:text-[var(--color-muted)] transition-colors duration-150 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]";
 
 function ClaimForm() {
   const [form, setForm] = useState<FormState>(INITIAL);
@@ -148,8 +148,8 @@ function ClaimForm() {
     return (
       <div className="text-center py-8">
         <CheckCircle2 size={40} className="text-green-400 mx-auto mb-4" />
-        <p className="text-lg font-semibold text-slate-900 mb-2">You&apos;re in!</p>
-        <p className="text-sm text-slate-600">
+        <p className="text-lg font-semibold text-[var(--color-heading)] mb-2">You&apos;re in!</p>
+        <p className="text-sm text-[var(--color-body)]">
           We&apos;ll be in touch within a few hours to kick things off. Check your inbox.
         </p>
       </div>
@@ -228,7 +228,7 @@ function ClaimForm() {
         type="submit"
         disabled={status === "loading"}
         className={cn(
-          "w-full inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-500/20 transition-all duration-200 hover:bg-blue-700 hover:shadow-blue-500/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white group",
+          "w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--color-primary)] px-6 py-3.5 text-base font-semibold text-[var(--color-bg)] shadow-lg shadow-blue-500/20 transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-blue-500/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-white group",
           status === "loading" && "opacity-70 cursor-not-allowed"
         )}
       >
@@ -261,14 +261,14 @@ export default function QuickStartClient() {
           {expired ? "Offer ended" : "This week only — ends Sunday 30 March"}
         </div>
 
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight mb-4">
-          <span className="line-through text-slate-400 text-2xl sm:text-3xl lg:text-4xl mr-3">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-heading)] leading-tight mb-4">
+          <span className="line-through text-[var(--color-muted)] text-2xl sm:text-3xl lg:text-4xl mr-3">
             £500
           </span>
-          <span className="text-blue-600">£297</span> Quick-Start AI Package
+          <span className="text-[var(--color-primary)]">£297</span> Quick-Start AI Package
         </h1>
 
-        <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-lg text-[var(--color-body)] max-w-2xl mx-auto leading-relaxed">
           Everything you need to start saving hours every week with AI —
           audit, automation build, and live dashboard. Delivered in 14 days.
         </p>
@@ -277,16 +277,16 @@ export default function QuickStartClient() {
       {/* ── Countdown ──────────────────────────────────────────────────── */}
       {!expired && (
         <div className="mb-16">
-          <div className="flex items-center justify-center gap-4 sm:gap-6 bg-slate-50 border border-slate-200 rounded-2xl py-6 px-6 max-w-md mx-auto">
+          <div className="flex items-center justify-center gap-4 sm:gap-6 bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-2xl py-6 px-6 max-w-md mx-auto">
             <CountdownBlock value={timeLeft.days} label="Days" />
-            <span className="text-slate-900 text-xl font-light" aria-hidden="true">:</span>
+            <span className="text-[var(--color-heading)] text-xl font-light" aria-hidden="true">:</span>
             <CountdownBlock value={timeLeft.hours} label="Hours" />
-            <span className="text-slate-900 text-xl font-light" aria-hidden="true">:</span>
+            <span className="text-[var(--color-heading)] text-xl font-light" aria-hidden="true">:</span>
             <CountdownBlock value={timeLeft.minutes} label="Mins" />
-            <span className="text-slate-900 text-xl font-light" aria-hidden="true">:</span>
+            <span className="text-[var(--color-heading)] text-xl font-light" aria-hidden="true">:</span>
             <CountdownBlock value={timeLeft.seconds} label="Secs" />
           </div>
-          <p className="text-center text-xs text-slate-400 mt-3">
+          <p className="text-center text-xs text-[var(--color-muted)] mt-3">
             Offer expires Sunday 30 March 2026 at midnight
           </p>
         </div>
@@ -307,43 +307,43 @@ export default function QuickStartClient() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
         {/* Left: What's included */}
         <div>
-          <h2 className="text-lg font-semibold text-slate-900 mb-6">
+          <h2 className="text-lg font-semibold text-[var(--color-heading)] mb-6">
             What&apos;s included
           </h2>
           <div className="flex flex-col gap-4">
             {INCLUDED.map((item) => (
               <div
                 key={item.title}
-                className="flex items-start gap-4 p-4 bg-slate-50 border border-slate-200 rounded-xl"
+                className="flex items-start gap-4 p-4 bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-xl"
               >
-                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-600/20 shrink-0">
-                  <item.icon size={16} className="text-blue-600" aria-hidden="true" />
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 shrink-0">
+                  <item.icon size={16} className="text-[var(--color-primary)]" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-slate-900 mb-0.5">{item.title}</p>
-                  <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+                  <p className="text-sm font-semibold text-[var(--color-heading)] mb-0.5">{item.title}</p>
+                  <p className="text-sm text-[var(--color-body)] leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Social proof */}
-          <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-6">
-            <p className="text-xs font-semibold uppercase tracking-widest text-blue-600 mb-3">
+          <div className="mt-8 bg-[var(--color-primary-light)] border border-[var(--color-primary-light)] rounded-xl p-6">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-primary)] mb-3">
               Real results
             </p>
-            <p className="text-sm text-slate-500 leading-relaxed mb-4">
+            <p className="text-sm text-[var(--color-muted)] leading-relaxed mb-4">
               E&apos;Manuel Bakery went from fully manual order processing to a complete
               AI-powered system in under a week.
             </p>
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-slate-50/60 border border-slate-200 rounded-lg p-3 text-center">
-                <p className="text-xl font-bold text-slate-900">8+</p>
-                <p className="text-xs text-slate-400 mt-0.5">Hours/week saved</p>
+              <div className="bg-[var(--color-bg-alt)]/60 border border-[var(--color-border)] rounded-lg p-3 text-center">
+                <p className="text-xl font-bold text-[var(--color-heading)]">8+</p>
+                <p className="text-xs text-[var(--color-muted)] mt-0.5">Hours/week saved</p>
               </div>
-              <div className="bg-slate-50/60 border border-slate-200 rounded-lg p-3 text-center">
-                <p className="text-xl font-bold text-slate-900">180</p>
-                <p className="text-xs text-slate-400 mt-0.5">Orders automated</p>
+              <div className="bg-[var(--color-bg-alt)]/60 border border-[var(--color-border)] rounded-lg p-3 text-center">
+                <p className="text-xl font-bold text-[var(--color-heading)]">180</p>
+                <p className="text-xs text-[var(--color-muted)] mt-0.5">Orders automated</p>
               </div>
             </div>
           </div>
@@ -351,9 +351,9 @@ export default function QuickStartClient() {
 
         {/* Right: Claim form */}
         <div>
-          <div className="bg-slate-50 border border-slate-200 rounded-2xl p-7 sm:p-8 sticky top-24">
+          <div className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-2xl p-7 sm:p-8 sticky top-24">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-lg font-semibold text-slate-900">
+              <h2 className="text-lg font-semibold text-[var(--color-heading)]">
                 Claim your spot
               </h2>
               <div className="flex items-center gap-1.5 text-xs font-medium text-green-400">
@@ -362,15 +362,15 @@ export default function QuickStartClient() {
               </div>
             </div>
 
-            <div className="mb-6 pb-6 border-b border-slate-200">
+            <div className="mb-6 pb-6 border-b border-[var(--color-border)]">
               <div className="flex items-baseline gap-2">
-                <span className="text-3xl font-bold text-slate-900">£297</span>
-                <span className="text-sm text-slate-400 line-through">£500</span>
+                <span className="text-3xl font-bold text-[var(--color-heading)]">£297</span>
+                <span className="text-sm text-[var(--color-muted)] line-through">£500</span>
                 <span className="ml-auto text-xs font-semibold text-green-400 bg-green-500/10 border border-green-500/20 rounded-full px-2.5 py-0.5">
                   Save £203
                 </span>
               </div>
-              <p className="text-xs text-slate-400 mt-2">
+              <p className="text-xs text-[var(--color-muted)] mt-2">
                 One-time setup fee. No hidden costs. No monthly commitment required.
               </p>
             </div>
@@ -378,11 +378,11 @@ export default function QuickStartClient() {
             <ClaimForm />
 
             {/* Or email CTA */}
-            <div className="mt-6 pt-6 border-t border-slate-200 text-center">
-              <p className="text-xs text-slate-400 mb-2">Prefer email?</p>
+            <div className="mt-6 pt-6 border-t border-[var(--color-border)] text-center">
+              <p className="text-xs text-[var(--color-muted)] mb-2">Prefer email?</p>
               <a
                 href="mailto:hello@workcrew.io?subject=Quick-Start%20AI%20Package%20-%20Claim%20My%20Spot&body=Hi%2C%20I%27d%20like%20to%20claim%20a%20spot%20on%20the%20%C2%A3297%20Quick-Start%20AI%20Package.%0A%0AMy%20business%3A%20%0AMy%20name%3A%20"
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:text-blue-600 transition-colors"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
               >
                 <Mail size={14} aria-hidden="true" />
                 Reply to claim your spot
@@ -394,7 +394,7 @@ export default function QuickStartClient() {
 
       {/* ── How it works ───────────────────────────────────────────────── */}
       <div className="mt-20">
-        <h2 className="text-lg font-semibold text-slate-900 text-center mb-10">
+        <h2 className="text-lg font-semibold text-[var(--color-heading)] text-center mb-10">
           How it works
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -417,13 +417,13 @@ export default function QuickStartClient() {
           ].map((item) => (
             <div
               key={item.step}
-              className="bg-slate-50 border border-slate-200 rounded-xl p-6 text-center"
+              className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-xl p-6 text-center"
             >
-              <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-600/10 border border-blue-600/20 text-sm font-bold text-blue-600 mb-4">
+              <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 text-sm font-bold text-[var(--color-primary)] mb-4">
                 {item.step}
               </div>
-              <p className="text-sm font-semibold text-slate-900 mb-1">{item.title}</p>
-              <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+              <p className="text-sm font-semibold text-[var(--color-heading)] mb-1">{item.title}</p>
+              <p className="text-sm text-[var(--color-body)] leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -431,11 +431,11 @@ export default function QuickStartClient() {
 
       {/* ── Final CTA ──────────────────────────────────────────────────── */}
       <div className="mt-20 text-center">
-        <div className="bg-blue-50 border border-blue-200 rounded-2xl p-8 sm:p-12 max-w-2xl mx-auto">
-          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
+        <div className="bg-[var(--color-primary-light)] border border-[var(--color-primary-light)] rounded-2xl p-8 sm:p-12 max-w-2xl mx-auto">
+          <h2 className="text-xl sm:text-2xl font-bold text-[var(--color-heading)] mb-3">
             Don&apos;t let this week slip by
           </h2>
-          <p className="text-sm text-slate-600 mb-6 leading-relaxed">
+          <p className="text-sm text-[var(--color-body)] mb-6 leading-relaxed">
             3 businesses will start saving 5+ hours a week with AI this Sunday.
             Will yours be one of them?
           </p>
@@ -445,7 +445,7 @@ export default function QuickStartClient() {
               e.preventDefault();
               document.querySelector("form")?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-blue-500/20 transition-all duration-200 hover:bg-blue-700 hover:shadow-blue-500/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white group"
+            className="inline-flex items-center gap-2 rounded-lg bg-[var(--color-primary)] px-6 py-3 text-base font-semibold text-[var(--color-bg)] shadow-lg shadow-blue-500/20 transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-blue-500/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-white group"
           >
             Claim Your Spot Now
             <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />

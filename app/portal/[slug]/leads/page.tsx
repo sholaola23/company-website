@@ -57,8 +57,8 @@ export default async function LeadsPage({
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-slate-900">All Leads</h1>
-        <p className="text-slate-500 mt-1">
+        <h1 className="text-2xl font-bold text-[var(--color-heading)]">All Leads</h1>
+        <p className="text-[var(--color-muted)] mt-1">
           {leads?.length || 0} leads across all campaigns
         </p>
       </div>

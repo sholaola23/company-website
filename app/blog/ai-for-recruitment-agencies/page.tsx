@@ -48,7 +48,7 @@ export default function BlogPost() {
         <div className="max-w-3xl mx-auto">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 text-sm mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-[var(--color-body)] hover:text-[var(--color-heading)] text-sm mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             All Posts
@@ -58,7 +58,7 @@ export default function BlogPost() {
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full"
+                className="text-xs bg-[var(--color-surface)] text-[var(--color-body)] px-2 py-0.5 rounded-full"
               >
                 {tag}
               </span>
@@ -70,11 +70,11 @@ export default function BlogPost() {
             Outreach &amp; Placement Tracking
           </h1>
 
-          <div className="flex items-center gap-4 text-sm text-slate-400 mb-12">
+          <div className="flex items-center gap-4 text-sm text-[var(--color-muted)] mb-12">
             <span>21 March 2026</span>
-            <span className="text-slate-600">|</span>
+            <span className="text-[var(--color-body)]">|</span>
             <span>By Olushola Oladipupo</span>
-            <span className="text-slate-600">|</span>
+            <span className="text-[var(--color-body)]">|</span>
             <span className="flex items-center gap-1">
               <Clock className="w-3 h-3" />
               8 min read
@@ -82,7 +82,7 @@ export default function BlogPost() {
           </div>
 
           <div className="prose prose-slate max-w-none">
-            <p className="text-slate-500 leading-relaxed mb-4 text-lg">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4 text-lg">
               It&apos;s Monday morning. You&apos;ve got 14 open roles, a
               client chasing for shortlists by end of day, and 200 new
               CVs sitting in your inbox from a job board blast you ran
@@ -92,7 +92,7 @@ export default function BlogPost() {
               to actually speak to people.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               If you run a recruitment agency in the UK, you know that
               speed wins placements. The agency that responds first,
               screens fastest, and submits the best shortlist gets the
@@ -102,7 +102,7 @@ export default function BlogPost() {
               placements in spreadsheets that nobody updates.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               AI automation can handle the repetitive operational work
               so your consultants can focus on what actually earns fees:
               building relationships, closing deals, and placing
@@ -115,8 +115,8 @@ export default function BlogPost() {
               1. CV Screening &amp; Candidate Shortlisting
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-2">
-              <strong className="text-slate-900">Problem:</strong> A single
+            <p className="text-[var(--color-muted)] leading-relaxed mb-2">
+              <strong className="text-[var(--color-heading)]">Problem:</strong> A single
               job advert on Reed, Indeed, or Totaljobs can generate
               100&ndash;300 applications. Your consultants spend 2&ndash;3
               hours per role reading CVs, most of which are completely
@@ -124,8 +124,8 @@ export default function BlogPost() {
               best candidates have already been placed by a faster agency.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Solution:</strong> An AI
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Solution:</strong> An AI
               screening system that parses every incoming CV against the
               job specification within seconds. It extracts skills,
               experience, qualifications, location, notice period, and
@@ -137,8 +137,8 @@ export default function BlogPost() {
               a ranked shortlist ready for calls.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Result:</strong> A
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Result:</strong> A
               recruitment agency in Leeds specialising in accountancy
               placements reduced CV screening time from 3 hours to 15
               minutes per role. With 20 active roles, that&apos;s roughly
@@ -147,7 +147,7 @@ export default function BlogPost() {
               before competitors had even finished reading CVs.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               The quality improved too. The AI doesn&apos;t get tired at
               4pm and start skimming. Every CV gets the same thorough
               assessment, meaning fewer &ldquo;why did you send me this
@@ -159,8 +159,8 @@ export default function BlogPost() {
               2. Automated Candidate Outreach &amp; Follow-Up Sequences
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-2">
-              <strong className="text-slate-900">Problem:</strong> You
+            <p className="text-[var(--color-muted)] leading-relaxed mb-2">
+              <strong className="text-[var(--color-heading)]">Problem:</strong> You
               find a brilliant candidate on LinkedIn. You send a message.
               No reply. You mean to follow up but you&apos;ve got 50
               other candidates to contact and it slips through the
@@ -169,8 +169,8 @@ export default function BlogPost() {
               potential &pound;5,000&ndash;&pound;15,000 fee gone.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Solution:</strong> An
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Solution:</strong> An
               automated outreach system that sends personalised initial
               messages using data from a candidate&apos;s CV or LinkedIn
               profile, then follows up automatically at 3, 7, and 14
@@ -180,8 +180,8 @@ export default function BlogPost() {
               which templates perform best.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Result:</strong> A
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Result:</strong> A
               tech recruitment firm in Manchester automated candidate
               outreach and saw response rates jump from 12% to 34%.
               The follow-up sequences recovered roughly 8 additional
@@ -189,7 +189,7 @@ export default function BlogPost() {
               total fees. Not a single manual follow-up was sent.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               The key is personalisation. Generic &ldquo;Hi, I have an
               exciting opportunity&rdquo; messages get ignored. AI-driven
               outreach that references specific skills and career
@@ -202,8 +202,8 @@ export default function BlogPost() {
               3. Interview Scheduling &amp; Calendar Management
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-2">
-              <strong className="text-slate-900">Problem:</strong> You&apos;re
+            <p className="text-[var(--color-muted)] leading-relaxed mb-2">
+              <strong className="text-[var(--color-heading)]">Problem:</strong> You&apos;re
               coordinating between candidate availability, the hiring
               manager&apos;s diary, and sometimes a panel of three
               interviewers. It takes an average of 7 emails to confirm
@@ -212,8 +212,8 @@ export default function BlogPost() {
               recruiting.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Solution:</strong> An AI
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Solution:</strong> An AI
               scheduling assistant that integrates with Google Calendar,
               Outlook, and Microsoft Teams. It checks the hiring
               manager&apos;s real-time availability, sends candidates a
@@ -224,8 +224,8 @@ export default function BlogPost() {
               reducing no-shows.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Result:</strong> A
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Result:</strong> A
               multi-branch agency in Birmingham with 12 consultants
               eliminated roughly 25 hours per week of scheduling admin.
               No-show rates dropped from 18% to 6% thanks to automated
@@ -233,7 +233,7 @@ export default function BlogPost() {
               wasted interview slots per month.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               The hidden benefit is client perception. When interviews
               are scheduled cleanly and candidates show up prepared,
               clients notice &mdash; and send more roles to the agency
@@ -245,8 +245,8 @@ export default function BlogPost() {
               4. Client Job Brief Intake &amp; Matching
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-2">
-              <strong className="text-slate-900">Problem:</strong> A client
+            <p className="text-[var(--color-muted)] leading-relaxed mb-2">
+              <strong className="text-[var(--color-heading)]">Problem:</strong> A client
               calls with a new vacancy. Your consultant scribbles notes,
               spends 20 minutes typing a job spec, and forgets to ask
               about salary budget or IR35 status. Then they manually
@@ -255,8 +255,8 @@ export default function BlogPost() {
               nobody tags consistently).
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Solution:</strong> A
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Solution:</strong> A
               structured job brief intake form &mdash; via a branded web
               form or guided chatbot &mdash; that captures every
               essential detail: role title, skills, salary band, location
@@ -266,8 +266,8 @@ export default function BlogPost() {
               by relevance, with availability and last contact date.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Result:</strong> A
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Result:</strong> A
               contract IT recruitment agency in London cut the time from
               receiving a brief to first shortlist from 24 hours to 2
               hours. Fill rate increased by 20% because they were
@@ -276,7 +276,7 @@ export default function BlogPost() {
               to misunderstood requirements.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               Most agencies have thousands of candidates they&apos;ve
               spoken to over the years but can&apos;t efficiently search.
               AI matching turns a dormant database into an active talent
@@ -289,8 +289,8 @@ export default function BlogPost() {
               Right-to-Work)
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-2">
-              <strong className="text-slate-900">Problem:</strong> Once a
+            <p className="text-[var(--color-muted)] leading-relaxed mb-2">
+              <strong className="text-[var(--color-heading)]">Problem:</strong> Once a
               candidate is placed, the admin doesn&apos;t stop. For
               permanent roles: rebate periods, probation milestones,
               invoicing. For contracts: timesheets, extension dates,
@@ -301,8 +301,8 @@ export default function BlogPost() {
               are always out of date.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Solution:</strong> An
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Solution:</strong> An
               automated placement system that tracks every active
               placement with alerts. It sends contract renewal reminders
               30 days before expiry, flags right-to-work documents
@@ -314,8 +314,8 @@ export default function BlogPost() {
               managers.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Result:</strong> A
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Result:</strong> A
               staffing agency in Bristol managing 150 contractors caught
               12 right-to-work expirations in the first quarter that had
               previously been missed &mdash; avoiding an estimated
@@ -325,7 +325,7 @@ export default function BlogPost() {
               in the agency&apos;s compliance processes.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               Compliance isn&apos;t glamorous, but it&apos;s where
               agencies face the most financial risk. An automated system
               doesn&apos;t forget to check a visa expiry date or lose
@@ -334,13 +334,13 @@ export default function BlogPost() {
             </p>
 
             {/* Summary */}
-            <hr className="border-slate-200 my-10" />
+            <hr className="border-[var(--color-border)] my-10" />
 
             <h2 className="text-2xl font-bold mt-8 mb-4">
               The Bottom Line
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               Recruitment is fundamentally a speed game. The agency that
               screens fastest, responds first, and submits the best
               shortlist wins the placement. Yet most agencies are still
@@ -348,7 +348,7 @@ export default function BlogPost() {
               tracking compliance in spreadsheets.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               The agencies growing fastest in 2026 have automated the
               operational grind. They screen 200 CVs in minutes. They
               never let a good candidate slip without a follow-up. They
@@ -356,7 +356,7 @@ export default function BlogPost() {
               fully compliant without anyone checking spreadsheets.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               If your team is spending more time on admin than on actual
               recruiting, the problem isn&apos;t headcount &mdash;
               it&apos;s process. Automate the repetitive work and let
@@ -366,26 +366,26 @@ export default function BlogPost() {
           </div>
 
           {/* Related Articles */}
-          <div className="mt-12 border border-slate-200 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-4 text-slate-900">Related Articles</h3>
+          <div className="mt-12 border border-[var(--color-border)] rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-4 text-[var(--color-heading)]">Related Articles</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/blog/ai-for-estate-agents" className="text-blue-600 hover:text-blue-600 transition-colors">
+                <Link href="/blog/ai-for-estate-agents" className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors">
                   AI for Estate Agents: Automate Viewings, Valuations &amp; Follow-Ups
                 </Link>
               </li>
               <li>
-                <Link href="/blog/automate-appointment-booking" className="text-blue-600 hover:text-blue-600 transition-colors">
+                <Link href="/blog/automate-appointment-booking" className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors">
                   How to Automate Appointment Booking With AI
                 </Link>
               </li>
               <li>
-                <Link href="/blog/ai-automation-uk-small-business-guide" className="text-blue-600 hover:text-blue-600 transition-colors">
+                <Link href="/blog/ai-automation-uk-small-business-guide" className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors">
                   AI Automation for UK Small Businesses: The Complete Guide
                 </Link>
               </li>
               <li>
-                <Link href="/services/lead-intake" className="text-slate-500 hover:text-slate-900 transition-colors">
+                <Link href="/services/lead-intake" className="text-[var(--color-muted)] hover:text-[var(--color-heading)] transition-colors">
                   View our AI Lead Intake &amp; Booking service &rarr;
                 </Link>
               </li>
@@ -393,11 +393,11 @@ export default function BlogPost() {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-16 bg-blue-50 border border-blue-200 rounded-xl p-8 text-center">
+          <div className="mt-16 bg-[var(--color-primary-light)] border border-[var(--color-primary-light)] rounded-xl p-8 text-center">
             <h3 className="text-xl font-semibold mb-2">
               Want to Know Which Automations Would Work for Your Agency?
             </h3>
-            <p className="text-slate-600 mb-6 max-w-lg mx-auto">
+            <p className="text-[var(--color-body)] mb-6 max-w-lg mx-auto">
               Every recruitment agency is different. Take our free AI
               Readiness Audit and we&apos;ll tell you exactly where
               automation would save you the most time &mdash; and how
@@ -405,12 +405,12 @@ export default function BlogPost() {
             </p>
             <Link
               href="/audit"
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-[var(--color-bg)] px-6 py-3 rounded-lg font-medium transition-colors"
             >
               Get Your Free AI Readiness Audit
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <p className="text-slate-400 text-sm mt-3">
+            <p className="text-[var(--color-muted)] text-sm mt-3">
               Takes 2 minutes. No obligation. Built for recruitment
               agencies.
             </p>

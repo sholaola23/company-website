@@ -108,30 +108,30 @@ export default function AboutPage() {
         <h2 id="story-heading" className="sr-only">
           Our story
         </h2>
-        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 sm:p-10 flex flex-col gap-6">
+        <div className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-2xl p-8 sm:p-10 flex flex-col gap-6">
           <div className="flex flex-col gap-1">
-            <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[var(--color-muted)]">
               Founded by
             </span>
-            <h3 className="text-2xl font-bold text-slate-900">
+            <h3 className="text-2xl font-bold text-[var(--color-heading)]">
               Olushola Oladipupo
             </h3>
-            <p className="text-sm text-blue-600 font-medium">
+            <p className="text-sm text-[var(--color-primary)] font-medium">
               WorkCrew Ltd — Registered in England &amp; Wales
             </p>
           </div>
 
-          <div className="flex flex-col gap-4 text-sm text-slate-600 leading-relaxed">
+          <div className="flex flex-col gap-4 text-sm text-[var(--color-body)] leading-relaxed">
             <p>
               WorkCrew was founded on one observation: small businesses are
               behind on AI because every tool and consultant is built for people
               who already know what they&apos;re doing.
             </p>
             <p>
-              We change that across three service pillars. <strong className="text-slate-700">AI Automation</strong> — lead intake,
+              We change that across three service pillars. <strong className="text-[var(--color-body)]">AI Automation</strong> — lead intake,
               appointment booking, inbox management, order processing, and content
-              production. <strong className="text-slate-700">Website Development</strong> — professional, fast-loading sites
-              built to convert visitors into customers. <strong className="text-slate-700">AI Training</strong> — hands-on
+              production. <strong className="text-[var(--color-body)]">Website Development</strong> — professional, fast-loading sites
+              built to convert visitors into customers. <strong className="text-[var(--color-body)]">AI Training</strong> — hands-on
               workshops that give your team the skills to work smarter with AI,
               tailored to your industry.
             </p>
@@ -162,21 +162,21 @@ export default function AboutPage() {
             return (
               <div
                 key={step.step}
-                className="bg-slate-50 border border-slate-200 rounded-xl p-6 flex flex-col gap-4 hover:border-slate-200 transition-colors duration-200"
+                className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-xl p-6 flex flex-col gap-4 hover:border-[var(--color-border)] transition-colors duration-200"
               >
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-600/20">
-                    <Icon size={18} className="text-blue-600" aria-hidden="true" />
+                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20">
+                    <Icon size={18} className="text-[var(--color-primary)]" aria-hidden="true" />
                   </div>
-                  <span className="text-2xl font-bold text-slate-600 font-mono">
+                  <span className="text-2xl font-bold text-[var(--color-body)] font-mono">
                     {step.step}
                   </span>
                 </div>
                 <div>
-                  <h3 className="text-base font-semibold text-slate-900 mb-2">
+                  <h3 className="text-base font-semibold text-[var(--color-heading)] mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">
+                  <p className="text-sm text-[var(--color-body)] leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -191,17 +191,17 @@ export default function AboutPage() {
         <h2 id="stats-heading" className="sr-only">
           By the numbers
         </h2>
-        <div className="bg-slate-50 border border-slate-200 rounded-2xl px-8 py-10 max-w-4xl mx-auto">
-          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 text-center mb-8">
+        <div className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-2xl px-8 py-10 max-w-4xl mx-auto">
+          <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-muted)] text-center mb-8">
             By the Numbers
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
             {STATS.map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="text-4xl font-bold text-slate-900 leading-none mb-2">
+                <p className="text-4xl font-bold text-[var(--color-heading)] leading-none mb-2">
                   {stat.value}
                 </p>
-                <p className="text-sm text-slate-400">{stat.label}</p>
+                <p className="text-sm text-[var(--color-muted)]">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -215,7 +215,7 @@ export default function AboutPage() {
       >
         <h2
           id="trust-heading"
-          className="text-xl font-semibold text-slate-900 mb-6 text-center"
+          className="text-xl font-semibold text-[var(--color-heading)] mb-6 text-center"
         >
           Why You Can Trust Us
         </h2>
@@ -224,10 +224,10 @@ export default function AboutPage() {
             <li key={item} className="flex items-start gap-3">
               <CheckCircle
                 size={16}
-                className="text-blue-600 shrink-0 mt-0.5"
+                className="text-[var(--color-primary)] shrink-0 mt-0.5"
                 aria-hidden="true"
               />
-              <span className="text-sm text-slate-500 leading-relaxed">{item}</span>
+              <span className="text-sm text-[var(--color-muted)] leading-relaxed">{item}</span>
             </li>
           ))}
         </ul>
@@ -236,13 +236,13 @@ export default function AboutPage() {
       {/* CTA */}
       <div className="text-center">
         <div className="inline-flex flex-col items-center gap-4">
-          <p className="text-slate-600 text-base">
+          <p className="text-[var(--color-body)] text-base">
             Ready to see what&apos;s possible for your business?
           </p>
           <CTAButton href="/audit" variant="primary" size="lg">
             Get Your Free Audit
           </CTAButton>
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-[var(--color-muted)]">
             48-hour turnaround. No obligation.
           </p>
         </div>

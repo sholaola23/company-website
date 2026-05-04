@@ -54,7 +54,7 @@ export default function KPIBar({
       {cards.map((card) => (
         <div
           key={card.label}
-          className="bg-white rounded-xl border border-slate-200 p-5 hover:border-slate-300 transition"
+          className="bg-[var(--color-bg)] rounded-xl border border-[var(--color-border)] p-5 hover:border-[var(--color-border-strong)] transition"
         >
           <div className="flex items-center gap-3 mb-3">
             <div
@@ -66,12 +66,12 @@ export default function KPIBar({
                 style={{ backgroundColor: card.color }}
               />
             </div>
-            <span className="text-sm font-medium text-slate-500">
+            <span className="text-sm font-medium text-[var(--color-muted)]">
               {card.label}
             </span>
           </div>
-          <p className="text-3xl font-bold text-slate-900">{card.value}</p>
-          <p className="text-xs text-slate-400 mt-1">{card.subtitle}</p>
+          <p className="text-3xl font-bold text-[var(--color-heading)]">{card.value}</p>
+          <p className="text-xs text-[var(--color-muted)] mt-1">{card.subtitle}</p>
         </div>
       ))}
     </div>

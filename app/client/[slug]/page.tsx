@@ -279,7 +279,7 @@ function LoginForm({ slug }: { slug: string }) {
         </div>
 
         <div className="text-center mb-8">
-          <p className="text-xl font-semibold text-white mb-1">
+          <p className="text-xl font-semibold text-[var(--color-bg)] mb-1">
             E&apos;Manuel Foods and Bakery
           </p>
           <p className="text-zinc-500 text-sm leading-relaxed">
@@ -294,7 +294,7 @@ function LoginForm({ slug }: { slug: string }) {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Dashboard password"
-              className="w-full px-4 py-3.5 bg-zinc-800/60 border border-zinc-700/80 rounded-xl text-white placeholder-zinc-600 focus:outline-none focus:ring-1 focus:ring-zinc-500 focus:border-zinc-500 transition-all text-sm"
+              className="w-full px-4 py-3.5 bg-zinc-800/60 border border-zinc-700/80 rounded-xl text-[var(--color-bg)] placeholder-zinc-600 focus:outline-none focus:ring-1 focus:ring-zinc-500 focus:border-zinc-500 transition-all text-sm"
               autoFocus
             />
           </div>
@@ -316,7 +316,7 @@ function LoginForm({ slug }: { slug: string }) {
           <button
             type="submit"
             disabled={loading || !password}
-            className="w-full py-3.5 bg-white hover:bg-zinc-100 disabled:bg-zinc-800 disabled:text-zinc-600 text-zinc-900 rounded-xl font-medium transition-all text-sm shadow-sm"
+            className="w-full py-3.5 bg-[var(--color-bg)] hover:bg-zinc-100 disabled:bg-zinc-800 disabled:text-zinc-600 text-zinc-900 rounded-xl font-medium transition-all text-sm shadow-sm"
           >
             {loading ? (
               <span className="flex items-center justify-center gap-2">
@@ -388,7 +388,7 @@ function AnimatedStat({
 
   return (
     <div>
-      <div className="text-3xl font-bold tabular-nums tracking-tight text-white">
+      <div className="text-3xl font-bold tabular-nums tracking-tight text-[var(--color-bg)]">
         {prefix}
         {decimals > 0 ? animated.toFixed(decimals) : Math.round(animated)}
       </div>
@@ -497,11 +497,11 @@ function BankStatementUpload({ slug, onUploadComplete }: { slug: string; onUploa
           className="flex items-center gap-2.5 w-full text-left group disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {uploadState === "uploading" ? (
-            <Loader2 className="w-4 h-4 text-amber-400 shrink-0 animate-spin" />
+            <Loader2 className="w-4 h-4 text-[var(--color-primary)] shrink-0 animate-spin" />
           ) : (
-            <Upload className="w-4 h-4 text-amber-400/70 shrink-0 group-hover:text-amber-300 transition-colors" />
+            <Upload className="w-4 h-4 text-[var(--color-primary)]/70 shrink-0 group-hover:text-[var(--color-accent)] transition-colors" />
           )}
-          <span className="text-amber-300/70 text-xs leading-relaxed group-hover:text-amber-200 transition-colors">
+          <span className="text-[var(--color-accent)]/70 text-xs leading-relaxed group-hover:text-amber-200 transition-colors">
             {uploadState === "uploading"
               ? "Uploading..."
               : "Upload bank statement (.csv)"}
@@ -629,7 +629,7 @@ function RefundModal({ order, orderIndex, slug, onClose, onSuccess }: RefundModa
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2.5">
               <RotateCcw className="w-4 h-4 text-purple-400" />
-              <p className="text-sm font-semibold text-white">Process Refund</p>
+              <p className="text-sm font-semibold text-[var(--color-bg)]">Process Refund</p>
             </div>
             <button
               onClick={onClose}
@@ -644,7 +644,7 @@ function RefundModal({ order, orderIndex, slug, onClose, onSuccess }: RefundModa
             <p className="text-zinc-200 text-sm font-medium">{order.fullName}</p>
             <p className="text-zinc-500 text-xs">{order.items}</p>
             <p className="text-zinc-400 text-xs">
-              Basket total: <span className="text-white font-medium">{formatCurrency(order.basketTotal)}</span>
+              Basket total: <span className="text-[var(--color-bg)] font-medium">{formatCurrency(order.basketTotal)}</span>
             </p>
           </div>
 
@@ -672,7 +672,7 @@ function RefundModal({ order, orderIndex, slug, onClose, onSuccess }: RefundModa
                       min="0.01"
                       value={refundAmount}
                       onChange={(e) => setRefundAmount(e.target.value)}
-                      className="w-full pl-7 pr-3 py-2.5 bg-zinc-800/60 border border-zinc-700/60 rounded-xl text-white placeholder-zinc-600 text-sm focus:outline-none focus:ring-1 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all tabular-nums"
+                      className="w-full pl-7 pr-3 py-2.5 bg-zinc-800/60 border border-zinc-700/60 rounded-xl text-[var(--color-bg)] placeholder-zinc-600 text-sm focus:outline-none focus:ring-1 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all tabular-nums"
                     />
                   </div>
                 </div>
@@ -685,7 +685,7 @@ function RefundModal({ order, orderIndex, slug, onClose, onSuccess }: RefundModa
                   <select
                     value={reason}
                     onChange={(e) => setReason(e.target.value)}
-                    className="w-full px-3 py-2.5 bg-zinc-800/60 border border-zinc-700/60 rounded-xl text-white text-sm focus:outline-none focus:ring-1 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all appearance-none"
+                    className="w-full px-3 py-2.5 bg-zinc-800/60 border border-zinc-700/60 rounded-xl text-[var(--color-bg)] text-sm focus:outline-none focus:ring-1 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all appearance-none"
                   >
                     {REFUND_REASONS.map((r) => (
                       <option key={r} value={r}>
@@ -699,7 +699,7 @@ function RefundModal({ order, orderIndex, slug, onClose, onSuccess }: RefundModa
                       placeholder="Describe the reason..."
                       value={otherReason}
                       onChange={(e) => setOtherReason(e.target.value)}
-                      className="mt-2 w-full px-3 py-2.5 bg-zinc-800/60 border border-zinc-700/60 rounded-xl text-white placeholder-zinc-600 text-sm focus:outline-none focus:ring-1 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all"
+                      className="mt-2 w-full px-3 py-2.5 bg-zinc-800/60 border border-zinc-700/60 rounded-xl text-[var(--color-bg)] placeholder-zinc-600 text-sm focus:outline-none focus:ring-1 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all"
                     />
                   )}
                 </div>
@@ -712,7 +712,7 @@ function RefundModal({ order, orderIndex, slug, onClose, onSuccess }: RefundModa
                   <select
                     value={method}
                     onChange={(e) => setMethod(e.target.value)}
-                    className="w-full px-3 py-2.5 bg-zinc-800/60 border border-zinc-700/60 rounded-xl text-white text-sm focus:outline-none focus:ring-1 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all appearance-none"
+                    className="w-full px-3 py-2.5 bg-zinc-800/60 border border-zinc-700/60 rounded-xl text-[var(--color-bg)] text-sm focus:outline-none focus:ring-1 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all appearance-none"
                   >
                     {REFUND_METHODS.map((m) => (
                       <option key={m} value={m}>
@@ -748,7 +748,7 @@ function RefundModal({ order, orderIndex, slug, onClose, onSuccess }: RefundModa
                   <button
                     onClick={() => setStep("confirm")}
                     disabled={!isValidAmount || (reason === "Other" && !otherReason.trim())}
-                    className="flex-1 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 disabled:bg-zinc-800 disabled:text-zinc-600 text-white font-medium transition-all text-sm shadow-sm"
+                    className="flex-1 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 disabled:bg-zinc-800 disabled:text-zinc-600 text-[var(--color-bg)] font-medium transition-all text-sm shadow-sm"
                   >
                     Process Refund
                   </button>
@@ -766,11 +766,11 @@ function RefundModal({ order, orderIndex, slug, onClose, onSuccess }: RefundModa
                 <div className="bg-purple-500/10 border border-purple-500/20 rounded-xl p-4 text-center space-y-2">
                   <p className="text-purple-200 text-sm">
                     Are you sure you want to process a{" "}
-                    <span className="text-white font-semibold">
+                    <span className="text-[var(--color-bg)] font-semibold">
                       {formatCurrency(parsedAmount)}
                     </span>{" "}
                     refund for{" "}
-                    <span className="text-white font-semibold">
+                    <span className="text-[var(--color-bg)] font-semibold">
                       {order.fullName}
                     </span>
                     ?
@@ -792,7 +792,7 @@ function RefundModal({ order, orderIndex, slug, onClose, onSuccess }: RefundModa
                   <button
                     onClick={handleSubmit}
                     disabled={submitting}
-                    className="flex-1 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 disabled:bg-purple-800 text-white font-medium transition-all text-sm shadow-sm flex items-center justify-center gap-2"
+                    className="flex-1 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 disabled:bg-purple-800 text-[var(--color-bg)] font-medium transition-all text-sm shadow-sm flex items-center justify-center gap-2"
                   >
                     {submitting ? (
                       <>
@@ -912,7 +912,7 @@ export default function ClientDashboard() {
     amber: {
       bg: "bg-gradient-to-br from-amber-950/50 to-zinc-900",
       border: "border-amber-500/20",
-      iconColor: "text-amber-400",
+      iconColor: "text-[var(--color-primary)]",
       icon: AlertTriangle,
     },
     red: {
@@ -932,7 +932,7 @@ export default function ClientDashboard() {
     hour < 12 ? "Good morning" : hour < 17 ? "Good afternoon" : "Good evening";
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white">
+    <div className="min-h-screen bg-zinc-950 text-[var(--color-bg)]">
       {/* Ambient top glow */}
       <div
         className="fixed top-0 left-0 right-0 h-64 pointer-events-none z-0"
@@ -966,7 +966,7 @@ export default function ClientDashboard() {
               <p className="text-zinc-500 text-sm">
                 {greeting}, {statusData.client.contactName}
               </p>
-              <p className="text-lg font-semibold mt-0.5 text-white leading-tight">
+              <p className="text-lg font-semibold mt-0.5 text-[var(--color-bg)] leading-tight">
                 {statusData.client.name}
               </p>
             </div>
@@ -1034,7 +1034,7 @@ export default function ClientDashboard() {
                   )}
                 </div>
                 <div>
-                  <p className="text-base font-semibold leading-snug text-white">
+                  <p className="text-base font-semibold leading-snug text-[var(--color-bg)]">
                     {statusData.businessSummary.headline}
                   </p>
                   <p className="text-sm text-zinc-400 mt-0.5">
@@ -1080,7 +1080,7 @@ export default function ClientDashboard() {
                   <span
                     className={`flex items-center gap-1.5 ${
                       sheetsData.orders.unpaidCount > 0
-                        ? "text-amber-400"
+                        ? "text-[var(--color-primary)]"
                         : "text-zinc-600"
                     }`}
                   >
@@ -1134,7 +1134,7 @@ export default function ClientDashboard() {
                           SumUp
                         </span>
                       </div>
-                      <p className="text-white font-semibold tabular-nums text-base">
+                      <p className="text-[var(--color-bg)] font-semibold tabular-nums text-base">
                         {formatCurrency(sheetsData.orders.paymentBreakdown.sumupPaid)}
                       </p>
                       <p className="text-zinc-600 text-xs">
@@ -1153,7 +1153,7 @@ export default function ClientDashboard() {
                           Bank Transfer
                         </span>
                       </div>
-                      <p className="text-white font-semibold tabular-nums text-base">
+                      <p className="text-[var(--color-bg)] font-semibold tabular-nums text-base">
                         {formatCurrency(sheetsData.orders.paymentBreakdown.bankTransferPaid)}
                       </p>
                       <p className="text-zinc-600 text-xs">
@@ -1180,7 +1180,7 @@ export default function ClientDashboard() {
                 <div className="h-0.5 bg-gradient-to-r from-amber-500/60 via-orange-400/40 to-transparent" />
                 <div className="p-5">
                   <div className="flex items-center gap-2 mb-4">
-                    <ChefHat className="w-4 h-4 text-amber-400/80" />
+                    <ChefHat className="w-4 h-4 text-[var(--color-primary)]/80" />
                     <p className="text-xs font-semibold text-zinc-500 uppercase tracking-widest">
                       What to Bake
                     </p>
@@ -1200,7 +1200,7 @@ export default function ClientDashboard() {
                             {item.product}
                           </span>
                         </div>
-                        <span className="text-white font-semibold tabular-nums text-sm bg-zinc-800/60 px-2.5 py-0.5 rounded-lg">
+                        <span className="text-[var(--color-bg)] font-semibold tabular-nums text-sm bg-zinc-800/60 px-2.5 py-0.5 rounded-lg">
                           {item.quantity}
                         </span>
                       </motion.div>
@@ -1223,8 +1223,8 @@ export default function ClientDashboard() {
                   <div className="h-0.5 bg-gradient-to-r from-amber-500/70 via-amber-400/30 to-transparent" />
                   <div className="p-5">
                     <div className="flex items-center gap-2 mb-4">
-                      <CreditCard className="w-4 h-4 text-amber-400/80" />
-                      <p className="text-xs font-semibold text-amber-500/80 uppercase tracking-widest">
+                      <CreditCard className="w-4 h-4 text-[var(--color-primary)]/80" />
+                      <p className="text-xs font-semibold text-[var(--color-primary)]/80 uppercase tracking-widest">
                         Unpaid Orders
                       </p>
                     </div>
@@ -1246,7 +1246,7 @@ export default function ClientDashboard() {
                                   : `${c.daysAgo} days ago`}
                             </span>
                           </div>
-                          <span className="text-amber-400 font-semibold tabular-nums text-sm">
+                          <span className="text-[var(--color-primary)] font-semibold tabular-nums text-sm">
                             {formatCurrency(c.amount)}
                           </span>
                         </div>
@@ -1254,7 +1254,7 @@ export default function ClientDashboard() {
                     </div>
                     <div className="mt-4 pt-3 border-t border-amber-500/10 flex justify-between text-sm">
                       <span className="text-zinc-500">Total outstanding</span>
-                      <span className="text-amber-400 font-semibold tabular-nums">
+                      <span className="text-[var(--color-primary)] font-semibold tabular-nums">
                         {formatCurrency(sheetsData.orders.unpaidAmount)}
                       </span>
                     </div>
@@ -1270,7 +1270,7 @@ export default function ClientDashboard() {
                             setBankCopied(true);
                             setTimeout(() => setBankCopied(false), 2500);
                           }}
-                          className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/20 text-amber-400 hover:text-amber-300 transition-all text-xs font-medium"
+                          className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/20 text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-all text-xs font-medium"
                         >
                           {bankCopied ? (
                             <>
@@ -1373,7 +1373,7 @@ export default function ClientDashboard() {
                                 ? "bg-red-500/10 text-red-400"
                                 : isPaid
                                   ? "bg-emerald-500/10 text-emerald-400"
-                                  : "bg-amber-500/10 text-amber-400";
+                                  : "bg-amber-500/10 text-[var(--color-primary)]";
 
                               return (
                                 <motion.div
@@ -1388,7 +1388,7 @@ export default function ClientDashboard() {
                                   <div className="p-3.5 space-y-2.5">
                                     {/* Name + status */}
                                     <div className="flex items-center justify-between gap-2">
-                                      <p className="text-white text-sm font-semibold truncate">
+                                      <p className="text-[var(--color-bg)] text-sm font-semibold truncate">
                                         {order.fullName}
                                       </p>
                                       <span
@@ -1417,7 +1417,7 @@ export default function ClientDashboard() {
 
                                     {/* Bottom row: total + phone */}
                                     <div className="flex items-center justify-between pt-1.5 border-t border-zinc-700/30">
-                                      <span className="text-white font-semibold tabular-nums text-sm">
+                                      <span className="text-[var(--color-bg)] font-semibold tabular-nums text-sm">
                                         {formatCurrency(order.basketTotal)}
                                       </span>
                                       {order.phone && (
@@ -1436,7 +1436,7 @@ export default function ClientDashboard() {
 
                                     {/* Outstanding balance for partial/unpaid */}
                                     {!isPaid && !isCancelled && order.outstandingBalance > 0 && (
-                                      <div className="text-xs text-amber-400/80">
+                                      <div className="text-xs text-[var(--color-primary)]/80">
                                         Outstanding: {formatCurrency(order.outstandingBalance)}
                                       </div>
                                     )}
@@ -1490,7 +1490,7 @@ export default function ClientDashboard() {
                 <div className="h-0.5 bg-gradient-to-r from-blue-500/50 via-blue-400/20 to-transparent" />
                 <div className="p-5">
                   <div className="flex items-center gap-2 mb-4">
-                    <MapPin className="w-4 h-4 text-blue-400/70" />
+                    <MapPin className="w-4 h-4 text-[var(--color-accent)]/70" />
                     <p className="text-xs font-semibold text-zinc-500 uppercase tracking-widest">
                       Deliveries
                     </p>
@@ -1513,7 +1513,7 @@ export default function ClientDashboard() {
                   </div>
                   <div className="mt-4 pt-3 border-t border-zinc-800/60 flex justify-between text-sm">
                     <span className="text-zinc-500">Total deliveries</span>
-                    <span className="text-white font-semibold tabular-nums">
+                    <span className="text-[var(--color-bg)] font-semibold tabular-nums">
                       {sheetsData.deliveries.totalStops}
                     </span>
                   </div>
@@ -1541,18 +1541,18 @@ export default function ClientDashboard() {
             <div className="bg-zinc-900/40 rounded-2xl border border-zinc-800/40 p-5">
               <p className="text-zinc-400 text-sm leading-relaxed">
                 We completed{" "}
-                <span className="text-white font-semibold">
+                <span className="text-[var(--color-bg)] font-semibold">
                   {statusData.businessSummary.tasksCompletedThisWeek}
                 </span>{" "}
                 tasks across your{" "}
-                <span className="text-white font-medium">
+                <span className="text-[var(--color-bg)] font-medium">
                   {statusData.businessSummary.automationsRunning}
                 </span>{" "}
                 automations this week.{" "}
                 {statusData.businessSummary.issuesNeedingAttention === 0 ? (
                   <span className="text-emerald-400">No issues detected.</span>
                 ) : (
-                  <span className="text-amber-400">
+                  <span className="text-[var(--color-primary)]">
                     {statusData.businessSummary.issuesNeedingAttention} item
                     {statusData.businessSummary.issuesNeedingAttention > 1
                       ? "s"
@@ -1581,7 +1581,7 @@ export default function ClientDashboard() {
                       health === "green"
                         ? "bg-emerald-500/10 text-emerald-400"
                         : health === "amber"
-                          ? "bg-amber-500/10 text-amber-400"
+                          ? "bg-amber-500/10 text-[var(--color-primary)]"
                           : "bg-red-500/10 text-red-400"
                     }`}
                   >
@@ -1621,7 +1621,7 @@ export default function ClientDashboard() {
                             </div>
                             <div className="flex-1 min-w-0">
                               <div className="flex items-center justify-between gap-2">
-                                <p className="text-sm font-medium text-white truncate">
+                                <p className="text-sm font-medium text-[var(--color-bg)] truncate">
                                   {wf.businessName}
                                 </p>
                                 <StatusBadge wf={wf} />
@@ -1662,7 +1662,7 @@ export default function ClientDashboard() {
                 Questions?{" "}
                 <a
                   href="mailto:hello@workcrew.io"
-                  className="text-zinc-400 hover:text-white transition-colors underline underline-offset-2 decoration-zinc-700"
+                  className="text-zinc-400 hover:text-[var(--color-bg)] transition-colors underline underline-offset-2 decoration-zinc-700"
                 >
                   hello@workcrew.io
                 </a>

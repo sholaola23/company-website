@@ -100,8 +100,8 @@ export default function LeadPipeline({
   );
 
   return (
-    <div className="bg-white rounded-xl border border-slate-200 p-6">
-      <h3 className="font-semibold text-slate-900 mb-4">Lead Pipeline</h3>
+    <div className="bg-[var(--color-bg)] rounded-xl border border-[var(--color-border)] p-6">
+      <h3 className="font-semibold text-[var(--color-heading)] mb-4">Lead Pipeline</h3>
 
       {/* Desktop: horizontal columns */}
       <div className="hidden md:grid md:grid-cols-5 gap-3">
@@ -110,8 +110,8 @@ export default function LeadPipeline({
             key={stage}
             className={`rounded-xl p-3 min-h-[200px] transition-colors ${
               dropTarget === stage
-                ? "bg-blue-50 ring-2 ring-blue-300"
-                : "bg-slate-50"
+                ? "bg-[var(--color-primary-light)] ring-2 ring-blue-300"
+                : "bg-[var(--color-bg-alt)]"
             }`}
             onDragOver={(e) => handleDragOver(e, stage)}
             onDragLeave={handleDragLeave}
@@ -124,11 +124,11 @@ export default function LeadPipeline({
                   className="w-2 h-2 rounded-full"
                   style={{ backgroundColor: STAGE_CONFIG[stage].color }}
                 />
-                <span className="text-xs font-semibold text-slate-600 uppercase tracking-wide">
+                <span className="text-xs font-semibold text-[var(--color-body)] uppercase tracking-wide">
                   {STAGE_CONFIG[stage].label}
                 </span>
               </div>
-              <span className="text-xs font-medium text-slate-400">
+              <span className="text-xs font-medium text-[var(--color-muted)]">
                 {leadsByStage[stage].length}
               </span>
             </div>
@@ -140,19 +140,19 @@ export default function LeadPipeline({
                   key={lead.id}
                   draggable
                   onDragStart={(e) => handleDragStart(e, lead.id)}
-                  className={`bg-white rounded-lg p-3 border border-slate-200 cursor-grab active:cursor-grabbing hover:border-slate-300 shadow-sm transition ${
+                  className={`bg-[var(--color-bg)] rounded-lg p-3 border border-[var(--color-border)] cursor-grab active:cursor-grabbing hover:border-[var(--color-border-strong)] shadow-sm transition ${
                     draggedLeadId === lead.id ? "opacity-50" : ""
                   } ${updating === lead.id ? "animate-pulse" : ""}`}
                 >
-                  <p className="text-sm font-medium text-slate-900 truncate">
+                  <p className="text-sm font-medium text-[var(--color-heading)] truncate">
                     {lead.company_name}
                   </p>
-                  <p className="text-xs text-slate-500 truncate mt-0.5">
+                  <p className="text-xs text-[var(--color-muted)] truncate mt-0.5">
                     {lead.contact_name}
                   </p>
                   {lead.score > 0 && (
                     <div className="flex items-center gap-1 mt-2">
-                      <div className="flex-1 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                      <div className="flex-1 h-1.5 bg-[var(--color-surface)] rounded-full overflow-hidden">
                         <div
                           className="h-full rounded-full transition-all"
                           style={{
@@ -166,7 +166,7 @@ export default function LeadPipeline({
                           }}
                         />
                       </div>
-                      <span className="text-xs text-slate-400">
+                      <span className="text-xs text-[var(--color-muted)]">
                         {lead.score}
                       </span>
                     </div>
@@ -174,7 +174,7 @@ export default function LeadPipeline({
                 </div>
               ))}
               {leadsByStage[stage].length === 0 && (
-                <div className="text-center py-6 text-xs text-slate-300">
+                <div className="text-center py-6 text-xs text-[var(--color-dark-text)]">
                   Drop leads here
                 </div>
               )}
@@ -193,7 +193,7 @@ export default function LeadPipeline({
                   className="w-2 h-2 rounded-full"
                   style={{ backgroundColor: STAGE_CONFIG[stage].color }}
                 />
-                <span className="text-sm font-semibold text-slate-700">
+                <span className="text-sm font-semibold text-[var(--color-body)]">
                   {STAGE_CONFIG[stage].label}
                 </span>
               </div>
@@ -205,20 +205,20 @@ export default function LeadPipeline({
               </span>
             </div>
             {leadsByStage[stage].length > 0 && (
-              <div className="space-y-2 pl-4 border-l-2 border-slate-100">
+              <div className="space-y-2 pl-4 border-l-2 border-[var(--color-border)]">
                 {leadsByStage[stage].slice(0, 3).map((lead) => (
                   <div
                     key={lead.id}
-                    className="bg-white rounded-lg p-3 border border-slate-200 shadow-sm"
+                    className="bg-[var(--color-bg)] rounded-lg p-3 border border-[var(--color-border)] shadow-sm"
                   >
-                    <p className="text-sm font-medium text-slate-900">
+                    <p className="text-sm font-medium text-[var(--color-heading)]">
                       {lead.company_name}
                     </p>
-                    <p className="text-xs text-slate-500">{lead.contact_name}</p>
+                    <p className="text-xs text-[var(--color-muted)]">{lead.contact_name}</p>
                   </div>
                 ))}
                 {leadsByStage[stage].length > 3 && (
-                  <p className="text-xs text-slate-400 pl-3">
+                  <p className="text-xs text-[var(--color-muted)] pl-3">
                     +{leadsByStage[stage].length - 3} more
                   </p>
                 )}

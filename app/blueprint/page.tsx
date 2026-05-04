@@ -32,10 +32,10 @@ export default function BlueprintPage() {
           <span className="text-xs font-semibold tracking-widest uppercase text-indigo-600 mb-4 block">
             Free, 2 Minutes, No Obligation
           </span>
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-slate-900 leading-tight mb-5">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-[var(--color-heading)] leading-tight mb-5">
             Your Free AI Blueprint
           </h1>
-          <p className="text-lg text-slate-600 leading-relaxed">
+          <p className="text-lg text-[var(--color-body)] leading-relaxed">
             Answer 5 quick questions about your business. Our AI analyses your industry,
             pain points, and customer channels — then generates a personalised automation
             blueprint showing exactly where you can save time and recover revenue.
@@ -49,19 +49,19 @@ export default function BlueprintPage() {
 
       {/* Trust signals */}
       <AnimatedSection delay={0.2}>
-        <div className="max-w-2xl mx-auto mt-16 pt-10 border-t border-slate-200">
+        <div className="max-w-2xl mx-auto mt-16 pt-10 border-t border-[var(--color-border)]">
           <div className="grid grid-cols-3 gap-6 text-center">
             <div>
-              <p className="text-2xl font-bold text-slate-900">63</p>
-              <p className="text-xs text-slate-500 mt-1">AI agents in our fleet</p>
+              <p className="text-2xl font-bold text-[var(--color-heading)]">63</p>
+              <p className="text-xs text-[var(--color-muted)] mt-1">AI agents in our fleet</p>
             </div>
             <div>
-              <p className="text-2xl font-bold text-slate-900">3</p>
-              <p className="text-xs text-slate-500 mt-1">active clients served</p>
+              <p className="text-2xl font-bold text-[var(--color-heading)]">3</p>
+              <p className="text-xs text-[var(--color-muted)] mt-1">active clients served</p>
             </div>
             <div>
-              <p className="text-2xl font-bold text-slate-900">90 days</p>
-              <p className="text-xs text-slate-500 mt-1">results guarantee</p>
+              <p className="text-2xl font-bold text-[var(--color-heading)]">90 days</p>
+              <p className="text-xs text-[var(--color-muted)] mt-1">results guarantee</p>
             </div>
           </div>
         </div>

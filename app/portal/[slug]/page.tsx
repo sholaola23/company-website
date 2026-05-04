@@ -63,8 +63,8 @@ export default async function OrgDashboardPage({
     <div className="space-y-8">
       {/* Page header */}
       <div>
-        <h1 className="text-2xl font-bold text-slate-900">Dashboard</h1>
-        <p className="text-slate-500 mt-1">
+        <h1 className="text-2xl font-bold text-[var(--color-heading)]">Dashboard</h1>
+        <p className="text-[var(--color-muted)] mt-1">
           Welcome back, {org.contact_name}. Here&apos;s your lead pipeline.
         </p>
       </div>

@@ -17,8 +17,8 @@ const CARDS = [
   {
     label: "Lead Captured",
     sub: "New enquiry from website",
-    color: "border-blue-600/40 bg-blue-600/5",
-    dot: "bg-blue-600",
+    color: "border-[var(--color-primary)]/40 bg-[var(--color-primary)]/5",
+    dot: "bg-[var(--color-primary)]",
     delay: 0,
     top: "top-0",
     left: "left-0",
@@ -94,9 +94,9 @@ function FloatingCard({
             className={`w-2 h-2 rounded-full ${card.dot} shrink-0`}
             aria-hidden="true"
           />
-          <p className="text-xs font-semibold text-slate-900">{card.label}</p>
+          <p className="text-xs font-semibold text-[var(--color-heading)]">{card.label}</p>
         </div>
-        <p className="text-xs text-slate-500 pl-4">{card.sub}</p>
+        <p className="text-xs text-[var(--color-muted)] pl-4">{card.sub}</p>
       </motion.div>
     </motion.div>
   );

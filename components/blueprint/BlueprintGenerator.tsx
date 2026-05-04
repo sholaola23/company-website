@@ -218,11 +218,11 @@ export default function BlueprintGenerator() {
       {/* Progress bar */}
       {step !== "result" && step !== "email" && step !== "complete" && (
         <div className="mb-8">
-          <div className="flex justify-between text-xs text-slate-400 mb-2">
+          <div className="flex justify-between text-xs text-[var(--color-muted)] mb-2">
             <span>Step {Math.min(currentIdx + 1, 5)} of 5</span>
             <span>{Math.round(progress)}%</span>
           </div>
-          <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
+          <div className="h-1.5 bg-[var(--color-surface)] rounded-full overflow-hidden">
             <motion.div
               className="h-full bg-indigo-500 rounded-full"
               initial={{ width: 0 }}
@@ -235,29 +235,29 @@ export default function BlueprintGenerator() {
 
       <div>
           {step === "industry" && (<>
-            <h2 className="text-2xl font-bold text-slate-900 mb-2">What type of business do you run?</h2>
-            <p className="text-slate-500 mb-6">Pick the closest match — we'll tailor your blueprint to your industry.</p>
+            <h2 className="text-2xl font-bold text-[var(--color-heading)] mb-2">What type of business do you run?</h2>
+            <p className="text-[var(--color-muted)] mb-6">Pick the closest match — we'll tailor your blueprint to your industry.</p>
             <div className="grid grid-cols-3 sm:grid-cols-4 gap-3 mb-4">
               {POPULAR_INDUSTRIES.map((ind) => (
-                <button key={ind} onClick={() => { setIndustry(ind); trackBlueprintStarted(ind); setDirection(1); setStep("painPoints"); }} className={cn("p-3 rounded-xl border-2 text-sm font-medium transition-all text-center hover:border-indigo-400 hover:bg-indigo-50", industry === ind ? "border-indigo-500 bg-indigo-50 text-indigo-700" : "border-slate-200 text-slate-700")}>{ind}</button>
+                <button key={ind} onClick={() => { setIndustry(ind); trackBlueprintStarted(ind); setDirection(1); setStep("painPoints"); }} className={cn("p-3 rounded-xl border-2 text-sm font-medium transition-all text-center hover:border-indigo-400 hover:bg-indigo-50", industry === ind ? "border-indigo-500 bg-indigo-50 text-indigo-700" : "border-[var(--color-border)] text-[var(--color-body)]")}>{ind}</button>
               ))}
             </div>
-            <select value={POPULAR_INDUSTRIES.includes(industry) ? "" : industry} onChange={(e) => { setIndustry(e.target.value); if (e.target.value) { trackBlueprintStarted(e.target.value); setDirection(1); setStep("painPoints"); } }} className="w-full p-3 rounded-xl border-2 border-slate-200 text-sm text-slate-600 focus:border-indigo-400 focus:outline-none">
+            <select value={POPULAR_INDUSTRIES.includes(industry) ? "" : industry} onChange={(e) => { setIndustry(e.target.value); if (e.target.value) { trackBlueprintStarted(e.target.value); setDirection(1); setStep("painPoints"); } }} className="w-full p-3 rounded-xl border-2 border-[var(--color-border)] text-sm text-[var(--color-body)] focus:border-indigo-400 focus:outline-none">
               <option value="">Other industry...</option>
               {INDUSTRIES.filter((i) => !POPULAR_INDUSTRIES.includes(i)).map((ind) => (<option key={ind} value={ind}>{ind}</option>))}
             </select>
           </>)}
 
           {step === "painPoints" && (<>
-            <h2 className="text-2xl font-bold text-slate-900 mb-2">What&apos;s eating your time right now?</h2>
-            <p className="text-slate-500 mb-6">Select all that apply — this shapes your blueprint recommendations.</p>
+            <h2 className="text-2xl font-bold text-[var(--color-heading)] mb-2">What&apos;s eating your time right now?</h2>
+            <p className="text-[var(--color-muted)] mb-6">Select all that apply — this shapes your blueprint recommendations.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
               {PAIN_POINTS.map(({ id, label, icon: Icon, desc }) => (
-                <button key={id} onClick={() => toggleSelection(painPoints, setPainPoints, id)} className={cn("flex items-start gap-3 p-4 rounded-xl border-2 text-left transition-all hover:border-indigo-400", painPoints.includes(id) ? "border-indigo-500 bg-indigo-50" : "border-slate-200")}>
-                  <Icon className={cn("w-5 h-5 mt-0.5 shrink-0", painPoints.includes(id) ? "text-indigo-600" : "text-slate-400")} />
+                <button key={id} onClick={() => toggleSelection(painPoints, setPainPoints, id)} className={cn("flex items-start gap-3 p-4 rounded-xl border-2 text-left transition-all hover:border-indigo-400", painPoints.includes(id) ? "border-indigo-500 bg-indigo-50" : "border-[var(--color-border)]")}>
+                  <Icon className={cn("w-5 h-5 mt-0.5 shrink-0", painPoints.includes(id) ? "text-indigo-600" : "text-[var(--color-muted)]")} />
                   <div>
-                    <span className={cn("text-sm font-semibold", painPoints.includes(id) ? "text-indigo-700" : "text-slate-700")}>{label}</span>
-                    <p className="text-xs text-slate-500 mt-0.5">{desc}</p>
+                    <span className={cn("text-sm font-semibold", painPoints.includes(id) ? "text-indigo-700" : "text-[var(--color-body)]")}>{label}</span>
+                    <p className="text-xs text-[var(--color-muted)] mt-0.5">{desc}</p>
                   </div>
                 </button>
               ))}
@@ -267,145 +267,145 @@ export default function BlueprintGenerator() {
               value={customPainPoint}
               onChange={(e) => setCustomPainPoint(e.target.value)}
               placeholder="Something else? Type it here..."
-              className="w-full p-3 rounded-xl border-2 border-slate-200 text-sm text-slate-600 focus:border-indigo-400 focus:outline-none mb-6"
+              className="w-full p-3 rounded-xl border-2 border-[var(--color-border)] text-sm text-[var(--color-body)] focus:border-indigo-400 focus:outline-none mb-6"
             />
             <div className="flex gap-3">
-              <button onClick={goBack} className="px-4 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-600 hover:bg-slate-50 flex items-center gap-1"><ArrowLeft className="w-4 h-4" /> Back</button>
-              <button onClick={goNext} disabled={painPoints.length === 0 && !customPainPoint.trim()} className="flex-1 px-4 py-2.5 rounded-xl bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-1">Continue <ArrowRight className="w-4 h-4" /></button>
+              <button onClick={goBack} className="px-4 py-2.5 rounded-xl border border-[var(--color-border)] text-sm text-[var(--color-body)] hover:bg-[var(--color-bg-alt)] flex items-center gap-1"><ArrowLeft className="w-4 h-4" /> Back</button>
+              <button onClick={goNext} disabled={painPoints.length === 0 && !customPainPoint.trim()} className="flex-1 px-4 py-2.5 rounded-xl bg-indigo-600 text-[var(--color-bg)] text-sm font-semibold hover:bg-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-1">Continue <ArrowRight className="w-4 h-4" /></button>
             </div>
           </>)}
 
           {step === "channels" && (<>
-            <h2 className="text-2xl font-bold text-slate-900 mb-2">How do customers find you?</h2>
-            <p className="text-slate-500 mb-6">This helps us recommend the right automation channels.</p>
+            <h2 className="text-2xl font-bold text-[var(--color-heading)] mb-2">How do customers find you?</h2>
+            <p className="text-[var(--color-muted)] mb-6">This helps us recommend the right automation channels.</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
               {CHANNELS.map(({ id, label, icon: Icon }) => (
-                <button key={id} onClick={() => toggleSelection(channels, setChannels, id)} className={cn("flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all hover:border-indigo-400", channels.includes(id) ? "border-indigo-500 bg-indigo-50" : "border-slate-200")}>
-                  <Icon className={cn("w-6 h-6", channels.includes(id) ? "text-indigo-600" : "text-slate-400")} />
-                  <span className={cn("text-sm font-medium text-center", channels.includes(id) ? "text-indigo-700" : "text-slate-600")}>{label}</span>
+                <button key={id} onClick={() => toggleSelection(channels, setChannels, id)} className={cn("flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all hover:border-indigo-400", channels.includes(id) ? "border-indigo-500 bg-indigo-50" : "border-[var(--color-border)]")}>
+                  <Icon className={cn("w-6 h-6", channels.includes(id) ? "text-indigo-600" : "text-[var(--color-muted)]")} />
+                  <span className={cn("text-sm font-medium text-center", channels.includes(id) ? "text-indigo-700" : "text-[var(--color-body)]")}>{label}</span>
                 </button>
               ))}
             </div>
             <div className="flex gap-3">
-              <button onClick={goBack} className="px-4 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-600 hover:bg-slate-50 flex items-center gap-1"><ArrowLeft className="w-4 h-4" /> Back</button>
-              <button onClick={goNext} disabled={channels.length === 0} className="flex-1 px-4 py-2.5 rounded-xl bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-1">Continue <ArrowRight className="w-4 h-4" /></button>
+              <button onClick={goBack} className="px-4 py-2.5 rounded-xl border border-[var(--color-border)] text-sm text-[var(--color-body)] hover:bg-[var(--color-bg-alt)] flex items-center gap-1"><ArrowLeft className="w-4 h-4" /> Back</button>
+              <button onClick={goNext} disabled={channels.length === 0} className="flex-1 px-4 py-2.5 rounded-xl bg-indigo-600 text-[var(--color-bg)] text-sm font-semibold hover:bg-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-1">Continue <ArrowRight className="w-4 h-4" /></button>
             </div>
           </>)}
 
           {step === "volume" && (<>
-            <h2 className="text-2xl font-bold text-slate-900 mb-2">How many new enquiries per month?</h2>
-            <p className="text-slate-500 mb-6">Rough estimate is fine — this sizes your ROI projection.</p>
+            <h2 className="text-2xl font-bold text-[var(--color-heading)] mb-2">How many new enquiries per month?</h2>
+            <p className="text-[var(--color-muted)] mb-6">Rough estimate is fine — this sizes your ROI projection.</p>
             <div className="flex flex-wrap gap-3 mb-6">
               {VOLUMES.map((v) => (
-                <button key={v} onClick={() => { setVolume(v); setDirection(1); setStep("name"); }} className={cn("px-5 py-3 rounded-xl border-2 text-sm font-semibold transition-all hover:border-indigo-400", volume === v ? "border-indigo-500 bg-indigo-50 text-indigo-700" : "border-slate-200 text-slate-700")}>{v}</button>
+                <button key={v} onClick={() => { setVolume(v); setDirection(1); setStep("name"); }} className={cn("px-5 py-3 rounded-xl border-2 text-sm font-semibold transition-all hover:border-indigo-400", volume === v ? "border-indigo-500 bg-indigo-50 text-indigo-700" : "border-[var(--color-border)] text-[var(--color-body)]")}>{v}</button>
               ))}
             </div>
-            <button onClick={goBack} className="px-4 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-600 hover:bg-slate-50 flex items-center gap-1"><ArrowLeft className="w-4 h-4" /> Back</button>
+            <button onClick={goBack} className="px-4 py-2.5 rounded-xl border border-[var(--color-border)] text-sm text-[var(--color-body)] hover:bg-[var(--color-bg-alt)] flex items-center gap-1"><ArrowLeft className="w-4 h-4" /> Back</button>
           </>)}
 
           {step === "name" && (<>
-            <h2 className="text-2xl font-bold text-slate-900 mb-2">Last one — what&apos;s your business called?</h2>
-            <p className="text-slate-500 mb-6">We&apos;ll personalise your blueprint with your business name.</p>
-            <input type="text" value={businessName} onChange={(e) => setBusinessName(e.target.value)} placeholder="e.g. Smith & Sons Plumbing" className="w-full p-4 rounded-xl border-2 border-slate-200 text-base focus:border-indigo-400 focus:outline-none mb-4" onKeyDown={(e) => { if (e.key === "Enter" && businessName.trim()) handleGenerate(); }} autoFocus />
+            <h2 className="text-2xl font-bold text-[var(--color-heading)] mb-2">Last one — what&apos;s your business called?</h2>
+            <p className="text-[var(--color-muted)] mb-6">We&apos;ll personalise your blueprint with your business name.</p>
+            <input type="text" value={businessName} onChange={(e) => setBusinessName(e.target.value)} placeholder="e.g. Smith & Sons Plumbing" className="w-full p-4 rounded-xl border-2 border-[var(--color-border)] text-base focus:border-indigo-400 focus:outline-none mb-4" onKeyDown={(e) => { if (e.key === "Enter" && businessName.trim()) handleGenerate(); }} autoFocus />
             {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
             <div className="flex gap-3">
-              <button onClick={goBack} className="px-4 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-600 hover:bg-slate-50 flex items-center gap-1"><ArrowLeft className="w-4 h-4" /> Back</button>
-              <button onClick={handleGenerate} disabled={!businessName.trim()} className="flex-1 px-4 py-3 rounded-xl bg-indigo-600 text-white text-sm font-bold hover:bg-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"><Sparkles className="w-4 h-4" /> Generate My Blueprint</button>
+              <button onClick={goBack} className="px-4 py-2.5 rounded-xl border border-[var(--color-border)] text-sm text-[var(--color-body)] hover:bg-[var(--color-bg-alt)] flex items-center gap-1"><ArrowLeft className="w-4 h-4" /> Back</button>
+              <button onClick={handleGenerate} disabled={!businessName.trim()} className="flex-1 px-4 py-3 rounded-xl bg-indigo-600 text-[var(--color-bg)] text-sm font-bold hover:bg-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"><Sparkles className="w-4 h-4" /> Generate My Blueprint</button>
             </div>
           </>)}
 
           {step === "generating" && (
             <div className="text-center py-16">
               <Loader2 className="w-12 h-12 text-indigo-500 animate-spin mx-auto mb-6" />
-              <h2 className="text-xl font-bold text-slate-900 mb-2">Building your AI blueprint...</h2>
-              <p className="text-slate-500">Analysing your {industry.toLowerCase()} business and matching to our automation solutions.</p>
+              <h2 className="text-xl font-bold text-[var(--color-heading)] mb-2">Building your AI blueprint...</h2>
+              <p className="text-[var(--color-muted)]">Analysing your {industry.toLowerCase()} business and matching to our automation solutions.</p>
             </div>
           )}
 
           {step === "result" && blueprint && (<>
-            <div className="bg-slate-900 rounded-t-2xl p-6 sm:p-8">
+            <div className="bg-[var(--color-dark)] rounded-t-2xl p-6 sm:p-8">
               <p className="text-indigo-400 text-xs font-semibold tracking-widest uppercase mb-2">AI Blueprint</p>
-              <h2 className="text-white text-xl sm:text-2xl font-bold">{blueprint.headline}</h2>
-              <p className="text-slate-400 text-sm mt-1">{businessName} · {industry}</p>
+              <h2 className="text-[var(--color-bg)] text-xl sm:text-2xl font-bold">{blueprint.headline}</h2>
+              <p className="text-[var(--color-muted)] text-sm mt-1">{businessName} · {industry}</p>
             </div>
-            <div className="grid grid-cols-3 border border-t-0 border-slate-200 divide-x divide-slate-200">
+            <div className="grid grid-cols-3 border border-t-0 border-[var(--color-border)] divide-x divide-[var(--color-border)]">
               <div className="p-4 text-center">
                 <p className="text-2xl font-bold text-indigo-600">{blueprint.totalHoursSaved}</p>
-                <p className="text-xs text-slate-500">hrs/week saved</p>
+                <p className="text-xs text-[var(--color-muted)]">hrs/week saved</p>
               </div>
               <div className="p-4 text-center">
-                <p className="text-2xl font-bold text-emerald-600">£{blueprint.monthlyRevenuePotential.toLocaleString()}</p>
-                <p className="text-xs text-slate-500">/month potential</p>
+                <p className="text-2xl font-bold text-[var(--color-success)]">£{blueprint.monthlyRevenuePotential.toLocaleString()}</p>
+                <p className="text-xs text-[var(--color-muted)]">/month potential</p>
               </div>
               <div className="p-4 text-center">
                 <p className="text-2xl font-bold text-amber-600">{blueprint.roiMultiple}x</p>
-                <p className="text-xs text-slate-500">ROI</p>
+                <p className="text-xs text-[var(--color-muted)]">ROI</p>
               </div>
             </div>
-            <div className="border border-t-0 border-slate-200 p-6">
-              <h3 className="text-lg font-bold text-slate-900 mb-4">Your Top 3 Automation Opportunities</h3>
+            <div className="border border-t-0 border-[var(--color-border)] p-6">
+              <h3 className="text-lg font-bold text-[var(--color-heading)] mb-4">Your Top 3 Automation Opportunities</h3>
               <div className="space-y-4">
                 {blueprint.opportunities.map((opp, i) => (
-                  <div key={i} className="border border-slate-200 rounded-xl p-4">
+                  <div key={i} className="border border-[var(--color-border)] rounded-xl p-4">
                     <div className="flex items-start justify-between mb-2">
                       <div className="flex items-center gap-2">
-                        <span className={cn("text-xs font-bold px-2 py-0.5 rounded-full", opp.impact === "high" ? "bg-red-100 text-red-700" : opp.impact === "medium" ? "bg-amber-100 text-amber-700" : "bg-slate-100 text-slate-600")}>{opp.impact.toUpperCase()} IMPACT</span>
-                        <span className="text-xs text-slate-400">{opp.solution}</span>
+                        <span className={cn("text-xs font-bold px-2 py-0.5 rounded-full", opp.impact === "high" ? "bg-red-100 text-red-700" : opp.impact === "medium" ? "bg-amber-100 text-amber-700" : "bg-[var(--color-surface)] text-[var(--color-body)]")}>{opp.impact.toUpperCase()} IMPACT</span>
+                        <span className="text-xs text-[var(--color-muted)]">{opp.solution}</span>
                       </div>
                       <span className="text-sm font-bold text-indigo-600">{opp.hoursSavedPerWeek} hrs/week</span>
                     </div>
-                    <h4 className="text-base font-semibold text-slate-900 mb-1">{opp.title}</h4>
-                    <p className="text-sm text-slate-600">{opp.description}</p>
+                    <h4 className="text-base font-semibold text-[var(--color-heading)] mb-1">{opp.title}</h4>
+                    <p className="text-sm text-[var(--color-body)]">{opp.description}</p>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="border border-t-0 border-slate-200 p-6">
-              <h3 className="text-lg font-bold text-slate-900 mb-4">Your Monday Morning: Before & After</h3>
+            <div className="border border-t-0 border-[var(--color-border)] p-6">
+              <h3 className="text-lg font-bold text-[var(--color-heading)] mb-4">Your Monday Morning: Before & After</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-red-50 border border-red-200 rounded-xl p-4">
                   <p className="text-xs font-bold text-red-600 uppercase mb-2">Before</p>
                   <p className="text-sm text-red-900">{blueprint.beforeAfter.before}</p>
                 </div>
-                <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
-                  <p className="text-xs font-bold text-emerald-600 uppercase mb-2">After</p>
+                <div className="bg-[var(--color-success-light)] border border-[var(--color-border)] rounded-xl p-4">
+                  <p className="text-xs font-bold text-[var(--color-success)] uppercase mb-2">After</p>
                   <p className="text-sm text-emerald-900">{blueprint.beforeAfter.after}</p>
                 </div>
               </div>
             </div>
-            <div className="border border-t-0 border-slate-200 rounded-b-2xl p-6 bg-slate-50">
+            <div className="border border-t-0 border-[var(--color-border)] rounded-b-2xl p-6 bg-[var(--color-bg-alt)]">
               <div className="flex flex-col sm:flex-row gap-3">
-                <button onClick={() => window.print()} className="flex-1 px-5 py-3 rounded-xl bg-slate-900 text-white text-sm font-bold hover:bg-slate-800 flex items-center justify-center gap-2"><ArrowRight className="w-4 h-4" /> Download as PDF</button>
-                <button onClick={() => setStep("email")} className="flex-1 px-5 py-3 rounded-xl bg-indigo-600 text-white text-sm font-bold hover:bg-indigo-700 flex items-center justify-center gap-2"><Mail className="w-4 h-4" /> Email Me This Blueprint</button>
+                <button onClick={() => window.print()} className="flex-1 px-5 py-3 rounded-xl bg-[var(--color-dark)] text-[var(--color-bg)] text-sm font-bold hover:bg-[var(--color-dark-surface)] flex items-center justify-center gap-2"><ArrowRight className="w-4 h-4" /> Download as PDF</button>
+                <button onClick={() => setStep("email")} className="flex-1 px-5 py-3 rounded-xl bg-indigo-600 text-[var(--color-bg)] text-sm font-bold hover:bg-indigo-700 flex items-center justify-center gap-2"><Mail className="w-4 h-4" /> Email Me This Blueprint</button>
               </div>
               <div className="mt-3 text-center">
                 <a href="https://cal.com/workcrew/free-ai-strategy-call" target="_blank" rel="noopener noreferrer" className="text-sm text-indigo-600 font-semibold hover:text-indigo-800 inline-flex items-center gap-1"><Calendar className="w-4 h-4" /> Book a Free Strategy Call</a>
               </div>
-              <p className="text-xs text-slate-400 text-center mt-3">Recommended: {blueprint.recommendedTier} tier — {blueprint.tierReason}</p>
+              <p className="text-xs text-[var(--color-muted)] text-center mt-3">Recommended: {blueprint.recommendedTier} tier — {blueprint.tierReason}</p>
             </div>
           </>)}
 
           {step === "email" && (
             <div className="text-center py-8">
               <Mail className="w-12 h-12 text-indigo-500 mx-auto mb-4" />
-              <h2 className="text-2xl font-bold text-slate-900 mb-2">Where should we send it?</h2>
-              <p className="text-slate-500 mb-6">We&apos;ll email your full blueprint and add you to our weekly AI tips newsletter (unsubscribe anytime).</p>
+              <h2 className="text-2xl font-bold text-[var(--color-heading)] mb-2">Where should we send it?</h2>
+              <p className="text-[var(--color-muted)] mb-6">We&apos;ll email your full blueprint and add you to our weekly AI tips newsletter (unsubscribe anytime).</p>
               <div className="flex gap-3 max-w-md mx-auto">
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="your@email.com" className="flex-1 p-3 rounded-xl border-2 border-slate-200 text-sm focus:border-indigo-400 focus:outline-none" onKeyDown={(e) => { if (e.key === "Enter" && email.includes("@")) handleSaveEmail(); }} autoFocus />
-                <button onClick={handleSaveEmail} disabled={!email.includes("@") || emailStatus === "loading"} className="px-5 py-3 rounded-xl bg-indigo-600 text-white text-sm font-bold hover:bg-indigo-700 disabled:opacity-40 flex items-center gap-2">{emailStatus === "loading" ? <Loader2 className="w-4 h-4 animate-spin" /> : <ArrowRight className="w-4 h-4" />} Send</button>
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="your@email.com" className="flex-1 p-3 rounded-xl border-2 border-[var(--color-border)] text-sm focus:border-indigo-400 focus:outline-none" onKeyDown={(e) => { if (e.key === "Enter" && email.includes("@")) handleSaveEmail(); }} autoFocus />
+                <button onClick={handleSaveEmail} disabled={!email.includes("@") || emailStatus === "loading"} className="px-5 py-3 rounded-xl bg-indigo-600 text-[var(--color-bg)] text-sm font-bold hover:bg-indigo-700 disabled:opacity-40 flex items-center gap-2">{emailStatus === "loading" ? <Loader2 className="w-4 h-4 animate-spin" /> : <ArrowRight className="w-4 h-4" />} Send</button>
               </div>
               {emailStatus === "error" && <p className="text-red-500 text-sm mt-3">Something went wrong — please try again.</p>}
-              <button onClick={() => setStep("result")} className="text-sm text-slate-400 hover:text-slate-600 mt-4 inline-block">Back to blueprint</button>
+              <button onClick={() => setStep("result")} className="text-sm text-[var(--color-muted)] hover:text-[var(--color-body)] mt-4 inline-block">Back to blueprint</button>
             </div>
           )}
 
           {step === "complete" && (
             <div className="text-center py-12">
               <CheckCircle2 className="w-16 h-16 text-emerald-500 mx-auto mb-4" />
-              <h2 className="text-2xl font-bold text-slate-900 mb-2">Blueprint sent!</h2>
-              <p className="text-slate-500 mb-8">Check your inbox — your personalised AI blueprint is on its way. We&apos;ve also added you to our weekly tips newsletter.</p>
-              <a href="https://cal.com/workcrew/free-ai-strategy-call" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 text-white text-sm font-bold hover:bg-indigo-700"><Calendar className="w-4 h-4" /> Book Your Free Strategy Call</a>
-              <p className="text-xs text-slate-400 mt-3">30 minutes. No obligation. We&apos;ll walk through your blueprint together.</p>
+              <h2 className="text-2xl font-bold text-[var(--color-heading)] mb-2">Blueprint sent!</h2>
+              <p className="text-[var(--color-muted)] mb-8">Check your inbox — your personalised AI blueprint is on its way. We&apos;ve also added you to our weekly tips newsletter.</p>
+              <a href="https://cal.com/workcrew/free-ai-strategy-call" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 text-[var(--color-bg)] text-sm font-bold hover:bg-indigo-700"><Calendar className="w-4 h-4" /> Book Your Free Strategy Call</a>
+              <p className="text-xs text-[var(--color-muted)] mt-3">30 minutes. No obligation. We&apos;ll walk through your blueprint together.</p>
             </div>
           )}
       </div>

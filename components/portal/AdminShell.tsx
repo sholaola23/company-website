@@ -38,17 +38,17 @@ export default function AdminShell({
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 flex">
+    <div className="min-h-screen bg-[var(--color-bg-alt)] flex">
       {/* Sidebar */}
-      <aside className="hidden lg:flex lg:w-64 lg:flex-col lg:fixed lg:inset-y-0 bg-slate-900 text-white">
-        <div className="px-6 py-5 border-b border-slate-800">
+      <aside className="hidden lg:flex lg:w-64 lg:flex-col lg:fixed lg:inset-y-0 bg-[var(--color-dark)] text-[var(--color-bg)]">
+        <div className="px-6 py-5 border-b border-[var(--color-dark-border)]">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-sm">
+            <div className="w-9 h-9 rounded-lg bg-[var(--color-primary)] flex items-center justify-center font-bold text-sm">
               L4U
             </div>
             <div>
               <p className="text-sm font-semibold">Admin Panel</p>
-              <p className="text-xs text-slate-400">Leads4U</p>
+              <p className="text-xs text-[var(--color-muted)]">Leads4U</p>
             </div>
           </div>
         </div>
@@ -60,8 +60,8 @@ export default function AdminShell({
               href={item.href}
               className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition ${
                 item.active
-                  ? "bg-slate-800 text-white"
-                  : "text-slate-400 hover:bg-slate-800 hover:text-white"
+                  ? "bg-[var(--color-dark-surface)] text-[var(--color-bg)]"
+                  : "text-[var(--color-muted)] hover:bg-[var(--color-dark-surface)] hover:text-[var(--color-bg)]"
               }`}
             >
               {item.label}
@@ -69,19 +69,19 @@ export default function AdminShell({
           ))}
         </nav>
 
-        <div className="px-4 py-4 border-t border-slate-800">
+        <div className="px-4 py-4 border-t border-[var(--color-dark-border)]">
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-xs font-medium">
+            <div className="w-8 h-8 rounded-full bg-[var(--color-primary)] flex items-center justify-center text-xs font-medium">
               {profile.full_name.charAt(0)}
             </div>
             <div className="min-w-0">
               <p className="text-sm font-medium truncate">{profile.full_name}</p>
-              <p className="text-xs text-slate-400 truncate">{profile.email}</p>
+              <p className="text-xs text-[var(--color-muted)] truncate">{profile.email}</p>
             </div>
           </div>
           <button
             onClick={handleSignOut}
-            className="w-full text-left text-sm text-slate-400 hover:text-white px-3 py-2 rounded-lg hover:bg-slate-800 transition"
+            className="w-full text-left text-sm text-[var(--color-muted)] hover:text-[var(--color-bg)] px-3 py-2 rounded-lg hover:bg-[var(--color-dark-surface)] transition"
           >
             Sign out
           </button>
@@ -89,7 +89,7 @@ export default function AdminShell({
       </aside>
 
       {/* Mobile header */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-40 bg-slate-900 text-white px-4 py-3 flex items-center justify-between">
+      <div className="lg:hidden fixed top-0 left-0 right-0 z-40 bg-[var(--color-dark)] text-[var(--color-bg)] px-4 py-3 flex items-center justify-between">
         <span className="font-semibold text-sm">Leads4U Admin</span>
         <div className="flex items-center gap-2">
           {navItems.map((item) => (
@@ -98,8 +98,8 @@ export default function AdminShell({
               href={item.href}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium ${
                 item.active
-                  ? "bg-slate-800 text-white"
-                  : "text-slate-400"
+                  ? "bg-[var(--color-dark-surface)] text-[var(--color-bg)]"
+                  : "text-[var(--color-muted)]"
               }`}
             >
               {item.label}
@@ -107,7 +107,7 @@ export default function AdminShell({
           ))}
           <button
             onClick={handleSignOut}
-            className="text-xs text-slate-400 px-2 py-1.5"
+            className="text-xs text-[var(--color-muted)] px-2 py-1.5"
           >
             Sign out
           </button>

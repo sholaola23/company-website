@@ -43,7 +43,7 @@ export default function BlogPost() {
         <div className="max-w-3xl mx-auto">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 text-sm mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-[var(--color-body)] hover:text-[var(--color-heading)] text-sm mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             All Posts
@@ -53,7 +53,7 @@ export default function BlogPost() {
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full"
+                className="text-xs bg-[var(--color-surface)] text-[var(--color-body)] px-2 py-0.5 rounded-full"
               >
                 {tag}
               </span>
@@ -65,11 +65,11 @@ export default function BlogPost() {
             &amp; Member Follow-Up
           </h1>
 
-          <div className="flex items-center gap-4 text-sm text-slate-400 mb-12">
+          <div className="flex items-center gap-4 text-sm text-[var(--color-muted)] mb-12">
             <span>20 March 2026</span>
-            <span className="text-slate-600">|</span>
+            <span className="text-[var(--color-body)]">|</span>
             <span>By Olushola Oladipupo</span>
-            <span className="text-slate-600">|</span>
+            <span className="text-[var(--color-body)]">|</span>
             <span className="flex items-center gap-1">
               <Clock className="w-3 h-3" />
               7 min read
@@ -77,28 +77,28 @@ export default function BlogPost() {
           </div>
 
           <div className="prose prose-slate max-w-none">
-            <p className="text-slate-500 leading-relaxed mb-4 text-lg">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4 text-lg">
               It&apos;s 7am. Your 6:30 HIIT class had 20 people booked and
               12 showed up. You&apos;ve got a waitlist of 8 who would have
               killed for those spots. Meanwhile, 4 trial members from last
               week never came back, and you have no idea why.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               Running a gym or fitness studio in 2026 is a constant juggle.
               Bookings, no-shows, member retention, trial conversions,
               reviews, social media &mdash; it&apos;s a full-time job on top
               of the actual fitness coaching you got into this for.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               AI automation won&apos;t replace your coaches or your
               community. But it can handle the operational grind that drains
               your time and costs you members. Here are five automations
               that are transforming how UK gyms and studios operate.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               Each one follows a simple pattern: here&apos;s the problem,
               here&apos;s how AI solves it, and here&apos;s what the result
               looks like in real numbers.
@@ -109,8 +109,8 @@ export default function BlogPost() {
               1. Class Booking &amp; Waitlist Management
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-2">
-              <strong className="text-slate-900">Problem:</strong> Classes
+            <p className="text-[var(--color-muted)] leading-relaxed mb-2">
+              <strong className="text-[var(--color-heading)]">Problem:</strong> Classes
               fill up, people cancel last minute, and spots go unfilled.
               Your front desk spends 30 minutes every morning texting
               waitlisted members to see if they can make it. Half the time
@@ -118,8 +118,8 @@ export default function BlogPost() {
               spaces.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Solution:</strong> An
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Solution:</strong> An
               automated system that monitors cancellations in real time.
               The moment someone drops out, the next person on the waitlist
               gets an instant WhatsApp or text: &ldquo;A spot just opened
@@ -128,8 +128,8 @@ export default function BlogPost() {
               the system moves to the next person. No manual intervention.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Result:</strong> A boutique
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Result:</strong> A boutique
               fitness studio in Manchester implemented this and went from
               filling 70% of cancelled spots to 94%. That&apos;s an
               average of 8 extra class attendances per week. At &pound;12
@@ -138,7 +138,7 @@ export default function BlogPost() {
               happier members who actually get into the classes they want.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               Your front desk team gets 30 minutes back every morning. Your
               members feel looked after. Everyone wins.
             </p>
@@ -148,8 +148,8 @@ export default function BlogPost() {
               2. Lapsed Member Re-Engagement
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-2">
-              <strong className="text-slate-900">Problem:</strong> Members
+            <p className="text-[var(--color-muted)] leading-relaxed mb-2">
+              <strong className="text-[var(--color-heading)]">Problem:</strong> Members
               stop coming. First they miss a week, then two, then they
               cancel their membership. By the time you notice, they&apos;re
               already signed up at the gym down the road. Acquiring a new
@@ -157,8 +157,8 @@ export default function BlogPost() {
               one, so every lapsed member is expensive.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Solution:</strong> AI tracks
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Solution:</strong> AI tracks
               attendance patterns. When a member&apos;s visit frequency
               drops &mdash; say, from 3 times a week to once, or from
               weekly to nothing &mdash; it triggers a personalised
@@ -170,8 +170,8 @@ export default function BlogPost() {
               coach.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Result:</strong> A gym in
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Result:</strong> A gym in
               Bristol reduced monthly cancellations by 35% after
               implementing automated re-engagement. With an average
               membership of &pound;45/month and 200 members, preventing
@@ -181,7 +181,7 @@ export default function BlogPost() {
               revenue.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               The key is catching the drop-off early. By the time someone
               hasn&apos;t visited for a month, it&apos;s usually too late.
               AI spots the pattern after 5 days of unusual absence.
@@ -192,8 +192,8 @@ export default function BlogPost() {
               3. Trial-to-Member Conversion Follow-Up
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-2">
-              <strong className="text-slate-900">Problem:</strong> Someone
+            <p className="text-[var(--color-muted)] leading-relaxed mb-2">
+              <strong className="text-[var(--color-heading)]">Problem:</strong> Someone
               does a trial class. They loved it. They said they&apos;d
               &ldquo;definitely sign up.&rdquo; Then life gets in the way,
               they forget, and you never hear from them again. Most gyms
@@ -201,8 +201,8 @@ export default function BlogPost() {
               disappear.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Solution:</strong> A
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Solution:</strong> A
               structured follow-up sequence that starts within 2 hours of
               the trial class. Message 1: &ldquo;Great to have you at
               today&apos;s class! Here&apos;s what to expect as a
@@ -214,8 +214,8 @@ export default function BlogPost() {
               trial.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Result:</strong> A CrossFit
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Result:</strong> A CrossFit
               box in London implemented automated trial follow-up and
               increased their conversion rate from 25% to 48%. With 30
               trials per month at &pound;45/month membership, that&apos;s
@@ -224,7 +224,7 @@ export default function BlogPost() {
               friends, book PT, and buy supplements.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               The difference between a 25% and 48% conversion rate is the
               difference between struggling and thriving. And it&apos;s
               just follow-up timing.
@@ -235,16 +235,16 @@ export default function BlogPost() {
               4. Automated Review Collection
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-2">
-              <strong className="text-slate-900">Problem:</strong> Your gym
+            <p className="text-[var(--color-muted)] leading-relaxed mb-2">
+              <strong className="text-[var(--color-heading)]">Problem:</strong> Your gym
               has 200 happy members but only 23 Google reviews. The new
               PureGym down the road has 340. When someone searches
               &ldquo;gym near me,&rdquo; Google shows the one with more
               reviews first. You&apos;re invisible.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Solution:</strong> After
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Solution:</strong> After
               milestone moments &mdash; first month anniversary, 50th
               class, hitting a PB &mdash; members automatically receive a
               personalised message asking for a Google review. The system
@@ -254,8 +254,8 @@ export default function BlogPost() {
               it, a quick Google review would mean the world to us.&rdquo;
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Result:</strong> A yoga
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Result:</strong> A yoga
               studio in Leeds went from 31 reviews to 89 in three months.
               Their Google Maps ranking jumped from position 7 to position
               2 for &ldquo;yoga studio Leeds.&rdquo; That generated 12
@@ -263,7 +263,7 @@ export default function BlogPost() {
               zero ad spend.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               The trick is asking at the right moment. People are most
               likely to leave a review when they&apos;re feeling good about
               their progress. AI identifies those moments and acts on them
@@ -275,16 +275,16 @@ export default function BlogPost() {
               5. Social Media Content from Class Photos
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-2">
-              <strong className="text-slate-900">Problem:</strong> You know
+            <p className="text-[var(--color-muted)] leading-relaxed mb-2">
+              <strong className="text-[var(--color-heading)]">Problem:</strong> You know
               you should be posting on Instagram and TikTok. It&apos;s how
               new members find you. But after coaching 5 classes a day, the
               last thing you want to do is think of a caption and pick the
               right filter. Your last post was 3 weeks ago.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Solution:</strong> Coaches
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Solution:</strong> Coaches
               snap a quick photo or 15-second clip during class and drop
               it into a shared folder. AI automatically generates a caption,
               adds relevant hashtags, formats it for each platform
@@ -293,8 +293,8 @@ export default function BlogPost() {
               with one tap. From photo to scheduled post in 60 seconds.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Result:</strong> A
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Result:</strong> A
               functional fitness studio in Birmingham went from posting
               twice a month to 5 times a week. Their Instagram following
               grew from 800 to 2,400 in 3 months. More importantly, they
@@ -303,27 +303,27 @@ export default function BlogPost() {
               membership revenue if even half converted.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               Consistency is everything on social media. AI removes the
               friction so your team actually posts regularly instead of
               meaning to and never getting around to it.
             </p>
 
             {/* Summary */}
-            <hr className="border-slate-200 my-10" />
+            <hr className="border-[var(--color-border)] my-10" />
 
             <h2 className="text-2xl font-bold mt-8 mb-4">
               The Bottom Line
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               Gyms and fitness studios live and die on three things:
               filling classes, keeping members, and attracting new ones.
               Every automation above directly impacts one or more of those
               metrics.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               You don&apos;t need to implement all five at once. Start with
               the one that addresses your biggest pain point. For most
               studios, that&apos;s either lapsed member re-engagement
@@ -332,7 +332,7 @@ export default function BlogPost() {
               trials through the door).
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               None of this replaces the human connection that makes a great
               gym. Your coaches, your community, your culture &mdash;
               that&apos;s your real competitive advantage. AI just handles
@@ -340,7 +340,7 @@ export default function BlogPost() {
               matters: helping people get fitter.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               The gyms that are growing fastest in 2026 aren&apos;t the ones
               with the fanciest equipment. They&apos;re the ones that
               respond instantly, follow up consistently, and never let a
@@ -349,26 +349,26 @@ export default function BlogPost() {
           </div>
 
           {/* Related Articles */}
-          <div className="mt-12 border border-slate-200 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-4 text-slate-900">Related Articles</h3>
+          <div className="mt-12 border border-[var(--color-border)] rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-4 text-[var(--color-heading)]">Related Articles</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/blog/ai-for-salons" className="text-blue-600 hover:text-blue-600 transition-colors">
+                <Link href="/blog/ai-for-salons" className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors">
                   AI for Salons: How to Fill Empty Chairs Without Lifting a Phone
                 </Link>
               </li>
               <li>
-                <Link href="/blog/automate-appointment-booking" className="text-blue-600 hover:text-blue-600 transition-colors">
+                <Link href="/blog/automate-appointment-booking" className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors">
                   How to Automate Appointment Booking for Your Small Business
                 </Link>
               </li>
               <li>
-                <Link href="/blog/get-more-google-reviews" className="text-blue-600 hover:text-blue-600 transition-colors">
+                <Link href="/blog/get-more-google-reviews" className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors">
                   How to Get More Google Reviews Automatically
                 </Link>
               </li>
               <li>
-                <Link href="/services/lead-intake" className="text-slate-500 hover:text-slate-900 transition-colors">
+                <Link href="/services/lead-intake" className="text-[var(--color-muted)] hover:text-[var(--color-heading)] transition-colors">
                   View our AI Lead Intake &amp; Appointment Booking service &rarr;
                 </Link>
               </li>
@@ -376,11 +376,11 @@ export default function BlogPost() {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-16 bg-blue-50 border border-blue-200 rounded-xl p-8 text-center">
+          <div className="mt-16 bg-[var(--color-primary-light)] border border-[var(--color-primary-light)] rounded-xl p-8 text-center">
             <h3 className="text-xl font-semibold mb-2">
               Want to Know Which Automations Would Work for Your Gym?
             </h3>
-            <p className="text-slate-600 mb-6 max-w-lg mx-auto">
+            <p className="text-[var(--color-body)] mb-6 max-w-lg mx-auto">
               Every gym is different. Take our free AI Readiness Audit and
               we&apos;ll tell you exactly where automation would make the
               biggest impact on your membership numbers &mdash; and what
@@ -388,12 +388,12 @@ export default function BlogPost() {
             </p>
             <Link
               href="/audit"
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-[var(--color-bg)] px-6 py-3 rounded-lg font-medium transition-colors"
             >
               Get Your Free AI Readiness Audit
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <p className="text-slate-400 text-sm mt-3">
+            <p className="text-[var(--color-muted)] text-sm mt-3">
               Takes 2 minutes. No obligation. Built for fitness businesses.
             </p>
           </div>

@@ -47,8 +47,8 @@ export async function generateMetadata({
 
 // ── Tier badge styles ─────────────────────────────────────────────────────────
 const TIER_BADGE: Record<string, string> = {
-  Starter: "bg-slate-200 text-slate-900",
-  Growth: "bg-blue-600/20 text-blue-600 border border-blue-600/30",
+  Starter: "bg-[var(--color-border)] text-[var(--color-heading)]",
+  Growth: "bg-[var(--color-primary)]/20 text-[var(--color-primary)] border border-[var(--color-primary)]/30",
   Scale: "bg-amber-500/20 text-amber-600 border border-amber-500/30",
   Premium: "bg-purple-500/20 text-purple-600 border border-purple-500/30",
 };
@@ -71,7 +71,7 @@ export default async function CaseStudyDetailPage({
       {/* Back link */}
       <Link
         href="/case-studies"
-        className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900 transition-colors duration-150 mb-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded group"
+        className="inline-flex items-center gap-2 text-sm text-[var(--color-body)] hover:text-[var(--color-heading)] transition-colors duration-150 mb-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] rounded group"
       >
         <ArrowLeft
           size={15}
@@ -87,38 +87,38 @@ export default async function CaseStudyDetailPage({
           <span
             className={cn(
               "text-xs font-semibold px-2.5 py-1 rounded-full capitalize",
-              TIER_BADGE[study.tier] ?? "bg-slate-200 text-slate-900"
+              TIER_BADGE[study.tier] ?? "bg-[var(--color-border)] text-[var(--color-heading)]"
             )}
           >
             {study.tier}
           </span>
-          <span className="flex items-center gap-1.5 text-xs text-slate-400">
+          <span className="flex items-center gap-1.5 text-xs text-[var(--color-muted)]">
             <Tag size={12} aria-hidden="true" />
             {study.industry}
           </span>
-          <span className="flex items-center gap-1.5 text-xs text-slate-400">
+          <span className="flex items-center gap-1.5 text-xs text-[var(--color-muted)]">
             <MapPin size={12} aria-hidden="true" />
             {study.location}
           </span>
         </div>
 
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-slate-900 leading-tight mb-2">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-[var(--color-heading)] leading-tight mb-2">
           {study.heroHeadline ?? study.name}
         </h1>
         {study.heroHeadline && (
-          <p className="text-sm text-slate-400 mb-6">{study.name}</p>
+          <p className="text-sm text-[var(--color-muted)] mb-6">{study.name}</p>
         )}
         {!study.heroHeadline && <div className="mb-6" />}
 
         {/* Hero stat */}
-        <div className="bg-blue-50 border border-blue-200 rounded-2xl p-8 text-center">
+        <div className="bg-[var(--color-primary-light)] border border-[var(--color-primary-light)] rounded-2xl p-8 text-center">
           <p
-            className="text-6xl sm:text-7xl font-bold text-slate-900 leading-none"
+            className="text-6xl sm:text-7xl font-bold text-[var(--color-heading)] leading-none"
             aria-label={`Key result: ${study.heroStat}`}
           >
             {study.heroStat}
           </p>
-          <p className="text-base text-slate-600 mt-3">{study.heroLabel}</p>
+          <p className="text-base text-[var(--color-body)] mt-3">{study.heroLabel}</p>
         </div>
       </header>
 
@@ -126,29 +126,29 @@ export default async function CaseStudyDetailPage({
       <section className="mb-10" aria-labelledby="challenge-heading">
         <h2
           id="challenge-heading"
-          className="text-xl font-semibold text-slate-900 mb-4"
+          className="text-xl font-semibold text-[var(--color-heading)] mb-4"
         >
           The Challenge
         </h2>
-        <p className="text-base text-slate-600 leading-relaxed">{study.problemExpanded ?? study.problem}</p>
+        <p className="text-base text-[var(--color-body)] leading-relaxed">{study.problemExpanded ?? study.problem}</p>
       </section>
 
-      <hr className="border-slate-200 mb-10" />
+      <hr className="border-[var(--color-border)] mb-10" />
 
       {/* Our Solution */}
       <section className="mb-10" aria-labelledby="solution-heading">
         <h2
           id="solution-heading"
-          className="text-xl font-semibold text-slate-900 mb-4"
+          className="text-xl font-semibold text-[var(--color-heading)] mb-4"
         >
           Our Solution
         </h2>
-        <p className="text-base text-slate-600 leading-relaxed">{study.solutionExpanded ?? study.solution}</p>
+        <p className="text-base text-[var(--color-body)] leading-relaxed">{study.solutionExpanded ?? study.solution}</p>
 
         {/* Timeline callout */}
         {study.timeline && (
-          <div className="mt-4 rounded-lg border border-blue-600/20 bg-blue-600/5 px-4 py-3">
-            <p className="text-sm text-blue-600 font-medium">{study.timeline}</p>
+          <div className="mt-4 rounded-lg border border-[var(--color-primary)]/20 bg-[var(--color-primary)]/5 px-4 py-3">
+            <p className="text-sm text-[var(--color-primary)] font-medium">{study.timeline}</p>
           </div>
         )}
       </section>
@@ -156,11 +156,11 @@ export default async function CaseStudyDetailPage({
       {/* Tech Stack */}
       {study.techStack && study.techStack.length > 0 && (
         <>
-          <hr className="border-slate-200 mb-10" />
+          <hr className="border-[var(--color-border)] mb-10" />
           <section className="mb-10" aria-labelledby="tech-heading">
             <h2
               id="tech-heading"
-              className="text-xl font-semibold text-slate-900 mb-4"
+              className="text-xl font-semibold text-[var(--color-heading)] mb-4"
             >
               Technology Used
             </h2>
@@ -168,7 +168,7 @@ export default async function CaseStudyDetailPage({
               {study.techStack.map((tech) => (
                 <span
                   key={tech}
-                  className="text-xs bg-slate-100 text-slate-500 px-3 py-1.5 rounded-full border border-slate-200"
+                  className="text-xs bg-[var(--color-surface)] text-[var(--color-muted)] px-3 py-1.5 rounded-full border border-[var(--color-border)]"
                 >
                   {tech}
                 </span>
@@ -178,13 +178,13 @@ export default async function CaseStudyDetailPage({
         </>
       )}
 
-      <hr className="border-slate-200 mb-10" />
+      <hr className="border-[var(--color-border)] mb-10" />
 
       {/* The Results */}
       <section className="mb-10" aria-labelledby="results-heading">
         <h2
           id="results-heading"
-          className="text-xl font-semibold text-slate-900 mb-6"
+          className="text-xl font-semibold text-[var(--color-heading)] mb-6"
         >
           The Results
         </h2>
@@ -197,24 +197,24 @@ export default async function CaseStudyDetailPage({
             <div
               key={result.label}
               role="listitem"
-              className="bg-slate-50 border border-slate-200 rounded-xl p-5 flex flex-col gap-1"
+              className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-xl p-5 flex flex-col gap-1"
             >
-              <p className="text-2xl font-bold text-slate-900 leading-none">
+              <p className="text-2xl font-bold text-[var(--color-heading)] leading-none">
                 {result.value}
               </p>
-              <p className="text-xs text-slate-400 leading-snug">{result.label}</p>
+              <p className="text-xs text-[var(--color-muted)] leading-snug">{result.label}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <hr className="border-slate-200 mb-10" />
+      <hr className="border-[var(--color-border)] mb-10" />
 
       {/* What We Delivered */}
       <section className="mb-12" aria-labelledby="deliverables-heading">
         <h2
           id="deliverables-heading"
-          className="text-xl font-semibold text-slate-900 mb-6"
+          className="text-xl font-semibold text-[var(--color-heading)] mb-6"
         >
           What We Delivered
         </h2>
@@ -223,10 +223,10 @@ export default async function CaseStudyDetailPage({
             <li key={item} className="flex items-start gap-3">
               <CheckCircle
                 size={16}
-                className="text-blue-600 shrink-0 mt-0.5"
+                className="text-[var(--color-primary)] shrink-0 mt-0.5"
                 aria-hidden="true"
               />
-              <span className="text-sm text-slate-500 leading-relaxed">{item}</span>
+              <span className="text-sm text-[var(--color-muted)] leading-relaxed">{item}</span>
             </li>
           ))}
         </ul>
@@ -235,37 +235,37 @@ export default async function CaseStudyDetailPage({
       {/* Before & After */}
       {study.beforeAfter && study.beforeAfter.length > 0 && (
         <>
-          <hr className="border-slate-200 mb-10" />
+          <hr className="border-[var(--color-border)] mb-10" />
           <AnimatedSection>
             <section className="mb-10" aria-labelledby="before-after-heading">
               <h2
                 id="before-after-heading"
-                className="text-xl font-semibold text-slate-900 mb-6"
+                className="text-xl font-semibold text-[var(--color-heading)] mb-6"
               >
                 Before &amp; After
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 rounded-xl border border-slate-200 overflow-hidden">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 rounded-xl border border-[var(--color-border)] overflow-hidden">
                 {/* Column headers */}
-                <div className="bg-slate-100/60 px-5 py-3 text-xs font-bold uppercase tracking-widest text-slate-600">
+                <div className="bg-[var(--color-surface)]/60 px-5 py-3 text-xs font-bold uppercase tracking-widest text-[var(--color-body)]">
                   Before
                 </div>
-                <div className="bg-slate-100/60 px-5 py-3 text-xs font-bold uppercase tracking-widest text-emerald-600">
+                <div className="bg-[var(--color-surface)]/60 px-5 py-3 text-xs font-bold uppercase tracking-widest text-[var(--color-success)]">
                   After
                 </div>
                 {study.beforeAfter.map((row, i) => (
                   <div key={i} className="contents">
                     <div
                       className={cn(
-                        "px-5 py-4 text-sm text-slate-600 leading-relaxed",
-                        i < study.beforeAfter!.length - 1 && "border-b border-slate-200"
+                        "px-5 py-4 text-sm text-[var(--color-body)] leading-relaxed",
+                        i < study.beforeAfter!.length - 1 && "border-b border-[var(--color-border)]"
                       )}
                     >
                       {row.before}
                     </div>
                     <div
                       className={cn(
-                        "px-5 py-4 text-sm text-slate-900 leading-relaxed font-medium",
-                        i < study.beforeAfter!.length - 1 && "border-b border-slate-200"
+                        "px-5 py-4 text-sm text-[var(--color-heading)] leading-relaxed font-medium",
+                        i < study.beforeAfter!.length - 1 && "border-b border-[var(--color-border)]"
                       )}
                     >
                       {row.after}
@@ -277,7 +277,7 @@ export default async function CaseStudyDetailPage({
               {/* Annual saving callout */}
               {study.annualSaving && (
                 <div className="mt-6 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-6 py-4 text-center">
-                  <p className="text-base font-semibold text-emerald-600">
+                  <p className="text-base font-semibold text-[var(--color-success)]">
                     {study.annualSaving}
                   </p>
                 </div>
@@ -289,11 +289,11 @@ export default async function CaseStudyDetailPage({
 
       {/* Mid-page CTA — after results/before-after (high-emotion moment) */}
       <AnimatedSection>
-        <div className="mb-10 rounded-xl bg-blue-50 border border-blue-200 p-6 text-center">
-          <p className="text-base font-semibold text-slate-900 mb-2">
+        <div className="mb-10 rounded-xl bg-[var(--color-primary-light)] border border-[var(--color-primary-light)] p-6 text-center">
+          <p className="text-base font-semibold text-[var(--color-heading)] mb-2">
             Ready to see results like these in your business?
           </p>
-          <p className="text-sm text-slate-600 mb-4">
+          <p className="text-sm text-[var(--color-body)] mb-4">
             It starts with a free 10-second AI audit — no email required.
           </p>
           <CTAButton href="/audit" variant="primary" size="md">
@@ -305,12 +305,12 @@ export default async function CaseStudyDetailPage({
       {/* Related case studies */}
       {relatedStudies.length > 0 && (
         <>
-          <hr className="border-slate-200 mb-10" />
+          <hr className="border-[var(--color-border)] mb-10" />
           <AnimatedSection>
             <section className="mb-12" aria-labelledby="related-heading">
               <h2
                 id="related-heading"
-                className="text-xl font-semibold text-slate-900 mb-6"
+                className="text-xl font-semibold text-[var(--color-heading)] mb-6"
               >
                 See more results
               </h2>
@@ -319,22 +319,22 @@ export default async function CaseStudyDetailPage({
                   <Link
                     key={related.slug}
                     href={`/case-studies/${related.slug}`}
-                    className="group flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50/50 p-6 transition-all duration-200 hover:border-blue-600/40 hover:bg-slate-50"
+                    className="group flex items-center justify-between rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-alt)]/50 p-6 transition-all duration-200 hover:border-[var(--color-primary)]/40 hover:bg-[var(--color-bg-alt)]"
                   >
                     <div>
-                      <span className="inline-block rounded-md border border-slate-200 bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600 mb-2">
+                      <span className="inline-block rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] px-2 py-0.5 text-xs font-medium text-[var(--color-body)] mb-2">
                         {related.industry}
                       </span>
-                      <h3 className="text-base font-semibold text-slate-900">
+                      <h3 className="text-base font-semibold text-[var(--color-heading)]">
                         {related.name}
                       </h3>
-                      <p className="mt-1 text-sm text-slate-600">
+                      <p className="mt-1 text-sm text-[var(--color-body)]">
                         {related.heroStat} {related.heroLabel}
                       </p>
                     </div>
                     <ArrowRight
                       size={18}
-                      className="text-slate-900 transition-all duration-200 group-hover:text-blue-600 group-hover:translate-x-0.5 shrink-0 ml-4"
+                      className="text-[var(--color-heading)] transition-all duration-200 group-hover:text-[var(--color-primary)] group-hover:translate-x-0.5 shrink-0 ml-4"
                       aria-hidden="true"
                     />
                   </Link>

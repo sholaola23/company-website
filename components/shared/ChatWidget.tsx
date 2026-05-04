@@ -86,7 +86,7 @@ function MessageBubble({ message }: MessageBubbleProps) {
       <div
         className={
           isUser
-            ? "bg-blue-500 text-white rounded-2xl rounded-br-md px-3 py-2.5 text-sm leading-relaxed"
+            ? "bg-blue-500 text-[var(--color-bg)] rounded-2xl rounded-br-md px-3 py-2.5 text-sm leading-relaxed"
             : "bg-zinc-800 text-zinc-100 rounded-2xl rounded-bl-md px-3 py-2.5 text-sm leading-relaxed"
         }
       >
@@ -358,7 +358,7 @@ export default function ChatWidget() {
                   className={[
                     "flex-1 resize-none bg-zinc-800 border border-zinc-700 rounded-xl",
                     "px-3 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-500",
-                    "focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500",
+                    "focus:outline-none focus:ring-1 focus:ring-[var(--color-primary)] focus:border-blue-500",
                     "transition-colors max-h-32 leading-relaxed",
                     "disabled:opacity-50 disabled:cursor-not-allowed",
                   ].join(" ")}
@@ -372,7 +372,7 @@ export default function ChatWidget() {
                   whileTap={{ scale: 0.95 }}
                   className={[
                     "flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center",
-                    "bg-blue-500 text-white transition-all",
+                    "bg-blue-500 text-[var(--color-bg)] transition-all",
                     "disabled:opacity-40 disabled:cursor-not-allowed disabled:scale-100",
                     "hover:bg-blue-400",
                   ].join(" ")}
@@ -402,11 +402,11 @@ export default function ChatWidget() {
           "bottom-4 right-4",
           isOpen ? "hidden sm:flex" : "",
           "w-14 h-14 rounded-full",
-          "bg-blue-500 text-white shadow-lg shadow-blue-500/25",
+          "bg-blue-500 text-[var(--color-bg)] shadow-lg shadow-blue-500/25",
           "flex items-center justify-center",
           "transition-colors hover:bg-blue-400",
           // Pulse ring
-          "ring-2 ring-blue-500/30",
+          "ring-2 ring-[var(--color-primary)]/30",
           isOpen ? "" : "animate-pulse-ring",
         ].join(" ")}
         style={{

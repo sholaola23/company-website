@@ -234,10 +234,10 @@ export default function RankReadyPage() {
       case 0:
         return (
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-slate-900 mb-1">
+            <h3 className="text-lg font-semibold text-[var(--color-heading)] mb-1">
               Business Basics
             </h3>
-            <p className="text-sm text-slate-600 mb-4">
+            <p className="text-sm text-[var(--color-body)] mb-4">
               Tell us about your business so we can tailor the audit.
             </p>
             <Field
@@ -286,10 +286,10 @@ export default function RankReadyPage() {
       case 1:
         return (
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-slate-900 mb-1">
+            <h3 className="text-lg font-semibold text-[var(--color-heading)] mb-1">
               Your Services
             </h3>
-            <p className="text-sm text-slate-600 mb-4">
+            <p className="text-sm text-[var(--color-body)] mb-4">
               What do you do and where do you serve customers?
             </p>
             <Field
@@ -299,7 +299,7 @@ export default function RankReadyPage() {
               placeholder="e.g. Emergency Plumbing"
             />
             <div>
-              <label className="block text-sm font-medium text-slate-500 mb-2">
+              <label className="block text-sm font-medium text-[var(--color-muted)] mb-2">
                 Other Services (up to 4)
               </label>
               {form.secondaryServices.map((s, i) => (
@@ -309,12 +309,12 @@ export default function RankReadyPage() {
                   value={s}
                   onChange={(e) => setArrayItem("secondaryServices", i, e.target.value)}
                   placeholder={`Service ${i + 2}`}
-                  className="w-full rounded-lg border border-slate-200 bg-slate-100/80 px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 outline-none mb-2"
+                  className="w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]/80 px-4 py-2.5 text-sm text-[var(--color-heading)] placeholder-slate-400 focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)] outline-none mb-2"
                 />
               ))}
             </div>
             <div>
-              <label className="block text-sm font-medium text-slate-500 mb-2">
+              <label className="block text-sm font-medium text-[var(--color-muted)] mb-2">
                 Service Areas (up to 5 cities) *
               </label>
               {form.serviceAreas.map((a, i) => (
@@ -324,7 +324,7 @@ export default function RankReadyPage() {
                   value={a}
                   onChange={(e) => setArrayItem("serviceAreas", i, e.target.value)}
                   placeholder={i === 0 ? "Primary city *" : `City ${i + 1}`}
-                  className="w-full rounded-lg border border-slate-200 bg-slate-100/80 px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 outline-none mb-2"
+                  className="w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]/80 px-4 py-2.5 text-sm text-[var(--color-heading)] placeholder-slate-400 focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)] outline-none mb-2"
                 />
               ))}
             </div>
@@ -340,16 +340,16 @@ export default function RankReadyPage() {
       case 2:
         return (
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-slate-900 mb-1">
+            <h3 className="text-lg font-semibold text-[var(--color-heading)] mb-1">
               Your Competitors
             </h3>
-            <p className="text-sm text-slate-600 mb-4">
+            <p className="text-sm text-[var(--color-body)] mb-4">
               Name up to 3 local competitors. We will compare your SEO positioning
               against theirs.
             </p>
             {form.competitors.map((comp, i) => (
               <div key={i} className="space-y-2">
-                <label className="block text-sm font-medium text-slate-500">
+                <label className="block text-sm font-medium text-[var(--color-muted)]">
                   Competitor {i + 1} {i === 0 ? "*" : "(optional)"}
                 </label>
                 <input
@@ -357,14 +357,14 @@ export default function RankReadyPage() {
                   value={comp.name}
                   onChange={(e) => setCompetitor(i, "name", e.target.value)}
                   placeholder="Competitor name"
-                  className="w-full rounded-lg border border-slate-200 bg-slate-100/80 px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 outline-none"
+                  className="w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]/80 px-4 py-2.5 text-sm text-[var(--color-heading)] placeholder-slate-400 focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)] outline-none"
                 />
                 <input
                   type="url"
                   value={comp.url}
                   onChange={(e) => setCompetitor(i, "url", e.target.value)}
                   placeholder="Website or GBP URL (optional)"
-                  className="w-full rounded-lg border border-slate-200 bg-slate-100/80 px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 outline-none"
+                  className="w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]/80 px-4 py-2.5 text-sm text-[var(--color-heading)] placeholder-slate-400 focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)] outline-none"
                 />
               </div>
             ))}
@@ -374,10 +374,10 @@ export default function RankReadyPage() {
       case 3:
         return (
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-slate-900 mb-1">
+            <h3 className="text-lg font-semibold text-[var(--color-heading)] mb-1">
               Current State & Contact
             </h3>
-            <p className="text-sm text-slate-600 mb-4">
+            <p className="text-sm text-[var(--color-body)] mb-4">
               Help us understand where you are today. All fields optional except email.
             </p>
             <div className="grid grid-cols-2 gap-4">
@@ -397,7 +397,7 @@ export default function RankReadyPage() {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-slate-500 mb-2">
+              <label className="block text-sm font-medium text-[var(--color-muted)] mb-2">
                 Biggest SEO Challenge
               </label>
               <textarea
@@ -405,7 +405,7 @@ export default function RankReadyPage() {
                 onChange={(e) => set("biggestProblem", e.target.value)}
                 placeholder="e.g. We don't show up in Google Maps for our area..."
                 rows={3}
-                className="w-full rounded-lg border border-slate-200 bg-slate-100/80 px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 outline-none resize-none"
+                className="w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]/80 px-4 py-2.5 text-sm text-[var(--color-heading)] placeholder-slate-400 focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)] outline-none resize-none"
               />
             </div>
             <Field
@@ -427,22 +427,22 @@ export default function RankReadyPage() {
         <span className="text-xs font-semibold tracking-widest uppercase text-emerald-500 mb-4 block">
           RankReady by WorkCrew
         </span>
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-slate-900 leading-tight tracking-tight mb-5">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-[var(--color-heading)] leading-tight tracking-tight mb-5">
           Get Your Local SEO Action Plan in 10&nbsp;Minutes
         </h1>
-        <p className="text-lg text-slate-600 leading-relaxed">
+        <p className="text-lg text-[var(--color-body)] leading-relaxed">
           Fill in one form. Our AI analyses your business, competitors, and
           Google presence — then gives you a complete action plan.
         </p>
       </div>
 
       {/* Social Proof */}
-      <div className="flex flex-wrap items-center justify-center gap-4 mb-10 text-xs text-slate-400">
+      <div className="flex flex-wrap items-center justify-center gap-4 mb-10 text-xs text-[var(--color-muted)]">
         <span className="flex items-center gap-1.5">
           <Star className="h-3.5 w-3.5 text-yellow-500" />
           Based on a methodology with 2.6M+ views
         </span>
-        <span className="hidden sm:inline text-slate-600">|</span>
+        <span className="hidden sm:inline text-[var(--color-body)]">|</span>
         <span>
           Powered by the same AI that helps E&apos;Manuel Bakery save 15+ hours/week
         </span>
@@ -468,19 +468,19 @@ export default function RankReadyPage() {
                 onClick={() => i < step && setStep(i)}
                 className={`flex flex-col items-center gap-1.5 transition-colors ${
                   active
-                    ? "text-blue-600"
+                    ? "text-[var(--color-primary)]"
                     : done
-                      ? "text-emerald-600 cursor-pointer"
-                      : "text-slate-900"
+                      ? "text-[var(--color-success)] cursor-pointer"
+                      : "text-[var(--color-heading)]"
                 }`}
               >
                 <div
                   className={`flex items-center justify-center w-9 h-9 rounded-full border ${
                     active
-                      ? "border-blue-600 bg-blue-600/15"
+                      ? "border-[var(--color-primary)] bg-[var(--color-primary)]/15"
                       : done
                         ? "border-emerald-500 bg-emerald-500/15"
-                        : "border-slate-200 bg-slate-100/60"
+                        : "border-[var(--color-border)] bg-[var(--color-surface)]/60"
                   }`}
                 >
                   {done ? (
@@ -495,9 +495,9 @@ export default function RankReadyPage() {
           })}
         </div>
         {/* Progress bar */}
-        <div className="mt-3 h-1 bg-slate-100 rounded-full overflow-hidden">
+        <div className="mt-3 h-1 bg-[var(--color-surface)] rounded-full overflow-hidden">
           <motion.div
-            className="h-full bg-blue-600 rounded-full"
+            className="h-full bg-[var(--color-primary)] rounded-full"
             initial={false}
             animate={{ width: `${((step + 1) / STEPS.length) * 100}%` }}
             transition={{ duration: 0.3 }}
@@ -507,7 +507,7 @@ export default function RankReadyPage() {
 
       {/* Form Card */}
       <div className="max-w-2xl mx-auto">
-        <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-6 sm:p-8">
+        <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-alt)]/60 p-6 sm:p-8">
           <AnimatePresence mode="wait">
             <motion.div
               key={step}
@@ -529,10 +529,10 @@ export default function RankReadyPage() {
           )}
 
           {/* Navigation */}
-          <div className="flex items-center justify-between mt-8 pt-6 border-t border-slate-200">
+          <div className="flex items-center justify-between mt-8 pt-6 border-t border-[var(--color-border)]">
             <button
               onClick={() => setStep((s) => Math.max(0, s - 1))}
-              className={`text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors ${
+              className={`text-sm font-medium text-[var(--color-body)] hover:text-[var(--color-heading)] transition-colors ${
                 step === 0 ? "invisible" : ""
               }`}
             >
@@ -543,7 +543,7 @@ export default function RankReadyPage() {
               <button
                 onClick={() => canProceed() && setStep((s) => s + 1)}
                 disabled={!canProceed()}
-                className="flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                className="flex items-center gap-2 rounded-lg bg-[var(--color-primary)] px-6 py-2.5 text-sm font-semibold text-[var(--color-bg)] hover:bg-[var(--color-primary-hover)] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 Next
                 <ArrowRight className="h-4 w-4" />
@@ -553,7 +553,7 @@ export default function RankReadyPage() {
                 <button
                   onClick={handlePreview}
                   disabled={!!submitting}
-                  className="flex items-center justify-center gap-2 rounded-lg border border-blue-600/40 bg-blue-600/10 px-5 py-2.5 text-sm font-semibold text-blue-600 hover:bg-blue-700/20 transition-colors disabled:opacity-40"
+                  className="flex items-center justify-center gap-2 rounded-lg border border-[var(--color-primary)]/40 bg-[var(--color-primary)]/10 px-5 py-2.5 text-sm font-semibold text-[var(--color-primary)] hover:bg-[var(--color-primary-hover)]/20 transition-colors disabled:opacity-40"
                 >
                   {submitting === "preview" ? (
                     <Loader2 className="h-4 w-4 animate-spin" />
@@ -563,7 +563,7 @@ export default function RankReadyPage() {
                 <button
                   onClick={handleFullReport}
                   disabled={!!submitting}
-                  className="flex items-center justify-center gap-2 rounded-lg bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-emerald-500 transition-colors disabled:opacity-40"
+                  className="flex items-center justify-center gap-2 rounded-lg bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-[var(--color-bg)] hover:bg-emerald-500 transition-colors disabled:opacity-40"
                 >
                   {submitting === "full" ? (
                     <Loader2 className="h-4 w-4 animate-spin" />
@@ -577,44 +577,44 @@ export default function RankReadyPage() {
 
         {/* What you get */}
         <div className="mt-10 grid sm:grid-cols-2 gap-4">
-          <div className="rounded-xl border border-slate-200 bg-slate-50/40 p-5">
-            <h4 className="text-sm font-semibold text-blue-600 mb-2">
+          <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-alt)]/40 p-5">
+            <h4 className="text-sm font-semibold text-[var(--color-primary)] mb-2">
               Free Preview (3 outputs)
             </h4>
-            <ul className="text-sm text-slate-600 space-y-1.5">
+            <ul className="text-sm text-[var(--color-body)] space-y-1.5">
               <li className="flex items-center gap-2">
-                <CheckCircle className="h-3.5 w-3.5 text-blue-600" />
+                <CheckCircle className="h-3.5 w-3.5 text-[var(--color-primary)]" />
                 GBP Description (3 variants)
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle className="h-3.5 w-3.5 text-blue-600" />
+                <CheckCircle className="h-3.5 w-3.5 text-[var(--color-primary)]" />
                 Review request templates
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle className="h-3.5 w-3.5 text-blue-600" />
+                <CheckCircle className="h-3.5 w-3.5 text-[var(--color-primary)]" />
                 Service page copy
               </li>
             </ul>
           </div>
           <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-5">
-            <h4 className="text-sm font-semibold text-emerald-600 mb-2">
+            <h4 className="text-sm font-semibold text-[var(--color-success)] mb-2">
               Full Report — £49 (all 5 outputs)
             </h4>
-            <ul className="text-sm text-slate-600 space-y-1.5">
+            <ul className="text-sm text-[var(--color-body)] space-y-1.5">
               <li className="flex items-center gap-2">
-                <CheckCircle className="h-3.5 w-3.5 text-emerald-600" />
+                <CheckCircle className="h-3.5 w-3.5 text-[var(--color-success)]" />
                 Everything in the free preview
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle className="h-3.5 w-3.5 text-emerald-600" />
+                <CheckCircle className="h-3.5 w-3.5 text-[var(--color-success)]" />
                 GBP Category Audit vs competitors
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle className="h-3.5 w-3.5 text-emerald-600" />
+                <CheckCircle className="h-3.5 w-3.5 text-[var(--color-success)]" />
                 4-week GBP posting calendar
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle className="h-3.5 w-3.5 text-emerald-600" />
+                <CheckCircle className="h-3.5 w-3.5 text-[var(--color-success)]" />
                 Emailed as a branded report
               </li>
             </ul>
@@ -622,7 +622,7 @@ export default function RankReadyPage() {
         </div>
 
         {/* Trust line */}
-        <p className="text-center text-xs text-slate-400 mt-6">
+        <p className="text-center text-xs text-[var(--color-muted)] mt-6">
           Your data is used only to generate your report. We do not share it with
           anyone.
         </p>
@@ -650,7 +650,7 @@ function Field({
 }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-slate-500 mb-2">
+      <label className="block text-sm font-medium text-[var(--color-muted)] mb-2">
         {label}
       </label>
       <input
@@ -658,7 +658,7 @@ function Field({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="w-full rounded-lg border border-slate-200 bg-slate-100/80 px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 outline-none"
+        className="w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]/80 px-4 py-2.5 text-sm text-[var(--color-heading)] placeholder-slate-400 focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)] outline-none"
       />
     </div>
   );

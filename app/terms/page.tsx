@@ -24,11 +24,11 @@ export default function TermsPage() {
     <div className="min-h-screen py-20 px-6">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold mb-8">Terms of Service</h1>
-        <p className="text-slate-600 text-sm mb-8">Last updated: 18 March 2026</p>
+        <p className="text-[var(--color-body)] text-sm mb-8">Last updated: 18 March 2026</p>
 
-        <div className="space-y-8 text-slate-500 text-[15px] leading-relaxed">
+        <div className="space-y-8 text-[var(--color-muted)] text-[15px] leading-relaxed">
           <section>
-            <h2 className="text-xl font-semibold text-slate-900 mb-3">Agreement</h2>
+            <h2 className="text-xl font-semibold text-[var(--color-heading)] mb-3">Agreement</h2>
             <p>
               By using the WorkCrew website (workcrew.io),
               you agree to these terms. If you do not agree, please do not use our
@@ -37,7 +37,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-slate-900 mb-3">Services</h2>
+            <h2 className="text-xl font-semibold text-[var(--color-heading)] mb-3">Services</h2>
             <p>
               WorkCrew Ltd provides AI automation, website development, and
               AI training services for businesses. Service details, pricing, and
@@ -46,7 +46,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-slate-900 mb-3">Free AI Readiness Audit</h2>
+            <h2 className="text-xl font-semibold text-[var(--color-heading)] mb-3">Free AI Readiness Audit</h2>
             <p>
               Our free AI Readiness Audit is provided as a complimentary assessment. It
               does not constitute a binding proposal or guarantee of results. The audit
@@ -55,7 +55,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-slate-900 mb-3">AI-Generated Content</h2>
+            <h2 className="text-xl font-semibold text-[var(--color-heading)] mb-3">AI-Generated Content</h2>
             <p>
               Parts of our website use AI to generate responses, including the instant
               audit tool and chat assistant. While we strive for accuracy, AI-generated
@@ -65,7 +65,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-slate-900 mb-3">Intellectual Property</h2>
+            <h2 className="text-xl font-semibold text-[var(--color-heading)] mb-3">Intellectual Property</h2>
             <p>
               All content on this website, including text, design, and code, is the
               property of WorkCrew Ltd unless otherwise stated. You may not
@@ -74,7 +74,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-slate-900 mb-3">Limitation of Liability</h2>
+            <h2 className="text-xl font-semibold text-[var(--color-heading)] mb-3">Limitation of Liability</h2>
             <p>
               WorkCrew Ltd is not liable for any indirect, incidental, or
               consequential damages arising from the use of our website or services. Our
@@ -83,7 +83,7 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-slate-900 mb-3">Governing Law</h2>
+            <h2 className="text-xl font-semibold text-[var(--color-heading)] mb-3">Governing Law</h2>
             <p>
               These terms are governed by the laws of England and Wales. Any disputes
               will be subject to the exclusive jurisdiction of the courts of England
@@ -92,10 +92,10 @@ export default function TermsPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-slate-900 mb-3">Contact</h2>
+            <h2 className="text-xl font-semibold text-[var(--color-heading)] mb-3">Contact</h2>
             <p>
               Questions about these terms? Email us at{" "}
-              <a href="mailto:hello@workcrew.io" className="text-blue-600 hover:underline">
+              <a href="mailto:hello@workcrew.io" className="text-[var(--color-primary)] hover:underline">
                 hello@workcrew.io
               </a>.
             </p>

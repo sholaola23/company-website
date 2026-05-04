@@ -16,8 +16,8 @@ interface GradientBlobProps {
  *
  * Usage:
  *   <div className="relative overflow-hidden">
- *     <GradientBlob className="w-[600px] h-[600px] bg-blue-600 -top-40 -left-32" />
- *     <GradientBlob className="w-[400px] h-[400px] bg-amber-300 top-10 right-0" delay={2} />
+ *     <GradientBlob className="w-[600px] h-[600px] bg-[var(--color-primary)] -top-40 -left-32" />
+ *     <GradientBlob className="w-[400px] h-[400px] bg-[var(--color-accent)] top-10 right-0" delay={2} />
  *   </div>
  */
 export default function GradientBlob({

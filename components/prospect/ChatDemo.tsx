@@ -97,17 +97,17 @@ export default function ChatDemo() {
   );
 
   return (
-    <div className="w-full max-w-md mx-auto bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-2xl">
+    <div className="w-full max-w-md mx-auto bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-2xl overflow-hidden shadow-2xl">
       {/* Chat header */}
-      <div className="flex items-center gap-3 px-4 py-3 bg-slate-50 border-b border-slate-200">
+      <div className="flex items-center gap-3 px-4 py-3 bg-[var(--color-bg-alt)] border-b border-[var(--color-border)]">
         <div className="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center flex-shrink-0">
-          <Bot className="w-4 h-4 text-white" />
+          <Bot className="w-4 h-4 text-[var(--color-bg)]" />
         </div>
         <div>
-          <p className="text-sm font-semibold text-slate-900">UWA Assistant</p>
+          <p className="text-sm font-semibold text-[var(--color-heading)]">UWA Assistant</p>
           <div className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-            <p className="text-xs text-slate-400">Online — ready to help</p>
+            <p className="text-xs text-[var(--color-muted)]">Online — ready to help</p>
           </div>
         </div>
       </div>
@@ -122,8 +122,8 @@ export default function ChatDemo() {
             <div
               className={`max-w-[80%] px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed ${
                 msg.role === "user"
-                  ? "bg-blue-600 text-white rounded-br-sm"
-                  : "bg-slate-100 text-slate-900 rounded-bl-sm"
+                  ? "bg-[var(--color-primary)] text-[var(--color-bg)] rounded-br-sm"
+                  : "bg-[var(--color-surface)] text-[var(--color-heading)] rounded-bl-sm"
               }`}
             >
               {msg.text}
@@ -133,7 +133,7 @@ export default function ChatDemo() {
 
         {typing && (
           <div className="flex justify-start">
-            <div className="bg-slate-100 px-4 py-3 rounded-2xl rounded-bl-sm">
+            <div className="bg-[var(--color-surface)] px-4 py-3 rounded-2xl rounded-bl-sm">
               <div className="flex gap-1 items-center h-4">
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce [animation-delay:0ms]" />
                 <span className="w-1.5 h-1.5 rounded-full bg-slate-400 animate-bounce [animation-delay:150ms]" />
@@ -150,23 +150,23 @@ export default function ChatDemo() {
       <form
         action="#"
         onSubmit={sendMessage}
-        className="flex items-center gap-2 px-3 py-3 border-t border-slate-200 bg-slate-50"
+        className="flex items-center gap-2 px-3 py-3 border-t border-[var(--color-border)] bg-[var(--color-bg-alt)]"
       >
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Ask about products, ingredients, shipping..."
-          className="flex-1 bg-slate-100 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-900 focus:outline-none focus:border-blue-600 transition-all"
+          className="flex-1 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl px-3.5 py-2.5 text-sm text-[var(--color-heading)] placeholder:text-[var(--color-heading)] focus:outline-none focus:border-[var(--color-primary)] transition-all"
           aria-label="Chat message"
         />
         <button
           type="submit"
           disabled={!input.trim() || typing}
-          className="w-9 h-9 flex-shrink-0 bg-blue-600 hover:bg-blue-700 disabled:opacity-40 disabled:cursor-not-allowed rounded-xl flex items-center justify-center transition-all"
+          className="w-9 h-9 flex-shrink-0 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] disabled:opacity-40 disabled:cursor-not-allowed rounded-xl flex items-center justify-center transition-all"
           aria-label="Send message"
         >
-          <Send className="w-4 h-4 text-white" />
+          <Send className="w-4 h-4 text-[var(--color-bg)]" />
         </button>
       </form>
     </div>
