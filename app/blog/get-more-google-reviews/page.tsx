@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "How to Get More Google Reviews Automatically",
   description:
-    "Learn how to get more Google reviews automatically with AI-powered review collection. Small businesses can 3x their reviews without awkward asks or manual follow-ups.",
+    "Learn how to get more Google reviews automatically with AI review collection. Small businesses can 3x their reviews without awkward asks or manual follow-ups.",
   keywords: [
     "get more Google reviews",
     "automate Google reviews",

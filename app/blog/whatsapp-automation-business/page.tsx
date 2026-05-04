@@ -94,7 +94,7 @@ export default function BlogPost() {
             </h2>
 
             <p className="text-slate-500 leading-relaxed mb-4">
-              WhatsApp automation means using AI-powered tools to
+              WhatsApp automation means using AI tools to
               automatically respond to customer messages, take orders, book
               appointments, and send follow-ups &mdash; all within WhatsApp.
             </p>
@@ -245,7 +245,7 @@ export default function BlogPost() {
                 can actually do things, not just answer questions
               </li>
               <li className="text-slate-500 ml-6 list-disc">
-                Complex or sensitive queries get passed to you seamlessly
+                Complex or sensitive queries get passed to you cleanly
               </li>
             </ul>
 

@@ -106,7 +106,7 @@ export default function BlogPost() {
               AI automation can handle the repetitive operational work
               so your consultants can focus on what actually earns fees:
               building relationships, closing deals, and placing
-              candidates. Here are five automations transforming UK
+              candidates. Here are five automations changing UK
               recruitment agencies right now.
             </p>
 
@@ -235,7 +235,7 @@ export default function BlogPost() {
 
             <p className="text-slate-500 leading-relaxed mb-8">
               The hidden benefit is client perception. When interviews
-              are scheduled seamlessly and candidates show up prepared,
+              are scheduled cleanly and candidates show up prepared,
               clients notice &mdash; and send more roles to the agency
               that makes their life easiest.
             </p>

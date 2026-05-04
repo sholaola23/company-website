@@ -405,7 +405,7 @@ export default function BlogPost() {
 
             <p className="text-slate-500 leading-relaxed mb-8">
               <strong className="text-slate-900">Best for:</strong> Businesses
-              that need complex, AI-powered automations. Lead qualification
+              that need complex, AI automations. Lead qualification
               bots, multi-channel customer service, intelligent appointment
               booking, content generation pipelines. Also ideal for any business
               where data privacy is a priority.
@@ -466,7 +466,7 @@ export default function BlogPost() {
             <p className="text-slate-500 leading-relaxed mb-4">
               <strong className="text-slate-900">Choose n8n if:</strong> You
               want the most powerful, flexible option. You&apos;re building
-              AI-powered automations. Data privacy matters. You want to own
+              AI automations. Data privacy matters. You want to own
               your infrastructure. You&apos;re working with a professional who
               can set it up and maintain it.
             </p>

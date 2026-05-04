@@ -199,7 +199,7 @@ export default function BlogPost() {
             </p>
 
             <p className="text-slate-500 leading-relaxed mb-4">
-              AI-powered wait time management sends automated updates to
+              AI wait time management sends automated updates to
               patients: &ldquo;The clinic is running 15 minutes behind
               today. Your appointment is now estimated at 10:45am.&rdquo;
               Patients can wait in their car or grab a coffee instead of

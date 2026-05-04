@@ -130,7 +130,7 @@ export default function BlogPost() {
 
             <p className="text-slate-500 leading-relaxed mb-4">
               <strong className="text-slate-900">Solution:</strong> An
-              AI-powered intake system that sends prospective clients a
+              AI intake system that sends prospective clients a
               branded form the moment they enquire. It collects details
               and opposing party information upfront, then immediately
               runs a conflict check against your client database. If

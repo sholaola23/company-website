@@ -267,7 +267,7 @@ function CaseStudiesPreview() {
               id="case-studies-heading"
               className="heading-section text-2xl sm:text-3xl"
             >
-              Numbers That Speak for Themselves
+              What the numbers say
             </h2>
           </div>
         </AnimatedSection>
@@ -668,7 +668,7 @@ function TestimonialSection() {
               id="testimonial-heading"
               className="heading-section text-3xl sm:text-4xl"
             >
-              Hear From Our Clients
+              From a client
             </h2>
           </div>
 

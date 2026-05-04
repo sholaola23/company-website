@@ -182,7 +182,7 @@ export default function BlogPost() {
             <h2 className="text-2xl font-bold mt-10 mb-4">What We Built</h2>
 
             <p className="text-slate-500 leading-relaxed mb-4">
-              We built an AI-powered system that connects the bakery&apos;s order
+              We built an AI system that connects the bakery&apos;s order
               intake directly to their production, delivery, and payment
               processes. No new software to learn. No code to maintain.
             </p>

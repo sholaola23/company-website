@@ -486,7 +486,7 @@ export default function BlogPost() {
             </h2>
 
             <p className="text-slate-500 leading-relaxed mb-4">
-              Most AI agencies talk about &ldquo;cutting-edge solutions&rdquo;
+              Most AI agencies talk about &ldquo;working solutions&rdquo;
               and &ldquo;transformational results.&rdquo; They do not tell you
               what it actually costs them to deliver. That makes it hard for
               small business owners to know if they are overpaying &mdash; or

@@ -106,7 +106,7 @@ export default function BlogPost() {
             </p>
 
             <p className="text-slate-500 leading-relaxed mb-8">
-              The fix is not complicated. AI-powered reminders sent at the right
+              The fix is not complicated. AI reminders sent at the right
               time, on the right channel, with a one-tap confirm or reschedule
               option, reduce no-shows by 40&ndash;60%. Here is exactly how it
               works.

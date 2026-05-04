@@ -122,7 +122,7 @@ export default function BlogPost() {
             </p>
 
             <p className="text-slate-500 leading-relaxed mb-4">
-              An AI-powered onboarding system sends a single smart form that adapts
+              An AI onboarding system sends a single smart form that adapts
               based on the client type &mdash; sole trader, limited company, or
               partnership. It pre-fills what it can from Companies House data,
               validates entries in real time, and flags anything incomplete before

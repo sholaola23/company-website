@@ -124,7 +124,7 @@ export default function BlogPost() {
             <ul className="text-slate-500 space-y-2 mb-4 ml-6 list-disc">
               <li><strong className="text-slate-900">Higher competition:</strong> There are over 1 million registered businesses in London (ONS, 2025). Your competitor is one Google search away. Responding to a lead 10 minutes late means losing them to the business that responded in 60 seconds.</li>
               <li><strong className="text-slate-900">Higher costs:</strong> London wages, rents, and overheads are 30&ndash;50% higher than the UK average. Hiring a part-time admin costs &pound;15,000&ndash;22,000 per year in London. AI automation doing the same work costs &pound;500&ndash;3,500 to set up and &pound;50&ndash;350 per month to run.</li>
-              <li><strong className="text-slate-900">Higher customer expectations:</strong> London customers expect fast responses, seamless booking, and instant confirmation. They are used to Deliveroo-speed service. If your business takes 4 hours to respond to an enquiry, they have already booked someone else.</li>
+              <li><strong className="text-slate-900">Higher customer expectations:</strong> London customers expect fast responses, clean booking, and instant confirmation. They are used to Deliveroo-speed service. If your business takes 4 hours to respond to an enquiry, they have already booked someone else.</li>
               <li><strong className="text-slate-900">Diverse customer base:</strong> London serves customers speaking 300+ languages. AI chatbots and messaging systems can handle multilingual interactions that would be impossible for a small team.</li>
             </ul>
 

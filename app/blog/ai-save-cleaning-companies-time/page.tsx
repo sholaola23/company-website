@@ -122,7 +122,7 @@ export default function BlogPost() {
             </p>
 
             <p className="text-slate-500 leading-relaxed mb-4">
-              With AI-powered quoting, the system collects the property type,
+              With AI quoting, the system collects the property type,
               number of rooms, and any special requirements &mdash; then generates
               and sends a quote within minutes. No manual calculation, no delay.
             </p>
@@ -195,7 +195,7 @@ export default function BlogPost() {
             </p>
 
             <p className="text-slate-500 leading-relaxed mb-4">
-              AI-powered invoice reminders send friendly, professional nudges at
+              AI invoice reminders send friendly, professional nudges at
               set intervals: a reminder on the due date, a follow-up at 7 days
               overdue, and a firmer message at 14 days. The tone escalates
               gradually, and every message is polite but clear.

@@ -100,7 +100,7 @@ export default function BlogPost() {
             </p>
 
             <p className="text-slate-500 leading-relaxed mb-4">
-              An AI-powered WhatsApp bot lets customers browse your menu,
+              An AI WhatsApp bot lets customers browse your menu,
               place orders, and pay &mdash; all within a WhatsApp chat. They
               type &ldquo;I&apos;d like a margherita pizza and garlic
               bread&rdquo; and the bot handles the rest: confirms the order,

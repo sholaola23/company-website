@@ -281,7 +281,7 @@ export default function BlogPost() {
             </p>
 
             <p className="text-slate-500 leading-relaxed mb-4">
-              AI-powered invoicing tools can generate invoices automatically
+              AI invoicing tools can generate invoices automatically
               after a job is completed, send payment reminders at set
               intervals, and even flag overdue payments so you know exactly
               who needs chasing. Some integrate directly with your bank to
