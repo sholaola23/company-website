@@ -339,6 +339,24 @@
       "accessCount": 1,
       "lastAccessed": 1777935099010,
       "type": "file"
+    },
+    {
+      "path": "rebrand-v1-docs/06-wake-up-brief.md",
+      "accessCount": 1,
+      "lastAccessed": 1777936797060,
+      "type": "file"
+    },
+    {
+      "path": "rebrand-v1-docs/07-gbp-rebrand-draft.md",
+      "accessCount": 1,
+      "lastAccessed": 1777936826901,
+      "type": "file"
+    },
+    {
+      "path": "rebrand-v1-docs/08-google-actions-thursday.md",
+      "accessCount": 1,
+      "lastAccessed": 1777936850567,
+      "type": "file"
     }
   ],
   "userDirectives": []
