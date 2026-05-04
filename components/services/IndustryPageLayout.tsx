@@ -92,7 +92,7 @@ export default function IndustryPageLayout({ page }: { page: IndustryPage }) {
           <div className="flex items-center gap-3 mb-6">
             <AlertTriangle
               size={20}
-              className="text-amber-600 shrink-0"
+              className="text-[var(--color-primary)] shrink-0"
               aria-hidden="true"
             />
             <h2 className="text-2xl font-bold text-[var(--color-heading)]">
@@ -198,7 +198,7 @@ export default function IndustryPageLayout({ page }: { page: IndustryPage }) {
       {/* ── 90-Day Guarantee ─────────────────────────────────────────────── */}
       <section className="py-8 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
-          <div className="flex items-center gap-4 rounded-xl border border-emerald-500/30 bg-emerald-500/5 px-6 py-5">
+          <div className="flex items-center gap-4 rounded-xl border border-emerald-500/30 bg-[var(--color-success)]/5 px-6 py-5">
             <ShieldCheck
               size={24}
               className="text-[var(--color-success)] shrink-0"

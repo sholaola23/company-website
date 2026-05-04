@@ -68,8 +68,8 @@ const TIERS = [
     name: "Scale",
     price: "Get a Quote",
     monthly: "",
-    color: "border-amber-500",
-    badge: "bg-amber-500/20 text-amber-600 border border-amber-500/30",
+    color: "border-[var(--color-primary)]",
+    badge: "bg-[var(--color-primary)]/20 text-[var(--color-primary)] border border-[var(--color-primary)]/30",
     includes: [
       "Full automation fleet",
       "Dedicated account manager",
@@ -268,7 +268,7 @@ export default function ServicesPage() {
 
       {/* 90-Day Guarantee */}
       <AnimatedSection delay={0.15}>
-        <div className="mt-16 flex items-center gap-4 rounded-xl border border-emerald-500/30 bg-emerald-500/5 px-6 py-5 max-w-3xl mx-auto">
+        <div className="mt-16 flex items-center gap-4 rounded-xl border border-emerald-500/30 bg-[var(--color-success)]/5 px-6 py-5 max-w-3xl mx-auto">
           <ShieldCheck
             size={24}
             className="text-[var(--color-success)] shrink-0"

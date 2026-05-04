@@ -424,7 +424,7 @@ export default function RankReadyPage() {
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
       {/* Hero */}
       <div className="max-w-2xl mx-auto text-center mb-10">
-        <span className="text-xs font-semibold tracking-widest uppercase text-emerald-500 mb-4 block">
+        <span className="text-xs font-semibold tracking-widest uppercase text-[var(--color-success)] mb-4 block">
           RankReady by WorkCrew
         </span>
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-[var(--color-heading)] leading-tight tracking-tight mb-5">
@@ -563,7 +563,7 @@ export default function RankReadyPage() {
                 <button
                   onClick={handleFullReport}
                   disabled={!!submitting}
-                  className="flex items-center justify-center gap-2 rounded-lg bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-[var(--color-bg)] hover:bg-emerald-500 transition-colors disabled:opacity-40"
+                  className="flex items-center justify-center gap-2 rounded-lg bg-[var(--color-success)] px-5 py-2.5 text-sm font-semibold text-[var(--color-bg)] hover:bg-emerald-500 transition-colors disabled:opacity-40"
                 >
                   {submitting === "full" ? (
                     <Loader2 className="h-4 w-4 animate-spin" />
@@ -596,7 +596,7 @@ export default function RankReadyPage() {
               </li>
             </ul>
           </div>
-          <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-5">
+          <div className="rounded-xl border border-emerald-500/30 bg-[var(--color-success)]/5 p-5">
             <h4 className="text-sm font-semibold text-[var(--color-success)] mb-2">
               Full Report — £49 (all 5 outputs)
             </h4>

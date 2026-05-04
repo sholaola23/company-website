@@ -222,7 +222,7 @@ function WhatWeBuild() {
 
                   {/* Result badge */}
                   <div className="mt-6">
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border)] bg-[var(--color-success-light)] px-3 py-1 text-xs font-semibold text-emerald-700 group-hover:border-emerald-500/30 group-hover:bg-emerald-500/10 group-hover:text-[var(--color-success)] transition-colors duration-300">
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border)] bg-[var(--color-success-light)] px-3 py-1 text-xs font-semibold text-[var(--color-success)] group-hover:border-emerald-500/30 group-hover:bg-emerald-500/10 group-hover:text-[var(--color-success)] transition-colors duration-300">
                       {cat.result}
                     </span>
                   </div>
@@ -363,7 +363,7 @@ function HowItWorks() {
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
         <AnimatedSection>
           <div className="flex flex-col items-center gap-4 text-center">
-            <span className="eyebrow">How It Works</span>
+            <span className="eyebrow">How it works</span>
             <h2
               id="how-it-works-heading"
               className="heading-section text-3xl sm:text-4xl lg:text-[56px]"

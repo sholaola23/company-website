@@ -176,7 +176,7 @@ export default function PersonalisedCTA() {
               <Link
                 href={variant.buttonHref}
                 onClick={() => trackCTAClicked("bottom-cta", variant.key)}
-                className="inline-flex items-center gap-2 rounded-full bg-[var(--color-primary)] px-8 py-4 text-base font-semibold text-[var(--color-bg)] shadow-lg shadow-blue-500/25 transition-all duration-200 hover:bg-[var(--color-dark)] hover:shadow-blue-500/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-white group"
+                className="inline-flex items-center gap-2 rounded-full bg-[var(--color-primary)] px-8 py-4 text-base font-semibold text-[var(--color-bg)] shadow-lg shadow-[var(--color-primary)]/25 transition-all duration-200 hover:bg-[var(--color-dark)] hover:shadow-[var(--color-primary)]/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-white group"
               >
                 {variant.buttonLabel}
                 <ArrowRight

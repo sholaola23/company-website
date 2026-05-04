@@ -82,7 +82,7 @@ export default function NewsletterSignup({
             placeholder="you@example.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="flex-1 min-w-0 bg-[var(--color-dark-surface)] border border-[var(--color-dark-border)] rounded-lg px-3 py-2 text-sm text-[var(--color-bg)] placeholder:text-[var(--color-muted)] transition-colors duration-150 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-[var(--color-primary)]"
+            className="flex-1 min-w-0 bg-[var(--color-dark-surface)] border border-[var(--color-dark-border)] rounded-lg px-3 py-2 text-sm text-[var(--color-bg)] placeholder:text-[var(--color-muted)] transition-colors duration-150 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
           />
           <button
             type="submit"
@@ -112,7 +112,7 @@ export default function NewsletterSignup({
       <section className="bg-[var(--color-bg-alt)] py-24" aria-label="Newsletter">
         <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
           <div className="mx-auto max-w-xl text-center">
-            <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-blue-500/20 border border-blue-500/30">
+            <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary)]/20 border border-[var(--color-primary)]/30">
               <svg
                 width="20"
                 height="20"
@@ -149,7 +149,7 @@ export default function NewsletterSignup({
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-xl text-center">
           {/* Icon */}
-          <div className="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10">
+          <div className="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--color-primary)]/10">
             <Mail size={22} className="text-[var(--color-accent)]" aria-hidden="true" />
           </div>
 
@@ -180,14 +180,14 @@ export default function NewsletterSignup({
               placeholder="you@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full sm:w-80 bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg px-4 py-3 text-sm text-[var(--color-heading)] placeholder:text-[var(--color-muted)] transition-colors duration-150 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-[var(--color-primary)]"
+              className="w-full sm:w-80 bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg px-4 py-3 text-sm text-[var(--color-heading)] placeholder:text-[var(--color-muted)] transition-colors duration-150 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
             />
             <button
               type="submit"
               disabled={status === "loading"}
               className={cn(
                 "inline-flex items-center justify-center gap-2 font-medium rounded-full",
-                "bg-blue-500 text-[var(--color-bg)] border border-blue-500",
+                "bg-[var(--color-primary)] text-[var(--color-bg)] border border-[var(--color-primary)]",
                 "hover:bg-[var(--color-primary)] hover:border-[var(--color-primary)]",
                 "transition-all duration-200 px-6 py-3 text-sm",
                 "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-white",

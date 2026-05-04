@@ -197,6 +197,12 @@
       "type": "file"
     },
     {
+      "path": "components/shared/HeroImage.tsx",
+      "accessCount": 3,
+      "lastAccessed": 1777936554669,
+      "type": "file"
+    },
+    {
       "path": "app/privacy/page.tsx",
       "accessCount": 2,
       "lastAccessed": 1777845332766,
@@ -296,12 +302,6 @@
       "path": "components/shared/AnimatedSection.tsx",
       "accessCount": 1,
       "lastAccessed": 1777934786091,
-      "type": "file"
-    },
-    {
-      "path": "components/shared/HeroImage.tsx",
-      "accessCount": 1,
-      "lastAccessed": 1777934787028,
       "type": "file"
     },
     {

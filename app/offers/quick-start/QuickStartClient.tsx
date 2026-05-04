@@ -228,7 +228,7 @@ function ClaimForm() {
         type="submit"
         disabled={status === "loading"}
         className={cn(
-          "w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--color-primary)] px-6 py-3.5 text-base font-semibold text-[var(--color-bg)] shadow-lg shadow-blue-500/20 transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-blue-500/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-white group",
+          "w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--color-primary)] px-6 py-3.5 text-base font-semibold text-[var(--color-bg)] shadow-lg shadow-[var(--color-primary)]/20 transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-[var(--color-primary)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-white group",
           status === "loading" && "opacity-70 cursor-not-allowed"
         )}
       >
@@ -256,7 +256,7 @@ export default function QuickStartClient() {
       {/* ── Hero ───────────────────────────────────────────────────────── */}
       <div className="text-center mb-16">
         {/* Urgency pill */}
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-1.5 text-xs font-medium tracking-wide text-amber-600">
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--color-primary)]/30 bg-[var(--color-primary)]/10 px-4 py-1.5 text-xs font-medium tracking-wide text-[var(--color-primary)]">
           <Clock size={12} aria-hidden="true" />
           {expired ? "Offer ended" : "This week only — ends Sunday 30 March"}
         </div>
@@ -445,7 +445,7 @@ export default function QuickStartClient() {
               e.preventDefault();
               document.querySelector("form")?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="inline-flex items-center gap-2 rounded-lg bg-[var(--color-primary)] px-6 py-3 text-base font-semibold text-[var(--color-bg)] shadow-lg shadow-blue-500/20 transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-blue-500/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-white group"
+            className="inline-flex items-center gap-2 rounded-lg bg-[var(--color-primary)] px-6 py-3 text-base font-semibold text-[var(--color-bg)] shadow-lg shadow-[var(--color-primary)]/20 transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-[var(--color-primary)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-white group"
           >
             Claim Your Spot Now
             <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />

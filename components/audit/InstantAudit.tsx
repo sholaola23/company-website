@@ -138,7 +138,7 @@ const SEVERITY_COLOR: Record<Severity, string> = {
 
 const SEVERITY_DOT: Record<Severity, string> = {
   red: "bg-red-500",
-  amber: "bg-amber-500",
+  amber: "bg-[var(--color-primary)]",
   green: "bg-green-500",
 };
 
@@ -523,7 +523,7 @@ function ResultsStep({ result, formId, state, dispatch, onEmailSubmit }: Results
             >
               <Lightbulb
                 size={16}
-                className="text-amber-600 shrink-0 mt-0.5"
+                className="text-[var(--color-primary)] shrink-0 mt-0.5"
                 aria-hidden="true"
               />
               <div>

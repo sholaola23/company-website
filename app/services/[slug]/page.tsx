@@ -81,8 +81,8 @@ export async function generateMetadata({
 const TIER_BADGE: Record<string, string> = {
   starter: "bg-[var(--color-border)] text-[var(--color-heading)]",
   growth: "bg-[var(--color-primary)]/20 text-[var(--color-primary)] border border-[var(--color-primary)]/30",
-  scale: "bg-amber-500/20 text-amber-600 border border-amber-500/30",
-  premium: "bg-purple-500/20 text-purple-600 border border-purple-500/30",
+  scale: "bg-[var(--color-primary)]/20 text-[var(--color-primary)] border border-[var(--color-primary)]/30",
+  premium: "bg-[var(--color-muted)]/20 text-[var(--color-muted)] border border-[var(--color-muted)]/30",
 };
 
 // ── Page ──────────────────────────────────────────────────────────────────────
@@ -160,7 +160,7 @@ export default async function ServiceDetailPage({
           </Link>
           <div className="flex items-center gap-2 bg-[var(--color-success-light)] border border-[var(--color-border)] rounded-lg px-4 py-2.5">
             <ShieldCheck size={15} className="text-[var(--color-success)]" aria-hidden="true" />
-            <span className="text-sm font-semibold text-emerald-700">
+            <span className="text-sm font-semibold text-[var(--color-success)]">
               90-day guarantee
             </span>
           </div>
@@ -333,10 +333,10 @@ export default async function ServiceDetailPage({
       {/* ROI Snippet (new) */}
       {service.roiSnippet && (
         <section className="mb-12" aria-labelledby="roi-heading">
-          <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-6">
+          <div className="rounded-xl border border-[var(--color-primary)]/30 bg-[var(--color-primary)]/5 p-6">
             <h2
               id="roi-heading"
-              className="text-lg font-semibold text-amber-600 mb-3"
+              className="text-lg font-semibold text-[var(--color-primary)] mb-3"
             >
               The Numbers: What This Costs You Today
             </h2>
@@ -456,7 +456,7 @@ export default async function ServiceDetailPage({
       )}
 
       {/* 90-Day Results Guarantee */}
-      <div className="mb-12 rounded-xl border-2 border-emerald-500/40 bg-[var(--color-bg-alt)]/60 p-6 sm:p-8 text-center">
+      <div className="mb-12 rounded-xl border-2 border-[var(--color-success)]/40 bg-[var(--color-bg-alt)]/60 p-6 sm:p-8 text-center">
         <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/10 border border-emerald-500/30">
           <ShieldCheck
             size={24}

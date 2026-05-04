@@ -338,7 +338,7 @@ export default function BlueprintGenerator() {
                 <p className="text-xs text-[var(--color-muted)]">/month potential</p>
               </div>
               <div className="p-4 text-center">
-                <p className="text-2xl font-bold text-amber-600">{blueprint.roiMultiple}x</p>
+                <p className="text-2xl font-bold text-[var(--color-primary)]">{blueprint.roiMultiple}x</p>
                 <p className="text-xs text-[var(--color-muted)]">ROI</p>
               </div>
             </div>
@@ -349,7 +349,7 @@ export default function BlueprintGenerator() {
                   <div key={i} className="border border-[var(--color-border)] rounded-xl p-4">
                     <div className="flex items-start justify-between mb-2">
                       <div className="flex items-center gap-2">
-                        <span className={cn("text-xs font-bold px-2 py-0.5 rounded-full", opp.impact === "high" ? "bg-red-100 text-red-700" : opp.impact === "medium" ? "bg-amber-100 text-amber-700" : "bg-[var(--color-surface)] text-[var(--color-body)]")}>{opp.impact.toUpperCase()} IMPACT</span>
+                        <span className={cn("text-xs font-bold px-2 py-0.5 rounded-full", opp.impact === "high" ? "bg-red-100 text-red-700" : opp.impact === "medium" ? "bg-[var(--color-primary-light)] text-[var(--color-primary)]" : "bg-[var(--color-surface)] text-[var(--color-body)]")}>{opp.impact.toUpperCase()} IMPACT</span>
                         <span className="text-xs text-[var(--color-muted)]">{opp.solution}</span>
                       </div>
                       <span className="text-sm font-bold text-indigo-600">{opp.hoursSavedPerWeek} hrs/week</span>
@@ -401,7 +401,7 @@ export default function BlueprintGenerator() {
 
           {step === "complete" && (
             <div className="text-center py-12">
-              <CheckCircle2 className="w-16 h-16 text-emerald-500 mx-auto mb-4" />
+              <CheckCircle2 className="w-16 h-16 text-[var(--color-success)] mx-auto mb-4" />
               <h2 className="text-2xl font-bold text-[var(--color-heading)] mb-2">Blueprint sent!</h2>
               <p className="text-[var(--color-muted)] mb-8">Check your inbox — your personalised AI blueprint is on its way. We&apos;ve also added you to our weekly tips newsletter.</p>
               <a href="https://cal.com/workcrew/free-ai-strategy-call" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 text-[var(--color-bg)] text-sm font-bold hover:bg-indigo-700"><Calendar className="w-4 h-4" /> Book Your Free Strategy Call</a>

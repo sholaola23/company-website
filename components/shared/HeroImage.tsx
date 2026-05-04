@@ -3,22 +3,19 @@
 import { motion } from "framer-motion";
 
 /**
- * A pure CSS/SVG animated illustration representing AI automation.
- * Shows a cluster of floating data cards connected by animated lines and
- * pulsing nodes — abstract but clearly "AI system" in feel.
- *
- * Sits to the right of the hero text on desktop, hidden on mobile.
- *
- * Usage:
- *   <HeroImage />
+ * Animated workflow visualisation — illustrates the four-stage agent flow.
+ * Recoloured 5 May 2026 to brand palette: Char/Forest/Ember/Stone.
+ * Each stage keeps its own hue so the eye can still parse the four steps,
+ * but every hue is on-brand. Hidden on mobile (no graceful tablet variant).
  */
 
 const CARDS = [
   {
     label: "Lead Captured",
     sub: "New enquiry from website",
-    color: "border-[var(--color-primary)]/40 bg-[var(--color-primary)]/5",
-    dot: "bg-[var(--color-primary)]",
+    border: "rgba(28, 24, 20, 0.25)",       // Char hairline
+    bg: "rgba(28, 24, 20, 0.04)",
+    dot: "var(--color-heading)",             // Char
     delay: 0,
     top: "top-0",
     left: "left-0",
@@ -26,8 +23,9 @@ const CARDS = [
   {
     label: "AI Qualified",
     sub: "High intent — budget confirmed",
-    color: "border-emerald-500/40 bg-emerald-500/5",
-    dot: "bg-emerald-600",
+    border: "rgba(63, 107, 78, 0.4)",        // Forest hairline
+    bg: "rgba(63, 107, 78, 0.05)",
+    dot: "var(--color-success)",             // Forest
     delay: 0.15,
     top: "top-24",
     left: "left-36",
@@ -35,8 +33,9 @@ const CARDS = [
   {
     label: "Booking Sent",
     sub: "Calendar link dispatched",
-    color: "border-purple-500/40 bg-purple-500/5",
-    dot: "bg-purple-400",
+    border: "rgba(168, 52, 31, 0.4)",        // Ember hairline
+    bg: "rgba(168, 52, 31, 0.05)",
+    dot: "var(--color-primary)",             // Ember (brand primary)
     delay: 0.3,
     top: "top-52",
     left: "left-4",
@@ -44,8 +43,9 @@ const CARDS = [
   {
     label: "Follow-up",
     sub: "Day 2 reminder queued",
-    color: "border-amber-500/40 bg-amber-500/5",
-    dot: "bg-amber-400",
+    border: "rgba(139, 130, 120, 0.4)",      // Stone hairline
+    bg: "rgba(139, 130, 120, 0.05)",
+    dot: "var(--color-muted)",               // Stone
     delay: 0.45,
     top: "top-72",
     left: "left-40",
@@ -87,16 +87,26 @@ function FloatingCard({
           ease: "easeInOut",
           delay: index * 0.6,
         }}
-        className={`rounded-xl border ${card.color} px-4 py-3 backdrop-blur-sm w-52 shadow-lg`}
+        className="rounded-sm px-4 py-3 backdrop-blur-sm w-52"
+        style={{
+          border: `1px solid ${card.border}`,
+          background: card.bg,
+          boxShadow: "0 4px 16px -4px rgba(28, 24, 20, 0.06)",
+        }}
       >
         <div className="flex items-center gap-2 mb-1">
           <span
-            className={`w-2 h-2 rounded-full ${card.dot} shrink-0`}
+            className="w-2 h-2 rounded-full shrink-0"
+            style={{ background: card.dot }}
             aria-hidden="true"
           />
-          <p className="text-xs font-semibold text-[var(--color-heading)]">{card.label}</p>
+          <p className="text-xs font-semibold" style={{ color: "var(--color-heading)" }}>
+            {card.label}
+          </p>
         </div>
-        <p className="text-xs text-[var(--color-muted)] pl-4">{card.sub}</p>
+        <p className="text-xs pl-4" style={{ color: "var(--color-muted)" }}>
+          {card.sub}
+        </p>
       </motion.div>
     </motion.div>
   );
@@ -108,14 +118,13 @@ export default function HeroImage() {
       className="hidden lg:block relative w-[340px] h-[380px] shrink-0"
       aria-hidden="true"
     >
-      {/* SVG connection lines */}
       <svg
         className="absolute inset-0 w-full h-full"
         viewBox="0 0 310 360"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Static faint lines */}
+        {/* Static hairline connectors — Stone */}
         {LINES.map((line, i) => (
           <line
             key={i}
@@ -123,18 +132,18 @@ export default function HeroImage() {
             y1={line.y1}
             x2={line.x2}
             y2={line.y2}
-            stroke="rgb(203 213 225)"
+            stroke="#B0A89E"
             strokeWidth="1"
             strokeDasharray="4 4"
           />
         ))}
 
-        {/* Animated travelling dot along each line */}
+        {/* Animated travelling dot — Ember */}
         {LINES.map((line, i) => (
           <motion.circle
             key={`dot-${i}`}
             r="3"
-            fill="#3b82f6"
+            fill="#A8341F"
             initial={{ offsetDistance: "0%" }}
             animate={{ offsetDistance: "100%" }}
             transition={{
@@ -150,15 +159,15 @@ export default function HeroImage() {
           />
         ))}
 
-        {/* Node circles */}
+        {/* Node circles — Mist outer, Char inner */}
         {NODES.map((node, i) => (
           <g key={`node-${i}`}>
             <motion.circle
               cx={node.cx}
               cy={node.cy}
               r="10"
-              fill="rgb(241 245 249)"
-              stroke="rgb(203 213 225)"
+              fill="#F4EDE0"
+              stroke="#B0A89E"
               strokeWidth="1.5"
               animate={{ r: [10, 13, 10] }}
               transition={{
@@ -172,14 +181,13 @@ export default function HeroImage() {
               cx={node.cx}
               cy={node.cy}
               r="4"
-              fill="#3b82f6"
+              fill="#1C1814"
               opacity="0.9"
             />
           </g>
         ))}
       </svg>
 
-      {/* Floating data cards */}
       {CARDS.map((card, i) => (
         <FloatingCard key={card.label} card={card} index={i} />
       ))}

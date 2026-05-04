@@ -269,7 +269,7 @@ export default function AIAutomationManchesterPage() {
         <section className="mb-20 sm:mb-24" aria-labelledby="how-heading">
           <div className="mb-12">
             <SectionHeading
-              eyebrow="Our Process"
+              eyebrow="Our process"
               heading="How It Works"
               align="center"
             />

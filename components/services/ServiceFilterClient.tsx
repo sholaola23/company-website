@@ -40,8 +40,8 @@ const ICON_MAP: Record<string, LucideIcon> = {
 const TIER_BADGE: Record<string, string> = {
   starter: "bg-[var(--color-border)] text-[var(--color-heading)]",
   growth: "bg-[var(--color-primary)]/20 text-[var(--color-primary)] border border-[var(--color-primary)]/30",
-  scale: "bg-amber-500/20 text-amber-600 border border-amber-500/30",
-  premium: "bg-purple-500/20 text-purple-600 border border-purple-500/30",
+  scale: "bg-[var(--color-primary)]/20 text-[var(--color-primary)] border border-[var(--color-primary)]/30",
+  premium: "bg-[var(--color-muted)]/20 text-[var(--color-muted)] border border-[var(--color-muted)]/30",
 };
 
 const TABS = [

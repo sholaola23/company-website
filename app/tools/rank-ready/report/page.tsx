@@ -414,7 +414,7 @@ function ReportContent() {
             </div>
 
             {report.reviewStrategy.quick_wins?.length > 0 && (
-              <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-4">
+              <div className="rounded-xl border border-emerald-500/20 bg-[var(--color-success)]/5 p-4">
                 <h4 className="text-sm font-semibold text-[var(--color-success)] mb-2">
                   Quick Wins — Do This Week
                 </h4>
@@ -509,7 +509,7 @@ function ReportContent() {
               {report.categoryAudit.summary}
             </p>
 
-            <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-4">
+            <div className="rounded-xl border border-emerald-500/20 bg-[var(--color-success)]/5 p-4">
               <h4 className="text-sm font-semibold text-[var(--color-success)] mb-1">
                 Recommended Primary Category
               </h4>
@@ -662,7 +662,7 @@ function ReportContent() {
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
       {/* Header */}
       <div className="max-w-3xl mx-auto text-center mb-10">
-        <span className="text-xs font-semibold tracking-widest uppercase text-emerald-500 mb-4 block">
+        <span className="text-xs font-semibold tracking-widest uppercase text-[var(--color-success)] mb-4 block">
           {isPreview ? "Free Preview" : "Full Report"}
         </span>
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-[var(--color-heading)] leading-tight tracking-tight mb-3">
@@ -716,7 +716,7 @@ function ReportContent() {
 
         {/* Upgrade CTA for preview */}
         {isPreview && (
-          <div className="mt-10 rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-6 text-center">
+          <div className="mt-10 rounded-2xl border border-emerald-500/30 bg-[var(--color-success)]/5 p-6 text-center">
             <h3 className="text-lg font-semibold text-[var(--color-heading)] mb-2">
               Get the Complete Report
             </h3>
@@ -726,7 +726,7 @@ function ReportContent() {
             </p>
             <Link
               href="/tools/rank-ready"
-              className="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-6 py-2.5 text-sm font-semibold text-[var(--color-bg)] hover:bg-emerald-500 transition-colors"
+              className="inline-flex items-center gap-2 rounded-lg bg-[var(--color-success)] px-6 py-2.5 text-sm font-semibold text-[var(--color-bg)] hover:bg-emerald-500 transition-colors"
             >
               Get Full Report — £49
               <ArrowRight className="h-4 w-4" />
@@ -776,7 +776,7 @@ function LockedSection({
       <p className="text-sm text-[var(--color-body)] max-w-md mb-6">{description}</p>
       <Link
         href="/tools/rank-ready"
-        className="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-[var(--color-bg)] hover:bg-emerald-500 transition-colors"
+        className="inline-flex items-center gap-2 rounded-lg bg-[var(--color-success)] px-5 py-2.5 text-sm font-semibold text-[var(--color-bg)] hover:bg-emerald-500 transition-colors"
       >
         Unlock — £49
         <ArrowRight className="h-4 w-4" />

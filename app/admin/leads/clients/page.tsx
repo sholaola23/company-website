@@ -109,7 +109,7 @@ export default async function AdminClientsPage() {
                 <p className="text-xs text-[var(--color-muted)]">New</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-amber-600">
+                <p className="text-2xl font-bold text-[var(--color-primary)]">
                   {qualifiedLeads}
                 </p>
                 <p className="text-xs text-[var(--color-muted)]">Qualified</p>

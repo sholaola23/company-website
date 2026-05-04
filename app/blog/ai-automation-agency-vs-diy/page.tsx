@@ -126,7 +126,7 @@ export default function BlogPost() {
                   <tr className="bg-[var(--color-surface)]/60">
                     <th className="text-left px-4 py-3 text-[var(--color-body)] font-semibold">Factor</th>
                     <th className="text-left px-4 py-3 text-[var(--color-primary)] font-semibold">Done-for-You Agency</th>
-                    <th className="text-left px-4 py-3 text-amber-600 font-semibold">DIY (Build It Yourself)</th>
+                    <th className="text-left px-4 py-3 text-[var(--color-primary)] font-semibold">DIY (Build It Yourself)</th>
                   </tr>
                 </thead>
                 <tbody className="text-[var(--color-muted)]">
@@ -239,7 +239,7 @@ export default function BlogPost() {
                   <tr className="bg-[var(--color-surface)]/60">
                     <th className="text-left px-4 py-3 text-[var(--color-body)] font-semibold">Cost Element</th>
                     <th className="text-left px-4 py-3 text-[var(--color-primary)] font-semibold">Agency</th>
-                    <th className="text-left px-4 py-3 text-amber-600 font-semibold">DIY</th>
+                    <th className="text-left px-4 py-3 text-[var(--color-primary)] font-semibold">DIY</th>
                   </tr>
                 </thead>
                 <tbody className="text-[var(--color-muted)]">
@@ -266,7 +266,7 @@ export default function BlogPost() {
                   <tr className="border-t border-[var(--color-border)] bg-[var(--color-surface)]/30">
                     <td className="px-4 py-3 font-bold text-[var(--color-heading)]">Total Year 1</td>
                     <td className="px-4 py-3 font-bold text-[var(--color-primary)]">&pound;1,100</td>
-                    <td className="px-4 py-3 font-bold text-amber-600">&pound;1,490</td>
+                    <td className="px-4 py-3 font-bold text-[var(--color-primary)]">&pound;1,490</td>
                   </tr>
                   <tr className="border-t border-[var(--color-border)]">
                     <td className="px-4 py-3">Time to live</td>

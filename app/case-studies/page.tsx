@@ -33,8 +33,8 @@ export const metadata: Metadata = {
 const TIER_BADGE: Record<string, string> = {
   Starter: "bg-[var(--color-border)] text-[var(--color-heading)]",
   Growth: "bg-[var(--color-primary)]/20 text-[var(--color-primary)] border border-[var(--color-primary)]/30",
-  Scale: "bg-amber-500/20 text-amber-600 border border-amber-500/30",
-  Premium: "bg-purple-500/20 text-purple-600 border border-purple-500/30",
+  Scale: "bg-[var(--color-primary)]/20 text-[var(--color-primary)] border border-[var(--color-primary)]/30",
+  Premium: "bg-[var(--color-muted)]/20 text-[var(--color-muted)] border border-[var(--color-muted)]/30",
 };
 
 export default function CaseStudiesPage() {

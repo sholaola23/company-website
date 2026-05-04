@@ -245,7 +245,7 @@ export default function BlogPost() {
                   </tr>
                   <tr className="border-t border-[var(--color-border)]">
                     <td className="px-4 py-3 font-medium">2&ndash;3</td>
-                    <td className="px-4 py-3 text-amber-600">Ready for a starter automation</td>
+                    <td className="px-4 py-3 text-[var(--color-primary)]">Ready for a starter automation</td>
                     <td className="px-4 py-3">Start with one high-ROI workflow (&pound;500 setup)</td>
                   </tr>
                   <tr className="border-t border-[var(--color-border)]">

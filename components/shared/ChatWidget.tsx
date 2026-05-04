@@ -86,7 +86,7 @@ function MessageBubble({ message }: MessageBubbleProps) {
       <div
         className={
           isUser
-            ? "bg-blue-500 text-[var(--color-bg)] rounded-2xl rounded-br-md px-3 py-2.5 text-sm leading-relaxed"
+            ? "bg-[var(--color-primary)] text-[var(--color-bg)] rounded-2xl rounded-br-md px-3 py-2.5 text-sm leading-relaxed"
             : "bg-zinc-800 text-zinc-100 rounded-2xl rounded-bl-md px-3 py-2.5 text-sm leading-relaxed"
         }
       >
@@ -310,7 +310,7 @@ export default function ChatWidget() {
               <div className="flex items-center gap-2.5">
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-accent)] opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500" />
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[var(--color-primary)]" />
                 </span>
                 <span className="text-sm font-semibold text-zinc-100">
                   AI Assistant
@@ -358,7 +358,7 @@ export default function ChatWidget() {
                   className={[
                     "flex-1 resize-none bg-zinc-800 border border-zinc-700 rounded-xl",
                     "px-3 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-500",
-                    "focus:outline-none focus:ring-1 focus:ring-[var(--color-primary)] focus:border-blue-500",
+                    "focus:outline-none focus:ring-1 focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)]",
                     "transition-colors max-h-32 leading-relaxed",
                     "disabled:opacity-50 disabled:cursor-not-allowed",
                   ].join(" ")}
@@ -372,7 +372,7 @@ export default function ChatWidget() {
                   whileTap={{ scale: 0.95 }}
                   className={[
                     "flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center",
-                    "bg-blue-500 text-[var(--color-bg)] transition-all",
+                    "bg-[var(--color-primary)] text-[var(--color-bg)] transition-all",
                     "disabled:opacity-40 disabled:cursor-not-allowed disabled:scale-100",
                     "hover:bg-[var(--color-accent)]",
                   ].join(" ")}
@@ -402,7 +402,7 @@ export default function ChatWidget() {
           "bottom-4 right-4",
           isOpen ? "hidden sm:flex" : "",
           "w-14 h-14 rounded-full",
-          "bg-blue-500 text-[var(--color-bg)] shadow-lg shadow-blue-500/25",
+          "bg-[var(--color-primary)] text-[var(--color-bg)] shadow-lg shadow-[var(--color-primary)]/25",
           "flex items-center justify-center",
           "transition-colors hover:bg-[var(--color-accent)]",
           // Pulse ring
@@ -451,8 +451,8 @@ export default function ChatWidget() {
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
               className="absolute -top-0.5 -right-0.5 flex h-3.5 w-3.5"
             >
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-300 opacity-75" />
-              <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[var(--color-accent)] border-2 border-zinc-900" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-accent)] opacity-75" />
+              <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[var(--color-accent)] border-2 border-[var(--color-dark)]" />
             </motion.span>
           )}
         </AnimatePresence>

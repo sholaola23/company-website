@@ -336,7 +336,7 @@ export default function AIROICalculatorPage() {
             <button
               type="submit"
               disabled={!industry || !teamSize}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--color-primary)] px-6 py-3 text-base font-semibold text-[var(--color-bg)] shadow-lg shadow-blue-500/20 transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-blue-500/30 disabled:opacity-40 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--color-primary)] px-6 py-3 text-base font-semibold text-[var(--color-bg)] shadow-lg shadow-[var(--color-primary)]/20 transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-[var(--color-primary)]/30 disabled:opacity-40 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
             >
               <Calculator size={18} aria-hidden="true" />
               Calculate My ROI
@@ -438,7 +438,7 @@ export default function AIROICalculatorPage() {
             </p>
             <Link
               href="/audit"
-              className="inline-flex items-center gap-2 rounded-lg bg-[var(--color-primary)] px-6 py-3 text-base font-semibold text-[var(--color-bg)] shadow-lg shadow-blue-500/20 transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-blue-500/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-white group"
+              className="inline-flex items-center gap-2 rounded-lg bg-[var(--color-primary)] px-6 py-3 text-base font-semibold text-[var(--color-bg)] shadow-lg shadow-[var(--color-primary)]/20 transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-[var(--color-primary)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-white group"
             >
               Get Your Free AI Readiness Audit
               <ArrowRight

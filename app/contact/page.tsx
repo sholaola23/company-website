@@ -139,7 +139,7 @@ export default function ContactPage() {
             aria-labelledby="hours-heading"
           >
             <div className="flex items-center gap-2.5 mb-4">
-              <Clock size={15} className="text-amber-600" aria-hidden="true" />
+              <Clock size={15} className="text-[var(--color-primary)]" aria-hidden="true" />
               <h2
                 id="hours-heading"
                 className="text-sm font-semibold text-[var(--color-muted)]"

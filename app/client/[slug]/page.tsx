@@ -501,7 +501,7 @@ function BankStatementUpload({ slug, onUploadComplete }: { slug: string; onUploa
           ) : (
             <Upload className="w-4 h-4 text-[var(--color-primary)]/70 shrink-0 group-hover:text-[var(--color-accent)] transition-colors" />
           )}
-          <span className="text-[var(--color-accent)]/70 text-xs leading-relaxed group-hover:text-amber-200 transition-colors">
+          <span className="text-[var(--color-accent)]/70 text-xs leading-relaxed group-hover:text-[var(--color-primary)] transition-colors">
             {uploadState === "uploading"
               ? "Uploading..."
               : "Upload bank statement (.csv)"}
@@ -628,7 +628,7 @@ function RefundModal({ order, orderIndex, slug, onClose, onSuccess }: RefundModa
           {/* Header */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2.5">
-              <RotateCcw className="w-4 h-4 text-purple-400" />
+              <RotateCcw className="w-4 h-4 text-[var(--color-muted)]" />
               <p className="text-sm font-semibold text-[var(--color-bg)]">Process Refund</p>
             </div>
             <button
@@ -672,7 +672,7 @@ function RefundModal({ order, orderIndex, slug, onClose, onSuccess }: RefundModa
                       min="0.01"
                       value={refundAmount}
                       onChange={(e) => setRefundAmount(e.target.value)}
-                      className="w-full pl-7 pr-3 py-2.5 bg-zinc-800/60 border border-zinc-700/60 rounded-xl text-[var(--color-bg)] placeholder-zinc-600 text-sm focus:outline-none focus:ring-1 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all tabular-nums"
+                      className="w-full pl-7 pr-3 py-2.5 bg-zinc-800/60 border border-zinc-700/60 rounded-xl text-[var(--color-bg)] placeholder-zinc-600 text-sm focus:outline-none focus:ring-1 focus:ring-purple-500/50 focus:border-[var(--color-muted)]/50 transition-all tabular-nums"
                     />
                   </div>
                 </div>
@@ -685,7 +685,7 @@ function RefundModal({ order, orderIndex, slug, onClose, onSuccess }: RefundModa
                   <select
                     value={reason}
                     onChange={(e) => setReason(e.target.value)}
-                    className="w-full px-3 py-2.5 bg-zinc-800/60 border border-zinc-700/60 rounded-xl text-[var(--color-bg)] text-sm focus:outline-none focus:ring-1 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all appearance-none"
+                    className="w-full px-3 py-2.5 bg-zinc-800/60 border border-zinc-700/60 rounded-xl text-[var(--color-bg)] text-sm focus:outline-none focus:ring-1 focus:ring-purple-500/50 focus:border-[var(--color-muted)]/50 transition-all appearance-none"
                   >
                     {REFUND_REASONS.map((r) => (
                       <option key={r} value={r}>
@@ -699,7 +699,7 @@ function RefundModal({ order, orderIndex, slug, onClose, onSuccess }: RefundModa
                       placeholder="Describe the reason..."
                       value={otherReason}
                       onChange={(e) => setOtherReason(e.target.value)}
-                      className="mt-2 w-full px-3 py-2.5 bg-zinc-800/60 border border-zinc-700/60 rounded-xl text-[var(--color-bg)] placeholder-zinc-600 text-sm focus:outline-none focus:ring-1 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all"
+                      className="mt-2 w-full px-3 py-2.5 bg-zinc-800/60 border border-zinc-700/60 rounded-xl text-[var(--color-bg)] placeholder-zinc-600 text-sm focus:outline-none focus:ring-1 focus:ring-purple-500/50 focus:border-[var(--color-muted)]/50 transition-all"
                     />
                   )}
                 </div>
@@ -712,7 +712,7 @@ function RefundModal({ order, orderIndex, slug, onClose, onSuccess }: RefundModa
                   <select
                     value={method}
                     onChange={(e) => setMethod(e.target.value)}
-                    className="w-full px-3 py-2.5 bg-zinc-800/60 border border-zinc-700/60 rounded-xl text-[var(--color-bg)] text-sm focus:outline-none focus:ring-1 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all appearance-none"
+                    className="w-full px-3 py-2.5 bg-zinc-800/60 border border-zinc-700/60 rounded-xl text-[var(--color-bg)] text-sm focus:outline-none focus:ring-1 focus:ring-purple-500/50 focus:border-[var(--color-muted)]/50 transition-all appearance-none"
                   >
                     {REFUND_METHODS.map((m) => (
                       <option key={m} value={m}>
@@ -748,7 +748,7 @@ function RefundModal({ order, orderIndex, slug, onClose, onSuccess }: RefundModa
                   <button
                     onClick={() => setStep("confirm")}
                     disabled={!isValidAmount || (reason === "Other" && !otherReason.trim())}
-                    className="flex-1 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 disabled:bg-zinc-800 disabled:text-zinc-600 text-[var(--color-bg)] font-medium transition-all text-sm shadow-sm"
+                    className="flex-1 py-2.5 rounded-xl bg-[var(--color-muted)] hover:bg-[var(--color-muted)] disabled:bg-zinc-800 disabled:text-zinc-600 text-[var(--color-bg)] font-medium transition-all text-sm shadow-sm"
                   >
                     Process Refund
                   </button>
@@ -763,8 +763,8 @@ function RefundModal({ order, orderIndex, slug, onClose, onSuccess }: RefundModa
                 className="space-y-4"
               >
                 {/* Confirmation */}
-                <div className="bg-purple-500/10 border border-purple-500/20 rounded-xl p-4 text-center space-y-2">
-                  <p className="text-purple-200 text-sm">
+                <div className="bg-[var(--color-muted)]/10 border border-[var(--color-muted)]/20 rounded-xl p-4 text-center space-y-2">
+                  <p className="text-[var(--color-muted)] text-sm">
                     Are you sure you want to process a{" "}
                     <span className="text-[var(--color-bg)] font-semibold">
                       {formatCurrency(parsedAmount)}
@@ -775,7 +775,7 @@ function RefundModal({ order, orderIndex, slug, onClose, onSuccess }: RefundModa
                     </span>
                     ?
                   </p>
-                  <p className="text-purple-400/70 text-xs">
+                  <p className="text-[var(--color-muted)]/70 text-xs">
                     {finalReason} &middot; {method}
                   </p>
                 </div>
@@ -792,7 +792,7 @@ function RefundModal({ order, orderIndex, slug, onClose, onSuccess }: RefundModa
                   <button
                     onClick={handleSubmit}
                     disabled={submitting}
-                    className="flex-1 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 disabled:bg-purple-800 text-[var(--color-bg)] font-medium transition-all text-sm shadow-sm flex items-center justify-center gap-2"
+                    className="flex-1 py-2.5 rounded-xl bg-[var(--color-muted)] hover:bg-[var(--color-muted)] disabled:bg-[var(--color-muted)] text-[var(--color-bg)] font-medium transition-all text-sm shadow-sm flex items-center justify-center gap-2"
                   >
                     {submitting ? (
                       <>
@@ -911,7 +911,7 @@ export default function ClientDashboard() {
     },
     amber: {
       bg: "bg-gradient-to-br from-amber-950/50 to-zinc-900",
-      border: "border-amber-500/20",
+      border: "border-[var(--color-primary)]/20",
       iconColor: "text-[var(--color-primary)]",
       icon: AlertTriangle,
     },
@@ -1085,7 +1085,7 @@ export default function ClientDashboard() {
                     }`}
                   >
                     {sheetsData.orders.unpaidCount > 0 && (
-                      <div className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary)]" />
                     )}
                     {sheetsData.orders.unpaidCount} unpaid
                     {sheetsData.orders.unpaidCount > 0 &&
@@ -1195,7 +1195,7 @@ export default function ClientDashboard() {
                         className="flex items-center justify-between py-2 border-b border-zinc-800/40 last:border-0"
                       >
                         <div className="flex items-center gap-2.5">
-                          <div className="w-1 h-4 rounded-full bg-amber-500/50 shrink-0" />
+                          <div className="w-1 h-4 rounded-full bg-[var(--color-primary)]/50 shrink-0" />
                           <span className="text-zinc-200 text-sm">
                             {item.product}
                           </span>
@@ -1219,7 +1219,7 @@ export default function ClientDashboard() {
           {sheetsData?.orders &&
             sheetsData.orders.unpaidCustomers.length > 0 && (
               <Section>
-                <div className="bg-gradient-to-br from-amber-950/30 to-zinc-900 rounded-2xl border border-amber-500/20 overflow-hidden">
+                <div className="bg-gradient-to-br from-amber-950/30 to-zinc-900 rounded-2xl border border-[var(--color-primary)]/20 overflow-hidden">
                   <div className="h-0.5 bg-gradient-to-r from-amber-500/70 via-amber-400/30 to-transparent" />
                   <div className="p-5">
                     <div className="flex items-center gap-2 mb-4">
@@ -1252,7 +1252,7 @@ export default function ClientDashboard() {
                         </div>
                       ))}
                     </div>
-                    <div className="mt-4 pt-3 border-t border-amber-500/10 flex justify-between text-sm">
+                    <div className="mt-4 pt-3 border-t border-[var(--color-primary)]/10 flex justify-between text-sm">
                       <span className="text-zinc-500">Total outstanding</span>
                       <span className="text-[var(--color-primary)] font-semibold tabular-nums">
                         {formatCurrency(sheetsData.orders.unpaidAmount)}
@@ -1261,7 +1261,7 @@ export default function ClientDashboard() {
 
                     {/* Quick payment reminder — copy message to send to customers */}
                     {statusData.client.bankDetails && (
-                      <div className="mt-4 pt-3 border-t border-amber-500/10">
+                      <div className="mt-4 pt-3 border-t border-[var(--color-primary)]/10">
                         <button
                           onClick={() => {
                             const bd = statusData.client.bankDetails!;
@@ -1270,7 +1270,7 @@ export default function ClientDashboard() {
                             setBankCopied(true);
                             setTimeout(() => setBankCopied(false), 2500);
                           }}
-                          className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/20 text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-all text-xs font-medium"
+                          className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[var(--color-primary)]/10 hover:bg-[var(--color-primary)]/20 border border-[var(--color-primary)]/20 text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-all text-xs font-medium"
                         >
                           {bankCopied ? (
                             <>
@@ -1363,17 +1363,17 @@ export default function ClientDashboard() {
                                 ? "border-red-500/30"
                                 : isPaid
                                   ? "border-emerald-500/30"
-                                  : "border-amber-500/30";
+                                  : "border-[var(--color-primary)]/30";
                               const accentStrip = isCancelled
                                 ? "bg-red-500/50"
                                 : isPaid
                                   ? "bg-emerald-500/50"
-                                  : "bg-amber-500/50";
+                                  : "bg-[var(--color-primary)]/50";
                               const statusBadgeBg = isCancelled
                                 ? "bg-red-500/10 text-red-400"
                                 : isPaid
                                   ? "bg-emerald-500/10 text-emerald-400"
-                                  : "bg-amber-500/10 text-[var(--color-primary)]";
+                                  : "bg-[var(--color-primary)]/10 text-[var(--color-primary)]";
 
                               return (
                                 <motion.div
@@ -1443,17 +1443,17 @@ export default function ClientDashboard() {
 
                                     {/* Refund indicator */}
                                     {order.refundAmount != null && order.refundAmount > 0 && (
-                                      <div className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-purple-500/10 border border-purple-500/20">
-                                        <RefreshCw className="w-3 h-3 text-purple-400 shrink-0" />
+                                      <div className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-[var(--color-muted)]/10 border border-[var(--color-muted)]/20">
+                                        <RefreshCw className="w-3 h-3 text-[var(--color-muted)] shrink-0" />
                                         <div className="flex-1 min-w-0">
-                                          <span className="text-xs font-medium text-purple-300">
+                                          <span className="text-xs font-medium text-[var(--color-muted)]">
                                             Refunded {formatCurrency(order.refundAmount)}
                                           </span>
                                           {order.refundMethod && (
-                                            <span className="text-xs text-purple-400/70"> via {order.refundMethod}</span>
+                                            <span className="text-xs text-[var(--color-muted)]/70"> via {order.refundMethod}</span>
                                           )}
                                           {order.refundReason && (
-                                            <p className="text-xs text-purple-400/60 truncate mt-0.5">{order.refundReason}</p>
+                                            <p className="text-xs text-[var(--color-muted)]/60 truncate mt-0.5">{order.refundReason}</p>
                                           )}
                                         </div>
                                       </div>
@@ -1463,7 +1463,7 @@ export default function ClientDashboard() {
                                     {order.refundAmount == null && !isCancelled && (
                                       <button
                                         onClick={() => setRefundTarget({ order, index: i })}
-                                        className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-purple-500/30 text-purple-400 hover:bg-purple-500/10 hover:text-purple-300 transition-all text-xs font-medium self-start"
+                                        className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-[var(--color-muted)]/30 text-[var(--color-muted)] hover:bg-[var(--color-muted)]/10 hover:text-[var(--color-muted)] transition-all text-xs font-medium self-start"
                                       >
                                         <RotateCcw className="w-3 h-3" />
                                         Refund
@@ -1502,7 +1502,7 @@ export default function ClientDashboard() {
                         className="flex items-center justify-between py-1.5 border-b border-zinc-800/40 last:border-0"
                       >
                         <div className="flex items-center gap-2.5">
-                          <div className="w-1 h-4 rounded-full bg-blue-500/40 shrink-0" />
+                          <div className="w-1 h-4 rounded-full bg-[var(--color-primary)]/40 shrink-0" />
                           <span className="text-zinc-200 text-sm">{t.town}</span>
                         </div>
                         <span className="text-zinc-400 text-sm tabular-nums">
@@ -1581,7 +1581,7 @@ export default function ClientDashboard() {
                       health === "green"
                         ? "bg-emerald-500/10 text-emerald-400"
                         : health === "amber"
-                          ? "bg-amber-500/10 text-[var(--color-primary)]"
+                          ? "bg-[var(--color-primary)]/10 text-[var(--color-primary)]"
                           : "bg-red-500/10 text-red-400"
                     }`}
                   >
