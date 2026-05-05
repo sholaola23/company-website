@@ -88,7 +88,7 @@ export default function AboutPage() {
           className="text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em] leading-tight mb-6"
           style={{ color: "var(--color-heading)" }}
         >
-          AI for the small businesses behind on AI
+          We run AI for small businesses.
         </h1>
         <p
           className="text-lg leading-relaxed"

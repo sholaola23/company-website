@@ -168,6 +168,49 @@ const categories = [
   },
 ];
 
+// ---------------------------------------------------------------------------
+// Why this matters — the redirect-the-time framing (workshop slide 18)
+// ---------------------------------------------------------------------------
+function WhyThisMatters() {
+  return (
+    <section
+      className="py-24"
+      style={{ background: "var(--color-bg)" }}
+      aria-labelledby="why-this-matters-heading"
+    >
+      <div className="mx-auto max-w-3xl px-6 sm:px-8 lg:px-12">
+        <AnimatedSection>
+          <span className="eyebrow">Why this matters</span>
+          <h2
+            id="why-this-matters-heading"
+            className="heading-section mt-4 text-2xl sm:text-3xl lg:text-[40px]"
+            style={{ color: "var(--color-heading)", letterSpacing: "-0.02em", lineHeight: 1.15 }}
+          >
+            AI takes the admin off your plate. You take the work that{" "}
+            <span style={{ color: "var(--color-primary)" }}>actually makes money</span>.
+          </h2>
+          <p
+            className="mt-6 text-lg leading-relaxed"
+            style={{ color: "var(--color-body)" }}
+          >
+            We run the inbox, the bookings, the chasing, the weekly reports.
+            You run the customer calls, the new offers, the partnerships.
+          </p>
+          <p
+            className="mt-4 text-lg leading-relaxed"
+            style={{ color: "var(--color-body)" }}
+          >
+            Same hours in your week.{" "}
+            <span style={{ color: "var(--color-heading)", fontWeight: 600 }}>
+              Different bank balance at the end of the year.
+            </span>
+          </p>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+}
+
 function WhatWeBuild() {
   return (
     <section
@@ -747,6 +790,7 @@ export default function HomePage() {
           </a>
         </div>
       </section>
+      <WhyThisMatters />
       <WhatWeBuild />
       <TestimonialSection />
       <CaseStudiesPreview />
