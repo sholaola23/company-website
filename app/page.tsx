@@ -53,7 +53,7 @@ function Hero() {
                 className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed sm:text-xl lg:mx-0"
                 style={{ color: "var(--color-body)" }}
               >
-                We run your inbox, your bookings, and your weekly reports. Set up in 7 days. Results in 90 or your money back.
+                Inbox, bookings, reports, knowledge bases, customer support — whatever&apos;s draining your week. We figure it out on a discovery call, then build and run it. 7-day setup. 90-day results guarantee.
               </p>
 
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">

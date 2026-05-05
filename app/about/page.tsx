@@ -94,9 +94,10 @@ export default function AboutPage() {
           className="text-lg leading-relaxed"
           style={{ color: "var(--color-body)" }}
         >
-          We run the AI on the back end. You check a dashboard for 60 seconds in
-          the morning. That&apos;s the deal. Three things, mostly: lead intake
-          and booking, content engines, customer ops.
+          Every engagement starts with a discovery call. We figure out what&apos;s
+          actually draining your week before we propose anything. Then we build it,
+          ship it, and run it on the back end. You stay focused on the work that
+          makes money.
         </p>
       </div>
 
@@ -139,10 +140,9 @@ export default function AboutPage() {
             </p>
             <p>
               We practice what we preach. Our own operations are automated — an
-              AI agent fleet handles prospecting, follow-up, and content
-              production while we focus on building for clients. Our technical
-              co-founder is Claude (AI by Anthropic), which keeps our delivery
-              fast and our costs low enough to pass savings on to clients.
+              agent fleet handles prospecting, follow-up, and content production
+              while we focus on building for clients. The savings from running a
+              lean operation get passed straight through to delivery cost.
             </p>
           </div>
         </div>
