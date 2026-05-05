@@ -123,9 +123,11 @@ export default function AboutPage() {
 
           <div className="flex flex-col gap-4 text-sm text-[var(--color-body)] leading-relaxed">
             <p>
-              WorkCrew was founded on one observation: small businesses are
-              behind on AI because every tool and consultant is built for people
-              who already know what they&apos;re doing.
+              WorkCrew was founded on one observation: every AI tool and
+              consultant is built for people who already know what they&apos;re
+              doing. We&apos;re built for everyone else — the founder still
+              wearing too many hats, the team that wants to use AI but doesn&apos;t
+              want to learn it from scratch.
             </p>
             <p>
               We change that across three service pillars. <strong className="text-[var(--color-body)]">AI Automation</strong> — lead intake,

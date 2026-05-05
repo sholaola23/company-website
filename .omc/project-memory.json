@@ -174,8 +174,8 @@
     },
     {
       "path": "components/layout/Footer.tsx",
-      "accessCount": 5,
-      "lastAccessed": 1777934774295,
+      "accessCount": 6,
+      "lastAccessed": 1777960033889,
       "type": "file"
     },
     {
@@ -227,6 +227,12 @@
       "type": "file"
     },
     {
+      "path": "app/about/page.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1777960028914,
+      "type": "file"
+    },
+    {
       "path": "app/client/[slug]/page.tsx",
       "accessCount": 1,
       "lastAccessed": 1777795516876,
@@ -248,12 +254,6 @@
       "path": "app/audit/page.tsx",
       "accessCount": 1,
       "lastAccessed": 1777934717767,
-      "type": "file"
-    },
-    {
-      "path": "app/about/page.tsx",
-      "accessCount": 1,
-      "lastAccessed": 1777934719037,
       "type": "file"
     },
     {

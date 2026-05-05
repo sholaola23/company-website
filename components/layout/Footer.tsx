@@ -58,8 +58,8 @@ export default function Footer() {
               className="text-sm leading-relaxed max-w-xs"
               style={{ color: "var(--color-dark-text)" }}
             >
-              AI automation, websites, and training for the small businesses
-              behind on AI. Set up in 7 days. Retainer from there.
+              AI automation, websites, and training for small businesses.
+              Set up in 7 days. Built around how you actually run things.
             </p>
           </div>
 
