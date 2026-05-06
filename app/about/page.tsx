@@ -30,30 +30,30 @@ const HOW_WE_WORK = [
   {
     icon: FileSearch,
     step: "01",
-    title: "Free Consultation",
+    title: "Discovery call",
     description:
-      "We assess your business and identify operational bottlenecks and the biggest opportunities for automation — at no cost to you.",
+      "We sit down for 30 minutes and find where your week leaks the most time. No charge, no slides, no obligation.",
   },
   {
     icon: CheckCircle,
     step: "02",
-    title: "Analysis & Proposal",
+    title: "Analysis and proposal",
     description:
-      "We quantify the time and cost savings, then propose tailored solutions with clear deliverables and projected ROI. A real proposal you can say yes or no to.",
+      "We write the scope: what we'll build, what it'll cost, what you should see in 30, 60, 90 days. A proposal you can say yes or no to.",
   },
   {
     icon: Zap,
     step: "03",
-    title: "Build & Launch",
+    title: "Build and launch",
     description:
-      "We build, test, and deploy your solution with full documentation, SOPs, and a training walkthrough. You are informed at every stage.",
+      "We build it, test it, ship it. Full SOPs and a walkthrough so your team runs it. You see progress weekly.",
   },
   {
     icon: RefreshCw,
     step: "04",
-    title: "Ongoing Optimisation",
+    title: "Run and adjust",
     description:
-      "We monitor performance, fix issues, and improve the system continuously. Automation is not a one-time job — it gets better over time.",
+      "We watch the system, fix what breaks, and tighten what works. Adopt. Test. Keep what works.",
   },
 ];
 
@@ -68,9 +68,9 @@ const TRUST = [
   "Registered in England & Wales (Companies House)",
   "UK-based — available evenings & weekends",
   "Real client references available on request",
-  "Human-in-the-loop on all outbound communications",
+  "Human approval on every outbound message until you say otherwise",
   "Full SOP documentation handed over on every project",
-  "Published in TechTrends Africa — AI thought leadership",
+  "Published in TechTrends Africa",
 ];
 
 export default function AboutPage() {
@@ -131,12 +131,7 @@ export default function AboutPage() {
               want to learn it from scratch.
             </p>
             <p>
-              We change that across three service pillars. <strong className="text-[var(--color-body)]">AI Automation</strong> — lead intake,
-              appointment booking, inbox management, order processing, and content
-              production. <strong className="text-[var(--color-body)]">Website Development</strong> — professional, fast-loading sites
-              built to convert visitors into customers. <strong className="text-[var(--color-body)]">AI Training</strong> — hands-on
-              workshops that give your team the skills to work smarter with AI,
-              tailored to your industry.
+              We work across three areas. <strong className="text-[var(--color-body)]">AI automation</strong> — examples include lead intake, bookings, inbox, orders, content, knowledge bases, customer support. The actual build comes out of the discovery call. <strong className="text-[var(--color-body)]">Websites and small apps</strong> — fast, indexed, built around how your customers actually behave. <strong className="text-[var(--color-body)]">AI training</strong> — hands-on workshops, tailored to your work, the same week.
             </p>
             <p>
               We practice what we preach. Our own operations are automated — an
@@ -219,7 +214,7 @@ export default function AboutPage() {
           id="trust-heading"
           className="text-xl font-semibold text-[var(--color-heading)] mb-6 text-center"
         >
-          Why You Can Trust Us
+          Why you can trust us
         </h2>
         <ul className="flex flex-col gap-3" role="list">
           {TRUST.map((item) => (
@@ -239,13 +234,13 @@ export default function AboutPage() {
       <div className="text-center">
         <div className="inline-flex flex-col items-center gap-4">
           <p className="text-[var(--color-body)] text-base">
-            Ready to see what&apos;s possible for your business?
+            Ready to find where your week leaks the most time?
           </p>
-          <CTAButton href="/audit" variant="primary" size="lg">
-            Get Your Free Audit
+          <CTAButton href="https://cal.com/workcrew/free-ai-strategy-call" variant="primary" size="lg">
+            Book a discovery call
           </CTAButton>
           <p className="text-xs text-[var(--color-muted)]">
-            48-hour turnaround. No obligation.
+            30 minutes. No charge. No obligation.
           </p>
         </div>
       </div>

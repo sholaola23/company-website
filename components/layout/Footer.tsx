@@ -3,18 +3,18 @@ import { Mail, Phone } from "lucide-react";
 import Logo from "@/components/shared/Logo";
 
 const SERVICES_LINKS = [
-  { label: "AI Lead Intake & Booking", href: "/services/lead-intake" },
-  { label: "AI Email Assistant", href: "/services/email-assistant" },
-  { label: "SEO Content Automation", href: "/services/seo-content" },
-  { label: "WhatsApp Customer Bot", href: "/services/whatsapp-bot" },
-  { label: "AI Workshops", href: "/services/ai-workshop" },
+  { label: "Lead intake & booking", href: "/services/lead-intake" },
+  { label: "Email assistant", href: "/services/email-assistant" },
+  { label: "SEO content automation", href: "/services/seo-content" },
+  { label: "WhatsApp customer bot", href: "/services/whatsapp-bot" },
+  { label: "AI workshops", href: "/services/ai-workshop" },
 ];
 
 const COMPANY_LINKS = [
   { label: "About", href: "/about" },
-  { label: "Case Studies", href: "/case-studies" },
+  { label: "Case studies", href: "/case-studies" },
   { label: "Blog", href: "/blog" },
-  { label: "ROI Calculator", href: "/tools/ai-roi-calculator" },
+  { label: "ROI calculator", href: "/tools/ai-roi-calculator" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -59,7 +59,7 @@ export default function Footer() {
               style={{ color: "var(--color-dark-text)" }}
             >
               AI automation, websites, and training for small businesses.
-              Set up in 7 days. Built around how you actually run things.
+              Built around how you actually run, not a template.
             </p>
           </div>
 
@@ -205,7 +205,7 @@ export default function Footer() {
                   }}
                   aria-label="Message us on WhatsApp"
                 >
-                  WhatsApp us
+                  Message on WhatsApp
                 </a>
               </li>
             </ul>

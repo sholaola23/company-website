@@ -55,7 +55,7 @@ const HOW_IT_WORKS = [
     step: "02",
     title: "Clear Proposal",
     description:
-      "You receive a specific solution with exact deliverables, timeline, and projected ROI. No vague consulting.",
+      "You receive a specific solution with exact deliverables, timeline, and what you should see in 30, 60, 90 days. No vague consulting.",
   },
   {
     icon: Zap,

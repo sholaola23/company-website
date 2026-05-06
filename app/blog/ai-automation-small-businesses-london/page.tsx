@@ -334,7 +334,7 @@ export default function BlogPost() {
             </h2>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-4">
-              Not sure where to start? Our free AI readiness audit analyses your business and tells you exactly what to automate, the expected time savings, and the projected ROI. It takes 60 seconds and requires no email.
+              Not sure where to start? Our free AI readiness audit analyses your business and tells you exactly what to automate, the expected time savings, and the what you should see in 30, 60, 90 days. It takes 60 seconds and requires no email.
             </p>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-8">
@@ -407,7 +407,7 @@ export default function BlogPost() {
               London Business? See What AI Could Save You.
             </h3>
             <p className="text-[var(--color-body)] mb-6 max-w-lg mx-auto">
-              Take our free AI Readiness Audit &mdash; 60 seconds, no email required. Get your automation score, top opportunities, and projected ROI instantly.
+              Take our free AI Readiness Audit &mdash; 60 seconds, no email required. Get your automation score, top opportunities, and what you should see in 30, 60, 90 days instantly.
             </p>
             <Link
               href="/audit"

@@ -57,7 +57,7 @@ const HOW_IT_WORKS = [
     step: "02",
     title: "Clear Proposal",
     description:
-      "You receive a specific solution with exact deliverables, timeline, and projected ROI. No vague consulting.",
+      "You receive a specific solution with exact deliverables, timeline, and what you should see in 30, 60, 90 days. No vague consulting.",
   },
   {
     icon: Zap,
@@ -178,7 +178,7 @@ export default function AIAutomationLondonPage() {
             </p>
             <p className="text-sm text-[var(--color-body)] leading-relaxed">
               London&apos;s diversity is also a strength. A Hackney-based design
-              studio faces completely different operational bottlenecks compared
+              studio faces completely different where your week leaks time compared
               to an estate agency in Richmond or a dental practice in Harley
               Street. That&apos;s why we tailor every automation to the specific
               workflows your business relies on, rather than offering a

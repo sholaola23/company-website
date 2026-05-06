@@ -495,7 +495,7 @@ export default function BlogPost() {
               </Link>{" "}
               that shows you exactly how Voice AI would work for your specific
               business &mdash; including which calls to automate, expected
-              conversion rates, and projected ROI.
+              conversion rates, and what you should see in 30, 60, 90 days.
             </p>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-8">

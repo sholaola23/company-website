@@ -44,7 +44,7 @@ function Hero() {
                   letterSpacing: "0.14em",
                 }}
               >
-                AI Automation · Websites · Training
+                AI automation · Websites · Training
               </div>
 
               <RotatingHeadline />
@@ -107,10 +107,10 @@ function Hero() {
 // Social proof bar — impact numbers with amber accents
 // ---------------------------------------------------------------------------
 const stats = [
-  { numeric: 50, suffix: "+", label: "Minutes Saved Daily", sublabel: "at E'Manuel Bakery" },
-  { numeric: 9, suffix: "", label: "Workflows Deployed", sublabel: "and counting" },
-  { numeric: 2, suffix: "", label: "Projects Delivered", sublabel: "and growing" },
-  { numeric: 90, suffix: "", label: "Day Guarantee", sublabel: "results or refund" },
+  { numeric: 50, suffix: "+", label: "Minutes saved daily", sublabel: "E'Manuel Bakery, daily" },
+  { numeric: 9, suffix: "", label: "Workflows deployed", sublabel: "live for clients" },
+  { numeric: 2, suffix: "", label: "Projects delivered", sublabel: "shipped, running" },
+  { numeric: 90, suffix: "", label: "Day guarantee", sublabel: "results or money back" },
 ];
 
 function SocialProofBar() {
@@ -147,7 +147,7 @@ const categories = [
     title: "AI Automation",
     href: "/services/lead-intake",
     description:
-      "Lead capture, email replies, appointment booking, follow-ups — running while you sleep. Built on n8n, hosted on Railway, alerts on Telegram.",
+      "Inbox, bookings, follow-ups, knowledge bases, customer support — whichever bit of your week we agree on. Built on n8n, hosted on Railway, alerts on Telegram.",
     result: "E'Manuel saves 50 minutes a day",
   },
   {
@@ -155,7 +155,7 @@ const categories = [
     title: "Websites & Web Apps",
     href: "/services/business-website",
     description:
-      "Sites and tools that turn visitors into customers. Dashboards, booking portals, calculators — mobile-first, fast, indexed.",
+      "Sites and small tools that earn their place. Whatever shape it needs to be — mobile-first, fast, indexed.",
     result: "Live in 7 days from kickoff",
   },
   {
@@ -163,8 +163,8 @@ const categories = [
     title: "AI Training",
     href: "/services/ai-workshop",
     description:
-      "Workshops that get your team using AI tools the same week. Tailored to your industry. We bring the prompts that already work.",
-    result: "Walked out with one test by Friday",
+      "Workshops that get your team using AI the same week. Tailored to your work. We bring prompts that already earn their keep.",
+    result: "Left with one experiment to run by Friday",
   },
 ];
 
@@ -221,18 +221,18 @@ function WhatWeBuild() {
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
         <AnimatedSection>
           <div className="flex flex-col items-center gap-4 text-center">
-            <span className="eyebrow">What we run</span>
+            <span className="eyebrow">What we ship</span>
             <h2
               id="services-heading"
               className="heading-section text-3xl sm:text-4xl lg:text-[56px]"
             >
-              What we run for you.
+              Three areas. Shaped to your week.
             </h2>
             <p
               className="max-w-2xl text-base leading-relaxed sm:text-lg"
               style={{ color: "var(--color-body)" }}
             >
-              Three things, mostly. Each one set up in days, not months — measured in hours saved and leads booked, not features shipped.
+              Examples below. The actual build comes out of a discovery call — measured in hours saved and revenue moved, not features shipped.
             </p>
           </div>
         </AnimatedSection>
@@ -369,30 +369,30 @@ function CaseStudiesPreview() {
 const steps = [
   {
     number: "01",
-    title: "Free AI Blueprint",
+    title: "Discovery call",
     description:
-      "We assess your business and identify the highest-impact automation opportunities — at no cost.",
+      "30 minutes. We find where your week leaks the most time. No charge, no slides, no obligation.",
     icon: FileSearch,
   },
   {
     number: "02",
-    title: "Custom Proposal",
+    title: "Analysis and proposal",
     description:
-      "You get a clear scope with exact deliverables and projected ROI — no vague quotes, no surprises.",
+      "We write the scope: what we'll build, what it'll cost, what you should see in 30, 60, 90 days. Yes or no.",
     icon: Users,
   },
   {
     number: "03",
-    title: "Build & Launch",
+    title: "Build and launch",
     description:
-      "We build, test, and deploy your solution with full documentation, SOPs, and a training walkthrough.",
+      "We build it, test it, ship it. Full SOPs and a walkthrough so your team runs it. You see progress weekly.",
     icon: Zap,
   },
   {
     number: "04",
-    title: "Your Dashboard. 60 Seconds a Day.",
+    title: "Run and adjust",
     description:
-      "You get a real-time dashboard showing exactly what your business is doing. Check it in 60 seconds each morning — we handle everything behind the scenes.",
+      "We watch the system, fix what breaks, tighten what works. Adopt. Test. Keep what works.",
     icon: TrendingUp,
   },
 ];
@@ -411,10 +411,10 @@ function HowItWorks() {
               id="how-it-works-heading"
               className="heading-section text-3xl sm:text-4xl lg:text-[56px]"
             >
-              From conversation to live automation
+              Discovery call to live system
             </h2>
             <p className="max-w-xl text-base leading-relaxed text-[var(--color-body)] sm:text-lg">
-              A structured 4-step process — from first conversation to a system that runs itself.
+              Four steps. We figure it out, build it, run it, tighten it.
             </p>
           </div>
         </AnimatedSection>
@@ -508,7 +508,7 @@ function StrategyCallCTA() {
               className="mt-6 max-w-xl text-base leading-relaxed sm:text-lg lg:mx-0 mx-auto"
               style={{ color: "var(--color-dark-text)" }}
             >
-              No slides. No sales pitch. Just a focused conversation about your business and where automation makes a real difference.
+              No slides. No sales pitch. We sit down for 30 minutes and find where your week leaks the most time.
             </p>
 
             <ul className="mt-8 flex flex-col gap-3" role="list">
@@ -556,15 +556,15 @@ function StrategyCallCTA() {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--color-primary)]/10 text-xs font-bold text-[var(--color-accent)]">1</span>
-                  <p className="text-sm text-[var(--color-dark-text)]">Tell us about your biggest manual pain points</p>
+                  <p className="text-sm text-[var(--color-dark-text)]">Tell us where your week leaks the most time</p>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--color-primary)]/10 text-xs font-bold text-[var(--color-accent)]">2</span>
-                  <p className="text-sm text-[var(--color-dark-text)]">We show you the 2–3 highest-impact automations for your business</p>
+                  <p className="text-sm text-[var(--color-dark-text)]">We show you what we'd build first, shaped to your operation</p>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--color-primary)]/10 text-xs font-bold text-[var(--color-accent)]">3</span>
-                  <p className="text-sm text-[var(--color-dark-text)]">Walk away with a clear plan, regardless of next steps</p>
+                  <p className="text-sm text-[var(--color-dark-text)]">Leave with a clear plan, work with us or not</p>
                 </div>
               </div>
 
@@ -668,7 +668,7 @@ const homepageFAQs: FAQItem[] = [
   {
     question: "What is AI automation for businesses?",
     answer:
-      "AI automation uses artificial intelligence to handle repetitive business tasks — things like responding to enquiries, booking appointments, sending follow-ups, and managing orders. Instead of hiring extra staff, you deploy AI systems that run 24/7 and free your team to focus on higher-value work.",
+      "Tech takes the admin and ops off your plate. You take the work that actually makes money. Same hours in your week, different bank balance at the end of the year. That's enquiries, bookings, follow-ups, orders, knowledge bases, customer support — whichever bit of your week is leaking time. We figure out which on a discovery call.",
   },
   {
     question: "How much does AI automation cost for a business in the UK?",
@@ -678,12 +678,12 @@ const homepageFAQs: FAQItem[] = [
   {
     question: "Do I need technical skills to use AI automation?",
     answer:
-      "Not at all. We handle the entire setup, configuration, and training. Once your system is live, you interact with a simple dashboard — no coding or technical knowledge required. We also provide full documentation and standard operating procedures so your team can manage everything confidently.",
+      "No. We handle setup, configuration, and training. We hand over SOPs and a walkthrough so your team runs it after launch — no coding required.",
   },
   {
     question: "How long does it take to set up AI automation?",
     answer:
-      "Timelines depend on the scope and complexity of your project. We start with a free AI blueprint that maps your business processes and identifies the highest-impact opportunities. You'll receive a clear timeline in your custom proposal.",
+      "Timelines depend on the scope and complexity of your project. We start with a free AI blueprint that maps your business processes and identifies the where your week leaks the most time. You'll receive a clear timeline in your custom proposal.",
   },
   {
     question: "Is AI automation safe and reliable for my business?",
@@ -802,7 +802,7 @@ export default function HomePage() {
             <FAQSection
               items={homepageFAQs}
               eyebrow="FAQs"
-              heading="Common Questions About AI Automation"
+              heading="Common questions"
             />
           </AnimatedSection>
         </div>

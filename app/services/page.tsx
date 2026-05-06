@@ -43,11 +43,11 @@ const TIERS = [
     color: "border-[var(--color-border)]",
     badge: "bg-[var(--color-border)] text-[var(--color-heading)]",
     includes: [
-      "Single focused automation",
-      "Email + docs handover",
-      "1 month support",
+      "One workflow that pays back fastest",
+      "SOPs and a walkthrough so your team runs it",
+      "1 month of fixes",
     ],
-    cta: "Get started",
+    cta: "Book a discovery call",
   },
   {
     name: "Growth",
@@ -56,10 +56,10 @@ const TIERS = [
     color: "border-[var(--color-primary)]",
     badge: "bg-[var(--color-primary)]/20 text-[var(--color-primary)] border border-[var(--color-primary)]/30",
     includes: [
-      "Multi-workflow system",
-      "Full SOP documentation",
-      "3 months support",
-      "Monthly optimisation",
+      "Two or three connected workflows",
+      "Full SOPs handed to your team",
+      "3 months of fixes and tightening",
+      "Monthly check-in on what to tighten next",
     ],
     cta: "Most popular",
     highlight: true,
@@ -71,13 +71,13 @@ const TIERS = [
     color: "border-[var(--color-primary)]",
     badge: "bg-[var(--color-primary)]/20 text-[var(--color-primary)] border border-[var(--color-primary)]/30",
     includes: [
-      "Full automation fleet",
-      "Dedicated account manager",
-      "KPI dashboard",
-      "Ongoing optimisation",
-      "Priority support",
+      "A fleet of workflows running the back-office",
+      "Single point of contact who knows your operation",
+      "Whatever reporting actually helps you decide",
+      "Ongoing fixes and tightening",
+      "Priority on anything urgent",
     ],
-    cta: "Get a quote",
+    cta: "Book a discovery call",
   },
 ];
 
@@ -118,7 +118,7 @@ const servicesFAQs: FAQItem[] = [
   {
     question: "Do I need to be technical to use your services?",
     answer:
-      "Not at all. We handle everything — setup, configuration, and training. You just need to tell us what is slowing you down. Once your system is live, you interact with a simple dashboard and we provide full documentation so your team can manage it confidently.",
+      "No. We handle setup, configuration, and training. Tell us what's slowing you down. We hand over SOPs and a walkthrough so your team runs it after launch.",
   },
   {
     question: "What is included in the monthly retainer?",
@@ -133,12 +133,12 @@ const servicesFAQs: FAQItem[] = [
   {
     question: "What if AI automation does not work for my business?",
     answer:
-      "That is what the free audit is for. We will tell you honestly if AI automation is a good fit before you spend a penny. Every project is also backed by our 90-Day Results Guarantee — if you do not save at least 5 hours per week, we refund your setup fee.",
+      "That's what the discovery call is for. We tell you honestly if it's a good fit before you spend a penny. Every project is backed by our 90-day results guarantee — if you don't save at least 5 hours per week, we refund your setup fee.",
   },
   {
-    question: "I am not sure which service or tier I need. How do I choose?",
+    question: "I'm not sure which tier I need. How do I choose?",
     answer:
-      "Start with a free AI Readiness Audit. We will analyse your business processes and recommend exactly which service and tier will have the biggest impact. Most small businesses start with the Starter or Growth tier and expand once they see results.",
+      "Don't pick yet. Book a discovery call. We figure out where your week leaks the most time, and the right tier becomes obvious from there.",
   },
 ];
 
@@ -152,9 +152,9 @@ export default function ServicesPage() {
         <div className="mb-16 sm:mb-20">
           <SectionHeading
             as="h1"
-            eyebrow="What we run"
-            heading="AI automation services"
-            description="From a single workflow to a full crew. Built around your business, not a template."
+            eyebrow="What we ship"
+            heading="Where we usually start"
+            description="Examples below. The actual build comes out of a discovery call — shaped to your week, not a template."
             align="center"
           />
         </div>
@@ -249,7 +249,7 @@ export default function ServicesPage() {
             id="services-grid-heading"
             className="text-xl font-semibold text-[var(--color-heading)] mb-8"
           >
-            All Services
+            All examples
           </h2>
           <ServiceFilterClient services={services} />
         </section>
@@ -261,7 +261,7 @@ export default function ServicesPage() {
           <FAQSection
             items={servicesFAQs}
             eyebrow="FAQs"
-            heading="Frequently Asked Questions"
+            heading="Frequently asked questions"
           />
         </div>
       </AnimatedSection>
