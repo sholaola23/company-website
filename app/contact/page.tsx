@@ -29,13 +29,13 @@ export default function ContactPage() {
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
       {/* Page heading */}
       <div className="max-w-xl mb-14 sm:mb-16">
-        <span className="text-xs font-semibold tracking-widest uppercase text-blue-600 mb-4 block">
+        <span className="text-xs font-semibold tracking-widest uppercase text-[var(--color-primary)] mb-4 block">
           Get in touch
         </span>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-slate-900 leading-tight mb-4">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.03em] text-[var(--color-heading)] leading-tight mb-4">
           Let&apos;s Talk
         </h1>
-        <p className="text-base text-slate-600 leading-relaxed">
+        <p className="text-base text-[var(--color-body)] leading-relaxed">
           Whether you have a question, want to learn more about a service, or
           you&apos;re ready to get started — we&apos;re here.
         </p>
@@ -44,8 +44,8 @@ export default function ContactPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
         {/* Left: Form */}
         <div>
-          <div className="bg-slate-50 border border-slate-200 rounded-2xl p-7 sm:p-8">
-            <h2 className="text-lg font-semibold text-slate-900 mb-6">
+          <div className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-2xl p-7 sm:p-8">
+            <h2 className="text-lg font-semibold text-[var(--color-heading)] mb-6">
               Send us a message
             </h2>
             <ContactForm />
@@ -57,7 +57,7 @@ export default function ContactPage() {
           <section aria-labelledby="contact-direct-heading">
             <h2
               id="contact-direct-heading"
-              className="text-lg font-semibold text-slate-900 mb-6"
+              className="text-lg font-semibold text-[var(--color-heading)] mb-6"
             >
               Direct contact
             </h2>
@@ -66,17 +66,17 @@ export default function ContactPage() {
               {/* Email */}
               <a
                 href="mailto:hello@workcrew.io"
-                className="flex items-start gap-4 p-4 bg-slate-50 border border-slate-200 rounded-xl hover:border-slate-200 transition-colors duration-150 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+                className="flex items-start gap-4 p-4 bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-xl hover:border-[var(--color-border)] transition-colors duration-150 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
                 aria-label="Send email to hello@workcrew.io"
               >
-                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-600/20 shrink-0">
-                  <Mail size={16} className="text-blue-600" aria-hidden="true" />
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 shrink-0">
+                  <Mail size={16} className="text-[var(--color-primary)]" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-0.5">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-muted)] mb-0.5">
                     Email
                   </p>
-                  <p className="text-sm text-slate-900 group-hover:text-slate-900 transition-colors">
+                  <p className="text-sm text-[var(--color-heading)] group-hover:text-[var(--color-heading)] transition-colors">
                     hello@workcrew.io
                   </p>
                 </div>
@@ -85,18 +85,18 @@ export default function ContactPage() {
               {/* Phone */}
               <a
                 href="tel:+447469347654"
-                className="flex items-start gap-4 p-4 bg-slate-50 border border-slate-200 rounded-xl hover:border-slate-200 transition-colors duration-150 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
-                aria-label="Call +44 7469 347654"
+                className="flex items-start gap-4 p-4 bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-xl hover:border-[var(--color-border)] transition-colors duration-150 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
+                aria-label="Call +44 7469 347 654"
               >
-                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-600/20 shrink-0">
-                  <Phone size={16} className="text-blue-600" aria-hidden="true" />
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 shrink-0">
+                  <Phone size={16} className="text-[var(--color-primary)]" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-0.5">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-muted)] mb-0.5">
                     Phone
                   </p>
-                  <p className="text-sm text-slate-900 group-hover:text-slate-900 transition-colors">
-                    +44 7469 347654
+                  <p className="text-sm text-[var(--color-heading)] group-hover:text-[var(--color-heading)] transition-colors">
+                    +44 7469 347 654
                   </p>
                 </div>
               </a>
@@ -106,7 +106,7 @@ export default function ContactPage() {
                 href="https://wa.me/447469347654"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-4 p-4 bg-slate-50 border border-slate-200 rounded-xl hover:border-slate-200 transition-colors duration-150 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+                className="flex items-start gap-4 p-4 bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-xl hover:border-[var(--color-border)] transition-colors duration-150 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
                 aria-label="Message on WhatsApp"
               >
                 <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-green-500/10 border border-green-500/20 shrink-0">
@@ -122,10 +122,10 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-0.5">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-muted)] mb-0.5">
                     WhatsApp
                   </p>
-                  <p className="text-sm text-slate-900 group-hover:text-slate-900 transition-colors">
+                  <p className="text-sm text-[var(--color-heading)] group-hover:text-[var(--color-heading)] transition-colors">
                     Message us directly
                   </p>
                 </div>
@@ -135,25 +135,25 @@ export default function ContactPage() {
 
           {/* Office hours */}
           <section
-            className="bg-slate-50 border border-slate-200 rounded-xl p-6"
+            className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-xl p-6"
             aria-labelledby="hours-heading"
           >
             <div className="flex items-center gap-2.5 mb-4">
-              <Clock size={15} className="text-amber-600" aria-hidden="true" />
+              <Clock size={15} className="text-[var(--color-primary)]" aria-hidden="true" />
               <h2
                 id="hours-heading"
-                className="text-sm font-semibold text-slate-500"
+                className="text-sm font-semibold text-[var(--color-muted)]"
               >
                 Availability
               </h2>
             </div>
             <div className="flex flex-col gap-2 text-sm">
-              <p className="text-slate-500 leading-relaxed">
+              <p className="text-[var(--color-muted)] leading-relaxed">
                 Flexible hours — we work around your schedule so we never
                 disrupt your working day.
               </p>
-              <div className="mt-3 pt-3 border-t border-slate-200">
-                <p className="text-xs text-slate-400 leading-relaxed">
+              <div className="mt-3 pt-3 border-t border-[var(--color-border)]">
+                <p className="text-xs text-[var(--color-muted)] leading-relaxed">
                   Most enquiries answered within a few hours. For urgent
                   matters, WhatsApp is fastest.
                 </p>
@@ -162,17 +162,17 @@ export default function ContactPage() {
           </section>
 
           {/* Prefer audit */}
-          <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-            <p className="text-sm font-semibold text-slate-900 mb-1.5">
+          <div className="bg-[var(--color-primary-light)] border border-[var(--color-primary-light)] rounded-xl p-6">
+            <p className="text-sm font-semibold text-[var(--color-heading)] mb-1.5">
               Not sure where to start?
             </p>
-            <p className="text-sm text-slate-600 mb-4 leading-relaxed">
+            <p className="text-sm text-[var(--color-body)] mb-4 leading-relaxed">
               A free AI readiness audit is the fastest way to get clarity on
               exactly how we can help your business.
             </p>
             <a
               href="/audit"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:text-blue-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded group"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] rounded group"
             >
               Request your free audit
               <svg

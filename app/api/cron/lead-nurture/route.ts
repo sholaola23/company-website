@@ -244,7 +244,7 @@ function buildDay5Email(name: string): string {
 
       <p>I'll show you:</p>
       <ul>
-        <li>The 1-2 highest-impact automations for your specific business</li>
+        <li>The 1-2 what we'd build first for your specific business</li>
         <li>Realistic timeline and cost to implement</li>
         <li>Whether it's worth doing at all (sometimes it isn't, and I'll tell you that honestly)</li>
       </ul>

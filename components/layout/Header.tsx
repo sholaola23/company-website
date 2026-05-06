@@ -10,23 +10,21 @@ import { cn } from "@/lib/utils";
 const SERVICE_LINKS = [
   { label: "AI Lead Intake & Booking", href: "/services/lead-intake" },
   { label: "AI Email Assistant", href: "/services/email-assistant" },
-  { label: "SEO Content Automation", href: "/services/seo-content" },
   { label: "WhatsApp Customer Bot", href: "/services/whatsapp-bot" },
   { label: "AI Workshops", href: "/services/ai-workshop" },
-  { label: "Website Development", href: "/services/business-website" },
-  { label: "View All Services", href: "/services" },
+  { label: "View all services", href: "/services" },
 ];
 
+// Operator nav — 4 items + 1 CTA. Was 5 items + 7-deep dropdown.
 const NAV_LINKS = [
-  { label: "About", href: "/about" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "About", href: "/about" },
 ];
 
 /**
- * Premium sticky header — white background, subtle shadow on scroll.
- * Services dropdown on desktop, full-screen overlay on mobile.
+ * Sticky header — Bone background, Char wordmark.
+ * Locked 4 May 2026 against brand-foundation.md.
  */
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -59,16 +57,25 @@ export default function Header() {
       className={cn(
         "fixed top-0 inset-x-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100"
-          : "bg-white"
+          ? "backdrop-blur-md shadow-sm"
+          : ""
       )}
+      style={{
+        background: scrolled
+          ? "color-mix(in srgb, var(--color-bg) 92%, transparent)"
+          : "var(--color-bg)",
+        borderBottom: scrolled
+          ? "1px solid var(--color-border)"
+          : "1px solid transparent",
+      }}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link
             href="/"
-            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-lg"
+            className="rounded-sm focus-visible:outline-none focus-visible:ring-2"
+            style={{ outlineColor: "var(--color-primary)" }}
             aria-label="WorkCrew — home"
           >
             <Logo size="sm" />
@@ -83,7 +90,17 @@ export default function Header() {
               onMouseLeave={() => setServicesOpen(false)}
             >
               <button
-                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-600 rounded-lg transition-colors duration-150 hover:text-slate-900 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+                onFocus={() => setServicesOpen(true)}
+                onBlur={(e) => {
+                  if (!e.currentTarget.parentElement?.contains(e.relatedTarget as Node)) {
+                    setServicesOpen(false);
+                  }
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Escape") setServicesOpen(false);
+                }}
+                className="flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-sm transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2"
+                style={{ color: "var(--color-body)", outlineColor: "var(--color-primary)" }}
                 aria-expanded={servicesOpen}
                 aria-haspopup="true"
               >
@@ -94,20 +111,34 @@ export default function Header() {
               {/* Dropdown */}
               <div
                 className={cn(
-                  "absolute left-0 top-full mt-1 w-64 rounded-xl bg-white border border-slate-200 shadow-lg py-2 transition-all duration-200 origin-top",
+                  "absolute left-0 top-full mt-1 w-64 rounded-sm shadow-md py-2 transition-all duration-200 origin-top",
                   servicesOpen
                     ? "opacity-100 scale-100 pointer-events-auto"
                     : "opacity-0 scale-95 pointer-events-none"
                 )}
+                style={{
+                  background: "var(--color-bg)",
+                  border: "1px solid var(--color-border)",
+                }}
               >
                 {SERVICE_LINKS.map((link, i) => (
                   <Link
                     key={link.href}
                     href={link.href}
                     className={cn(
-                      "block px-4 py-2.5 text-sm text-slate-600 hover:text-blue-600 hover:bg-blue-50/50 transition-colors duration-150",
-                      i === SERVICE_LINKS.length - 1 && "border-t border-slate-100 mt-1 pt-3 font-semibold text-blue-600"
+                      "block px-4 py-2.5 text-sm transition-colors duration-150",
+                      i === SERVICE_LINKS.length - 1 && "mt-1 pt-3 font-semibold"
                     )}
+                    style={{
+                      color:
+                        i === SERVICE_LINKS.length - 1
+                          ? "var(--color-primary)"
+                          : "var(--color-body)",
+                      borderTop:
+                        i === SERVICE_LINKS.length - 1
+                          ? "1px solid var(--color-border)"
+                          : "none",
+                    }}
                   >
                     {link.label}
                   </Link>
@@ -119,7 +150,8 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-3 py-2 text-sm font-medium text-slate-600 rounded-lg transition-colors duration-150 hover:text-slate-900 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+                className="px-3 py-2 text-sm font-medium rounded-sm transition-colors duration-150 hover:opacity-70 focus-visible:outline-none focus-visible:ring-2"
+                style={{ color: "var(--color-body)", outlineColor: "var(--color-primary)" }}
               >
                 {link.label}
               </Link>
@@ -128,14 +160,15 @@ export default function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center">
-            <CTAButton href="/blueprint" variant="primary" size="sm">
-              Get Free Blueprint
+            <CTAButton href="https://cal.com/workcrew/free-ai-strategy-call" variant="primary" size="sm">
+              Book a call
             </CTAButton>
           </div>
 
           {/* Mobile hamburger */}
           <button
-            className="flex md:hidden items-center justify-center w-9 h-9 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+            className="flex md:hidden items-center justify-center w-9 h-9 rounded-sm transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2"
+            style={{ color: "var(--color-body)", outlineColor: "var(--color-primary)" }}
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={mobileOpen}
@@ -152,14 +185,19 @@ export default function Header() {
         role="navigation"
         aria-label="Mobile navigation"
         className={cn(
-          "md:hidden overflow-hidden transition-all duration-300 ease-in-out",
-          "bg-white border-b border-slate-200 shadow-lg",
+          "md:hidden overflow-hidden transition-all duration-300 ease-in-out shadow-md",
           mobileOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         )}
+        style={{
+          background: "var(--color-bg)",
+          borderBottom: "1px solid var(--color-border)",
+        }}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 pb-6 pt-2 flex flex-col gap-1">
-          {/* Services header */}
-          <p className="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-widest text-slate-400">
+          <p
+            className="px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-widest"
+            style={{ color: "var(--color-muted)" }}
+          >
             Services
           </p>
           {SERVICE_LINKS.map((link) => (
@@ -167,34 +205,38 @@ export default function Header() {
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="px-3 py-2.5 text-sm font-medium text-slate-600 rounded-lg transition-colors duration-150 hover:text-blue-600 hover:bg-blue-50/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+              className="px-3 py-2.5 text-sm font-medium rounded-sm transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2"
+              style={{ color: "var(--color-body)", outlineColor: "var(--color-primary)" }}
             >
               {link.label}
             </Link>
           ))}
 
-          {/* Separator */}
-          <div className="my-2 border-t border-slate-100" />
+          <div className="my-2" style={{ borderTop: "1px solid var(--color-border)" }} />
 
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="px-3 py-2.5 text-base font-medium text-slate-600 rounded-lg transition-colors duration-150 hover:text-slate-900 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+              className="px-3 py-2.5 text-base font-medium rounded-sm transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2"
+              style={{ color: "var(--color-body)", outlineColor: "var(--color-primary)" }}
             >
               {link.label}
             </Link>
           ))}
 
-          <div className="mt-3 pt-3 border-t border-slate-100">
+          <div
+            className="mt-3 pt-3"
+            style={{ borderTop: "1px solid var(--color-border)" }}
+          >
             <CTAButton
-              href="/blueprint"
+              href="https://cal.com/workcrew/free-ai-strategy-call"
               variant="primary"
               size="md"
               className="w-full justify-center"
             >
-              Get Free Blueprint
+              Book a call
             </CTAButton>
           </div>
         </div>

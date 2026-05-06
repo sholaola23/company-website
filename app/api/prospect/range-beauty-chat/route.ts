@@ -1,5 +1,6 @@
 import { NextRequest } from "next/server";
 import { ANTHROPIC_API_URL, ANTHROPIC_VERSION, heliconeHeaders } from "@/lib/constants";
+import { requireGuard } from "@/lib/api-guard";
 
 export const runtime = "edge";
 
@@ -97,6 +98,15 @@ Link: https://rangebeauty.com/products/bali-face-body-glow
 11. Start conversations warmly. If someone just says "hi", introduce yourself and ask how you can help with shade matching or products.`;
 
 export async function POST(req: NextRequest) {
+  // Guard FIRST — Range Beauty shade-match chat endpoint (Haiku).
+  const guard = requireGuard(req, {
+    endpoint: "prospect-range-beauty-chat",
+    perIpLimit: 30,
+  });
+  if (!guard.ok) {
+    return Response.json({ error: guard.message }, { status: guard.status });
+  }
+
   const body = await req.json();
   const { message, history } = body;
 

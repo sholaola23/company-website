@@ -1,11 +1,20 @@
 import { NextRequest } from "next/server";
 import { CHAT_SYSTEM_PROMPT } from "@/lib/chat-system-prompt";
-import { checkChatRateLimit } from "@/lib/rate-limit";
+import { requireGuard } from "@/lib/api-guard";
 import { ANTHROPIC_API_URL, ANTHROPIC_VERSION, heliconeHeaders } from "@/lib/constants";
 
 export const runtime = "edge";
 
 export async function POST(req: NextRequest) {
+  // Guard FIRST — chat endpoint is high volume (Haiku) but still public.
+  const guard = requireGuard(req, {
+    endpoint: "chat",
+    perIpLimit: 30,
+  });
+  if (!guard.ok) {
+    return Response.json({ error: guard.message }, { status: guard.status });
+  }
+
   const body = await req.json();
   const { messages } = body;
 
@@ -19,22 +28,10 @@ export async function POST(req: NextRequest) {
     return Response.json({ text: "It looks like your message was empty. How can I help you today?" });
   }
 
-  const ip = req.headers.get("x-forwarded-for")?.split(",")[0] || "unknown";
-  const { allowed } = checkChatRateLimit(ip);
-  if (!allowed) {
-    return Response.json(
-      {
-        error:
-          "You've sent quite a few messages! Please try again in a bit, or reach us directly at hello@workcrew.io",
-      },
-      { status: 429 }
-    );
-  }
-
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
     return Response.json({
-      text: "I'm having trouble connecting right now. You can reach us directly at hello@workcrew.io or call 07469 347654.",
+      text: "I'm having trouble connecting right now. You can reach us directly at hello@workcrew.io or call +44 7469 347 654.",
     });
   }
 

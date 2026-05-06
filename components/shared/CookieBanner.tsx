@@ -47,14 +47,14 @@ export default function CookieBanner() {
       role="dialog"
       aria-live="polite"
       aria-label="Cookie consent"
-      className="fixed bottom-4 left-4 right-4 md:left-6 md:right-auto md:max-w-md z-[90] rounded-lg border border-slate-200 bg-white shadow-lg p-4 md:p-5 text-sm text-slate-700"
+      className="fixed bottom-4 left-4 right-4 md:left-6 md:right-auto md:max-w-md z-[90] rounded-lg border border-[var(--color-border)] bg-[var(--color-bg)] shadow-lg p-4 md:p-5 text-sm text-[var(--color-body)]"
     >
-      <p className="font-semibold text-slate-900 mb-2">We use cookies</p>
-      <p className="text-slate-600 mb-4 leading-relaxed">
+      <p className="font-semibold text-[var(--color-heading)] mb-2">We use cookies</p>
+      <p className="text-[var(--color-body)] mb-4 leading-relaxed">
         We use essential cookies to make this site work. With your consent, we
         also use analytics cookies to understand how visitors use the site and
         improve it. Read our{" "}
-        <a href="/privacy" className="text-blue-600 hover:underline">
+        <a href="/privacy" className="text-[var(--color-primary)] hover:underline">
           Privacy Policy
         </a>
         .
@@ -64,14 +64,14 @@ export default function CookieBanner() {
         <button
           type="button"
           onClick={() => record("accepted")}
-          className="flex-1 bg-slate-900 text-white text-sm font-medium px-4 py-2 rounded-md hover:bg-slate-800 transition focus:outline-none focus:ring-2 focus:ring-slate-400"
+          className="flex-1 bg-[var(--color-dark)] text-[var(--color-bg)] text-sm font-medium px-4 py-2 rounded-md hover:bg-[var(--color-dark-surface)] transition focus:outline-none focus:ring-2 focus:ring-slate-400"
         >
           Accept all
         </button>
         <button
           type="button"
           onClick={() => record("rejected")}
-          className="flex-1 bg-slate-900 text-white text-sm font-medium px-4 py-2 rounded-md hover:bg-slate-800 transition focus:outline-none focus:ring-2 focus:ring-slate-400"
+          className="flex-1 bg-[var(--color-dark)] text-[var(--color-bg)] text-sm font-medium px-4 py-2 rounded-md hover:bg-[var(--color-dark-surface)] transition focus:outline-none focus:ring-2 focus:ring-slate-400"
         >
           Reject non-essential
         </button>

@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 const HOW_IT_WORKS = [
   { step: "1", label: "Enter your details" },
   { step: "2", label: "Get instant AI analysis" },
-  { step: "3", label: "Unlock the full report" },
+  { step: "3", label: "Get the full report" },
 ] as const;
 
 const auditFAQs: FAQItem[] = [
@@ -56,7 +56,7 @@ const auditFAQs: FAQItem[] = [
   {
     question: "What happens after I complete the audit?",
     answer:
-      "You can unlock the full detailed report by providing your email. From there, if you would like to explore implementation, we will send you a custom proposal — typically within 48 hours. There is absolutely no pressure to proceed.",
+      "Drop your email to get the full report. If you'd like a proposal afterwards, we send one within 48 hours. No pressure.",
   },
   {
     question: "Is the audit relevant to my specific industry?",
@@ -71,19 +71,25 @@ export default function AuditPage() {
       {/* Hero */}
       <AnimatedSection>
         <div className="max-w-2xl mx-auto text-center mb-10 sm:mb-12">
-          <span className="text-xs font-semibold tracking-widest uppercase text-blue-600 mb-4 block">
-            Free, No Obligation
+          <span
+            className="text-xs font-semibold tracking-widest uppercase mb-4 block"
+            style={{ color: "var(--color-muted)" }}
+          >
+            Free · No obligation
           </span>
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-slate-900 leading-tight tracking-tight mb-5">
-            Your Free AI Readiness Audit
+          <h1
+            className="text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em] leading-tight mb-5"
+            style={{ color: "var(--color-heading)" }}
+          >
+            Your free AI readiness audit
           </h1>
-          <p className="text-lg text-slate-600 leading-relaxed">
+          <p className="text-lg text-[var(--color-body)] leading-relaxed">
             Get instant AI analysis of your business in 10&nbsp;seconds.
             No email required.
           </p>
-          <p className="text-slate-600 text-sm mt-6">
+          <p className="text-[var(--color-body)] text-sm mt-6">
             We helped E&apos;Manuel Bakery save 50+ minutes every day and built QuantumFM Media a 12-page professional website.{" "}
-            <span className="text-blue-600">Let&apos;s find your wins.</span>
+            <span className="text-[var(--color-primary)]">Let&apos;s find your wins.</span>
           </p>
         </div>
       </AnimatedSection>
@@ -98,14 +104,14 @@ export default function AuditPage() {
             {HOW_IT_WORKS.map(({ step, label }, i) => (
               <li key={step} className="flex items-center gap-3 sm:gap-0">
                 <div className="flex items-center gap-3">
-                  <div className="flex items-center justify-center w-7 h-7 rounded-full bg-blue-600/15 border border-blue-600/30 shrink-0">
-                    <span className="text-xs font-bold text-blue-600">{step}</span>
+                  <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[var(--color-primary)]/15 border border-[var(--color-primary)]/30 shrink-0">
+                    <span className="text-xs font-bold text-[var(--color-primary)]">{step}</span>
                   </div>
-                  <span className="text-sm text-slate-600 font-medium">{label}</span>
+                  <span className="text-sm text-[var(--color-body)] font-medium">{label}</span>
                 </div>
                 {i < HOW_IT_WORKS.length - 1 && (
                   <span
-                    className="hidden sm:inline text-slate-600 mx-4 select-none"
+                    className="hidden sm:inline text-[var(--color-body)] mx-4 select-none"
                     aria-hidden="true"
                   >
                     →
@@ -121,12 +127,12 @@ export default function AuditPage() {
       <AnimatedSection delay={0.2}>
         <div className="max-w-2xl mx-auto">
           <InstantAudit />
-          <p className="text-center text-xs text-slate-400 mt-4">
+          <p className="text-center text-xs text-[var(--color-muted)] mt-4">
             Free — no obligation
           </p>
-          <p className="text-center text-xs text-slate-400 mt-2">
+          <p className="text-center text-xs text-[var(--color-muted)] mt-2">
             Backed by our{" "}
-            <span className="text-emerald-600 font-medium">
+            <span className="text-[var(--color-success)] font-medium">
               90-Day Results Guarantee
             </span>{" "}
             — if you don&apos;t see results, we refund your setup fee.

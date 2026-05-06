@@ -127,17 +127,17 @@ function ResultCard({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay, ease: "easeOut" }}
-      className="rounded-xl border border-slate-200 bg-slate-50/70 p-6 text-center"
+      className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-alt)]/70 p-6 text-center"
     >
-      <div className="mb-3 flex items-center justify-center text-blue-600">
+      <div className="mb-3 flex items-center justify-center text-[var(--color-primary)]">
         {icon}
       </div>
-      <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">
+      <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-muted)]">
         {label}
       </p>
-      <p className="mt-1 text-3xl font-bold text-slate-900">{value}</p>
+      <p className="mt-1 text-3xl font-bold text-[var(--color-heading)]">{value}</p>
       {subtitle && (
-        <p className="mt-1 text-sm text-slate-600">{subtitle}</p>
+        <p className="mt-1 text-sm text-[var(--color-body)]">{subtitle}</p>
       )}
     </motion.div>
   );
@@ -188,7 +188,7 @@ export default function AIROICalculatorPage() {
 
   // Select styling helper
   const selectClasses =
-    "w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600 transition-colors";
+    "w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-alt)] px-4 py-3 text-sm text-[var(--color-heading)] placeholder:text-[var(--color-muted)] focus:border-[var(--color-primary)] focus:outline-none focus:ring-1 focus:ring-[var(--color-primary)] transition-colors";
 
   return (
     <>
@@ -202,13 +202,13 @@ export default function AIROICalculatorPage() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <div className="mx-auto max-w-2xl text-center mb-12">
-            <span className="text-xs font-semibold tracking-widest uppercase text-blue-600 mb-4 block">
+            <span className="text-xs font-semibold tracking-widest uppercase text-[var(--color-primary)] mb-4 block">
               Free Tool
             </span>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-slate-900 leading-tight tracking-tight mb-5">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-[var(--color-heading)] leading-tight tracking-tight mb-5">
               AI ROI Calculator
             </h1>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-lg text-[var(--color-body)] leading-relaxed">
               Estimate how much time and money your business could save with
               AI&nbsp;automation — in under 60&nbsp;seconds.
             </p>
@@ -223,13 +223,13 @@ export default function AIROICalculatorPage() {
         >
           <form
             onSubmit={handleSubmit}
-            className="mx-auto max-w-xl rounded-2xl border border-slate-200 bg-slate-50/60 p-6 sm:p-8 space-y-6"
+            className="mx-auto max-w-xl rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-alt)]/60 p-6 sm:p-8 space-y-6"
           >
             {/* Industry */}
             <div>
               <label
                 htmlFor="industry"
-                className="mb-2 block text-sm font-medium text-slate-500"
+                className="mb-2 block text-sm font-medium text-[var(--color-muted)]"
               >
                 Industry
               </label>
@@ -256,7 +256,7 @@ export default function AIROICalculatorPage() {
 
             {/* Team size */}
             <div>
-              <label className="mb-2 block text-sm font-medium text-slate-500">
+              <label className="mb-2 block text-sm font-medium text-[var(--color-muted)]">
                 Team size
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -270,8 +270,8 @@ export default function AIROICalculatorPage() {
                     }}
                     className={`rounded-lg border px-4 py-2.5 text-sm font-medium transition-all duration-200 ${
                       teamSize === size
-                        ? "border-blue-600 bg-blue-600/15 text-blue-600"
-                        : "border-slate-200 bg-slate-50 text-slate-600 hover:border-slate-400 hover:text-slate-900"
+                        ? "border-[var(--color-primary)] bg-[var(--color-primary)]/15 text-[var(--color-primary)]"
+                        : "border-[var(--color-border)] bg-[var(--color-bg-alt)] text-[var(--color-body)] hover:border-[var(--color-border-strong)] hover:text-[var(--color-heading)]"
                     }`}
                   >
                     {size}
@@ -284,10 +284,10 @@ export default function AIROICalculatorPage() {
             <div>
               <label
                 htmlFor="admin-hours"
-                className="mb-2 block text-sm font-medium text-slate-500"
+                className="mb-2 block text-sm font-medium text-[var(--color-muted)]"
               >
                 Hours per week on admin / manual tasks:{" "}
-                <span className="text-blue-600 font-bold">{adminHours}h</span>
+                <span className="text-[var(--color-primary)] font-bold">{adminHours}h</span>
               </label>
               <input
                 id="admin-hours"
@@ -302,7 +302,7 @@ export default function AIROICalculatorPage() {
                 }}
                 className="w-full accent-blue-500"
               />
-              <div className="mt-1 flex justify-between text-xs text-slate-400">
+              <div className="mt-1 flex justify-between text-xs text-[var(--color-muted)]">
                 <span>5h</span>
                 <span>40h</span>
               </div>
@@ -312,10 +312,10 @@ export default function AIROICalculatorPage() {
             <div>
               <label
                 htmlFor="revenue"
-                className="mb-2 block text-sm font-medium text-slate-500"
+                className="mb-2 block text-sm font-medium text-[var(--color-muted)]"
               >
                 Current monthly revenue{" "}
-                <span className="text-slate-400">(optional)</span>
+                <span className="text-[var(--color-muted)]">(optional)</span>
               </label>
               <select
                 id="revenue"
@@ -336,7 +336,7 @@ export default function AIROICalculatorPage() {
             <button
               type="submit"
               disabled={!industry || !teamSize}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-blue-500/20 transition-all duration-200 hover:bg-blue-700 hover:shadow-blue-500/30 disabled:opacity-40 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[var(--color-primary)] px-6 py-3 text-base font-semibold text-[var(--color-bg)] shadow-lg shadow-[var(--color-primary)]/20 transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-[var(--color-primary)]/30 disabled:opacity-40 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
             >
               <Calculator size={18} aria-hidden="true" />
               Calculate My ROI
@@ -356,7 +356,7 @@ export default function AIROICalculatorPage() {
               className="overflow-hidden"
             >
               <div className="mx-auto mt-10 max-w-3xl">
-                <h2 className="mb-6 text-center text-2xl font-bold text-slate-900">
+                <h2 className="mb-6 text-center text-2xl font-bold text-[var(--color-heading)]">
                   Your Estimated AI Savings
                 </h2>
 
@@ -395,7 +395,7 @@ export default function AIROICalculatorPage() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.6 }}
-                  className="mt-6 text-center text-sm text-slate-400"
+                  className="mt-6 text-center text-sm text-[var(--color-muted)]"
                 >
                   Based on a £{SETUP_FEE} setup fee + £{MONTHLY_FEE}/month retainer.
                   Actual savings may vary.
@@ -411,7 +411,7 @@ export default function AIROICalculatorPage() {
                   <button
                     type="button"
                     onClick={handleReset}
-                    className="text-sm text-blue-600 underline underline-offset-4 hover:text-blue-600 transition-colors"
+                    className="text-sm text-[var(--color-primary)] underline underline-offset-4 hover:text-[var(--color-primary)] transition-colors"
                   >
                     Adjust your inputs
                   </button>
@@ -428,17 +428,17 @@ export default function AIROICalculatorPage() {
           transition={{ duration: 0.6, delay: showResults ? 0.8 : 0.2, ease: "easeOut" }}
           className="mx-auto mt-16 max-w-xl text-center"
         >
-          <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-8 sm:p-10">
-            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
+          <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-alt)]/60 p-8 sm:p-10">
+            <h2 className="text-xl sm:text-2xl font-bold text-[var(--color-heading)] mb-3">
               Ready to see exactly where AI fits your business?
             </h2>
-            <p className="text-sm text-slate-600 mb-6 leading-relaxed">
+            <p className="text-sm text-[var(--color-body)] mb-6 leading-relaxed">
               Get a personalised AI Readiness Audit — free, no obligation. We
               will analyse your processes and show you the quickest wins.
             </p>
             <Link
               href="/audit"
-              className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-blue-500/20 transition-all duration-200 hover:bg-blue-700 hover:shadow-blue-500/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white group"
+              className="inline-flex items-center gap-2 rounded-lg bg-[var(--color-primary)] px-6 py-3 text-base font-semibold text-[var(--color-bg)] shadow-lg shadow-[var(--color-primary)]/20 transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:shadow-[var(--color-primary)]/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-white group"
             >
               Get Your Free AI Readiness Audit
               <ArrowRight

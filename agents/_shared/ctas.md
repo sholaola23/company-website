@@ -34,16 +34,21 @@ workcrew.io
 ```
 
 ## Email Signature (FULL — for longer template emails)
+
+**This sig is required for GAM-sent agent emails** because GAM does not auto-attach the Gmail HTML signature (only Gmail web does). Agents sending via API must include this block in the body.
+
 ```
 Best,
-Olushola Oladipupo
-WorkCrew Ltd
-workcrew.io
-07469 347654
-hello@workcrew.io
+Olushola
+
+Founder, WorkCrew
+hello@workcrew.io · +44 7469 347 654 · workcrew.io
+Book a call: cal.com/workcrew
 
 If this isn't relevant, just let me know and I won't follow up.
 ```
+
+Brand checklist: phone `+44 7469 347 654` (international format with spaces), role `Founder, WorkCrew` (never CEO, never Solutions Architect), Cal.com displayed as `cal.com/workcrew` shortened. Locked 4 May 2026 against [brand-foundation.md](/Users/olushola/AI%20Projects/brand-assets/brand-foundation.md).
 
 ## PS Line Bank (use the most relevant one)
 - "PS — we just saved a bakery 10+ hours a week on orders, payments and deliveries"

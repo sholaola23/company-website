@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { ANTHROPIC_API_URL, ANTHROPIC_VERSION, heliconeHeaders } from "@/lib/constants";
+import { requireGuard } from "@/lib/api-guard";
 
 // Allow up to 300s on Pro plan for full report generation
 export const maxDuration = 300;
@@ -311,6 +312,20 @@ async function notifyOwner(
 // ---------------------------------------------------------------------------
 
 export async function POST(req: NextRequest) {
+  // Guard FIRST — generate-report uses Sonnet 4.5 + Opus 4.6 advisor (most
+  // expensive endpoint). Lower per-IP limit than instant-audit because each
+  // call is a 300s, multi-thousand-token job.
+  const guard = requireGuard(req, {
+    endpoint: "generate-report",
+    perIpLimit: 3,
+  });
+  if (!guard.ok) {
+    return NextResponse.json(
+      { success: false, message: guard.message },
+      { status: guard.status }
+    );
+  }
+
   let body: Partial<GenerateReportBody>;
 
   try {

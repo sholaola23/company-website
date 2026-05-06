@@ -1,78 +1,83 @@
 @import "tailwindcss";
 
 /* ============================================================================
-   OLADIPUPO CONSULTING — DESIGN SYSTEM v2.0 (Light & Premium)
-   Inspired by: Fliweel.tech (clean, bright, generous whitespace)
-   Brand identity: Blue (trust/tech), Amber (warmth/energy), White (clarity)
-   Principles: Customer Obsession, Highest Standards, Frugality (less = more)
+   WORKCREW — OPERATOR DESIGN SYSTEM v1.0
+   Locked 4 May 2026 — see /brand-assets/brand-foundation.md
+   Brand idea: The Operator. Back-of-house, plainspoken. Aesop applied to ops.
+   Palette: Clay (primary), Bone (ground), Char (ink), Stone + Mist (neutrals).
+   Type: Inter only. Single family. Weight contrast does the work of two families.
    ============================================================================ */
 
 :root {
   /* ── Brand Colours ────────────────────────────────────────────────────── */
-  --color-primary: #2563EB;          /* Blue-600 — buttons, links, accents */
-  --color-primary-hover: #1D4ED8;    /* Blue-700 — button hover */
-  --color-primary-light: #EFF6FF;    /* Blue-50 — tinted section backgrounds */
-  --color-primary-tint: rgba(37, 99, 235, 0.05); /* Blue at 5% — subtle sections */
+  /* Note: --color-primary uses Ember (#A8341F, ~5.6:1 on Bone) instead of
+     pure Clay (#C2451E, 4.33:1) so links + body-sized accent text pass WCAG AA.
+     Pure Clay is reserved for large-text-only and decorative rules. */
+  --color-primary: #A8341F;          /* Ember — passes WCAG AA on Bone for normal text */
+  --color-primary-hover: #8C2A14;    /* Ember-deeper — hover/press */
+  --color-primary-light: #FAEFE8;    /* Bone-tinted-Clay — subtle section bg */
+  --color-primary-tint: rgba(168, 52, 31, 0.06); /* Ember at 6% — section ground */
 
-  --color-accent: #F59E0B;           /* Amber-500 — stat counters, highlights */
-  --color-accent-light: #FFFBEB;     /* Amber-50 — accent tint backgrounds */
+  --color-clay-display: #C2451E;     /* PURE CLAY — large-text-only (≥18pt or 14pt bold), card decoration, hairline rules. NEVER for body text. */
+  --color-accent: #E8896B;           /* Clay-tint-60 — DECORATION ONLY. Fails 2.19:1 — never as text */
+  --color-accent-light: #FAEFE8;
 
-  --color-success: #059669;          /* Emerald-600 — guarantee, positive */
-  --color-success-light: #ECFDF5;    /* Emerald-50 */
+  --color-success: #3F6B4E;          /* Forest — functional only, never decorative */
+  --color-success-light: #EEF3EF;
 
   /* ── Text ─────────────────────────────────────────────────────────────── */
-  --color-heading: #0F172A;          /* Slate-900 — headings (near-black) */
-  --color-body: #334155;             /* Slate-700 — body text */
-  --color-muted: #64748B;            /* Slate-500 — secondary text */
-  --color-subtle: #94A3B8;           /* Slate-400 — tertiary text */
+  --color-heading: #1C1814;          /* Char — warm-shifted ink */
+  --color-body: #2C2823;             /* Char-tint — body copy */
+  --color-muted: #6B6459;            /* Stone-darkened — passes AA at 12px on Bone */
+  --color-subtle: #B0A89E;           /* DECORATION ONLY — borders/hairlines. Fails 2.02:1 — NEVER as text */
 
   /* ── Surfaces ─────────────────────────────────────────────────────────── */
-  --color-bg: #FFFFFF;               /* Main background */
-  --color-bg-alt: #F8FAFC;           /* Slate-50 — alternating sections */
-  --color-surface: #F1F5F9;          /* Slate-100 — cards, inputs */
-  --color-border: #E2E8F0;           /* Slate-200 — borders */
-  --color-border-strong: #CBD5E1;    /* Slate-300 — emphasized borders */
+  --color-bg: #F4EDE0;               /* Bone — main ground */
+  --color-bg-alt: #EDE5D5;           /* Bone-shade — alternating sections */
+  --color-surface: #E8DFCD;          /* Bone-deeper — cards, inputs */
+  --color-border: #D8D2C5;           /* Mist — borders */
+  --color-border-strong: #B0A89E;    /* Stone-tint — emphasized borders */
 
-  /* ── Dark surfaces (footer, dark sections) ────────────────────────────── */
-  --color-dark: #0F172A;             /* Slate-900 */
-  --color-dark-surface: #1E293B;     /* Slate-800 */
-  --color-dark-border: #334155;      /* Slate-700 */
-  --color-dark-text: #CBD5E1;        /* Slate-300 */
-  --color-dark-muted: #64748B;       /* Slate-500 */
+  /* ── Dark surfaces (footer, dark CTA sections) ────────────────────────── */
+  --color-dark: #1C1814;             /* Char — dark ground */
+  --color-dark-surface: #2C2823;     /* Char-tint — surface on Char */
+  --color-dark-border: #3F3933;      /* Char-light border */
+  --color-dark-text: #D8D2C5;        /* Mist — body on dark */
+  --color-dark-muted: #8B8278;       /* Stone — muted on dark */
 
-  /* ── Shadows ──────────────────────────────────────────────────────────── */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
-  --shadow-xl: 0 20px 50px -12px rgba(0, 0, 0, 0.12);
-  --shadow-button: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
-  --shadow-card-hover: 0 8px 30px -4px rgba(0, 0, 0, 0.1);
-  --shadow-active: 0 4px 60px 0 rgba(0, 0, 0, 0.08);
+  /* ── Shadows — Aesop discipline: barely-there ─────────────────────────── */
+  --shadow-sm: 0 1px 1px 0 rgba(28, 24, 20, 0.04);
+  --shadow-md: 0 2px 4px -1px rgba(28, 24, 20, 0.05), 0 1px 2px -1px rgba(28, 24, 20, 0.03);
+  --shadow-lg: 0 6px 16px -4px rgba(28, 24, 20, 0.06), 0 2px 4px -2px rgba(28, 24, 20, 0.03);
+  --shadow-xl: 0 12px 32px -8px rgba(28, 24, 20, 0.08);
+  --shadow-button: none;             /* Stripe-style: no button shadow */
+  --shadow-card-hover: 0 4px 16px -4px rgba(28, 24, 20, 0.06);
+  --shadow-active: 0 4px 40px 0 rgba(28, 24, 20, 0.05);
 
-  /* ── Radii ────────────────────────────────────────────────────────────── */
-  --radius-pill: 9999px;             /* Fully rounded pill buttons */
-  --radius-card: 1.5rem;              /* 24px — cards, FAQ items */
-  --radius-card-lg: 1.875rem;        /* 30px — large feature cards (Fliweel: 30px) */
-  --radius-sm: 0.5rem;               /* 8px — small elements */
-  --radius-md: 0.75rem;              /* 12px — inputs, small cards */
+  /* ── Radii — flatter than v2.0, no pill buttons ───────────────────────── */
+  --radius-pill: 4px;                /* Was 9999px — rectangular Stripe-style */
+  --radius-card: 0.5rem;             /* 8px — flat, restrained */
+  --radius-card-lg: 0.75rem;         /* 12px — large feature cards */
+  --radius-sm: 0.25rem;              /* 4px */
+  --radius-md: 0.375rem;             /* 6px */
 
   /* ── Spacing ──────────────────────────────────────────────────────────── */
-  --section-padding: 8rem;            /* 128px — generous section spacing (Fliweel: 130px) */
-  --section-padding-lg: 8.5rem;      /* 136px — hero-level spacing */
-  --card-padding: 2rem;              /* 32px — card internal padding */
-  --content-max: 72rem;              /* 1152px — content max width */
+  --section-padding: 8rem;
+  --section-padding-lg: 8.5rem;
+  --card-padding: 2rem;
+  --content-max: 72rem;
 
   /* ── Legacy bridge for Tailwind v4 ────────────────────────────────────── */
-  --background: #FFFFFF;
-  --foreground: #0F172A;
+  --background: #F4EDE0;             /* Bone */
+  --foreground: #1C1814;             /* Char */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
-  --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-dm-sans);
+  --font-mono: var(--font-inter);    /* Inter only — mono fallback dropped */
+  --font-heading: var(--font-inter); /* Single family — was DM Sans */
 }
 
 /* ── Base ───────────────────────────────────────────────────────────────── */
@@ -88,40 +93,33 @@ body {
   font-family: var(--font-inter), 'Inter', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
-/* ── Headings ──────────────────────────────────────────────────────────── */
+/* ── Headings — Inter only, weight contrast, tight tracking ────────────── */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
+  font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
   color: var(--color-heading);
   line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 600;
 }
 
-/* ── Focus ring — accessible, brand-consistent ─────────────────────────── */
+/* ── Focus ring — Clay on Bone ─────────────────────────────────────────── */
 
 *:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
-/* ── Scrollbar — clean light theme ─────────────────────────────────────── */
+/* ── Scrollbar — warm tonal ────────────────────────────────────────────── */
 
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--color-bg-alt);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--color-border-strong);
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-muted);
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg-alt); }
+::-webkit-scrollbar-thumb { background: var(--color-border-strong); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-muted); }
 
 /* ── Selection ─────────────────────────────────────────────────────────── */
 
@@ -130,7 +128,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-heading);
 }
 
-/* ── Utility classes for the new design system ─────────────────────────── */
+/* ── Utility classes ───────────────────────────────────────────────────── */
 
 .section-padding {
   padding-top: var(--section-padding);
@@ -142,52 +140,95 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: var(--section-padding-lg);
 }
 
-/* Pill button base */
+/* Button base — Stripe/Aesop: rectangular, no shadow, colour-invert hover */
 .btn-pill {
   border-radius: var(--radius-pill);
   font-weight: 600;
-  transition: all 0.2s ease-out;
+  transition: background-color 0.18s ease-out, color 0.18s ease-out, border-color 0.18s ease-out;
   box-shadow: var(--shadow-button);
 }
 .btn-pill:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+  /* No translate-Y. No shadow lift. Just colour. */
+  box-shadow: var(--shadow-button);
 }
 
-/* Card hover effect */
+/* Card hover — restrained */
 .card-hover {
-  transition: all 0.3s ease;
+  transition: box-shadow 0.18s ease, border-color 0.18s ease;
 }
 .card-hover:hover {
-  transform: translateY(-2px);
   box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-border-strong);
 }
 
-/* Section heading typography */
+/* Section heading typography — Inter SemiBold, tight tracking */
 .heading-display {
-  font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.04em;
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.03em;
   color: var(--color-heading);
 }
 
 .heading-section {
-  font-family: var(--font-dm-sans), 'DM Sans', sans-serif;
+  font-family: var(--font-inter), 'Inter', sans-serif;
   font-weight: 600;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.025em;
   color: var(--color-heading);
 }
 
-/* Eyebrow label */
+/* Eyebrow label — Stone, letter-spaced, uppercase */
 .eyebrow {
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-primary);
+  letter-spacing: 0.12em;
+  color: var(--color-muted);
 }
 
-/* Print styles — hide chrome when printing (e.g. blueprint PDF download) */
+/* Clay rule — small accent line, used at section dividers */
+.clay-rule {
+  display: block;
+  width: 1.5rem;
+  height: 2px;
+  background: var(--color-primary);
+}
+
+/* ── Category card hover (homepage WhatWeBuild) ───────────────────────
+   Bullet-proof hover state. Tailwind v4 arbitrary values inside
+   group-hover: variants were dropping silently in production CSS,
+   leaving the title invisible on dark hover. Direct selectors fix that. */
+.category-card:hover {
+  background: var(--color-dark);
+}
+.category-card:hover .category-card-title {
+  color: var(--color-bg);
+}
+.category-card:hover .category-card-desc {
+  color: var(--color-dark-text);
+}
+.category-card:hover .category-card-icon-wrap {
+  background: rgba(244, 237, 224, 0.08);
+}
+.category-card:hover .category-card-badge {
+  background: rgba(244, 237, 224, 0.10);
+  border-color: rgba(244, 237, 224, 0.20);
+  color: var(--color-bg);
+}
+.category-card:hover .category-card-link {
+  color: var(--color-bg);
+}
+
+/* ── Reduced motion — WCAG 2.2 SC 2.3.3 ──────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print styles */
 @media print {
   header, footer, nav, [data-chat-widget], iframe { display: none !important; }
   body { background: white !important; }

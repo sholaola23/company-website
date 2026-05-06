@@ -42,7 +42,7 @@ export default function BlogPost() {
         <div className="max-w-3xl mx-auto">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 text-sm mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-[var(--color-body)] hover:text-[var(--color-heading)] text-sm mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             All Posts
@@ -52,7 +52,7 @@ export default function BlogPost() {
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full"
+                className="text-xs bg-[var(--color-surface)] text-[var(--color-body)] px-2 py-0.5 rounded-full"
               >
                 {tag}
               </span>
@@ -63,11 +63,11 @@ export default function BlogPost() {
             WhatsApp Automation for Business: The Complete Guide
           </h1>
 
-          <div className="flex items-center gap-4 text-sm text-slate-400 mb-12">
+          <div className="flex items-center gap-4 text-sm text-[var(--color-muted)] mb-12">
             <span>19 March 2026</span>
-            <span className="text-slate-600">|</span>
+            <span className="text-[var(--color-body)]">|</span>
             <span>By Olushola Oladipupo</span>
-            <span className="text-slate-600">|</span>
+            <span className="text-[var(--color-body)]">|</span>
             <span className="flex items-center gap-1">
               <Clock className="w-3 h-3" />
               7 min read
@@ -75,7 +75,7 @@ export default function BlogPost() {
           </div>
 
           <div className="prose prose-slate max-w-none">
-            <p className="text-slate-500 leading-relaxed mb-4 text-lg">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4 text-lg">
               There are 2 billion people on WhatsApp. Your customers are
               already there, messaging friends, family, and &mdash;
               increasingly &mdash; businesses. If you&apos;re not using
@@ -83,7 +83,7 @@ export default function BlogPost() {
               channel they prefer most.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               But replying to every WhatsApp message manually is
               unsustainable. That&apos;s where WhatsApp automation comes in.
               Here&apos;s everything you need to know.
@@ -93,13 +93,13 @@ export default function BlogPost() {
               What Is WhatsApp Automation?
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              WhatsApp automation means using AI-powered tools to
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              WhatsApp automation means using AI tools to
               automatically respond to customer messages, take orders, book
               appointments, and send follow-ups &mdash; all within WhatsApp.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               It&apos;s not a robotic, frustrating phone menu. Modern
               WhatsApp bots use AI to understand natural language. A customer
               can type &ldquo;I need a cleaning next Tuesday morning&rdquo;
@@ -107,7 +107,7 @@ export default function BlogPost() {
               books it.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               When the bot can&apos;t handle something, it smoothly hands off
               to a human. The customer never gets stuck in a loop.
             </p>
@@ -117,26 +117,26 @@ export default function BlogPost() {
             </h2>
 
             <div className="space-y-6 mb-8">
-              <div className="bg-slate-50 border border-slate-200 rounded-lg p-5">
-                <h3 className="text-lg font-semibold mb-2 text-slate-900">
+              <div className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-lg p-5">
+                <h3 className="text-lg font-semibold mb-2 text-[var(--color-heading)]">
                   1. Instant FAQ Responses
                 </h3>
-                <p className="text-slate-600 text-sm mb-2">
+                <p className="text-[var(--color-body)] text-sm mb-2">
                   &ldquo;What are your prices?&rdquo; &ldquo;Where are you
                   located?&rdquo; &ldquo;Are you open on Sundays?&rdquo;
                 </p>
-                <p className="text-slate-600 text-sm">
+                <p className="text-[var(--color-body)] text-sm">
                   These questions make up 60&ndash;70% of all customer
                   messages. A WhatsApp bot answers them instantly, 24 hours a
                   day. No waiting. No missed messages.
                 </p>
               </div>
 
-              <div className="bg-slate-50 border border-slate-200 rounded-lg p-5">
-                <h3 className="text-lg font-semibold mb-2 text-slate-900">
+              <div className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-lg p-5">
+                <h3 className="text-lg font-semibold mb-2 text-[var(--color-heading)]">
                   2. Order Taking
                 </h3>
-                <p className="text-slate-600 text-sm">
+                <p className="text-[var(--color-body)] text-sm">
                   Restaurants, bakeries, and food businesses can take orders
                   directly through WhatsApp. Customers browse a menu, select
                   items, confirm their order, and pay &mdash; all in the
@@ -145,11 +145,11 @@ export default function BlogPost() {
                 </p>
               </div>
 
-              <div className="bg-slate-50 border border-slate-200 rounded-lg p-5">
-                <h3 className="text-lg font-semibold mb-2 text-slate-900">
+              <div className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-lg p-5">
+                <h3 className="text-lg font-semibold mb-2 text-[var(--color-heading)]">
                   3. Appointment Booking
                 </h3>
-                <p className="text-slate-600 text-sm">
+                <p className="text-[var(--color-body)] text-sm">
                   Salons, clinics, and service businesses can let customers
                   book appointments through WhatsApp. The bot checks your
                   real-time calendar, offers available slots, and confirms
@@ -157,11 +157,11 @@ export default function BlogPost() {
                 </p>
               </div>
 
-              <div className="bg-slate-50 border border-slate-200 rounded-lg p-5">
-                <h3 className="text-lg font-semibold mb-2 text-slate-900">
+              <div className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-lg p-5">
+                <h3 className="text-lg font-semibold mb-2 text-[var(--color-heading)]">
                   4. Booking Confirmations and Reminders
                 </h3>
-                <p className="text-slate-600 text-sm">
+                <p className="text-[var(--color-body)] text-sm">
                   After any booking or order, the system sends automatic
                   confirmations. Then 24 hours before, a reminder. This
                   reduces no-shows by up to 60% and keeps customers informed
@@ -169,11 +169,11 @@ export default function BlogPost() {
                 </p>
               </div>
 
-              <div className="bg-slate-50 border border-slate-200 rounded-lg p-5">
-                <h3 className="text-lg font-semibold mb-2 text-slate-900">
+              <div className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-lg p-5">
+                <h3 className="text-lg font-semibold mb-2 text-[var(--color-heading)]">
                   5. Post-Service Follow-Up
                 </h3>
-                <p className="text-slate-600 text-sm">
+                <p className="text-[var(--color-body)] text-sm">
                   After a job or appointment, the bot sends a thank-you
                   message and asks for a Google review. It can also offer
                   rebooking. This turns one-time customers into repeat clients
@@ -186,32 +186,32 @@ export default function BlogPost() {
               Why WhatsApp Beats Email and Phone
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               The numbers speak for themselves:
             </p>
 
             <ul className="mb-6 space-y-2">
-              <li className="text-slate-500 ml-6 list-disc">
-                WhatsApp messages have a <strong className="text-slate-900">98% open rate</strong>{" "}
+              <li className="text-[var(--color-muted)] ml-6 list-disc">
+                WhatsApp messages have a <strong className="text-[var(--color-heading)]">98% open rate</strong>{" "}
                 (email averages 20%)
               </li>
-              <li className="text-slate-500 ml-6 list-disc">
+              <li className="text-[var(--color-muted)] ml-6 list-disc">
                 Average response time on WhatsApp is{" "}
-                <strong className="text-slate-900">under 90 seconds</strong>{" "}
+                <strong className="text-[var(--color-heading)]">under 90 seconds</strong>{" "}
                 (email is 6+ hours)
               </li>
-              <li className="text-slate-500 ml-6 list-disc">
-                <strong className="text-slate-900">76% of consumers</strong>{" "}
+              <li className="text-[var(--color-muted)] ml-6 list-disc">
+                <strong className="text-[var(--color-heading)]">76% of consumers</strong>{" "}
                 prefer messaging a business over calling
               </li>
-              <li className="text-slate-500 ml-6 list-disc">
+              <li className="text-[var(--color-muted)] ml-6 list-disc">
                 WhatsApp conversations convert at{" "}
-                <strong className="text-slate-900">3&ndash;5x the rate</strong>{" "}
+                <strong className="text-[var(--color-heading)]">3&ndash;5x the rate</strong>{" "}
                 of email
               </li>
             </ul>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               Your customers don&apos;t want to call you and wait on hold.
               They don&apos;t want to send an email and hope for a reply
               tomorrow. They want to message you the same way they message
@@ -222,34 +222,34 @@ export default function BlogPost() {
               How It Works (Behind the Scenes)
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               You don&apos;t need to understand the technical details, but
               here&apos;s a simple overview:
             </p>
 
             <ul className="mb-6 space-y-2">
-              <li className="text-slate-500 ml-6 list-disc">
+              <li className="text-[var(--color-muted)] ml-6 list-disc">
                 Your business gets an official WhatsApp Business API account
                 (this is different from the regular WhatsApp Business app)
               </li>
-              <li className="text-slate-500 ml-6 list-disc">
+              <li className="text-[var(--color-muted)] ml-6 list-disc">
                 An AI bot is connected to your WhatsApp number that
                 understands natural language
               </li>
-              <li className="text-slate-500 ml-6 list-disc">
+              <li className="text-[var(--color-muted)] ml-6 list-disc">
                 The bot is trained on your specific business information
                 &mdash; your services, prices, hours, FAQs
               </li>
-              <li className="text-slate-500 ml-6 list-disc">
+              <li className="text-[var(--color-muted)] ml-6 list-disc">
                 It connects to your calendar, ordering system, or CRM so it
                 can actually do things, not just answer questions
               </li>
-              <li className="text-slate-500 ml-6 list-disc">
-                Complex or sensitive queries get passed to you seamlessly
+              <li className="text-[var(--color-muted)] ml-6 list-disc">
+                Complex or sensitive queries get passed to you cleanly
               </li>
             </ul>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               From the customer&apos;s perspective, they&apos;re just
               chatting on WhatsApp. They don&apos;t know (or care) that an AI
               is handling most of the conversation.
@@ -259,20 +259,20 @@ export default function BlogPost() {
               What Does It Cost?
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               A WhatsApp automation system for a small business typically
               costs &pound;500&ndash;1,500 to set up, plus &pound;50&ndash;150
               per month for the WhatsApp API, AI usage, and maintenance.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               Compare that to hiring a receptionist (&pound;20,000+/year) or
               a call handling service (&pound;200&ndash;500/month). WhatsApp
               automation is a fraction of the cost and works 24/7 without
               breaks, holidays, or sick days.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               Most businesses see the system pay for itself within the first
               month through recovered leads, fewer no-shows, and reduced
               admin time.
@@ -282,34 +282,34 @@ export default function BlogPost() {
               Is WhatsApp Automation Right for You?
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               WhatsApp automation works brilliantly for any business where
               customers currently contact you by phone, text, or social
               media. That includes:
             </p>
 
             <ul className="mb-6 space-y-2">
-              <li className="text-slate-500 ml-6 list-disc">
+              <li className="text-[var(--color-muted)] ml-6 list-disc">
                 Restaurants, cafes, and food businesses
               </li>
-              <li className="text-slate-500 ml-6 list-disc">
+              <li className="text-[var(--color-muted)] ml-6 list-disc">
                 Salons, barbers, and beauty services
               </li>
-              <li className="text-slate-500 ml-6 list-disc">
+              <li className="text-[var(--color-muted)] ml-6 list-disc">
                 Clinics, dentists, and healthcare providers
               </li>
-              <li className="text-slate-500 ml-6 list-disc">
+              <li className="text-[var(--color-muted)] ml-6 list-disc">
                 Tradespeople (plumbers, electricians, cleaners)
               </li>
-              <li className="text-slate-500 ml-6 list-disc">
+              <li className="text-[var(--color-muted)] ml-6 list-disc">
                 Coaches, consultants, and tutors
               </li>
-              <li className="text-slate-500 ml-6 list-disc">
+              <li className="text-[var(--color-muted)] ml-6 list-disc">
                 Any local service business with regular customer enquiries
               </li>
             </ul>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               If you&apos;re currently answering the same questions over and
               over, or missing messages because you&apos;re too busy working
               &mdash; WhatsApp automation will change your life.
@@ -317,26 +317,26 @@ export default function BlogPost() {
           </div>
 
           {/* Related Articles */}
-          <div className="mt-12 border border-slate-200 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-4 text-slate-900">Related Articles</h3>
+          <div className="mt-12 border border-[var(--color-border)] rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-4 text-[var(--color-heading)]">Related Articles</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/blog/ai-chatbot-small-business" className="text-blue-600 hover:text-blue-600 transition-colors">
+                <Link href="/blog/ai-chatbot-small-business" className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors">
                   AI Customer Service Chatbot for Small Businesses: WhatsApp, Website &amp; Beyond
                 </Link>
               </li>
               <li>
-                <Link href="/blog/ai-for-restaurants" className="text-blue-600 hover:text-blue-600 transition-colors">
+                <Link href="/blog/ai-for-restaurants" className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors">
                   AI for Restaurants: Automate Orders, Bookings, and Reviews
                 </Link>
               </li>
               <li>
-                <Link href="/blog/ai-for-cleaning-companies" className="text-blue-600 hover:text-blue-600 transition-colors">
+                <Link href="/blog/ai-for-cleaning-companies" className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors">
                   AI for Cleaning Companies: Win More Contracts While Spending Less on Admin
                 </Link>
               </li>
               <li>
-                <Link href="/services/whatsapp-bot" className="text-slate-500 hover:text-slate-900 transition-colors">
+                <Link href="/services/whatsapp-bot" className="text-[var(--color-muted)] hover:text-[var(--color-heading)] transition-colors">
                   View our WhatsApp Customer Bot service &rarr;
                 </Link>
               </li>
@@ -344,11 +344,11 @@ export default function BlogPost() {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-16 bg-blue-50 border border-blue-200 rounded-xl p-8 text-center">
+          <div className="mt-16 bg-[var(--color-primary-light)] border border-[var(--color-primary-light)] rounded-xl p-8 text-center">
             <h3 className="text-xl font-semibold mb-2">
               Want WhatsApp Working for Your Business?
             </h3>
-            <p className="text-slate-600 mb-6 max-w-lg mx-auto">
+            <p className="text-[var(--color-body)] mb-6 max-w-lg mx-auto">
               Take our free AI Readiness Audit and we&apos;ll show you
               exactly how WhatsApp automation would work for your specific
               business &mdash; including what it would cost and what
@@ -356,12 +356,12 @@ export default function BlogPost() {
             </p>
             <Link
               href="/audit"
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-[var(--color-bg)] px-6 py-3 rounded-lg font-medium transition-colors"
             >
               Get Your Free AI Readiness Audit
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <p className="text-slate-400 text-sm mt-3">
+            <p className="text-[var(--color-muted)] text-sm mt-3">
               Takes 2 minutes. No obligation. See your WhatsApp potential.
             </p>
           </div>

@@ -52,13 +52,13 @@ function renderBlock(block: Record<string, unknown>) {
       if (t.annotations?.italic) el = <em key={i}>{el}</em>;
       if (t.annotations?.code)
         el = (
-          <code key={i} className="bg-slate-100 px-1.5 py-0.5 rounded text-sm">
+          <code key={i} className="bg-[var(--color-surface)] px-1.5 py-0.5 rounded text-sm">
             {el}
           </code>
         );
       if (t.href)
         el = (
-          <a key={i} href={t.href} className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
+          <a key={i} href={t.href} className="text-[var(--color-primary)] hover:underline" target="_blank" rel="noopener noreferrer">
             {el}
           </a>
         );
@@ -68,7 +68,7 @@ function renderBlock(block: Record<string, unknown>) {
   switch (type) {
     case "paragraph":
       return (
-        <p className="text-slate-500 leading-relaxed mb-4">
+        <p className="text-[var(--color-muted)] leading-relaxed mb-4">
           {renderRichText(richText)}
         </p>
       );
@@ -92,24 +92,24 @@ function renderBlock(block: Record<string, unknown>) {
       );
     case "bulleted_list_item":
       return (
-        <li className="text-slate-500 ml-6 list-disc mb-1">
+        <li className="text-[var(--color-muted)] ml-6 list-disc mb-1">
           {renderRichText(richText)}
         </li>
       );
     case "numbered_list_item":
       return (
-        <li className="text-slate-500 ml-6 list-decimal mb-1">
+        <li className="text-[var(--color-muted)] ml-6 list-decimal mb-1">
           {renderRichText(richText)}
         </li>
       );
     case "quote":
       return (
-        <blockquote className="border-l-4 border-blue-600 pl-4 italic text-slate-600 my-4">
+        <blockquote className="border-l-4 border-[var(--color-primary)] pl-4 italic text-[var(--color-body)] my-4">
           {renderRichText(richText)}
         </blockquote>
       );
     case "divider":
-      return <hr className="border-slate-200 my-8" />;
+      return <hr className="border-[var(--color-border)] my-8" />;
     default:
       return null;
   }
@@ -159,7 +159,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <div className="max-w-3xl mx-auto">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 text-sm mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-[var(--color-body)] hover:text-[var(--color-heading)] text-sm mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             All Posts
@@ -169,7 +169,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full"
+                className="text-xs bg-[var(--color-surface)] text-[var(--color-body)] px-2 py-0.5 rounded-full"
               >
                 {tag}
               </span>
@@ -178,9 +178,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
 
-          <p className="text-slate-400 text-sm mb-12">
+          <p className="text-[var(--color-muted)] text-sm mb-12">
             By{" "}
-            <Link href="/about" className="text-slate-500 hover:text-slate-900 transition-colors">
+            <Link href="/about" className="text-[var(--color-muted)] hover:text-[var(--color-heading)] transition-colors">
               Olushola Oladipupo
             </Link>
             {" · "}
@@ -193,17 +193,17 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             ))}
           </div>
 
-          <div className="mt-16 bg-slate-50 border border-slate-200 rounded-xl p-8 text-center">
+          <div className="mt-16 bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-xl p-8 text-center">
             <h3 className="text-xl font-semibold mb-2">
               Want to automate your business?
             </h3>
-            <p className="text-slate-600 mb-4">
+            <p className="text-[var(--color-body)] mb-4">
               Get a free AI Readiness Audit — we&apos;ll show you exactly
               where AI can save you time.
             </p>
             <Link
               href="/audit"
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-[var(--color-bg)] px-6 py-3 rounded-lg font-medium transition-colors"
             >
               Get Your Free Audit
             </Link>

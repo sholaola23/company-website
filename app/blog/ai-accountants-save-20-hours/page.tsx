@@ -65,7 +65,7 @@ export default function BlogPost() {
         <div className="max-w-3xl mx-auto">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 text-sm mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-[var(--color-body)] hover:text-[var(--color-heading)] text-sm mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             All Posts
@@ -75,7 +75,7 @@ export default function BlogPost() {
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full"
+                className="text-xs bg-[var(--color-surface)] text-[var(--color-body)] px-2 py-0.5 rounded-full"
               >
                 {tag}
               </span>
@@ -87,11 +87,11 @@ export default function BlogPost() {
             a Month
           </h1>
 
-          <div className="flex items-center gap-4 text-sm text-slate-400 mb-12">
+          <div className="flex items-center gap-4 text-sm text-[var(--color-muted)] mb-12">
             <span>24 March 2026</span>
-            <span className="text-slate-600">|</span>
+            <span className="text-[var(--color-body)]">|</span>
             <span>By Olushola Oladipupo</span>
-            <span className="text-slate-600">|</span>
+            <span className="text-[var(--color-body)]">|</span>
             <span className="flex items-center gap-1">
               <Clock className="w-3 h-3" />5 min read
             </span>
@@ -99,12 +99,12 @@ export default function BlogPost() {
 
           <div className="prose prose-slate max-w-none">
             {/* Hook */}
-            <p className="text-slate-500 leading-relaxed mb-4 text-lg">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4 text-lg">
               A client needs their P60. You sent the reminder two weeks ago.
               They acknowledged it. Nothing arrived.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               If that sounds familiar, you are spending part of your working week
               not doing accountancy &mdash; you are doing admin that could be
               automated.
@@ -115,14 +115,14 @@ export default function BlogPost() {
               Where the Hours Go
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               Running a small practice means constant context-switching. Client
               work, compliance deadlines, new business, and in between all of
               that: chasing documents, onboarding new clients, scheduling calls,
               answering the same questions via email.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               58% of small businesses using AI free up 20 or more hours per
               month. For accounting practices, that number is probably
               conservative. The admin load in a small practice is high &mdash;
@@ -139,7 +139,7 @@ export default function BlogPost() {
                 <h3 className="text-xl font-semibold mb-2">
                   1. Client Onboarding Sequences
                 </h3>
-                <p className="text-slate-500 leading-relaxed">
+                <p className="text-[var(--color-muted)] leading-relaxed">
                   New client signs &mdash; AI sends the welcome email, document
                   checklist, deadline reminders, and next-steps guide, in the
                   right order, at the right time. You set it up once. It runs
@@ -151,7 +151,7 @@ export default function BlogPost() {
                 <h3 className="text-xl font-semibold mb-2">
                   2. Document Chase Emails
                 </h3>
-                <p className="text-slate-500 leading-relaxed">
+                <p className="text-[var(--color-muted)] leading-relaxed">
                   &ldquo;Still waiting on your bank statements&rdquo; is a
                   sentence no accountant should have to write manually. Set it up
                   once: if the document has not arrived by day X, the system
@@ -163,7 +163,7 @@ export default function BlogPost() {
                 <h3 className="text-xl font-semibold mb-2">
                   3. Self-Assessment Deadline Reminders
                 </h3>
-                <p className="text-slate-500 leading-relaxed">
+                <p className="text-[var(--color-muted)] leading-relaxed">
                   Peak season means high volume and high stress &mdash; because
                   every client needs chasing at the same time. An automated
                   reminder sequence handles this entirely: reminders at the right
@@ -175,12 +175,12 @@ export default function BlogPost() {
                 <h3 className="text-xl font-semibold mb-2">
                   4. Appointment Booking for Review Calls
                 </h3>
-                <p className="text-slate-500 leading-relaxed">
+                <p className="text-[var(--color-muted)] leading-relaxed">
                   Email back-and-forth to find a meeting slot costs more time
                   than it looks like on any individual email. A{" "}
                   <Link
                     href="/blog/automate-appointment-booking"
-                    className="text-blue-600 hover:text-blue-600 transition-colors"
+                    className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
                   >
                     calendar booking link
                   </Link>{" "}
@@ -193,12 +193,12 @@ export default function BlogPost() {
                 <h3 className="text-xl font-semibold mb-2">
                   5. New Enquiry Response
                 </h3>
-                <p className="text-slate-500 leading-relaxed">
+                <p className="text-[var(--color-muted)] leading-relaxed">
                   Someone fills in your contact form at 8pm on a Sunday. Does
                   anything happen? An{" "}
                   <Link
                     href="/blog/ai-chatbot-small-business"
-                    className="text-blue-600 hover:text-blue-600 transition-colors"
+                    className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
                   >
                     AI assistant
                   </Link>{" "}
@@ -213,7 +213,7 @@ export default function BlogPost() {
               This Is Not About Replacing Expertise
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               None of these five tasks require an accountant. They require
               consistency, timing, and follow-through &mdash; which AI does
               reliably and without reminders. Automating them does not change
@@ -221,21 +221,21 @@ export default function BlogPost() {
               work that actually requires your expertise.
             </p>
 
-            <hr className="border-slate-200 my-10" />
+            <hr className="border-[var(--color-border)] my-10" />
 
             {/* Where to Start */}
             <h2 className="text-2xl font-bold mt-8 mb-4">Where to Start</h2>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               You do not have to automate all five at once. Start with the one
               costing you the most time this month.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               Not sure which that is? Take our free{" "}
               <Link
                 href="/audit"
-                className="text-blue-600 hover:text-blue-600 transition-colors"
+                className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
               >
                 AI readiness audit
               </Link>{" "}
@@ -245,15 +245,15 @@ export default function BlogPost() {
           </div>
 
           {/* Related Articles */}
-          <div className="mt-12 border border-slate-200 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-4 text-slate-900">
+          <div className="mt-12 border border-[var(--color-border)] rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-4 text-[var(--color-heading)]">
               Related Articles
             </h3>
             <ul className="space-y-3">
               <li>
                 <Link
                   href="/blog/ai-for-accountants"
-                  className="text-blue-600 hover:text-blue-600 transition-colors"
+                  className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
                 >
                   AI for Accountants: Automate Onboarding
                 </Link>
@@ -261,7 +261,7 @@ export default function BlogPost() {
               <li>
                 <Link
                   href="/blog/ai-for-solicitors"
-                  className="text-blue-600 hover:text-blue-600 transition-colors"
+                  className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
                 >
                   AI for Solicitors: Automate Intake &amp; Billing
                 </Link>
@@ -269,7 +269,7 @@ export default function BlogPost() {
               <li>
                 <Link
                   href="/blog/automate-appointment-booking"
-                  className="text-blue-600 hover:text-blue-600 transition-colors"
+                  className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
                 >
                   Automate Appointment Booking for Your Business
                 </Link>
@@ -277,7 +277,7 @@ export default function BlogPost() {
               <li>
                 <Link
                   href="/services/lead-intake"
-                  className="text-slate-500 hover:text-slate-900 transition-colors"
+                  className="text-[var(--color-muted)] hover:text-[var(--color-heading)] transition-colors"
                 >
                   View our AI Lead Intake &amp; Appointment Booking service
                   &rarr;
@@ -287,39 +287,39 @@ export default function BlogPost() {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-16 bg-blue-50 border border-blue-200 rounded-xl p-8 text-center">
+          <div className="mt-16 bg-[var(--color-primary-light)] border border-[var(--color-primary-light)] rounded-xl p-8 text-center">
             <h3 className="text-xl font-semibold mb-2">
               Want to Know Which Tasks AI Could Handle for Your Practice?
             </h3>
-            <p className="text-slate-600 mb-6 max-w-lg mx-auto">
+            <p className="text-[var(--color-body)] mb-6 max-w-lg mx-auto">
               Every accounting practice is different. Take our free AI Readiness
               Audit and we&apos;ll tell you exactly where automation would save
               you the most time &mdash; and what it would cost.
             </p>
             <Link
               href="/audit"
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-[var(--color-bg)] px-6 py-3 rounded-lg font-medium transition-colors"
             >
               Get Your Free AI Readiness Audit
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <p className="text-slate-400 text-sm mt-3">
+            <p className="text-[var(--color-muted)] text-sm mt-3">
               Takes 2 minutes. No obligation. Built for professional services.
             </p>
           </div>
 
           {/* Prev/Next Navigation */}
-          <div className="mt-12 flex justify-between items-center border-t border-slate-200 pt-8">
+          <div className="mt-12 flex justify-between items-center border-t border-[var(--color-border)] pt-8">
             <Link
               href="/blog/bakery-saved-15-hours-ai"
-              className="text-slate-600 hover:text-slate-900 transition-colors text-sm flex items-center gap-2"
+              className="text-[var(--color-body)] hover:text-[var(--color-heading)] transition-colors text-sm flex items-center gap-2"
             >
               <ArrowLeft className="w-4 h-4" />
               London Bakery Saved 15+ Hours
             </Link>
             <Link
               href="/blog/small-business-ai-adoption"
-              className="text-slate-600 hover:text-slate-900 transition-colors text-sm flex items-center gap-2"
+              className="text-[var(--color-body)] hover:text-[var(--color-heading)] transition-colors text-sm flex items-center gap-2"
             >
               Small Business AI Adoption
               <ArrowRight className="w-4 h-4" />

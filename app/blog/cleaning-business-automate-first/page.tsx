@@ -70,7 +70,7 @@ export default function BlogPost() {
         <div className="max-w-3xl mx-auto">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 text-sm mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-[var(--color-body)] hover:text-[var(--color-heading)] text-sm mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             All Posts
@@ -80,7 +80,7 @@ export default function BlogPost() {
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full"
+                className="text-xs bg-[var(--color-surface)] text-[var(--color-body)] px-2 py-0.5 rounded-full"
               >
                 {tag}
               </span>
@@ -91,11 +91,11 @@ export default function BlogPost() {
             AI for Cleaning Businesses: The 3 Tasks You Should Automate First
           </h1>
 
-          <div className="flex items-center gap-4 text-sm text-slate-400 mb-12">
+          <div className="flex items-center gap-4 text-sm text-[var(--color-muted)] mb-12">
             <span>24 March 2026</span>
-            <span className="text-slate-600">|</span>
+            <span className="text-[var(--color-body)]">|</span>
             <span>By Olushola Oladipupo</span>
-            <span className="text-slate-600">|</span>
+            <span className="text-[var(--color-body)]">|</span>
             <span className="flex items-center gap-1">
               <Clock className="w-3 h-3" />5 min read
             </span>
@@ -103,22 +103,22 @@ export default function BlogPost() {
 
           <div className="prose prose-slate max-w-none">
             {/* Hook */}
-            <p className="text-slate-500 leading-relaxed mb-4 text-lg">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4 text-lg">
               Someone needs a cleaner. They search online, find three businesses,
               and send enquiries to all three.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               The first to reply gets the job.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               If your reply comes the next morning &mdash; and a competitor
               responded at 10:47pm the night before &mdash; the job was never
               yours to lose. You never had it.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               This is the reality for cleaning businesses in 2026. Competition is
               no longer just about price or reviews. It is about speed. Here are
               the three tasks cleaning businesses should automate first &mdash;
@@ -130,22 +130,22 @@ export default function BlogPost() {
               Task 1: After-Hours Lead Capture
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               Most cleaning enquiries do not arrive during business hours. They
               arrive when someone looks around their home after a long day and
               decides to act. Evenings. Weekends. Bank holidays.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               If no one picks up those enquiries until Monday morning, they are
               already gone.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               An{" "}
               <Link
                 href="/blog/ai-chatbot-small-business"
-                className="text-blue-600 hover:text-blue-600 transition-colors"
+                className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
               >
                 AI assistant
               </Link>{" "}
@@ -161,17 +161,17 @@ export default function BlogPost() {
               Task 2: Booking Confirmations and Reminder Sequences
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               No-shows cost more than most cleaning business owners realise. A
               missed appointment means a wasted journey, a lost fee, and a gap in
               the schedule that is hard to fill last-minute.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               A simple{" "}
               <Link
                 href="/blog/automate-appointment-booking"
-                className="text-blue-600 hover:text-blue-600 transition-colors"
+                className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
               >
                 automated sequence
               </Link>{" "}
@@ -180,7 +180,7 @@ export default function BlogPost() {
               do not forget. No-shows drop. Your team&apos;s time is protected.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               Once set up, this runs without you. Running it manually costs you
               every week.
             </p>
@@ -190,17 +190,17 @@ export default function BlogPost() {
               Task 3: Quote Follow-Up
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               Someone requested a quote. You sent it. Two days have passed with
               no reply.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               Do you follow up? Most business owners either send a manual chaser
               (costs time) or let it go (costs the booking).
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               Automated follow-up removes this decision entirely. The system
               sends a polite nudge at 48 hours. If still no reply, another at 5
               days. You only step in when they respond. Everything before that
@@ -208,24 +208,24 @@ export default function BlogPost() {
               extra effort from you.
             </p>
 
-            <hr className="border-slate-200 my-10" />
+            <hr className="border-[var(--color-border)] my-10" />
 
             {/* Where to Start */}
             <h2 className="text-2xl font-bold mt-8 mb-4">
               Start With What Is Costing You Most Right Now
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               You do not need to automate all three at once. Start with the task
               losing you the most business this month. For most cleaning
               businesses, that is after-hours leads.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               Take our free{" "}
               <Link
                 href="/audit"
-                className="text-blue-600 hover:text-blue-600 transition-colors"
+                className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
               >
                 AI readiness audit
               </Link>{" "}
@@ -235,15 +235,15 @@ export default function BlogPost() {
           </div>
 
           {/* Related Articles */}
-          <div className="mt-12 border border-slate-200 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-4 text-slate-900">
+          <div className="mt-12 border border-[var(--color-border)] rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-4 text-[var(--color-heading)]">
               Related Articles
             </h3>
             <ul className="space-y-3">
               <li>
                 <Link
                   href="/blog/ai-for-cleaning-companies"
-                  className="text-blue-600 hover:text-blue-600 transition-colors"
+                  className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
                 >
                   AI for Cleaning Companies: Win More Contracts
                 </Link>
@@ -251,7 +251,7 @@ export default function BlogPost() {
               <li>
                 <Link
                   href="/blog/before-after-automated-lead-response"
-                  className="text-blue-600 hover:text-blue-600 transition-colors"
+                  className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
                 >
                   Before and After: Automating Lead Response
                 </Link>
@@ -259,7 +259,7 @@ export default function BlogPost() {
               <li>
                 <Link
                   href="/blog/ai-chatbot-small-business"
-                  className="text-blue-600 hover:text-blue-600 transition-colors"
+                  className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
                 >
                   AI Chatbots for Small Business: Complete Guide
                 </Link>
@@ -267,7 +267,7 @@ export default function BlogPost() {
               <li>
                 <Link
                   href="/services/lead-intake"
-                  className="text-slate-500 hover:text-slate-900 transition-colors"
+                  className="text-[var(--color-muted)] hover:text-[var(--color-heading)] transition-colors"
                 >
                   View our AI Lead Intake &amp; Appointment Booking service
                   &rarr;
@@ -277,39 +277,39 @@ export default function BlogPost() {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-16 bg-blue-50 border border-blue-200 rounded-xl p-8 text-center">
+          <div className="mt-16 bg-[var(--color-primary-light)] border border-[var(--color-primary-light)] rounded-xl p-8 text-center">
             <h3 className="text-xl font-semibold mb-2">
               Find Out What&apos;s Costing Your Cleaning Business Money
             </h3>
-            <p className="text-slate-600 mb-6 max-w-lg mx-auto">
+            <p className="text-[var(--color-body)] mb-6 max-w-lg mx-auto">
               Take our free AI Readiness Audit. In 2 minutes, you&apos;ll know
               exactly where automation would make the biggest impact &mdash; and
               what it would cost.
             </p>
             <Link
               href="/audit"
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-[var(--color-bg)] px-6 py-3 rounded-lg font-medium transition-colors"
             >
               Get Your Free AI Readiness Audit
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <p className="text-slate-400 text-sm mt-3">
+            <p className="text-[var(--color-muted)] text-sm mt-3">
               Takes 2 minutes. No obligation. 90-day results guarantee.
             </p>
           </div>
 
           {/* Prev/Next Navigation */}
-          <div className="mt-12 flex justify-between items-center border-t border-slate-200 pt-8">
+          <div className="mt-12 flex justify-between items-center border-t border-[var(--color-border)] pt-8">
             <Link
               href="/blog/before-after-automated-lead-response"
-              className="text-slate-600 hover:text-slate-900 transition-colors text-sm flex items-center gap-2"
+              className="text-[var(--color-body)] hover:text-[var(--color-heading)] transition-colors text-sm flex items-center gap-2"
             >
               <ArrowLeft className="w-4 h-4" />
               Automated Lead Response
             </Link>
             <Link
               href="/blog/voice-ai-small-business"
-              className="text-slate-600 hover:text-slate-900 transition-colors text-sm flex items-center gap-2"
+              className="text-[var(--color-body)] hover:text-[var(--color-heading)] transition-colors text-sm flex items-center gap-2"
             >
               Voice AI for Small Business
               <ArrowRight className="w-4 h-4" />

@@ -31,10 +31,10 @@ export const metadata: Metadata = {
 };
 
 const TIER_BADGE: Record<string, string> = {
-  Starter: "bg-slate-200 text-slate-900",
-  Growth: "bg-blue-600/20 text-blue-600 border border-blue-600/30",
-  Scale: "bg-amber-500/20 text-amber-600 border border-amber-500/30",
-  Premium: "bg-purple-500/20 text-purple-600 border border-purple-500/30",
+  Starter: "bg-[var(--color-border)] text-[var(--color-heading)]",
+  Growth: "bg-[var(--color-primary)]/20 text-[var(--color-primary)] border border-[var(--color-primary)]/30",
+  Scale: "bg-[var(--color-primary)]/20 text-[var(--color-primary)] border border-[var(--color-primary)]/30",
+  Premium: "bg-[var(--color-muted)]/20 text-[var(--color-muted)] border border-[var(--color-muted)]/30",
 };
 
 export default function CaseStudiesPage() {
@@ -59,21 +59,21 @@ export default function CaseStudiesPage() {
         {caseStudies.map((study, index) => (
           <AnimatedSection key={study.slug} delay={0.15 * (index + 1)}>
           <article
-            className="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden hover:border-slate-200 transition-colors duration-200"
+            className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-2xl overflow-hidden hover:border-[var(--color-border)] transition-colors duration-200"
           >
             {/* Hero stat bar */}
-            <div className="bg-gradient-to-r from-blue-50 to-blue-100 border-b border-slate-200 px-7 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div className="bg-gradient-to-r from-blue-50 to-blue-100 border-b border-[var(--color-border)] px-7 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div>
-                <p className="text-5xl font-bold text-slate-900 leading-none">
+                <p className="text-5xl font-bold text-[var(--color-heading)] leading-none">
                   {study.heroStat}
                 </p>
-                <p className="text-sm text-slate-600 mt-1.5">{study.heroLabel}</p>
+                <p className="text-sm text-[var(--color-body)] mt-1.5">{study.heroLabel}</p>
               </div>
               <div className="flex flex-wrap items-center gap-2">
                 <span
                   className={cn(
                     "text-xs font-semibold px-2.5 py-1 rounded-full capitalize",
-                    TIER_BADGE[study.tier] ?? "bg-slate-200 text-slate-900"
+                    TIER_BADGE[study.tier] ?? "bg-[var(--color-border)] text-[var(--color-heading)]"
                   )}
                 >
                   {study.tier}
@@ -84,10 +84,10 @@ export default function CaseStudiesPage() {
             {/* Card body */}
             <div className="px-7 py-6 flex flex-col gap-5">
               <div>
-                <h2 className="text-xl font-semibold text-slate-900 mb-2">
+                <h2 className="text-xl font-semibold text-[var(--color-heading)] mb-2">
                   {study.name}
                 </h2>
-                <div className="flex flex-wrap items-center gap-4 text-xs text-slate-400">
+                <div className="flex flex-wrap items-center gap-4 text-xs text-[var(--color-muted)]">
                   <span className="flex items-center gap-1.5">
                     <Tag size={12} aria-hidden="true" />
                     {study.industry}
@@ -99,7 +99,7 @@ export default function CaseStudiesPage() {
                 </div>
               </div>
 
-              <p className="text-sm text-slate-600 leading-relaxed line-clamp-3">
+              <p className="text-sm text-[var(--color-body)] leading-relaxed line-clamp-3">
                 {study.problem}
               </p>
 
@@ -107,17 +107,17 @@ export default function CaseStudiesPage() {
                 <div className="flex flex-wrap gap-5">
                   {study.results.slice(0, 3).map((r) => (
                     <div key={r.label}>
-                      <p className="text-base font-bold text-slate-900">
+                      <p className="text-base font-bold text-[var(--color-heading)]">
                         {r.value}
                       </p>
-                      <p className="text-xs text-slate-400">{r.label}</p>
+                      <p className="text-xs text-[var(--color-muted)]">{r.label}</p>
                     </div>
                   ))}
                 </div>
 
                 <Link
                   href={`/case-studies/${study.slug}`}
-                  className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:text-blue-600 transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded group shrink-0 ml-4"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] rounded group shrink-0 ml-4"
                   aria-label={`Read full case study for ${study.name}`}
                 >
                   Read full case study
@@ -137,7 +137,7 @@ export default function CaseStudiesPage() {
       {/* Bottom CTA */}
       <AnimatedSection delay={0.2}>
         <div className="mt-20 text-center">
-          <p className="text-slate-600 text-base mb-6">
+          <p className="text-[var(--color-body)] text-base mb-6">
             Want results like these for your business?
           </p>
           <CTAButton href="/audit" variant="primary" size="lg">

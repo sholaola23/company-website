@@ -27,57 +27,69 @@ import type { FAQItem } from "@/components/shared/FAQSection";
 // ---------------------------------------------------------------------------
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-white">
-      {/* Subtle gradient blobs for depth — very low opacity on white */}
-      <GradientBlob
-        className="w-[700px] h-[700px] bg-blue-600 -top-60 -left-40"
-        duration={10}
-      />
-      <GradientBlob
-        className="w-[500px] h-[500px] bg-amber-300 top-20 -right-40"
-        duration={12}
-        delay={2}
-      />
-
+    <section
+      className="relative overflow-hidden"
+      style={{ background: "var(--color-bg)" }}
+    >
       <div className="relative mx-auto max-w-6xl px-6 pb-28 pt-32 sm:px-8 lg:px-12">
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
           {/* Left: copy */}
           <div className="flex-1 text-center lg:text-left">
             <AnimatedSection delay={0}>
-              {/* Eyebrow pill */}
-              <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-semibold tracking-wide text-slate-600 shadow-sm">
-                <span
-                  className="h-1.5 w-1.5 rounded-full bg-blue-600"
-                  aria-hidden="true"
-                />
-                AI Automation · Websites · Training
+              {/* Eyebrow — flat text, small caps, no pill */}
+              <div
+                className="mb-8 text-xs font-semibold uppercase"
+                style={{
+                  color: "var(--color-muted)",
+                  letterSpacing: "0.14em",
+                }}
+              >
+                AI automation · Websites · Training
               </div>
 
               <RotatingHeadline />
 
-              <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl lg:mx-0">
-                AI automation, websites, and custom apps — built fast, built to last. 90-day results guarantee.
+              <p
+                className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed sm:text-xl lg:mx-0"
+                style={{ color: "var(--color-body)" }}
+              >
+                Inbox, bookings, reports, knowledge bases, customer support — whatever&apos;s draining your week. We figure it out on a discovery call, then build and run it. 7-day setup. 90-day results guarantee.
               </p>
 
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
+                {/* Single primary CTA — Stripe-style rectangle */}
                 <Link
-                  href="/blueprint"
-                  className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 text-base font-semibold text-white shadow-[0_1px_6px_-1px_rgba(37,99,235,0.4)] transition-all duration-200 hover:bg-slate-900 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 group"
+                  href="https://cal.com/workcrew/free-ai-strategy-call"
+                  className="inline-flex items-center gap-2 rounded-sm px-7 py-3.5 text-base font-semibold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 group"
+                  style={{
+                    background: "var(--color-primary)",
+                    color: "var(--color-bg)",
+                    outlineColor: "var(--color-primary)",
+                  }}
                 >
-                  Get Your Free AI Blueprint
+                  Book a 30-minute call
                   <ArrowRight
                     size={18}
                     className="transition-transform duration-200 group-hover:translate-x-0.5"
                     aria-hidden="true"
                   />
                 </Link>
-                <Link
-                  href="https://cal.com/workcrew/free-ai-strategy-call"
-                  className="inline-flex items-center gap-2 rounded-full border-2 border-slate-200 bg-white px-7 py-3.5 text-base font-semibold text-slate-700 shadow-sm transition-all duration-200 hover:border-slate-900 hover:bg-slate-900 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
-                >
-                  Schedule a Call
-                </Link>
               </div>
+
+              {/* Tertiary text link — consolation door */}
+              <p
+                className="mt-6 text-sm"
+                style={{ color: "var(--color-muted)" }}
+              >
+                Not ready?{" "}
+                <Link
+                  href="/blueprint"
+                  className="underline underline-offset-2 transition-opacity hover:opacity-70"
+                  style={{ color: "var(--color-primary)" }}
+                >
+                  Get the free AI blueprint
+                </Link>
+              </p>
             </AnimatedSection>
           </div>
 
@@ -95,28 +107,28 @@ function Hero() {
 // Social proof bar — impact numbers with amber accents
 // ---------------------------------------------------------------------------
 const stats = [
-  { numeric: 50, suffix: "+", label: "Minutes Saved Daily", sublabel: "at E'Manuel Bakery" },
-  { numeric: 9, suffix: "", label: "Workflows Deployed", sublabel: "and counting" },
-  { numeric: 2, suffix: "", label: "Projects Delivered", sublabel: "and growing" },
-  { numeric: 90, suffix: "", label: "Day Guarantee", sublabel: "results or refund" },
+  { numeric: 50, suffix: "+", label: "Minutes saved daily", sublabel: "E'Manuel Bakery, daily" },
+  { numeric: 9, suffix: "", label: "Workflows deployed", sublabel: "live for clients" },
+  { numeric: 2, suffix: "", label: "Projects delivered", sublabel: "shipped, running" },
+  { numeric: 90, suffix: "", label: "Day guarantee", sublabel: "results or money back" },
 ];
 
 function SocialProofBar() {
   return (
-    <div className="border-b border-t border-slate-100 bg-slate-50">
+    <div className="border-b border-t border-[var(--color-border)] bg-[var(--color-bg-alt)]">
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
-        <dl className="grid grid-cols-2 divide-x divide-slate-200 md:grid-cols-4">
+        <dl className="grid grid-cols-2 divide-x divide-[var(--color-border)] md:grid-cols-4">
           {stats.map((stat) => (
             <div
               key={stat.label}
               className="flex flex-col items-center justify-center py-8 px-4 text-center"
             >
-              <dt className="text-3xl font-bold text-blue-600 sm:text-4xl">
+              <dt className="text-3xl font-bold text-[var(--color-primary)] sm:text-4xl">
                 <AnimatedCounter target={stat.numeric} suffix={stat.suffix} />
               </dt>
-              <dd className="mt-1.5 text-sm text-slate-700 font-medium">{stat.label}</dd>
+              <dd className="mt-1.5 text-sm text-[var(--color-body)] font-medium">{stat.label}</dd>
               {"sublabel" in stat && stat.sublabel && (
-                <dd className="mt-0.5 text-xs text-slate-400">{stat.sublabel}</dd>
+                <dd className="mt-0.5 text-xs text-[var(--color-muted)]">{stat.sublabel}</dd>
               )}
             </div>
           ))}
@@ -135,43 +147,92 @@ const categories = [
     title: "AI Automation",
     href: "/services/lead-intake",
     description:
-      "Automate repetitive tasks. Lead capture, email responses, appointment booking, follow-ups — all running on autopilot.",
-    result: "Save hours of admin every week",
+      "Inbox, bookings, follow-ups, knowledge bases, customer support — whichever bit of your week we agree on. Built on n8n, hosted on Railway, alerts on Telegram.",
+    result: "E'Manuel saves 50 minutes a day",
   },
   {
     icon: Globe,
     title: "Websites & Web Apps",
     href: "/services/business-website",
     description:
-      "Professional websites and custom web apps that convert visitors into customers. Dashboards, booking portals, interactive tools — mobile-first and SEO-optimised.",
-    result: "Professional online presence",
+      "Sites and small tools that earn their place. Whatever shape it needs to be — mobile-first, fast, indexed.",
+    result: "Live in 7 days from kickoff",
   },
   {
     icon: GraduationCap,
     title: "AI Training",
     href: "/services/ai-workshop",
     description:
-      "Hands-on workshops that get your team using AI tools confidently. Tailored to your industry and skill level.",
-    result: "Teams productive with AI in one session",
+      "Workshops that get your team using AI the same week. Tailored to your work. We bring prompts that already earn their keep.",
+    result: "Left with one experiment to run by Friday",
   },
 ];
 
+// ---------------------------------------------------------------------------
+// Why this matters — the redirect-the-time framing (workshop slide 18)
+// ---------------------------------------------------------------------------
+function WhyThisMatters() {
+  return (
+    <section
+      className="py-24"
+      style={{ background: "var(--color-bg)" }}
+      aria-labelledby="why-this-matters-heading"
+    >
+      <div className="mx-auto max-w-3xl px-6 sm:px-8 lg:px-12">
+        <AnimatedSection>
+          <span className="eyebrow">Why this matters</span>
+          <h2
+            id="why-this-matters-heading"
+            className="heading-section mt-4 text-2xl sm:text-3xl lg:text-[40px]"
+            style={{ color: "var(--color-heading)", letterSpacing: "-0.02em", lineHeight: 1.15 }}
+          >
+            AI takes the admin off your plate. You take the work that{" "}
+            <span style={{ color: "var(--color-primary)" }}>actually makes money</span>.
+          </h2>
+          <p
+            className="mt-6 text-lg leading-relaxed"
+            style={{ color: "var(--color-body)" }}
+          >
+            We run the inbox, the bookings, the chasing, the weekly reports.
+            You run the customer calls, the new offers, the partnerships.
+          </p>
+          <p
+            className="mt-4 text-lg leading-relaxed"
+            style={{ color: "var(--color-body)" }}
+          >
+            Same hours in your week.{" "}
+            <span style={{ color: "var(--color-heading)", fontWeight: 600 }}>
+              Different bank balance at the end of the year.
+            </span>
+          </p>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+}
+
 function WhatWeBuild() {
   return (
-    <section className="bg-blue-600/[0.03] py-28" aria-labelledby="services-heading">
+    <section
+      className="py-28"
+      style={{ background: "var(--color-primary-tint)" }}
+      aria-labelledby="services-heading"
+    >
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
         <AnimatedSection>
           <div className="flex flex-col items-center gap-4 text-center">
-            <span className="eyebrow">What We Build</span>
+            <span className="eyebrow">What we ship</span>
             <h2
               id="services-heading"
               className="heading-section text-3xl sm:text-4xl lg:text-[56px]"
             >
-              Tools That Deliver.
+              Three areas. Shaped to your week.
             </h2>
-            <p className="max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
-              We help businesses save time, win more customers, and look
-              professional — delivered fast and built to last.
+            <p
+              className="max-w-2xl text-base leading-relaxed sm:text-lg"
+              style={{ color: "var(--color-body)" }}
+            >
+              Examples below. The actual build comes out of a discovery call — measured in hours saved and revenue moved, not features shipped.
             </p>
           </div>
         </AnimatedSection>
@@ -182,29 +243,29 @@ function WhatWeBuild() {
             const Icon = cat.icon;
             return (
               <AnimatedSection key={cat.title} delay={0.1 * (index + 1)}>
-                <div className="group flex h-full flex-col rounded-[30px] border-2 border-slate-900 bg-transparent p-8 transition-all duration-300 hover:bg-slate-900 hover:text-white cursor-pointer">
+                <div className="category-card group flex h-full flex-col rounded-[30px] border-2 border-[var(--color-dark)] bg-transparent p-8 transition-all duration-300 cursor-pointer">
                   {/* Icon */}
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 group-hover:bg-blue-700/20 transition-colors duration-300">
+                  <div className="category-card-icon-wrap flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--color-primary-light)] transition-colors duration-300">
                     <Icon
                       size={22}
-                      className="text-blue-600 group-hover:text-blue-600 transition-colors duration-300"
+                      className="text-[var(--color-primary)] transition-colors duration-300"
                       aria-hidden="true"
                     />
                   </div>
 
                   {/* Title */}
-                  <h3 className="mt-5 text-lg font-bold text-slate-900 group-hover:text-white transition-colors duration-300">
+                  <h3 className="category-card-title mt-5 text-lg font-bold text-[var(--color-heading)] transition-colors duration-300">
                     {cat.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600 group-hover:text-slate-300 transition-colors duration-300">
+                  <p className="category-card-desc mt-3 flex-1 text-sm leading-relaxed text-[var(--color-body)] transition-colors duration-300">
                     {cat.description}
                   </p>
 
                   {/* Result badge */}
                   <div className="mt-6">
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 group-hover:border-emerald-500/30 group-hover:bg-emerald-500/10 group-hover:text-emerald-600 transition-colors duration-300">
+                    <span className="category-card-badge inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border)] bg-[var(--color-success-light)] px-3 py-1 text-xs font-semibold text-[var(--color-success)] transition-colors duration-300">
                       {cat.result}
                     </span>
                   </div>
@@ -212,7 +273,7 @@ function WhatWeBuild() {
                   {/* Arrow link */}
                   <Link
                     href={cat.href}
-                    className="group/link mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 group-hover:text-blue-600 transition-colors duration-200"
+                    className="category-card-link group/link mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-primary)] transition-colors duration-200"
                   >
                     Learn more
                     <ArrowRight
@@ -238,7 +299,7 @@ function WhatWeBuild() {
 function CaseStudiesPreview() {
   return (
     <section
-      className="bg-white py-24"
+      className="bg-[var(--color-bg)] py-24"
       aria-labelledby="case-studies-heading"
     >
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
@@ -249,7 +310,7 @@ function CaseStudiesPreview() {
               id="case-studies-heading"
               className="heading-section text-2xl sm:text-3xl"
             >
-              Numbers That Speak for Themselves
+              What the numbers say
             </h2>
           </div>
         </AnimatedSection>
@@ -259,32 +320,32 @@ function CaseStudiesPreview() {
             <AnimatedSection key={study.slug} delay={0.1 * (index + 1)}>
               <Link
                 href={`/case-studies/${study.slug}`}
-                className="group flex h-full flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-blue-200 hover:shadow-lg card-hover"
+                className="group flex h-full flex-col justify-between rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-6 shadow-sm transition-all duration-300 hover:border-[var(--color-primary-light)] hover:shadow-lg card-hover"
               >
                 <div>
                   {/* Industry tag */}
-                  <span className="inline-block rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600">
+                  <span className="inline-block rounded-full border border-[var(--color-border)] bg-[var(--color-bg-alt)] px-3 py-1 text-xs font-medium text-[var(--color-body)]">
                     {study.industry}
                   </span>
 
                   {/* Hero stat */}
                   <div className="mt-4">
-                    <p className="text-3xl font-bold tracking-tight text-slate-900 lg:text-4xl">
+                    <p className="text-3xl font-bold tracking-tight text-[var(--color-heading)] lg:text-4xl">
                       {study.heroStat}
                     </p>
-                    <p className="mt-1 text-sm font-semibold text-blue-600">
+                    <p className="mt-1 text-sm font-semibold text-[var(--color-primary)]">
                       {study.heroLabel}
                     </p>
                   </div>
 
                   {/* Business name */}
-                  <h3 className="mt-4 text-base font-semibold text-slate-900">
+                  <h3 className="mt-4 text-base font-semibold text-[var(--color-heading)]">
                     {study.name}
                   </h3>
-                  <p className="mt-0.5 text-xs text-slate-500">{study.location}</p>
+                  <p className="mt-0.5 text-xs text-[var(--color-muted)]">{study.location}</p>
                 </div>
 
-                <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 transition-colors duration-200 group-hover:text-blue-700">
+                <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-primary)] transition-colors duration-200 group-hover:text-[var(--color-primary-hover)]">
                   Read case study
                   <ArrowRight
                     size={14}
@@ -308,30 +369,30 @@ function CaseStudiesPreview() {
 const steps = [
   {
     number: "01",
-    title: "Free AI Blueprint",
+    title: "Discovery call",
     description:
-      "We assess your business and identify the highest-impact automation opportunities — at no cost.",
+      "30 minutes. We find where your week leaks the most time. No charge, no slides, no obligation.",
     icon: FileSearch,
   },
   {
     number: "02",
-    title: "Custom Proposal",
+    title: "Analysis and proposal",
     description:
-      "You get a clear scope with exact deliverables and projected ROI — no vague quotes, no surprises.",
+      "We write the scope: what we'll build, what it'll cost, what you should see in 30, 60, 90 days. Yes or no.",
     icon: Users,
   },
   {
     number: "03",
-    title: "Build & Launch",
+    title: "Build and launch",
     description:
-      "We build, test, and deploy your solution with full documentation, SOPs, and a training walkthrough.",
+      "We build it, test it, ship it. Full SOPs and a walkthrough so your team runs it. You see progress weekly.",
     icon: Zap,
   },
   {
     number: "04",
-    title: "Your Dashboard. 60 Seconds a Day.",
+    title: "Run and adjust",
     description:
-      "You get a real-time dashboard showing exactly what your business is doing. Check it in 60 seconds each morning — we handle everything behind the scenes.",
+      "We watch the system, fix what breaks, tighten what works. Adopt. Test. Keep what works.",
     icon: TrendingUp,
   },
 ];
@@ -339,21 +400,21 @@ const steps = [
 function HowItWorks() {
   return (
     <section
-      className="bg-white py-28"
+      className="bg-[var(--color-bg)] py-28"
       aria-labelledby="how-it-works-heading"
     >
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
         <AnimatedSection>
           <div className="flex flex-col items-center gap-4 text-center">
-            <span className="eyebrow">How It Works</span>
+            <span className="eyebrow">How it works</span>
             <h2
               id="how-it-works-heading"
               className="heading-section text-3xl sm:text-4xl lg:text-[56px]"
             >
-              From conversation to live automation
+              Discovery call to live system
             </h2>
-            <p className="max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
-              A structured 4-step process — from first conversation to a system that runs itself.
+            <p className="max-w-xl text-base leading-relaxed text-[var(--color-body)] sm:text-lg">
+              Four steps. We figure it out, build it, run it, tighten it.
             </p>
           </div>
         </AnimatedSection>
@@ -374,23 +435,23 @@ function HowItWorks() {
                   )}
 
                   {/* Icon badge */}
-                  <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-white shadow-sm">
+                  <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] shadow-sm">
                     <Icon
                       size={20}
-                      className="text-blue-600"
+                      className="text-[var(--color-primary)]"
                       aria-hidden="true"
                     />
                   </div>
 
                   {/* Step number */}
-                  <span className="mt-4 text-xs font-bold tracking-widest text-slate-400">
+                  <span className="mt-4 text-xs font-bold tracking-widest text-[var(--color-muted)]">
                     {step.number}
                   </span>
 
-                  <h3 className="mt-2 text-base font-semibold text-slate-900">
+                  <h3 className="mt-2 text-base font-semibold text-[var(--color-heading)]">
                     {step.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                  <p className="mt-2 text-sm leading-relaxed text-[var(--color-body)]">
                     {step.description}
                   </p>
                 </li>
@@ -414,34 +475,48 @@ const callPoints = [
 
 function StrategyCallCTA() {
   return (
-    <section className="bg-slate-900 py-28" aria-labelledby="strategy-call-heading">
+    <section className="bg-[var(--color-dark)] py-28" aria-labelledby="strategy-call-heading">
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
         <div className="flex flex-col items-center gap-10 lg:flex-row lg:gap-16">
           {/* Left: copy */}
           <AnimatedSection className="flex-1 text-center lg:text-left">
-            <span className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800 px-4 py-1.5 text-xs font-semibold tracking-wide text-slate-400 mb-6">
+            <span
+              className="inline-flex items-center gap-2 rounded-sm border px-4 py-1.5 text-xs font-semibold tracking-wide mb-6"
+              style={{
+                borderColor: "var(--color-dark-border)",
+                background: "var(--color-dark-surface)",
+                color: "var(--color-dark-muted)",
+              }}
+            >
               <Calendar size={12} aria-hidden="true" />
-              Free 30-Minute Strategy Call
+              Free 30-minute call
             </span>
 
             <h2
               id="strategy-call-heading"
-              className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-[44px] lg:leading-tight"
+              className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-[44px] lg:leading-tight"
+              style={{ color: "var(--color-bg)", letterSpacing: "-0.025em" }}
             >
-              See exactly what AI can do for{" "}
-              <span className="text-blue-400">Your Business</span> — in 30 minutes.
+              30 minutes.{" "}
+              <span style={{ color: "var(--color-accent)" }}>
+                We tell you what's broken
+              </span>{" "}
+              and what we'd fix first.
             </h2>
 
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-400 sm:text-lg lg:mx-0 mx-auto">
-              No slides. No sales pitch. Just a focused conversation about your business and where automation makes a real difference.
+            <p
+              className="mt-6 max-w-xl text-base leading-relaxed sm:text-lg lg:mx-0 mx-auto"
+              style={{ color: "var(--color-dark-text)" }}
+            >
+              No slides. No sales pitch. We sit down for 30 minutes and find where your week leaks the most time.
             </p>
 
             <ul className="mt-8 flex flex-col gap-3" role="list">
               {callPoints.map((point) => (
-                <li key={point} className="flex items-start gap-3 text-sm text-slate-300">
+                <li key={point} className="flex items-start gap-3 text-sm text-[var(--color-dark-text)]">
                   <CheckCircle2
                     size={18}
-                    className="mt-0.5 shrink-0 text-blue-400"
+                    className="mt-0.5 shrink-0 text-[var(--color-accent)]"
                     aria-hidden="true"
                   />
                   {point}
@@ -452,7 +527,7 @@ function StrategyCallCTA() {
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:items-center">
               <Link
                 href="https://cal.com/workcrew/free-ai-strategy-call"
-                className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 text-base font-semibold text-white shadow-[0_1px_6px_-1px_rgba(37,99,235,0.5)] transition-all duration-200 hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 group"
+                className="inline-flex items-center gap-2 rounded-full bg-[var(--color-primary)] px-7 py-3.5 text-base font-semibold text-[var(--color-bg)] shadow-[0_1px_6px_-1px_rgba(37,99,235,0.5)] transition-all duration-200 hover:bg-[var(--color-primary-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-dark)] group"
               >
                 Book Your Free Strategy Call
                 <ArrowRight
@@ -461,40 +536,40 @@ function StrategyCallCTA() {
                   aria-hidden="true"
                 />
               </Link>
-              <p className="text-xs text-slate-500">No obligation. No credit card.</p>
+              <p className="text-xs text-[var(--color-muted)]">No obligation. No credit card.</p>
             </div>
           </AnimatedSection>
 
           {/* Right: call details card */}
           <AnimatedSection delay={0.2} className="w-full lg:w-80 shrink-0">
-            <div className="rounded-2xl border border-slate-700 bg-slate-800 p-8">
+            <div className="rounded-2xl border border-[var(--color-dark-border)] bg-[var(--color-dark-surface)] p-8">
               <div className="flex items-center gap-3 mb-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600/20">
-                  <Calendar size={20} className="text-blue-400" aria-hidden="true" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--color-primary)]/20">
+                  <Calendar size={20} className="text-[var(--color-accent)]" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-white">Free Strategy Call</p>
-                  <p className="text-xs text-slate-400">30 minutes · Google Meet</p>
+                  <p className="text-sm font-semibold text-[var(--color-bg)]">Free Strategy Call</p>
+                  <p className="text-xs text-[var(--color-muted)]">30 minutes · Google Meet</p>
                 </div>
               </div>
 
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-600/10 text-xs font-bold text-blue-400">1</span>
-                  <p className="text-sm text-slate-300">Tell us about your biggest manual pain points</p>
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--color-primary)]/10 text-xs font-bold text-[var(--color-accent)]">1</span>
+                  <p className="text-sm text-[var(--color-dark-text)]">Tell us where your week leaks the most time</p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-600/10 text-xs font-bold text-blue-400">2</span>
-                  <p className="text-sm text-slate-300">We show you the 2–3 highest-impact automations for your business</p>
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--color-primary)]/10 text-xs font-bold text-[var(--color-accent)]">2</span>
+                  <p className="text-sm text-[var(--color-dark-text)]">We show you what we'd build first, shaped to your operation</p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-blue-600/10 text-xs font-bold text-blue-400">3</span>
-                  <p className="text-sm text-slate-300">Walk away with a clear plan, regardless of next steps</p>
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--color-primary)]/10 text-xs font-bold text-[var(--color-accent)]">3</span>
+                  <p className="text-sm text-[var(--color-dark-text)]">Leave with a clear plan, work with us or not</p>
                 </div>
               </div>
 
-              <div className="mt-6 rounded-xl border border-slate-700 bg-slate-900/50 px-4 py-3 text-center">
-                <p className="text-xs text-slate-400">Booked by <span className="text-white font-semibold">UK business owners</span> who want clarity before they commit</p>
+              <div className="mt-6 rounded-xl border border-[var(--color-dark-border)] bg-[var(--color-dark)]/50 px-4 py-3 text-center">
+                <p className="text-xs text-[var(--color-muted)]">Booked by <span className="text-[var(--color-bg)] font-semibold">UK business owners</span> who want clarity before they commit</p>
               </div>
             </div>
           </AnimatedSection>
@@ -593,7 +668,7 @@ const homepageFAQs: FAQItem[] = [
   {
     question: "What is AI automation for businesses?",
     answer:
-      "AI automation uses artificial intelligence to handle repetitive business tasks — things like responding to enquiries, booking appointments, sending follow-ups, and managing orders. Instead of hiring extra staff, you deploy AI systems that run 24/7 and free your team to focus on higher-value work.",
+      "Tech takes the admin and ops off your plate. You take the work that actually makes money. Same hours in your week, different bank balance at the end of the year. That's enquiries, bookings, follow-ups, orders, knowledge bases, customer support — whichever bit of your week is leaking time. We figure out which on a discovery call.",
   },
   {
     question: "How much does AI automation cost for a business in the UK?",
@@ -603,12 +678,12 @@ const homepageFAQs: FAQItem[] = [
   {
     question: "Do I need technical skills to use AI automation?",
     answer:
-      "Not at all. We handle the entire setup, configuration, and training. Once your system is live, you interact with a simple dashboard — no coding or technical knowledge required. We also provide full documentation and standard operating procedures so your team can manage everything confidently.",
+      "No. We handle setup, configuration, and training. We hand over SOPs and a walkthrough so your team runs it after launch — no coding required.",
   },
   {
     question: "How long does it take to set up AI automation?",
     answer:
-      "Timelines depend on the scope and complexity of your project. We start with a free AI blueprint that maps your business processes and identifies the highest-impact opportunities. You'll receive a clear timeline in your custom proposal.",
+      "Timelines depend on the scope and complexity of your project. We start with a free AI blueprint that maps your business processes and identifies the where your week leaks the most time. You'll receive a clear timeline in your custom proposal.",
   },
   {
     question: "Is AI automation safe and reliable for my business?",
@@ -627,7 +702,7 @@ const homepageFAQs: FAQItem[] = [
 // ---------------------------------------------------------------------------
 function TestimonialSection() {
   return (
-    <section className="bg-slate-50 py-24" aria-labelledby="testimonial-heading">
+    <section className="bg-[var(--color-bg-alt)] py-24" aria-labelledby="testimonial-heading">
       <div className="mx-auto max-w-3xl px-6 sm:px-8 lg:px-12">
         <AnimatedSection>
           <div className="flex flex-col items-center text-center gap-4 mb-12">
@@ -636,26 +711,26 @@ function TestimonialSection() {
               id="testimonial-heading"
               className="heading-section text-3xl sm:text-4xl"
             >
-              Hear From Our Clients
+              From a client
             </h2>
           </div>
 
           {/* Testimonial card */}
-          <div className="rounded-2xl border border-slate-200 bg-white p-10 shadow-sm text-center">
+          <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-10 shadow-sm text-center">
             {/* Stars */}
             <div className="flex justify-center gap-1 mb-6" aria-label="5 out of 5 stars">
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
                   size={18}
-                  className="fill-amber-400 text-amber-400"
+                  className="fill-amber-400 text-[var(--color-primary)]"
                   aria-hidden="true"
                 />
               ))}
             </div>
 
             {/* Quote */}
-            <blockquote className="text-lg font-medium leading-relaxed text-slate-800 sm:text-xl">
+            <blockquote className="text-lg font-medium leading-relaxed text-[var(--color-heading)] sm:text-xl">
               &ldquo;They moved us from manual order tracking to a fully automated
               system — orders come in digitally, responses to customers are instant,
               and payments match our statements automatically. It&rsquo;s saving us
@@ -663,22 +738,22 @@ function TestimonialSection() {
             </blockquote>
 
             {/* Divider */}
-            <div className="my-8 h-px w-16 bg-slate-200 mx-auto" aria-hidden="true" />
+            <div className="my-8 h-px w-16 bg-[var(--color-border)] mx-auto" aria-hidden="true" />
 
             {/* Attribution */}
             <div className="flex flex-col items-center gap-1">
               {/* Avatar initials */}
               <div
-                className="h-12 w-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-sm mb-2"
+                className="h-12 w-12 rounded-full bg-[var(--color-primary)] flex items-center justify-center text-[var(--color-bg)] font-bold text-sm mb-2"
                 aria-hidden="true"
               >
                 TA
               </div>
-              <p className="font-semibold text-slate-900">Tunmise Ajao</p>
-              <p className="text-sm text-slate-500">Founder, E&rsquo;Manuel Bakery — Kettering</p>
+              <p className="font-semibold text-[var(--color-heading)]">Tunmise Ajao</p>
+              <p className="text-sm text-[var(--color-muted)]">Founder, E&rsquo;Manuel Bakery — Kettering</p>
 
               {/* Google badge */}
-              <div className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-500">
+              <div className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border)] bg-[var(--color-bg-alt)] px-3 py-1 text-xs font-medium text-[var(--color-muted)]">
                 <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true">
                   <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                   <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -715,18 +790,19 @@ export default function HomePage() {
           </a>
         </div>
       </section>
+      <WhyThisMatters />
       <WhatWeBuild />
       <TestimonialSection />
       <CaseStudiesPreview />
       <HowItWorks />
       <StrategyCallCTA />
-      <section className="bg-white py-28">
+      <section className="bg-[var(--color-bg)] py-28">
         <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
           <AnimatedSection>
             <FAQSection
               items={homepageFAQs}
               eyebrow="FAQs"
-              heading="Common Questions About AI Automation"
+              heading="Common questions"
             />
           </AnimatedSection>
         </div>

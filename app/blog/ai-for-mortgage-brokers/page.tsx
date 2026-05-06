@@ -48,7 +48,7 @@ export default function BlogPost() {
         <div className="max-w-3xl mx-auto">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 text-sm mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-[var(--color-body)] hover:text-[var(--color-heading)] text-sm mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             All Posts
@@ -58,7 +58,7 @@ export default function BlogPost() {
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full"
+                className="text-xs bg-[var(--color-surface)] text-[var(--color-body)] px-2 py-0.5 rounded-full"
               >
                 {tag}
               </span>
@@ -70,11 +70,11 @@ export default function BlogPost() {
             Applications &amp; Client Updates
           </h1>
 
-          <div className="flex items-center gap-4 text-sm text-slate-400 mb-12">
+          <div className="flex items-center gap-4 text-sm text-[var(--color-muted)] mb-12">
             <span>21 March 2026</span>
-            <span className="text-slate-600">|</span>
+            <span className="text-[var(--color-body)]">|</span>
             <span>By Olushola Oladipupo</span>
-            <span className="text-slate-600">|</span>
+            <span className="text-[var(--color-body)]">|</span>
             <span className="flex items-center gap-1">
               <Clock className="w-3 h-3" />
               8 min read
@@ -82,7 +82,7 @@ export default function BlogPost() {
           </div>
 
           <div className="prose prose-slate max-w-none">
-            <p className="text-slate-500 leading-relaxed mb-4 text-lg">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4 text-lg">
               It&apos;s 7pm on a Tuesday. You&apos;ve got 12 unread
               emails &mdash; clients asking &ldquo;any update?&rdquo;,
               lenders requesting documents, and new enquiries you
@@ -90,7 +90,7 @@ export default function BlogPost() {
               half those leads will have gone to another broker.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               If you&apos;re a UK mortgage broker, this is daily life.
               You&apos;re stretched between sourcing leads, chasing
               paperwork, keeping clients informed, and documenting
@@ -100,7 +100,7 @@ export default function BlogPost() {
               under admin.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               AI automation can handle the operational heavy lifting so
               you can focus on advising clients and growing your pipeline.
               Here are five automations that are transforming how UK
@@ -112,8 +112,8 @@ export default function BlogPost() {
               1. Lead Qualification &amp; Initial Affordability Checks
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-2">
-              <strong className="text-slate-900">Problem:</strong> New
+            <p className="text-[var(--color-muted)] leading-relaxed mb-2">
+              <strong className="text-[var(--color-heading)]">Problem:</strong> New
               enquiries arrive from your website, Rightmove, social media,
               and referrals at all hours. Each needs an initial conversation
               to establish income, deposit, credit situation, and property
@@ -123,8 +123,8 @@ export default function BlogPost() {
               browsing.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Solution:</strong> An AI
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Solution:</strong> An AI
               qualification system that engages every enquiry within 60
               seconds via website chat, WhatsApp, or email. It asks the
               right questions conversationally: household income, deposit,
@@ -135,8 +135,8 @@ export default function BlogPost() {
               options).
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Result:</strong> A broker
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Result:</strong> A broker
               in Leeds receiving 80 enquiries per month cut screening time
               from 25 minutes to 3 minutes per lead. Response time dropped
               from 4 hours to under 90 seconds. Lead-to-appointment
@@ -145,7 +145,7 @@ export default function BlogPost() {
               they&apos;d already spoken to two other brokers.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               Speed matters enormously in mortgage leads. The broker who
               responds first &mdash; even via AI &mdash; wins the business.
             </p>
@@ -155,8 +155,8 @@ export default function BlogPost() {
               2. Document Collection &amp; Chasing
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-2">
-              <strong className="text-slate-900">Problem:</strong> Every
+            <p className="text-[var(--color-muted)] leading-relaxed mb-2">
+              <strong className="text-[var(--color-heading)]">Problem:</strong> Every
               application requires three months&apos; payslips, three
               months&apos; bank statements, proof of ID, proof of address,
               SA302s for self-employed clients, deposit proof, and more.
@@ -165,8 +165,8 @@ export default function BlogPost() {
               15&ndash;20 emails on document collection alone.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Solution:</strong> An
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Solution:</strong> An
               automated document portal tailored to each client. The
               system generates a personalised checklist based on
               employment type (employed, self-employed, contractor,
@@ -178,8 +178,8 @@ export default function BlogPost() {
               February but March is missing.&rdquo;
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Result:</strong> A
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Result:</strong> A
               brokerage in Manchester handling 30 applications per month
               reduced average document collection time from 12 days to
               4 days. That&apos;s 8 days shaved off every application
@@ -189,7 +189,7 @@ export default function BlogPost() {
               per week.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               For self-employed clients especially, where the document
               requirements are more complex (two years&apos; SA302s,
               tax year overviews, company accounts), the automated
@@ -202,8 +202,8 @@ export default function BlogPost() {
               3. Application Status Updates to Clients
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-2">
-              <strong className="text-slate-900">Problem:</strong> From
+            <p className="text-[var(--color-muted)] leading-relaxed mb-2">
+              <strong className="text-[var(--color-heading)]">Problem:</strong> From
               DIP to full application, valuation, underwriting, offer,
               and completion &mdash; a mortgage has a dozen stages.
               Clients are anxious. &ldquo;Has the valuation been
@@ -213,8 +213,8 @@ export default function BlogPost() {
               calls a month just telling people where they are.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Solution:</strong> An
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Solution:</strong> An
               automated update system that sends proactive notifications
               at every milestone. When you update the case in your CRM,
               clients receive a message via email, SMS, or WhatsApp:
@@ -226,8 +226,8 @@ export default function BlogPost() {
               We&apos;ll update you as soon as we hear back.&rdquo;
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Result:</strong> A
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Result:</strong> A
               broker in Birmingham with 25 active cases reduced inbound
               &ldquo;any update?&rdquo; calls by 70%, saving 10 hours
               per month. Clients specifically mentioned the proactive
@@ -235,7 +235,7 @@ export default function BlogPost() {
               separates a good mortgage experience from a bad one.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               Automated updates ensure every client gets a premium
               experience, even when you&apos;re juggling 30 cases.
               The mortgage product matters, but clients remember how
@@ -247,8 +247,8 @@ export default function BlogPost() {
               4. Lender Panel Matching &amp; Product Sourcing Support
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-2">
-              <strong className="text-slate-900">Problem:</strong> With
+            <p className="text-[var(--color-muted)] leading-relaxed mb-2">
+              <strong className="text-[var(--color-heading)]">Problem:</strong> With
               50&ndash;90 lenders on your panel, finding the right product
               means factoring in LTV, income multiples, employment type,
               credit history, and property type. A contractor with 12
@@ -258,8 +258,8 @@ export default function BlogPost() {
               research taking 30&ndash;45 minutes per case.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Solution:</strong> An AI
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Solution:</strong> An AI
               assistant that cross-references the client&apos;s profile
               against your panel&apos;s criteria. It flags likely lenders,
               highlights concerns (&ldquo;Lender X requires 18
@@ -270,15 +270,15 @@ export default function BlogPost() {
               overlook a better-fit lender.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Result:</strong> A
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Result:</strong> A
               whole-of-market broker in London reduced product research
               time by 75% across 70 lenders. The system flagged options
               the broker hadn&apos;t considered in 20% of cases &mdash;
               leading to better rates and stronger conversion.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               This is especially valuable for complex cases: buy-to-let
               portfolios, limited company purchases, shared ownership,
               or clients with adverse credit. An AI with every
@@ -291,8 +291,8 @@ export default function BlogPost() {
               5. Compliance &amp; FCA Record Keeping
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-2">
-              <strong className="text-slate-900">Problem:</strong> The FCA
+            <p className="text-[var(--color-muted)] leading-relaxed mb-2">
+              <strong className="text-[var(--color-heading)]">Problem:</strong> The FCA
               requires detailed records of every interaction, every piece
               of advice, and the rationale for every recommendation.
               Suitability letters, fact-finds, demands and needs
@@ -302,8 +302,8 @@ export default function BlogPost() {
               compliance documentation alone.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Solution:</strong> An AI
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Solution:</strong> An AI
               compliance assistant that generates suitability letters,
               file notes, and demands and needs documents from structured
               data. After a call, you type a brief summary. The AI
@@ -315,8 +315,8 @@ export default function BlogPost() {
               40-minute task into 10 minutes.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Result:</strong> A
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Result:</strong> A
               network-appointed broker in Edinburgh cut suitability
               letter drafting from 40 to 12 minutes per case. File
               quality improved because the AI ensured consistent
@@ -325,20 +325,20 @@ export default function BlogPost() {
               rated file quality higher than when everything was manual.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               Automated compliance means every file is complete,
               consistent, and audit-ready. No more scrambling to
               backfill notes before a review.
             </p>
 
             {/* Summary */}
-            <hr className="border-slate-200 my-10" />
+            <hr className="border-[var(--color-border)] my-10" />
 
             <h2 className="text-2xl font-bold mt-8 mb-4">
               The Bottom Line
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               Mortgage broking is high-touch and high-admin. Every
               interaction generates paperwork, every application involves
               dozens of documents, and every case requires compliance
@@ -346,7 +346,7 @@ export default function BlogPost() {
               through the most stressful financial process of their lives.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               The brokers winning in 2026 have automated the grind. They
               respond to leads in under two minutes, collect documents in
               days not weeks, keep clients proactively updated, source
@@ -354,7 +354,7 @@ export default function BlogPost() {
               immaculate.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               That freed-up time goes into what grows a mortgage business
               &mdash; deeper relationships, more referrals, and capacity
               to handle more cases without hiring. It&apos;s not about
@@ -362,7 +362,7 @@ export default function BlogPost() {
               admin that gets in the way of it.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               If you&apos;re spending more time on emails and paperwork
               than advising clients, automation isn&apos;t a luxury
               &mdash; it&apos;s a necessity.
@@ -370,26 +370,26 @@ export default function BlogPost() {
           </div>
 
           {/* Related Articles */}
-          <div className="mt-12 border border-slate-200 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-4 text-slate-900">Related Articles</h3>
+          <div className="mt-12 border border-[var(--color-border)] rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-4 text-[var(--color-heading)]">Related Articles</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/blog/ai-for-estate-agents" className="text-blue-600 hover:text-blue-600 transition-colors">
+                <Link href="/blog/ai-for-estate-agents" className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors">
                   AI for Estate Agents: Automate Viewings, Follow-Ups &amp; Valuations
                 </Link>
               </li>
               <li>
-                <Link href="/blog/ai-for-accountants" className="text-blue-600 hover:text-blue-600 transition-colors">
+                <Link href="/blog/ai-for-accountants" className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors">
                   AI for Accountants &amp; Bookkeepers: Automate Client Onboarding &amp; Compliance
                 </Link>
               </li>
               <li>
-                <Link href="/blog/ai-automation-cost" className="text-blue-600 hover:text-blue-600 transition-colors">
+                <Link href="/blog/ai-automation-cost" className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors">
                   How Much Does AI Automation Cost for Small Businesses?
                 </Link>
               </li>
               <li>
-                <Link href="/services/lead-intake" className="text-slate-500 hover:text-slate-900 transition-colors">
+                <Link href="/services/lead-intake" className="text-[var(--color-muted)] hover:text-[var(--color-heading)] transition-colors">
                   View our AI Lead Intake service &rarr;
                 </Link>
               </li>
@@ -397,11 +397,11 @@ export default function BlogPost() {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-16 bg-blue-50 border border-blue-200 rounded-xl p-8 text-center">
+          <div className="mt-16 bg-[var(--color-primary-light)] border border-[var(--color-primary-light)] rounded-xl p-8 text-center">
             <h3 className="text-xl font-semibold mb-2">
               Want to Know Which Automations Would Work for Your Brokerage?
             </h3>
-            <p className="text-slate-600 mb-6 max-w-lg mx-auto">
+            <p className="text-[var(--color-body)] mb-6 max-w-lg mx-auto">
               Every mortgage business is different. Take our free AI
               Readiness Audit and we&apos;ll tell you exactly where
               automation would save you the most time &mdash; and what
@@ -409,12 +409,12 @@ export default function BlogPost() {
             </p>
             <Link
               href="/audit"
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-[var(--color-bg)] px-6 py-3 rounded-lg font-medium transition-colors"
             >
               Get Your Free AI Readiness Audit
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <p className="text-slate-400 text-sm mt-3">
+            <p className="text-[var(--color-muted)] text-sm mt-3">
               Takes 2 minutes. No obligation. Built for financial
               services.
             </p>

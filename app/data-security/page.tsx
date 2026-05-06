@@ -62,7 +62,7 @@ const FAQ_SCHEMA = {
       name: "Where is my data stored?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "All data is stored in London-region servers (AWS eu-west-2). Your data never leaves the UK without your explicit consent. We are fully UK GDPR compliant.",
+        text: "All data is stored in UK-region servers (London, eu-west-2). Your data never leaves the UK without your explicit consent. We are fully UK GDPR compliant.",
       },
     },
     {
@@ -185,7 +185,7 @@ const SECTIONS = [
     points: [
       {
         icon: Server,
-        text: "All data stored in London-region servers (AWS eu-west-2)",
+        text: "All data stored in UK-region servers (London, eu-west-2)",
       },
       {
         icon: ShieldCheck,
@@ -258,13 +258,13 @@ export default function DataSecurityPage() {
 
       {/* Hero */}
       <div className="max-w-3xl mx-auto text-center mb-20 sm:mb-24">
-        <span className="text-xs font-semibold tracking-widest uppercase text-blue-600 mb-4 block">
+        <span className="text-xs font-semibold tracking-widest uppercase text-[var(--color-primary)] mb-4 block">
           Data Security & Privacy
         </span>
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-slate-900 leading-tight tracking-tight mb-6">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-[var(--color-heading)] leading-tight tracking-tight mb-6">
           How We Protect Your Data
         </h1>
-        <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+        <p className="text-lg text-[var(--color-body)] leading-relaxed max-w-2xl mx-auto">
           Security and privacy are built into every system we build. Here&apos;s
           exactly how we keep your business data safe.
         </p>
@@ -283,27 +283,27 @@ export default function DataSecurityPage() {
             aria-labelledby={`${section.id}-heading`}
           >
             <div
-              className={`bg-slate-50 border border-slate-200 rounded-2xl p-8 sm:p-10 max-w-4xl mx-auto ${
+              className={`bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-2xl p-8 sm:p-10 max-w-4xl mx-auto ${
                 isEven ? "" : ""
               }`}
             >
               <div className="flex flex-col gap-6">
                 {/* Header */}
                 <div className="flex items-start gap-4">
-                  <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-blue-600/10 border border-blue-600/20 shrink-0">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 shrink-0">
                     <SectionIcon
                       size={22}
-                      className="text-blue-600"
+                      className="text-[var(--color-primary)]"
                       aria-hidden="true"
                     />
                   </div>
                   <div>
-                    <span className="text-xs font-semibold uppercase tracking-widest text-slate-400 block mb-1">
+                    <span className="text-xs font-semibold uppercase tracking-widest text-[var(--color-muted)] block mb-1">
                       {section.eyebrow}
                     </span>
                     <h2
                       id={`${section.id}-heading`}
-                      className="text-xl sm:text-2xl font-bold text-slate-900"
+                      className="text-xl sm:text-2xl font-bold text-[var(--color-heading)]"
                     >
                       {section.title}
                     </h2>
@@ -311,7 +311,7 @@ export default function DataSecurityPage() {
                 </div>
 
                 {/* Description */}
-                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                <p className="text-sm sm:text-base text-[var(--color-body)] leading-relaxed">
                   {section.description}
                 </p>
 
@@ -323,10 +323,10 @@ export default function DataSecurityPage() {
                       <li key={point.text} className="flex items-start gap-3">
                         <PointIcon
                           size={16}
-                          className="text-blue-600 shrink-0 mt-0.5"
+                          className="text-[var(--color-primary)] shrink-0 mt-0.5"
                           aria-hidden="true"
                         />
-                        <span className="text-sm text-slate-500 leading-relaxed">
+                        <span className="text-sm text-[var(--color-muted)] leading-relaxed">
                           {point.text}
                         </span>
                       </li>
@@ -342,7 +342,7 @@ export default function DataSecurityPage() {
       {/* CTA */}
       <div className="text-center mt-20 sm:mt-24">
         <div className="inline-flex flex-col items-center gap-4">
-          <p className="text-slate-600 text-base">
+          <p className="text-[var(--color-body)] text-base">
             Have questions about data security?
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-3">
@@ -357,7 +357,7 @@ export default function DataSecurityPage() {
               Book a Call
             </CTAButton>
           </div>
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-[var(--color-muted)]">
             We are happy to answer any questions about how we handle your data.
           </p>
         </div>

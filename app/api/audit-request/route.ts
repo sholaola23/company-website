@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { waitUntil } from "@vercel/functions";
 import { Resend } from "resend";
 import { Client } from "@notionhq/client";
+import { requireGuard } from "@/lib/api-guard";
 
 const resend = process.env.RESEND_API_KEY
   ? new Resend(process.env.RESEND_API_KEY)
@@ -213,6 +214,18 @@ async function notifyOwnerAudit({
 }
 
 export async function POST(req: NextRequest) {
+  // Guard FIRST — public form that uses Haiku for auto-reply.
+  const guard = requireGuard(req, {
+    endpoint: "audit-request",
+    perIpLimit: 5,
+  });
+  if (!guard.ok) {
+    return NextResponse.json(
+      { success: false, message: guard.message },
+      { status: guard.status }
+    );
+  }
+
   let body: Partial<AuditRequestBody>;
 
   try {

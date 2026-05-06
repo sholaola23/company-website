@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Inter, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -8,41 +8,28 @@ import ChatWidgetLoader from "@/components/shared/ChatWidgetLoader";
 import ConsentGate from "@/components/shared/ConsentGate";
 import CookieBanner from "@/components/shared/CookieBanner";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
-
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   title: {
-    default: "WorkCrew — Digital Systems for Your Business",
+    default: "WorkCrew — We run the back-of-house. You run the business.",
     template: "%s | WorkCrew",
   },
   description:
-    "We build AI automation systems, professional websites, and deliver AI training for businesses. From lead capture to content engines — built to last.",
+    "AI automation for small businesses. Lead intake, content engines, customer ops — set up in 7 days, retainer from there. 90-day results guarantee.",
   keywords: [
     "AI automation",
     "business automation",
     "AI training for teams",
-    "website development",
     "lead intake system",
     "appointment booking bot",
-    "UK AI consultancy",
     "n8n automation",
+    "small business AI",
+    "AI operator",
   ],
   authors: [{ name: "WorkCrew Ltd" }],
   creator: "WorkCrew Ltd",
@@ -55,15 +42,15 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: "https://workcrew.io",
     siteName: "WorkCrew",
-    title: "WorkCrew — Digital Systems for Your Business",
+    title: "WorkCrew — We run the back-of-house. You run the business.",
     description:
-      "We build AI automation systems, professional websites, and deliver AI training for businesses. From lead capture to content engines — built to last.",
+      "AI automation for small businesses. Lead intake, content engines, customer ops — set up in 7 days. 90-day results guarantee.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "WorkCrew — Digital Systems for Your Business",
+    title: "WorkCrew — We run the back-of-house. You run the business.",
     description:
-      "AI automation, websites, and team training for businesses. Built for results.",
+      "AI automation for small businesses. Lead intake, content engines, customer ops. Set up in 7 days.",
   },
   robots: {
     index: true,
@@ -82,11 +69,13 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body
-        className={`${dmSans.variable} ${inter.variable} ${geistMono.variable} antialiased bg-white text-slate-700 min-h-screen flex flex-col`}
+        className={`${inter.variable} antialiased min-h-screen flex flex-col`}
+        style={{ background: "var(--color-bg)", color: "var(--color-body)" }}
       >
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-0 focus:left-0 focus:z-[100] focus:bg-blue-600 focus:text-white focus:px-4 focus:py-2 focus:text-sm"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-0 focus:left-0 focus:z-[100] focus:px-4 focus:py-2 focus:text-sm"
+          style={{ background: "var(--color-primary)", color: "var(--color-bg)" }}
         >
           Skip to main content
         </a>

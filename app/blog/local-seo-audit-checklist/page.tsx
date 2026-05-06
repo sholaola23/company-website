@@ -79,12 +79,12 @@ function TaskItem({
 }) {
   return (
     <div className="flex gap-4 mb-6">
-      <span className="shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-blue-600/20 text-blue-600 text-sm font-bold border border-blue-600/30">
+      <span className="shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-[var(--color-primary)]/20 text-[var(--color-primary)] text-sm font-bold border border-[var(--color-primary)]/30">
         {number}
       </span>
       <div>
-        <p className="text-slate-900 font-semibold mb-1">{title}</p>
-        <p className="text-slate-600 text-sm leading-relaxed">{description}</p>
+        <p className="text-[var(--color-heading)] font-semibold mb-1">{title}</p>
+        <p className="text-[var(--color-body)] text-sm leading-relaxed">{description}</p>
       </div>
     </div>
   );
@@ -98,7 +98,7 @@ export default function BlogPost() {
         <div className="max-w-3xl mx-auto">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 text-sm mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-[var(--color-body)] hover:text-[var(--color-heading)] text-sm mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             All Posts
@@ -108,7 +108,7 @@ export default function BlogPost() {
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full"
+                className="text-xs bg-[var(--color-surface)] text-[var(--color-body)] px-2 py-0.5 rounded-full"
               >
                 {tag}
               </span>
@@ -120,11 +120,11 @@ export default function BlogPost() {
             Small Businesses
           </h1>
 
-          <div className="flex items-center gap-4 text-sm text-slate-400 mb-12">
+          <div className="flex items-center gap-4 text-sm text-[var(--color-muted)] mb-12">
             <span>27 March 2026</span>
-            <span className="text-slate-600">|</span>
+            <span className="text-[var(--color-body)]">|</span>
             <span>By Olushola Oladipupo</span>
-            <span className="text-slate-600">|</span>
+            <span className="text-[var(--color-body)]">|</span>
             <span className="flex items-center gap-1">
               <Clock className="w-3 h-3" />
               10 min read
@@ -133,14 +133,14 @@ export default function BlogPost() {
 
           <div className="prose prose-slate max-w-none">
             {/* Hook */}
-            <p className="text-slate-500 leading-relaxed mb-4 text-lg">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4 text-lg">
               A 20-task local SEO framework went viral this week &mdash; 2.6
               million views on X. It was built from 14 years of managing local
               SEO for home service businesses. Plumbers, HVAC, cleaning
               companies, lawyers.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               We read the entire thing. Most of it is excellent. But it was
               written for people who already know SEO. If you are a small
               business owner in the UK &mdash; a baker, a plumber, a salon owner
@@ -148,7 +148,7 @@ export default function BlogPost() {
               the &ldquo;why&rdquo; behind every task.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               So here it is. 20 tasks, organised into four sections. Every task
               is practical, specific, and something you can do (or have someone
               do for you) this month. At the end, we will tell you about the
@@ -159,7 +159,7 @@ export default function BlogPost() {
             <h2 className="text-2xl font-bold mt-12 mb-2">
               Section 1: Google Business Profile (GBP)
             </h2>
-            <p className="text-slate-600 text-sm mb-6">
+            <p className="text-[var(--color-body)] text-sm mb-6">
               Your GBP listing is the single most important factor for showing
               up in the Google Maps &ldquo;3-pack&rdquo; &mdash; those three
               businesses that appear at the top when someone searches
@@ -167,7 +167,7 @@ export default function BlogPost() {
               Get this right first.
             </p>
 
-            <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 mb-8">
+            <div className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-xl p-6 mb-8">
               <TaskItem
                 number={1}
                 title="Audit your GBP categories"
@@ -214,13 +214,13 @@ export default function BlogPost() {
             <h2 className="text-2xl font-bold mt-12 mb-2">
               Section 2: Website Optimisation
             </h2>
-            <p className="text-slate-600 text-sm mb-6">
+            <p className="text-[var(--color-body)] text-sm mb-6">
               Your website is where Google confirms what your GBP promises.
               These tasks make sure your site ranks for the searches that
               actually bring in customers.
             </p>
 
-            <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 mb-8">
+            <div className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-xl p-6 mb-8">
               <TaskItem
                 number={9}
                 title="Find and fix your page 2 keywords"
@@ -252,14 +252,14 @@ export default function BlogPost() {
             <h2 className="text-2xl font-bold mt-12 mb-2">
               Section 3: Backlinks and Citations
             </h2>
-            <p className="text-slate-600 text-sm mb-6">
+            <p className="text-[var(--color-body)] text-sm mb-6">
               Backlinks are how Google measures your authority. Citations are
               consistent mentions of your business name, address, and phone
               number across the web. Together, they tell Google you are a real,
               trusted business.
             </p>
 
-            <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 mb-8">
+            <div className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-xl p-6 mb-8">
               <TaskItem
                 number={14}
                 title="Audit your competitors' backlinks"
@@ -286,13 +286,13 @@ export default function BlogPost() {
             <h2 className="text-2xl font-bold mt-12 mb-2">
               Section 4: Content That Ranks Locally
             </h2>
-            <p className="text-slate-600 text-sm mb-6">
+            <p className="text-[var(--color-body)] text-sm mb-6">
               Content is what fills the gaps. Every question a customer asks that
               you do not have a page answering is a search result you are giving
               to a competitor.
             </p>
 
-            <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 mb-8">
+            <div className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-xl p-6 mb-8">
               <TaskItem
                 number={18}
                 title="Build your entity in Google's Knowledge Graph"
@@ -315,17 +315,17 @@ export default function BlogPost() {
               What Happens When You Actually Execute
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               Most people will save this checklist and never execute a single
               task. That is true for every framework ever published.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               We know because we build automation systems for small businesses
               every week. When we worked with{" "}
               <Link
                 href="/blog/bakery-saved-15-hours-ai"
-                className="text-blue-600 hover:text-blue-600 transition-colors"
+                className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
               >
                 a London wholesale bakery
               </Link>
@@ -334,26 +334,26 @@ export default function BlogPost() {
               tracking. We automated the entire operation in 7 days.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               The same principle applies here. Local SEO is not complicated. It
               is just time-consuming. The businesses that win are the ones that
               actually do the work &mdash; or the ones that automate it.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               90 days of consistent execution on this checklist and you will
               outrank businesses that have been established for years. That is
               not a guess. That is what the data shows.
             </p>
 
             {/* The tool */}
-            <hr className="border-slate-200 my-10" />
+            <hr className="border-[var(--color-border)] my-10" />
 
             <h2 className="text-2xl font-bold mt-8 mb-4">
               We Are Automating This Entire Checklist
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               We are building a tool that takes your business details and runs
               this entire 20-task audit automatically. You fill in one form. You
               get back a complete action plan &mdash; your GBP gaps, your
@@ -362,13 +362,13 @@ export default function BlogPost() {
               competitors.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               No SEO knowledge required. No agency retainer. Just a clear list
               of exactly what to fix and in what order.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
-              We are calling it <strong className="text-slate-900">RankReady</strong>.
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
+              We are calling it <strong className="text-[var(--color-heading)]">RankReady</strong>.
               Sign up below to get early access when it launches.
             </p>
 
@@ -376,12 +376,12 @@ export default function BlogPost() {
             <RankReadyWaitlist />
 
             {/* Secondary CTA */}
-            <p className="text-slate-500 leading-relaxed mt-8 mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mt-8 mb-4">
               In the meantime, if you want someone to run this checklist for
               your business right now, start with our free{" "}
               <Link
                 href="/audit"
-                className="text-blue-600 hover:text-blue-600 transition-colors"
+                className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
               >
                 AI readiness audit
               </Link>
@@ -391,15 +391,15 @@ export default function BlogPost() {
           </div>
 
           {/* Related Articles */}
-          <div className="mt-12 border border-slate-200 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-4 text-slate-900">
+          <div className="mt-12 border border-[var(--color-border)] rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-4 text-[var(--color-heading)]">
               Related Articles
             </h3>
             <ul className="space-y-3">
               <li>
                 <Link
                   href="/blog/get-more-google-reviews"
-                  className="text-blue-600 hover:text-blue-600 transition-colors"
+                  className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
                 >
                   How to Get More Google Reviews Automatically
                 </Link>
@@ -407,7 +407,7 @@ export default function BlogPost() {
               <li>
                 <Link
                   href="/blog/local-business-website-2026"
-                  className="text-blue-600 hover:text-blue-600 transition-colors"
+                  className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
                 >
                   Does Your Business Need a Website in 2026?
                 </Link>
@@ -415,7 +415,7 @@ export default function BlogPost() {
               <li>
                 <Link
                   href="/blog/bakery-saved-15-hours-ai"
-                  className="text-blue-600 hover:text-blue-600 transition-colors"
+                  className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
                 >
                   How a London Bakery Saved 15+ Hours a Week With AI
                 </Link>
@@ -423,7 +423,7 @@ export default function BlogPost() {
               <li>
                 <Link
                   href="/case-studies/emanuel-bakery"
-                  className="text-slate-500 hover:text-slate-900 transition-colors"
+                  className="text-[var(--color-muted)] hover:text-[var(--color-heading)] transition-colors"
                 >
                   View the E&apos;Manuel Bakery case study &rarr;
                 </Link>
@@ -432,38 +432,38 @@ export default function BlogPost() {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-16 bg-blue-50 border border-blue-200 rounded-xl p-8 text-center">
+          <div className="mt-16 bg-[var(--color-primary-light)] border border-[var(--color-primary-light)] rounded-xl p-8 text-center">
             <h3 className="text-xl font-semibold mb-2">
               Want Us to Run This Checklist for Your Business?
             </h3>
-            <p className="text-slate-600 mb-6 max-w-lg mx-auto">
+            <p className="text-[var(--color-body)] mb-6 max-w-lg mx-auto">
               Take our free AI Readiness Audit. In 10 seconds, you&apos;ll know
               exactly where automation would save you the most time and money.
             </p>
             <Link
               href="/audit"
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-[var(--color-bg)] px-6 py-3 rounded-lg font-medium transition-colors"
             >
               Get Your Free AI Readiness Audit
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <p className="text-slate-400 text-sm mt-3">
+            <p className="text-[var(--color-muted)] text-sm mt-3">
               Takes 10 seconds. No obligation. 90-day results guarantee.
             </p>
           </div>
 
           {/* Prev/Next Navigation */}
-          <div className="mt-12 flex justify-between items-center border-t border-slate-200 pt-8">
+          <div className="mt-12 flex justify-between items-center border-t border-[var(--color-border)] pt-8">
             <Link
               href="/blog/bakery-saved-15-hours-ai"
-              className="text-slate-600 hover:text-slate-900 transition-colors text-sm flex items-center gap-2"
+              className="text-[var(--color-body)] hover:text-[var(--color-heading)] transition-colors text-sm flex items-center gap-2"
             >
               <ArrowLeft className="w-4 h-4" />
               London Bakery Case Study
             </Link>
             <Link
               href="/blog/what-it-costs-63-agent-ai-business"
-              className="text-slate-600 hover:text-slate-900 transition-colors text-sm flex items-center gap-2"
+              className="text-[var(--color-body)] hover:text-[var(--color-heading)] transition-colors text-sm flex items-center gap-2"
             >
               What It Costs to Run 63 AI Agents
               <ArrowRight className="w-4 h-4" />

@@ -30,11 +30,11 @@ type CTAButtonProps = LinkProps | ClickProps;
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-blue-600 text-white hover:bg-slate-900 border border-blue-600 hover:border-slate-900 shadow-[0_1px_6px_-1px_rgba(37,99,235,0.4)] hover:shadow-[0_2px_10px_-2px_rgba(15,23,42,0.3)]",
+    "bg-[var(--color-primary)] text-[var(--color-bg)] hover:bg-[var(--color-dark)] border border-[var(--color-primary)] hover:border-[var(--color-dark)] shadow-[0_1px_6px_-1px_rgba(37,99,235,0.4)] hover:shadow-[0_2px_10px_-2px_rgba(15,23,42,0.3)]",
   secondary:
-    "bg-white text-blue-600 border-2 border-slate-200 hover:bg-slate-900 hover:text-white hover:border-slate-900 shadow-sm hover:shadow-md",
+    "bg-[var(--color-bg)] text-[var(--color-primary)] border-2 border-[var(--color-border)] hover:bg-[var(--color-dark)] hover:text-[var(--color-bg)] hover:border-[var(--color-dark)] shadow-sm hover:shadow-md",
   ghost:
-    "bg-transparent text-slate-700 border border-transparent hover:text-blue-600 hover:bg-blue-50/50",
+    "bg-transparent text-[var(--color-body)] border border-transparent hover:text-[var(--color-primary)] hover:bg-[var(--color-primary-light)]/50",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
@@ -63,7 +63,7 @@ export default function CTAButton({
   const baseStyles = cn(
     "inline-flex items-center justify-center font-semibold rounded-full",
     "transition-all duration-200 ease-out",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-white",
     "group cursor-pointer select-none",
     variantStyles[variant],
     sizeStyles[size],

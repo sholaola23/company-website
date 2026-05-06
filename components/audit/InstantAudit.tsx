@@ -138,7 +138,7 @@ const SEVERITY_COLOR: Record<Severity, string> = {
 
 const SEVERITY_DOT: Record<Severity, string> = {
   red: "bg-red-500",
-  amber: "bg-amber-500",
+  amber: "bg-[var(--color-primary)]",
   green: "bg-green-500",
 };
 
@@ -199,14 +199,14 @@ function ScoreCircle({ score }: { score: number }) {
         {/* Score text */}
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <motion.span
-            className="text-4xl font-bold text-slate-900 leading-none"
+            className="text-4xl font-bold text-[var(--color-heading)] leading-none"
             initial={{ opacity: 0, scale: 0.7 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             {score}
           </motion.span>
-          <span className="text-xs text-slate-400 mt-0.5">/ 10</span>
+          <span className="text-xs text-[var(--color-muted)] mt-0.5">/ 10</span>
         </div>
       </div>
       <div className="text-center">
@@ -224,12 +224,12 @@ function SkeletonCard({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "bg-slate-100/60 border border-slate-200/50 rounded-xl p-5 overflow-hidden relative",
+        "bg-[var(--color-surface)]/60 border border-[var(--color-border)]/50 rounded-xl p-5 overflow-hidden relative",
         className
       )}
       aria-hidden="true"
     >
-      <div className="shimmer-line h-3 rounded-full w-1/2 mb-3 bg-slate-200" />
+      <div className="shimmer-line h-3 rounded-full w-1/2 mb-3 bg-[var(--color-border)]" />
       <div className="shimmer-line h-2.5 rounded-full w-full mb-2 bg-slate-300" />
       <div className="shimmer-line h-2.5 rounded-full w-4/5 bg-slate-300" />
     </div>
@@ -270,9 +270,9 @@ function GeneratingStep() {
       {/* Progress header */}
       <div className="flex flex-col items-center gap-4">
         {/* Pulsing score circle placeholder */}
-        <div className="w-36 h-36 rounded-full bg-slate-100/60 border-4 border-slate-200/50 flex items-center justify-center relative overflow-hidden">
+        <div className="w-36 h-36 rounded-full bg-[var(--color-surface)]/60 border-4 border-[var(--color-border)]/50 flex items-center justify-center relative overflow-hidden">
           <div className="absolute inset-0 shimmer-overlay" aria-hidden="true" />
-          <span className="text-slate-900 text-sm font-medium">—</span>
+          <span className="text-[var(--color-heading)] text-sm font-medium">—</span>
         </div>
 
         <AnimatePresence mode="wait">
@@ -282,7 +282,7 @@ function GeneratingStep() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.3 }}
-            className="text-slate-600 text-sm font-medium"
+            className="text-[var(--color-body)] text-sm font-medium"
             aria-live="polite"
             aria-atomic="true"
           >
@@ -291,9 +291,9 @@ function GeneratingStep() {
         </AnimatePresence>
 
         {/* Progress bar */}
-        <div className="w-full max-w-xs h-1 bg-slate-100 rounded-full overflow-hidden">
+        <div className="w-full max-w-xs h-1 bg-[var(--color-surface)] rounded-full overflow-hidden">
           <motion.div
-            className="h-full bg-blue-600 rounded-full"
+            className="h-full bg-[var(--color-primary)] rounded-full"
             initial={{ width: "0%" }}
             animate={{ width: "90%" }}
             transition={{ duration: 9, ease: "easeInOut" }}
@@ -322,7 +322,7 @@ function useReducerLike(initial: number): [number, (fn: (i: number) => number) =
 // ---------------------------------------------------------------------------
 
 const inputBase =
-  "w-full bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-colors duration-150 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 disabled:opacity-40 disabled:cursor-not-allowed";
+  "w-full bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg px-4 py-3 text-sm text-[var(--color-heading)] placeholder:text-[var(--color-muted)] transition-colors duration-150 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)] disabled:opacity-40 disabled:cursor-not-allowed";
 
 interface InputStepProps {
   state: State;
@@ -348,8 +348,8 @@ function InputStep({ state, dispatch, formId, onSubmit }: InputStepProps) {
       <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5" aria-labelledby={`${formId}-heading`}>
         {/* Business name */}
         <div className="flex flex-col gap-1.5">
-          <label htmlFor={`${formId}-bizname`} className="text-sm font-medium text-slate-500">
-            Business Name <span className="text-blue-600" aria-hidden="true">*</span>
+          <label htmlFor={`${formId}-bizname`} className="text-sm font-medium text-[var(--color-muted)]">
+            Business Name <span className="text-[var(--color-primary)]" aria-hidden="true">*</span>
           </label>
           <input
             id={`${formId}-bizname`}
@@ -366,8 +366,8 @@ function InputStep({ state, dispatch, formId, onSubmit }: InputStepProps) {
 
         {/* Industry */}
         <div className="flex flex-col gap-1.5">
-          <label htmlFor={`${formId}-industry`} className="text-sm font-medium text-slate-500">
-            Industry <span className="text-blue-600" aria-hidden="true">*</span>
+          <label htmlFor={`${formId}-industry`} className="text-sm font-medium text-[var(--color-muted)]">
+            Industry <span className="text-[var(--color-primary)]" aria-hidden="true">*</span>
           </label>
           <select
             id={`${formId}-industry`}
@@ -386,9 +386,9 @@ function InputStep({ state, dispatch, formId, onSubmit }: InputStepProps) {
 
         {/* Website URL */}
         <div className="flex flex-col gap-2">
-          <label htmlFor={`${formId}-website`} className="text-sm font-medium text-slate-500">
+          <label htmlFor={`${formId}-website`} className="text-sm font-medium text-[var(--color-muted)]">
             Website URL{" "}
-            <span className="text-slate-400 font-normal">(optional)</span>
+            <span className="text-[var(--color-muted)] font-normal">(optional)</span>
           </label>
           <input
             id={`${formId}-website`}
@@ -405,9 +405,9 @@ function InputStep({ state, dispatch, formId, onSubmit }: InputStepProps) {
               type="checkbox"
               checked={state.noWebsite}
               onChange={() => dispatch({ type: "TOGGLE_NO_WEBSITE" })}
-              className="w-4 h-4 rounded border-slate-500 bg-slate-50 accent-blue-500 cursor-pointer"
+              className="w-4 h-4 rounded border-[var(--color-border-strong)] bg-[var(--color-bg-alt)] accent-blue-500 cursor-pointer"
             />
-            <span className="text-sm text-slate-600">I don&apos;t have a website</span>
+            <span className="text-sm text-[var(--color-body)]">I don&apos;t have a website</span>
           </label>
         </div>
 
@@ -426,17 +426,17 @@ function InputStep({ state, dispatch, formId, onSubmit }: InputStepProps) {
           type="submit"
           className={cn(
             "inline-flex items-center justify-center gap-2.5 font-semibold rounded-xl",
-            "bg-blue-600 text-white border border-blue-600",
-            "hover:bg-blue-700 hover:border-blue-600 active:scale-[0.98]",
+            "bg-[var(--color-primary)] text-[var(--color-bg)] border border-[var(--color-primary)]",
+            "hover:bg-[var(--color-primary-hover)] hover:border-[var(--color-primary)] active:scale-[0.98]",
             "transition-all duration-200 px-6 py-3.5 text-base mt-1",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-white"
           )}
         >
           <Zap size={18} aria-hidden="true" />
           Run My Free Audit
         </button>
 
-        <p className="text-xs text-slate-400 text-center">
+        <p className="text-xs text-[var(--color-muted)] text-center">
           Takes about 10 seconds. No email required.
         </p>
       </form>
@@ -471,17 +471,17 @@ function ResultsStep({ result, formId, state, dispatch, onEmailSubmit }: Results
       {/* Score */}
       <div className="flex flex-col items-center gap-1 pt-2">
         <ScoreCircle score={result.score} />
-        <p className="text-sm font-semibold text-slate-500 mt-1">{result.scoreLabel}</p>
+        <p className="text-sm font-semibold text-[var(--color-muted)] mt-1">{result.scoreLabel}</p>
       </div>
 
       {/* Summary */}
-      <div className="bg-slate-100/50 border border-slate-200/50 rounded-xl p-5">
-        <p className="text-sm text-slate-500 leading-relaxed">{result.summary}</p>
+      <div className="bg-[var(--color-surface)]/50 border border-[var(--color-border)]/50 rounded-xl p-5">
+        <p className="text-sm text-[var(--color-muted)] leading-relaxed">{result.summary}</p>
       </div>
 
       {/* Findings */}
       <section aria-labelledby={`${formId}-findings-heading`}>
-        <h3 id={`${formId}-findings-heading`} className="text-xs font-semibold tracking-widest uppercase text-slate-400 mb-3">
+        <h3 id={`${formId}-findings-heading`} className="text-xs font-semibold tracking-widest uppercase text-[var(--color-muted)] mb-3">
           Key Findings
         </h3>
         <ol className="flex flex-col gap-3" role="list">
@@ -491,7 +491,7 @@ function ResultsStep({ result, formId, state, dispatch, onEmailSubmit }: Results
               initial={{ opacity: 0, x: -12 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4, delay: 0.1 + i * 0.1 }}
-              className="bg-slate-50 border border-slate-200 rounded-xl p-4 flex gap-3 items-start"
+              className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-xl p-4 flex gap-3 items-start"
             >
               <span
                 className={cn("w-2.5 h-2.5 rounded-full shrink-0 mt-1", SEVERITY_DOT[finding.severity])}
@@ -499,8 +499,8 @@ function ResultsStep({ result, formId, state, dispatch, onEmailSubmit }: Results
                 style={{ background: SEVERITY_COLOR[finding.severity] }}
               />
               <div>
-                <p className="text-sm font-semibold text-slate-900 mb-1">{finding.title}</p>
-                <p className="text-sm text-slate-600 leading-relaxed">{finding.description}</p>
+                <p className="text-sm font-semibold text-[var(--color-heading)] mb-1">{finding.title}</p>
+                <p className="text-sm text-[var(--color-body)] leading-relaxed">{finding.description}</p>
               </div>
             </motion.li>
           ))}
@@ -509,7 +509,7 @@ function ResultsStep({ result, formId, state, dispatch, onEmailSubmit }: Results
 
       {/* Quick Wins */}
       <section aria-labelledby={`${formId}-quickwins-heading`}>
-        <h3 id={`${formId}-quickwins-heading`} className="text-xs font-semibold tracking-widest uppercase text-slate-400 mb-3">
+        <h3 id={`${formId}-quickwins-heading`} className="text-xs font-semibold tracking-widest uppercase text-[var(--color-muted)] mb-3">
           Quick Wins
         </h3>
         <ul className="flex flex-col gap-3" role="list">
@@ -519,16 +519,16 @@ function ResultsStep({ result, formId, state, dispatch, onEmailSubmit }: Results
               initial={{ opacity: 0, x: -12 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4, delay: 0.4 + i * 0.1 }}
-              className="bg-slate-50 border border-slate-200 rounded-xl p-4 flex gap-3 items-start"
+              className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-xl p-4 flex gap-3 items-start"
             >
               <Lightbulb
                 size={16}
-                className="text-amber-600 shrink-0 mt-0.5"
+                className="text-[var(--color-primary)] shrink-0 mt-0.5"
                 aria-hidden="true"
               />
               <div>
-                <p className="text-sm font-semibold text-slate-900 mb-1">{win.title}</p>
-                <p className="text-sm text-slate-600 leading-relaxed">{win.description}</p>
+                <p className="text-sm font-semibold text-[var(--color-heading)] mb-1">{win.title}</p>
+                <p className="text-sm text-[var(--color-body)] leading-relaxed">{win.description}</p>
               </div>
             </motion.li>
           ))}
@@ -540,19 +540,19 @@ function ResultsStep({ result, formId, state, dispatch, onEmailSubmit }: Results
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.6 }}
-        className="border border-blue-600/40 bg-blue-600/5 rounded-xl p-5"
+        className="border border-[var(--color-primary)]/40 bg-[var(--color-primary)]/5 rounded-xl p-5"
         role="region"
         aria-label="Recommended service tier"
       >
-        <p className="text-xs font-semibold tracking-widest uppercase text-blue-600 mb-2">Recommended</p>
+        <p className="text-xs font-semibold tracking-widest uppercase text-[var(--color-primary)] mb-2">Recommended</p>
         <div className="flex items-baseline gap-3 flex-wrap mb-2">
-          <span className="text-lg font-bold text-slate-900">{tier.label} Plan</span>
-          <span className="text-sm text-slate-600">{tier.price}</span>
+          <span className="text-lg font-bold text-[var(--color-heading)]">{tier.label} Plan</span>
+          <span className="text-sm text-[var(--color-body)]">{tier.price}</span>
         </div>
-        <p className="text-sm text-slate-600 leading-relaxed mb-3">{result.tierReason}</p>
+        <p className="text-sm text-[var(--color-body)] leading-relaxed mb-3">{result.tierReason}</p>
         <NextLink
           href="/services"
-          className="inline-flex items-center gap-1.5 text-sm text-blue-600 hover:text-blue-600 font-medium transition-colors"
+          className="inline-flex items-center gap-1.5 text-sm text-[var(--color-primary)] hover:text-[var(--color-primary)] font-medium transition-colors"
         >
           View details
           <ExternalLink size={13} aria-hidden="true" />
@@ -564,16 +564,16 @@ function ResultsStep({ result, formId, state, dispatch, onEmailSubmit }: Results
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.75 }}
-        className="border border-blue-600/30 bg-gradient-to-b from-blue-500/5 to-blue-100 rounded-xl p-6 relative overflow-hidden"
+        className="border border-[var(--color-primary)]/30 bg-gradient-to-b from-blue-500/5 to-blue-100 rounded-xl p-6 relative overflow-hidden"
       >
         {/* Header */}
         <div className="flex items-center gap-2 mb-1.5">
-          <Sparkles size={16} className="text-blue-600" aria-hidden="true" />
-          <h3 className="text-base font-semibold text-slate-900">
+          <Sparkles size={16} className="text-[var(--color-primary)]" aria-hidden="true" />
+          <h3 className="text-base font-semibold text-[var(--color-heading)]">
             Unlock Your Full AI Readiness Report
           </h3>
         </div>
-        <p className="text-sm text-slate-600 leading-relaxed mb-5">
+        <p className="text-sm text-[var(--color-body)] leading-relaxed mb-5">
           Your personalised report has 5 in-depth sections ready for you:
         </p>
 
@@ -591,22 +591,22 @@ function ResultsStep({ result, formId, state, dispatch, onEmailSubmit }: Results
               initial={{ opacity: 0, x: -8 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.3, delay: 0.8 + i * 0.08 }}
-              className="flex items-start gap-3 bg-slate-100/40 border border-slate-200/30 rounded-lg px-4 py-3 relative overflow-hidden"
+              className="flex items-start gap-3 bg-[var(--color-surface)]/40 border border-[var(--color-border)]/30 rounded-lg px-4 py-3 relative overflow-hidden"
             >
-              <Icon size={15} className="text-blue-600/70 shrink-0 mt-0.5" aria-hidden="true" />
+              <Icon size={15} className="text-[var(--color-primary)]/70 shrink-0 mt-0.5" aria-hidden="true" />
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium text-slate-900">{title}</p>
-                <p className="text-xs text-slate-400 mt-0.5 select-none" style={{ filter: "blur(4px)" }} aria-hidden="true">
+                <p className="text-sm font-medium text-[var(--color-heading)]">{title}</p>
+                <p className="text-xs text-[var(--color-muted)] mt-0.5 select-none" style={{ filter: "blur(4px)" }} aria-hidden="true">
                   {teaser}
                 </p>
               </div>
-              <Lock size={13} className="text-slate-900 shrink-0 mt-1" aria-hidden="true" />
+              <Lock size={13} className="text-[var(--color-heading)] shrink-0 mt-1" aria-hidden="true" />
             </motion.div>
           ))}
         </div>
 
         {/* Social proof nudge */}
-        <p className="text-xs text-slate-400 text-center mb-4">
+        <p className="text-xs text-[var(--color-muted)] text-center mb-4">
           Takes ~90 seconds to generate. Free, no obligation.
         </p>
 
@@ -632,10 +632,10 @@ function ResultsStep({ result, formId, state, dispatch, onEmailSubmit }: Results
             disabled={state.emailStatus === "loading"}
             className={cn(
               "inline-flex items-center justify-center gap-2 font-semibold rounded-lg",
-              "bg-blue-600 text-white border border-blue-600",
-              "hover:bg-blue-700 hover:border-blue-600 active:scale-[0.98]",
+              "bg-[var(--color-primary)] text-[var(--color-bg)] border border-[var(--color-primary)]",
+              "hover:bg-[var(--color-primary-hover)] hover:border-[var(--color-primary)] active:scale-[0.98]",
               "transition-all duration-200 px-5 py-3 text-sm shrink-0",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-white",
               "disabled:opacity-60 disabled:cursor-not-allowed"
             )}
           >
@@ -699,14 +699,14 @@ function CompleteStep({ result }: { result: AuditResult }) {
           </svg>
         </div>
         <div>
-          <h3 className="text-xl font-bold text-slate-900 mb-2">Your full report is being generated!</h3>
-          <p className="text-sm text-slate-600 leading-relaxed max-w-sm mx-auto">
+          <h3 className="text-xl font-bold text-[var(--color-heading)] mb-2">Your full report is being generated!</h3>
+          <p className="text-sm text-[var(--color-body)] leading-relaxed max-w-sm mx-auto">
             Your personalised 5-section AI Readiness Report is being created right now. You&apos;ll receive it by email within 2 minutes.
           </p>
         </div>
         <NextLink
           href="/services"
-          className="inline-flex items-center gap-1.5 text-sm text-blue-600 hover:text-blue-600 font-medium transition-colors"
+          className="inline-flex items-center gap-1.5 text-sm text-[var(--color-primary)] hover:text-[var(--color-primary)] font-medium transition-colors"
         >
           In the meantime, explore our services
           <ExternalLink size={13} aria-hidden="true" />
@@ -714,14 +714,14 @@ function CompleteStep({ result }: { result: AuditResult }) {
       </motion.div>
 
       {/* Results still visible */}
-      <div className="border-t border-slate-200 pt-7">
-        <p className="text-xs font-semibold tracking-widest uppercase text-slate-400 mb-4">Your Instant Results</p>
+      <div className="border-t border-[var(--color-border)] pt-7">
+        <p className="text-xs font-semibold tracking-widest uppercase text-[var(--color-muted)] mb-4">Your Instant Results</p>
         <div className="flex flex-col items-center gap-2 mb-5">
           <ScoreCircle score={result.score} />
-          <p className="text-sm font-semibold text-slate-500">{result.scoreLabel}</p>
+          <p className="text-sm font-semibold text-[var(--color-muted)]">{result.scoreLabel}</p>
         </div>
-        <div className="bg-slate-100/50 border border-slate-200/50 rounded-xl p-4">
-          <p className="text-sm text-slate-600 leading-relaxed">{result.summary}</p>
+        <div className="bg-[var(--color-surface)]/50 border border-[var(--color-border)]/50 rounded-xl p-4">
+          <p className="text-sm text-[var(--color-body)] leading-relaxed">{result.summary}</p>
         </div>
       </div>
     </motion.div>
@@ -957,17 +957,17 @@ export default function InstantAudit() {
 
       <div
         ref={containerRef}
-        className="bg-slate-50 border border-slate-200 rounded-2xl p-7 sm:p-8 scroll-mt-24"
+        className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-2xl p-7 sm:p-8 scroll-mt-24"
         role="region"
         aria-label="Instant AI Readiness Audit"
       >
         {/* Heading — shown on input step only */}
         {state.step === "input" && (
           <div className="mb-7">
-            <h2 id={`${formId}-heading`} className="text-xl font-bold text-slate-900 mb-1.5">
+            <h2 id={`${formId}-heading`} className="text-xl font-bold text-[var(--color-heading)] mb-1.5">
               Run your instant audit
             </h2>
-            <p className="text-sm text-slate-600">
+            <p className="text-sm text-[var(--color-body)]">
               Enter your business details below — AI analysis in seconds.
             </p>
           </div>
@@ -1011,11 +1011,11 @@ export default function InstantAudit() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
-            className="mt-6 pt-5 border-t border-slate-200 text-center"
+            className="mt-6 pt-5 border-t border-[var(--color-border)] text-center"
           >
             <button
               onClick={() => dispatch({ type: "RESET" })}
-              className="text-xs text-slate-400 hover:text-slate-600 transition-colors underline underline-offset-2"
+              className="text-xs text-[var(--color-muted)] hover:text-[var(--color-body)] transition-colors underline underline-offset-2"
             >
               Start a new audit
             </button>

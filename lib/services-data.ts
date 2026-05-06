@@ -71,7 +71,7 @@ export const services: Service[] = [
     referenceClient: "E'Manuel Bakery",
     icon: "ShoppingCart",
     proof: {
-      heading: "Real Results",
+      heading: "Real results",
       stats: [
         { label: "Orders automated weekly", value: "180+" },
         { label: "Hours saved per week", value: "8+" },
@@ -108,7 +108,7 @@ export const services: Service[] = [
     referenceClient: "QuantumFM Media",
     icon: "Globe",
     proof: {
-      heading: "Real Results",
+      heading: "Real results",
       stats: [
         { label: "Pages delivered", value: "12" },
         { label: "Delivery time", value: "Under 2 weeks" },
@@ -127,14 +127,14 @@ export const services: Service[] = [
   {
     slug: "lead-intake",
     name: "AI Lead Intake & Appointment Booking",
-    heroHeadline: "Speed-to-Lead: Respond in 60 Seconds, Book Jobs While You Sleep.",
+    heroHeadline: "Respond in 60 seconds. Book jobs while you sleep.",
     tier: "starter",
     setupPrice: "Get a quote",
     monthlyPrice: "",
     deliveryDays: "Fast turnaround",
     idealFor: "Plumbers, cleaners, salons, gyms",
-    pain: "Missing leads, slow response — 78% of customers buy from whoever responds first",
-    metaDescription: "Speed-to-Lead AI agent that responds to enquiries in under 60 seconds, qualifies leads automatically, and books appointments 24/7. Never lose a lead to slow response times again.",
+    pain: "Leads slip through. Missed calls. 4-hour reply windows. The first business to respond wins the job.",
+    metaDescription: "An intake agent that answers enquiries in under 60 seconds, qualifies them, and books straight into your calendar. Stop losing leads to slow replies.",
     deliverables: [
       "Lead capture form",
       "AI qualification",
@@ -145,41 +145,41 @@ export const services: Service[] = [
     referenceClient: undefined,
     icon: "CalendarCheck",
     proof: {
-      heading: "Real Results",
+      heading: "Real results",
       description:
-        "We built exactly this for E'Manuel Bakery — automated order intake that replaced manual WhatsApp collection. 180+ orders per week now flow through automatically with zero admin time. The same Speed-to-Lead approach works for any service business: an enquiry comes in, AI responds instantly with intelligent qualifying questions, books the calendar slot, and sends a confirmation — all in under 60 seconds while you're on a job site.",
+        "We built exactly this for E'Manuel Bakery — automated order intake that replaced manual WhatsApp collection. 180+ orders per week now flow through automatically with zero admin time. The same lead intake approach works for any service business: an enquiry comes in, AI responds instantly with intelligent qualifying questions, books the calendar slot, and sends a confirmation — all in under 60 seconds while you're on a job site.",
       stats: [
         { label: "Response time", value: "Under 60 seconds" },
         { label: "Proven with", value: "180+ orders/week" },
       ],
       clientName: "E'Manuel Foods & Bakery",
     },
-    ctaText: "Get Your Free AI Blueprint",
-    ctaHref: "/blueprint",
-    ctaSubtext: "See exactly where automation would save you time — takes 60 seconds.",
+    ctaText: "Book a discovery call",
+    ctaHref: "https://cal.com/workcrew/free-ai-strategy-call",
+    ctaSubtext: "30 minutes. We tell you where your week leaks the most time.",
     howItWorks: [
       {
         step: 1,
-        title: "Audit Your Current Process",
-        description: "We map how leads reach you today — phone, email, website, social — and measure your response time. Research shows a 5-minute response makes you 21x more likely to win the job. Most businesses take hours or never respond at all.",
+        title: "Map your current process",
+        description: "We map how leads reach you today — phone, email, website, social — and measure your response time. A 5-minute response makes you 21× more likely to win the job. Most businesses take hours, or never reply at all.",
         icon: "Search",
       },
       {
         step: 2,
-        title: "Build Your AI Intake System",
-        description: "We set up your custom lead capture form, AI qualification logic, and calendar integration. The AI learns what makes a good lead for YOUR business — budget, location, urgency, job type.",
+        title: "Build your intake system",
+        description: "We set up your lead capture form, qualification logic, and calendar integration. The AI learns what makes a good lead for your business — budget, location, urgency, job type.",
         icon: "Wrench",
       },
       {
         step: 3,
-        title: "Launch & Test",
-        description: "Your Speed-to-Lead agent goes live. Every new enquiry gets an intelligent response in under 60 seconds — not a generic auto-reply, but a personalised message that asks the right qualifying questions and books them straight into your calendar.",
+        title: "Launch and test",
+        description: "Your intake agent goes live. Every enquiry gets a real response in under 60 seconds — qualifying questions and a calendar slot, not a generic auto-reply.",
         icon: "Rocket",
       },
       {
         step: 4,
-        title: "Optimise Monthly",
-        description: "We review your KPI dashboard weekly: response times, booking rates, no-shows. We tweak the qualification logic, follow-up sequences, and booking flow to continuously improve conversion.",
+        title: "Run and adjust",
+        description: "We watch the system, fix what breaks, tighten what works. Each month we review what to adjust next — qualification logic, follow-up sequences, booking flow.",
         icon: "TrendingUp",
       },
     ],
@@ -249,7 +249,7 @@ export const services: Service[] = [
     referenceClient: undefined,
     icon: "MessageCircle",
     proof: {
-      heading: "Real Results",
+      heading: "Real results",
       description:
         "E'Manuel Bakery's customers get instant WhatsApp confirmations the moment their order is placed — no manual messages, no delays. The bot handles order acknowledgements, delivery updates, and payment reminders automatically. Their customers regularly reply saying they love the fast updates.",
       stats: [
@@ -439,7 +439,7 @@ export const services: Service[] = [
     referenceClient: undefined,
     icon: "Search",
     proof: {
-      heading: "Real Results",
+      heading: "Real results",
       description:
         "We built QuantumFM Media's website with a full blog and SEO foundations from scratch. Their site now ranks for local search terms, drives organic traffic, and the headless WordPress CMS lets them publish new content without touching code. The same content engine powers our own consulting site — 12 blog posts, 5 city landing pages, and 26 pages indexed on Google within weeks.",
       stats: [
@@ -625,7 +625,7 @@ export const services: Service[] = [
     deliveryDays: "48 hours",
     idealFor: "Any prospect",
     pain: "Unsure where AI fits — get your free AI readiness score in 60 seconds",
-    metaDescription: "Free AI readiness audit for your business. Get an instant AI score, top automation opportunities, and projected ROI in 60 seconds. No email required.",
+    metaDescription: "Free AI readiness audit for your business. Get an instant AI score, top automation opportunities, and what you should see in 30, 60, 90 days in 60 seconds. No email required.",
     deliverables: [
       "5-section report",
       "Business snapshot",
@@ -636,9 +636,9 @@ export const services: Service[] = [
     referenceClient: undefined,
     icon: "FileSearch",
     proof: {
-      heading: "Real Results",
+      heading: "Real results",
       description:
-        "Our instant AI audit scores your business in under 60 seconds — no email required. Enter a few details and get an AI readiness score, top automation opportunities, and a projected ROI. Over a dozen businesses have taken it so far. Want the full 5-section deep-dive report? Just add your email and we'll send it within 48 hours.",
+        "Our instant AI audit scores your business in under 60 seconds — no email required. Enter a few details and get an AI readiness score, top automation opportunities, and a what you should see in 30, 60, 90 days. Over a dozen businesses have taken it so far. Want the full 5-section deep-dive report? Just add your email and we'll send it within 48 hours.",
       stats: [
         { label: "Time to get your score", value: "60 seconds" },
         { label: "Cost", value: "FREE" },
@@ -667,7 +667,7 @@ export const services: Service[] = [
     referenceClient: undefined,
     icon: "Wrench",
     proof: {
-      heading: "Real Results",
+      heading: "Real results",
       description:
         "E'Manuel Foods & Bakery needed something no off-the-shelf tool could do: a system that takes a WhatsApp order, matches it to a SumUp or bank transfer payment, generates a production schedule, optimises delivery routes by town, and sends the customer a confirmation — all automatically. We built 9 custom workflows that save 8+ hours a week and handle 180+ orders without a single manual step.",
       stats: [

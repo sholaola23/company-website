@@ -118,7 +118,7 @@ If the lead has an email address, SEND the email directly via gmail_send_email (
 ```html
 <a href="[report-url]" style="display:inline-block; background:#6366f1; color:white; padding:14px 28px; border-radius:8px; text-decoration:none; font-weight:700; font-size:15px;">View Your AI Readiness Report →</a>
 ```
-4. Soft CTA: "No strings attached — just thought you'd find it useful. If anything resonates, reply here or WhatsApp me on 07469 347654."
+4. Soft CTA: "No strings attached — just thought you'd find it useful. If anything resonates, reply here or WhatsApp me on +44 7469 347 654."
 5. Signature (from `../_shared/ctas.md`)
 
 **If the lead has NO email:** Skip sending. Note "No email — audit ready, waiting for email discovery" in the report.

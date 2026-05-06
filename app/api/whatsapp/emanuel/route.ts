@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ANTHROPIC_API_URL, ANTHROPIC_VERSION, heliconeHeaders } from "@/lib/constants";
+import { requireGuard } from "@/lib/api-guard";
 
 export const runtime = "edge";
 
@@ -164,12 +165,24 @@ Escalation message: "Let me get Tunmise to help you with that. He'll get back to
 // ---------------------------------------------------------------------------
 
 export async function POST(req: NextRequest) {
-  // ---- Auth check ----
+  // ---- Auth check (Kapso webhook bearer token) ----
   const authHeader = req.headers.get("authorization");
   const expectedToken = process.env.WHATSAPP_EMANUEL_WEBHOOK_SECRET;
 
   if (expectedToken && authHeader !== `Bearer ${expectedToken}`) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  // ---- Guard (kill-switch + global cap + per-IP). Origin skipped because
+  // Kapso webhooks come from Kapso's IPs, not workcrew.io. The bearer-token
+  // check above is the primary auth for this endpoint.
+  const guard = requireGuard(req, {
+    endpoint: "whatsapp-emanuel",
+    perIpLimit: 1000,
+    skipOriginCheck: true,
+  });
+  if (!guard.ok) {
+    return NextResponse.json({ error: guard.message }, { status: guard.status });
   }
 
   // ---- Parse incoming message ----

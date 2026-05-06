@@ -48,7 +48,7 @@ export default function BlogPost() {
         <div className="max-w-3xl mx-auto">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 text-sm mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-[var(--color-body)] hover:text-[var(--color-heading)] text-sm mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             All Posts
@@ -58,7 +58,7 @@ export default function BlogPost() {
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full"
+                className="text-xs bg-[var(--color-surface)] text-[var(--color-body)] px-2 py-0.5 rounded-full"
               >
                 {tag}
               </span>
@@ -70,11 +70,11 @@ export default function BlogPost() {
             Planning, Family Updates &amp; Compliance
           </h1>
 
-          <div className="flex items-center gap-4 text-sm text-slate-400 mb-12">
+          <div className="flex items-center gap-4 text-sm text-[var(--color-muted)] mb-12">
             <span>21 March 2026</span>
-            <span className="text-slate-600">|</span>
+            <span className="text-[var(--color-body)]">|</span>
             <span>By Olushola Oladipupo</span>
-            <span className="text-slate-600">|</span>
+            <span className="text-[var(--color-body)]">|</span>
             <span className="flex items-center gap-1">
               <Clock className="w-3 h-3" />
               8 min read
@@ -82,7 +82,7 @@ export default function BlogPost() {
           </div>
 
           <div className="prose prose-slate max-w-none">
-            <p className="text-slate-500 leading-relaxed mb-4 text-lg">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4 text-lg">
               It&apos;s 5:45am. Your phone buzzes. A carer has called in
               sick for the 7am shift and you&apos;ve got 12 residents who
               need medication rounds, personal care, and breakfast
@@ -93,7 +93,7 @@ export default function BlogPost() {
               updated since last week.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               If you manage a care home or run a domiciliary care agency,
               this is your reality. Rota gaps. Family complaints. CQC
               inspections looming. Safeguarding paperwork that needs to be
@@ -102,7 +102,7 @@ export default function BlogPost() {
               have time to respond to properly.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               The actual caring &mdash; the reason you got into this
               sector &mdash; gets squeezed by an avalanche of
               administrative work. Your registered manager is drowning in
@@ -110,7 +110,7 @@ export default function BlogPost() {
               floor.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               AI automation can handle the operational burden so your
               team can focus on what matters: delivering outstanding care.
               Here are five automations making a genuine difference for
@@ -122,8 +122,8 @@ export default function BlogPost() {
               1. Staff Rota Planning &amp; Shift Cover Automation
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-2">
-              <strong className="text-slate-900">Problem:</strong> Care
+            <p className="text-[var(--color-muted)] leading-relaxed mb-2">
+              <strong className="text-[var(--color-heading)]">Problem:</strong> Care
               homes operate 24/7, 365 days a year. You need the right
               staff with the right qualifications on every shift &mdash;
               and CQC will check your staffing levels against dependency
@@ -135,8 +135,8 @@ export default function BlogPost() {
               could be left without medication or meals.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Solution:</strong> An AI
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Solution:</strong> An AI
               rota management system that builds weekly rotas based on
               staff availability, qualifications, contracted hours, and
               resident dependency levels. When a shift becomes vacant,
@@ -148,8 +148,8 @@ export default function BlogPost() {
               when, and how the shift was filled.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
-              <strong className="text-slate-900">Result:</strong> A
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
+              <strong className="text-[var(--color-heading)]">Result:</strong> A
               40-bed residential care home in Leeds reduced shift
               vacancy fill time from 2 hours of phone calls to an
               average of 18 minutes. Agency spend dropped by 35%,
@@ -165,8 +165,8 @@ export default function BlogPost() {
               2. Family Communication &amp; Care Updates
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-2">
-              <strong className="text-slate-900">Problem:</strong> Families
+            <p className="text-[var(--color-muted)] leading-relaxed mb-2">
+              <strong className="text-[var(--color-heading)]">Problem:</strong> Families
               want to know how their loved one is doing. They want
               updates on meals, activities, health changes, and general
               wellbeing. But your care staff are busy delivering care,
@@ -178,8 +178,8 @@ export default function BlogPost() {
               can&apos;t simply pop in and see for themselves.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Solution:</strong> An
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Solution:</strong> An
               automated family communication system that pulls data
               from daily care notes and generates personalised updates.
               When a carer logs that a resident ate well, participated
@@ -192,8 +192,8 @@ export default function BlogPost() {
               staff member.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
-              <strong className="text-slate-900">Result:</strong> A
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
+              <strong className="text-[var(--color-heading)]">Result:</strong> A
               home care agency in Birmingham serving 85 clients
               introduced automated weekly family updates and saw
               formal complaints drop by 60% within three months.
@@ -208,8 +208,8 @@ export default function BlogPost() {
               3. CQC Compliance Documentation &amp; Audit Trail
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-2">
-              <strong className="text-slate-900">Problem:</strong> CQC
+            <p className="text-[var(--color-muted)] leading-relaxed mb-2">
+              <strong className="text-[var(--color-heading)]">Problem:</strong> CQC
               inspections can happen at any time. Your service needs
               up-to-date care plans, risk assessments, incident reports,
               safeguarding logs, supervision records, MARs, and policy
@@ -219,8 +219,8 @@ export default function BlogPost() {
               memory. When an inspector arrives, it&apos;s a scramble.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Solution:</strong> An AI
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Solution:</strong> An AI
               compliance monitoring system that continuously checks your
               documentation against CQC requirements. It flags gaps
               automatically: &ldquo;Mrs Johnson&apos;s care plan
@@ -234,8 +234,8 @@ export default function BlogPost() {
               outstanding items.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
-              <strong className="text-slate-900">Result:</strong> A
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
+              <strong className="text-[var(--color-heading)]">Result:</strong> A
               care home group in the West Midlands with three sites
               implemented automated compliance monitoring and moved
               from &ldquo;Requires Improvement&rdquo; to &ldquo;Good&rdquo;
@@ -253,8 +253,8 @@ export default function BlogPost() {
               4. Enquiry Handling &amp; Bed/Capacity Management
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-2">
-              <strong className="text-slate-900">Problem:</strong> When a
+            <p className="text-[var(--color-muted)] leading-relaxed mb-2">
+              <strong className="text-[var(--color-heading)]">Problem:</strong> When a
               family is looking for a care home bed or home care
               package, they&apos;re often in crisis &mdash; a hospital
               discharge is imminent and they&apos;re contacting
@@ -266,8 +266,8 @@ export default function BlogPost() {
               is significant revenue walking out the door.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Solution:</strong> An AI
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Solution:</strong> An AI
               enquiry response system that acknowledges every new
               enquiry within 2 minutes &mdash; via email, web form, or
               phone (with an AI voice assistant). It asks qualifying
@@ -282,8 +282,8 @@ export default function BlogPost() {
               forecast occupancy.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
-              <strong className="text-slate-900">Result:</strong> A
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
+              <strong className="text-[var(--color-heading)]">Result:</strong> A
               60-bed care home in Surrey was operating at 78% occupancy
               and losing enquiries to faster-responding competitors.
               After implementing automated enquiry handling, response
@@ -301,8 +301,8 @@ export default function BlogPost() {
               5. Staff Training Tracking &amp; Certification Reminders
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-2">
-              <strong className="text-slate-900">Problem:</strong> Care
+            <p className="text-[var(--color-muted)] leading-relaxed mb-2">
+              <strong className="text-[var(--color-heading)]">Problem:</strong> Care
               staff need mandatory training in safeguarding, manual
               handling, infection control, first aid, fire safety, and
               medication administration. Each certificate has a different
@@ -312,8 +312,8 @@ export default function BlogPost() {
               track this on spreadsheets that are perpetually out of date.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
-              <strong className="text-slate-900">Solution:</strong> An
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
+              <strong className="text-[var(--color-heading)]">Solution:</strong> An
               automated training management system that maintains a
               live register of every staff member&apos;s certifications
               and expiry dates. It sends reminders at 90, 60, and 30
@@ -324,8 +324,8 @@ export default function BlogPost() {
               you can pull up a complete training matrix in seconds.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
-              <strong className="text-slate-900">Result:</strong> A
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
+              <strong className="text-[var(--color-heading)]">Result:</strong> A
               domiciliary care agency in Manchester with 45 carers
               had 12 staff members with expired certifications. After
               implementing automated tracking and reminders, they
@@ -339,13 +339,13 @@ export default function BlogPost() {
             </p>
 
             {/* Summary */}
-            <hr className="border-slate-200 my-10" />
+            <hr className="border-[var(--color-border)] my-10" />
 
             <h2 className="text-2xl font-bold mt-8 mb-4">
               The Bottom Line
             </h2>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               The care sector is facing a perfect storm: rising demand,
               workforce shortages, tighter CQC scrutiny, and families
               who expect more transparency than ever. The providers
@@ -354,7 +354,7 @@ export default function BlogPost() {
               who work smarter.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-4">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               AI automation doesn&apos;t replace carers. It replaces
               the admin that stops carers from caring. It fills shifts
               in minutes instead of hours. It keeps families informed
@@ -366,7 +366,7 @@ export default function BlogPost() {
               and happier staff.
             </p>
 
-            <p className="text-slate-500 leading-relaxed mb-8">
+            <p className="text-[var(--color-muted)] leading-relaxed mb-8">
               If you&apos;re a care home manager or agency owner
               spending more time on paperwork than on the floor with
               your residents and clients, automation isn&apos;t a
@@ -375,26 +375,26 @@ export default function BlogPost() {
           </div>
 
           {/* Related Articles */}
-          <div className="mt-12 border border-slate-200 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-4 text-slate-900">Related Articles</h3>
+          <div className="mt-12 border border-[var(--color-border)] rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-4 text-[var(--color-heading)]">Related Articles</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/blog/ai-for-healthcare" className="text-blue-600 hover:text-blue-600 transition-colors">
+                <Link href="/blog/ai-for-healthcare" className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors">
                   AI for Healthcare: Automating Patient Communication &amp; Admin
                 </Link>
               </li>
               <li>
-                <Link href="/blog/ai-for-dentists" className="text-blue-600 hover:text-blue-600 transition-colors">
+                <Link href="/blog/ai-for-dentists" className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors">
                   AI for Dentists &amp; Dental Practices: Reduce No-Shows by 60%
                 </Link>
               </li>
               <li>
-                <Link href="/blog/5-ways-ai-saves-time" className="text-blue-600 hover:text-blue-600 transition-colors">
+                <Link href="/blog/5-ways-ai-saves-time" className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors">
                   5 Ways AI Saves Time for Small Businesses
                 </Link>
               </li>
               <li>
-                <Link href="/services/lead-intake" className="text-slate-500 hover:text-slate-900 transition-colors">
+                <Link href="/services/lead-intake" className="text-[var(--color-muted)] hover:text-[var(--color-heading)] transition-colors">
                   View our AI Lead Intake service &rarr;
                 </Link>
               </li>
@@ -402,11 +402,11 @@ export default function BlogPost() {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-16 bg-blue-50 border border-blue-200 rounded-xl p-8 text-center">
+          <div className="mt-16 bg-[var(--color-primary-light)] border border-[var(--color-primary-light)] rounded-xl p-8 text-center">
             <h3 className="text-xl font-semibold mb-2">
               Want to Know Which Automations Would Work for Your Care Service?
             </h3>
-            <p className="text-slate-600 mb-6 max-w-lg mx-auto">
+            <p className="text-[var(--color-body)] mb-6 max-w-lg mx-auto">
               Every care home and agency is different. Take our free AI
               Readiness Audit and we&apos;ll show you exactly where
               automation would save you the most time &mdash; and what
@@ -414,12 +414,12 @@ export default function BlogPost() {
             </p>
             <Link
               href="/audit"
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+              className="inline-flex items-center gap-2 bg-[var(--color-primary)] hover:bg-[var(--color-primary-hover)] text-[var(--color-bg)] px-6 py-3 rounded-lg font-medium transition-colors"
             >
               Get Your Free AI Readiness Audit
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <p className="text-slate-400 text-sm mt-3">
+            <p className="text-[var(--color-muted)] text-sm mt-3">
               Takes 2 minutes. No obligation. Built for care providers.
             </p>
           </div>

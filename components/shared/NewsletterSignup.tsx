@@ -64,7 +64,7 @@ export default function NewsletterSignup({
 
     return (
       <div>
-        <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">
+        <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--color-muted)] mb-3">
           The AI Operator Newsletter
         </h3>
         <form
@@ -82,15 +82,15 @@ export default function NewsletterSignup({
             placeholder="you@example.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="flex-1 min-w-0 bg-slate-800 border border-slate-600 rounded-lg px-3 py-2 text-sm text-white placeholder:text-slate-400 transition-colors duration-150 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+            className="flex-1 min-w-0 bg-[var(--color-dark-surface)] border border-[var(--color-dark-border)] rounded-lg px-3 py-2 text-sm text-[var(--color-bg)] placeholder:text-[var(--color-muted)] transition-colors duration-150 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
           />
           <button
             type="submit"
             disabled={status === "loading"}
             className={cn(
-              "shrink-0 rounded-full bg-blue-600 px-4 py-2 text-sm font-medium text-white",
-              "hover:bg-blue-600 transition-colors duration-150",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900",
+              "shrink-0 rounded-full bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-bg)]",
+              "hover:bg-[var(--color-primary)] transition-colors duration-150",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-dark)]",
               "disabled:opacity-60 disabled:cursor-not-allowed"
             )}
           >
@@ -109,10 +109,10 @@ export default function NewsletterSignup({
   // ── Full version (homepage section) ───────────────────────────────────
   if (status === "success") {
     return (
-      <section className="bg-slate-50 py-24" aria-label="Newsletter">
+      <section className="bg-[var(--color-bg-alt)] py-24" aria-label="Newsletter">
         <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
           <div className="mx-auto max-w-xl text-center">
-            <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-blue-500/20 border border-blue-500/30">
+            <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary)]/20 border border-[var(--color-primary)]/30">
               <svg
                 width="20"
                 height="20"
@@ -122,17 +122,17 @@ export default function NewsletterSignup({
                 strokeWidth="2.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="text-blue-400"
+                className="text-[var(--color-accent)]"
                 aria-hidden="true"
               >
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>
-            <h3 className="text-lg font-semibold text-slate-900">
+            <h3 className="text-lg font-semibold text-[var(--color-heading)]">
               You&apos;re subscribed!
             </h3>
             <p
-              className="mt-2 text-sm text-slate-600"
+              className="mt-2 text-sm text-[var(--color-body)]"
               role="alert"
               aria-live="polite"
             >
@@ -145,22 +145,22 @@ export default function NewsletterSignup({
   }
 
   return (
-    <section className="bg-slate-50 py-24" aria-label="Newsletter">
+    <section className="bg-[var(--color-bg-alt)] py-24" aria-label="Newsletter">
       <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-xl text-center">
           {/* Icon */}
-          <div className="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10">
-            <Mail size={22} className="text-blue-400" aria-hidden="true" />
+          <div className="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--color-primary)]/10">
+            <Mail size={22} className="text-[var(--color-accent)]" aria-hidden="true" />
           </div>
 
           {/* Headline */}
-          <span className="text-xs font-semibold uppercase tracking-widest text-blue-500">
+          <span className="text-xs font-semibold uppercase tracking-widest text-[var(--color-primary)]">
             Newsletter
           </span>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-[var(--color-heading)] sm:text-4xl">
             Get The AI Operator
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-slate-600">
+          <p className="mt-4 text-base leading-relaxed text-[var(--color-body)]">
             Weekly AI wins for your business. No jargon. No fluff.
           </p>
 
@@ -180,17 +180,17 @@ export default function NewsletterSignup({
               placeholder="you@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full sm:w-80 bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 transition-colors duration-150 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+              className="w-full sm:w-80 bg-[var(--color-bg)] border border-[var(--color-border)] rounded-lg px-4 py-3 text-sm text-[var(--color-heading)] placeholder:text-[var(--color-muted)] transition-colors duration-150 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
             />
             <button
               type="submit"
               disabled={status === "loading"}
               className={cn(
                 "inline-flex items-center justify-center gap-2 font-medium rounded-full",
-                "bg-blue-500 text-white border border-blue-500",
-                "hover:bg-blue-600 hover:border-blue-600",
+                "bg-[var(--color-primary)] text-[var(--color-bg)] border border-[var(--color-primary)]",
+                "hover:bg-[var(--color-primary)] hover:border-[var(--color-primary)]",
                 "transition-all duration-200 px-6 py-3 text-sm",
-                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-white",
                 "disabled:opacity-60 disabled:cursor-not-allowed"
               )}
             >
@@ -235,7 +235,7 @@ export default function NewsletterSignup({
           )}
 
           {/* Privacy note */}
-          <p className="mt-5 text-xs text-slate-500">
+          <p className="mt-5 text-xs text-[var(--color-muted)]">
             No spam. Unsubscribe anytime.
           </p>
         </div>

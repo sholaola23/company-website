@@ -1,5 +1,6 @@
 import { NextRequest } from "next/server";
 import { ANTHROPIC_API_URL, ANTHROPIC_VERSION, heliconeHeaders } from "@/lib/constants";
+import { requireGuard } from "@/lib/api-guard";
 
 export const runtime = "edge";
 
@@ -104,6 +105,15 @@ For any issues with your order, contact UWA customer service via the website or 
 12. Encourage the full routine when appropriate, but don't be pushy.`;
 
 export async function POST(req: NextRequest) {
+  // Guard FIRST — UWA hair-care chat endpoint (Haiku).
+  const guard = requireGuard(req, {
+    endpoint: "prospect-chat",
+    perIpLimit: 30,
+  });
+  if (!guard.ok) {
+    return Response.json({ error: guard.message }, { status: guard.status });
+  }
+
   const body = await req.json();
   const { message, history } = body;
 

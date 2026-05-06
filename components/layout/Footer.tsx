@@ -1,21 +1,20 @@
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 import Logo from "@/components/shared/Logo";
-import NewsletterSignup from "@/components/shared/NewsletterSignup";
 
 const SERVICES_LINKS = [
-  { label: "AI Lead Intake & Booking", href: "/services/lead-intake" },
-  { label: "AI Email Assistant", href: "/services/email-assistant" },
-  { label: "SEO Content Automation", href: "/services/seo-content" },
-  { label: "WhatsApp Customer Bot", href: "/services/whatsapp-bot" },
-  { label: "AI Workshops", href: "/services/ai-workshop" },
+  { label: "Lead intake & booking", href: "/services/lead-intake" },
+  { label: "Email assistant", href: "/services/email-assistant" },
+  { label: "SEO content automation", href: "/services/seo-content" },
+  { label: "WhatsApp customer bot", href: "/services/whatsapp-bot" },
+  { label: "AI workshops", href: "/services/ai-workshop" },
 ];
 
 const COMPANY_LINKS = [
   { label: "About", href: "/about" },
-  { label: "Case Studies", href: "/case-studies" },
+  { label: "Case studies", href: "/case-studies" },
   { label: "Blog", href: "/blog" },
-  { label: "ROI Calculator", href: "/tools/ai-roi-calculator" },
+  { label: "ROI calculator", href: "/tools/ai-roi-calculator" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -32,9 +31,16 @@ const LOCATION_LINKS = [
   { label: "Kettering", href: "/ai-automation-kettering" },
 ];
 
+/**
+ * Footer — Char ground, Bone wordmark, restrained.
+ * Locked 4 May 2026 against brand-foundation.md.
+ */
 export default function Footer() {
   return (
-    <footer className="bg-slate-900" aria-label="Site footer">
+    <footer
+      style={{ background: "var(--color-dark)" }}
+      aria-label="Site footer"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Main footer grid */}
         <div className="py-16 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-5">
@@ -42,21 +48,27 @@ export default function Footer() {
           <div className="lg:col-span-1 flex flex-col gap-5">
             <Link
               href="/"
-              className="w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg"
+              className="w-fit rounded-sm focus-visible:outline-none focus-visible:ring-2"
+              style={{ outlineColor: "var(--color-primary)" }}
               aria-label="WorkCrew — home"
             >
               <Logo size="lg" variant="light" />
             </Link>
-            <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
-              Our mission is to help small businesses save time and grow — with
-              AI automation, professional websites, and intelligent systems that
-              work while you sleep.
+            <p
+              className="text-sm leading-relaxed max-w-xs"
+              style={{ color: "var(--color-dark-text)" }}
+            >
+              AI automation, websites, and training for small businesses.
+              Built around how you actually run, not a template.
             </p>
           </div>
 
           {/* Services column */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-5">
+            <h3
+              className="text-xs font-semibold uppercase tracking-widest mb-5"
+              style={{ color: "var(--color-dark-muted)" }}
+            >
               Services
             </h3>
             <ul className="flex flex-col gap-3" role="list">
@@ -64,7 +76,11 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-400 hover:text-white transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+                    className="text-sm transition-colors duration-150 rounded-sm focus-visible:outline-none focus-visible:ring-2"
+                    style={{
+                      color: "var(--color-dark-text)",
+                      outlineColor: "var(--color-primary)",
+                    }}
                   >
                     {link.label}
                   </Link>
@@ -75,7 +91,10 @@ export default function Footer() {
 
           {/* Company column */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-5">
+            <h3
+              className="text-xs font-semibold uppercase tracking-widest mb-5"
+              style={{ color: "var(--color-dark-muted)" }}
+            >
               Company
             </h3>
             <ul className="flex flex-col gap-3" role="list">
@@ -83,7 +102,11 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-400 hover:text-white transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+                    className="text-sm transition-colors duration-150 rounded-sm focus-visible:outline-none focus-visible:ring-2"
+                    style={{
+                      color: "var(--color-dark-text)",
+                      outlineColor: "var(--color-primary)",
+                    }}
                   >
                     {link.label}
                   </Link>
@@ -94,7 +117,10 @@ export default function Footer() {
 
           {/* Locations column */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-5">
+            <h3
+              className="text-xs font-semibold uppercase tracking-widest mb-5"
+              style={{ color: "var(--color-dark-muted)" }}
+            >
               Locations
             </h3>
             <ul className="flex flex-col gap-3" role="list">
@@ -102,7 +128,11 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-400 hover:text-white transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+                    className="text-sm transition-colors duration-150 rounded-sm focus-visible:outline-none focus-visible:ring-2"
+                    style={{
+                      color: "var(--color-dark-text)",
+                      outlineColor: "var(--color-primary)",
+                    }}
                   >
                     {link.label}
                   </Link>
@@ -113,22 +143,30 @@ export default function Footer() {
 
           {/* Contact column */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-5">
+            <h3
+              className="text-xs font-semibold uppercase tracking-widest mb-5"
+              style={{ color: "var(--color-dark-muted)" }}
+            >
               Contact
             </h3>
             <ul className="flex flex-col gap-4" role="list">
               <li>
                 <a
                   href="mailto:hello@workcrew.io"
-                  className="flex items-start gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+                  className="flex items-start gap-3 group rounded-sm focus-visible:outline-none focus-visible:ring-2"
+                  style={{ outlineColor: "var(--color-primary)" }}
                   aria-label="Send us an email"
                 >
                   <Mail
                     size={15}
-                    className="mt-0.5 text-blue-400 shrink-0"
+                    className="mt-0.5 shrink-0"
+                    style={{ color: "var(--color-primary)" }}
                     aria-hidden="true"
                   />
-                  <span className="text-sm text-slate-400 group-hover:text-white transition-colors duration-150">
+                  <span
+                    className="text-sm transition-colors duration-150"
+                    style={{ color: "var(--color-dark-text)" }}
+                  >
                     hello@workcrew.io
                   </span>
                 </a>
@@ -136,16 +174,21 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:+447469347654"
-                  className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+                  className="flex items-center gap-3 group rounded-sm focus-visible:outline-none focus-visible:ring-2"
+                  style={{ outlineColor: "var(--color-primary)" }}
                   aria-label="Call us"
                 >
                   <Phone
                     size={15}
-                    className="text-blue-400 shrink-0"
+                    className="shrink-0"
+                    style={{ color: "var(--color-primary)" }}
                     aria-hidden="true"
                   />
-                  <span className="text-sm text-slate-400 group-hover:text-white transition-colors duration-150">
-                    07469 347654
+                  <span
+                    className="text-sm transition-colors duration-150"
+                    style={{ color: "var(--color-dark-text)" }}
+                  >
+                    +44 7469 347 654
                   </span>
                 </a>
               </li>
@@ -154,46 +197,61 @@ export default function Footer() {
                   href="https://wa.me/447469347654"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-white border border-slate-700 hover:border-slate-500 rounded-full px-4 py-2 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                  className="inline-flex items-center gap-2 text-sm font-medium rounded-sm px-4 py-2 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2"
+                  style={{
+                    color: "var(--color-dark-text)",
+                    border: "1px solid var(--color-dark-border)",
+                    outlineColor: "var(--color-primary)",
+                  }}
                   aria-label="Message us on WhatsApp"
                 >
-                  WhatsApp Us
+                  Message on WhatsApp
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Newsletter signup */}
-        <div className="py-8 border-t border-slate-800">
-          <div className="max-w-md">
-            <NewsletterSignup compact />
-          </div>
-        </div>
-
         {/* Bottom bar */}
-        <div className="py-6 border-t border-slate-800 flex flex-col gap-4">
-          {/* Statutory disclosures — Companies Act 2006 s.82 + Trading Disclosures Regs 2008 */}
-          <p className="text-xs text-slate-500 text-center sm:text-left leading-relaxed">
+        <div
+          className="py-6 flex flex-col gap-4"
+          style={{ borderTop: "1px solid var(--color-dark-border)" }}
+        >
+          {/* Statutory disclosures */}
+          <p
+            className="text-xs text-center sm:text-left leading-relaxed"
+            style={{ color: "var(--color-dark-muted)" }}
+          >
             WorkCrew Ltd — Registered in England &amp; Wales, company number{" "}
-            <span className="text-slate-400">16501246</span>. Registered office:{" "}
-            71-75 Shelton Street, Covent Garden, London, WC2H 9JQ.
-            {" "}ICO registration: ZC129468.
+            <span style={{ color: "var(--color-dark-text)" }}>16501246</span>.
+            Registered office: 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ.{" "}
+            ICO registration: application pending (C1914939).
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
-            <p className="text-xs text-slate-500 text-center sm:text-left">
+            <p
+              className="text-xs text-center sm:text-left"
+              style={{ color: "var(--color-dark-muted)" }}
+            >
               &copy; 2026 WorkCrew Ltd. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
               <Link
                 href="/privacy"
-                className="text-xs text-slate-500 hover:text-slate-300 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+                className="text-xs transition-colors duration-150 rounded-sm focus-visible:outline-none focus-visible:ring-2"
+                style={{
+                  color: "var(--color-dark-muted)",
+                  outlineColor: "var(--color-primary)",
+                }}
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="text-xs text-slate-500 hover:text-slate-300 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
+                className="text-xs transition-colors duration-150 rounded-sm focus-visible:outline-none focus-visible:ring-2"
+                style={{
+                  color: "var(--color-dark-muted)",
+                  outlineColor: "var(--color-primary)",
+                }}
               >
                 Terms
               </Link>

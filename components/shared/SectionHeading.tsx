@@ -53,7 +53,7 @@ export default function SectionHeading({
       {description && (
         <p
           className={cn(
-            "text-slate-600 text-base leading-relaxed sm:text-lg",
+            "text-[var(--color-body)] text-base leading-relaxed sm:text-lg",
             isCenter ? "max-w-2xl" : "max-w-xl"
           )}
         >

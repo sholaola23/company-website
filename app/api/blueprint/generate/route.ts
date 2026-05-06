@@ -1,5 +1,6 @@
 import { NextRequest } from "next/server";
 import { ANTHROPIC_API_URL, ANTHROPIC_VERSION, heliconeHeaders } from "@/lib/constants";
+import { requireGuard } from "@/lib/api-guard";
 
 export const maxDuration = 60;
 
@@ -48,7 +49,7 @@ YOUR TASK: Generate a JSON blueprint with exactly this structure (no markdown, n
   "headline": "A punchy one-line headline for their blueprint, e.g. '${businessName}: 17 Hours Back Every Week'",
   "opportunities": [
     {
-      "title": "Name of the automation (e.g. 'Speed-to-Lead Agent', 'AI Email Assistant')",
+      "title": "Name of the automation (e.g. 'lead intake Agent', 'AI Email Assistant')",
       "impact": "high or medium or low",
       "hoursSavedPerWeek": <number>,
       "description": "2-3 sentences explaining what this does for THEIR specific business. Reference their industry and pain points. Be concrete — 'Your plumbing enquiries get a response in 60 seconds instead of 4 hours' not 'AI responds faster'. Use UK English.",
@@ -93,6 +94,15 @@ RULES:
 }
 
 export async function POST(req: NextRequest) {
+  // Guard FIRST — Haiku endpoint, but still public.
+  const guard = requireGuard(req, {
+    endpoint: "blueprint-generate",
+    perIpLimit: 5,
+  });
+  if (!guard.ok) {
+    return Response.json({ error: guard.message }, { status: guard.status });
+  }
+
   try {
     const body = (await req.json()) as BlueprintRequest;
 

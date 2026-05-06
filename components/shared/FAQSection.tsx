@@ -64,8 +64,8 @@ export default function FAQSection({
                 key={index}
                 className={`rounded-xl border transition-all duration-200 ${
                   isOpen
-                    ? "border-slate-200 bg-white shadow-lg"
-                    : "border-slate-200 bg-white hover:border-slate-300"
+                    ? "border-[var(--color-border)] bg-[var(--color-bg)] shadow-lg"
+                    : "border-[var(--color-border)] bg-[var(--color-bg)] hover:border-[var(--color-border-strong)]"
                 }`}
               >
                 <button
@@ -76,13 +76,13 @@ export default function FAQSection({
                   aria-expanded={isOpen}
                   aria-controls={`faq-panel-${index}`}
                 >
-                  <span className="text-base font-semibold text-slate-900">
+                  <span className="text-base font-semibold text-[var(--color-heading)]">
                     {item.question}
                   </span>
                   <ChevronDown
                     size={18}
-                    className={`shrink-0 text-slate-400 transition-transform duration-200 ${
-                      isOpen ? "rotate-180 text-blue-600" : ""
+                    className={`shrink-0 text-[var(--color-muted)] transition-transform duration-200 ${
+                      isOpen ? "rotate-180 text-[var(--color-primary)]" : ""
                     }`}
                     aria-hidden="true"
                   />
@@ -96,7 +96,7 @@ export default function FAQSection({
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="px-6 pb-6 text-base leading-relaxed text-slate-600">
+                    <div className="px-6 pb-6 text-base leading-relaxed text-[var(--color-body)]">
                       {item.answer}
                     </div>
                   </div>

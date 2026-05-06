@@ -49,7 +49,7 @@ COMPANY INFO:
 - Founded 2025 by Olushola Oladipupo
 - We are a young, fast-moving company — our clients care more about results than company age, and our live case studies speak for themselves.
 - Email: hello@workcrew.io
-- Phone/WhatsApp: 07469 347654
+- Phone/WhatsApp: +44 7469 347 654
 - Website: workcrew.io
 
 RULES:

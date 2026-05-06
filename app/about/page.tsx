@@ -30,30 +30,30 @@ const HOW_WE_WORK = [
   {
     icon: FileSearch,
     step: "01",
-    title: "Free Consultation",
+    title: "Discovery call",
     description:
-      "We assess your business and identify operational bottlenecks and the biggest opportunities for automation — at no cost to you.",
+      "We sit down for 30 minutes and find where your week leaks the most time. No charge, no slides, no obligation.",
   },
   {
     icon: CheckCircle,
     step: "02",
-    title: "Analysis & Proposal",
+    title: "Analysis and proposal",
     description:
-      "We quantify the time and cost savings, then propose tailored solutions with clear deliverables and projected ROI. A real proposal you can say yes or no to.",
+      "We write the scope: what we'll build, what it'll cost, what you should see in 30, 60, 90 days. A proposal you can say yes or no to.",
   },
   {
     icon: Zap,
     step: "03",
-    title: "Build & Launch",
+    title: "Build and launch",
     description:
-      "We build, test, and deploy your solution with full documentation, SOPs, and a training walkthrough. You are informed at every stage.",
+      "We build it, test it, ship it. Full SOPs and a walkthrough so your team runs it. You see progress weekly.",
   },
   {
     icon: RefreshCw,
     step: "04",
-    title: "Ongoing Optimisation",
+    title: "Run and adjust",
     description:
-      "We monitor performance, fix issues, and improve the system continuously. Automation is not a one-time job — it gets better over time.",
+      "We watch the system, fix what breaks, and tighten what works. Adopt. Test. Keep what works.",
   },
 ];
 
@@ -68,9 +68,9 @@ const TRUST = [
   "Registered in England & Wales (Companies House)",
   "UK-based — available evenings & weekends",
   "Real client references available on request",
-  "Human-in-the-loop on all outbound communications",
+  "Human approval on every outbound message until you say otherwise",
   "Full SOP documentation handed over on every project",
-  "Published in TechTrends Africa — AI thought leadership",
+  "Published in TechTrends Africa",
 ];
 
 export default function AboutPage() {
@@ -78,17 +78,26 @@ export default function AboutPage() {
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
       {/* Hero */}
       <div className="max-w-3xl mx-auto text-center mb-20 sm:mb-24">
-        <span className="text-xs font-semibold tracking-widest uppercase text-blue-600 mb-4 block">
+        <span
+          className="text-xs font-semibold tracking-widest uppercase mb-4 block"
+          style={{ color: "var(--color-muted)" }}
+        >
           About WorkCrew
         </span>
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-slate-900 leading-tight tracking-tight mb-6">
-          AI Solutions, Built for Small Businesses
+        <h1
+          className="text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em] leading-tight mb-6"
+          style={{ color: "var(--color-heading)" }}
+        >
+          We run AI for small businesses.
         </h1>
-        <p className="text-lg text-slate-600 leading-relaxed">
-          We are an AI-native agency — we use AI on the back end to deliver
-          results that used to require a full team. The businesses we work with
-          don&apos;t need to understand the technology. They just check a
-          dashboard, save hours of admin every week, and watch their business run itself.
+        <p
+          className="text-lg leading-relaxed"
+          style={{ color: "var(--color-body)" }}
+        >
+          Every engagement starts with a discovery call. We figure out what&apos;s
+          actually draining your week before we propose anything. Then we build it,
+          ship it, and run it on the back end. You stay focused on the work that
+          makes money.
         </p>
       </div>
 
@@ -100,40 +109,35 @@ export default function AboutPage() {
         <h2 id="story-heading" className="sr-only">
           Our story
         </h2>
-        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 sm:p-10 flex flex-col gap-6">
+        <div className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-2xl p-8 sm:p-10 flex flex-col gap-6">
           <div className="flex flex-col gap-1">
-            <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[var(--color-muted)]">
               Founded by
             </span>
-            <h3 className="text-2xl font-bold text-slate-900">
+            <h3 className="text-2xl font-bold text-[var(--color-heading)]">
               Olushola Oladipupo
             </h3>
-            <p className="text-sm text-blue-600 font-medium">
+            <p className="text-sm text-[var(--color-primary)] font-medium">
               WorkCrew Ltd — Registered in England &amp; Wales
             </p>
           </div>
 
-          <div className="flex flex-col gap-4 text-sm text-slate-600 leading-relaxed">
+          <div className="flex flex-col gap-4 text-sm text-[var(--color-body)] leading-relaxed">
             <p>
-              WorkCrew was founded with one observation: small
-              businesses are behind on AI not because they don&apos;t want to
-              adopt it, but because every tool, platform, and consultant is aimed
-              at people who already know what they&apos;re doing.
+              WorkCrew was founded on one observation: every AI tool and
+              consultant is built for people who already know what they&apos;re
+              doing. We&apos;re built for everyone else — the founder still
+              wearing too many hats, the team that wants to use AI but doesn&apos;t
+              want to learn it from scratch.
             </p>
             <p>
-              We change that across three service pillars. <strong className="text-slate-700">AI Automation</strong> — lead intake,
-              appointment booking, inbox management, order processing, and content
-              production. <strong className="text-slate-700">Website Development</strong> — professional, fast-loading sites
-              built to convert visitors into customers. <strong className="text-slate-700">AI Training</strong> — hands-on
-              workshops that give your team the skills to work smarter with AI,
-              tailored to your industry.
+              We work across three areas. <strong className="text-[var(--color-body)]">AI automation</strong> — examples include lead intake, bookings, inbox, orders, content, knowledge bases, customer support. The actual build comes out of the discovery call. <strong className="text-[var(--color-body)]">Websites and small apps</strong> — fast, indexed, built around how your customers actually behave. <strong className="text-[var(--color-body)]">AI training</strong> — hands-on workshops, tailored to your work, the same week.
             </p>
             <p>
               We practice what we preach. Our own operations are automated — an
-              AI agent fleet handles prospecting, follow-up, and content
-              production while we focus on building for clients. Our technical
-              co-founder is Claude (AI by Anthropic), which keeps our delivery
-              fast and our costs low enough to pass savings on to clients.
+              agent fleet handles prospecting, follow-up, and content production
+              while we focus on building for clients. The savings from running a
+              lean operation get passed straight through to delivery cost.
             </p>
           </div>
         </div>
@@ -143,8 +147,8 @@ export default function AboutPage() {
       <section className="mb-20 sm:mb-24" aria-labelledby="how-heading">
         <div className="mb-12">
           <SectionHeading
-            eyebrow="Our Process"
-            heading="How We Work"
+            eyebrow="Our process"
+            heading="How we work"
             align="center"
           />
         </div>
@@ -155,21 +159,21 @@ export default function AboutPage() {
             return (
               <div
                 key={step.step}
-                className="bg-slate-50 border border-slate-200 rounded-xl p-6 flex flex-col gap-4 hover:border-slate-200 transition-colors duration-200"
+                className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-xl p-6 flex flex-col gap-4 hover:border-[var(--color-border)] transition-colors duration-200"
               >
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-600/20">
-                    <Icon size={18} className="text-blue-600" aria-hidden="true" />
+                  <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20">
+                    <Icon size={18} className="text-[var(--color-primary)]" aria-hidden="true" />
                   </div>
-                  <span className="text-2xl font-bold text-slate-600 font-mono">
+                  <span className="text-2xl font-bold text-[var(--color-body)] font-mono">
                     {step.step}
                   </span>
                 </div>
                 <div>
-                  <h3 className="text-base font-semibold text-slate-900 mb-2">
+                  <h3 className="text-base font-semibold text-[var(--color-heading)] mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">
+                  <p className="text-sm text-[var(--color-body)] leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -184,17 +188,17 @@ export default function AboutPage() {
         <h2 id="stats-heading" className="sr-only">
           By the numbers
         </h2>
-        <div className="bg-slate-50 border border-slate-200 rounded-2xl px-8 py-10 max-w-4xl mx-auto">
-          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 text-center mb-8">
+        <div className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-2xl px-8 py-10 max-w-4xl mx-auto">
+          <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-muted)] text-center mb-8">
             By the Numbers
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
             {STATS.map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="text-4xl font-bold text-slate-900 leading-none mb-2">
+                <p className="text-4xl font-bold text-[var(--color-heading)] leading-none mb-2">
                   {stat.value}
                 </p>
-                <p className="text-sm text-slate-400">{stat.label}</p>
+                <p className="text-sm text-[var(--color-muted)]">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -208,19 +212,19 @@ export default function AboutPage() {
       >
         <h2
           id="trust-heading"
-          className="text-xl font-semibold text-slate-900 mb-6 text-center"
+          className="text-xl font-semibold text-[var(--color-heading)] mb-6 text-center"
         >
-          Why You Can Trust Us
+          Why you can trust us
         </h2>
         <ul className="flex flex-col gap-3" role="list">
           {TRUST.map((item) => (
             <li key={item} className="flex items-start gap-3">
               <CheckCircle
                 size={16}
-                className="text-blue-600 shrink-0 mt-0.5"
+                className="text-[var(--color-primary)] shrink-0 mt-0.5"
                 aria-hidden="true"
               />
-              <span className="text-sm text-slate-500 leading-relaxed">{item}</span>
+              <span className="text-sm text-[var(--color-muted)] leading-relaxed">{item}</span>
             </li>
           ))}
         </ul>
@@ -229,14 +233,14 @@ export default function AboutPage() {
       {/* CTA */}
       <div className="text-center">
         <div className="inline-flex flex-col items-center gap-4">
-          <p className="text-slate-600 text-base">
-            Ready to see what&apos;s possible for your business?
+          <p className="text-[var(--color-body)] text-base">
+            Ready to find where your week leaks the most time?
           </p>
-          <CTAButton href="/audit" variant="primary" size="lg">
-            Get Your Free Audit
+          <CTAButton href="https://cal.com/workcrew/free-ai-strategy-call" variant="primary" size="lg">
+            Book a discovery call
           </CTAButton>
-          <p className="text-xs text-slate-400">
-            48-hour turnaround. No obligation.
+          <p className="text-xs text-[var(--color-muted)]">
+            30 minutes. No charge. No obligation.
           </p>
         </div>
       </div>

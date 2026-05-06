@@ -40,26 +40,26 @@ const TIERS = [
     name: "Starter",
     price: "Get a Quote",
     monthly: "",
-    color: "border-slate-200",
-    badge: "bg-slate-200 text-slate-900",
+    color: "border-[var(--color-border)]",
+    badge: "bg-[var(--color-border)] text-[var(--color-heading)]",
     includes: [
-      "Single focused automation",
-      "Email + docs handover",
-      "1 month support",
+      "One workflow that pays back fastest",
+      "SOPs and a walkthrough so your team runs it",
+      "1 month of fixes",
     ],
-    cta: "Get started",
+    cta: "Book a discovery call",
   },
   {
     name: "Growth",
     price: "Get a Quote",
     monthly: "",
-    color: "border-blue-600",
-    badge: "bg-blue-600/20 text-blue-600 border border-blue-600/30",
+    color: "border-[var(--color-primary)]",
+    badge: "bg-[var(--color-primary)]/20 text-[var(--color-primary)] border border-[var(--color-primary)]/30",
     includes: [
-      "Multi-workflow system",
-      "Full SOP documentation",
-      "3 months support",
-      "Monthly optimisation",
+      "Two or three connected workflows",
+      "Full SOPs handed to your team",
+      "3 months of fixes and tightening",
+      "Monthly check-in on what to tighten next",
     ],
     cta: "Most popular",
     highlight: true,
@@ -68,16 +68,16 @@ const TIERS = [
     name: "Scale",
     price: "Get a Quote",
     monthly: "",
-    color: "border-amber-500",
-    badge: "bg-amber-500/20 text-amber-600 border border-amber-500/30",
+    color: "border-[var(--color-primary)]",
+    badge: "bg-[var(--color-primary)]/20 text-[var(--color-primary)] border border-[var(--color-primary)]/30",
     includes: [
-      "Full automation fleet",
-      "Dedicated account manager",
-      "KPI dashboard",
-      "Ongoing optimisation",
-      "Priority support",
+      "A fleet of workflows running the back-office",
+      "Single point of contact who knows your operation",
+      "Whatever reporting actually helps you decide",
+      "Ongoing fixes and tightening",
+      "Priority on anything urgent",
     ],
-    cta: "Get a quote",
+    cta: "Book a discovery call",
   },
 ];
 
@@ -118,7 +118,7 @@ const servicesFAQs: FAQItem[] = [
   {
     question: "Do I need to be technical to use your services?",
     answer:
-      "Not at all. We handle everything — setup, configuration, and training. You just need to tell us what is slowing you down. Once your system is live, you interact with a simple dashboard and we provide full documentation so your team can manage it confidently.",
+      "No. We handle setup, configuration, and training. Tell us what's slowing you down. We hand over SOPs and a walkthrough so your team runs it after launch.",
   },
   {
     question: "What is included in the monthly retainer?",
@@ -133,12 +133,12 @@ const servicesFAQs: FAQItem[] = [
   {
     question: "What if AI automation does not work for my business?",
     answer:
-      "That is what the free audit is for. We will tell you honestly if AI automation is a good fit before you spend a penny. Every project is also backed by our 90-Day Results Guarantee — if you do not save at least 5 hours per week, we refund your setup fee.",
+      "That's what the discovery call is for. We tell you honestly if it's a good fit before you spend a penny. Every project is backed by our 90-day results guarantee — if you don't save at least 5 hours per week, we refund your setup fee.",
   },
   {
-    question: "I am not sure which service or tier I need. How do I choose?",
+    question: "I'm not sure which tier I need. How do I choose?",
     answer:
-      "Start with a free AI Readiness Audit. We will analyse your business processes and recommend exactly which service and tier will have the biggest impact. Most small businesses start with the Starter or Growth tier and expand once they see results.",
+      "Don't pick yet. Book a discovery call. We figure out where your week leaks the most time, and the right tier becomes obvious from there.",
   },
 ];
 
@@ -152,9 +152,9 @@ export default function ServicesPage() {
         <div className="mb-16 sm:mb-20">
           <SectionHeading
             as="h1"
-            eyebrow="Our Solutions"
-            heading="AI Automation Services"
-            description="From single workflows to full automation fleets. We build AI systems tailored to your business."
+            eyebrow="What we ship"
+            heading="Where we usually start"
+            description="Examples below. The actual build comes out of a discovery call — shaped to your week, not a template."
             align="center"
           />
         </div>
@@ -170,14 +170,14 @@ export default function ServicesPage() {
             <AnimatedSection key={tier.name} delay={0.1 * (index + 1)}>
             <div
               className={cn(
-                "relative bg-slate-50 rounded-xl border-2 p-7 flex flex-col gap-5 transition-all duration-300 hover:scale-[1.02]",
+                "relative bg-[var(--color-bg-alt)] rounded-xl border-2 p-7 flex flex-col gap-5 transition-all duration-300 hover:scale-[1.02]",
                 tier.color,
                 tier.highlight && "md:-mt-3 md:mb-[-12px]"
               )}
             >
               {tier.highlight && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="text-xs font-semibold bg-blue-600 text-white px-3 py-1 rounded-full">
+                  <span className="text-xs font-semibold bg-[var(--color-primary)] text-[var(--color-bg)] px-3 py-1 rounded-full">
                     Most Popular
                   </span>
                 </div>
@@ -193,10 +193,10 @@ export default function ServicesPage() {
                   {tier.name}
                 </span>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-3xl font-bold text-slate-900">
+                  <span className="text-3xl font-bold text-[var(--color-heading)]">
                     {tier.price}
                   </span>
-                  <span className="text-sm text-slate-400">{tier.monthly}</span>
+                  <span className="text-sm text-[var(--color-muted)]">{tier.monthly}</span>
                 </div>
               </div>
 
@@ -205,10 +205,10 @@ export default function ServicesPage() {
                   <li key={item} className="flex items-start gap-2.5">
                     <CheckCircle
                       size={15}
-                      className="text-blue-600 shrink-0 mt-0.5"
+                      className="text-[var(--color-primary)] shrink-0 mt-0.5"
                       aria-hidden="true"
                     />
-                    <span className="text-sm text-slate-500">{item}</span>
+                    <span className="text-sm text-[var(--color-muted)]">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -229,11 +229,11 @@ export default function ServicesPage() {
         </div>
 
         <AnimatedSection delay={0.4}>
-          <p className="text-center text-sm text-slate-400 mt-6">
+          <p className="text-center text-sm text-[var(--color-muted)] mt-6">
             Not sure which tier fits?{" "}
             <Link
               href="/contact"
-              className="text-blue-600 hover:text-blue-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded"
+              className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] rounded"
             >
               Get in touch
             </Link>{" "}
@@ -247,9 +247,9 @@ export default function ServicesPage() {
         <section aria-labelledby="services-grid-heading">
           <h2
             id="services-grid-heading"
-            className="text-xl font-semibold text-slate-900 mb-8"
+            className="text-xl font-semibold text-[var(--color-heading)] mb-8"
           >
-            All Services
+            All examples
           </h2>
           <ServiceFilterClient services={services} />
         </section>
@@ -261,28 +261,28 @@ export default function ServicesPage() {
           <FAQSection
             items={servicesFAQs}
             eyebrow="FAQs"
-            heading="Frequently Asked Questions"
+            heading="Frequently asked questions"
           />
         </div>
       </AnimatedSection>
 
       {/* 90-Day Guarantee */}
       <AnimatedSection delay={0.15}>
-        <div className="mt-16 flex items-center gap-4 rounded-xl border border-emerald-500/30 bg-emerald-500/5 px-6 py-5 max-w-3xl mx-auto">
+        <div className="mt-16 flex items-center gap-4 rounded-xl border border-emerald-500/30 bg-[var(--color-success)]/5 px-6 py-5 max-w-3xl mx-auto">
           <ShieldCheck
             size={24}
-            className="text-emerald-600 shrink-0"
+            className="text-[var(--color-success)] shrink-0"
             aria-hidden="true"
           />
-          <p className="text-sm text-slate-500">
+          <p className="text-sm text-[var(--color-muted)]">
             Every package comes with our{" "}
-            <span className="font-semibold text-emerald-600">
+            <span className="font-semibold text-[var(--color-success)]">
               90-Day Results Guarantee
             </span>
             .{" "}
             <Link
               href="/contact"
-              className="text-blue-600 hover:text-blue-600 transition-colors"
+              className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
             >
               Get in touch
             </Link>{" "}
