@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import MetaPixel from "@/components/shared/MetaPixel";
+import GoogleAnalytics from "@/components/shared/GoogleAnalytics";
 
 /**
  * ConsentGate renders analytics + marketing trackers ONLY after the visitor
@@ -44,6 +45,7 @@ export default function ConsentGate() {
       <Analytics />
       <SpeedInsights />
       <MetaPixel />
+      <GoogleAnalytics />
     </>
   );
 }
