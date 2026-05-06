@@ -243,29 +243,29 @@ function WhatWeBuild() {
             const Icon = cat.icon;
             return (
               <AnimatedSection key={cat.title} delay={0.1 * (index + 1)}>
-                <div className="group flex h-full flex-col rounded-[30px] border-2 border-[var(--color-dark)] bg-transparent p-8 transition-all duration-300 hover:bg-[var(--color-dark)] hover:text-[var(--color-bg)] cursor-pointer">
+                <div className="category-card group flex h-full flex-col rounded-[30px] border-2 border-[var(--color-dark)] bg-transparent p-8 transition-all duration-300 cursor-pointer">
                   {/* Icon */}
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--color-primary-light)] group-hover:bg-[var(--color-primary-hover)]/20 transition-colors duration-300">
+                  <div className="category-card-icon-wrap flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--color-primary-light)] transition-colors duration-300">
                     <Icon
                       size={22}
-                      className="text-[var(--color-primary)] group-hover:text-[var(--color-primary)] transition-colors duration-300"
+                      className="text-[var(--color-primary)] transition-colors duration-300"
                       aria-hidden="true"
                     />
                   </div>
 
                   {/* Title */}
-                  <h3 className="mt-5 text-lg font-bold text-[var(--color-heading)] group-hover:text-[var(--color-bg)] transition-colors duration-300">
+                  <h3 className="category-card-title mt-5 text-lg font-bold text-[var(--color-heading)] transition-colors duration-300">
                     {cat.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--color-body)] group-hover:text-[var(--color-dark-text)] transition-colors duration-300">
+                  <p className="category-card-desc mt-3 flex-1 text-sm leading-relaxed text-[var(--color-body)] transition-colors duration-300">
                     {cat.description}
                   </p>
 
                   {/* Result badge */}
                   <div className="mt-6">
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border)] bg-[var(--color-success-light)] px-3 py-1 text-xs font-semibold text-[var(--color-success)] group-hover:border-emerald-500/30 group-hover:bg-emerald-500/10 group-hover:text-[var(--color-success)] transition-colors duration-300">
+                    <span className="category-card-badge inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border)] bg-[var(--color-success-light)] px-3 py-1 text-xs font-semibold text-[var(--color-success)] transition-colors duration-300">
                       {cat.result}
                     </span>
                   </div>
@@ -273,7 +273,7 @@ function WhatWeBuild() {
                   {/* Arrow link */}
                   <Link
                     href={cat.href}
-                    className="group/link mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-primary)] group-hover:text-[var(--color-primary)] transition-colors duration-200"
+                    className="category-card-link group/link mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-primary)] transition-colors duration-200"
                   >
                     Learn more
                     <ArrowRight

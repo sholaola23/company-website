@@ -193,6 +193,31 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--color-primary);
 }
 
+/* ── Category card hover (homepage WhatWeBuild) ───────────────────────
+   Bullet-proof hover state. Tailwind v4 arbitrary values inside
+   group-hover: variants were dropping silently in production CSS,
+   leaving the title invisible on dark hover. Direct selectors fix that. */
+.category-card:hover {
+  background: var(--color-dark);
+}
+.category-card:hover .category-card-title {
+  color: var(--color-bg);
+}
+.category-card:hover .category-card-desc {
+  color: var(--color-dark-text);
+}
+.category-card:hover .category-card-icon-wrap {
+  background: rgba(244, 237, 224, 0.08);
+}
+.category-card:hover .category-card-badge {
+  background: rgba(244, 237, 224, 0.10);
+  border-color: rgba(244, 237, 224, 0.20);
+  color: var(--color-bg);
+}
+.category-card:hover .category-card-link {
+  color: var(--color-bg);
+}
+
 /* ── Reduced motion — WCAG 2.2 SC 2.3.3 ──────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
