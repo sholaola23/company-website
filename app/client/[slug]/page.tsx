@@ -70,6 +70,7 @@ interface WorkflowStatus {
   } | null;
   executionsThisWeek: number;
   errorsThisWeek: number;
+  currentlyFailing: boolean;
   businessName: string;
   statusVerb: string;
   expectedScheduleHuman: string;
@@ -358,7 +359,7 @@ function StatusBadge({ wf }: { wf: WorkflowStatus }) {
       </span>
     );
   }
-  if (wf.lastExecution?.status === "error") {
+  if (wf.currentlyFailing) {
     return (
       <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-red-500/10 text-red-400">
         Needs attention

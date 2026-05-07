@@ -19,6 +19,7 @@ interface WorkflowStatus {
   } | null;
   executionsThisWeek: number;
   errorsThisWeek: number;
+  currentlyFailing: boolean;
   // Business-friendly fields
   businessName: string;
   statusVerb: string;
@@ -99,6 +100,8 @@ export async function GET(
 
   // Fetch execution data for each client workflow
   const workflowStatuses: WorkflowStatus[] = [];
+  const now = Date.now();
+  const FORTY_EIGHT_HOURS = 48 * 60 * 60 * 1000;
 
   for (const wf of client.workflows) {
     const execData = await fetchN8nExecutions(apiKey, wf.id, 20);
@@ -115,29 +118,51 @@ export async function GET(
 
     const lastExec = executions[0] || null;
     const wfInfo = workflowMap.get(wf.id);
+    const isActive = wfInfo?.active ?? false;
+    const lastStatus: "success" | "error" | "waiting" | "unknown" = lastExec
+      ? lastExec.status === "success"
+        ? "success"
+        : lastExec.status === "error"
+          ? "error"
+          : lastExec.status === "waiting"
+            ? "waiting"
+            : "unknown"
+      : "unknown";
+    const lastStartedAt = lastExec?.startedAt || null;
+
+    // A workflow is "currently failing" only if:
+    // 1. Active (inactive workflows are intentionally paused, not failing).
+    // 2. Last execution status was "error".
+    // 3. Error within the last 48 hours (not a stale old error).
+    // 4. Workflow has not been updated/redeployed after the error (an update means the
+    //    issue has been addressed — auto-healer fix or manual intervention).
+    let currentlyFailing = false;
+    if (isActive && lastStatus === "error" && lastStartedAt) {
+      const lastRun = new Date(lastStartedAt).getTime();
+      const fresh = now - lastRun < FORTY_EIGHT_HOURS;
+      const updatedAt = wfInfo?.updatedAt
+        ? new Date(wfInfo.updatedAt).getTime()
+        : 0;
+      const addressed = updatedAt > lastRun;
+      currentlyFailing = fresh && !addressed;
+    }
 
     workflowStatuses.push({
       id: wf.id,
       name: wf.name,
       shortName: wf.shortName,
       schedule: wf.schedule,
-      active: wfInfo?.active ?? false,
+      active: isActive,
       lastExecution: lastExec
         ? {
-            status:
-              lastExec.status === "success"
-                ? "success"
-                : lastExec.status === "error"
-                  ? "error"
-                  : lastExec.status === "waiting"
-                    ? "waiting"
-                    : "unknown",
-            startedAt: lastExec.startedAt || null,
+            status: lastStatus,
+            startedAt: lastStartedAt,
             finishedAt: lastExec.stoppedAt || null,
           }
         : null,
       executionsThisWeek: weekExecutions.length,
       errorsThisWeek: weekErrors.length,
+      currentlyFailing,
       // Business-friendly fields from config
       businessName: wf.businessName,
       statusVerb: wf.statusVerb,
@@ -157,29 +182,9 @@ export async function GET(
   );
   const activeCount = workflowStatuses.filter((w) => w.active).length;
 
-  // Health is based ONLY on current state — a workflow is "currently failing" only if:
-  // 1. The workflow is currently active (inactive workflows are intentionally paused, not failing)
-  // 2. Its last execution status was "error", AND
-  // 3. That error happened within the last 48 hours (not a stale old error from a weekly workflow)
-  // 4. The error happened AFTER the workflow was last updated (a deactivate/reactivate cycle
-  //    or node fix after an error means the issue has been addressed — treat as acknowledged)
-  const now = Date.now();
-  const FORTY_EIGHT_HOURS = 48 * 60 * 60 * 1000;
-  const currentlyFailingCount = workflowStatuses.filter((w) => {
-    if (!w.active) return false;
-    if (w.lastExecution?.status !== "error") return false;
-    const lastRun = w.lastExecution?.startedAt
-      ? new Date(w.lastExecution.startedAt).getTime()
-      : 0;
-    if (now - lastRun >= FORTY_EIGHT_HOURS) return false;
-    // If workflow was updated after the error, the issue has been addressed
-    const wfData = workflowMap.get(w.id) as { active: boolean; updatedAt?: string } | undefined;
-    if (wfData?.updatedAt) {
-      const updatedAt = new Date(wfData.updatedAt).getTime();
-      if (updatedAt > lastRun) return false;
-    }
-    return true;
-  }).length;
+  const currentlyFailingCount = workflowStatuses.filter(
+    (w) => w.currentlyFailing
+  ).length;
 
   const overallHealth: "green" | "amber" | "red" =
     currentlyFailingCount === 0
