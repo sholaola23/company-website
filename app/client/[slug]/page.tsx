@@ -1638,7 +1638,7 @@ export default function ClientDashboard() {
                                 </span>
                                 <span>Next: {wf.expectedScheduleHuman}</span>
                               </div>
-                              {wf.errorsThisWeek > 0 && (
+                              {wf.currentlyFailing && wf.errorsThisWeek > 0 && (
                                 <p className="text-red-400/80 text-xs mt-1">
                                   {wf.errorsThisWeek} issue
                                   {wf.errorsThisWeek > 1 ? "s" : ""} this
