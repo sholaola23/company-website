@@ -117,6 +117,7 @@ interface OrderRow {
   refundDate: string | null;
   refundReason: string | null;
   refundMethod: string | null;
+  sheetRowIndex: number;
 }
 
 interface SheetsData {
@@ -1463,7 +1464,7 @@ export default function ClientDashboard() {
                                     {/* Refund button — only if not already refunded */}
                                     {order.refundAmount == null && !isCancelled && (
                                       <button
-                                        onClick={() => setRefundTarget({ order, index: i })}
+                                        onClick={() => setRefundTarget({ order, index: order.sheetRowIndex })}
                                         className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-[var(--color-muted)]/30 text-[var(--color-muted)] hover:bg-[var(--color-muted)]/10 hover:text-[var(--color-muted)] transition-all text-xs font-medium self-start"
                                       >
                                         <RotateCcw className="w-3 h-3" />
