@@ -48,7 +48,7 @@ const faqSchema = {
       name: "What's the minimum size business that benefits from AI?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Even sole traders benefit from AI automation. If you're a one-person plumbing business getting 10+ enquiries per week, AI lead response alone can save you 2-3 hours and help you book 3-5 more jobs per month. The ROI is proportional — a larger business saves more, but the payback period is similar. Our starter packages begin at £500 setup for businesses of any size.",
+        text: "Even sole traders benefit from AI automation. If you're a one-person plumbing business getting 10+ enquiries per week, AI lead response alone can save you 2-3 hours and help you book 3-5 more jobs per month. The ROI is proportional — a larger business saves more, but the payback period is similar. Start with the free audit so we can scope the right first build.",
       },
     },
     {
@@ -197,7 +197,7 @@ export default function BlogPost() {
             </p>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-8">
-              <strong className="text-[var(--color-heading)]">The maths:</strong> A part-time admin costs &pound;12,000&ndash;18,000 per year (National Living Wage, 20 hrs/week). AI automation that handles the same tasks costs &pound;500&ndash;3,500 to set up and &pound;50&ndash;350 per month to run. That is 70&ndash;90% cheaper than hiring.
+              <strong className="text-[var(--color-heading)]">The maths:</strong> A part-time admin costs &pound;12,000&ndash;18,000 per year (National Living Wage, 20 hrs/week). AI automation is usually cheaper than hiring because you scope the exact workflow instead of paying for idle hours.
             </p>
 
             {/* Sign 5 */}
@@ -246,12 +246,12 @@ export default function BlogPost() {
                   <tr className="border-t border-[var(--color-border)]">
                     <td className="px-4 py-3 font-medium">2&ndash;3</td>
                     <td className="px-4 py-3 text-[var(--color-primary)]">Ready for a starter automation</td>
-                    <td className="px-4 py-3">Start with one high-ROI workflow (&pound;500 setup)</td>
+                    <td className="px-4 py-3">Start with one high-ROI workflow after a free audit</td>
                   </tr>
                   <tr className="border-t border-[var(--color-border)]">
                     <td className="px-4 py-3 font-medium">4&ndash;5</td>
                     <td className="px-4 py-3 text-[var(--color-success)]">Strongly ready &mdash; you&apos;re leaving money on the table</td>
-                    <td className="px-4 py-3">Full automation sprint (&pound;1,500&ndash;3,500)</td>
+                    <td className="px-4 py-3">Scope a connected automation sprint after discovery</td>
                   </tr>
                 </tbody>
               </table>
@@ -297,7 +297,7 @@ export default function BlogPost() {
                   What&apos;s the minimum size business that benefits from AI?
                 </h3>
                 <p className="text-[var(--color-muted)] leading-relaxed">
-                  Even sole traders benefit from AI automation. If you&apos;re a one-person plumbing business getting 10+ enquiries per week, AI lead response alone can save you 2&ndash;3 hours and help you book 3&ndash;5 more jobs per month. The ROI is proportional &mdash; a larger business saves more, but the payback period is similar. Our starter packages begin at &pound;500 setup for businesses of any size.
+                  Even sole traders benefit from AI automation. If you&apos;re a one-person plumbing business getting 10+ enquiries per week, AI lead response alone can save you 2&ndash;3 hours and help you book 3&ndash;5 more jobs per month. The ROI is proportional &mdash; a larger business saves more, but the payback period is similar. Start with the free audit so we can scope the right first build.
                 </p>
               </div>
               <div>

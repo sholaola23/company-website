@@ -1,9 +1,22 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, type FormEvent } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import type { Lead, Campaign, LeadStage } from "@/lib/supabase/types";
 import { STAGES, STAGE_CONFIG } from "@/lib/supabase/types";
+
+function SortIndicator({
+  field,
+  sortField,
+  sortDir,
+}: {
+  field: keyof Lead;
+  sortField: keyof Lead;
+  sortDir: "asc" | "desc";
+}) {
+  if (sortField !== field) return null;
+  return <span className="ml-1">{sortDir === "asc" ? "\u25B2" : "\u25BC"}</span>;
+}
 
 /**
  * Lead table with sorting, filtering by stage/campaign, and search.
@@ -14,7 +27,6 @@ export default function LeadTable({
   campaigns,
   currentFilters,
   slug,
-  brandColor,
 }: {
   leads: Lead[];
   campaigns: Campaign[];
@@ -60,15 +72,10 @@ export default function LeadTable({
     router.push(`/portal/${slug}/leads?${params.toString()}`);
   }
 
-  function handleSearch(e: React.FormEvent) {
+  function handleSearch(e: FormEvent) {
     e.preventDefault();
     updateFilter("q", search);
   }
-
-  const SortIndicator = ({ field }: { field: keyof Lead }) => {
-    if (sortField !== field) return null;
-    return <span className="ml-1">{sortDir === "asc" ? "\u25B2" : "\u25BC"}</span>;
-  };
 
   return (
     <div className="space-y-4">
@@ -141,25 +148,25 @@ export default function LeadTable({
                   className="px-6 py-3 font-medium text-[var(--color-muted)] cursor-pointer hover:text-[var(--color-body)]"
                   onClick={() => handleSort("company_name")}
                 >
-                  Company <SortIndicator field="company_name" />
+                  Company <SortIndicator field="company_name" sortField={sortField} sortDir={sortDir} />
                 </th>
                 <th
                   className="px-6 py-3 font-medium text-[var(--color-muted)] cursor-pointer hover:text-[var(--color-body)]"
                   onClick={() => handleSort("contact_name")}
                 >
-                  Contact <SortIndicator field="contact_name" />
+                  Contact <SortIndicator field="contact_name" sortField={sortField} sortDir={sortDir} />
                 </th>
                 <th
                   className="px-6 py-3 font-medium text-[var(--color-muted)] cursor-pointer hover:text-[var(--color-body)]"
                   onClick={() => handleSort("stage")}
                 >
-                  Stage <SortIndicator field="stage" />
+                  Stage <SortIndicator field="stage" sortField={sortField} sortDir={sortDir} />
                 </th>
                 <th
                   className="px-6 py-3 font-medium text-[var(--color-muted)] cursor-pointer hover:text-[var(--color-body)]"
                   onClick={() => handleSort("score")}
                 >
-                  Score <SortIndicator field="score" />
+                  Score <SortIndicator field="score" sortField={sortField} sortDir={sortDir} />
                 </th>
                 <th className="px-6 py-3 font-medium text-[var(--color-muted)]">
                   Source
@@ -168,7 +175,7 @@ export default function LeadTable({
                   className="px-6 py-3 font-medium text-[var(--color-muted)] cursor-pointer hover:text-[var(--color-body)]"
                   onClick={() => handleSort("created_at")}
                 >
-                  Date <SortIndicator field="created_at" />
+                  Date <SortIndicator field="created_at" sortField={sortField} sortDir={sortDir} />
                 </th>
                 <th className="px-6 py-3 font-medium text-[var(--color-muted)]">
                   Location

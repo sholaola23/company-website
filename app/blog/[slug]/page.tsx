@@ -74,9 +74,9 @@ function renderBlock(block: Record<string, unknown>) {
       );
     case "heading_1":
       return (
-        <h1 className="text-3xl font-bold mt-8 mb-4">
+        <h2 className="text-3xl font-bold mt-8 mb-4">
           {renderRichText(richText)}
-        </h1>
+        </h2>
       );
     case "heading_2":
       return (

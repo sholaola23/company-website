@@ -33,7 +33,7 @@ const INITIAL_MESSAGE: Message = {
   id: "init",
   role: "assistant",
   content:
-    "Hi! I'm the WorkCrew AI assistant. I can help with questions about our services, pricing, or figuring out if AI automation is right for your business. What can I help with?",
+    "Hi, I'm WorkCrew's AI assistant. Tell me what is draining time in your business and I'll point you towards the right first fix.",
 };
 
 function generateId() {
@@ -181,8 +181,8 @@ export default function ChatWidget() {
     trackChatMessageSent();
     setIsStreaming(true);
 
-    // Build conversation payload — exclude the static initial message if it's
-    // the only message, to keep the API call clean
+    // Build conversation payload. The API strips the static opening assistant
+    // message before forwarding to Anthropic.
     const history = [...messages, userMessage].map(({ role, content }) => ({
       role,
       content,
@@ -192,7 +192,10 @@ export default function ChatWidget() {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: history }),
+        body: JSON.stringify({
+          messages: history,
+          pagePath: window.location.pathname,
+        }),
       });
 
       // ── Non-streaming fallback (error / rate limit) ───────────────────────
@@ -285,7 +288,7 @@ export default function ChatWidget() {
           <motion.div
             key="chat-window"
             role="dialog"
-            aria-label="Chat with our AI assistant"
+            aria-label="Chat with the WorkCrew assistant"
             aria-modal="true"
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -313,7 +316,7 @@ export default function ChatWidget() {
                   <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[var(--color-primary)]" />
                 </span>
                 <span className="text-sm font-semibold text-zinc-100">
-                  AI Assistant
+                  WorkCrew assistant
                 </span>
               </div>
               <button
@@ -351,7 +354,7 @@ export default function ChatWidget() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  placeholder="Ask me anything..."
+                  placeholder="Tell me what's draining time..."
                   rows={1}
                   disabled={isStreaming}
                   aria-label="Message input"
@@ -391,7 +394,7 @@ export default function ChatWidget() {
       {/* ── Toggle button (hidden on mobile when chat is open) ──────────── */}
       <motion.button
         onClick={() => setIsOpen((v) => !v)}
-        aria-label={isOpen ? "Close chat" : "Open AI assistant chat"}
+        aria-label={isOpen ? "Close chat" : "Open WorkCrew assistant chat"}
         aria-expanded={isOpen}
         aria-haspopup="dialog"
         whileHover={{ scale: 1.08 }}

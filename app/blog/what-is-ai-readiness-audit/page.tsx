@@ -139,12 +139,12 @@ export default function BlogPost() {
 
               <div className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-lg p-5">
                 <h3 className="text-lg font-semibold mb-2 text-[var(--color-heading)]">
-                  4. Recommended Solution and Pricing
+                  4. Recommended First Build
                 </h3>
                 <p className="text-[var(--color-body)] text-sm">
-                  We recommend a specific solution with transparent pricing.
-                  You&apos;ll know exactly what it costs to set up and what
-                  the monthly fee is. No hidden charges, no surprises.
+                  We recommend a specific first build and explain what affects
+                  scope: workflow shape, channels, volume, integrations, and
+                  handoff rules. No guesswork before discovery.
                 </p>
               </div>
 

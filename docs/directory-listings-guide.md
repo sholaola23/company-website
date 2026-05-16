@@ -21,9 +21,7 @@ Our services include AI automation setup, professional website development, What
 
 We work with local service businesses across the UK — from salons and restaurants to tradespeople, accountants, and healthcare providers. Our clients typically save 8+ hours per week and see measurable ROI within the first month.
 
-Every project starts with a free AI Readiness Audit, where we analyse your business processes and show you exactly where AI can make the biggest impact. Most projects are delivered within 7 days, with a 90-day results guarantee.
-
-We offer three tiers to fit any budget: Starter (single automation, £500), Growth (multi-workflow system, £1,500), and Scale (full automation fleet with dashboard, £3,500). All tiers include monthly optimisation retainers.
+Every project starts with a free AI Readiness Audit, where we analyse your business processes and show you exactly where AI can make the biggest impact. Scope and commercial terms are confirmed after discovery, with a 90-day results review after launch.
 
 Visit workcrew.io to book your free audit.
 

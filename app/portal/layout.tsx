@@ -1,6 +1,17 @@
-"use client";
+import type { Metadata } from "next";
+import ChromeHider from "@/components/shared/ChromeHider";
 
-import { useEffect } from "react";
+export const metadata: Metadata = {
+  title: "Client Portal",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
+};
 
 /**
  * Portal layout — hides the main site chrome (header, footer, chat widget)
@@ -11,20 +22,10 @@ export default function PortalLayout({
 }: {
   children: React.ReactNode;
 }) {
-  useEffect(() => {
-    const style = document.createElement("style");
-    style.id = "portal-dashboard-overrides";
-    style.textContent = `
-      header.fixed, footer, #chat-widget-root,
-      [aria-label="Open AI assistant chat"] { display: none !important; }
-      #main-content { padding-top: 0 !important; }
-    `;
-    document.head.appendChild(style);
-
-    return () => {
-      document.getElementById("portal-dashboard-overrides")?.remove();
-    };
-  }, []);
-
-  return <>{children}</>;
+  return (
+    <>
+      <ChromeHider />
+      {children}
+    </>
+  );
 }

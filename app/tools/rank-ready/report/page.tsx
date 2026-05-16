@@ -12,7 +12,6 @@ import {
   Layers,
   Copy,
   Check,
-  Download,
   ArrowRight,
   Loader2,
   Lock,
@@ -728,7 +727,7 @@ function ReportContent() {
               href="/tools/rank-ready"
               className="inline-flex items-center gap-2 rounded-lg bg-[var(--color-success)] px-6 py-2.5 text-sm font-semibold text-[var(--color-bg)] hover:bg-emerald-500 transition-colors"
             >
-              Get Full Report — £49
+              Get Full Report
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -778,7 +777,7 @@ function LockedSection({
         href="/tools/rank-ready"
         className="inline-flex items-center gap-2 rounded-lg bg-[var(--color-success)] px-5 py-2.5 text-sm font-semibold text-[var(--color-bg)] hover:bg-emerald-500 transition-colors"
       >
-        Unlock — £49
+        Unlock Full Report
         <ArrowRight className="h-4 w-4" />
       </Link>
     </div>

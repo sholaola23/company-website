@@ -51,7 +51,7 @@ export default function PrivacyPage() {
               <li><strong className="text-[var(--color-muted)]">Contact form submissions:</strong> name, email address, phone number (optional), and your message.</li>
               <li><strong className="text-[var(--color-muted)]">Audit / Blueprint request submissions:</strong> business name, industry, website URL, email address, and details about your business challenges.</li>
               <li><strong className="text-[var(--color-muted)]">Chat conversations:</strong> messages exchanged with our AI assistant, processed in real-time and stored only in your browser session unless you submit them to us via a form.</li>
-              <li><strong className="text-[var(--color-muted)]">Client data (as processor):</strong> when you engage WorkCrew under a service agreement, we may process personal data on your behalf (e.g. your customers' names, phone numbers, emails). This is governed by a separate Data Processing Agreement and you remain the controller of that data.</li>
+              <li><strong className="text-[var(--color-muted)]">Client data (as processor):</strong> when you engage WorkCrew under a service agreement, we may process personal data on your behalf (e.g. your customers&apos; names, phone numbers, emails). This is governed by a separate Data Processing Agreement and you remain the controller of that data.</li>
               <li><strong className="text-[var(--color-muted)]">Usage data:</strong> pages visited, interactions, and device info stored in your browser (localStorage / sessionStorage). Analytics data is collected only after you consent via our cookie banner.</li>
             </ul>
           </section>
@@ -150,7 +150,7 @@ export default function PrivacyPage() {
               If you are unhappy with how we have handled your data, please contact us
               first at <a href="mailto:hello@workcrew.io" className="text-[var(--color-primary)] hover:underline">hello@workcrew.io</a>.
               You also have the right to lodge a complaint with the UK Information
-              Commissioner's Office (ICO): <a href="https://ico.org.uk" className="text-[var(--color-primary)] hover:underline" target="_blank" rel="noopener noreferrer">ico.org.uk</a>.
+              Commissioner&apos;s Office (ICO): <a href="https://ico.org.uk" className="text-[var(--color-primary)] hover:underline" target="_blank" rel="noopener noreferrer">ico.org.uk</a>.
             </p>
           </section>
 

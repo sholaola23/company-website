@@ -281,15 +281,6 @@ const staticPosts = [
     tags: ["AI Automation", "Restaurants", "Hospitality", "Industry Guide"],
   },
   {
-    id: "static-7",
-    slug: "ai-automation-cost",
-    title: "How Much Does AI Automation Cost for a Small Business?",
-    excerpt:
-      "An honest pricing breakdown for AI automation. Compare DIY, freelancer, agency, and specialist costs — with real ROI numbers from real businesses.",
-    publishedAt: "19 March 2026",
-    tags: ["AI Automation", "Pricing", "Small Business", "Guides"],
-  },
-  {
     id: "static-8",
     slug: "whatsapp-automation-business",
     title: "WhatsApp Automation for Business: The Complete Guide",

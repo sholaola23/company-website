@@ -160,8 +160,8 @@ export default function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center">
-            <CTAButton href="https://cal.com/workcrew/free-ai-strategy-call" variant="primary" size="sm">
-              Book a call
+            <CTAButton href="/audit" variant="primary" size="sm">
+              Free AI audit
             </CTAButton>
           </div>
 
@@ -231,12 +231,12 @@ export default function Header() {
             style={{ borderTop: "1px solid var(--color-border)" }}
           >
             <CTAButton
-              href="https://cal.com/workcrew/free-ai-strategy-call"
+              href="/audit"
               variant="primary"
               size="md"
               className="w-full justify-center"
             >
-              Book a call
+              Free AI audit
             </CTAButton>
           </div>
         </div>

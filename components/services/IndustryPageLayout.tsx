@@ -72,8 +72,8 @@ export default function IndustryPageLayout({ page }: { page: IndustryPage }) {
             {page.heroSubheadline}
           </p>
           <div className="flex flex-wrap gap-4">
-            <CTAButton href="/blueprint" variant="primary" size="lg">
-              Get Your Free AI Blueprint
+            <CTAButton href="/audit" variant="primary" size="lg">
+              Get Your Free AI Audit
             </CTAButton>
             <CTAButton
               href="https://cal.com/workcrew/free-ai-strategy-call"
@@ -262,7 +262,7 @@ export default function IndustryPageLayout({ page }: { page: IndustryPage }) {
                     {s.name}
                   </h3>
                   <p className="text-xs text-[var(--color-muted)]">
-                    {s.setupPrice} + {s.monthlyPrice}
+                    Scoped after your free audit
                   </p>
                 </Link>
               ))}
@@ -283,8 +283,8 @@ export default function IndustryPageLayout({ page }: { page: IndustryPage }) {
               can save you time and money.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <CTAButton href="/blueprint" variant="primary" size="lg">
-                Get Your Free AI Blueprint
+              <CTAButton href="/audit" variant="primary" size="lg">
+                Get Your Free AI Audit
               </CTAButton>
               <CTAButton
                 href="https://cal.com/workcrew/free-ai-strategy-call"

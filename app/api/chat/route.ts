@@ -1,9 +1,19 @@
 import { NextRequest } from "next/server";
-import { CHAT_SYSTEM_PROMPT } from "@/lib/chat-system-prompt";
+import { retrieveChatKnowledge } from "@/lib/chat-knowledge";
+import { getChatSystemPrompt } from "@/lib/chat-system-prompt";
 import { requireGuard } from "@/lib/api-guard";
 import { ANTHROPIC_API_URL, ANTHROPIC_VERSION, heliconeHeaders } from "@/lib/constants";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
+export const maxDuration = 30;
+
+const CHAT_MODEL =
+  process.env.ANTHROPIC_CHAT_MODEL || "claude-sonnet-4-20250514";
+
+type ChatMessage = {
+  role: "user" | "assistant";
+  content: string;
+};
 
 export async function POST(req: NextRequest) {
   // Guard FIRST — chat endpoint is high volume (Haiku) but still public.
@@ -15,15 +25,35 @@ export async function POST(req: NextRequest) {
     return Response.json({ error: guard.message }, { status: guard.status });
   }
 
-  const body = await req.json();
-  const { messages } = body;
+  let body: { messages?: unknown; pagePath?: unknown };
+
+  try {
+    body = await req.json();
+  } catch {
+    return Response.json({ error: "Invalid request body." }, { status: 400 });
+  }
+
+  const { messages, pagePath } = body;
 
   if (!messages || !Array.isArray(messages) || messages.length === 0) {
     return Response.json({ error: "Messages required" }, { status: 400 });
   }
 
+  const validMessages = messages.filter(
+    (message): message is ChatMessage =>
+      !!message &&
+      typeof message === "object" &&
+      ((message as ChatMessage).role === "user" ||
+        (message as ChatMessage).role === "assistant") &&
+      typeof (message as ChatMessage).content === "string"
+  );
+
+  if (validMessages.length === 0) {
+    return Response.json({ error: "Valid messages required" }, { status: 400 });
+  }
+
   // Reject empty/whitespace-only messages
-  const lastMessage = messages[messages.length - 1];
+  const lastMessage = validMessages[validMessages.length - 1];
   if (!lastMessage?.content?.trim()) {
     return Response.json({ text: "It looks like your message was empty. How can I help you today?" });
   }
@@ -38,13 +68,25 @@ export async function POST(req: NextRequest) {
   try {
     // Cap conversation to last 20 messages and ensure it starts with a user message
     // (Anthropic API requires first message role to be "user")
-    let cappedMessages = messages.slice(-20);
+    let cappedMessages = validMessages.slice(-20);
     while (cappedMessages.length > 0 && cappedMessages[0].role !== "user") {
       cappedMessages = cappedMessages.slice(1);
     }
     if (cappedMessages.length === 0) {
       return Response.json({ text: "How can I help you today?" });
     }
+
+    const lastUserMessage = [...cappedMessages]
+      .reverse()
+      .find((message) => message.role === "user");
+    const knowledgeQuery = cappedMessages
+      .slice(-6)
+      .map((message) => `${message.role}: ${message.content}`)
+      .join("\n");
+    const retrievedKnowledge = retrieveChatKnowledge({
+      query: `${lastUserMessage?.content ?? ""}\n${knowledgeQuery}`,
+      pagePath: typeof pagePath === "string" ? pagePath : undefined,
+    });
 
     const response = await fetch(ANTHROPIC_API_URL, {
       method: "POST",
@@ -54,10 +96,13 @@ export async function POST(req: NextRequest) {
         ...heliconeHeaders(), "anthropic-version": ANTHROPIC_VERSION,
       },
       body: JSON.stringify({
-        model: "claude-haiku-4-5-20251001",
-        max_tokens: 700,
+        model: CHAT_MODEL,
+        max_tokens: 900,
         stream: true,
-        system: CHAT_SYSTEM_PROMPT,
+        system: getChatSystemPrompt({
+          pagePath: typeof pagePath === "string" ? pagePath : undefined,
+          knowledgeContext: retrievedKnowledge.context,
+        }),
         messages: cappedMessages,
       }),
     });

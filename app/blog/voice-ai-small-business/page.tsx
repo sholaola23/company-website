@@ -310,20 +310,20 @@ export default function BlogPost() {
                     <th className="py-3 pr-4 text-[var(--color-heading)] font-semibold">
                       Item
                     </th>
-                    <th className="py-3 text-[var(--color-heading)] font-semibold">Cost</th>
+                    <th className="py-3 text-[var(--color-heading)] font-semibold">What drives scope</th>
                   </tr>
                 </thead>
                 <tbody className="text-[var(--color-muted)]">
                   <tr className="border-b border-[var(--color-border)]/50">
-                    <td className="py-3 pr-4">Setup (one-time)</td>
+                    <td className="py-3 pr-4">Implementation</td>
                     <td className="py-3">
-                      &pound;500 &ndash; &pound;3,500
+                      Call volume, booking rules, and integrations
                     </td>
                   </tr>
                   <tr className="border-b border-[var(--color-border)]/50">
-                    <td className="py-3 pr-4">Monthly management</td>
+                    <td className="py-3 pr-4">Ongoing management</td>
                     <td className="py-3">
-                      &pound;150 &ndash; &pound;500
+                      Monitoring, optimisation, and provider usage
                     </td>
                   </tr>
                   <tr className="border-b border-[var(--color-border)]/50">
@@ -341,10 +341,10 @@ export default function BlogPost() {
             </div>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-4">
-              Setup cost depends on complexity. A straightforward
+              Scope depends on complexity. A straightforward
               &ldquo;answer, qualify, book&rdquo; system is at the lower end.
               If you need multi-location routing, CRM integration, or custom
-              qualification logic, it costs more.
+              qualification logic, the build is larger.
             </p>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-4">
@@ -457,8 +457,8 @@ export default function BlogPost() {
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               We stand behind the systems we build. If your Voice AI setup
-              doesn&apos;t save you at least 5 hours per week within 90 days,
-              we refund your setup fee. No arguments, no small print.
+              doesn&apos;t hit the agreed success metric within 90 days, we keep
+              improving it until it is doing the job it was scoped to do.
             </p>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-4">

@@ -236,7 +236,7 @@ export default function BlueprintGenerator() {
       <div>
           {step === "industry" && (<>
             <h2 className="text-2xl font-bold text-[var(--color-heading)] mb-2">What type of business do you run?</h2>
-            <p className="text-[var(--color-muted)] mb-6">Pick the closest match — we'll tailor your blueprint to your industry.</p>
+            <p className="text-[var(--color-muted)] mb-6">Pick the closest match — we&apos;ll tailor your blueprint to your industry.</p>
             <div className="grid grid-cols-3 sm:grid-cols-4 gap-3 mb-4">
               {POPULAR_INDUSTRIES.map((ind) => (
                 <button key={ind} onClick={() => { setIndustry(ind); trackBlueprintStarted(ind); setDirection(1); setStep("painPoints"); }} className={cn("p-3 rounded-xl border-2 text-sm font-medium transition-all text-center hover:border-indigo-400 hover:bg-indigo-50", industry === ind ? "border-indigo-500 bg-indigo-50 text-indigo-700" : "border-[var(--color-border)] text-[var(--color-body)]")}>{ind}</button>

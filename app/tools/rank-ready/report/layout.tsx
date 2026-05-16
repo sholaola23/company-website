@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import ChromeHider from "@/components/shared/ChromeHider";
 
 export const metadata: Metadata = {
-  title: "Client Dashboard",
+  title: "RankReady Report",
   robots: {
     index: false,
     follow: false,
@@ -13,15 +12,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ClientLayout({
+export default function RankReadyReportLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <>
-      <ChromeHider background="#09090b" />
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }

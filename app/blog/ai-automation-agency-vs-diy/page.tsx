@@ -39,7 +39,7 @@ const faqSchema = {
       name: "Is it cheaper to build AI automation myself or hire an agency?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "DIY is cheaper upfront (£0-50/month for tools) but costs more in time — typically 40-80 hours of learning and building. An agency charges £500-3,500 for setup but delivers in 5-14 days with ongoing support. For most small businesses, the agency route is cheaper when you factor in the value of your time.",
+        text: "DIY is cheaper upfront in software bills but costs more in time — typically 40-80 hours of learning and building. An agency delivers faster with ongoing support. For most small businesses, the agency route is cheaper when you factor in the value of your time.",
       },
     },
     {
@@ -132,12 +132,12 @@ export default function BlogPost() {
                 <tbody className="text-[var(--color-muted)]">
                   <tr className="border-t border-[var(--color-border)]">
                     <td className="px-4 py-3 font-medium text-[var(--color-heading)]">Upfront Cost</td>
-                    <td className="px-4 py-3">&pound;500&ndash;&pound;3,500</td>
+                    <td className="px-4 py-3">Scoped after discovery</td>
                     <td className="px-4 py-3">&pound;0&ndash;&pound;50/month (tool subscriptions)</td>
                   </tr>
                   <tr className="border-t border-[var(--color-border)]">
                     <td className="px-4 py-3 font-medium text-[var(--color-heading)]">Ongoing Cost</td>
-                    <td className="px-4 py-3">&pound;50&ndash;&pound;350/month</td>
+                    <td className="px-4 py-3">Depends on monitoring and optimisation</td>
                     <td className="px-4 py-3">&pound;20&ndash;&pound;100/month (tools only)</td>
                   </tr>
                   <tr className="border-t border-[var(--color-border)]">
@@ -157,7 +157,7 @@ export default function BlogPost() {
                   </tr>
                   <tr className="border-t border-[var(--color-border)]">
                     <td className="px-4 py-3 font-medium text-[var(--color-heading)]">Ongoing Support</td>
-                    <td className="px-4 py-3">Included in retainer</td>
+                    <td className="px-4 py-3">Included in ongoing support</td>
                     <td className="px-4 py-3">Self-serve (YouTube, forums)</td>
                   </tr>
                   <tr className="border-t border-[var(--color-border)]">
@@ -217,7 +217,7 @@ export default function BlogPost() {
               <Link href="/case-studies/emanuel-bakery" className="text-[var(--color-primary)] hover:underline">
                 E&apos;Manuel Bakery in Kettering
               </Link>{" "}
-              that save the owner 50+ minutes every day. That&apos;s over 300 hours per year &mdash; worth approximately &pound;20,000 in admin time. The setup cost was &pound;1,500. The ROI paid for itself in the first month.
+              that save the owner 50+ minutes every day. That&apos;s over 300 hours per year &mdash; worth approximately &pound;20,000 in admin time. The project was scoped after discovery around order intake, payment matching, production planning, and delivery routing.
             </p>
 
             {/* The hidden cost of DIY */}
@@ -226,7 +226,7 @@ export default function BlogPost() {
             </h2>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-4">
-              The sticker price of DIY looks attractive &mdash; &pound;20/month for Zapier vs &pound;500 for an agency. But the real cost is your time.
+              The sticker price of DIY looks attractive because the software subscription can look small. But the real cost is your time.
             </p>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-4">
@@ -244,8 +244,8 @@ export default function BlogPost() {
                 </thead>
                 <tbody className="text-[var(--color-muted)]">
                   <tr className="border-t border-[var(--color-border)]">
-                    <td className="px-4 py-3">Setup fee</td>
-                    <td className="px-4 py-3">&pound;500</td>
+                    <td className="px-4 py-3">Implementation</td>
+                    <td className="px-4 py-3">Scoped after discovery</td>
                     <td className="px-4 py-3">&pound;0</td>
                   </tr>
                   <tr className="border-t border-[var(--color-border)]">
@@ -254,8 +254,8 @@ export default function BlogPost() {
                     <td className="px-4 py-3">&pound;1,000</td>
                   </tr>
                   <tr className="border-t border-[var(--color-border)]">
-                    <td className="px-4 py-3">Tool subscriptions (Year 1)</td>
-                    <td className="px-4 py-3">&pound;600 (&pound;50/mo retainer)</td>
+                    <td className="px-4 py-3">Ongoing support</td>
+                    <td className="px-4 py-3">Depends on monitoring and optimisation</td>
                     <td className="px-4 py-3">&pound;240 (&pound;20/mo tools)</td>
                   </tr>
                   <tr className="border-t border-[var(--color-border)]">
@@ -265,7 +265,7 @@ export default function BlogPost() {
                   </tr>
                   <tr className="border-t border-[var(--color-border)] bg-[var(--color-surface)]/30">
                     <td className="px-4 py-3 font-bold text-[var(--color-heading)]">Total Year 1</td>
-                    <td className="px-4 py-3 font-bold text-[var(--color-primary)]">&pound;1,100</td>
+                    <td className="px-4 py-3 font-bold text-[var(--color-primary)]">Quoted after discovery</td>
                     <td className="px-4 py-3 font-bold text-[var(--color-primary)]">&pound;1,490</td>
                   </tr>
                   <tr className="border-t border-[var(--color-border)]">
@@ -291,14 +291,14 @@ export default function BlogPost() {
               <Link href="/services" className="text-[var(--color-primary)] hover:underline">
                 WorkCrew
               </Link>
-              , we offer a productised done-for-you service starting at &pound;500 setup + &pound;50/month. Here is what that means in practice:
+              , we offer productised done-for-you automation scoped after a free audit and discovery call. Here is what that means in practice:
             </p>
 
             <ul className="text-[var(--color-muted)] space-y-2 mb-4 ml-6 list-disc">
               <li><strong className="text-[var(--color-heading)]">We build it</strong> &mdash; you spend 2&ndash;3 hours briefing us, then we handle everything</li>
               <li><strong className="text-[var(--color-heading)]">We maintain it</strong> &mdash; when APIs change, tools update, or workflows break, we fix it</li>
               <li><strong className="text-[var(--color-heading)]">We optimise it</strong> &mdash; monthly reviews of your KPIs with tweaks to improve performance</li>
-              <li><strong className="text-[var(--color-heading)]">We guarantee it</strong> &mdash; 90-day results guarantee: save 5+ hours/week or get your setup fee back</li>
+              <li><strong className="text-[var(--color-heading)]">We guarantee it</strong> &mdash; we agree the success metric before build and review it after launch</li>
             </ul>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-8">
@@ -335,7 +335,7 @@ export default function BlogPost() {
                   Is it cheaper to build AI automation myself or hire an agency?
                 </h3>
                 <p className="text-[var(--color-muted)] leading-relaxed">
-                  DIY is cheaper upfront (&pound;0&ndash;50/month for tools) but costs more in time &mdash; typically 40&ndash;80 hours of learning and building. An agency charges &pound;500&ndash;3,500 for setup but delivers in 5&ndash;14 days with ongoing support. For most small businesses, the agency route is cheaper when you factor in the value of your time.
+                  DIY is cheaper upfront in software bills but costs more in time &mdash; typically 40&ndash;80 hours of learning and building. An agency delivers faster with ongoing support. For most small businesses, the agency route is cheaper when you factor in the value of your time.
                 </p>
               </div>
               <div>

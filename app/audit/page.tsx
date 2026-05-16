@@ -135,7 +135,7 @@ export default function AuditPage() {
             <span className="text-[var(--color-success)] font-medium">
               90-Day Results Guarantee
             </span>{" "}
-            — if you don&apos;t see results, we refund your setup fee.
+            — we agree the target before build and review it after launch.
           </p>
         </div>
       </AnimatedSection>

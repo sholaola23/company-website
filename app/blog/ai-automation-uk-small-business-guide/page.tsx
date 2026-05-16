@@ -370,29 +370,29 @@ export default function BlogPost() {
             <p className="text-[var(--color-muted)] leading-relaxed mb-4">
               This is the question everyone asks first, and the answer depends
               on what you&apos;re automating and how complex your business
-              processes are. But here are realistic ranges for UK small
-              businesses in 2026:
+              processes are. Instead of guessing from a public price list, look
+              at the shape of the build:
             </p>
 
             <ul className="list-disc pl-6 mb-4 space-y-2">
               <li className="text-[var(--color-muted)]">
                 <strong className="text-[var(--color-heading)]">Simple automations</strong>{" "}
-                (review collection, basic follow-ups): &pound;300&ndash;500
-                setup + &pound;30&ndash;50/month
+                (review collection, basic follow-ups): one clear trigger, one
+                output, and minimal exceptions
               </li>
               <li className="text-[var(--color-muted)]">
                 <strong className="text-[var(--color-heading)]">
                   Mid-complexity systems
                 </strong>{" "}
-                (lead capture + booking + follow-up): &pound;800&ndash;1,500
-                setup + &pound;100&ndash;150/month
+                (lead capture + booking + follow-up): multiple tools, calendar
+                rules, and customer handoffs
               </li>
               <li className="text-[var(--color-muted)]">
                 <strong className="text-[var(--color-heading)]">
                   Full business automation
                 </strong>{" "}
                 (multiple integrated systems, custom AI assistants):
-                &pound;2,500&ndash;5,000 setup + &pound;250&ndash;350/month
+                monitoring, reporting, exceptions, and ongoing optimisation
               </li>
             </ul>
 
@@ -633,11 +633,9 @@ export default function BlogPost() {
             </h3>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-6">
-              We offer a 90-day results guarantee. If you don&apos;t save at
-              least 5 hours per week within 90 days, we&apos;ll refund your
-              setup fee. We&apos;re confident enough to make this guarantee
-              because we&apos;ve seen these automations work across dozens of
-              industries. Before we start, we&apos;ll be honest about whether AI
+              We offer a 90-day results guarantee. We agree the success metric
+              before build, track it after launch, and keep improving the system
+              until it is doing the job it was scoped to do. Before we start, we&apos;ll be honest about whether AI
               is a good fit for your specific situation &mdash; we&apos;d rather
               turn away a project than deliver something that doesn&apos;t work.
             </p>

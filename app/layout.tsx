@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | WorkCrew",
   },
   description:
-    "AI automation for small businesses. Lead intake, content engines, customer ops — set up in 7 days, retainer from there. 90-day results guarantee.",
+    "AI automation for small businesses. Lead intake, content engines, customer ops — scoped after discovery, built fast, and backed by a 90-day results guarantee.",
   keywords: [
     "AI automation",
     "business automation",
@@ -44,13 +44,13 @@ export const metadata: Metadata = {
     siteName: "WorkCrew",
     title: "WorkCrew — We run the back-of-house. You run the business.",
     description:
-      "AI automation for small businesses. Lead intake, content engines, customer ops — set up in 7 days. 90-day results guarantee.",
+      "AI automation for small businesses. Lead intake, content engines, customer ops — scoped after discovery and backed by a 90-day results guarantee.",
   },
   twitter: {
     card: "summary_large_image",
     title: "WorkCrew — We run the back-of-house. You run the business.",
     description:
-      "AI automation for small businesses. Lead intake, content engines, customer ops. Set up in 7 days.",
+      "AI automation for small businesses. Lead intake, content engines, customer ops. Start with a free AI audit.",
   },
   robots: {
     index: true,

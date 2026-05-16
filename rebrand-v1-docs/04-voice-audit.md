@@ -12,9 +12,9 @@ The site is **two brands stacked on top of each other.** The hero (`RotatingHead
 
 ## Best lines on the site (don't lose these)
 
-1. `app/page.tsx:59` — *"We run your inbox, your bookings, and your weekly reports. Set up in 7 days. Results in 90 or your money back."* — three concrete nouns + two numbers + guarantee in 21 words. **This line is the brand.**
+1. `app/page.tsx:59` — *"We run your inbox, your bookings, and your weekly reports. Set up around the first workflow that saves real time."* — concrete nouns + practical outcome. **This line is the brand.**
 2. `app/page.tsx:180` — *"Three things, mostly. Each one set up in days, not months — measured in hours saved and leads booked, not features shipped."* — defines the brand by what it isn't.
-3. `app/services/[slug]/page.tsx:470-472` — *"If you don't save at least 5 hours per week within 90 days, we'll refund your setup fee. No questions asked."* — model for every guarantee on the site.
+3. `app/services/[slug]/page.tsx:470-472` — *"We agree the success metric before build, track it after launch, and keep improving until the system is doing the job it was scoped to do."* — model for every guarantee on the site.
 
 ## Banned-word hit list (file:line)
 

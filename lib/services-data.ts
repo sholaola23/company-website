@@ -82,9 +82,9 @@ export const services: Service[] = [
         "E'Manuel Foods & Bakery in Kettering went from manually collecting orders via WhatsApp and spreadsheets to a fully automated pipeline — order intake, payment matching (SumUp + bank transfer), production schedules, delivery routes, and customer confirmations. All built and live in under two weeks.",
       clientName: "E'Manuel Foods & Bakery",
     },
-    ctaText: "Get Your Free AI Blueprint",
-    ctaHref: "/blueprint",
-    ctaSubtext: "See exactly how automation would work for your business — takes 60 seconds.",
+    ctaText: "Get Your Free AI Audit",
+    ctaHref: "/audit",
+    ctaSubtext: "See where automation could save your business the most time — takes 60 seconds.",
   },
   {
     slug: "business-website",
@@ -154,9 +154,9 @@ export const services: Service[] = [
       ],
       clientName: "E'Manuel Foods & Bakery",
     },
-    ctaText: "Book a discovery call",
-    ctaHref: "https://cal.com/workcrew/free-ai-strategy-call",
-    ctaSubtext: "30 minutes. We tell you where your week leaks the most time.",
+    ctaText: "Get Your Free AI Audit",
+    ctaHref: "/audit",
+    ctaSubtext: "Start with a quick audit, then book a discovery call if the fit is real.",
     howItWorks: [
       {
         step: 1,
@@ -209,11 +209,11 @@ export const services: Service[] = [
       },
       {
         question: "How much does it cost?",
-        answer: "Pricing is tailored to your specific needs. Every project includes ongoing optimisation, monitoring, and support. No hidden costs. No long-term contracts — month-to-month with no lock-in. Book a free consultation to get an exact quote.",
+        answer: "Every build is scoped after discovery because the workflow, channels, volume, and handoff rules change the shape of the work. Start with the free audit, then we give you a practical proposal.",
       },
       {
         question: "Do you offer a guarantee?",
-        answer: "Yes. Our 90-Day Results Guarantee: if you don't save at least 5 hours per week within 90 days, we refund your full setup fee. No questions asked. We've never had to pay out.",
+        answer: "Yes. We agree the success metric before build, track it after launch, and keep improving the system until it is doing the job it was scoped to do.",
       },
     ],
     roiSnippet: "If you get 50 leads per month and currently lose 30% to slow follow-up, that's 15 lost customers every month. At an average job value of £100, that's £1,500/month walking out the door — £18,000 per year. Our system runs at a fraction of what you're losing. The ROI pays for itself in the first week.",
@@ -259,8 +259,8 @@ export const services: Service[] = [
       ],
       clientName: "E'Manuel Foods & Bakery",
     },
-    ctaText: "Get Your Free AI Blueprint",
-    ctaHref: "/blueprint",
+    ctaText: "Get Your Free AI Audit",
+    ctaHref: "/audit",
     ctaSubtext: "Find out if a WhatsApp bot is right for your business — 60-second audit.",
     heroHeadline: "Your Customers Are Already on WhatsApp. Now Your Business Can Be Too.",
     howItWorks: [
@@ -352,8 +352,8 @@ export const services: Service[] = [
         { label: "Admin time recovered", value: "5-8 hrs/week" },
       ],
     },
-    ctaText: "Get Your Free AI Blueprint",
-    ctaHref: "/blueprint",
+    ctaText: "Get Your Free AI Audit",
+    ctaHref: "/audit",
     ctaSubtext: "We'll show you exactly how much email time you can get back.",
     heroHeadline: "Stop Drowning in Emails. Let AI Handle the Replies.",
     howItWorks: [
@@ -512,8 +512,8 @@ export const services: Service[] = [
         { label: "Manual research replaced", value: "10+ hrs/week" },
       ],
     },
-    ctaText: "Get Your Free AI Blueprint",
-    ctaHref: "/blueprint",
+    ctaText: "Get Your Free AI Audit",
+    ctaHref: "/audit",
     ctaSubtext: "We'll assess your pipeline and show where scraping can fill the gaps.",
   },
   {
@@ -549,8 +549,8 @@ export const services: Service[] = [
       description:
         "A plumber gets a call at 9pm about a leaking pipe. The AI answers in 2 seconds, asks the right questions, books a morning appointment, sends the customer an SMS confirmation, and texts you the details. By the time you check your phone, the job is already booked.",
     },
-    ctaText: "Get Your Free AI Blueprint",
-    ctaHref: "/blueprint",
+    ctaText: "Get Your Free AI Audit",
+    ctaHref: "/audit",
     ctaSubtext: "See how many leads you're losing to missed calls — takes 60 seconds.",
   },
   {
@@ -581,8 +581,8 @@ export const services: Service[] = [
         { label: "After-hours coverage", value: "24/7" },
       ],
     },
-    ctaText: "Get Your Free AI Blueprint",
-    ctaHref: "/blueprint",
+    ctaText: "Get Your Free AI Audit",
+    ctaHref: "/audit",
     ctaSubtext: "Find out how many leads you're losing to missed calls.",
   },
   {
@@ -638,15 +638,15 @@ export const services: Service[] = [
     proof: {
       heading: "Real results",
       description:
-        "Our instant AI audit scores your business in under 60 seconds — no email required. Enter a few details and get an AI readiness score, top automation opportunities, and a what you should see in 30, 60, 90 days. Over a dozen businesses have taken it so far. Want the full 5-section deep-dive report? Just add your email and we'll send it within 48 hours.",
+        "Our instant AI audit scores your business in under 60 seconds — no email required. Enter a few details and get an AI readiness score, top automation opportunities, and what you should expect to see in 30, 60, and 90 days. Over a dozen businesses have taken it so far. Want the full 5-section deep-dive report? Just add your email and we'll send it within 48 hours.",
       stats: [
         { label: "Time to get your score", value: "60 seconds" },
         { label: "Cost", value: "FREE" },
         { label: "Full report delivery", value: "48 hours" },
       ],
     },
-    ctaText: "Get Your Free AI Blueprint",
-    ctaHref: "/blueprint",
+    ctaText: "Get Your Free AI Audit",
+    ctaHref: "/audit",
     ctaSubtext: "60 seconds. No email required. Instant AI readiness score.",
   },
   {
@@ -658,7 +658,7 @@ export const services: Service[] = [
     deliveryDays: "Fast turnaround",
     idealFor: "Businesses with unique problems",
     pain: "Unique workflow problems",
-    metaDescription: "Custom AI automation built for your unique business needs. We audit your processes, design a bespoke solution, and deliver fast.",
+    metaDescription: "Custom AI automation built for your unique business needs. We audit your processes, design a practical build, and deliver fast.",
     deliverables: [
       "Audit first",
       "Custom proposal",
@@ -677,8 +677,8 @@ export const services: Service[] = [
       ],
       clientName: "E'Manuel Foods & Bakery",
     },
-    ctaText: "Get Your Free AI Blueprint",
-    ctaHref: "/blueprint",
+    ctaText: "Get Your Free AI Audit",
+    ctaHref: "/audit",
     ctaSubtext: "Tell us what's broken — we'll show you what we can build.",
   },
   {

@@ -11,15 +11,17 @@ export default function CookieBanner() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    try {
-      const saved = localStorage.getItem(CONSENT_KEY);
-      if (saved === "accepted" || saved === "rejected") {
-        setConsent(saved);
+    Promise.resolve().then(() => {
+      try {
+        const saved = localStorage.getItem(CONSENT_KEY);
+        if (saved === "accepted" || saved === "rejected") {
+          setConsent(saved);
+        }
+      } catch {
+        // localStorage unavailable — show banner
       }
-    } catch {
-      // localStorage unavailable — show banner
-    }
+      setMounted(true);
+    });
   }, []);
 
   const record = (choice: "accepted" | "rejected") => {

@@ -172,10 +172,10 @@ export default function BlogPost() {
 
             <div className="bg-[var(--color-surface)]/50 border border-[var(--color-border)] rounded-lg p-6 mb-4">
               <p className="text-[var(--color-muted)] leading-relaxed mb-2">
-                <strong className="text-[var(--color-heading)]">Setup cost:</strong> &pound;500 (one-time)
+                <strong className="text-[var(--color-heading)]">Implementation:</strong> scoped after discovery
               </p>
               <p className="text-[var(--color-muted)] leading-relaxed mb-2">
-                <strong className="text-[var(--color-heading)]">Monthly running cost:</strong> &pound;50 (retainer + platform)
+                <strong className="text-[var(--color-heading)]">Scope driver:</strong> quote volume, booking rules, and follow-up channels
               </p>
               <p className="text-[var(--color-muted)] leading-relaxed mb-2">
                 <strong className="text-[var(--color-heading)]">Quotes sent per month:</strong> 60
@@ -197,13 +197,13 @@ export default function BlogPost() {
               </p>
               <hr className="border-[var(--color-border)] my-3" />
               <p className="text-[var(--color-muted)] leading-relaxed mb-1">
-                <strong className="text-[var(--color-heading)]">Monthly ROI:</strong> &pound;1,400 &minus; &pound;50 = &pound;1,350 net gain
+                <strong className="text-[var(--color-heading)]">Monthly upside:</strong> &pound;1,400 in extra booked work before implementation cost
               </p>
               <p className="text-[var(--color-muted)] leading-relaxed mb-1">
-                <strong className="text-[var(--color-heading)]">Payback period:</strong> Setup cost recovered in first 2 weeks
+                <strong className="text-[var(--color-heading)]">Payback period:</strong> confirmed after your discovery call
               </p>
               <p className="text-[var(--color-muted)] leading-relaxed">
-                <strong className="text-[var(--color-heading)]">Annual ROI:</strong> &pound;16,200 net gain on a &pound;1,100 investment = 1,373% return
+                <strong className="text-[var(--color-heading)]">Annual upside:</strong> &pound;16,800 in potential recovered revenue before implementation cost
               </p>
             </div>
 
@@ -221,10 +221,10 @@ export default function BlogPost() {
 
             <div className="bg-[var(--color-surface)]/50 border border-[var(--color-border)] rounded-lg p-6 mb-4">
               <p className="text-[var(--color-muted)] leading-relaxed mb-2">
-                <strong className="text-[var(--color-heading)]">Setup cost:</strong> &pound;500 (one-time)
+                <strong className="text-[var(--color-heading)]">Implementation:</strong> scoped after discovery
               </p>
               <p className="text-[var(--color-muted)] leading-relaxed mb-2">
-                <strong className="text-[var(--color-heading)]">Monthly running cost:</strong> &pound;50 (retainer + platform)
+                <strong className="text-[var(--color-heading)]">Scope driver:</strong> calendar rules, reminder channels, and staff handoff
               </p>
               <p className="text-[var(--color-muted)] leading-relaxed mb-2">
                 <strong className="text-[var(--color-heading)]">Appointments per month:</strong> 300
@@ -252,10 +252,10 @@ export default function BlogPost() {
                 <strong className="text-[var(--color-heading)]">Total monthly benefit:</strong> &pound;840 + &pound;480 = &pound;1,320
               </p>
               <p className="text-[var(--color-muted)] leading-relaxed mb-1">
-                <strong className="text-[var(--color-heading)]">Monthly ROI:</strong> &pound;1,320 &minus; &pound;50 = &pound;1,270 net gain
+                <strong className="text-[var(--color-heading)]">Monthly upside:</strong> &pound;1,320 in recovered value before implementation cost
               </p>
               <p className="text-[var(--color-muted)] leading-relaxed">
-                <strong className="text-[var(--color-heading)]">Payback period:</strong> Under 3 weeks
+                <strong className="text-[var(--color-heading)]">Payback period:</strong> confirmed after your discovery call
               </p>
             </div>
 
@@ -273,10 +273,10 @@ export default function BlogPost() {
 
             <div className="bg-[var(--color-surface)]/50 border border-[var(--color-border)] rounded-lg p-6 mb-4">
               <p className="text-[var(--color-muted)] leading-relaxed mb-2">
-                <strong className="text-[var(--color-heading)]">Setup cost:</strong> &pound;500 (one-time)
+                <strong className="text-[var(--color-heading)]">Implementation:</strong> scoped after discovery
               </p>
               <p className="text-[var(--color-muted)] leading-relaxed mb-2">
-                <strong className="text-[var(--color-heading)]">Monthly running cost:</strong> &pound;50 (retainer + platform)
+                <strong className="text-[var(--color-heading)]">Scope driver:</strong> review source, CRM/POS data, and follow-up rules
               </p>
               <p className="text-[var(--color-muted)] leading-relaxed mb-2">
                 <strong className="text-[var(--color-heading)]">Previous Google reviews:</strong> 45 (3.8 star average)
@@ -301,7 +301,7 @@ export default function BlogPost() {
                 <strong className="text-[var(--color-heading)]">Extra monthly revenue:</strong> &pound;1,430
               </p>
               <p className="text-[var(--color-muted)] leading-relaxed">
-                <strong className="text-[var(--color-heading)]">Monthly ROI:</strong> &pound;1,430 &minus; &pound;50 = &pound;1,380 net gain (after ramp-up period)
+                <strong className="text-[var(--color-heading)]">Monthly upside:</strong> &pound;1,430 in potential extra revenue before implementation cost
               </p>
             </div>
 
@@ -403,30 +403,28 @@ export default function BlogPost() {
             </p>
 
             <h3 className="text-xl font-semibold mt-6 mb-3 text-[var(--color-heading)]">
-              Step 3: Compare to the Cost
+              Step 3: Compare to the Scope
             </h3>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-4">
-              A typical AI automation setup costs:
+              The implementation cost depends on:
             </p>
 
             <ul className="text-[var(--color-muted)] leading-relaxed mb-4 list-disc pl-6 space-y-2">
               <li>
-                <strong className="text-[var(--color-heading)]">&pound;500 setup</strong>{" "}
-                for a starter package (1&ndash;2 automations)
+                <strong className="text-[var(--color-heading)]">Workflow shape:</strong>{" "}
+                one focused process or several connected workflows
               </li>
               <li>
-                <strong className="text-[var(--color-heading)]">&pound;50&ndash;150/month</strong>{" "}
-                for ongoing optimisation and platform costs
+                <strong className="text-[var(--color-heading)]">Operating rules:</strong>{" "}
+                channels, integrations, handoffs, monitoring, and optimisation
               </li>
             </ul>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-8">
-              If your combined admin savings and recovered revenue total more
-              than &pound;100&ndash;200/month (and from the scenarios above,
-              they almost certainly do), the automation pays for itself within
-              the first month. The setup fee is typically recovered in
-              2&ndash;4 weeks.
+              If your combined admin savings and recovered revenue are already
+              meaningful, the next step is to scope the smallest build that can
+              prove the gain. That is what the free audit and discovery call are for.
             </p>
 
             {/* When NOT worth it */}

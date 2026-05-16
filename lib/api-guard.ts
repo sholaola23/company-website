@@ -21,6 +21,22 @@ const ALLOWED_ORIGINS = [
   "https://www.oladipupoconsulting.co.uk",
 ];
 
+const DEV_ALLOWED_ORIGINS = [
+  "http://localhost:3000",
+  "http://127.0.0.1:3000",
+];
+
+function isVercelPreviewOrigin(candidate: string) {
+  if (process.env.VERCEL_ENV !== "preview") return false;
+
+  try {
+    const hostname = new URL(candidate).hostname;
+    return hostname.endsWith(".vercel.app");
+  } catch {
+    return false;
+  }
+}
+
 // Per-instance global cap. Edge runtime spins many instances so this is
 // defence in depth, not a primary control. Tuned so a single instance
 // hitting the cap throttles to ~$1/min in worst case (Opus 4.6 burst).
@@ -87,9 +103,13 @@ export function requireGuard(
     const origin = req.headers.get("origin");
     const referer = req.headers.get("referer");
     const candidate = origin ?? referer ?? "";
-    const isAllowed = ALLOWED_ORIGINS.some((o) =>
+    const allowedOrigins =
+      process.env.NODE_ENV === "production"
+        ? ALLOWED_ORIGINS
+        : [...ALLOWED_ORIGINS, ...DEV_ALLOWED_ORIGINS];
+    const isAllowed = allowedOrigins.some((o) =>
       candidate.startsWith(o + "/") || candidate === o
-    );
+    ) || isVercelPreviewOrigin(candidate);
 
     if (!isAllowed) {
       console.warn(

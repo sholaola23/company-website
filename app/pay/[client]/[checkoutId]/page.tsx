@@ -12,6 +12,20 @@ interface CheckoutData {
   checkout_reference: string;
 }
 
+interface SumUpCardWidget {
+  mount: (options: {
+    id: string;
+    checkoutId: string;
+    onResponse: (type: string, body: unknown) => void;
+  }) => void;
+}
+
+declare global {
+  interface Window {
+    SumUpCard?: SumUpCardWidget;
+  }
+}
+
 const CLIENT_BRANDING: Record<string, { name: string; tagline: string; color: string }> = {
   "emanuel-bakery": {
     name: "E'Manuel Foods and Bakery",
@@ -73,13 +87,13 @@ export default function PaymentPage() {
     script.src = "https://gateway.sumup.com/gateway/ecom/card/v2/sdk.js";
     script.async = true;
     script.onload = () => {
-      const SumUpCard = (window as any).SumUpCard;
+      const SumUpCard = window.SumUpCard;
       if (!SumUpCard) return;
 
       SumUpCard.mount({
         id: "sumup-card",
         checkoutId: checkoutId,
-        onResponse: (type: string, body: any) => {
+        onResponse: (type: string) => {
           if (type === "success") {
             setPaid(true);
           } else if (type === "error") {

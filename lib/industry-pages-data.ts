@@ -86,7 +86,7 @@ export const industryPages: IndustryPage[] = [
       "We have already built appointment and order automation systems handling 180+ transactions per week for live clients. The same AI engine that sends order confirmations and manages scheduling for E'Manuel Bakery powers our dental practice solution — adapted for clinical workflows, patient communication, and NHS/private scheduling patterns.",
     proofSource: "E'Manuel Foods & Bakery — 180+ orders/week automated",
     guaranteeText:
-      "Every project comes with our 90-Day Results Guarantee. If you do not save at least 5 hours per week within 90 days, we refund your setup fee. No questions asked.",
+      "Every project includes a 90-day results review. We agree the success metric before build, track it after launch, and keep improving until the system is doing the job it was scoped to do.",
     blogLinks: [
       {
         label: "AI for Dentists: Reduce No-Shows by 60%",
@@ -167,7 +167,7 @@ export const industryPages: IndustryPage[] = [
       "Our Voice AI agent uses the same technology trusted by hundreds of service businesses. It handles natural conversation, understands accents, manages calendar availability, and routes emergencies — all without human intervention. We have built automation systems handling 180+ weekly transactions for live clients, and the same reliability powers our HVAC solution.",
     proofSource: "Based on our Voice AI Agent service — live and production-ready",
     guaranteeText:
-      "Every project comes with our 90-Day Results Guarantee. If you do not save at least 5 hours per week within 90 days, we refund your setup fee. No questions asked.",
+      "Every project includes a 90-day results review. We agree the success metric before build, track it after launch, and keep improving until the system is doing the job it was scoped to do.",
     blogLinks: [
       {
         label: "Voice AI for Small Business: The Complete Guide",
@@ -248,7 +248,7 @@ export const industryPages: IndustryPage[] = [
       "We have accounting firms in our pipeline and have built document management and client communication workflows for multiple live clients. Our automation engine handles 180+ weekly transactions reliably — the same infrastructure powers automated reminders, status tracking, and client-facing dashboards.",
     proofSource: "3 accounting firms currently in our sales pipeline",
     guaranteeText:
-      "Every project comes with our 90-Day Results Guarantee. If you do not save at least 5 hours per week within 90 days, we refund your setup fee. No questions asked.",
+      "Every project includes a 90-day results review. We agree the success metric before build, track it after launch, and keep improving until the system is doing the job it was scoped to do.",
     blogLinks: [
       {
         label: "AI for UK Accountants: A Complete Guide",
@@ -329,7 +329,7 @@ export const industryPages: IndustryPage[] = [
       "We have built WhatsApp bots handling 180+ automated messages per week for live clients. The same technology that sends order confirmations, payment reminders, and delivery updates for E'Manuel Bakery powers our salon solution — adapted for appointment confirmations, rebooking flows, and review collection.",
     proofSource: "E'Manuel Foods & Bakery — 180+ WhatsApp messages/week automated",
     guaranteeText:
-      "Every project comes with our 90-Day Results Guarantee. If you do not save at least 5 hours per week within 90 days, we refund your setup fee. No questions asked.",
+      "Every project includes a 90-day results review. We agree the success metric before build, track it after launch, and keep improving until the system is doing the job it was scoped to do.",
     blogLinks: [
       {
         label: "AI for Salons: Automate Bookings and Reviews",
@@ -410,7 +410,7 @@ export const industryPages: IndustryPage[] = [
       "We have already built a live client-facing dashboard for E'Manuel Bakery — tracking orders, production, deliveries, and payments in real time. The same dashboard technology, GPS tracking concepts, and automated notification systems power our cleaning company solution. This is not theoretical — it is adapted from production infrastructure.",
     proofSource: "E'Manuel Bakery client dashboard — live at app.workcrew.io",
     guaranteeText:
-      "Every project comes with our 90-Day Results Guarantee. If you do not save at least 5 hours per week within 90 days, we refund your setup fee. No questions asked.",
+      "Every project includes a 90-day results review. We agree the success metric before build, track it after launch, and keep improving until the system is doing the job it was scoped to do.",
     blogLinks: [
       {
         label: "AI for Cleaning Companies: Save 15 Hours Per Week",

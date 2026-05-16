@@ -326,7 +326,7 @@ export default function BlogPost() {
                       Us (WorkCrew)
                     </td>
                     <td className="py-3 px-4 text-[var(--color-heading)]">
-                      From &pound;1,500
+                      Scoped after discovery
                     </td>
                     <td className="py-3 px-4 text-[var(--color-heading)]">
                       10&ndash;14 days
@@ -390,14 +390,14 @@ export default function BlogPost() {
             </h2>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-4">
-              For &pound;1,500, our{" "}
+              When we scope a{" "}
               <Link
                 href="/services/business-website"
                 className="text-[var(--color-primary)] hover:text-[var(--color-primary)] underline transition-colors"
               >
                 Professional Business Website package
               </Link>{" "}
-              includes everything a local business needs to start getting found
+              it includes everything a local business needs to start getting found
               online:
             </p>
 
@@ -443,8 +443,9 @@ export default function BlogPost() {
             </p>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-4">
-              A &pound;1,500 website pays for itself in under 4 months. After
-              that, it&apos;s pure profit.
+              A properly scoped website should pay for itself through recovered
+              enquiries, stronger trust, and fewer lost prospects. We confirm
+              the actual scope after discovery.
             </p>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-8">

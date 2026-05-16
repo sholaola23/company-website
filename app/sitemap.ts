@@ -19,19 +19,19 @@ const CITY_SLUGS = [
 
 // Last significant content update for static pages
 const SITE_LAUNCH = new Date("2026-03-01");
-const BLOG_LAUNCH = new Date("2026-03-15");
 const CITY_PAGES_LAUNCH = new Date("2026-03-10");
 const REDESIGN_DATE = new Date("2026-03-29");
+const CONTENT_REFRESH = new Date("2026-05-16");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
-    { url: BASE_URL, lastModified: REDESIGN_DATE, changeFrequency: "weekly" as const, priority: 1 },
-    { url: `${BASE_URL}/services`, lastModified: REDESIGN_DATE, changeFrequency: "weekly" as const, priority: 0.9 },
+    { url: BASE_URL, lastModified: CONTENT_REFRESH, changeFrequency: "weekly" as const, priority: 1 },
+    { url: `${BASE_URL}/services`, lastModified: CONTENT_REFRESH, changeFrequency: "weekly" as const, priority: 0.9 },
     { url: `${BASE_URL}/blueprint`, lastModified: new Date("2026-04-05"), changeFrequency: "monthly" as const, priority: 0.9 },
     { url: `${BASE_URL}/audit`, lastModified: REDESIGN_DATE, changeFrequency: "monthly" as const, priority: 0.7 },
-    { url: `${BASE_URL}/case-studies`, lastModified: REDESIGN_DATE, changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${BASE_URL}/case-studies`, lastModified: CONTENT_REFRESH, changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${BASE_URL}/about`, lastModified: REDESIGN_DATE, changeFrequency: "monthly" as const, priority: 0.6 },
-    { url: `${BASE_URL}/blog`, lastModified: new Date(), changeFrequency: "daily" as const, priority: 0.7 },
+    { url: `${BASE_URL}/blog`, lastModified: CONTENT_REFRESH, changeFrequency: "daily" as const, priority: 0.7 },
     { url: `${BASE_URL}/contact`, lastModified: REDESIGN_DATE, changeFrequency: "monthly" as const, priority: 0.5 },
     { url: `${BASE_URL}/tools`, lastModified: SITE_LAUNCH, changeFrequency: "monthly" as const, priority: 0.6 },
     { url: `${BASE_URL}/tools/ai-roi-calculator`, lastModified: SITE_LAUNCH, changeFrequency: "monthly" as const, priority: 0.8 },
@@ -42,21 +42,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const servicePages = services.map((s) => ({
     url: `${BASE_URL}/services/${s.slug}`,
-    lastModified: REDESIGN_DATE,
+    lastModified: CONTENT_REFRESH,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
   const caseStudyPages = caseStudies.map((c) => ({
     url: `${BASE_URL}/case-studies/${c.slug}`,
-    lastModified: REDESIGN_DATE,
+    lastModified: CONTENT_REFRESH,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
   const cityPages = CITY_SLUGS.map((slug) => ({
     url: `${BASE_URL}/${slug}`,
-    lastModified: REDESIGN_DATE,
+    lastModified: CITY_PAGES_LAUNCH,
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
@@ -78,7 +78,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "ai-for-restaurants",
     "ai-for-healthcare",
     "ai-for-coaches",
-    "ai-automation-cost",
     "whatsapp-automation-business",
     "get-more-google-reviews",
     "what-is-ai-readiness-audit",
@@ -112,7 +111,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogPages = BLOG_SLUGS.map((slug) => ({
     url: `${BASE_URL}/blog/${slug}`,
-    lastModified: BLOG_LAUNCH,
+    lastModified: CONTENT_REFRESH,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));

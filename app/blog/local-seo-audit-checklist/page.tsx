@@ -363,7 +363,7 @@ export default function BlogPost() {
             </p>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-4">
-              No SEO knowledge required. No agency retainer. Just a clear list
+              No SEO knowledge required. No agency contract. Just a clear list
               of exactly what to fix and in what order.
             </p>
 

@@ -16,7 +16,7 @@ import BreadcrumbJsonLd from "@/components/shared/BreadcrumbJsonLd";
 export const metadata: Metadata = {
   title: "AI Automation Services",
   description:
-    "From single workflows to full automation fleets. We build AI systems tailored to your business.",
+    "AI automation, websites, and training for small businesses. Start with a free audit, then get a discovery-led plan for your operation.",
   alternates: {
     canonical: "https://workcrew.io/services",
   },
@@ -24,22 +24,21 @@ export const metadata: Metadata = {
     images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "AI Automation Services | WorkCrew",
     description:
-      "From single workflows to full automation fleets. We build AI systems tailored to your business.",
+      "AI automation, websites, and training for small businesses. Start with a free audit, then get a discovery-led plan for your operation.",
     url: "https://workcrew.io/services",
     type: "website",
   },
   twitter: {
     title: "AI Automation Services | WorkCrew",
     description:
-      "From single workflows to full automation fleets. We build AI systems tailored to your business.",
+      "AI automation, websites, and training for small businesses. Start with a free audit, then get a discovery-led plan for your operation.",
   },
 };
 
-const TIERS = [
+const ENGAGEMENTS = [
   {
-    name: "Starter",
-    price: "Get a Quote",
-    monthly: "",
+    name: "Focused Workflow",
+    label: "One clear bottleneck",
     color: "border-[var(--color-border)]",
     badge: "bg-[var(--color-border)] text-[var(--color-heading)]",
     includes: [
@@ -47,12 +46,11 @@ const TIERS = [
       "SOPs and a walkthrough so your team runs it",
       "1 month of fixes",
     ],
-    cta: "Book a discovery call",
+    cta: "Start with an audit",
   },
   {
-    name: "Growth",
-    price: "Get a Quote",
-    monthly: "",
+    name: "Connected Operations",
+    label: "Most common starting point",
     color: "border-[var(--color-primary)]",
     badge: "bg-[var(--color-primary)]/20 text-[var(--color-primary)] border border-[var(--color-primary)]/30",
     includes: [
@@ -61,13 +59,12 @@ const TIERS = [
       "3 months of fixes and tightening",
       "Monthly check-in on what to tighten next",
     ],
-    cta: "Most popular",
+    cta: "Start with an audit",
     highlight: true,
   },
   {
-    name: "Scale",
-    price: "Get a Quote",
-    monthly: "",
+    name: "Managed Improvement",
+    label: "Ongoing ops support",
     color: "border-[var(--color-primary)]",
     badge: "bg-[var(--color-primary)]/20 text-[var(--color-primary)] border border-[var(--color-primary)]/30",
     includes: [
@@ -77,7 +74,7 @@ const TIERS = [
       "Ongoing fixes and tightening",
       "Priority on anything urgent",
     ],
-    cta: "Book a discovery call",
+    cta: "Start with an audit",
   },
 ];
 
@@ -86,7 +83,7 @@ const servicesJsonLd = {
   "@type": "ItemList",
   "name": "AI Automation Services — WorkCrew",
   "description":
-    "From single workflows to full automation fleets. We build AI systems tailored to your business.",
+    "AI automation, websites, and training for small businesses. Start with a free audit, then get a discovery-led plan for your operation.",
   "numberOfItems": services.length,
   "itemListElement": services.map((service, index) => ({
     "@type": "ListItem",
@@ -103,7 +100,7 @@ const servicesJsonLd = {
       "offers": {
         "@type": "Offer",
         "availability": "https://schema.org/InStock",
-        "description": "Contact us for a tailored quote",
+        "description": "Scope is confirmed after a discovery call",
       },
     },
   })),
@@ -121,24 +118,24 @@ const servicesFAQs: FAQItem[] = [
       "No. We handle setup, configuration, and training. Tell us what's slowing you down. We hand over SOPs and a walkthrough so your team runs it after launch.",
   },
   {
-    question: "What is included in the monthly retainer?",
+    question: "What happens after launch?",
     answer:
       "Ongoing monitoring, optimisation, support, and minor adjustments. We make sure your automations keep working and improving over time. You also get priority access to our team for any questions or changes you need.",
   },
   {
-    question: "Can I cancel the monthly retainer at any time?",
+    question: "Can I cancel ongoing support at any time?",
     answer:
-      "Yes. There are no long-term contracts. It is a monthly retainer that you can cancel whenever you like. We keep clients by delivering results, not by locking them into agreements.",
+      "Yes. There are no long-term contracts. Ongoing support is scoped after discovery and can be cancelled whenever you like. We keep clients by delivering results, not by locking them into agreements.",
   },
   {
     question: "What if AI automation does not work for my business?",
     answer:
-      "That's what the discovery call is for. We tell you honestly if it's a good fit before you spend a penny. Every project is backed by our 90-day results guarantee — if you don't save at least 5 hours per week, we refund your setup fee.",
+      "That's what the discovery call is for. We tell you honestly if it's a good fit before you spend a penny. Every project includes a 90-day results review against the success metric agreed before build.",
   },
   {
-    question: "I'm not sure which tier I need. How do I choose?",
+    question: "I'm not sure which path I need. How do I choose?",
     answer:
-      "Don't pick yet. Book a discovery call. We figure out where your week leaks the most time, and the right tier becomes obvious from there.",
+      "Don't pick yet. Start with the free audit. We figure out where your week leaks the most time, then scope the right build after discovery.",
   },
 ];
 
@@ -160,13 +157,13 @@ export default function ServicesPage() {
         </div>
       </AnimatedSection>
 
-      {/* Pricing tier cards */}
-      <section aria-labelledby="pricing-heading" className="mb-20">
-        <h2 id="pricing-heading" className="sr-only">
-          Pricing tiers
+      {/* Engagement cards */}
+      <section aria-labelledby="engagement-heading" className="mb-20">
+        <h2 id="engagement-heading" className="sr-only">
+          Ways to work with us
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {TIERS.map((tier, index) => (
+          {ENGAGEMENTS.map((tier, index) => (
             <AnimatedSection key={tier.name} delay={0.1 * (index + 1)}>
             <div
               className={cn(
@@ -192,12 +189,9 @@ export default function ServicesPage() {
                 >
                   {tier.name}
                 </span>
-                <div className="flex items-baseline gap-2">
-                  <span className="text-3xl font-bold text-[var(--color-heading)]">
-                    {tier.price}
-                  </span>
-                  <span className="text-sm text-[var(--color-muted)]">{tier.monthly}</span>
-                </div>
+                <p className="text-2xl font-bold text-[var(--color-heading)] leading-tight">
+                  {tier.label}
+                </p>
               </div>
 
               <ul className="flex flex-col gap-3" role="list">
@@ -215,12 +209,12 @@ export default function ServicesPage() {
 
               <div className="mt-auto">
                 <CTAButton
-                  href="/contact"
+                  href="/audit"
                   variant={tier.highlight ? "primary" : "secondary"}
                   size="md"
                   className="w-full justify-center"
                 >
-                  {tier.highlight ? tier.cta : "Get started"}
+                  {tier.cta}
                 </CTAButton>
               </div>
             </div>
@@ -230,14 +224,14 @@ export default function ServicesPage() {
 
         <AnimatedSection delay={0.4}>
           <p className="text-center text-sm text-[var(--color-muted)] mt-6">
-            Not sure which tier fits?{" "}
+            Not sure which path fits?{" "}
             <Link
-              href="/contact"
+              href="/audit"
               className="text-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] rounded"
             >
-              Get in touch
+              Start with the free audit
             </Link>{" "}
-            and we&apos;ll recommend the right package.
+            and we&apos;ll recommend the right path after discovery.
           </p>
         </AnimatedSection>
       </section>

@@ -260,9 +260,10 @@ export default function BlogPost() {
             </h2>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-4">
-              A WhatsApp automation system for a small business typically
-              costs &pound;500&ndash;1,500 to set up, plus &pound;50&ndash;150
-              per month for the WhatsApp API, AI usage, and maintenance.
+              A WhatsApp automation system for a small business is scoped after
+              discovery. The final proposal depends on conversation volume,
+              WhatsApp API requirements, AI usage, payment links, and the handoff
+              rules for your team.
             </p>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-4">

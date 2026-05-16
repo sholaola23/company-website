@@ -352,8 +352,8 @@ export default function BlogPost() {
             </h2>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-4">
-              This is the part most agencies will not share. Here is our actual
-              unit economics for a Starter-tier client.
+              This is the part most agencies will not share. Here is how we
+              think about unit economics without publishing fixed package prices.
             </p>
 
             <div className="bg-[var(--color-bg-alt)] border border-[var(--color-border)] rounded-xl p-6 mb-6 space-y-4">
@@ -362,7 +362,8 @@ export default function BlogPost() {
                   <strong className="text-[var(--color-heading)]">
                     What the client pays:
                   </strong>{" "}
-                  &pound;500 setup + &pound;50/month retainer
+                  A proposal scoped after discovery, based on workflow shape,
+                  channels, volume, and handoff rules
                 </p>
               </div>
               <div>
@@ -380,31 +381,30 @@ export default function BlogPost() {
                   <strong className="text-[var(--color-heading)]">
                     Our cost to deliver:
                   </strong>{" "}
-                  Roughly &pound;4 in API calls + agent time for the monthly
-                  retainer work
+                  API calls, platform usage, monitoring, and agent-assisted
+                  review time
                 </p>
               </div>
               <div>
                 <p className="text-[var(--color-muted)]">
                   <strong className="text-[var(--color-heading)]">Gross margin:</strong>{" "}
-                  90%+ on the retainer
+                  protected by repeatable templates, monitoring, and agent-assisted operations
                 </p>
               </div>
             </div>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-4">
-              The setup has a higher real cost because it involves human time
+              The initial build has a higher real cost because it involves human time
               &mdash; discovery calls, process mapping, building the initial
-              workflows. But the ongoing retainer is almost entirely automated.
+              workflows. But ongoing support is heavily systematised.
               Monitoring, QA, health checks, and optimisation are all handled by
               agents.
             </p>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-8">
-              We also offer Growth (&pound;1,500 + &pound;150/month) and Scale
-              (&pound;3,500 + &pound;350/month) tiers for businesses that need
-              more complex automation. The margins are similar. The delivery cost
-              scales slowly because agents handle the recurring work.
+              More complex businesses need more connected workflows, more
+              exceptions, and more reporting. The delivery cost scales slowly
+              because agents handle much of the recurring monitoring work.
             </p>
 
             {/* Honest Parts */}

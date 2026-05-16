@@ -352,10 +352,10 @@ export default function BlogPost() {
                 <strong className="text-[var(--color-heading)]">
                   Custom AI chatbot (what we build):
                 </strong>{" "}
-                &pound;500&ndash;1,500 setup + &pound;50&ndash;150/month. Trained
-                on your business data, connected to your booking system, handles
-                complex conversations. The monthly cost covers AI model usage and
-                ongoing optimisation.
+                scoped after discovery. Trained on your business data, connected
+                to your booking system, and designed around the conversations
+                your customers actually have. Ongoing support covers AI usage,
+                monitoring, and optimisation.
               </li>
               <li className="text-[var(--color-muted)]">
                 <strong className="text-[var(--color-heading)]">

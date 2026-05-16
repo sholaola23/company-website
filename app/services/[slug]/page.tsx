@@ -4,7 +4,6 @@ import Link from "next/link";
 import {
   ArrowLeft,
   CheckCircle,
-  Clock,
   ShieldCheck,
   Users,
   Zap,
@@ -56,7 +55,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const service = services.find((s) => s.slug === slug);
   if (!service) return {};
-  const pageDescription = service.metaDescription || `${service.pain}. Tailored solutions for ${service.idealFor}. Book a free consultation.`;
+  const pageDescription = service.metaDescription || `${service.pain}. Practical automation for ${service.idealFor}. Start with a free AI audit.`;
   const pageUrl = `https://workcrew.io/services/${slug}`;
   return {
     title: service.name,
@@ -150,12 +149,12 @@ export default async function ServiceDetailPage({
         {/* Key metrics row */}
         <div className="flex flex-wrap gap-4">
           <Link
-            href="/contact"
+            href="/audit"
             className="flex items-center gap-2 bg-[var(--color-primary-light)] border border-[var(--color-primary-light)] rounded-lg px-4 py-2.5 hover:bg-[var(--color-primary-light)] transition-colors"
           >
             <Zap size={15} className="text-[var(--color-primary)]" aria-hidden="true" />
             <span className="text-sm font-semibold text-[var(--color-primary-hover)]">
-              Get a tailored quote
+              Start with a free audit
             </span>
           </Link>
           <div className="flex items-center gap-2 bg-[var(--color-success-light)] border border-[var(--color-border)] rounded-lg px-4 py-2.5">
@@ -468,8 +467,8 @@ export default async function ServiceDetailPage({
           90-Day Results Guarantee
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-[var(--color-body)] max-w-md mx-auto">
-          If you don&apos;t save at least 5 hours per week within 90 days,
-          we&apos;ll refund your setup fee. No questions asked.
+          We agree the success metric before build, track it after launch, and
+          keep improving the system until it is doing the job it was scoped to do.
         </p>
       </div>
 

@@ -34,7 +34,7 @@ const TOOLS = [
     description:
       "Fill in one form about your business. Get a complete local SEO action plan with GBP optimisation, review strategy, posting calendar, and service page copy.",
     href: "/tools/rank-ready",
-    badge: "Free Preview / £49 Full Report",
+    badge: "Free Preview / Full Report",
     icon: "📍",
   },
   {

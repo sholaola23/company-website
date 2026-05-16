@@ -125,11 +125,13 @@ export default function ServiceFilterClient({
                 </p>
               </div>
 
-              <div className="flex items-baseline gap-1.5 mt-auto">
-                <span className="text-xl font-bold text-[var(--color-heading)]">
-                  {service.setupPrice}
-                </span>
-                <span className="text-sm text-[var(--color-muted)]">setup</span>
+              <div className="mt-auto rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]/60 px-3 py-2">
+                <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-muted)]">
+                  Scoped after audit
+                </p>
+                <p className="mt-1 text-sm font-medium text-[var(--color-heading)]">
+                  Discovery-led proposal
+                </p>
               </div>
 
               <Link

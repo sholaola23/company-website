@@ -1,7 +1,20 @@
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
+import type { Metadata } from "next";
 import type { Profile } from "@/lib/supabase/types";
 import AdminShell from "@/components/portal/AdminShell";
+
+export const metadata: Metadata = {
+  title: "Admin Leads",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
+};
 
 /**
  * Admin layout — checks that the user has admin role.

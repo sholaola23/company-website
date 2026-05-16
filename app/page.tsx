@@ -14,7 +14,6 @@ import {
 import { caseStudies } from "@/lib/case-studies-data";
 import AnimatedSection from "@/components/shared/AnimatedSection";
 import AnimatedCounter from "@/components/shared/AnimatedCounter";
-import GradientBlob from "@/components/shared/GradientBlob";
 import HeroImage from "@/components/shared/HeroImage";
 import PersonalisedCTA from "@/components/shared/PersonalisedCTA";
 import RotatingHeadline from "@/components/home/RotatingHeadline";
@@ -57,9 +56,9 @@ function Hero() {
               </p>
 
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
-                {/* Single primary CTA — Stripe-style rectangle */}
+                {/* Primary CTA — discovery-first funnel */}
                 <Link
-                  href="https://cal.com/workcrew/free-ai-strategy-call"
+                  href="/audit"
                   className="inline-flex items-center gap-2 rounded-sm px-7 py-3.5 text-base font-semibold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 group"
                   style={{
                     background: "var(--color-primary)",
@@ -67,7 +66,7 @@ function Hero() {
                     outlineColor: "var(--color-primary)",
                   }}
                 >
-                  Book a 30-minute call
+                  Get your free AI audit
                   <ArrowRight
                     size={18}
                     className="transition-transform duration-200 group-hover:translate-x-0.5"
@@ -81,13 +80,13 @@ function Hero() {
                 className="mt-6 text-sm"
                 style={{ color: "var(--color-muted)" }}
               >
-                Not ready?{" "}
+                Prefer to talk?{" "}
                 <Link
-                  href="/blueprint"
+                  href="https://cal.com/workcrew/free-ai-strategy-call"
                   className="underline underline-offset-2 transition-opacity hover:opacity-70"
                   style={{ color: "var(--color-primary)" }}
                 >
-                  Get the free AI blueprint
+                  Book a 30-minute call
                 </Link>
               </p>
             </AnimatedSection>
@@ -499,9 +498,9 @@ function StrategyCallCTA() {
             >
               30 minutes.{" "}
               <span style={{ color: "var(--color-accent)" }}>
-                We tell you what's broken
+                We tell you what&apos;s broken
               </span>{" "}
-              and what we'd fix first.
+              and what we&apos;d fix first.
             </h2>
 
             <p
@@ -560,7 +559,7 @@ function StrategyCallCTA() {
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--color-primary)]/10 text-xs font-bold text-[var(--color-accent)]">2</span>
-                  <p className="text-sm text-[var(--color-dark-text)]">We show you what we'd build first, shaped to your operation</p>
+                  <p className="text-sm text-[var(--color-dark-text)]">We show you what we&apos;d build first, shaped to your operation</p>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--color-primary)]/10 text-xs font-bold text-[var(--color-accent)]">3</span>
@@ -673,7 +672,7 @@ const homepageFAQs: FAQItem[] = [
   {
     question: "How much does AI automation cost for a business in the UK?",
     answer:
-      "Every project is scoped individually based on your needs and complexity. We start with a free AI blueprint to understand your business, then provide a detailed proposal with a fixed price — no hidden costs. Book a free consultation to get a tailored quote.",
+      "Every project is scoped individually based on your needs and complexity. Start with the free AI audit, then we give you a practical proposal after discovery. No public price list, no guesswork.",
   },
   {
     question: "Do I need technical skills to use AI automation?",
@@ -683,7 +682,7 @@ const homepageFAQs: FAQItem[] = [
   {
     question: "How long does it take to set up AI automation?",
     answer:
-      "Timelines depend on the scope and complexity of your project. We start with a free AI blueprint that maps your business processes and identifies the where your week leaks the most time. You'll receive a clear timeline in your custom proposal.",
+      "Timelines depend on the scope and complexity of your project. We start with a free AI audit that maps where your week leaks the most time. You'll receive a clear timeline in your custom proposal.",
   },
   {
     question: "Is AI automation safe and reliable for my business?",
@@ -693,7 +692,7 @@ const homepageFAQs: FAQItem[] = [
   {
     question: "What happens if the automation does not deliver results?",
     answer:
-      "Every project is backed by our 90-Day Results Guarantee. If you do not save at least 5 hours per week within 90 days, we refund your setup fee — no questions asked. We are confident in what we deliver because we only take on projects where we know AI will make a measurable difference.",
+      "Every project is backed by a 90-day results review. We agree the success metric before build, track it after launch, and keep improving the system until it is doing the job it was scoped to do.",
   },
 ];
 

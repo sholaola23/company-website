@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     images: [{ url: "https://workcrew.io/api/og", width: 1200, height: 630 }],
     title: "AI Automation for Small Businesses in London",
     description:
-      "AI automation services for London small businesses. Save 8+ hours per week. Local agency, 7-day delivery, from £500.",
+      "AI automation services for London small businesses. Save 8+ hours per week with discovery-led automation builds.",
     type: "article",
     publishedTime: "2026-03-27T00:00:00.000Z",
     authors: ["Olushola Oladipupo"],
@@ -40,7 +40,7 @@ const faqSchema = {
       name: "How much does AI automation cost for a London small business?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "AI automation for London small businesses starts from £500 setup with £50/month ongoing for a lead intake system. More comprehensive automations (order management, WhatsApp bots, multi-system integration) range from £1,500-3,500 setup with £150-350/month. We offer a 90-day results guarantee: save 5+ hours per week or get your setup fee back.",
+        text: "AI automation for London small businesses is scoped after discovery. A lead intake system, WhatsApp bot, order workflow, or multi-system integration all need different tools and handoff rules. We agree a 90-day success metric before build and review it after launch.",
       },
     },
     {
@@ -123,7 +123,7 @@ export default function BlogPost() {
 
             <ul className="text-[var(--color-muted)] space-y-2 mb-4 ml-6 list-disc">
               <li><strong className="text-[var(--color-heading)]">Higher competition:</strong> There are over 1 million registered businesses in London (ONS, 2025). Your competitor is one Google search away. Responding to a lead 10 minutes late means losing them to the business that responded in 60 seconds.</li>
-              <li><strong className="text-[var(--color-heading)]">Higher costs:</strong> London wages, rents, and overheads are 30&ndash;50% higher than the UK average. Hiring a part-time admin costs &pound;15,000&ndash;22,000 per year in London. AI automation doing the same work costs &pound;500&ndash;3,500 to set up and &pound;50&ndash;350 per month to run.</li>
+              <li><strong className="text-[var(--color-heading)]">Higher costs:</strong> London wages, rents, and overheads are 30&ndash;50% higher than the UK average. Hiring a part-time admin costs &pound;15,000&ndash;22,000 per year in London. AI automation lets you scope the exact workflow instead of hiring for idle hours.</li>
               <li><strong className="text-[var(--color-heading)]">Higher customer expectations:</strong> London customers expect fast responses, clean booking, and instant confirmation. They are used to Deliveroo-speed service. If your business takes 4 hours to respond to an enquiry, they have already booked someone else.</li>
               <li><strong className="text-[var(--color-heading)]">Diverse customer base:</strong> London serves customers speaking 300+ languages. AI chatbots and messaging systems can handle multilingual interactions that would be impossible for a small team.</li>
             </ul>
@@ -204,7 +204,7 @@ export default function BlogPost() {
               <Link href="/services/lead-intake" className="text-[var(--color-primary)] hover:underline">
                 AI lead intake service
               </Link>{" "}
-              starts at &pound;500 setup.
+              is scoped after the free audit.
             </p>
 
             <h3 className="text-xl font-semibold text-[var(--color-heading)] mt-6 mb-3">
@@ -276,42 +276,42 @@ export default function BlogPost() {
               </table>
             </div>
 
-            {/* Pricing */}
+            {/* Discovery-led scope */}
             <h2 className="text-2xl font-bold mt-10 mb-4">
-              How Much Does AI Automation Cost in London?
+              How We Scope AI Automation in London
             </h2>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-4">
-              Our pricing is transparent and fixed &mdash; no hourly billing, no scope creep:
+              We do not publish a fixed price list because the right build depends on your channels, volume, tools, and handoff rules. The free audit tells us where the first win is likely to be:
             </p>
 
             <div className="overflow-x-auto mb-8">
               <table className="w-full text-sm border border-[var(--color-border)] rounded-xl overflow-hidden">
                 <thead>
                   <tr className="bg-[var(--color-surface)]/60">
-                    <th className="text-left px-4 py-3 text-[var(--color-body)] font-semibold">Package</th>
-                    <th className="text-left px-4 py-3 text-[var(--color-body)] font-semibold">Setup</th>
-                    <th className="text-left px-4 py-3 text-[var(--color-body)] font-semibold">Monthly</th>
+                    <th className="text-left px-4 py-3 text-[var(--color-body)] font-semibold">Path</th>
+                    <th className="text-left px-4 py-3 text-[var(--color-body)] font-semibold">Starting Point</th>
+                    <th className="text-left px-4 py-3 text-[var(--color-body)] font-semibold">Scope Driver</th>
                     <th className="text-left px-4 py-3 text-[var(--color-body)] font-semibold">Best For</th>
                   </tr>
                 </thead>
                 <tbody className="text-[var(--color-muted)]">
                   <tr className="border-t border-[var(--color-border)]">
-                    <td className="px-4 py-3 font-medium text-[var(--color-heading)]">Starter</td>
-                    <td className="px-4 py-3">&pound;500</td>
-                    <td className="px-4 py-3">&pound;50/mo</td>
+                    <td className="px-4 py-3 font-medium text-[var(--color-heading)]">Focused workflow</td>
+                    <td className="px-4 py-3">One bottleneck</td>
+                    <td className="px-4 py-3">Volume and handoff rules</td>
                     <td className="px-4 py-3">Lead intake, email assistant, SEO content</td>
                   </tr>
                   <tr className="border-t border-[var(--color-border)]">
-                    <td className="px-4 py-3 font-medium text-[var(--color-heading)]">Growth</td>
-                    <td className="px-4 py-3">&pound;1,500</td>
-                    <td className="px-4 py-3">&pound;150/mo</td>
+                    <td className="px-4 py-3 font-medium text-[var(--color-heading)]">Connected operations</td>
+                    <td className="px-4 py-3">Two or three workflows</td>
+                    <td className="px-4 py-3">Integrations and exceptions</td>
                     <td className="px-4 py-3">Order automation, WhatsApp bot, website</td>
                   </tr>
                   <tr className="border-t border-[var(--color-border)]">
-                    <td className="px-4 py-3 font-medium text-[var(--color-heading)]">Scale</td>
-                    <td className="px-4 py-3">&pound;3,500</td>
-                    <td className="px-4 py-3">&pound;350/mo</td>
+                    <td className="px-4 py-3 font-medium text-[var(--color-heading)]">Managed improvement</td>
+                    <td className="px-4 py-3">Ongoing operations</td>
+                    <td className="px-4 py-3">Monitoring and iteration</td>
                     <td className="px-4 py-3">Full business automation, multiple systems</td>
                   </tr>
                 </tbody>
@@ -319,9 +319,9 @@ export default function BlogPost() {
             </div>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-8">
-              Every package includes our <strong className="text-[var(--color-heading)]">90-Day Results Guarantee</strong>: save at least 5 hours per week within 90 days, or we refund your setup fee. View our full{" "}
+              Every package includes our <strong className="text-[var(--color-heading)]">90-Day Results Guarantee</strong>: we agree the success metric before build and review it after launch. View our full{" "}
               <Link href="/services" className="text-[var(--color-primary)] hover:underline">
-                services and pricing
+                services
               </Link>
               .
             </p>
@@ -352,7 +352,7 @@ export default function BlogPost() {
                   How much does AI automation cost for a London small business?
                 </h3>
                 <p className="text-[var(--color-muted)] leading-relaxed">
-                  AI automation for London small businesses starts from &pound;500 setup with &pound;50/month ongoing for a lead intake system. More comprehensive automations (order management, WhatsApp bots, multi-system integration) range from &pound;1,500&ndash;3,500 setup with &pound;150&ndash;350/month. We offer a 90-day results guarantee: save 5+ hours per week or get your setup fee back.
+                  AI automation for London small businesses is scoped after discovery. A lead intake system, WhatsApp bot, order workflow, or multi-system integration all need different tools and handoff rules. We agree a 90-day success metric before build and review it after launch.
                 </p>
               </div>
               <div>

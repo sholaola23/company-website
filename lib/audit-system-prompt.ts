@@ -48,9 +48,9 @@ SCORING GUIDE:
 - 9-10: Strong presence, only niche optimisations remain
 
 SERVICE TIERS (recommend the most appropriate):
-- "starter" (£500 setup + £50/mo): Single workflow — best for solo traders, micro-businesses, one clear problem
-- "growth" (£1,500 setup + £150/mo): Multi-workflow system — best for small teams (3-15 staff), multiple pain points
-- "scale" (£3,500 setup + £350/mo): Full automation fleet — best for established businesses with significant revenue
+- "starter": Single workflow — best for solo traders, micro-businesses, one clear problem
+- "growth": Multi-workflow system — best for small teams (3-15 staff), multiple pain points
+- "scale": Full automation fleet — best for established businesses with significant operational complexity
 
 INDUSTRY-SPECIFIC ANALYSIS:
 For ${industry} businesses, consider typical pain points:

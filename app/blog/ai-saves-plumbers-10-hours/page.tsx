@@ -40,7 +40,7 @@ const faqSchema = {
       name: "How much does AI automation cost for a plumbing business?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Basic AI automation for a plumbing business starts from £500 setup with £50/month ongoing. This covers lead intake, appointment booking, and follow-up sequences. More advanced setups (invoicing, Google reviews, route planning) typically cost £1,500-3,500 to set up. Most plumbers see ROI within the first month through recovered leads and time savings.",
+        text: "AI automation for a plumbing business is scoped after discovery because call volume, booking rules, integrations, and handoff requirements vary. A focused lead-intake build usually covers enquiry capture, appointment booking, and follow-up sequences. Most plumbers see ROI through recovered leads and time savings.",
       },
     },
     {
@@ -48,7 +48,7 @@ const faqSchema = {
       name: "Can AI really answer phone calls for my plumbing business?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. AI voice agents can answer calls 24/7, ask qualification questions (location, urgency, job type), book appointments into your calendar, and send the customer a confirmation text — all within 60 seconds. The AI costs 20-60p per call, compared to £1-3 per call for a traditional answering service.",
+        text: "Yes. AI voice agents can answer calls 24/7, ask qualification questions (location, urgency, job type), book appointments into your calendar, and send the customer a confirmation text — all within 60 seconds. Running costs depend on call volume and the phone/AI provider used.",
       },
     },
     {
@@ -280,7 +280,7 @@ export default function BlogPost() {
             </p>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-4">
-              At &pound;35&ndash;50 per hour (average plumber rate), 10 hours of admin time is worth &pound;350&ndash;500 per week &mdash; or &pound;18,000&ndash;26,000 per year. The cost of automating? From &pound;500 setup + &pound;50/month.
+              At &pound;35&ndash;50 per hour (average plumber rate), 10 hours of admin time is worth &pound;350&ndash;500 per week &mdash; or &pound;18,000&ndash;26,000 per year. The cost of automating depends on your workflow, call volume, booking rules, and existing tools.
             </p>
 
             <p className="text-[var(--color-muted)] leading-relaxed mb-8">
@@ -298,7 +298,7 @@ export default function BlogPost() {
                   How much does AI automation cost for a plumbing business?
                 </h3>
                 <p className="text-[var(--color-muted)] leading-relaxed">
-                  Basic AI automation for a plumbing business starts from &pound;500 setup with &pound;50/month ongoing. This covers lead intake, appointment booking, and follow-up sequences. More advanced setups (invoicing, Google reviews, route planning) typically cost &pound;1,500&ndash;3,500 to set up. Most plumbers see ROI within the first month through recovered leads and time savings.
+                  AI automation for a plumbing business is scoped after discovery because call volume, booking rules, integrations, and handoff requirements vary. A focused lead-intake build usually covers enquiry capture, appointment booking, and follow-up sequences. Most plumbers see ROI through recovered leads and time savings.
                 </p>
               </div>
               <div>
@@ -306,7 +306,7 @@ export default function BlogPost() {
                   Can AI really answer phone calls for my plumbing business?
                 </h3>
                 <p className="text-[var(--color-muted)] leading-relaxed">
-                  Yes. AI voice agents can answer calls 24/7, ask qualification questions (location, urgency, job type), book appointments into your calendar, and send the customer a confirmation text &mdash; all within 60 seconds. The AI costs 20&ndash;60p per call, compared to &pound;1&ndash;3 per call for a traditional answering service.
+                  Yes. AI voice agents can answer calls 24/7, ask qualification questions (location, urgency, job type), book appointments into your calendar, and send the customer a confirmation text &mdash; all within 60 seconds. Running costs depend on call volume and the phone/AI provider used.
                 </p>
               </div>
               <div>

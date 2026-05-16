@@ -58,7 +58,7 @@ YOUR TASK: Generate a JSON blueprint with exactly this structure (no markdown, n
   ],
   "totalHoursSaved": <sum of all hoursSavedPerWeek>,
   "monthlyRevenuePotential": <estimated monthly revenue recovery in GBP — calculate based on their enquiry volume, industry average job value, and conversion improvement from faster response>,
-  "roiMultiple": <how many times the retainer pays for itself — monthlyRevenuePotential divided by ~200>,
+  "roiMultiple": <estimated return multiple based on recovered revenue versus a scoped implementation investment; do not quote public prices>,
   "beforeAfter": {
     "before": "A vivid 2-sentence description of their Monday morning WITHOUT automation. Make it specific to their industry. E.g. for a plumber: 'Monday starts with 14 missed calls from the weekend sitting in voicemail. You spend the first 2 hours calling people back — half don't answer because they already called someone else.'",
     "after": "A vivid 2-sentence description of their Monday morning WITH automation. E.g. 'Monday starts with a dashboard showing 8 new appointments already booked over the weekend. Every enquiry got an instant response, the urgent ones are flagged, and your calendar is full until Wednesday.'"

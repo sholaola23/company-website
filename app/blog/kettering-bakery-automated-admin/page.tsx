@@ -48,7 +48,7 @@ const faqSchema = {
       name: "How much did the bakery automation cost?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The setup cost was £1,500 (Growth tier) with £150/month for ongoing optimisation and support. The system saves Tunmise 50+ minutes every day (in his own words), making the ROI positive from the first month. Estimated annual saving is £20,000+ when accounting for the full value of the owner's time.",
+        text: "The project was scoped after discovery around order intake, payment matching, production planning, and delivery routing. The system saves Tunmise 50+ minutes every day (in his own words), making the ROI clear from the first month. Estimated annual saving is £20,000+ when accounting for the full value of the owner's time.",
       },
     },
     {
@@ -350,7 +350,7 @@ export default function BlogPost() {
                   How much did the bakery automation cost?
                 </h3>
                 <p className="text-[var(--color-muted)] leading-relaxed">
-                  The setup cost was &pound;1,500 (Growth tier) with &pound;150/month for ongoing optimisation and support. The system saves Tunmise 50+ minutes every day (in his own words), making the ROI positive from the first month. Estimated annual saving is &pound;20,000+ when accounting for the full value of the owner&apos;s time.
+                  The project was scoped after discovery around order intake, payment matching, production planning, and delivery routing. The system saves Tunmise 50+ minutes every day (in his own words), making the ROI clear from the first month. Estimated annual saving is &pound;20,000+ when accounting for the full value of the owner&apos;s time.
                 </p>
               </div>
               <div>

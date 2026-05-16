@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   MapPin,
@@ -568,7 +567,7 @@ export default function RankReadyPage() {
                   {submitting === "full" ? (
                     <Loader2 className="h-4 w-4 animate-spin" />
                   ) : null}
-                  Get Full Report — £49
+                  Get Full Report
                 </button>
               </div>
             )}
@@ -598,7 +597,7 @@ export default function RankReadyPage() {
           </div>
           <div className="rounded-xl border border-emerald-500/30 bg-[var(--color-success)]/5 p-5">
             <h4 className="text-sm font-semibold text-[var(--color-success)] mb-2">
-              Full Report — £49 (all 5 outputs)
+              Full Report (all 5 outputs)
             </h4>
             <ul className="text-sm text-[var(--color-body)] space-y-1.5">
               <li className="flex items-center gap-2">

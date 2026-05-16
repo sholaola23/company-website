@@ -72,7 +72,7 @@ const faqs: FAQItem[] = [
   {
     question: "How is the AI ROI estimate calculated?",
     answer:
-      "We estimate that AI automation can eliminate 60–70% of repetitive admin tasks such as scheduling, follow-ups, data entry, and invoicing. The calculator multiplies the hours saved by an industry-average hourly rate to produce an annual cost saving, then compares that against a typical AI setup and monthly retainer investment to give you a return-on-investment percentage.",
+      "We estimate that AI automation can eliminate 60–70% of repetitive admin tasks such as scheduling, follow-ups, data entry, and invoicing. The calculator multiplies the hours saved by an industry-average hourly rate to produce an annual cost saving, then compares that against an indicative implementation model to give you a return-on-investment percentage.",
   },
   {
     question: "Are these savings realistic for a small business?",
@@ -82,7 +82,7 @@ const faqs: FAQItem[] = [
   {
     question: "What does the AI investment include?",
     answer:
-      "The calculator uses industry-standard AI implementation costs to estimate your return on investment. Actual pricing is tailored to your specific needs — book a free consultation to get an exact quote. Every project includes design, build, deployment, and ongoing support.",
+      "The calculator is an estimate, not a price list. Actual scope is tailored to your workflow, channels, volume, and handoff rules after discovery. Every project includes design, build, deployment, and ongoing support.",
   },
   {
     question: "What happens after I see my ROI estimate?",
@@ -386,7 +386,7 @@ export default function AIROICalculatorPage() {
                     icon={<TrendingUp size={24} />}
                     label="Estimated ROI"
                     value={`${results.roiPercent}%`}
-                    subtitle={`on £${ANNUAL_INVESTMENT.toLocaleString("en-GB")} yr-1 investment`}
+                    subtitle="against an indicative implementation model"
                     delay={0.4}
                   />
                 </div>
@@ -397,7 +397,7 @@ export default function AIROICalculatorPage() {
                   transition={{ delay: 0.6 }}
                   className="mt-6 text-center text-sm text-[var(--color-muted)]"
                 >
-                  Based on a £{SETUP_FEE} setup fee + £{MONTHLY_FEE}/month retainer.
+                  Indicative only. Your proposal is scoped after the free audit and discovery call.
                   Actual savings may vary.
                 </motion.p>
 
